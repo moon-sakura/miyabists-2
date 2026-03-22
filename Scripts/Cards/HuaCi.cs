@@ -18,7 +18,13 @@ namespace Miyabists2.Scripts.Cards
         // 如果花辞共用枫花的图片，路径可以保持不变
         public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public HuaCi() : base(1, CardRarity.Token, TargetType.AnyEnemy, true) { }
+        public HuaCi() : base(0, CardRarity.Token, TargetType.AnyEnemy, true) { }
+
+        public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [
+            MiyabiKeywords.LieShuang,
+            CardKeyword.Exhaust
+        ];
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(3, ValueProp.Move),

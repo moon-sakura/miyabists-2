@@ -14,7 +14,7 @@
   // 死亡时事件对话
   "MIYABISTS2-MIYABI.eventDeathPrevention": "难道……就要到此为止了吗",
   // 沉没宝库事件中对金币的独白
-  "MIYABISTS2-MIYABI.goldMonologue": "[sine]物资自然越多越好[/sine]",
+  "MIYABISTS2-MIYABI.goldMonologue": "[sine]这些硬币，能用来磨刀吗？[/sine]",
   // 物主形容词，用于动态文本
   "MIYABISTS2-MIYABI.possessiveAdjective": "雅的",
   // 宾语代词

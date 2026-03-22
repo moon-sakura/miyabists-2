@@ -1,0 +1,58 @@
+using BaseLib.Abstracts;
+using Godot;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Hooks;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts.Service;
+
+namespace Miyabists2.Scripts.Powers
+{
+    internal class FrostFallPower : CustomPowerModel
+    {
+        public override PowerType Type => PowerType.Buff;
+        public override PowerStackType StackType => PowerStackType.Counter;
+        public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
+        public string BigIconPath => "res://images/powers/Frost.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
+
+        public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+        {
+            // 这里的 context 尝试从当前上下文中获取，如果没有则传 null
+            await CheckAndAddFrostMoon(base.Owner);
+        }
+
+        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        {
+            if(side == base.Owner.Side)
+            {
+                await CheckAndAddFrostMoon(base.Owner);
+            }
+        }
+
+        // 抽取的公共检测逻辑：大于 2 点时加入一张《霜月》
+        private async Task CheckAndAddFrostMoon(Creature creature)
+        {
+            //base.Amount = MiyabiCombatService.LuoShuangCurrent;
+            if (base.Amount >= 2 && PileType.Draw.GetPile(base.Owner.Player).Cards.Any(card => card is ShuangYue))
+            {
+                // 加入一张《霜月》到手中
+                CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(creature.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+
+                // 如果你的逻辑是触发后消耗层数，可以加在这里。
+                // 如果只是“大于 2 点就给一张”且不消耗，则不写 Reduce。
+                base.Amount -= 2;
+            }
+        }
+
+    }
+}

@@ -11,7 +11,7 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class FrostPower: CustomPowerModel
+    internal class AnomalyBuildupPower : CustomPowerModel
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -23,18 +23,11 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            //造成冰焰层数*1.5点伤害，清除冰焰
-            int fireAmount = base.Owner.GetPowerAmount<FrostFirePower>();
+            // 为敌人附加一次属性异常
+            await PowerCmd.Apply<AttributeAnomalyPower>(base.Owner, 1, applier, cardSource);
 
-            await CreatureCmd.Damage(null, base.Owner, fireAmount * 1.5m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, (Creature)null);
-
-            if (!MiyabiCombatService.ShouldKeepFrostFire())
-            {
-                await PowerCmd.Remove<FrostFirePower>(base.Owner);
-            }
-            //添加一次属性异常
-            await PowerCmd.Apply<AttributeAnomalyPower>(base.Owner,1,null,null);
+            // 层数 -5
+            await PowerCmd.Apply<AnomalyBuildupPower>(base.Owner, -5, applier, cardSource);
         }
-    
     }
 }

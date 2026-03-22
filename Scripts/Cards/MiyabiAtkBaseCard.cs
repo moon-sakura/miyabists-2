@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 
@@ -28,20 +29,13 @@ namespace Miyabists2.Scripts.Cards
         // 通用打出逻辑
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
             // 1. 执行基础攻击
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
 
-            // 2. 施加 1 层冰焰 (FrostFirePower)
-            await PowerCmd.Apply<FrostFirePower>(cardPlay.Target, 1, base.Owner.Creature, this);
-
-            // 3. 施加动态配置的失衡值 (DazePower)
-            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar))
-            {
-                await PowerCmd.Apply<DazePower>(cardPlay.Target, dazeVar.BaseValue, base.Owner.Creature, this);
-            }
         }
 
         // 通用伤害后逻辑：将伤害转化为烈霜积蓄值
@@ -54,6 +48,20 @@ namespace Miyabists2.Scripts.Cards
                 if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
                 {
                     await PowerCmd.Apply<FrostBuildPower>(target, result.TotalDamage, base.Owner.Creature, this);
+                   
+                }
+
+            }
+
+            if (cardSource == this && target != null && !target.IsDead)
+            {
+                // 2. 施加 1 层冰焰 (FrostFirePower)
+                await PowerCmd.Apply<FrostFirePower>(target, 1, base.Owner.Creature, this);
+
+                // 3. 施加动态配置的失衡值 (DazePower)
+                if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar))
+                {
+                    await PowerCmd.Apply<DazePower>(target, dazeVar.BaseValue, base.Owner.Creature, this);
                 }
             }
         }

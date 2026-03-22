@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
+using Miyabists2.Scripts.Cards;
 
 namespace Miyabists2.Scripts.Char;
 
@@ -24,16 +25,16 @@ public class Miyabi : PlaceholderCharacterModel
     /// 初始卡组。你可以在这里添加需要卡组。
     /// </summary>
     public override IEnumerable<CardModel> StartingDeck => [
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<StrikeIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>()
+        ModelDb.Card<FengHua>(),
+        ModelDb.Card<FengHua>(),
+        ModelDb.Card<FengHua>(),
+        ModelDb.Card<FengHua>(),
+        ModelDb.Card<FengHua>(),
+        ModelDb.Card<ShuiNiao>(),
+        ModelDb.Card<ShuiNiao>(),
+        ModelDb.Card<MiyabiBlock>(),
+        ModelDb.Card<MiyabiBlock>(),
+        ModelDb.Card<ShenXue>()
     ];
 
     /// <summary>
@@ -80,7 +81,7 @@ public class Miyabi : PlaceholderCharacterModel
     // public override string CustomArmScissorsTexturePath => null;
 
     // 人物选择背景。
-    public override string CustomCharacterSelectBg => "res://images/charui/miyabi_bg.tscn";
+    public override string CustomCharacterSelectBg => "res://scenes/char_select/char_select_bg_miyabi.tscn";
     // 人物选择图标。
     //public override string CustomCharacterSelectIconPath => "res://test/images/char_select_test.png";
     // 人物选择图标-锁定状态。
