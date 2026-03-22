@@ -1,0 +1,10 @@
+{
+	"MIYABISTS2-FENG_HUA.title": "风花",
+    "MIYABISTS2-FENG_HUA.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
+
+	"MIYABISTS2-MIYABI_BLOCK.title": "防御",
+    "MIYABISTS2-MIYABI_BLOCK.description": "护甲 {Block:diff()} \\n 招架 {PARRY_POWER:diff()}",
+
+	"MIYABISTS2-HUA_CI.title": "花辞",
+    "MIYABISTS2-HUA_CI.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}"
+}

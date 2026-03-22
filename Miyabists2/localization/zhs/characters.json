@@ -1,0 +1,32 @@
+{
+  // 混沌香气事件中的内心独白
+  "MIYABISTS2-MIYABI.aromaPrinciple": "[sine][blue]……修行……[/blue][/sine]",
+  // 多人模式：存活时回合结束对白
+  "MIYABISTS2-MIYABI.banter.alive.endTurnPing": "请求集合",
+  // 多人模式：死亡后回合结束对白
+  "MIYABISTS2-MIYABI.banter.dead.endTurnPing": "还不能倒下……",
+  // 自定义模式文本
+  "MIYABISTS2-MIYABI.cardsModifierDescription": "星见雅与其伙伴的卡牌现在会出现在奖励和商店中。",
+  // 卡池名字
+  "MIYABISTS2-MIYABI.cardsModifierTitle": "星见雅与伙伴们",
+  // 角色选择界面描述
+  "MIYABISTS2-MIYABI.description": "对空六课，星见雅，准备完毕。",
+  // 死亡时事件对话
+  "MIYABISTS2-MIYABI.eventDeathPrevention": "难道……就要到此为止了吗",
+  // 沉没宝库事件中对金币的独白
+  "MIYABISTS2-MIYABI.goldMonologue": "[sine]物资自然越多越好[/sine]",
+  // 物主形容词，用于动态文本
+  "MIYABISTS2-MIYABI.possessiveAdjective": "雅的",
+  // 宾语代词
+  "MIYABISTS2-MIYABI.pronounObject": "雅",
+  // 所有格代词
+  "MIYABISTS2-MIYABI.pronounPossessive": "雅的",
+  // 主语代词
+  "MIYABISTS2-MIYABI.pronounSubject": "雅",
+  // 角色名（标题用）
+  "MIYABISTS2-MIYABI.title": "星见雅",
+  // 角色名（作宾语用）
+  "MIYABISTS2-MIYABI.titleObject": "雅",
+  // 解锁条件文案，{Prerequisite} 会被替换
+  "MIYABISTS2-MIYABI.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。"
+}

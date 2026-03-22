@@ -1,0 +1,33 @@
+{
+	"MIYABISTS2-FROST_BUILD_POWER.smartDescription": "积累到100层后触发[color=skyblue]寒霜[/color]",
+	"MIYABISTS2-FROST_BUILD_POWER.description": "寒意正在不断渗入",
+	"MIYABISTS2-FROST_BUILD_POWER.title": "烈霜",
+
+	"MIYABISTS2-DAZE_POWER.smartDescription": "积累到100层后触发[color=yellow]击破[/color]",
+	"MIYABISTS2-DAZE_POWER.description": "我去，手感来了",
+	"MIYABISTS2-DAZE_POWER.title": "失衡值",
+
+	"MIYABISTS2-BREAK_POWER.smartDescription": "一回合[color=yellow]眩晕[/color]，并添加一回合[color=red]失衡易伤50%[/color]。在此状态下不能叠加[color=yellow]失衡值[/color]。",
+	"MIYABISTS2-BREAK_POWER.description": "我去，手感来了",
+	"MIYABISTS2-BREAK_POWER.title": "击破",
+
+	"MIYABISTS2-FROST_FIRE_POWER.title": "冰焰",
+    "MIYABISTS2-FROST_FIRE_POWER.description": "极寒中跳动的赤红之火。",
+    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "[color=skyblue]烈霜[/color]伤害增加 [color=red]{0}%[/color]（上限200%）。",
+
+	"MIYABISTS2-FROST_POWER.title": "寒霜",
+    "MIYABISTS2-FROST_POWER.description": "凝结吧，碎裂吧。",
+    "MIYABISTS2-FROST_POWER.smartDescription": "造成[color=orange]冰焰层数 * 5[/color]点伤害。清除[color=orange]冰焰[/color]，添加1次[color=purple]属性异常[/color]。",
+
+	"MIYABISTS2-DAZE_VULN_POWER.smartDescription": "一回合内，受伤 + {MIYABISTS2-DAZE_VULN_POWER.Amount}",
+	"MIYABISTS2-DAZE_VULN_POWER.description": "我去，手感来了",
+	"MIYABISTS2-DAZE_VULN_POWER.title": "失衡易伤",
+
+	"MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.title": "属性异常",
+    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.description": "多种元素在体内冲突。",
+    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "受到伤害增加 [color=red]25%[/color]，每回合结束时受到 [color=red]5[/color] 点伤害。添加时如果已存在该效果则触发[color=purple]紊乱[/color]。",
+
+	"MIYABISTS2-PARRY_POWER.title": "招架",
+    "MIYABISTS2-PARRY_POWER.description": "弹刀这一块",
+    "MIYABISTS2-PARRY_POWER.smartDescription": "每次受到被护甲格挡下来的伤害，增加一张 [color=red]花辞[/color]到手牌，然后层数-1。"
+}
