@@ -15,5 +15,5 @@
     "MIYABISTS2-HUA_CI.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
 	"MIYABISTS2-SHUANG_YUE.title": "霜月",
-    "MIYABISTS2-SHUANG_YUE.description": "落霜-2\\n全体（本回合消耗落霜数）次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜再加一张 霜月 到手中"
+    "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜再加一张 霜月 到手中"
 }

@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            if (result.BlockedDamage > 0 && base.Amount > 0)
+            if (result.BlockedDamage > 0 && base.Amount > 0 && target == base.Owner)
             {
                 // 2. 逻辑触发：增加一张《花辞》到手牌
                 // 注意：这里使用你之前定义的卡牌 ID "HuaCi"

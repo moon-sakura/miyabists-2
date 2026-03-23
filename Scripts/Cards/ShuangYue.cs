@@ -6,10 +6,12 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
@@ -32,13 +34,17 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 2)
+            //new DynamicVar("HitCount",0)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             //ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            _atkCount = 4;
+            //if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc)) 
+            //    hc.BaseValue = base.Owner.Creature.GetPower<FrostFallPower>().CostThisTurn;
             //await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature,-2,null,this);
+            
+            await GetCostCount();
 
             foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
             {
@@ -49,13 +55,27 @@ namespace Miyabists2.Scripts.Cards
                 .FromCard(this).TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
                 .Execute(choiceContext);
+
+            if(base.Owner.Creature.GetPower<FrostFallPower>().DisplayAmount >= 2)
+            {
+                // 加入一张《霜月》到手中
+                CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<ShuangYue>(base.Owner.Creature.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, -2, null, null);
+            }
         }
 
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(3);
+            //DynamicVars.Damage.UpgradeValueBy(3);
             //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
+            //if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc)) hc.UpgradeValueBy(1);
+        }
+
+        private async Task GetCostCount()
+        {
+            _atkCount = base.Owner.GetRelic<SwordNotailRelic>().LuoShuangCostThisTurn;
         }
     }
 }

@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts.Relics;
 
 namespace Miyabists2.Scripts.Char;
 
@@ -42,7 +43,7 @@ public class Miyabi : PlaceholderCharacterModel
     /// </summary>
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<BurningBlood>()
+        ModelDb.Relic<SwordNotailRelic>()
     ];
 
     public override CardPoolModel CardPool => ModelDb.CardPool<MiyabiCardPool>();

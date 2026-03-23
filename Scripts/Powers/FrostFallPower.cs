@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Powers
@@ -18,6 +19,12 @@ namespace Miyabists2.Scripts.Powers
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
+
+        //public override bool AllowNegative => true;
+
+        public override int DisplayAmount => Amount - 1;
+
+
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/Frost.png";
         public string BigBetaIconPath => BigIconPath;
@@ -27,32 +34,51 @@ namespace Miyabists2.Scripts.Powers
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             // 这里的 context 尝试从当前上下文中获取，如果没有则传 null
-            await CheckAndAddFrostMoon(base.Owner);
-        }
-
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
-        {
-            if(side == base.Owner.Side)
-            {
-                await CheckAndAddFrostMoon(base.Owner);
-            }
-        }
-
-        // 抽取的公共检测逻辑：大于 2 点时加入一张《霜月》
-        private async Task CheckAndAddFrostMoon(Creature creature)
-        {
-            //base.Amount = MiyabiCombatService.LuoShuangCurrent;
-            if (base.Amount >= 2 && PileType.Draw.GetPile(base.Owner.Player).Cards.Any(card => card is ShuangYue))
+            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < CardPile.maxCardsInHand && GetCards().ToList().Count()==0 && DisplayAmount >= 2)
             {
                 // 加入一张《霜月》到手中
-                CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(creature.Player);
+                CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
 
                 // 如果你的逻辑是触发后消耗层数，可以加在这里。
                 // 如果只是“大于 2 点就给一张”且不消耗，则不写 Reduce。
-                base.Amount -= 2;
+                //await AmountChange(2);
+                await PowerCmd.Apply<FrostFallPower>(base.Owner, -2, null, null);
+                base.Owner.Player.GetRelic<SwordNotailRelic>().LuoShuangCostThisTurn -= 2;
             }
         }
 
+        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        {
+            if (side == base.Owner.Side)
+            {
+                //CostThisTurn = 0; // 每回合开始重置消耗计数
+                if (CardPile.GetCards(base.Owner.Player).Count() < CardPile.maxCardsInHand && base.DisplayAmount >= 2 && GetCards().Count()== 0)
+                {
+                    // 加入一张《霜月》到手中
+                    CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+
+                    // 如果你的逻辑是触发后消耗层数，可以加在这里。
+                    // 如果只是“大于 2 点就给一张”且不消耗，则不写 Reduce。
+                    //await AmountChange(2);
+                    await PowerCmd.Apply<FrostFallPower>(base.Owner, -2, null, null);
+                    //CostThisTurn += 2; // 增加本回合的消耗计数
+                }
+            }
+        }
+
+        private IEnumerable<CardModel> GetCards()
+        {
+            CardPile pile = PileType.Hand.GetPile(base.Owner.Player);
+            return pile.Cards.Where((CardModel c) => c is ShuangYue);
+        }
+
+        private async Task AmountChange(int change)
+        {
+            //CostThisTurn += change;
+            await PowerCmd.ModifyAmount(this, -2m, base.Owner, null);
+
+        }
     }
 }

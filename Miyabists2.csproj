@@ -47,7 +47,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Miyabists2\localization\zhs\" />
-	  <Folder Include="Scripts\Relics\" />
 	</ItemGroup>
 
 	<Target Name="Copy Mod" AfterTargets="PostBuildEvent">
