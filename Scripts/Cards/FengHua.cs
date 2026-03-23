@@ -20,6 +20,8 @@ namespace Miyabists2.Scripts.Cards
 
         public FengHua() : base(1, CardRarity.Basic, TargetType.AnyEnemy, true) { }
 
+        protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(5, ValueProp.Move),
             new DynamicVar(DazeVarName, 2)

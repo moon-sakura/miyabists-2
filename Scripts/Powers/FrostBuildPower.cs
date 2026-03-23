@@ -1,11 +1,14 @@
 using BaseLib.Abstracts;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Cards;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +32,21 @@ namespace Miyabists2.Scripts.Powers
 
         // 最大堆叠层数常量
         private const int MAX_STACKS = 100;
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await CheckMaxStacks();
+        }
+
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             // 检查是否达到100层
             await CheckMaxStacks();
         }
 
+
         private async Task CheckMaxStacks()
         {
-            if (base.Amount >= MAX_STACKS && base.Owner != null && !base.Owner.IsDead)
+            if (Amount >= MAX_STACKS && base.Owner != null && !base.Owner.IsDead)
             {
                 await PowerCmd.Apply<FrostPower>(base.Owner, 1m, null, null);
                 await PowerCmd.Remove(this);

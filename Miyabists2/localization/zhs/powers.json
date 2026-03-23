@@ -45,5 +45,9 @@
 
 	"MIYABISTS2-MIYABI_PARRY_POWER.title": "招架",
     "MIYABISTS2-MIYABI_PARRY_POWER.description": "弹刀这一块",
-    "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被护甲格挡下来的伤害，增加一张 [color=red]花辞[/color]到手牌，然后层数-1。"
+    "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被护甲格挡下来的伤害，增加一张 [color=red]花辞[/color]到手牌，然后层数-1。",
+
+	"MIYABISTS2-DONG_FENG_SP.title": "冬蜂·极",
+    "MIYABISTS2-DONG_FENG_SP.description": "弹刀这一块",
+    "MIYABISTS2-DONG_FENG_SP.smartDescription": "下一张攻击卡伤害 + 50%。"
 }

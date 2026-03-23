@@ -15,7 +15,6 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class HuaCi : MiyabiAttackCardBase
     {
-        // 如果花辞共用枫花的图片，路径可以保持不变
         public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public HuaCi() : base(0, CardRarity.Token, TargetType.AnyEnemy, true) { }

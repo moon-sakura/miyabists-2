@@ -2,6 +2,7 @@ using BaseLib.Abstracts;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -40,6 +41,16 @@ namespace Miyabists2.Scripts.Powers
             if (base.Owner.HasPower<AttributeAnomalyPower>())
             {
                 await PowerCmd.Apply<DisorderPower>(base.Owner, 1, applier, cardSource);
+                await PowerCmd.Remove(this);
+            }
+        }
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
+        {
+            if(base.Amount >= 2)
+            {
+                await PowerCmd.Apply<DisorderPower>(base.Owner, 1, null, null);
+                await PowerCmd.Remove(this);
             }
         }
 

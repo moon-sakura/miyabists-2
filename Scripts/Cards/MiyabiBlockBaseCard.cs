@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts.Cards
 
 
         protected MiyabiBlockCardBase(int energy, CardRarity rarity, bool showInLib)
-            : base(energy, CardType.Skill, rarity, TargetType.Self, showInLib)
+            : base(energy, CardType.Skill, rarity, TargetType.Self, showInLib=true)
         {
         }
 

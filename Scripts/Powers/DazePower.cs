@@ -1,8 +1,10 @@
 using BaseLib.Abstracts;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using System.Runtime.InteropServices;
 
@@ -26,6 +28,16 @@ namespace Miyabists2.Scripts.Powers
             {
                 await PowerCmd.Remove(this);
                 return; 
+            } // 如果已经有BreakPower，不再触发
+            await CheckDazeTrigger(base.Owner);
+        }
+
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (base.Owner.HasPower<BreakPower>())
+            {
+                await PowerCmd.Remove(this);
+                return;
             } // 如果已经有BreakPower，不再触发
             await CheckDazeTrigger(base.Owner);
         }

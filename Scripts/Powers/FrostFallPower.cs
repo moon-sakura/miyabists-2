@@ -33,8 +33,25 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            // 这里的 context 尝试从当前上下文中获取，如果没有则传 null
-            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < CardPile.maxCardsInHand && GetCards().ToList().Count()==0 && DisplayAmount >= 2)
+            await CheckFallPower();
+        }
+
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await CheckFallPower();
+        }
+
+        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        {
+            if (side == base.Owner.Side)
+            {
+                await CheckFallPower();
+            }
+        }
+
+        private async Task CheckFallPower()
+        {
+            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < CardPile.maxCardsInHand && GetCards().ToList().Count() == 0 && DisplayAmount >= 2)
             {
                 // 加入一张《霜月》到手中
                 CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);
@@ -44,27 +61,7 @@ namespace Miyabists2.Scripts.Powers
                 // 如果只是“大于 2 点就给一张”且不消耗，则不写 Reduce。
                 //await AmountChange(2);
                 await PowerCmd.Apply<FrostFallPower>(base.Owner, -2, null, null);
-                base.Owner.Player.GetRelic<SwordNotailRelic>().LuoShuangCostThisTurn -= 2;
-            }
-        }
-
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
-        {
-            if (side == base.Owner.Side)
-            {
-                //CostThisTurn = 0; // 每回合开始重置消耗计数
-                if (CardPile.GetCards(base.Owner.Player).Count() < CardPile.maxCardsInHand && base.DisplayAmount >= 2 && GetCards().Count()== 0)
-                {
-                    // 加入一张《霜月》到手中
-                    CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-
-                    // 如果你的逻辑是触发后消耗层数，可以加在这里。
-                    // 如果只是“大于 2 点就给一张”且不消耗，则不写 Reduce。
-                    //await AmountChange(2);
-                    await PowerCmd.Apply<FrostFallPower>(base.Owner, -2, null, null);
-                    //CostThisTurn += 2; // 增加本回合的消耗计数
-                }
+                //base.Owner.Player.GetRelic<SwordNotailRelic>().LuoShuangCostThisTurn -= 2;
             }
         }
 
@@ -74,11 +71,5 @@ namespace Miyabists2.Scripts.Powers
             return pile.Cards.Where((CardModel c) => c is ShuangYue);
         }
 
-        private async Task AmountChange(int change)
-        {
-            //CostThisTurn += change;
-            await PowerCmd.ModifyAmount(this, -2m, base.Owner, null);
-
-        }
     }
 }

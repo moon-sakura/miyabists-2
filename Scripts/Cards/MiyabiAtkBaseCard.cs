@@ -35,7 +35,6 @@ namespace Miyabists2.Scripts.Cards
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
-
         }
 
         // 通用伤害后逻辑：将伤害转化为烈霜积蓄值

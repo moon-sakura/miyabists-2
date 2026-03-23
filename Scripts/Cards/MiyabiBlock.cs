@@ -26,6 +26,9 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SlipperyVarName, 0)
         ];
 
+        protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Defend };
+
+
         protected override void OnUpgrade()
         {
             // 升级增加 2 点护甲

@@ -10,8 +10,9 @@ using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
-using Miyabists2.Scripts.Service;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
+using System.Drawing;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -25,26 +26,10 @@ namespace Miyabists2.Scripts.Service
         // 设置状态
         public static void SetShouldKeepFrostFire(bool value) => FrostFireKeeped = value;
 
-        //落霜消耗计数
-        public static int LuoShuangCurrent { get; set; } = 0;
-        public static int LuoShuangCostThisTurn { get; set; } = 0;
-        public static void ResetLuoShuangCost() => LuoShuangCostThisTurn = 0;
-        public static bool AddLuoShuangCost(int amount)
-        {
-            if (!CanUseLuoShuang(amount)) return false;
-            LuoShuangCostThisTurn += amount;
-            LuoShuangCurrent -= amount;
-            return true;
-        }
-        public static int GetLuoShuangCost() => LuoShuangCostThisTurn;
-        public static bool CanUseLuoShuang(int cost)
-        {
-            return cost <= LuoShuangCurrent;
-        }
-        public static async Task AddLuoShuang(int amount,Creature creature)
-        {
-            LuoShuangCurrent += amount;
-            await PowerCmd.Apply<FrostFallPower>(creature, amount, null, null);
-        }
+        //伙伴卡牌的特殊处理
+        public static bool ThisTurnUsedPartnerCard { set; get; } = false;
+        public static bool GetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard;
+        public static void ResetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard = false;
+        public static void UsedPartnerCard() => ThisTurnUsedPartnerCard = true;
     }
 }

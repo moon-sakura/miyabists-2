@@ -5,8 +5,23 @@
 	"MIYABISTS2-SHEN_XUE.title": "深雪",
     "MIYABISTS2-SHEN_XUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+1",
 
+	"MIYABISTS2-FEI_XUE.title": "飞雪",
+    "MIYABISTS2-FEI_XUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+2",
+
+	"MIYABISTS2-FEI_XUE_TWO.title": "飞雪·二段",
+    "MIYABISTS2-FEI_XUE_TWO.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+2",
+
 	"MIYABISTS2-SHUI_NIAO.title": "水鸟",
     "MIYABISTS2-SHUI_NIAO.description": "滑溜1",
+
+	"MIYABISTS2-DONG_FENG.title": "冬蜂",
+    "MIYABISTS2-DONG_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 抽{Cards:diff()}张卡，有滑溜则费用为0",
+
+	"MIYABISTS2-DONG_FENG_SP.title": "冬蜂·极",
+    "MIYABISTS2-DONG_FENG_SP.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 下一张攻击卡伤害 + 50%，有滑溜则费用为0",
+
+	"MIYABISTS2-HAN_QUE.title": "寒雀",
+    "MIYABISTS2-HAN_QUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 有滑溜则伤害+4",
 
 	"MIYABISTS2-MIYABI_BLOCK.title": "防御",
     "MIYABISTS2-MIYABI_BLOCK.description": "护甲 {Block:diff()} \\n 招架 {PARRY_POWER:diff()}",
@@ -14,6 +29,12 @@
 	"MIYABISTS2-HUA_CI.title": "花辞",
     "MIYABISTS2-HUA_CI.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
+	"MIYABISTS2-HUA_FA.title": "花筏",
+    "MIYABISTS2-HUA_FA.description": "{Block:diff()}护甲\\n招架{PARRY_POWER:diff()}\\n若本回合使用过伙伴牌，则额外6护甲，招架1",
+
+	"MIYABISTS2-E_JI_ZHAN.title": "恶，即斩",
+    "MIYABISTS2-E_JI_ZHAN.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
+
 	"MIYABISTS2-SHUANG_YUE.title": "霜月",
-    "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜再加一张 霜月 到手中"
+    "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜一张升级后的 霜月 到手中"
 }
