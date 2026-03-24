@@ -17,6 +17,10 @@ namespace Miyabists2.Scripts.Powers
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
 
+        public override int DisplayAmount => Amount - 1;
+
+        private int _max = 100;
+
         public string BigIconPath => "res://images/powers/FrostBuild.png";
         public string BigBetaIconPath => "res://images/powers/FrostBuild.png";
         public override string CustomPackedIconPath => "res://images/powers/FrostBuild.png";
@@ -26,7 +30,7 @@ namespace Miyabists2.Scripts.Powers
         {
             if (base.Owner.HasPower<BreakPower>()) 
             {
-                await PowerCmd.Remove(this);
+                await PowerCmd.SetAmount<DazePower>(base.Owner, 1m, null, null);
                 return; 
             } // 如果已经有BreakPower，不再触发
             await CheckDazeTrigger(base.Owner);
@@ -36,7 +40,7 @@ namespace Miyabists2.Scripts.Powers
         {
             if (base.Owner.HasPower<BreakPower>())
             {
-                await PowerCmd.Remove(this);
+                await PowerCmd.SetAmount<DazePower>(base.Owner, 1m, null, null);
                 return;
             } // 如果已经有BreakPower，不再触发
             await CheckDazeTrigger(base.Owner);
@@ -44,10 +48,10 @@ namespace Miyabists2.Scripts.Powers
 
         public async Task CheckDazeTrigger(Creature target)
         {
-            if (this.Amount >= 100)
+            if (this.DisplayAmount >= _max)
             {
                 await PowerCmd.Apply<BreakPower>(target, 1m, null, null);
-                await PowerCmd.Remove(this);
+                await PowerCmd.SetAmount<DazePower>(base.Owner, 1m, null, null);
             }
         }
     }

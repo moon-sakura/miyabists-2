@@ -57,5 +57,15 @@ namespace Miyabists2.Scripts.Powers
                 Amount = 1;
             }
         }
+
+        public int CanUsePoint(int a)
+        {
+            if (a <= DisplayAmount) return 1;
+            if (isSupportFree) return 2;
+            return 0;
+        }
+
+        public void SetFree() => isSupportFree = true;
+        public void ResetFree() => isSupportFree = false;
     }
 }

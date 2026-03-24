@@ -23,6 +23,8 @@ namespace Miyabists2.Scripts.Powers
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
 
+        public override int DisplayAmount => Amount - 1;
+
 
         public string BigIconPath => "res://images/powers/FrostBuild.png";
         public string BigBetaIconPath => "res://images/powers/FrostBuild.png";
@@ -39,6 +41,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
+            Amount++;
             // 检查是否达到100层
             await CheckMaxStacks();
         }
@@ -46,10 +49,10 @@ namespace Miyabists2.Scripts.Powers
 
         private async Task CheckMaxStacks()
         {
-            if (Amount >= MAX_STACKS && base.Owner != null && !base.Owner.IsDead)
+            if (DisplayAmount >= MAX_STACKS && base.Owner != null && !base.Owner.IsDead)
             {
                 await PowerCmd.Apply<FrostPower>(base.Owner, 1m, null, null);
-                await PowerCmd.Remove(this);
+                await PowerCmd.SetAmount<FrostBuildPower>(base.Owner, 1m, null, null);
             }
         }
 

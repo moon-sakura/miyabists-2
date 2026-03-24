@@ -41,11 +41,15 @@
 
 	"MIYABISTS2-SUPPORT_POINT_POWER.title": "支援点数",
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "",
-    "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块",
+    "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块,上限为6",
 
 	"MIYABISTS2-MIYABI_PARRY_POWER.title": "招架",
     "MIYABISTS2-MIYABI_PARRY_POWER.description": "弹刀这一块",
     "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被护甲格挡下来的伤害，增加一张 [color=red]花辞[/color]到手牌，然后层数-1。",
+
+	"MIYABISTS2-TONGMU_SHUANGXUE_POWER.title": "同沐霜雪",
+    "MIYABISTS2-TONGMU_SHUANGXUE_POWER.description": "每次使用非伙伴攻击卡时，支援点数+1",
+	"MIYABISTS2-TONGMU_SHUANGXUE_POWER.smartDescription": "每次使用非伙伴攻击卡时，支援点数+1",
 
 	"MIYABISTS2-DONG_FENG_SP.title": "冬蜂·极",
     "MIYABISTS2-DONG_FENG_SP.description": "弹刀这一块",

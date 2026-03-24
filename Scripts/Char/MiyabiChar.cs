@@ -56,7 +56,7 @@ public class Miyabi : PlaceholderCharacterModel
         These are just some of the simplest assets, given some placeholders to differentiate your character with. 
         You don't have to, but you're suggested to rename these images. */
     // 人物头像路径。
-    public override string CustomIconTexturePath => "res://images/charui/miyabi_icon.png";
+    public override string CustomIconTexturePath => "res://images/charui/icon.png";
     public override string CustomCharacterSelectIconPath => "res://images/charui/Miyabi_select.png";
     public override string CustomCharacterSelectLockedIconPath => "res://images/charui/char_select_char_name_locked.png";
     //public override string CustomMapMarkerPath => "res://images/charui/map_marker_char_name.png";

@@ -60,7 +60,8 @@ namespace Miyabists2.Scripts.Cards
                 // 3. 施加动态配置的失衡值 (DazePower)
                 if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar))
                 {
-                    await PowerCmd.Apply<DazePower>(target, dazeVar.BaseValue, base.Owner.Creature, this);
+                    if(!target.HasPower<BreakPower>())
+                        await PowerCmd.Apply<DazePower>(target, dazeVar.BaseValue, base.Owner.Creature, this);
                 }
             }
         }

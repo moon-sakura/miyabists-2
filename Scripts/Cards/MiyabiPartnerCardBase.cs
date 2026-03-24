@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
@@ -56,7 +57,8 @@ namespace Miyabists2.Scripts.Cards
 
             if(base.DynamicVars.TryGetValue(DazeVarName, out var dazeVar) && dazeVar.BaseValue > 0)
             {
-                await PowerCmd.Apply<DazePower>(base.Owner.Creature, dazeVar.BaseValue, base.Owner.Creature, this);
+                if (!cardPlay.Target.HasPower<BreakPower>())
+                    await PowerCmd.Apply<DazePower>(base.Owner.Creature, dazeVar.BaseValue, base.Owner.Creature, this);
             }
 
             if(base.DynamicVars.Damage.BaseValue > 0)
@@ -69,13 +71,21 @@ namespace Miyabists2.Scripts.Cards
         }
 
 
-        protected virtual bool CheckSupportCost()
+        public virtual int CheckSupportCost(int a)
         {
-            if (base.Owner.Creature.GetPower<SupportPointPower>()?.DisplayAmount < _supportCost)
-            {
-                return false;
-            }
-            return true;
+            return base.Owner.Creature.GetPower<SupportPointPower>().CanUsePoint(a);
+            //{
+            //    return false;
+            //}
+            //return true;
+        }
+
+        public virtual async Task CostSupporPoint(int amount) 
+        {
+            if (CheckSupportCost(amount) == 0) return;
+            if (CheckSupportCost(amount) == 1)
+                await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature,-amount,null,null);
+            if (CheckSupportCost(amount) == 2) return;
         }
     }
 }
