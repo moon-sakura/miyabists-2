@@ -8,10 +8,12 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Miyabists2.Scripts.Powers
 {
@@ -31,6 +33,17 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
+        private class Data
+        {
+            public readonly HashSet<Creature> casters = new HashSet<Creature>();
+
+            public readonly Dictionary<CardModel, int> downgradedCardsToOldUpgradeLevels = new Dictionary<CardModel, int>();
+        }
+        protected override object InitInternalData()
+        {
+            return new Data();
+        }
+
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             await CheckFallPower();
@@ -46,6 +59,19 @@ namespace Miyabists2.Scripts.Powers
             if (side == base.Owner.Side)
             {
                 await CheckFallPower();
+            }
+        }
+
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            if (side == base.Owner.Side)
+            {
+                IEnumerable<CardModel> enumerable = base.Owner.Player.PlayerCombatState.AllCards.Where((CardModel c) => c.IsUpgraded && c is ShuangYue);
+                foreach (CardModel item in enumerable)
+                {
+                    GetInternalData<Data>().downgradedCardsToOldUpgradeLevels.Add(item, item.CurrentUpgradeLevel);
+                    CardCmd.Downgrade(item);
+                }
             }
         }
 

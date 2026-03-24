@@ -10,7 +10,7 @@ namespace Miyabists2.Scripts.Char
         public override string BigEnergyIconPath => "res://images/charui/big_energy.png";
         public override string TextEnergyIconPath => "res://images/charui/text_energy.png";
 
-        public override string EnergyColorName => "blue";
+        public override string EnergyColorName => "defect";
         public override string CardFrameMaterialPath => "card_frame_blue";
 
         //Color of small card icons

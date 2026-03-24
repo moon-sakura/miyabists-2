@@ -1,7 +1,9 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
@@ -31,14 +33,25 @@ namespace Miyabists2.Scripts.Cards
             await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
         }
 
-        public override Task BeforeCardPlayed(CardPlay cardPlay)
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (!base.Owner.Creature.HasPower<SlipperyPower>())
+            await CheckReduce();
+        }
+
+        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        {
+            if (side == base.Owner.Creature.Side)
             {
-                return Task.CompletedTask;
+                await CheckReduce();
             }
-            ReduceCostBy(1);
-            return Task.CompletedTask;
+        }
+
+        public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
+        {
+            if(card == this)
+            {
+                await CheckReduce();
+            }
         }
 
         protected override void OnUpgrade()
@@ -48,9 +61,26 @@ namespace Miyabists2.Scripts.Cards
             //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
         }
 
+        private async Task CheckReduce()
+        {
+            if(base.Owner != null && base.Owner.Creature.IsAlive)
+            {
+                if (base.Owner.Creature.HasPower<SlipperyPower>())
+                    SetCost(0);
+                else
+                    SetCost(1);
+            }
+        }
+
         private void ReduceCostBy(int amount)
         {
             base.EnergyCost.AddThisTurn(-amount);
         }
+
+        private void SetCost(int a) 
+        {
+            base.EnergyCost.SetThisTurn(a);
+        }
+
     }
 }
