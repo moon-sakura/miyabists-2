@@ -15,6 +15,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
@@ -22,15 +23,13 @@ using Miyabists2.Scripts.Powers;
 namespace Miyabists2.Scripts.Relics
 {
     [Pool(typeof(MiyabiRelicPool))]
-    internal class SwordNotailRelic : CustomRelicModel
+    internal class SectionSixRelic : CustomRelicModel
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
-        public override string PackedIconPath => "res://images/relics/OWmajor.png";
+        public override string PackedIconPath => "res://images/relics/section_six.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
         protected override IEnumerable<DynamicVar> CanonicalVars => Array.Empty<DynamicVar>();
-
-        //public int LuoShuangCostThisTurn { get; set; } = 0; // 本回合已使用的落霜点数
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
@@ -38,16 +37,8 @@ namespace Miyabists2.Scripts.Relics
             if (base.Owner.Creature.CombatState.RoundNumber == 1)
             {
                 Flash();
-                await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, 4, null, null);
+                await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, 7, null, null);
             }
-
-            //LuoShuangCostThisTurn = 0;
-            
-
-            // 此时，syncRnd.Next 在所有客户端产生的结果将完全一致
-            int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, 4); ;
-
-            
         }
     }
 }

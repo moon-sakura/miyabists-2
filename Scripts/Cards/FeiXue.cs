@@ -4,11 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Models;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -27,6 +23,9 @@ namespace Miyabists2.Scripts.Cards
         {
             await base.OnPlay(choiceContext, cardPlay);
             await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, 2, base.Owner.Creature, this);
+            CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<FeiXueTwo>(base.Owner.Creature.Player);
+            if(base.IsUpgraded) reward1.UpgradeInternal();
+            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
         }
 
         protected override void OnUpgrade()

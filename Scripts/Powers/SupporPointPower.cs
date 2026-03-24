@@ -18,8 +18,10 @@ namespace Miyabists2.Scripts.Powers
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
-        private const int MaxPoints = 6; // 上限为 6
+        private const int MaxPoints = 7; // 上限为 6
         private bool isSupportFree = false;
+
+        public override int DisplayAmount => Amount - 1;
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/Frost.png";
@@ -32,13 +34,27 @@ namespace Miyabists2.Scripts.Powers
         {
             if (base.Amount > MaxPoints)
             {
-                // 如果超过 6，则设回 6
-                Amount = 6;
+                // 如果超过 7，则设回 7
+                Amount = MaxPoints;
             }
-            else if (base.Amount < 0)
+            else if (base.Amount < 1)
             {
                 // 确保不为负数
-                Amount = 0;
+                Amount = 1;
+            }
+        }
+
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (base.Amount > MaxPoints)
+            {
+                // 如果超过 7，则设回 7
+                Amount = MaxPoints;
+            }
+            else if (base.Amount < 1)
+            {
+                // 确保不为负数
+                Amount = 1;
             }
         }
     }

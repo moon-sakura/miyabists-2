@@ -1,3 +1,5 @@
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -28,7 +30,12 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (MiyabiCombatService.ThisTurnUsedPartnerCard)
+            int amount = CombatManager.Instance.History.CardPlaysFinished
+                .Count((CardPlayFinishedEntry e) 
+                => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends) 
+                && e.CardPlay.Card.Owner == base.Owner 
+                && e.HappenedThisTurn(base.CombatState));
+            if (amount > 0)
             {
                 DynamicVars.Block.BaseValue += 6; // 如果本回合已经使用过伙伴卡，增加额外的 6 点护甲
                 if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.BaseValue += 1;

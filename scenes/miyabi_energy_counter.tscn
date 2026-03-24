@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnrdkh40qg4gw"]
+
+[ext_resource type="Texture2D" uid="uid://b3x0av53fw6ri" path="res://images/charui/big_energy.png" id="1_dghjk"]
+
+[node name="MiyabiEnergyCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BurstBack" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Layers" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RotationLayers" type="Control" parent="Layers"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Layer1" type="TextureRect" parent="Layers"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dghjk")
+expand_mode = 1
+
+[node name="BurstFront" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

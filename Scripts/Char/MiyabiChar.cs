@@ -43,7 +43,8 @@ public class Miyabi : PlaceholderCharacterModel
     /// </summary>
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<SwordNotailRelic>()
+        ModelDb.Relic<SwordNotailRelic>(),
+        ModelDb.Relic<SectionSixRelic>()
     ];
 
     public override CardPoolModel CardPool => ModelDb.CardPool<MiyabiCardPool>();
@@ -54,20 +55,19 @@ public class Miyabi : PlaceholderCharacterModel
         override all the other methods that define those assets. 
         These are just some of the simplest assets, given some placeholders to differentiate your character with. 
         You don't have to, but you're suggested to rename these images. */
+    // 人物头像路径。
     public override string CustomIconTexturePath => "res://images/charui/miyabi_icon.png";
     public override string CustomCharacterSelectIconPath => "res://images/charui/Miyabi_select.png";
     public override string CustomCharacterSelectLockedIconPath => "res://images/charui/char_select_char_name_locked.png";
-    public override string CustomMapMarkerPath => "res://images/charui/map_marker_char_name.png";
+    //public override string CustomMapMarkerPath => "res://images/charui/map_marker_char_name.png";
     // 人物模型tscn路径。要自定义见下。
-    //public override string CustomVisualPath => "res://test/scenes/test_character.tscn";
+    public override string CustomVisualPath => "res://scenes/miyabi_char.tscn";
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
-    // 人物头像路径。
-    //public override string CustomIconTexturePath => "res://icon.svg";
     // 人物头像2号。
-    // public override string CustomIconPath => "res://scenes/ui/character_icons/ironclad_icon.tscn";
+    //public override string CustomIconPath => "res://images/charui/miyabi_icon.png";
     // 能量表盘tscn路径。要自定义见下。
-    //public override string CustomEnergyCounterPath => "res://test/scenes/test_energy_counter.tscn";
+    //public override string CustomEnergyCounterPath => "res://scenes/miyabi_energy_counter.tscn";
     // 篝火休息动画。
     // public override string CustomRestSiteAnimPath => "res://scenes/rest_site/characters/ironclad_rest_site.tscn";
     // 商店人物动画。
@@ -90,7 +90,7 @@ public class Miyabi : PlaceholderCharacterModel
     // 人物选择过渡动画。
     // public override string CustomCharacterSelectTransitionPath => "res://materials/transitions/ironclad_transition_mat.tres";
     // 地图上的角色标记图标、表情轮盘上的角色头像
-    // public override string CustomMapMarkerPath => null;
+    public override string CustomMapMarkerPath => "res://images/charui/icon.png";
     // 攻击音效
     // public override string CustomAttackSfx => null;
     // 施法音效

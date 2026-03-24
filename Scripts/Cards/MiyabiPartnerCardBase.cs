@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
@@ -17,16 +18,17 @@ namespace Miyabists2.Scripts.Cards
     internal abstract class MiyabiPartnerCardBase : MiyabiCardBase
     {
         // 伙伴卡通常消耗的支援点数变量名
-        //protected const string SupportCostVarName = "SUPPORT_COST";
-        //protected int _supportCost = 0; // 默认需要 0 点支援点数
-        public override int CanonicalStarCost => 1;
+        protected int _supportCost = 0; // 默认需要 0 点支援点数
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [base.EnergyHoverTip];
+        protected const string DazeVarName = "DAZE_POWER";
+        protected const string ParryVarName = "PARRY_POWER";
+        protected const string SlipperyVarName = "SLIPPERY_POWER";
+
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];
 
         protected MiyabiPartnerCardBase(int energy, CardRarity rarity, TargetType target, bool showInLib)
-            : base(energy = 0, CardType.Skill, rarity, target, showInLib=true)
+            : base(energy, CardType.Skill, rarity, target, showInLib=true)
         {
             // 伙伴卡在视觉上可以加入特定词条
             // this.CanonicalKeywords = [MiyabiKeywords.Partner]; 
@@ -34,9 +36,46 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            //变更记录
-            MiyabiCombatService.UsedPartnerCard();
+            // 1. 获得护甲
+            // 注意：BlockVar 通常会自动关联到 DynamicVars.Block
+            if (DynamicVars.Block.BaseValue > 0)
+                await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
+
+            // 2. 施加招架 (ParryPower)
+            if (base.DynamicVars.TryGetValue(ParryVarName, out var parryVar) && parryVar.BaseValue > 0)
+            {
+                await PowerCmd.Apply<MiyabiParryPower>(base.Owner.Creature, parryVar.BaseValue, base.Owner.Creature, this);
+            }
+
+            // 3. 施加滑步 (SlipperyPower)
+            if (base.DynamicVars.TryGetValue(SlipperyVarName, out var slipVar) && slipVar.BaseValue > 0)
+            {
+                // 注意：这里修正了你原代码中 Slippery 误写成 ParryPower 的问题
+                await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
+            }
+
+            if(base.DynamicVars.TryGetValue(DazeVarName, out var dazeVar) && dazeVar.BaseValue > 0)
+            {
+                await PowerCmd.Apply<DazePower>(base.Owner.Creature, dazeVar.BaseValue, base.Owner.Creature, this);
+            }
+
+            if(base.DynamicVars.Damage.BaseValue > 0)
+            {
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+            }
+        }
+
+
+        protected virtual bool CheckSupportCost()
+        {
+            if (base.Owner.Creature.GetPower<SupportPointPower>()?.DisplayAmount < _supportCost)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

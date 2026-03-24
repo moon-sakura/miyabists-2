@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqh4jr3hu76bj"
-path="res://.godot/imported/60px-【契合】俳句剑法.png-5fc2f00c83b7ec354866b7fac61d8117.ctex"
+uid="uid://hbrk82ocyhnd"
+path="res://.godot/imported/icon.png-32dd61e159d5fe54fecaca8b96b180fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/charui/60px-【契合】俳句剑法.png"
-dest_files=["res://.godot/imported/60px-【契合】俳句剑法.png-5fc2f00c83b7ec354866b7fac61d8117.ctex"]
+source_file="res://images/charui/icon.png"
+dest_files=["res://.godot/imported/icon.png-32dd61e159d5fe54fecaca8b96b180fa.ctex"]
 
 [params]
 

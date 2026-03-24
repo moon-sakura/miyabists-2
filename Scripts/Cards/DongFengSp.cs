@@ -27,16 +27,16 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await base.OnPlay(choiceContext, cardPlay);
-            await PowerCmd.Apply<DongFengSpPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+            
         }
 
         public override Task BeforeCardPlayed(CardPlay cardPlay)
         {
-            if (!base.Owner.Creature.HasPower<SlipperyPower>())
+            if (!base.Owner.Creature.HasPower<BreakPower>())
             {
                 return Task.CompletedTask;
             }
-            ReduceCostBy(1);
+            ReduceCostBy(2);
             return Task.CompletedTask;
         }
 

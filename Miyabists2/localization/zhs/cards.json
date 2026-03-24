@@ -32,9 +32,15 @@
 	"MIYABISTS2-HUA_FA.title": "花筏",
     "MIYABISTS2-HUA_FA.description": "{Block:diff()}护甲\\n招架{PARRY_POWER:diff()}\\n若本回合使用过伙伴牌，则额外6护甲，招架1",
 
+	"MIYABISTS2-CHUN_LIN.title": "春临",
+    "MIYABISTS2-CHUN_LIN.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\选一张伙伴卡到手中",
+
 	"MIYABISTS2-E_JI_ZHAN.title": "恶，即斩",
     "MIYABISTS2-E_JI_ZHAN.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
 
 	"MIYABISTS2-SHUANG_YUE.title": "霜月",
-    "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜一张升级后的 霜月 到手中"
+    "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜一张升级后的 霜月 到手中",
+
+	"MIYABISTS2-BAOJUN_MENGJI.title": "暴君猛击",
+    "MIYABISTS2-BAOJUN_MENGJI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，{Block:diff()}护甲，招架{PARRY_POWER:diff()}"
 }

@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts.Cards
                 NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
             }
             if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc))
-                await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
                 .WithHitCount(hc.IntValue)
                 .FromCard(this).TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
@@ -61,8 +61,8 @@ namespace Miyabists2.Scripts.Cards
             if(base.Owner.Creature.GetPower<FrostFallPower>().DisplayAmount >= 2)
             {
                 // 加入一张升级后的《霜月》到手中
-                CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<ShuangYue>(base.Owner.Creature.Player);
-                for (int i = 0; i < base.CurrentUpgradeLevel; i++) reward1.UpgradeInternal();
+                ShuangYue reward1 = base.Owner.Creature.CombatState.CreateCard<ShuangYue>(base.Owner.Creature.Player);
+                for (int i = 0; i <= base.CurrentUpgradeLevel; i++) reward1.OnUpgrade();
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
                 await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, -2, null, null);
             }

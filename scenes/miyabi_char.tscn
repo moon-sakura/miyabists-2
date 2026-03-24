@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwx4x6mwmh1jc"]
+
+[ext_resource type="Texture2D" uid="uid://ck7vu40vneun" path="res://images/charui/miyabi_char.png" id="1_s6fse"]
+
+[node name="miyabi_char" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1.9999886, -252.00002)
+scale = Vector2(0.233839, 0.23383902)
+texture = ExtResource("1_s6fse")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -120.0
+offset_right = 120.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
