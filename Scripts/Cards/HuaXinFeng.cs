@@ -1,12 +1,11 @@
 using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
-using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,35 +14,22 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class DongFengSp:MiyabiAttackCardBase
+    internal class HuaXinFeng : MiyabiAttackCardBase
     {
         public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public DongFengSp() : base(1, CardRarity.Common, TargetType.AnyEnemy, true) { }
+        public HuaXinFeng() : base(1, CardRarity.Common, TargetType.AnyEnemy, true) { }
+
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 2)
         ];
 
-        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            await base.OnPlay(choiceContext, cardPlay);
-            await PowerCmd.Apply<DongFengSpPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
-            
-        }
 
         public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await CheckReduce();
-        }
-
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
-        {
-            if (side == base.Owner.Creature.Side)
-            {
-                await CheckReduce();
-            }
         }
 
         public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
@@ -57,17 +43,20 @@ namespace Miyabists2.Scripts.Cards
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(2);
-            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
+            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
         }
 
         private async Task CheckReduce()
         {
+            int amount = CombatManager.Instance.History.CardPlaysFinished
+                .Count((CardPlayFinishedEntry e)
+                => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
+                && e.CardPlay.Card.Owner == base.Owner
+                && e.HappenedThisTurn(base.CombatState));
             if (base.Owner != null && base.Owner.Creature.IsAlive)
             {
-                if (base.Owner.Creature.HasPower<SlipperyPower>())
+                if (amount > 0)
                     SetCost(0);
-                else
-                    SetCost(1);
             }
         }
 
@@ -80,6 +69,5 @@ namespace Miyabists2.Scripts.Cards
         {
             base.EnergyCost.SetThisTurn(a);
         }
-
     }
 }

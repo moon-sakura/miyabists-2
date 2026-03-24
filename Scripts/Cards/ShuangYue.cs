@@ -38,7 +38,7 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
-            new DynamicVar("HitCount",2)
+            new DynamicVar("HitCount",1)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -57,7 +57,7 @@ namespace Miyabists2.Scripts.Cards
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
                 .WithHitCount(hc.IntValue)
                 .FromCard(this).TargetingAllOpponents(base.CombatState)
-                .WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+                .WithHitFx("vfx/vfx_giant_horizontal_slash")
                 .Execute(choiceContext);
 
             if(base.Owner.Creature.GetPower<FrostFallPower>().DisplayAmount >= 2)
@@ -75,7 +75,7 @@ namespace Miyabists2.Scripts.Cards
         {
             //DynamicVars.Damage.UpgradeValueBy(3);
             //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
-            if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc)) hc.UpgradeValueBy(2);
+            if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc)) hc.UpgradeValueBy(1);
         }
 
 

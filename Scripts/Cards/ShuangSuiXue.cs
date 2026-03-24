@@ -17,14 +17,14 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ChunLin : MiyabiAttackCardBase
+    internal class ShuangSuiXue : MiyabiAttackCardBase
     {
         public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public ChunLin() : base(2, CardRarity.Rare, TargetType.AllEnemies, true) { }
+        public ShuangSuiXue() : base(1, CardRarity.Common, TargetType.AllEnemies, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(16, ValueProp.Move),
+            new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 4)
         ];
 
@@ -39,40 +39,12 @@ namespace Miyabists2.Scripts.Cards
                 .FromCard(this).TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_giant_horizontal_slash")
                 .Execute(choiceContext);
-
-            //选择一张伙伴卡加入手卡
-            CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
-            CardPile pile = PileType.Discard.GetPile(base.Owner);
-            IEnumerable<CardModel> cards = pile.Cards.Where(c => c.CanonicalKeywords.Contains(MiyabiKeywords.Friends));
-            CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cards.ToList(), base.Owner, prefs)).FirstOrDefault();
-            if (cardModel != null)
-            {
-                await CardPileCmd.Add(cardModel, PileType.Hand);
-            }
-
         }
-
-
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            //本回合击破过减费
-            bool hasBreak = false;
-            foreach (Creature Enemy in base.CombatState.Enemies)
-            {
-                if(Enemy.HasPower<BreakPower>()) hasBreak = true;
-            }
-            if(hasBreak) ReduceCostBy(2);
-        }
-
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(4);
+            DynamicVars.Damage.UpgradeValueBy(2);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
-        }
-        private void ReduceCostBy(int amount)
-        {
-            base.EnergyCost.AddThisTurn(-amount);
         }
     }
 }

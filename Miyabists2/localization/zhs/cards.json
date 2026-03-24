@@ -44,6 +44,12 @@
 	"MIYABISTS2-TONGMU_SHUANGXUE.title": "同沐霜雪",
     "MIYABISTS2-TONGMU_SHUANGXUE.description": "每次使用非伙伴攻击卡时，支援点数+1",
 
+	"MIYABISTS2-HUA_XIN_FENG.title": "花信风",
+    "MIYABISTS2-HUA_XIN_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合使用过伙伴卡则0费",
+
+	"MIYABISTS2-SHUANG_SUI_XUE.title": "花信风",
+    "MIYABISTS2-SHUANG_SUI_XUE.description": "全体[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
+
 	"MIYABISTS2-BAOJUN_MENGJI.title": "暴君猛击",
     "MIYABISTS2-BAOJUN_MENGJI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，{Block:diff()}护甲，招架{PARRY_POWER:diff()}\\n支援点数2：覆甲4"
 }
