@@ -50,7 +50,8 @@ namespace Miyabists2.Scripts.Powers
             if(base.Amount >= 2)
             {
                 await PowerCmd.Apply<DisorderPower>(base.Owner, 1, null, null);
-                await PowerCmd.Remove(this);
+                //await PowerCmd.Remove(this);
+                Amount = 0;
             }
         }
 

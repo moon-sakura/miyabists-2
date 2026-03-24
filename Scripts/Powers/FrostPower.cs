@@ -34,7 +34,11 @@ namespace Miyabists2.Scripts.Powers
             }
             //添加一次属性异常
             await PowerCmd.Apply<AttributeAnomalyPower>(base.Owner,1,null,null);
+            //await PowerCmd.Remove(this);
+            Amount = 0;
         }
+
+        
     
     }
 }

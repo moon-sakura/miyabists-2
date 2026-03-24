@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
     {
         public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public BaojunMengji() : base(3, CardRarity.Uncommon, TargetType.AnyEnemy, true) { }
+        public BaojunMengji() : base(3,CardRarity.Uncommon, TargetType.AnyEnemy) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(20, ValueProp.Move),

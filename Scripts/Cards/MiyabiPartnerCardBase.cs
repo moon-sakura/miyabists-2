@@ -28,8 +28,8 @@ namespace Miyabists2.Scripts.Cards
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];
 
-        protected MiyabiPartnerCardBase(int energy, CardRarity rarity, TargetType target, bool showInLib)
-            : base(energy, CardType.Skill, rarity, target, showInLib=true)
+        protected MiyabiPartnerCardBase(int energy, CardRarity rarity, TargetType target, CardType type = CardType.Skill, bool showInLib=true)
+            : base(energy, type, rarity, target, showInLib=true)
         {
             // 伙伴卡在视觉上可以加入特定词条
             // this.CanonicalKeywords = [MiyabiKeywords.Partner]; 

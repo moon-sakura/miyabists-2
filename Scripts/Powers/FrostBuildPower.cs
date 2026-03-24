@@ -49,10 +49,11 @@ namespace Miyabists2.Scripts.Powers
 
         private async Task CheckMaxStacks()
         {
-            if (DisplayAmount >= MAX_STACKS && base.Owner != null && !base.Owner.IsDead)
+            if (base.Owner != null && !base.Owner.IsDead && Amount >= MAX_STACKS + 1)
             {
                 await PowerCmd.Apply<FrostPower>(base.Owner, 1m, null, null);
-                await PowerCmd.SetAmount<FrostBuildPower>(base.Owner, 1m, null, null);
+                //await PowerCmd.Apply<FrostBuildPower>(base.Owner, 1m - Amount, null, null);
+                Amount = 0;
             }
         }
 

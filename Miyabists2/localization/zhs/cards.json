@@ -51,5 +51,18 @@
     "MIYABISTS2-SHUANG_SUI_XUE.description": "全体[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
 	"MIYABISTS2-BAOJUN_MENGJI.title": "暴君猛击",
-    "MIYABISTS2-BAOJUN_MENGJI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，{Block:diff()}护甲，招架{PARRY_POWER:diff()}\\n支援点数2：覆甲4"
+    "MIYABISTS2-BAOJUN_MENGJI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，{Block:diff()}护甲，招架{PARRY_POWER:diff()}\\n支援点数2：覆甲4",
+	
+	"MIYABISTS2-ZHONGMO_CAIJUE.title": "终末裁决",
+    "MIYABISTS2-ZHONGMO_CAIJUE.description": "打{Damage:diff()}，如果敌人处于击破状态，伤害变为3倍，移除敌人的击破与失衡易伤，移除后失衡{DAZE_POWER:diff()}\\n支援点数3：伤害+8",
+
+	"MIYABISTS2-TEST_CARD_DAZE.title": "失衡测试卡",
+    "MIYABISTS2-TEST_CARD_DAZE.description": "失衡50",
+
+	"MIYABISTS2-TEST_CARD_ANO.title": "属性测试卡",
+    "MIYABISTS2-TEST_CARD_ANO.description": "属性积蓄3",
+
+	"MIYABISTS2-TEST_CARD_FROST.title": "烈霜测试卡",
+    "MIYABISTS2-TEST_CARD_FROST.description": "烈霜积蓄50"
 }
+

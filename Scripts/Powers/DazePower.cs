@@ -30,9 +30,10 @@ namespace Miyabists2.Scripts.Powers
         {
             if (base.Owner.HasPower<BreakPower>()) 
             {
-                await PowerCmd.SetAmount<DazePower>(base.Owner, 1m, null, null);
+                await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
                 return; 
             } // 如果已经有BreakPower，不再触发
+            Amount++;
             await CheckDazeTrigger(base.Owner);
         }
 
@@ -40,7 +41,7 @@ namespace Miyabists2.Scripts.Powers
         {
             if (base.Owner.HasPower<BreakPower>())
             {
-                await PowerCmd.SetAmount<DazePower>(base.Owner, 1m, null, null);
+                await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
                 return;
             } // 如果已经有BreakPower，不再触发
             await CheckDazeTrigger(base.Owner);
@@ -51,7 +52,8 @@ namespace Miyabists2.Scripts.Powers
             if (this.DisplayAmount >= _max)
             {
                 await PowerCmd.Apply<BreakPower>(target, 1m, null, null);
-                await PowerCmd.SetAmount<DazePower>(base.Owner, 1m, null, null);
+                //await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
+                Amount = 0;
             }
         }
     }
