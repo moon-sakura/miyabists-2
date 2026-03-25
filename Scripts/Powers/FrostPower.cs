@@ -31,20 +31,20 @@ namespace Miyabists2.Scripts.Powers
             //    await PowerCmd.SetAmount<FrostBuildPower>(base.Owner, 1, null, null);
             //}
 
-            if (base.Owner.HasPower<FrostFirePower>())
-            {
-                //造成冰焰层数*1.5点伤害，清除冰焰
-                int fireAmount = base.Owner.GetPowerAmount<FrostFirePower>();
+            //if (base.Owner.HasPower<FrostFirePower>())
+            //{
+            //    //造成冰焰层数*1.5点伤害，清除冰焰
+            //    int fireAmount = base.Owner.GetPowerAmount<FrostFirePower>();
 
-                //await CreatureCmd.Damage(null, base.Owner, fireAmount * 1.5m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, base.Owner);
+            //    //await CreatureCmd.Damage(null, base.Owner, fireAmount * 1.5m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, base.Owner);
 
-                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .Targeting(base.Owner)
-                .Execute(null);
+            //    await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            //    .Targeting(base.Owner)
+            //    .Execute(null);
 
-                if(!MiyabiCombatService.ShouldKeepFrostFire())
-                    await PowerCmd.Remove<FrostFirePower>(base.Owner);
-            }
+            //    if(!MiyabiCombatService.ShouldKeepFrostFire())
+            //        await PowerCmd.Remove<FrostFirePower>(base.Owner);
+            //}
             //添加一次属性异常
             //await PowerCmd.Apply<AttributeAnomalyPower>(base.Owner,1,null,null);
             //await PowerCmd.Remove(this);
