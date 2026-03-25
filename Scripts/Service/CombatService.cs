@@ -4,19 +4,21 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 using System.Drawing;
-using MegaCrit.Sts2.Core.Logging;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -101,6 +103,18 @@ namespace Miyabists2.Scripts.Service
             }
         }
 
+        //加喧嚣值
+        public static async Task AddDecible(Player player, int amount)
+        {
+            // 查找实例
+            var myRelic = player.Relics.OfType<SwordNotailRelic>().FirstOrDefault();
+
+            // 修改属性
+            if (myRelic != null)
+            {
+                myRelic?.AddCounter(amount);
+            }
+        }
 
     }
 }

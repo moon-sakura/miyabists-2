@@ -21,6 +21,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
+using System.Diagnostics.Metrics;
 
 namespace Miyabists2.Scripts.Relics
 {
@@ -50,6 +51,18 @@ namespace Miyabists2.Scripts.Relics
                 _counter = value;
                 InvokeDisplayAmountChanged(); // 通知 UI 更新数字
             }
+        }
+
+        //public static void AddCounter(int counter)
+        //{
+        //    SwordNotailRelic.Counter += counter;
+        //}
+
+        public void AddCounter(int amount)
+        {
+            // 这里在类内部，可以访问 private set
+            this.Counter += amount;
+            //this.Flash(); // 让遗物闪烁一下，视觉效果更好
         }
 
         // 每次打出卡牌后检查

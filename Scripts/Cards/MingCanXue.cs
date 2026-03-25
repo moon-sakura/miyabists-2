@@ -34,7 +34,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Retain
         ];
 
-        public MingCanXue() : base(0, CardRarity.Token, TargetType.AllEnemies, true) { }
+        public MingCanXue() : base(2, CardRarity.Token, TargetType.AllEnemies, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),

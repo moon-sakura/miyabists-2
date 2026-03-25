@@ -35,9 +35,11 @@
 	"MIYABISTS2-QUICK_PARRY.title": "快速招架",
     "MIYABISTS2-QUICK_PARRY.description": "{Block:diff()}护甲\\n招架{PARRY_POWER:diff()}\\n将抽牌堆中随机一张伙伴卡加入手卡",
 
-	"MIYABISTS2-ZHANSHU_CHONGZHENG.title": "快速招架",
+	"MIYABISTS2-ZHANSHU_CHONGZHENG.title": "战术重整",
     "MIYABISTS2-ZHANSHU_CHONGZHENG.description": "抽{Cards:diff()}张卡\\n每有一张伙伴卡，获得1支援点数",
 
+	"MIYABISTS2-RANYOUYIN_SHARE.title": "燃油饮分享装",
+    "MIYABISTS2-RANYOUYIN_SHARE.description": "自己获得一层易伤，喧嚣+5，支援点数+1\\n 如果本回合使用过伙伴卡，则重放1",
 
 	"MIYABISTS2-CHUN_LIN.title": "春临",
     "MIYABISTS2-CHUN_LIN.description": "全体烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n从抽卡堆选一张伙伴卡到手中，添加保留",
@@ -51,10 +53,13 @@
 	"MIYABISTS2-TONGMU_SHUANGXUE.title": "同沐霜雪",
     "MIYABISTS2-TONGMU_SHUANGXUE.description": "每次使用非伙伴攻击卡时，支援点数+1",
 
+	"MIYABISTS2-XUESHANG_JIASHUANG.title": "雪上加霜",
+    "MIYABISTS2-XUESHANG_JIASHUANG.description": "每次使用 霜月 时，本回合力量+1",
+
 	"MIYABISTS2-HUA_XIN_FENG.title": "花信风",
     "MIYABISTS2-HUA_XIN_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合使用过伙伴卡则0费",
 
-	"MIYABISTS2-SHUANG_SUI_XUE.title": "花信风",
+	"MIYABISTS2-SHUANG_SUI_XUE.title": "霜碎雪",
     "MIYABISTS2-SHUANG_SUI_XUE.description": "全体[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
 	"MIYABISTS2-MING_CAN_XUE.title": "名残雪",

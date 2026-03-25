@@ -65,13 +65,13 @@ public class Miyabi : PlaceholderCharacterModel
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
     // 人物头像2号。
-    //public override string CustomIconPath => "res://images/charui/miyabi_icon.png";
+    //public override string CustomIconPath => "res://images/charui/icon.png";
     // 能量表盘tscn路径。要自定义见下。
     //public override string CustomEnergyCounterPath => "res://scenes/miyabi_energy_counter.tscn";
     // 篝火休息动画。
-    // public override string CustomRestSiteAnimPath => "res://scenes/rest_site/characters/ironclad_rest_site.tscn";
+    //public override string CustomRestSiteAnimPath => "res://scenes/miyabi_char.tscn";
     // 商店人物动画。
-    // public override string CustomMerchantAnimPath => "res://scenes/merchant/characters/ironclad_merchant.tscn";
+    //public override string CustomMerchantAnimPath => "res://scenes/miyabi_char.tscn";
     // 多人模式-手指。
     // public override string CustomArmPointingTexturePath => null;
     // 多人模式剪刀石头布-石头。

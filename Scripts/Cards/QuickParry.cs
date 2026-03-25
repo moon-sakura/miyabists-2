@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts.Cards
             // 注意：StS2 的 Cards 属性通常是 IEnumerable<CardModel>，我们可以直接用 LINQ 筛选
             IEnumerable<CardModel> selectedCards = discardPile.Cards
                 .Where(c => c.CanonicalKeywords.Contains(MiyabiKeywords.Friends)) // 筛选符合条件的卡
-                .TakeRandom(base.DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.CombatCardSelection); // 随机取 N 张
+                .TakeRandom(1, base.Owner.RunState.Rng.CombatCardSelection); // 随机取 N 张
 
             if (selectedCards.Count() != 0)
             {

@@ -43,6 +43,10 @@
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "",
     "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块,上限为6",
 
+	"MIYABISTS2-XSJS_POWER.title": "雪上加霜",
+    "MIYABISTS2-XSJS_POWER.description": "",
+    "MIYABISTS2-XSJS_POWER.smartDescription": "每次使用 霜月 时，本回合力量+1",
+
 	"MIYABISTS2-MIYABI_PARRY_POWER.title": "招架",
     "MIYABISTS2-MIYABI_PARRY_POWER.description": "弹刀这一块",
     "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被护甲格挡下来的伤害，增加一张 [color=red]花辞[/color]到手牌，然后层数-1。",

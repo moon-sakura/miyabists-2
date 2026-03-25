@@ -82,6 +82,12 @@ namespace Miyabists2.Scripts.Cards
             }
         }
 
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            if (side != Owner.Creature.Side) return;
+            CardCmd.Downgrade(this);
+        }
+
 
         protected override void OnUpgrade()
         {
