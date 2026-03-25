@@ -22,5 +22,8 @@ namespace Miyabists2.Scripts.Cards
             : base(baseCost, type, rarity, target, showInCardLibrary)
         {
         }
+
+
+
     }
 }

@@ -1,6 +1,8 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
@@ -10,21 +12,19 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class TestCardDaze : MiyabiCardBase
+    internal class TestCardDaze : MiyabiPartnerCardBase
     {
 
 
         public TestCardDaze()
-            : base(0, CardType.Attack, CardRarity.None, TargetType.AnyEnemy, false)
+            : base(0,  CardRarity.None, TargetType.AnyEnemy, CardType.Attack, false)
         {
         }
 
-
-        // 通用打出逻辑
-        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            await PowerCmd.Apply<DazePower>(cardPlay.Target, 50m, null, null);
-        }
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DamageVar(0, ValueProp.Move),
+            new DynamicVar(DazeVarName, 50),
+            new BlockVar(0,ValueProp.Move)
+        ];
     }
 }

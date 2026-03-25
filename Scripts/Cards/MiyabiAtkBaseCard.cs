@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -40,30 +41,43 @@ namespace Miyabists2.Scripts.Cards
         // 通用伤害后逻辑：将伤害转化为烈霜积蓄值
         public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
         {
+            if (cardSource != this || target == null || target.IsDead) return;
+            int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
+
             // 确保是本卡造成的实际伤害，且目标存活
-            if (cardSource == this && target != null && !target.IsDead && result.TotalDamage > 0)
+            if (result.TotalDamage > 0 && chkFB <= 100)
             {
                 // 如果拥有烈霜词条，按伤害量施加积蓄值
-                if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
+                if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang) && !target.HasPower<FrostPower>())
                 {
                     await PowerCmd.Apply<FrostBuildPower>(target, result.TotalDamage, base.Owner.Creature, this);
-                   
                 }
-
+            }
+            //烈霜积蓄值积攒逻辑
+            if (chkFB >= 101)
+            {
+                await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<FrostPower>(target, 1, base.Owner.Creature, this);
+                if (target.HasPower<AttributeAnomalyPower>())
+                {
+                    await MiyabiCombatService.DisorderApply(target, base.Owner.Creature,choiceContext);
+                }
+                else
+                {
+                    await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, base.Owner.Creature, this);
+                }
             }
 
-            if (cardSource == this && target != null && !target.IsDead)
-            {
-                // 2. 施加 1 层冰焰 (FrostFirePower)
+            // 2. 施加 1 层冰焰 (FrostFirePower)
+            if (chkFB <= 100 && this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
                 await PowerCmd.Apply<FrostFirePower>(target, 1, base.Owner.Creature, this);
 
-                // 3. 施加动态配置的失衡值 (DazePower)
-                if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar))
-                {
-                    if(!target.HasPower<BreakPower>())
-                        await PowerCmd.Apply<DazePower>(target, dazeVar.BaseValue, base.Owner.Creature, this);
-                }
+            // 3. 施加动态配置的失衡值 (DazePower)
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar))
+            {
+                await MiyabiCombatService.AddDaze(target, dazeVar, base.Owner.Creature);
             }
+
         }
     }
 }

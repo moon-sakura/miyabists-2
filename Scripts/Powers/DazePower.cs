@@ -34,27 +34,27 @@ namespace Miyabists2.Scripts.Powers
                 return; 
             } // 如果已经有BreakPower，不再触发
             Amount++;
-            await CheckDazeTrigger(base.Owner);
+            //await CheckDazeTrigger(base.Owner);
         }
 
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            if (base.Owner.HasPower<BreakPower>())
-            {
-                await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
-                return;
-            } // 如果已经有BreakPower，不再触发
-            await CheckDazeTrigger(base.Owner);
-        }
+        //public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        //{
+        //    if (base.Owner.HasPower<BreakPower>())
+        //    {
+        //        await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
+        //        return;
+        //    } // 如果已经有BreakPower，不再触发
+        //    await CheckDazeTrigger(base.Owner);
+        //}
 
-        public async Task CheckDazeTrigger(Creature target)
-        {
-            if (this.DisplayAmount >= _max)
-            {
-                await PowerCmd.Apply<BreakPower>(target, 1m, null, null);
-                //await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
-                Amount = 0;
-            }
-        }
+        //public async Task CheckDazeTrigger(Creature target)
+        //{
+        //    if (this.DisplayAmount >= _max)
+        //    {
+        //        await PowerCmd.Apply<BreakPower>(target, 1m, null, null);
+        //        //await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
+        //        Amount = 0;
+        //    }
+        //}
     }
 }

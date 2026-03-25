@@ -35,9 +35,9 @@
     "MIYABISTS2-ANOMALY_BUILDUP_POWER.description": "爆！",
     "MIYABISTS2-ANOMALY_BUILDUP_POWER.smartDescription": "什么效果都没有哦~",
 
-	"MIYABISTS2-DISORDER_BUILDUP_POWER.title": "紊乱",
-    "MIYABISTS2-DISORDER_BUILDUP_POWER.description": "爆！",
-    "MIYABISTS2-DISORDER_BUILDUP_POWER.smartDescription": "立即造成50点伤害，下一击伤害翻倍",
+	"MIYABISTS2-DISORDER_POWER.title": "紊乱",
+    "MIYABISTS2-DISORDER_POWER.description": "爆！",
+    "MIYABISTS2-DISORDER_POWER.smartDescription": "立即造成20点伤害，下一击伤害翻倍",
 
 	"MIYABISTS2-SUPPORT_POINT_POWER.title": "支援点数",
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "",

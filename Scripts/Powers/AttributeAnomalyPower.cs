@@ -34,26 +34,30 @@ namespace Miyabists2.Scripts.Powers
             return 1m;
         }
 
-        // 效果 2：添加时逻辑（检查重复以触发紊乱）
-        public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
-            // 如果目标已经拥有此能力，触发紊乱
-            if (base.Owner.HasPower<AttributeAnomalyPower>())
-            {
-                await PowerCmd.Apply<DisorderPower>(base.Owner, 1, applier, cardSource);
-                await PowerCmd.Remove(this);
-            }
+            //if (base.Amount >= 2)
+            //{
+            //    await PowerCmd.Apply<DisorderPower>(base.Owner, 1, null, null);
+            //    //await PowerCmd.Remove(this);
+            //}
         }
-
-        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
-        {
-            if(base.Amount >= 2)
-            {
-                await PowerCmd.Apply<DisorderPower>(base.Owner, 1, null, null);
-                //await PowerCmd.Remove(this);
-                Amount = 0;
-            }
-        }
+        //public override async Task BeforeCardPlayed(CardPlay cardPlay)
+        //{
+        //    if (base.Amount >= 2)
+        //    {
+        //        //await PowerCmd.Apply<DisorderPower>(base.Owner, 1, null, null);
+        //        await PowerCmd.Remove(this);
+        //    }
+        //}
+        //public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
+        //{
+        //    if(base.Amount >= 2)
+        //    {
+        //        //await PowerCmd.Apply<DisorderPower>(base.Owner, 1, null, null);
+        //        await PowerCmd.Remove(this);
+        //    }
+        //}
 
         // 效果 3：每回合结束受到 5 点伤害
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)

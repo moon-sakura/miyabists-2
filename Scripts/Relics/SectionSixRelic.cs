@@ -19,6 +19,7 @@ using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Relics
 {
@@ -39,6 +40,11 @@ namespace Miyabists2.Scripts.Relics
                 Flash();
                 await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, 7, null, null);
             }
+        }
+
+        public override async Task AfterRoomEntered(AbstractRoom room)
+        {
+            MiyabiCombatService.ResetAnoT();
         }
     }
 }

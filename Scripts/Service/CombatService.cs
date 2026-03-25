@@ -7,7 +7,10 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
@@ -27,9 +30,42 @@ namespace Miyabists2.Scripts.Service
         public static void SetShouldKeepFrostFire(bool value) => FrostFireKeeped = value;
 
         //伙伴卡牌的特殊处理
-        public static bool ThisTurnUsedPartnerCard { set; get; } = false;
-        public static bool GetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard;
-        public static void ResetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard = false;
-        public static void UsedPartnerCard() => ThisTurnUsedPartnerCard = true;
+        //public static bool ThisTurnUsedPartnerCard { set; get; } = false;
+        //public static bool GetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard;
+        //public static void ResetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard = false;
+        //public static void UsedPartnerCard() => ThisTurnUsedPartnerCard = true;
+
+        //属性积蓄判断
+        public static int AnoTrigger { get; set; } = 5;
+        public static void ChangeAnoT(int amount) => AnoTrigger += amount;
+        public static void ResetAnoT() => AnoTrigger = 5;
+        public static int GetAnoTrigger() => AnoTrigger;
+
+
+        //用于调用各种触发
+        //紊乱触发
+        public static async Task DisorderApply(Creature target, Creature dealer, PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Remove<AttributeAnomalyPower>(target);
+            await PowerCmd.Apply<DisorderPower>(target, 1, dealer, null);
+            //造成20点伤害
+            await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
+        }
+
+        //失衡值叠加
+        public static async Task AddDaze(Creature target,DynamicVar dazeVar,Creature dealer)
+        {
+            int chkDaze = target.GetPowerAmount<DazePower>() + dazeVar.IntValue;
+
+            if (!target.HasPower<BreakPower>() && chkDaze <= 100)
+                await PowerCmd.Apply<DazePower>(target, dazeVar.BaseValue, dealer, null);
+            else if (chkDaze >= 101)
+            {
+                await PowerCmd.SetAmount<DazePower>(target, 1, dealer, null);
+                await PowerCmd.Apply<BreakPower>(target, 1, dealer, null);
+            }
+        }
+
+
     }
 }

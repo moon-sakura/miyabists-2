@@ -31,31 +31,62 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => "res://images/powers/FrostBuild.png";
         public override string CustomBigIconPath => "res://images/powers/FrostBuild.png";
 
-
         // 最大堆叠层数常量
-        private const int MAX_STACKS = 100;
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            await CheckMaxStacks();
-        }
+        //private const int MAX_STACKS = 100;
+        //bool isUpdating = false;
+
+
+        //public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        //{
+        //    if (base.Owner != null && !base.Owner.IsDead && DisplayAmount >= MAX_STACKS && power == this && !isUpdating)
+        //    {
+        //        isUpdating = true;
+        //        try
+        //        {
+        //            // 3. 执行修改。由于 isUpdating 是 true，
+        //            // 这些 await 触发的次生 Hook 都会在第一行被拦截。
+        //            //await PowerCmd.Apply<FrostBuildPower>(base.Owner, 1m, null, null,true);
+        //            await PowerCmd.Apply<FrostPower>(base.Owner, 1m, null, null);
+        //        }
+        //        finally
+        //        {
+
+        //            isUpdating = false;
+        //        }
+        //    }
+        //}
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             Amount++;
             // 检查是否达到100层
-            await CheckMaxStacks();
+            //await CheckMaxStacks();
         }
 
+        //private async Task ExecuteResetLogic()
+        //{
+        //    try
+        //    {
+        //        // 在这里处理真正耗时的修改
+        //        await PowerCmd.SetAmount<FrostBuildPower>(base.Owner, 1m, null, null);
+        //        await PowerCmd.Apply<FrostPower>(base.Owner, 1m, null, null);
+        //    }
+        //    finally
+        //    {
+        //        isUpdating = false;
+        //    }
+        //}
 
-        private async Task CheckMaxStacks()
-        {
-            if (base.Owner != null && !base.Owner.IsDead && Amount >= MAX_STACKS + 1)
-            {
-                await PowerCmd.Apply<FrostPower>(base.Owner, 1m, null, null);
-                //await PowerCmd.Apply<FrostBuildPower>(base.Owner, 1m - Amount, null, null);
-                Amount = 0;
-            }
-        }
+
+        //private async Task CheckMaxStacks()
+        //{
+        //    if (base.Owner != null && !base.Owner.IsDead && Amount >= MAX_STACKS + 1)
+        //    {
+        //        await PowerCmd.Apply<FrostPower>(base.Owner, 1m, null, null);
+        //        //await PowerCmd.Apply<FrostBuildPower>(base.Owner, 1m - Amount, null, null);
+        //        Amount = 1;
+        //    }
+        //}
 
     }
 }

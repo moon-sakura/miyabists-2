@@ -24,6 +24,9 @@ namespace Miyabists2.Scripts.Cards
         protected const string DazeVarName = "DAZE_POWER";
         protected const string ParryVarName = "PARRY_POWER";
         protected const string SlipperyVarName = "SLIPPERY_POWER";
+        protected const string AnomalyBuildupVarName = "ANOBUILD_POWER";
+
+        protected const bool isDirectAno = false;
 
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];
@@ -31,8 +34,6 @@ namespace Miyabists2.Scripts.Cards
         protected MiyabiPartnerCardBase(int energy, CardRarity rarity, TargetType target, CardType type = CardType.Skill, bool showInLib=true)
             : base(energy, type, rarity, target, showInLib=true)
         {
-            // 伙伴卡在视觉上可以加入特定词条
-            // this.CanonicalKeywords = [MiyabiKeywords.Partner]; 
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -54,14 +55,81 @@ namespace Miyabists2.Scripts.Cards
                 // 注意：这里修正了你原代码中 Slippery 误写成 ParryPower 的问题
                 await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
             }
-
-            if(base.DynamicVars.TryGetValue(DazeVarName, out var dazeVar) && dazeVar.BaseValue > 0)
+            //施加失衡
+            //if(base.DynamicVars.TryGetValue(DazeVarName, out var dazeVar) && dazeVar.BaseValue > 0)
+            //{
+            //    if (!cardPlay.Target.HasPower<BreakPower>())
+            //        await PowerCmd.Apply<DazePower>(base.Owner.Creature, dazeVar.BaseValue, base.Owner.Creature, this);
+            //}
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar) && dazeVar.BaseValue > 0)
             {
-                if (!cardPlay.Target.HasPower<BreakPower>())
-                    await PowerCmd.Apply<DazePower>(base.Owner.Creature, dazeVar.BaseValue, base.Owner.Creature, this);
+                await MiyabiCombatService.AddDaze(cardPlay.Target, dazeVar,base.Owner.Creature);
             }
 
-            if(base.DynamicVars.Damage.BaseValue > 0)
+            //属性积蓄与异常
+            //if ((base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out var anoVar) && anoVar.BaseValue > 0) || isDirectAno)
+            //{
+            //    int chkAno = cardPlay.Target.GetPowerAmount<AnomalyBuildupPower>() + anoVar.IntValue;
+            //    int trigger = MiyabiCombatService.GetAnoTrigger();
+
+            //    if ((isDirectAno || chkAno >= trigger +1) && cardPlay.Target.HasPower<AttributeAnomalyPower>())
+            //    {
+            //        //触发紊乱
+            //        await PowerCmd.Remove<AttributeAnomalyPower>(cardPlay.Target);
+            //        await PowerCmd.Apply<DisorderPower>(cardPlay.Target,1,base.Owner.Creature, this);
+            //    }
+            //    else if(!cardPlay.Target.HasPower<AttributeAnomalyPower>() 
+            //        && ((!isDirectAno && chkAno <= trigger) || isDirectAno))
+            //    {
+            //        //触发异常
+            //        await PowerCmd.Apply<AttributeAnomalyPower>(cardPlay.Target, 1, base.Owner.Creature, this);
+            //        if(!isDirectAno)
+            //            await PowerCmd.Apply<AnomalyBuildupPower>(cardPlay.Target, -trigger, base.Owner.Creature, this);
+            //    }
+            //    else if (chkAno <= trigger && !isDirectAno)
+            //    { 
+            //        //仅添加
+            //        await PowerCmd.Apply<AnomalyBuildupPower>(cardPlay.Target, anoVar.BaseValue, base.Owner.Creature, this); 
+            //    }
+            //}
+            if ((base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out var anoVar) && anoVar.BaseValue > 0) || isDirectAno)
+            {
+                var target = cardPlay.Target;
+                int trigger = MiyabiCombatService.GetAnoTrigger();
+                bool hasAnomaly = target.HasPower<AttributeAnomalyPower>();
+                int chkAno = anoVar.IntValue;
+                if (target.HasPower<AnomalyBuildupPower>())
+                    chkAno += target.GetPowerAmount<AnomalyBuildupPower>();
+
+                // 情况 A：已经有异常状态了
+                if (hasAnomaly)
+                {
+                    if (isDirectAno || chkAno > trigger) // 满溢则紊乱
+                    {
+                        await MiyabiCombatService.DisorderApply(target, base.Owner.Creature, choiceContext);
+                    }
+                    else // 未满则继续堆积蓄
+                    {
+                        await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar.BaseValue, base.Owner.Creature, this);
+                    }
+                }
+                // 情况 B：还没有异常状态
+                else
+                {
+                    if (isDirectAno || chkAno > trigger) // 满溢则触发异常
+                    {
+                        await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, base.Owner.Creature, this);
+                        if (!isDirectAno) // 扣除触发掉的积蓄
+                            await PowerCmd.Apply<AnomalyBuildupPower>(target, -trigger, base.Owner.Creature, this);
+                    }
+                    else // 未满则仅仅添加积蓄
+                    {
+                        await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar.BaseValue, base.Owner.Creature, this);
+                    }
+                }
+            }
+
+            if (base.DynamicVars.Damage.BaseValue > 0)
             {
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
                     .FromCard(this)
@@ -73,6 +141,7 @@ namespace Miyabists2.Scripts.Cards
 
         public virtual int CheckSupportCost(int a)
         {
+            if(!base.Owner.Creature.HasPower<SupportPointPower>()) return 0;
             return base.Owner.Creature.GetPower<SupportPointPower>().CanUsePoint(a);
             //{
             //    return false;
