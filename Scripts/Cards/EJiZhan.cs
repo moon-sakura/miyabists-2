@@ -14,7 +14,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class EJiZhan : MiyabiAttackCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public EJiZhan() : base(3, CardRarity.Rare, TargetType.AnyEnemy, true) { }
 

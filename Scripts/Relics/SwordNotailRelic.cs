@@ -15,7 +15,10 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
+using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
 
@@ -25,12 +28,56 @@ namespace Miyabists2.Scripts.Relics
     internal class SwordNotailRelic : CustomRelicModel
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
-        public override string PackedIconPath => "res://images/relics/OWmajor.png";
+        public override string PackedIconPath => "res://images/relics/commonRelics.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
-        protected override IEnumerable<DynamicVar> CanonicalVars => Array.Empty<DynamicVar>();
 
-        //public int LuoShuangCostThisTurn { get; set; } = 0; // 本回合已使用的落霜点数
+        public int Threshold {get;set;} = 30; // 触发阈值
+
+        private int _counter;
+
+        // 显示在遗物图标上的数字
+        public override bool ShowCounter => true;
+        public override int DisplayAmount => Counter;
+
+        [SavedProperty]
+        public int Counter
+        {
+            get => _counter;
+            private set
+            {
+                AssertMutable(); // 确保在合法的修改状态
+                _counter = value;
+                InvokeDisplayAmountChanged(); // 通知 UI 更新数字
+            }
+        }
+
+        // 每次打出卡牌后检查
+        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
+        {
+            // 1. 检查是否是特定的卡（或者任意卡，根据你的需求）
+            // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"
+            if (cardPlay.Card.Owner == base.Owner)
+            {
+                Counter++;
+
+                // 2. 检查是否达到 30 次
+                if (Counter >= Threshold)
+                {
+                    Counter = 0; // 重置计数器
+
+                    // 3. 触发效果：闪烁并加入一张卡
+                    Flash();
+
+                    // 假设你要加入一张具体的卡牌，ID 为 "BonusCardId"
+                    // CardCmd 是 StS2 中操作卡牌的标准命令类
+                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                }
+            }
+        }
+
+
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
@@ -40,14 +87,14 @@ namespace Miyabists2.Scripts.Relics
                 Flash();
                 await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, 4, null, null);
             }
-
-            //LuoShuangCostThisTurn = 0;
-            
-
             // 此时，syncRnd.Next 在所有客户端产生的结果将完全一致
             int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, 4); ;
-
-            
         }
+
+        //public override Task AfterCombatEnd(CombatRoom _)
+        //{
+        //    base.Status = RelicStatus.Normal;
+        //    return Task.CompletedTask;
+        //}
     }
 }

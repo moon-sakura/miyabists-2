@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
     [Pool(typeof(MiyabiCardPool))]
     internal class MiyabiBlock : MiyabiBlockCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public MiyabiBlock() : base(1, CardRarity.Basic, true) { }
 

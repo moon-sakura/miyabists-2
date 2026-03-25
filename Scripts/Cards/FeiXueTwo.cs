@@ -14,7 +14,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class FeiXueTwo:MiyabiAttackCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public FeiXueTwo() : base(2, CardRarity.Token, TargetType.AnyEnemy, true) { }
 

@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class HuaXinFeng : MiyabiAttackCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public HuaXinFeng() : base(1, CardRarity.Common, TargetType.AnyEnemy, true) { }
 

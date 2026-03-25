@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class DongFengSp:MiyabiAttackCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public DongFengSp() : base(1, CardRarity.Common, TargetType.AnyEnemy, true) { }
 

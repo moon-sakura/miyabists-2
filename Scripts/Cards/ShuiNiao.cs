@@ -15,7 +15,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ShuiNiao : MiyabiBlockCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public override bool GainsBlock => false;
 

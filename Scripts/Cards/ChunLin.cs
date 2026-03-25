@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ChunLin : MiyabiAttackCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public ChunLin() : base(2, CardRarity.Rare, TargetType.AllEnemies, true) { }
 
@@ -42,12 +42,18 @@ namespace Miyabists2.Scripts.Cards
 
             //选择一张伙伴卡加入手卡
             CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
-            CardPile pile = PileType.Discard.GetPile(base.Owner);
-            IEnumerable<CardModel> cards = pile.Cards.Where(c => c.CanonicalKeywords.Contains(MiyabiKeywords.Friends));
-            CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cards.ToList(), base.Owner, prefs)).FirstOrDefault();
-            if (cardModel != null)
+            List<CardModel> cardsIn = (from c in PileType.Draw.GetPile(base.Owner).Cards
+                                       where c.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
+                                       orderby c.Rarity, c.Id
+                                       select c).ToList();
+            if(cardsIn.Count != 0)
             {
-                await CardPileCmd.Add(cardModel, PileType.Hand);
+                CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
+                if (cardModel != null)
+                {
+                    cardModel.AddKeyword(CardKeyword.Retain);
+                    await CardPileCmd.Add(cardModel, PileType.Hand);
+                }
             }
 
         }

@@ -18,10 +18,10 @@ namespace Miyabists2.Scripts.Powers
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
 
-        public string BigIconPath => "res://images/powers/FrostBuild.png";
-        public string BigBetaIconPath => "res://images/powers/FrostBuild.png";
-        public override string CustomPackedIconPath => "res://images/powers/FrostBuild.png";
-        public override string CustomBigIconPath => "res://images/powers/FrostBuild.png";
+        public string BigIconPath => "res://images/powers/commonPowers.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {

@@ -15,7 +15,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ZhongmoCaijue : MiyabiPartnerCardBase
     {
-        public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
         public ZhongmoCaijue() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
 

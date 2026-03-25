@@ -13,13 +13,13 @@
 
 	"MIYABISTS2-FROST_FIRE_POWER.title": "冰焰",
     "MIYABISTS2-FROST_FIRE_POWER.description": "极寒中跳动的赤红之火。",
-    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[color=skyblue]烈霜[/color]伤害增加 [color=red]10%[/color]（上限200%）。",
+    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[color=skyblue]烈霜[/color]伤害增加 [color=red]5%[/color]（上限80%）。",
 
 	"MIYABISTS2-FROST_POWER.title": "霜灼",
     "MIYABISTS2-FROST_POWER.description": "凝结吧，碎裂吧。",
-    "MIYABISTS2-FROST_POWER.smartDescription": "造成[color=orange]冰焰层数 * 5[/color]点伤害。清除[color=orange]冰焰[/color]，添加1次[color=purple]属性异常[/color]。",
+    "MIYABISTS2-FROST_POWER.smartDescription": "受到伤害+20%，不可叠加烈霜积蓄值",
 
-	"MIYABISTS2-DAZE_VULN_POWER.smartDescription": "一回合内，受伤 + {MIYABISTS2-DAZE_VULN_POWER:Amount}",
+	"MIYABISTS2-DAZE_VULN_POWER.smartDescription": "一回合内，受伤 + {Amount} %",
 	"MIYABISTS2-DAZE_VULN_POWER.description": "我去，手感来了",
 	"MIYABISTS2-DAZE_VULN_POWER.title": "失衡易伤",
 
@@ -29,7 +29,7 @@
 
 	"MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.title": "属性异常",
     "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.description": "多种元素在体内冲突。",
-    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "受到伤害增加 [color=red]25%[/color]，每回合结束时受到 [color=red]5[/color] 点伤害。添加时如果已存在该效果则触发[color=purple]紊乱[/color]。",
+    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "每回合结束时受到 [color=red]10[/color] 点伤害。添加时如果已存在该效果则触发[color=purple]紊乱[/color]。",
 
 	"MIYABISTS2-ANOMALY_BUILDUP_POWER.title": "属性积蓄",
     "MIYABISTS2-ANOMALY_BUILDUP_POWER.description": "爆！",

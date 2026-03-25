@@ -21,10 +21,10 @@ namespace Miyabists2.Scripts.Powers
 
         private int _max = 100;
 
-        public string BigIconPath => "res://images/powers/FrostBuild.png";
-        public string BigBetaIconPath => "res://images/powers/FrostBuild.png";
-        public override string CustomPackedIconPath => "res://images/powers/FrostBuild.png";
-        public override string CustomBigIconPath => "res://images/powers/FrostBuild.png";
+        public string BigIconPath => "res://images/powers/commonPowers.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {

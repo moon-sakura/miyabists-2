@@ -11,7 +11,7 @@ namespace Miyabists2.Scripts.Cards
     [Pool(typeof(MiyabiCardPool))]
     public abstract class MiyabiCardBase : CustomCardModel
     {
-        protected virtual string ArtPath => CardModel.MissingPortraitPath;
+        protected virtual string ArtPath => "res://images/cards/commonCards.png";
         //public override string PortraitPath => $"res://images/cards/{Id.Entry.ToLowerInvariant()}.png";
         public override string PortraitPath => ArtPath;
         public override string BetaPortraitPath => ArtPath;
