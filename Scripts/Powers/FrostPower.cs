@@ -24,32 +24,42 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+        //public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+        //{
+        //    if (base.Owner.GetPowerAmount<FrostBuildPower>() >= 101)
+        //    {
+        //        await PowerCmd.SetAmount<FrostBuildPower>(base.Owner, 1, null, null);
+        //    }
+
+        //    if (base.Owner.HasPower<FrostFirePower>())
+        //    {
+        //        //造成冰焰层数*1.5点伤害，清除冰焰
+        //        int fireAmount = base.Owner.GetPowerAmount<FrostFirePower>();
+
+        //        await CreatureCmd.Damage(null, base.Owner, fireAmount * 1.5m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, base.Owner);
+
+        //        //await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+        //        //.Targeting(base.Owner)
+        //        //.Execute(null);
+
+        //        if (!MiyabiCombatService.ShouldKeepFrostFire())
+        //            await PowerCmd.Remove<FrostFirePower>(base.Owner);
+        //    }
+        //    //添加一次属性异常
+        //    //await PowerCmd.Apply<AttributeAnomalyPower>(base.Owner, 1, null, null);
+        //    //await PowerCmd.Remove(this);
+
+        //    //await PowerCmd.TickDownDuration(this);
+        //}
+
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            //if (base.Owner.GetPowerAmount<FrostBuildPower>() >= 101)
-            //{
-            //    await PowerCmd.SetAmount<FrostBuildPower>(base.Owner, 1, null, null);
-            //}
-
-            //if (base.Owner.HasPower<FrostFirePower>())
-            //{
-            //    //造成冰焰层数*1.5点伤害，清除冰焰
-            //    int fireAmount = base.Owner.GetPowerAmount<FrostFirePower>();
-
-            //    //await CreatureCmd.Damage(null, base.Owner, fireAmount * 1.5m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, base.Owner);
-
-            //    await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            //    .Targeting(base.Owner)
-            //    .Execute(null);
-
-            //    if(!MiyabiCombatService.ShouldKeepFrostFire())
-            //        await PowerCmd.Remove<FrostFirePower>(base.Owner);
-            //}
-            //添加一次属性异常
-            //await PowerCmd.Apply<AttributeAnomalyPower>(base.Owner,1,null,null);
-            //await PowerCmd.Remove(this);
-
-            //await PowerCmd.TickDownDuration(this);
+            bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
+            if (target == base.Owner && isValidMove)
+            {
+                return 1.20m;
+            }
+            return 1m;
         }
 
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
@@ -57,7 +67,7 @@ namespace Miyabists2.Scripts.Powers
             if (side == base.Owner.Side)
             {
                 //持续一回合
-                await PowerCmd.TickDownDuration(this);
+                await PowerCmd.Remove(this);
             }
         }
 

@@ -1,15 +1,20 @@
+using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Cards;
+using MegaCrit.Sts2.Core.Saves;
+using MegaCrit.Sts2.Core.Settings;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
@@ -44,23 +49,30 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             //ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            
+
             //await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature,-2,null,this);
-            
+
             //await GetCostCount();
+
+            int num = 0;
+            if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc))
+                num = hc.IntValue;
 
             foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
             {
-                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
+                Color color = new Color("FFFFFF80");
+                double num2 = ((SaveManager.Instance.PrefsSave.FastMode == FastModeType.Fast) ? 0.2 : 0.3);
+                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NHorizontalLinesVfx.Create(color, 0.8 + (double)Mathf.Min(8, num) * num2));
+                //SfxCmd.Play("event:/sfx/characters/ironclad/ironclad_whirlwind");
+                NRun.Instance?.GlobalUi.AddChildSafely(NSmokyVignetteVfx.Create(color, color));
             }
-            if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc))
-            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-                .WithHitCount(hc.IntValue)
-                .FromCard(this).TargetingAllOpponents(base.CombatState)
-                .WithHitFx("vfx/vfx_giant_horizontal_slash")
-                .Execute(choiceContext);
+            //if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc))
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this)
+            .TargetingAllOpponents(base.CombatState)
+            .WithHitFx("vfx/vfx_giant_horizontal_slash")
+            .Execute(choiceContext);
 
-            if(base.Owner.Creature.GetPower<FrostFallPower>().DisplayAmount >= 2)
+            if (base.Owner.Creature.GetPower<FrostFallPower>().DisplayAmount >= 2)
             {
                 // 加入一张升级后的《霜月》到手中
                 ShuangYue reward1 = base.Owner.Creature.CombatState.CreateCard<ShuangYue>(base.Owner.Creature.Player);

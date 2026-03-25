@@ -15,9 +15,9 @@ namespace Miyabists2.Scripts.Powers
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/Frost.png";
-        public string BigBetaIconPath => "res://images/powers/Frost.png";
-        public override string CustomPackedIconPath => "res://images/powers/Frost.png";
-        public override string CustomBigIconPath => "res://images/powers/Frost.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
@@ -32,10 +32,10 @@ namespace Miyabists2.Scripts.Powers
                 return 1m;
 
             //烈霜伤害+10%（效果上限200%，层数无上限）
-            decimal damageIncrease = base.Amount * 0.1m;
-            if (damageIncrease > 2m)
+            decimal damageIncrease = base.Amount * 0.05m;
+            if (damageIncrease > 0.8m)
             {
-                damageIncrease = 2m;
+                damageIncrease = 0.8m;
             }
 
             return 1m + damageIncrease;

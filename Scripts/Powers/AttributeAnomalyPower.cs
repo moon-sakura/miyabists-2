@@ -24,15 +24,15 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomBigIconPath => BigIconPath;
 
         // 效果 1：受到伤害 +20%
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
-        {
-            bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
-            if (target == base.Owner && isValidMove)
-            {
-                return 1.20m;
-            }
-            return 1m;
-        }
+        //public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        //{
+        //    bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
+        //    if (target == base.Owner && isValidMove)
+        //    {
+        //        return 1.20m;
+        //    }
+        //    return 1m;
+        //}
 
         public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
@@ -65,7 +65,7 @@ namespace Miyabists2.Scripts.Powers
             if (side == base.Owner.Side)
             {
                 // 造成 5 点固定伤害（Unpowered 确保不被自己再次增幅）
-                await CreatureCmd.Damage(choiceContext, base.Owner, 5m, ValueProp.Unpowered, (Creature)null);
+                await CreatureCmd.Damage(choiceContext, base.Owner, 10m, ValueProp.Unpowered, (Creature)null);
             }
         }
 
