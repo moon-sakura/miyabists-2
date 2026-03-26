@@ -21,9 +21,7 @@ namespace Miyabists2.Scripts.Cards
         public LuoyuShenghua() : base(1, CardRarity.Uncommon, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("LuoYu", 3),
-            new DamageVar(0,ValueProp.Unpowered),
-            new BlockVar(0,ValueProp.Unpowered)
+            new DynamicVar("LuoYu", 3)
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];

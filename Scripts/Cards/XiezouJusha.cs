@@ -19,8 +19,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(3, ValueProp.Move),
-            new DynamicVar(DazeVarName, 6),
-            new BlockVar(0,ValueProp.Unpowered)
+            new DynamicVar(DazeVarName, 6)
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -32,6 +31,15 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             base.OnPlay(choiceContext, cardPlay);
+
+            if (base.DynamicVars.Damage.BaseValue > 0)
+            {
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+            }
+
             await PowerCmd.Apply<DazeVulnPower>(cardPlay.Target, 15, base.Owner.Creature, this);
             
         }

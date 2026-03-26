@@ -22,13 +22,21 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 12),
-            new BlockVar(0,ValueProp.Move),
             new CardsVar(1)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             base.OnPlay(choiceContext, cardPlay);
+
+            if (base.DynamicVars.Damage.BaseValue > 0)
+            {
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+            }
+
 
             bool isBreak = cardPlay.Target.HasPower<BreakPower>();
 

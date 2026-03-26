@@ -18,11 +18,6 @@ namespace Miyabists2.Scripts.Cards
     {
         public BamianWeifeng() : base(2,CardRarity.Uncommon,TargetType.Self, CardType.Power) { }
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(0,ValueProp.Unpowered),
-            new BlockVar(0,ValueProp.Unpowered)
-        ];
-
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

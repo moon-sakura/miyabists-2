@@ -22,7 +22,6 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 15),
-            new BlockVar(0,ValueProp.Unpowered),
             new DynamicVar("WanGe",3)
         ];
 
@@ -31,6 +30,16 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             base.OnPlay(choiceContext, cardPlay);
+
+            if (base.DynamicVars.Damage.BaseValue > 0)
+            {
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+            }
+
+
             if (base.DynamicVars.TryGetValue("WanGe", out DynamicVar w))
                 await PowerCmd.Apply<MingfuwgPower>(base.Owner.Creature, w.BaseValue, base.Owner.Creature, this);
             await PowerCmd.Apply<DazeVulnPower>(cardPlay.Target, 35, base.Owner.Creature, this);

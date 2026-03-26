@@ -21,8 +21,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(10, ValueProp.Move),
-            new DynamicVar(DazeVarName, 10),
-            new BlockVar(0, ValueProp.Move)
+            new DynamicVar(DazeVarName, 10)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -42,6 +41,14 @@ namespace Miyabists2.Scripts.Cards
             }
 
             await base.OnPlay(choiceContext, cardPlay);
+
+            if (base.DynamicVars.Damage.BaseValue > 0)
+            {
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+            }
 
             if (cardPlay.Target.HasPower<BreakPower>())
             {

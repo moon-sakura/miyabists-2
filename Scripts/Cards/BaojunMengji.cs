@@ -28,6 +28,21 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             base.OnPlay(choiceContext, cardPlay);
+
+            // 1. 获得护甲
+            // 注意：BlockVar 通常会自动关联到 DynamicVars.Block
+            if (DynamicVars.Block.BaseValue > 0)
+                await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
+
+            if (base.DynamicVars.Damage.BaseValue > 0)
+            {
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+            } 
+
+
             if (base.CheckSupportCost(2) != 0) 
             {
                 await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, 4, base.Owner.Creature, this);
