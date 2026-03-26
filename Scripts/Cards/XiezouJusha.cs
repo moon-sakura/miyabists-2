@@ -23,6 +23,12 @@ namespace Miyabists2.Scripts.Cards
             new BlockVar(0,ValueProp.Unpowered)
         ];
 
+        public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [
+            MiyabiKeywords.Friends,
+            CardKeyword.Exhaust
+        ];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             base.OnPlay(choiceContext, cardPlay);

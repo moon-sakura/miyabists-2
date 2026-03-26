@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -23,7 +24,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
+            bool isValidMove = !props.HasFlag(ValueProp.Unpowered);
             if (dealer == base.Owner && isValidMove)
             {
                 return 1.5m;
@@ -33,12 +34,18 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
+            bool isValidMove = !props.HasFlag(ValueProp.Unpowered);
             if (dealer == base.Owner && result.TotalDamage > 0 && isValidMove)
             {
                 // 触发一次后移除
                 await PowerCmd.Remove(this);
             }
+        }
+
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            if (side != Owner.Side) return;
+            await PowerCmd.Remove(this);
         }
     }
 }

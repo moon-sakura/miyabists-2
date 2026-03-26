@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
     {
         //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public DongFengSp() : base(1, CardRarity.Common, TargetType.AnyEnemy, true) { }
+        public DongFengSp() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),

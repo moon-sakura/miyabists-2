@@ -1,10 +1,12 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
-using MegaCrit.Sts2.Core.Models;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -18,6 +20,8 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(12, ValueProp.Move),
             new DynamicVar(DazeVarName, 4)
         ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<FeiXueTwo>()];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

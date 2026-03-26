@@ -31,6 +31,7 @@ namespace Miyabists2.Scripts.Cards
             base.OnPlay(choiceContext, cardPlay);
 
             bool isBreak = cardPlay.Target.HasPower<BreakPower>();
+
             if (base.CheckSupportCost(2) != 0 || isBreak)
             {
                 //选择一张攻击卡加入手卡
@@ -59,10 +60,9 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(6);
+            DynamicVars.Damage.UpgradeValueBy(3);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
-            DynamicVars.Block.UpgradeValueBy(4);
-            if (base.DynamicVars.TryGetValue(ParryVarName, out DynamicVar p)) p.UpgradeValueBy(1);
+            DynamicVars.Cards.UpgradeValueBy(1);
 
         }
     }

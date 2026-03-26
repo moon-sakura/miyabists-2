@@ -30,8 +30,6 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // 1. 获得护甲
-            // 注意：BlockVar 通常会自动关联到 DynamicVars.Block
             if (DynamicVars.Block.BaseValue > 0 )
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 

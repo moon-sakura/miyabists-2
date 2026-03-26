@@ -76,7 +76,17 @@ namespace Miyabists2.Scripts.Cards
             {
                 // 加入一张升级后的《霜月》到手中
                 ShuangYue reward1 = base.Owner.Creature.CombatState.CreateCard<ShuangYue>(base.Owner.Creature.Player);
-                for (int i = 0; i <= base.CurrentUpgradeLevel; i++) reward1.OnUpgrade();
+                int targetLevel = base.CurrentUpgradeLevel + 1;
+                for (int i = 0; i < targetLevel; i++)
+                {
+                    reward1.UpgradeInternal();
+                }
+
+                //if (reward1.DynamicVars.TryGetValue("HitCount", out DynamicVar rhc))
+                //{
+                //    rhc.BaseValue += base.CurrentUpgradeLevel + 1;
+                //}
+
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
                 await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, -2, null, null);
             }
@@ -91,9 +101,11 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
+            //base.OnUpgrade();
             //DynamicVars.Damage.UpgradeValueBy(3);
             //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
             if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc)) hc.UpgradeValueBy(1);
+            //base.up
         }
 
 

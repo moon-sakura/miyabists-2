@@ -43,6 +43,7 @@
 
 	"MIYABISTS2-CHUN_LIN.title": "春临",
     "MIYABISTS2-CHUN_LIN.description": "全体烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n从抽卡堆选一张伙伴卡到手中，添加保留",
+	"MIYABISTS2-CHUN_LIN.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2-E_JI_ZHAN.title": "恶，即斩",
     "MIYABISTS2-E_JI_ZHAN.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
@@ -70,6 +71,7 @@
 
 	"MIYABISTS2-BYE_QUANLEIDA.title": "再见全垒打！",
     "MIYABISTS2-BYE_QUANLEIDA.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n支援点数2：从弃牌堆中选{Cards:diff()}张攻击卡加入手卡， 本场战斗伤害+3\\n如果敌人已经处于击破状态，则不消耗支援点数",
+	"MIYABISTS2-BYE_QUANLEIDA.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2-HUA_XIN_FENG.title": "花信风",
     "MIYABISTS2-HUA_XIN_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合使用过伙伴卡则0费",
