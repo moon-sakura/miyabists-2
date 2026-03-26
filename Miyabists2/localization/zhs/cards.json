@@ -1,33 +1,33 @@
 {
 	"MIYABISTS2-FENG_HUA.title": "风花",
-    "MIYABISTS2-FENG_HUA.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
+    "MIYABISTS2-FENG_HUA.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
 	"MIYABISTS2-SHEN_XUE.title": "深雪",
-    "MIYABISTS2-SHEN_XUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+1",
+    "MIYABISTS2-SHEN_XUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+1",
 
 	"MIYABISTS2-FEI_XUE.title": "飞雪",
-    "MIYABISTS2-FEI_XUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+2",
+    "MIYABISTS2-FEI_XUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+2",
 
 	"MIYABISTS2-FEI_XUE_TWO.title": "飞雪·二段",
-    "MIYABISTS2-FEI_XUE_TWO.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+2",
+    "MIYABISTS2-FEI_XUE_TWO.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n落霜+2",
 
 	"MIYABISTS2-SHUI_NIAO.title": "水鸟",
     "MIYABISTS2-SHUI_NIAO.description": "滑溜1",
 
 	"MIYABISTS2-DONG_FENG.title": "冬蜂",
-    "MIYABISTS2-DONG_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 抽{Cards:diff()}张卡，有滑溜则费用为0",
+    "MIYABISTS2-DONG_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 抽{Cards:diff()}张卡，有滑溜则费用为0",
 
 	"MIYABISTS2-DONG_FENG_SP.title": "冬蜂·极",
-    "MIYABISTS2-DONG_FENG_SP.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 下一张攻击卡伤害 + 50%，有滑溜则费用为0",
+    "MIYABISTS2-DONG_FENG_SP.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 下一张攻击卡伤害 + 50%，有滑溜则费用为0",
 
 	"MIYABISTS2-HAN_QUE.title": "寒雀",
-    "MIYABISTS2-HAN_QUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 有滑溜则伤害+4",
+    "MIYABISTS2-HAN_QUE.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()} \\n 有滑溜则伤害+4",
 
 	"MIYABISTS2-MIYABI_BLOCK.title": "防御",
-    "MIYABISTS2-MIYABI_BLOCK.description": "护甲 {Block:diff()} \\n 招架 {PARRY_POWER:diff()}",
+    "MIYABISTS2-MIYABI_BLOCK.description": "护甲 {Block:diff()} \\n招架 {PARRY_POWER:diff()}",
 
 	"MIYABISTS2-HUA_CI.title": "花辞",
-    "MIYABISTS2-HUA_CI.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
+    "MIYABISTS2-HUA_CI.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
 	"MIYABISTS2-HUA_FA.title": "花筏",
     "MIYABISTS2-HUA_FA.description": "{Block:diff()}护甲\\n招架{PARRY_POWER:diff()}\\n若本回合使用过伙伴牌，则额外6护甲，招架1",
@@ -39,13 +39,13 @@
     "MIYABISTS2-ZHANSHU_CHONGZHENG.description": "抽{Cards:diff()}张卡\\n每有一张伙伴卡，获得1支援点数",
 
 	"MIYABISTS2-RANYOUYIN_SHARE.title": "燃油饮分享装",
-    "MIYABISTS2-RANYOUYIN_SHARE.description": "自己获得一层易伤，喧嚣+5，支援点数+1\\n 如果本回合使用过伙伴卡，则重放1",
+    "MIYABISTS2-RANYOUYIN_SHARE.description": "自己获得一层易伤，喧嚣+5，支援点数+1\\n如果本回合使用过伙伴卡，则重放1",
 
 	"MIYABISTS2-CHUN_LIN.title": "春临",
     "MIYABISTS2-CHUN_LIN.description": "全体烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n从抽卡堆选一张伙伴卡到手中，添加保留",
 
 	"MIYABISTS2-E_JI_ZHAN.title": "恶，即斩",
-    "MIYABISTS2-E_JI_ZHAN.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
+    "MIYABISTS2-E_JI_ZHAN.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
 
 	"MIYABISTS2-SHUANG_YUE.title": "霜月",
     "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜一张升级后的 霜月 到手中",
@@ -56,11 +56,26 @@
 	"MIYABISTS2-XUESHANG_JIASHUANG.title": "雪上加霜",
     "MIYABISTS2-XUESHANG_JIASHUANG.description": "每次使用 霜月 时，本回合力量+1",
 
+	"MIYABISTS2-BAMIAN_WEIFENG.title": "八面威风",
+    "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
+
+	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
+    "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合使用攻击卡后给与敌人属性积蓄1，最多可触发{LuoYu:diff()}次",
+
+	"MIYABISTS2-MINGFU_WANGE.title": "冥府挽歌",
+    "MIYABISTS2-MINGFU_WANGE.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，给予一回合失衡易伤35%\\n{WanGe:diff()}回合内，每回合开始时增加一张《协奏狙杀》到手里\\n支援点数1：增加一张《协奏狙杀》到手里",
+
+	"MIYABISTS2-XIEZOU_JUSHA.title": "协奏狙杀",
+    "MIYABISTS2-XIEZOU_JUSHA.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，给予一回合失衡易伤15%",
+
+	"MIYABISTS2-BYE_QUANLEIDA.title": "再见全垒打！",
+    "MIYABISTS2-BYE_QUANLEIDA.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n支援点数2：从弃牌堆中选{Cards:diff()}张攻击卡加入手卡， 本场战斗伤害+3\\n如果敌人已经处于击破状态，则不消耗支援点数",
+
 	"MIYABISTS2-HUA_XIN_FENG.title": "花信风",
-    "MIYABISTS2-HUA_XIN_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合使用过伙伴卡则0费",
+    "MIYABISTS2-HUA_XIN_FENG.description": "[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合使用过伙伴卡则0费",
 
 	"MIYABISTS2-SHUANG_SUI_XUE.title": "霜碎雪",
-    "MIYABISTS2-SHUANG_SUI_XUE.description": "全体[color=blue]烈霜[/color] {Damage:diff()} \\n [color=yellow]失衡[/color] {DAZE_POWER:diff()}",
+    "MIYABISTS2-SHUANG_SUI_XUE.description": "全体[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
 	"MIYABISTS2-MING_CAN_XUE.title": "名残雪",
     "MIYABISTS2-MING_CAN_XUE.description": "全体5次[color=blue]烈霜[/color] {Damage:diff()}，[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合每使用一张攻击牌次数+1，每攻击两次，落霜+1",

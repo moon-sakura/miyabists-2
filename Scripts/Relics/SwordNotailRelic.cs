@@ -82,8 +82,6 @@ namespace Miyabists2.Scripts.Relics
                     // 3. 触发效果：闪烁并加入一张卡
                     Flash();
 
-                    // 假设你要加入一张具体的卡牌，ID 为 "BonusCardId"
-                    // CardCmd 是 StS2 中操作卡牌的标准命令类
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
                     await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
                 }

@@ -29,6 +29,15 @@ namespace Miyabists2.Scripts.Powers
             await CreatureCmd.Stun(base.Owner);
             //添加一回合失衡易伤50%
             await PowerCmd.Apply<DazeVulnPower>(base.Owner, 50m, null, null);
+
+            foreach (Creature Player in base.CombatState.PlayerCreatures)
+            {
+                if (Player != null && Player.IsAlive && Player.HasPower<SupportPointPower>())
+                {
+                    await PowerCmd.Apply<SupportPointPower>(Player, 3, base.Owner, null);
+                }
+                //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
+            }
         }
 
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)

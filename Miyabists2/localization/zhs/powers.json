@@ -47,6 +47,18 @@
     "MIYABISTS2-XSJS_POWER.description": "",
     "MIYABISTS2-XSJS_POWER.smartDescription": "每次使用 霜月 时，本回合力量+1",
 
+	"MIYABISTS2-MINGFUWG_POWER.title": "冥府挽歌",
+    "MIYABISTS2-MINGFUWG_POWER.description": "",
+    "MIYABISTS2-MINGFUWG_POWER.smartDescription": "{Amount}回合内，回合开始加一张《协奏狙杀》到手牌",
+
+	"MIYABISTS2-BAMIANWF_POWER.title": "八面威风",
+	"MIYABISTS2-BAMIANWF_POWER.description": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
+    "MIYABISTS2-BAMIANWF_POWER.smartDescription": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
+
+	"MIYABISTS2-LUOYUSH_POWER.title": "落羽生花",
+	"MIYABISTS2-LUOYUSH_POWER.description": "每回合使用攻击卡后给与敌人属性积蓄1，最多可触发{Amount}次",
+    "MIYABISTS2-LUOYUSH_POWER.smartDescription": "每回合使用攻击卡后给与敌人属性积蓄1，最多可触发{Amount}次",
+
 	"MIYABISTS2-MIYABI_PARRY_POWER.title": "招架",
     "MIYABISTS2-MIYABI_PARRY_POWER.description": "弹刀这一块",
     "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被护甲格挡下来的伤害，增加一张 [color=red]花辞[/color]到手牌，然后层数-1。",
