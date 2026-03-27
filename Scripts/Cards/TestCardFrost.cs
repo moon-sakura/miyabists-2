@@ -1,6 +1,9 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Relics;
 using Miyabists2.Scripts.Powers;
 using System;
@@ -9,10 +12,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Godot.HttpRequest;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [Pool(typeof(StatusCardPool))]
     internal class TestCardFrost : MiyabiCardBase
     {
         public TestCardFrost()
