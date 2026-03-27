@@ -87,7 +87,10 @@
 
 	"MIYABISTS2-MENGHU_ZHAKAIHUA.title": "恶虎七式·猛虎炸开花",
     "MIYABISTS2-MENGHU_ZHAKAIHUA.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，喧嚣+{Decible:diff()}\\n支援点数2：喧嚣+3",
-	
+
+	"MIYABISTS2-YONGTAN_HUACAI.title": "咏叹华彩",
+    "MIYABISTS2-YONGTAN_HUACAI.description": "每次使用伙伴卡获得1能量\\n支援点数2：从抽牌堆中选一张伙伴卡加入手卡",
+
 	"MIYABISTS2-ZHONGMO_CAIJUE.title": "终末裁决",
     "MIYABISTS2-ZHONGMO_CAIJUE.description": "打{Damage:diff()}，如果敌人处于击破状态，伤害变为3倍，移除敌人的击破与失衡易伤，移除后失衡{DAZE_POWER:diff()}\\n支援点数3：伤害+8",
 

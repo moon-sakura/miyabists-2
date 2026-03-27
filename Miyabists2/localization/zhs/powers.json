@@ -43,6 +43,10 @@
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "",
     "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块,上限为6",
 
+	"MIYABISTS2-YONGTAN_HUACAI_POWER.title": "咏叹华彩",
+    "MIYABISTS2-YONGTAN_HUACAI_POWER.description": "每次使用伙伴卡获得1能量",
+	"MIYABISTS2-YONGTAN_HUACAI_POWER.smartDescription": "每次使用伙伴卡获得1能量",
+
 	"MIYABISTS2-TRAIN_SPEAK_POWER.title": "说话不超过五个字修行",
     "MIYABISTS2-TRAIN_SPEAK_POWER.description": "",
     "MIYABISTS2-TRAIN_SPEAK_POWER.smartDescription": "每回合仅限使用5张卡，还剩{Amount}回合",
