@@ -28,11 +28,11 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            if (base.Owner.HasPower<BreakPower>()) 
-            {
-                await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
-                return; 
-            } // 如果已经有BreakPower，不再触发
+            //if (base.Owner.HasPower<BreakPower>()) 
+            //{
+            //    await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
+            //    return; 
+            //} // 如果已经有BreakPower，不再触发
             Amount++;
             //await CheckDazeTrigger(base.Owner);
         }

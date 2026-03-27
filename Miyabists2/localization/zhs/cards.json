@@ -39,7 +39,7 @@
     "MIYABISTS2-ZHANSHU_CHONGZHENG.description": "抽{Cards:diff()}张卡\\n每有一张伙伴卡，获得1支援点数",
 
 	"MIYABISTS2-RANYOUYIN_SHARE.title": "燃油饮分享装",
-    "MIYABISTS2-RANYOUYIN_SHARE.description": "自己获得一层易伤，喧嚣+5，支援点数+1\\n如果本回合使用过伙伴卡，则重放1",
+    "MIYABISTS2-RANYOUYIN_SHARE.description": "自己获得一层易伤，喧嚣+{Decible:diff()}，支援点数+1\\n如果本回合使用过伙伴卡，则重放1",
 
 	"MIYABISTS2-CHUN_LIN.title": "春临",
     "MIYABISTS2-CHUN_LIN.description": "全体烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n从抽卡堆选一张伙伴卡到手中，添加保留",
@@ -84,6 +84,9 @@
 
 	"MIYABISTS2-BAOJUN_MENGJI.title": "暴君猛击",
     "MIYABISTS2-BAOJUN_MENGJI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，{Block:diff()}护甲，招架{PARRY_POWER:diff()}\\n支援点数2：覆甲4",
+
+	"MIYABISTS2-MENGHU_ZHAKAIHUA.title": "恶虎七式·猛虎炸开花",
+    "MIYABISTS2-MENGHU_ZHAKAIHUA.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，喧嚣+{Decible:diff()}\\n支援点数2：喧嚣+3",
 	
 	"MIYABISTS2-ZHONGMO_CAIJUE.title": "终末裁决",
     "MIYABISTS2-ZHONGMO_CAIJUE.description": "打{Damage:diff()}，如果敌人处于击破状态，伤害变为3倍，移除敌人的击破与失衡易伤，移除后失衡{DAZE_POWER:diff()}\\n支援点数3：伤害+8",

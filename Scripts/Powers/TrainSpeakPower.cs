@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        int turnLimit = 3;
+        int turnLimit = 2;
 
         //类似眩晕机制
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
@@ -58,6 +58,11 @@ namespace Miyabists2.Scripts.Powers
             if (side == base.Owner.Side)
             {
                 Flash();
+                if (Amount == 0)
+                {
+                    await PowerCmd.Remove(this);
+                    return;
+                }
                 Amount--;
             }
         }

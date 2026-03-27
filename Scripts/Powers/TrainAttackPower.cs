@@ -28,7 +28,7 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        int turnLimit = 3;
+        int turnLimit = 2;
         int cardsLimit = 3;
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
@@ -59,6 +59,11 @@ namespace Miyabists2.Scripts.Powers
             if (side == base.Owner.Side)
             {
                 Flash();
+                if (Amount == 0)
+                {
+                    await PowerCmd.Remove(this);
+                    return;
+                }
                 Amount--;
             }
         }
@@ -87,7 +92,7 @@ namespace Miyabists2.Scripts.Powers
             {
                 return true;
             }
-            return CombatManager.Instance.History.CardPlaysStarted.Count((CardPlayStartedEntry e) => e.HappenedThisTurn(base.CombatState) && e.CardPlay.Card.Owner.Creature == base.Owner) <= 3;
+            return CombatManager.Instance.History.CardPlaysStarted.Count((CardPlayStartedEntry e) => e.HappenedThisTurn(base.CombatState) && e.CardPlay.Card.Owner.Creature == base.Owner) < 3;
         }
 
         public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
@@ -136,7 +141,7 @@ namespace Miyabists2.Scripts.Powers
             }
             if (!flag2)
             {
-                return base.Amount >= cardsLimit;
+                return false;//base.Amount >= cardsLimit;
             }
             return true;
         }

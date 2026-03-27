@@ -30,3 +30,4 @@ namespace Miyabists2.Scripts.Powers
             return amount + (decimal)base.Amount;
         }
     }
+}
