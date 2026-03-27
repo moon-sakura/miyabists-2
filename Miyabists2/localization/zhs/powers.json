@@ -43,6 +43,38 @@
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "",
     "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块,上限为6",
 
+	"MIYABISTS2-TRAIN_SPEAK_POWER.title": "说话不超过五个字修行",
+    "MIYABISTS2-TRAIN_SPEAK_POWER.description": "",
+    "MIYABISTS2-TRAIN_SPEAK_POWER.smartDescription": "每回合仅限使用5张卡，还剩{Amount}回合",
+
+	"MIYABISTS2-TRAIN_SPEAK_OVER_POWER.title": "修行完成",
+    "MIYABISTS2-TRAIN_SPEAK_OVER_POWER.description": "",
+    "MIYABISTS2-TRAIN_SPEAK_OVER_POWER.smartDescription": "每回合前5张卡费用减1",
+
+	"MIYABISTS2-TRAIN_ATTACK_POWER.title": "只出三招修行",
+    "MIYABISTS2-TRAIN_ATTACK_POWER.description": "",
+    "MIYABISTS2-TRAIN_ATTACK_POWER.smartDescription": "每回合最多使用3张卡，卡全部免费使用，还剩{Amount}回合",
+
+	"MIYABISTS2-TRAIN_ATTACK_OVER_POWER.title": "修行完成",
+    "MIYABISTS2-TRAIN_ATTACK_OVER_POWER.description": "",
+    "MIYABISTS2-TRAIN_ATTACK_OVER_POWER.smartDescription": "每回合开始时获得3点能量",
+
+	"MIYABISTS2-TRAIN_STEP_POWER.title": "进门先踏右脚修行",
+    "MIYABISTS2-TRAIN_STEP_POWER.description": "",
+    "MIYABISTS2-TRAIN_STEP_POWER.smartDescription": "每回合使用攻击卡后需弃掉一张手卡，还剩{Amount}回合",
+
+	"MIYABISTS2-TRAIN_STEP_OVER_POWER.title": "修行完成",
+    "MIYABISTS2-TRAIN_STEP_OVER_POWER.description": "",
+    "MIYABISTS2-TRAIN_STEP_OVER_POWER.smartDescription": "每回合使用攻击卡后抽一张卡",
+
+	"MIYABISTS2-TRAIN_EAT_POWER.title": "只吃蜜瓜修行",
+    "MIYABISTS2-TRAIN_EAT_POWER.description": "",
+    "MIYABISTS2-TRAIN_EAT_POWER.smartDescription": "不可使用攻击卡，还剩{Amount}回合",
+
+	"MIYABISTS2-TRAIN_EAT_OVER_POWER.title": "修行完成",
+    "MIYABISTS2-TRAIN_EAT_OVER_POWER.description": "",
+    "MIYABISTS2-TRAIN_EAT_OVER_POWER.smartDescription": "所有攻击卡费用-1",
+
 	"MIYABISTS2-XSJS_POWER.title": "雪上加霜",
     "MIYABISTS2-XSJS_POWER.description": "",
     "MIYABISTS2-XSJS_POWER.smartDescription": "每次使用 霜月 时，本回合力量+1",

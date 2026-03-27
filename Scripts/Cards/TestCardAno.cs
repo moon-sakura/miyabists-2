@@ -20,9 +20,7 @@ namespace Miyabists2.Scripts.Cards
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(0, ValueProp.Move),
-            new DynamicVar(AnomalyBuildupVarName,3),
-            new BlockVar(0,ValueProp.Move),
+            new DynamicVar(AnomalyBuildupVarName,3)
         ];
     }
 }

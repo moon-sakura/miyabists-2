@@ -1,3 +1,4 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+    //[Pool(typeof(StatusCardPool))]
     internal class FeiXueTwo:MiyabiAttackCardBase
     {
         //public override string PortraitPath => $"res://images/cards/feng_hua.png";
