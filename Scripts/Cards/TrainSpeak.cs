@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [Pool(typeof(StatusCardPool))]
     internal class TrainSpeak:MiyabiCardBase
     {
-        [Pool(typeof(StatusCardPool))]
         public TrainSpeak() : base(0, CardType.Status, CardRarity.None, TargetType.Self, true) { }
     }
 }

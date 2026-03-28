@@ -22,15 +22,22 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        // 效果 1：添加时立即造成 20 点伤害
-        //public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
-        //{
-        //    // 这里的 context 尝试从当前上下文中获取，如果没有则传 null
-        //    //await CreatureCmd.Damage((PlayerChoiceContext)null, base.Owner, 50m, ValueProp.Unpowered, (Creature)null);
-        //    await DamageCmd.Attack(20m)
-        //        .Targeting(base.Owner)
-        //        .Execute(null);
-        //}
+        //效果 1：添加时立即造成 20 点伤害
+        public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+        {
+            // 这里的 context 尝试从当前上下文中获取，如果没有则传 null
+            //await CreatureCmd.Damage((PlayerChoiceContext)null, base.Owner, 50m, ValueProp.Unpowered, (Creature)null);
+            //await DamageCmd.Attack(20m).Targeting(base.Owner).Execute(null);
+
+            foreach (Creature Player in base.CombatState.PlayerCreatures)
+            {
+                if (Player != null && Player.IsAlive && Player.HasPower<SupportPointPower>())
+                {
+                    await PowerCmd.Apply<FrostFallPower>(Player, 2, base.Owner, null);
+                }
+                //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
+            }
+        }
 
         // 效果 2：下一击伤害 2 倍
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)

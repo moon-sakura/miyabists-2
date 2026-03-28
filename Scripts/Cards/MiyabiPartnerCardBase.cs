@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Cards
         protected const string SlipperyVarName = "SLIPPERY_POWER";
         protected const string AnomalyBuildupVarName = "ANOBUILD_POWER";
 
-        protected const bool isDirectAno = false;
+        //protected const bool isDirectAno = false;
 
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];
@@ -88,41 +88,9 @@ namespace Miyabists2.Scripts.Cards
             //        await PowerCmd.Apply<AnomalyBuildupPower>(cardPlay.Target, anoVar.BaseValue, base.Owner.Creature, this); 
             //    }
             //}
-            if ((base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out var anoVar) && anoVar.BaseValue > 0) || isDirectAno)
+            if ((base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out var anoVar) && anoVar.BaseValue > 0))
             {
-                var target = cardPlay.Target;
-                int trigger = MiyabiCombatService.GetAnoTrigger();
-                bool hasAnomaly = target.HasPower<AttributeAnomalyPower>();
-                int chkAno = anoVar.IntValue;
-                if (target.HasPower<AnomalyBuildupPower>())
-                    chkAno += target.GetPowerAmount<AnomalyBuildupPower>();
-
-                // 情况 A：已经有异常状态了
-                if (hasAnomaly)
-                {
-                    if (isDirectAno || chkAno >= trigger + 1) // 满溢则紊乱
-                    {
-                        await MiyabiCombatService.DisorderApply(target, base.Owner.Creature, choiceContext);
-                    }
-                    else // 未满则继续堆积蓄
-                    {
-                        await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar.BaseValue, base.Owner.Creature, this);
-                    }
-                }
-                // 情况 B：还没有异常状态
-                else
-                {
-                    if (isDirectAno || chkAno >= trigger + 1) // 满溢则触发异常
-                    {
-                        await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, base.Owner.Creature, this);
-                        if (!isDirectAno) // 扣除触发掉的积蓄
-                            await PowerCmd.Apply<AnomalyBuildupPower>(target, -trigger, base.Owner.Creature, this);
-                    }
-                    else // 未满则仅仅添加积蓄
-                    {
-                        await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar.BaseValue, base.Owner.Creature, this);
-                    }
-                }
+                await MiyabiCombatService.AddAnoBuildup(cardPlay.Target, anoVar.IntValue, base.Owner.Creature, this, choiceContext);
             }
 
             

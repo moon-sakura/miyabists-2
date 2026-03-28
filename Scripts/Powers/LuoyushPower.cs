@@ -1,18 +1,19 @@
 using BaseLib.Abstracts;
+using Godot;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Service;
-using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Combat;
 
 namespace Miyabists2.Scripts.Powers
 {
@@ -36,7 +37,7 @@ namespace Miyabists2.Scripts.Powers
             if (countOneTurn < Amount)
             {
                 countOneTurn++;
-                await PowerCmd.Apply<AnomalyBuildupPower>(cardPlay.Target, 1, base.Owner, null);
+                await MiyabiCombatService.AddAnoBuildup(cardPlay.Target, 1, base.Owner, null, context);
             }
 
 

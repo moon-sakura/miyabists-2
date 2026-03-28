@@ -44,6 +44,44 @@ namespace Miyabists2.Scripts.Service
         public static void ResetAnoT() => AnoTrigger = 5;
         public static int GetAnoTrigger() => AnoTrigger;
 
+        public static async Task AddAnoBuildup(Creature target, int anoVar, Creature dealer, CardModel card, PlayerChoiceContext choiceContext)
+        {
+            //处理Amount而不是DisplayAmount
+            int trigger = GetAnoTrigger() + 1;
+            bool hasAnomaly = target.HasPower<AttributeAnomalyPower>();
+            int chkAno = anoVar;
+            if (target.HasPower<AnomalyBuildupPower>())
+                chkAno += target.GetPowerAmount<AnomalyBuildupPower>();
+
+            // 情况 A：已经有异常状态了
+            if (hasAnomaly)
+            {
+                if (chkAno >= trigger) // 满溢则紊乱
+                {
+                    await DisorderApply(target, dealer, choiceContext);
+                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
+                }
+                else // 未满则继续堆积蓄
+                {
+                    await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar, dealer, card);
+                }
+            }
+            // 情况 B：还没有异常状态
+            else
+            {
+                if (chkAno >= trigger) // 满溢则触发异常
+                {
+                    await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, dealer, card);
+                    //await PowerCmd.Apply<AnomalyBuildupPower>(target, 1-trigger, dealer, card);
+                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
+                }
+                else // 未满则仅仅添加积蓄
+                {
+                    await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar, dealer, card);
+                }
+            }
+        }
+
 
         //用于调用各种触发
         //紊乱触发

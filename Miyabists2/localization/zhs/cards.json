@@ -60,8 +60,14 @@
 	"MIYABISTS2-BAMIAN_WEIFENG.title": "八面威风",
     "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
 
+	"MIYABISTS2-TIANMI_JINGXIA.title": "甜蜜惊吓",
+    "MIYABISTS2-TIANMI_JINGXIA.description": "每回合结束时，所有敌人打3，属性异常1",
+
+	"MIYABISTS2-CUTE_FEITIANZHUANG.title": "可爱地雷飞天撞",
+    "MIYABISTS2-CUTE_FEITIANZHUANG.description": "失衡{DAZE_POWER:diff()}\\n敌人每有1层属性积蓄，额外失衡5（属性异常视为3层，紊乱视为5层）\\n支援点数1：造成失衡+20%",
+
 	"MIYABISTS2-SONG_KE.title": "送客！",
-    "MIYABISTS2-BSONG_KE.description": "失衡{DAZE_POWER:diff()}\\n支援点数3：添加一张0费虚无终结技（《名残雪》）到手中",
+    "MIYABISTS2-SONG_KE.description": "失衡{DAZE_POWER:diff()}\\n支援点数3：添加一张0费虚无终结技（《名残雪》）到手中",
 
 
 	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
@@ -94,6 +100,9 @@
 
 	"MIYABISTS2-YONGTAN_HUACAI.title": "咏叹华彩",
     "MIYABISTS2-YONGTAN_HUACAI.description": "每次使用伙伴卡获得1能量\\n支援点数2：从抽牌堆中选一张伙伴卡加入手卡",
+
+	"MIYABISTS2-SHUANGYUE_JIASHI.title": "霜月架势",
+    "MIYABISTS2-SHUANGYUE_JIASHI.description": "每回合开始时获得2点落霜",
 
 	"MIYABISTS2-ZHONGMO_CAIJUE.title": "终末裁决",
     "MIYABISTS2-ZHONGMO_CAIJUE.description": "打{Damage:diff()}，如果敌人处于击破状态，伤害变为3倍，移除敌人的击破与失衡易伤，移除后失衡{DAZE_POWER:diff()}\\n支援点数3：伤害+8",

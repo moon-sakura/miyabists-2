@@ -25,7 +25,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(StatusCardPool))]
+    //[Pool(typeof(StatusCardPool))]
     internal class ShuangYue:MiyabiAttackCardBase
     {
         //public override string PortraitPath => $"res://images/cards/feng_hua.png";

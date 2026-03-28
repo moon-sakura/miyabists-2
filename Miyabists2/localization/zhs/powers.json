@@ -47,6 +47,15 @@
     "MIYABISTS2-YONGTAN_HUACAI_POWER.description": "每次使用伙伴卡获得1能量",
 	"MIYABISTS2-YONGTAN_HUACAI_POWER.smartDescription": "每次使用伙伴卡获得1能量",
 
+	"MIYABISTS2-SHUANGYUEJS_POWER.title": "霜月架势",
+    "MIYABISTS2-SHUANGYUEJS_POWER.smartDescription": "每回合开始时获得2点落霜",
+	"MIYABISTS2-SHUANGYUEJS_POWER.description": "每回合开始时获得2点落霜",
+
+	"MIYABISTS2-TIANMIJX_POWER.title": "甜蜜惊吓",
+    "MIYABISTS2-TIANMIJX_POWER.description": "每回合结束时，所有敌人打3，属性异常1",
+	"MIYABISTS2-TIANMIJX_POWER.smartDescription": "每回合结束时，所有敌人打3，属性异常1",
+
+
 	"MIYABISTS2-TRAIN_SPEAK_POWER.title": "说话不超过五个字修行",
     "MIYABISTS2-TRAIN_SPEAK_POWER.description": "",
     "MIYABISTS2-TRAIN_SPEAK_POWER.smartDescription": "每回合仅限使用5张卡，还剩{Amount}回合",
