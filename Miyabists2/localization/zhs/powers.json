@@ -43,6 +43,13 @@
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "",
     "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块,上限为6",
 
+	"MIYABISTS2-TUNAFA_POWER.title": "吐纳法",
+    "MIYABISTS2-TUNAFA_POWER.description": "",
+    "MIYABISTS2-TUNAFA_POWER.smartDescription": "每使用5张风花，落霜+1，已使用{CardsCount}张",
+
+	"MIYABISTS2-TIANZIZY_POWER.title": "天资卓越",
+    "MIYABISTS2-TIANZIZY_POWER.description": "每次使用霜月，自动使用一次霜月·极意",
+
 	"MIYABISTS2-YONGTAN_HUACAI_POWER.title": "咏叹华彩",
     "MIYABISTS2-YONGTAN_HUACAI_POWER.description": "每次使用伙伴卡获得1能量",
 	"MIYABISTS2-YONGTAN_HUACAI_POWER.smartDescription": "每次使用伙伴卡获得1能量",
