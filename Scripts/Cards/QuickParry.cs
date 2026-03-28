@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers.Mocks;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,11 @@ namespace Miyabists2.Scripts.Cards
     {
         //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public QuickParry() : base(0, CardRarity.Common, true) { }
+        public QuickParry() : base(1, CardRarity.Common, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(2, ValueProp.Move),
-            new DynamicVar(ParryVarName, 1),
-            new DamageVar(0, ValueProp.Move)
+            new DynamicVar(ParryVarName, 1)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -48,16 +48,14 @@ namespace Miyabists2.Scripts.Cards
                     await CardPileCmd.Add(item, PileType.Hand);
                 }
             }
+
+            await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, 1, null, null);
         }
 
 
         protected override void OnUpgrade()
         {
-            // 升级增加 2 点护甲
-            DynamicVars.Block.UpgradeValueBy(2);
-
-            // 如果需要升级 Parry 或 Slippery，可以在此添加逻辑
-            // if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
+            EnergyCost.UpgradeBy(-1);
         }
     }
 }

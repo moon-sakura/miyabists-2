@@ -33,7 +33,7 @@
     "MIYABISTS2-HUA_FA.description": "{Block:diff()}护甲\\n招架{PARRY_POWER:diff()}\\n若本回合使用过伙伴牌，则额外6护甲，招架1",
 
 	"MIYABISTS2-QUICK_PARRY.title": "快速招架",
-    "MIYABISTS2-QUICK_PARRY.description": "{Block:diff()}护甲\\n招架{PARRY_POWER:diff()}\\n将抽牌堆中随机一张伙伴卡加入手卡",
+    "MIYABISTS2-QUICK_PARRY.description": "{Block:diff()}护甲\\n招架{PARRY_POWER:diff()}\\n支援点数+1，将抽牌堆中随机一张伙伴卡加入手卡",
 
 	"MIYABISTS2-ZHANSHU_CHONGZHENG.title": "战术重整",
     "MIYABISTS2-ZHANSHU_CHONGZHENG.description": "抽{Cards:diff()}张卡\\n每有一张伙伴卡，获得1支援点数",
@@ -59,6 +59,10 @@
 
 	"MIYABISTS2-BAMIAN_WEIFENG.title": "八面威风",
     "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
+
+	"MIYABISTS2-SONG_KE.title": "送客！",
+    "MIYABISTS2-BSONG_KE.description": "失衡{DAZE_POWER:diff()}\\n支援点数3：添加一张0费虚无终结技（《名残雪》）到手中",
+
 
 	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
     "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合使用攻击卡后给与敌人属性积蓄1，最多可触发{LuoYu:diff()}次",
