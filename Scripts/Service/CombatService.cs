@@ -44,6 +44,20 @@ namespace Miyabists2.Scripts.Service
         public static void ResetAnoT() => AnoTrigger = 5;
         public static int GetAnoTrigger() => AnoTrigger;
 
+        //新月祝福
+        public static bool IsAnyHasMoonBlessing(Creature c)
+        {
+            foreach (Creature Player in c.CombatState.PlayerCreatures)
+            {
+                if (Player != null && Player.IsAlive && Player.HasPower<BlessingMoonPower>())
+                {
+                    return true;
+                }
+                //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
+            }
+            return false;
+        }
+
         //冰焰
         public static decimal FrostFireLimit { get; set; } = 0.5m;
         public static decimal GetFrostFireLimit() => FrostFireLimit;
@@ -58,6 +72,7 @@ namespace Miyabists2.Scripts.Service
             int chkAno = anoVar;
             if (target.HasPower<AnomalyBuildupPower>())
                 chkAno += target.GetPowerAmount<AnomalyBuildupPower>();
+
 
             // 情况 A：已经有异常状态了
             if (hasAnomaly)
@@ -95,10 +110,16 @@ namespace Miyabists2.Scripts.Service
         //紊乱触发
         public static async Task DisorderApply(Creature target, Creature dealer, PlayerChoiceContext choiceContext)
         {
+
+            bool moonBless = IsAnyHasMoonBlessing(dealer);
+
             await PowerCmd.Remove<AttributeAnomalyPower>(target);
             await PowerCmd.Apply<DisorderPower>(target, 1, dealer, null);
             //造成10%点伤害
             decimal damage = target.MaxHp * DisorderDamageRate;
+
+            if (moonBless) damage += target.MaxHp * 0.05m;
+
             await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered & ValueProp.Unblockable, dealer);
         }
 

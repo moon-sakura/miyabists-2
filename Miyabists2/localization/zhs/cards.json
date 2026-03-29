@@ -66,6 +66,12 @@
 	"MIYABISTS2-BAMIAN_WEIFENG.title": "八面威风",
     "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
 
+	"MIYABISTS2-SP_XIAOYE.title": "SP：小夜骑士",
+    "MIYABISTS2-SP_XIAOYE.description": "自己和敌方各获得一层无实体，从所有卡牌里选择两张卡牌消耗",
+
+	"MIYABISTS2-BLESSING_OFMOON.title": "新月的祝福",
+    "MIYABISTS2-BLESSING_OFMOON.description": "受到致命伤害时，避免死亡并恢复{Bless:diff()}%的生命\\n触发属性异常与紊乱时额外造成5%最大生命值伤害",
+
 	"MIYABISTS2-TIANMI_JINGXIA.title": "甜蜜惊吓",
     "MIYABISTS2-TIANMI_JINGXIA.description": "每回合结束时，所有敌人打3，属性异常1\\n支援点数1：所有敌人属性积蓄1",
 

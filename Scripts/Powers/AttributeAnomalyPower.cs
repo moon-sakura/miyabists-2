@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Service;
 namespace Miyabists2.Scripts.Powers
 {
     internal class AttributeAnomalyPower : CustomPowerModel
@@ -71,6 +72,10 @@ namespace Miyabists2.Scripts.Powers
         public async Task DealAno(PlayerChoiceContext choiceContext)
         {
             decimal damage = Owner.MaxHp * 0.05m;
+
+            if (MiyabiCombatService.IsAnyHasMoonBlessing(Owner))
+                damage += Owner.MaxHp * 0.05m;
+
             await CreatureCmd.Damage(choiceContext, base.Owner, damage, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
         }
 
