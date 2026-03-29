@@ -16,6 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class SongKe : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/songKe.png";
         public SongKe() : base(3, CardRarity.Rare, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

@@ -15,8 +15,10 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+
     internal class XueshangJiashuang : MiyabiCardBase
     {
+        public override string PortraitPath => $"res://images/cards/xueshangJiashuang.png";
         public XueshangJiashuang() : base(2,CardType.Power, CardRarity.Uncommon,TargetType.Self, true) { }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -17,6 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class YongtanHuacai : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/yongtanHuacai.png";
         public YongtanHuacai() : base(3, CardRarity.Rare, TargetType.Self, CardType.Power) { }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

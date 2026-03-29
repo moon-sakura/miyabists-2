@@ -17,6 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class HuanxiangshiZouming : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/huanxiangshiZouming.png";
         public HuanxiangshiZouming() : base(2, CardRarity.Uncommon, TargetType.Self, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

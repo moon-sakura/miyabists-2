@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class MingCanXue : MiyabiAttackCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        public override string PortraitPath => $"res://images/cards/mingCanxue.png";
 
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>

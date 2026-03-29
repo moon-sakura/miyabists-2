@@ -14,7 +14,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class BaojunMengji : MiyabiPartnerCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        public override string PortraitPath => $"res://images/cards/baojunMengji.png";
 
         public BaojunMengji() : base(3,CardRarity.Uncommon, TargetType.AnyEnemy) { }
 

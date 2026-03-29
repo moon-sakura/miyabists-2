@@ -12,6 +12,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ShuangyueJiashi : MiyabiCardBase
     {
+        public override string PortraitPath => $"res://images/cards/shuangyueJiashi.png";
         public ShuangyueJiashi():base(3,CardType.Power,CardRarity.Common,TargetType.Self) { }
 
         protected override async  Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

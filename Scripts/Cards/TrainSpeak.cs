@@ -12,6 +12,7 @@ namespace Miyabists2.Scripts.Cards
     [Pool(typeof(StatusCardPool))]
     internal class TrainSpeak:MiyabiCardBase
     {
+        public override string PortraitPath => $"res://images/cards/trainSpeak.png";
         public TrainSpeak() : base(0, CardType.Status, CardRarity.None, TargetType.Self, true) { }
     }
 }

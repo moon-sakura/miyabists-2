@@ -15,6 +15,8 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class XingmangZhongzhang : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/xingmangZhongzhang.png";
+
         public XingmangZhongzhang() : base(2, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

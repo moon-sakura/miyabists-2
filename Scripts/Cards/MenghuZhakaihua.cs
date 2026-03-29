@@ -15,6 +15,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class MenghuZhakaihua: MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/menghuZhakaihua.png";
         public MenghuZhakaihua() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

@@ -12,6 +12,7 @@ namespace Miyabists2.Scripts.Cards
     [Pool(typeof(StatusCardPool))]
     internal class TrainEat : MiyabiCardBase
     {
+        public override string PortraitPath => $"res://images/cards/trainEat.png";
         public TrainEat() : base(0, CardType.Status, CardRarity.None, TargetType.Self, true) { }
     }
 }

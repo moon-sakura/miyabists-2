@@ -17,6 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class MingfuWange : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/mingfuWange.png";
         public MingfuWange() : base(2, CardRarity.Rare, TargetType.AnyEnemy,CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

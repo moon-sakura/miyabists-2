@@ -17,6 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ByeQuanleida : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/byeQuanleida.png";
         public ByeQuanleida():base(1,CardRarity.Rare,TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

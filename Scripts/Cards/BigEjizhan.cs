@@ -16,6 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class BigEjizhan : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/bigEjizhan.png";
         public BigEjizhan() : base(2, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
