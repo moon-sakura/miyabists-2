@@ -59,13 +59,13 @@ namespace Miyabists2.Scripts.Powers
         //    }
         //}
 
-        // 效果 3：每回合结束受到 5 点伤害
+        // 效果 3：每回合结束受到 5% 伤害
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if (side == base.Owner.Side)
             {
-                // 造成 5 点固定伤害（Unpowered 确保不被自己再次增幅）
-                await CreatureCmd.Damage(choiceContext, base.Owner, 10m, ValueProp.Unpowered, (Creature)null);
+                decimal damage = Owner.MaxHp * 0.05m;
+                await CreatureCmd.Damage(choiceContext, base.Owner, damage, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
             }
         }
 

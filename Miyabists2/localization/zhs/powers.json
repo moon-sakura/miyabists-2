@@ -29,7 +29,7 @@
 
 	"MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.title": "属性异常",
     "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.description": "多种元素在体内冲突。",
-    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "每回合结束时受到 [color=red]10[/color] 点伤害。添加时如果已存在该效果则触发[color=purple]紊乱[/color]。",
+    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "每回合结束时受到最大生命值 5% 的伤害。添加时如果已存在该效果则触发[color=purple]紊乱[/color]。",
 
 	"MIYABISTS2-ANOMALY_BUILDUP_POWER.title": "属性积蓄",
     "MIYABISTS2-ANOMALY_BUILDUP_POWER.description": "爆！",
@@ -37,7 +37,7 @@
 
 	"MIYABISTS2-DISORDER_POWER.title": "紊乱",
     "MIYABISTS2-DISORDER_POWER.description": "爆！",
-    "MIYABISTS2-DISORDER_POWER.smartDescription": "立即造成20点伤害，下一击伤害翻倍",
+    "MIYABISTS2-DISORDER_POWER.smartDescription": "立即造成最大生命值 10% 的伤害，下一击伤害翻倍",
 
 	"MIYABISTS2-SUPPORT_POINT_POWER.title": "支援点数",
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "",

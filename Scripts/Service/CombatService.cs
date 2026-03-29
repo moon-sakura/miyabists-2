@@ -88,6 +88,8 @@ namespace Miyabists2.Scripts.Service
             }
         }
 
+        public static decimal DisorderDamageRate { get; set; } = 0.1m;
+        public static void ResetDisorderDamageRate() { DisorderDamageRate = 0.1m; }
 
         //用于调用各种触发
         //紊乱触发
@@ -95,8 +97,9 @@ namespace Miyabists2.Scripts.Service
         {
             await PowerCmd.Remove<AttributeAnomalyPower>(target);
             await PowerCmd.Apply<DisorderPower>(target, 1, dealer, null);
-            //造成20点伤害
-            await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
+            //造成10%点伤害
+            decimal damage = target.MaxHp * DisorderDamageRate;
+            await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered & ValueProp.Unblockable, dealer);
         }
 
         //霜灼增加
