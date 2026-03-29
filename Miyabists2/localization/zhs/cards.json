@@ -67,7 +67,8 @@
     "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
 
 	"MIYABISTS2-SP_XIAOYE.title": "SP：小夜骑士",
-    "MIYABISTS2-SP_XIAOYE.description": "自己和敌方各获得一层无实体，从所有卡牌里选择两张卡牌消耗",
+    "MIYABISTS2-SP_XIAOYE.description": "自己和敌方各获得一层无实体，从所有卡牌里选择{Cards:diff()}张卡牌消耗",
+	"MIYABISTS2-SP_XIAOYE.selectionScreenPrompt": "选择{Cards:diff()}张卡消耗",
 
 	"MIYABISTS2-BLESSING_OFMOON.title": "新月的祝福",
     "MIYABISTS2-BLESSING_OFMOON.description": "受到致命伤害时，避免死亡并恢复{Bless:diff()}%的生命\\n触发属性异常与紊乱时额外造成5%最大生命值伤害",
@@ -107,7 +108,7 @@
     "MIYABISTS2-BAOJUN_MENGJI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，{Block:diff()}护甲，招架{PARRY_POWER:diff()}\\n支援点数2：覆甲4",
 
 	"MIYABISTS2-MENGHU_ZHAKAIHUA.title": "恶虎七式·猛虎炸开花",
-    "MIYABISTS2-MENGHU_ZHAKAIHUA.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，喧嚣+{Decible:diff()}\\n支援点数2：喧嚣+3",
+    "MIYABISTS2-MENGHU_ZHAKAIHUA.description": "失衡{DAZE_POWER:diff()}\\n支援点数1：喧嚣+{Decible:diff()}",
 
 	"MIYABISTS2-YONGTAN_HUACAI.title": "咏叹华彩",
     "MIYABISTS2-YONGTAN_HUACAI.description": "每次使用伙伴卡获得1能量\\n支援点数2：从抽牌堆中选一张伙伴卡加入手卡",
@@ -138,7 +139,7 @@
     "MIYABISTS2-TU_NA_FA.description": "每使用5张风花，落霜+1\\n升级后，本场战斗卡组中所有《风花》费用变为0",
 
 	"MIYABISTS2-JUN_LIE.title": "皲裂",
-    "MIYABISTS2-JUN_LIE.description": "每次造成烈霜伤害时，喧嚣值+1",
+    "MIYABISTS2-JUN_LIE.description": "每次使用烈霜卡牌时，喧嚣值+1",
 
 	"MIYABISTS2-ZHONGMO_CAIJUE.title": "终末裁决",
     "MIYABISTS2-ZHONGMO_CAIJUE.description": "打{Damage:diff()}，如果敌人处于击破状态，伤害变为3倍，移除敌人的击破与失衡易伤，移除后失衡{DAZE_POWER:diff()}\\n支援点数3：伤害+8",

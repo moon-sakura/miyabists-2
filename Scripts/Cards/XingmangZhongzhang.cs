@@ -38,6 +38,7 @@ namespace Miyabists2.Scripts.Cards
             if (base.CheckSupportCost(3) != 0)
             {
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XingmangYuanwuqu>(base.Owner.Creature.Player);
+                reward1.SetToFreeThisTurn();
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
                 await CostSupporPoint(3);
             }

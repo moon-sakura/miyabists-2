@@ -49,7 +49,7 @@
 
 	"MIYABISTS2-JUN_LIE_POWER.title": "皲裂",
     "MIYABISTS2-JUN_LIE_POWER.description": "",
-    "MIYABISTS2-JUN_LIE_POWER.smartDescription": "每次造成烈霜卡牌时，喧嚣+1",
+    "MIYABISTS2-JUN_LIE_POWER.smartDescription": "每次使用烈霜卡牌时，喧嚣+1",
 
 	"MIYABISTS2-TIANZIZY_POWER.title": "天资卓越",
     "MIYABISTS2-TIANZIZY_POWER.description": "每次使用霜月，自动使用一次霜月·极意",
@@ -59,8 +59,8 @@
 	"MIYABISTS2-YONGTAN_HUACAI_POWER.smartDescription": "每次使用伙伴卡获得1能量",
 
 	"MIYABISTS2-BLESSING_MOON_POWER.title": "新月的祝福",
-    "MIYABISTS2-BLESSING_MOON_POWER.description": "受到致命伤害时，避免死亡并恢复{Bless:diff()}%的生命\\n触发属性异常与紊乱时额外造成5%最大生命值伤害",
-	"MIYABISTS2-BLESSING_MOON_POWER.smartDescription": "受到致命伤害时，避免死亡并恢复{Bless:diff()}%的生命\\n触发属性异常与紊乱时额外造成5%最大生命值伤害",
+    "MIYABISTS2-BLESSING_MOON_POWER.description": "受到致命伤害时，避免死亡并恢复{Amount}%的生命\\n触发属性异常与紊乱时额外造成5%最大生命值伤害",
+	"MIYABISTS2-BLESSING_MOON_POWER.smartDescription": "受到致命伤害时，避免死亡并恢复{Amount}%的生命\\n触发属性异常与紊乱时额外造成5%最大生命值伤害",
 
 	"MIYABISTS2-SHUANGYUEJS_POWER.title": "霜月架势",
     "MIYABISTS2-SHUANGYUEJS_POWER.smartDescription": "每回合开始时获得2点落霜",

@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
         public SongKe() : base(3, CardRarity.Rare, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar(DazeVarName, 15)
+            new DynamicVar(DazeVarName, 20)
         ];
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<MingCanXue>()];
 

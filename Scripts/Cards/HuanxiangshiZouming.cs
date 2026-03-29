@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class HuanxiangshiZouming : MiyabiPartnerCardBase
     {
-        public HuanxiangshiZouming() : base(2, CardRarity.Uncommon, TargetType.Self, CardType.Power) { }
+        public HuanxiangshiZouming() : base(2, CardRarity.Uncommon, TargetType.Self, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("SupportPoint",1)
@@ -50,7 +50,7 @@ namespace Miyabists2.Scripts.Cards
             if (base.CheckSupportCost(2) != 0)
             {
                 CardSelectorPrefs prefs2 = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
-                List<CardModel> cardsIn2 = (from c in PileType.Draw.GetPile(base.Owner).Cards
+                List<CardModel> cardsIn2 = (from c in PileType.Discard.GetPile(base.Owner).Cards
                                            where c.Type != CardType.Power
                                            orderby c.Rarity, c.Id
                                            select c).ToList();

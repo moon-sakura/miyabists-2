@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Cards
         public MenghuZhakaihua() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(5, ValueProp.Move),
+            //new DamageVar(5, ValueProp.Move),
             new DynamicVar(DazeVarName, 20),
             new DynamicVar("Decible",5)
         ];
@@ -27,13 +27,13 @@ namespace Miyabists2.Scripts.Cards
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            if (base.DynamicVars.Damage.BaseValue > 0)
-            {
-                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                    .FromCard(this)
-                    .Targeting(cardPlay.Target)
-                    .Execute(choiceContext);
-            }
+            //if (base.DynamicVars.Damage.BaseValue > 0)
+            //{
+            //    await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            //        .FromCard(this)
+            //        .Targeting(cardPlay.Target)
+            //        .Execute(choiceContext);
+            //}
 
             if (base.CheckSupportCost(1) != 0)
             {

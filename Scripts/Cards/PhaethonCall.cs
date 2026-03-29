@@ -22,13 +22,14 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            CardModel cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
+            List<CardModel> cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
                                                                                where c.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || c.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends)
-                                                                               select c, 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
-            if (cardModel != null)
+                                                                               select c, 3, base.Owner.RunState.Rng.CombatCardGeneration).ToList();
+            CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, cardModel, base.Owner);
+            if (chosen != null)
             {
                 //cardModel.SetToFreeThisTurn();
-                await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, addedByPlayer: true);
             }
         }
 

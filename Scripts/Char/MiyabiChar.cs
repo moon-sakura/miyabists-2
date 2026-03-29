@@ -18,6 +18,7 @@ public class Miyabi : PlaceholderCharacterModel
     // 能量图标轮廓颜色
     public override Color EnergyLabelOutlineColor => new(0.1f, 0.1f, 1f);
 
+
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override int StartingHp => 40;
@@ -101,5 +102,14 @@ public class Miyabi : PlaceholderCharacterModel
     // public override string CharacterSelectSfx => null;
     // 过渡音效。这个不能删。
     public override string CharacterTransitionSfx => "event:/sfx/ui/wipe_ironclad";
+
+    // 攻击建筑师的攻击特效列表
+    public override List<string> GetArchitectAttackVfx() => [
+        "vfx/vfx_attack_blunt",
+        "vfx/vfx_heavy_blunt",
+        "vfx/vfx_attack_slash",
+        "vfx/vfx_bloody_impact",
+        "vfx/vfx_rock_shatter"
+    ];
 
 }
