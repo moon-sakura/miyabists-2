@@ -34,8 +34,8 @@ namespace Miyabists2.Scripts.Powers
 
             foreach (Creature enemy in base.CombatState.Enemies)
             {
-                await CreatureCmd.Damage(choiceContext, enemy, 3m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, (Creature)null);
-                await MiyabiCombatService.AddAnoBuildup(enemy, 1, null, null, choiceContext);
+                await CreatureCmd.Damage(choiceContext, enemy, Amount * 3m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, (Creature)null);
+                await MiyabiCombatService.AddAnoBuildup(enemy, Amount, null, null, choiceContext);
             }
         }
     }

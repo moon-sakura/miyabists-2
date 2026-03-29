@@ -17,12 +17,18 @@ namespace Miyabists2.Scripts.Cards
     {
         //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public ZhongmoCaijue() : base(1, CardRarity.Rare, TargetType.AnyEnemy, CardType.Attack) { }
+        public ZhongmoCaijue() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(10, ValueProp.Move),
             new DynamicVar(DazeVarName, 10)
         ];
+
+        public override IEnumerable<CardKeyword> CanonicalKeywords => 
+        [
+            MiyabiKeywords.Friends,
+            CardKeyword.Exhaust
+            ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

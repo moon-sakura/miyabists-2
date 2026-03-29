@@ -44,6 +44,12 @@ namespace Miyabists2.Scripts.Service
         public static void ResetAnoT() => AnoTrigger = 5;
         public static int GetAnoTrigger() => AnoTrigger;
 
+        //冰焰
+        public static decimal FrostFireLimit { get; set; } = 0.5m;
+        public static decimal GetFrostFireLimit() => FrostFireLimit;
+        public static decimal SetFrostFireLimit(decimal value) => FrostFireLimit = value;
+        public static void ResetFrostFireLimit() => FrostFireLimit = 0.5m;
+
         public static async Task AddAnoBuildup(Creature target, int anoVar, Creature dealer, CardModel card, PlayerChoiceContext choiceContext)
         {
             //处理Amount而不是DisplayAmount

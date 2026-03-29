@@ -110,6 +110,9 @@
 	"MIYABISTS2-SHUANGYUE_JIASHI.title": "霜月架势",
     "MIYABISTS2-SHUANGYUE_JIASHI.description": "每回合开始时获得2点落霜",
 
+	"MIYABISTS2-BIG_EJIZHAN.title": "大份鹅鸡斩",
+    "MIYABISTS2-BIG_EJIZHAN.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，属性积蓄{ANOBUILD_POWER:diff()}，本回合获得{Strength:diff()}点力量\\n支援点数1：额外获得1点力量",
+
 	"MIYABISTS2-HUANXIANGSHI_ZOUMING.title": "《幻想式奏鸣》",
     "MIYABISTS2-HUANXIANGSHI_ZOUMING.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为0，获得{SupportPoint:diff()}点支援点数\\n支援点数2：额外从弃牌堆中选一张加入手卡",
 	"MIYABISTS2-HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "选择一张伙伴卡",

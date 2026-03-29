@@ -2,7 +2,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Service;
 using System;
@@ -10,17 +10,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class MenghuZhakaihua: MiyabiPartnerCardBase
+    internal class BigEjizhan : MiyabiPartnerCardBase
     {
-        public MenghuZhakaihua() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Skill) { }
+        public BigEjizhan() : base(2, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(5, ValueProp.Move),
-            new DynamicVar(DazeVarName, 20),
-            new DynamicVar("Decible",5)
+            new DamageVar(12, ValueProp.Move),
+            new DynamicVar(DazeVarName, 8),
+            new DynamicVar(AnomalyBuildupVarName,1),
+            new DynamicVar("Strength",1)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -35,19 +37,22 @@ namespace Miyabists2.Scripts.Cards
                     .Execute(choiceContext);
             }
 
-            if (base.CheckSupportCost(1) != 0)
+            if (base.CheckSupportCost(1) != 0 && base.DynamicVars.TryGetValue("Strength", out DynamicVar s))
             {
-                if (base.DynamicVars.TryGetValue("Decible", out DynamicVar d))
-                    await MiyabiCombatService.AddDecible(base.Owner, d.IntValue);
+                s.BaseValue += 1;
                 await CostSupporPoint(1);
             }
+
+            if (base.DynamicVars.TryGetValue("Strength", out DynamicVar t))
+                await PowerCmd.Apply<EjizhanPower>(base.Owner.Creature, t.BaseValue, Owner.Creature, this);
         }
 
 
         protected override void OnUpgrade()
         {
-            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(5);
-            if (base.DynamicVars.TryGetValue("Decible", out DynamicVar d)) d.UpgradeValueBy(2);
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
+            if (base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out DynamicVar a)) a.UpgradeValueBy(1);
+            if (base.DynamicVars.TryGetValue("Strength", out DynamicVar s)) s.UpgradeValueBy(1);
         }
     }
 }

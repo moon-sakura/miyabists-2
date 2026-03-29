@@ -22,11 +22,11 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<BamianwfPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            if (base.CheckSupportCost(1) != 0)
-            {
-                MiyabiCombatService.AddDecible(Owner, 3);
-                await CostSupporPoint(1);
-            }
+            //if (base.CheckSupportCost(1) != 0)
+            //{
+            //    MiyabiCombatService.AddDecible(Owner, 3);
+            //    await CostSupporPoint(1);
+            //}
         }
 
         protected override void OnUpgrade()

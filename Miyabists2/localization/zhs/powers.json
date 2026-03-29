@@ -13,7 +13,7 @@
 
 	"MIYABISTS2-FROST_FIRE_POWER.title": "冰焰",
     "MIYABISTS2-FROST_FIRE_POWER.description": "极寒中跳动的赤红之火。",
-    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[color=skyblue]烈霜[/color]伤害增加 [color=red]5%[/color]（上限80%）。",
+    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[color=skyblue]烈霜[/color]伤害增加 [color=red]5%[/color]（上限50%）。",
 
 	"MIYABISTS2-FROST_POWER.title": "霜灼",
     "MIYABISTS2-FROST_POWER.description": "凝结吧，碎裂吧。",
@@ -65,6 +65,10 @@
 	"MIYABISTS2-TIANMIJX_POWER.title": "甜蜜惊吓",
     "MIYABISTS2-TIANMIJX_POWER.description": "每回合结束时，所有敌人打3，属性异常1",
 	"MIYABISTS2-TIANMIJX_POWER.smartDescription": "每回合结束时，所有敌人打3，属性异常1",
+
+	"MIYABISTS2-EJIZHAN_POWER.title": "大份鹅鸡斩",
+    "MIYABISTS2-EJIZHAN_POWER.description": "",
+	"MIYABISTS2-EJIZHAN_POWER.smartDescription": "本回合获得{Amount}点力量",
 
 
 	"MIYABISTS2-TRAIN_SPEAK_POWER.title": "说话不超过五个字修行",

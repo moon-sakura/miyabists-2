@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Powers
 {
@@ -31,11 +32,13 @@ namespace Miyabists2.Scripts.Powers
             if(!cardSource.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
                 return 1m;
 
-            //烈霜伤害+10%（效果上限200%，层数无上限）
+            decimal limit = MiyabiCombatService.GetFrostFireLimit();
+
+            //烈霜伤害+5%（效果上限150%，层数无上限）
             decimal damageIncrease = base.Amount * 0.05m;
-            if (damageIncrease > 0.8m)
+            if (damageIncrease > limit)
             {
-                damageIncrease = 0.8m;
+                damageIncrease = limit;
             }
 
             return 1m + damageIncrease;

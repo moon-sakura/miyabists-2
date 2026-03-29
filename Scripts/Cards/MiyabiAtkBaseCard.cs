@@ -23,6 +23,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected const bool isAOE = false;
 
+        protected const int trigger = 50;
+
         protected MiyabiAttackCardBase(int energy, CardRarity rarity, TargetType target, bool showInLib)
             : base(energy, CardType.Attack, rarity, target, showInLib)
         {
@@ -54,7 +56,7 @@ namespace Miyabists2.Scripts.Cards
             int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
 
             // 确保是本卡造成的实际伤害，且目标存活
-            if (result.TotalDamage > 0 && chkFB <= 100)
+            if (result.TotalDamage > 0 && chkFB <= trigger)
             {
                 // 如果拥有烈霜词条，按伤害量施加积蓄值
                 if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang) && !target.HasPower<FrostPower>())
@@ -63,7 +65,7 @@ namespace Miyabists2.Scripts.Cards
                 }
             }
             //烈霜积蓄值积攒逻辑
-            if (chkFB >= 101)
+            if (chkFB >= trigger + 1)
             {
                 //await MiyabiCombatService.FrostApply(target,base.Owner.Creature,choiceContext);
                 await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
@@ -84,7 +86,7 @@ namespace Miyabists2.Scripts.Cards
             }
 
             // 2. 施加 1 层冰焰 (FrostFirePower)
-            if (chkFB <= 100 && this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
+            if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
                 await PowerCmd.Apply<FrostFirePower>(target, 1, base.Owner.Creature, this);
 
             // 3. 施加动态配置的失衡值 (DazePower)
