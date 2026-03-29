@@ -36,13 +36,13 @@ namespace Miyabists2.Scripts.Cards
         protected override void AddExtraArgsToDescription(LocString description)
         {
             base.AddExtraArgsToDescription(description);
-            if (base.IsUpgraded)
-                description.Add("TunaUpgrade", "\n 本场战斗中卡组内所有风花费用变为0");
+            description.Add("TunaUpgrade", "\n 本场战斗中卡组内所有风花费用变为0");
         }
 
         protected override void OnUpgrade()
         {
             base.OnUpgrade();
+            AddExtraArgsToDescription(base.Description);
         }
     }
 }

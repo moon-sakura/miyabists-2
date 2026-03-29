@@ -18,6 +18,8 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class CuteFeitianzhuang : MiyabiPartnerCardBase
     {
+        protected override string ArtPath => "res://images/cards/cuteFeitianzhuang.png";
+
         public CuteFeitianzhuang() : base(2, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Service;
+using MegaCrit.Sts2.Core.Entities.Cards;
 
 namespace Miyabists2.Scripts.Powers
 {
@@ -24,14 +25,12 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
+        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
-            if(dealer != base.Owner) { return; }
+            if(cardPlay.Card.Owner.Creature != base.Owner 
+                || !cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang)) { return; }
 
-            if (cardSource.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
-            {
-                await MiyabiCombatService.AddDecible(Owner.Player, 1);
-            }
+            await MiyabiCombatService.AddDecible(Owner.Player, 1);
         }
     }
 }

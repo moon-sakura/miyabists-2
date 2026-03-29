@@ -24,6 +24,8 @@ namespace Miyabists2.Scripts.Cards
             new CardsVar(2)
         ];
 
+        public override bool GainsBlock => false;
+
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
             CardKeyword.Exhaust

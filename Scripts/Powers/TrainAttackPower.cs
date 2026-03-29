@@ -40,7 +40,7 @@ namespace Miyabists2.Scripts.Powers
             {
                 if (item.Affliction == null)
                 {
-                    await CardCmd.Afflict<Ringing>(item, 1m);
+                    await CardCmd.Afflict<Ringing>(item, 3m);
                 }
             }
         }
@@ -50,7 +50,7 @@ namespace Miyabists2.Scripts.Powers
         {
             if (card.Owner == base.Owner.Player && card.Affliction == null)
             {
-                await CardCmd.Afflict<Ringing>(card, 1m);
+                await CardCmd.Afflict<Ringing>(card, 3m);
             }
         }
 

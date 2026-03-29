@@ -25,6 +25,9 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Decible", 5)
         ];
+
+        public override bool GainsBlock => false;
+
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
             CardKeyword.Exhaust

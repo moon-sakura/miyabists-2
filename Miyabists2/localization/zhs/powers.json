@@ -47,6 +47,10 @@
     "MIYABISTS2-TUNAFA_POWER.description": "",
     "MIYABISTS2-TUNAFA_POWER.smartDescription": "每使用5张风花，落霜+1，已使用{CardsCount}张",
 
+	"MIYABISTS2-JUN_LIE_POWER.title": "皲裂",
+    "MIYABISTS2-JUN_LIE_POWER.description": "",
+    "MIYABISTS2-JUN_LIE_POWER.smartDescription": "每次造成烈霜卡牌时，喧嚣+1",
+
 	"MIYABISTS2-TIANZIZY_POWER.title": "天资卓越",
     "MIYABISTS2-TIANZIZY_POWER.description": "每次使用霜月，自动使用一次霜月·极意",
 

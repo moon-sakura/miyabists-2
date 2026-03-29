@@ -42,14 +42,14 @@
     "MIYABISTS2-RANYOUYIN_SHARE.description": "自己获得一层易伤，喧嚣+{Decible:diff()}，支援点数+1\\n如果本回合使用过伙伴卡，则重放1",
 
 	"MIYABISTS2-CHUN_LIN.title": "春临",
-    "MIYABISTS2-CHUN_LIN.description": "全体烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n从抽卡堆选一张伙伴卡到手中，添加保留",
+    "MIYABISTS2-CHUN_LIN.description": "全体烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n从抽卡堆选一张伙伴卡到手中，添加保留\\n本回合有敌人被击破，则0费",
 	"MIYABISTS2-CHUN_LIN.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2-E_JI_ZHAN.title": "恶，即斩",
     "MIYABISTS2-E_JI_ZHAN.description": "终结技\\n[color=blue]烈霜[/color] {Damage:diff()}\\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
 
 	"MIYABISTS2-SHUANG_YUE.title": "霜月",
-    "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜一张升级后的 霜月 到手中",
+    "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜一张升级后的《霜月》到手中",
 
 	"MIYABISTS2-SHUANG_YUE_SP.title": "霜月·极意",
     "MIYABISTS2-SHUANG_YUE_SP.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}",
@@ -67,7 +67,7 @@
     "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用终结技后喧嚣+5，使用伙伴卡后喧嚣+2",
 
 	"MIYABISTS2-TIANMI_JINGXIA.title": "甜蜜惊吓",
-    "MIYABISTS2-TIANMI_JINGXIA.description": "每回合结束时，所有敌人打3，属性异常1",
+    "MIYABISTS2-TIANMI_JINGXIA.description": "每回合结束时，所有敌人打3，属性异常1\\n支援点数1：所有敌人属性积蓄1",
 
 	"MIYABISTS2-CUTE_FEITIANZHUANG.title": "可爱地雷飞天撞",
     "MIYABISTS2-CUTE_FEITIANZHUANG.description": "失衡{DAZE_POWER:diff()}\\n敌人每有1层属性积蓄，额外失衡5（属性异常视为3层，紊乱视为5层）\\n支援点数1：造成失衡+20%",
@@ -77,7 +77,7 @@
 
 
 	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
-    "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合使用攻击卡后给与敌人属性积蓄1，最多可触发{LuoYu:diff()}次",
+    "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合使用单体攻击卡后给与敌人属性积蓄1，最多可触发{LuoYu:diff()}次\\n支援点数1：所有敌人属性积蓄1",
 
 	"MIYABISTS2-MINGFU_WANGE.title": "冥府挽歌",
     "MIYABISTS2-MINGFU_WANGE.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，给予一回合失衡易伤35%\\n{WanGe:diff()}回合内，每回合开始时增加一张《协奏狙杀》到手里\\n支援点数1：增加一张《协奏狙杀》到手里",
@@ -115,7 +115,10 @@
 	"MIYABISTS2-HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2-TU_NA_FA.title": "吐纳法",
-    "MIYABISTS2-TU_NA_FA.description": "每使用5张风花，落霜+1",
+    "MIYABISTS2-TU_NA_FA.description": "每使用5张风花，落霜+1\\n升级后，本场战斗卡组中所有《风花》费用变为0",
+
+	"MIYABISTS2-JUN_LIE.title": "皲裂",
+    "MIYABISTS2-JUN_LIE.description": "每次造成烈霜伤害时，喧嚣值+1",
 
 	"MIYABISTS2-ZHONGMO_CAIJUE.title": "终末裁决",
     "MIYABISTS2-ZHONGMO_CAIJUE.description": "打{Damage:diff()}，如果敌人处于击破状态，伤害变为3倍，移除敌人的击破与失衡易伤，移除后失衡{DAZE_POWER:diff()}\\n支援点数3：伤害+8",

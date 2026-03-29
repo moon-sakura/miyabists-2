@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts.Powers
             {
                 if (item.Affliction == null)
                 {
-                    await CardCmd.Afflict<Ringing>(item, 1m);
+                    await CardCmd.Afflict<Ringing>(item, 5m);
                 }
             }
         }
@@ -49,7 +49,7 @@ namespace Miyabists2.Scripts.Powers
         {
             if (card.Owner == base.Owner.Player && card.Affliction == null)
             {
-                await CardCmd.Afflict<Ringing>(card, 1m);
+                await CardCmd.Afflict<Ringing>(card, 5m);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Miyabists2.Scripts.Powers
             {
                 return true;
             }
-            return CombatManager.Instance.History.CardPlaysStarted.Count((CardPlayStartedEntry e) => e.HappenedThisTurn(base.CombatState) && e.CardPlay.Card.Owner.Creature == base.Owner) <= 5 ;
+            return CombatManager.Instance.History.CardPlaysStarted.Count((CardPlayStartedEntry e) => e.HappenedThisTurn(base.CombatState) && e.CardPlay.Card.Owner.Creature == base.Owner) <= 4 ;
         }
 
     }
