@@ -84,12 +84,6 @@ namespace Miyabists2.Scripts.Cards
                 {
                     reward1.UpgradeInternal();
                 }
-
-                //if (reward1.DynamicVars.TryGetValue("HitCount", out DynamicVar rhc))
-                //{
-                //    rhc.BaseValue += base.CurrentUpgradeLevel + 1;
-                //}
-
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
                 await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, -2, null, null);
             }

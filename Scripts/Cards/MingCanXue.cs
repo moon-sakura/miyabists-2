@@ -30,6 +30,7 @@ namespace Miyabists2.Scripts.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
             MiyabiKeywords.LieShuang,
+            MiyabiKeywords.EndSkill,
             CardKeyword.Exhaust,
             CardKeyword.Retain
         ];

@@ -64,9 +64,14 @@ namespace Miyabists2.Scripts.Powers
         {
             if (side == base.Owner.Side)
             {
-                decimal damage = Owner.MaxHp * 0.05m;
-                await CreatureCmd.Damage(choiceContext, base.Owner, damage, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
+                await DealAno(choiceContext);
             }
+        }
+
+        public async Task DealAno(PlayerChoiceContext choiceContext)
+        {
+            decimal damage = Owner.MaxHp * 0.05m;
+            await CreatureCmd.Damage(choiceContext, base.Owner, damage, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
         }
 
     }

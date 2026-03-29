@@ -46,7 +46,7 @@
 	"MIYABISTS2-CHUN_LIN.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2-E_JI_ZHAN.title": "恶，即斩",
-    "MIYABISTS2-E_JI_ZHAN.description": "终结技\\n[color=blue]烈霜[/color] {Damage:diff()}\\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
+    "MIYABISTS2-E_JI_ZHAN.description": "[color=blue]烈霜[/color] {Damage:diff()}\\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n落霜+3",
 
 	"MIYABISTS2-SHUANG_YUE.title": "霜月",
     "MIYABISTS2-SHUANG_YUE.description": "全体{HitCount:diff()}次烈霜{Damage:diff()}，失衡{DAZE_POWER:diff()}\\n若还有2点以上落霜一张升级后的《霜月》到手中",
@@ -75,7 +75,6 @@
 	"MIYABISTS2-SONG_KE.title": "送客！",
     "MIYABISTS2-SONG_KE.description": "失衡{DAZE_POWER:diff()}\\n支援点数3：添加一张0费虚无终结技（《名残雪》）到手中",
 
-
 	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
     "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合使用单体攻击卡后给与敌人属性积蓄1，最多可触发{LuoYu:diff()}次\\n支援点数1：所有敌人属性积蓄1",
 
@@ -96,7 +95,7 @@
     "MIYABISTS2-SHUANG_SUI_XUE.description": "全体[color=blue]烈霜[/color] {Damage:diff()} \\n[color=yellow]失衡[/color] {DAZE_POWER:diff()}",
 
 	"MIYABISTS2-MING_CAN_XUE.title": "名残雪",
-    "MIYABISTS2-MING_CAN_XUE.description": "终结技\\n全体5次[color=blue]烈霜[/color] {Damage:diff()}，[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合每使用一张攻击牌次数+1，每攻击两次，落霜+1",
+    "MIYABISTS2-MING_CAN_XUE.description": "全体5次[color=blue]烈霜[/color] {Damage:diff()}，[color=yellow]失衡[/color] {DAZE_POWER:diff()}\\n本回合每使用一张攻击牌次数+1，每攻击两次，落霜+1",
 
 	"MIYABISTS2-BAOJUN_MENGJI.title": "暴君猛击",
     "MIYABISTS2-BAOJUN_MENGJI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，{Block:diff()}护甲，招架{PARRY_POWER:diff()}\\n支援点数2：覆甲4",
@@ -110,8 +109,20 @@
 	"MIYABISTS2-SHUANGYUE_JIASHI.title": "霜月架势",
     "MIYABISTS2-SHUANGYUE_JIASHI.description": "每回合开始时获得2点落霜",
 
+	"MIYABISTS2-PHAETHON_CALL.title": "法厄同的呼朋引伴",
+    "MIYABISTS2-PHAETHON_CALL.description": "从3张伙伴卡中选择一张加入手卡",
+
 	"MIYABISTS2-BIG_EJIZHAN.title": "大份鹅鸡斩",
     "MIYABISTS2-BIG_EJIZHAN.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，属性积蓄{ANOBUILD_POWER:diff()}，本回合获得{Strength:diff()}点力量\\n支援点数1：额外获得1点力量",
+
+	"MIYABISTS2-XINGYUE_XIANGSUI.title": "星月相随",
+    "MIYABISTS2-XINGYUE_XIANGSUI.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，属性积蓄{ANOBUILD_POWER:diff()}\\n支援点数1：如果敌方已处于属性异常状态，则立即触发一次结算效果",
+
+	"MIYABISTS2-XINGMANG_ZHONGZHANG.title": "星芒终章",
+    "MIYABISTS2-XINGMANG_ZHONGZHANG.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，属性积蓄{ANOBUILD_POWER:diff()}\\n支援点数3：添加一张《星芒圆舞曲》到手牌，本回合费用为0",
+
+	"MIYABISTS2-XINGMANG_YUANWUQU.title": "星芒圆舞曲",
+    "MIYABISTS2-XINGMANG_YUANWUQU.description": "打{Damage:diff()}，失衡{DAZE_POWER:diff()}，属性积蓄{ANOBUILD_POWER:diff()}",
 
 	"MIYABISTS2-HUANXIANGSHI_ZOUMING.title": "《幻想式奏鸣》",
     "MIYABISTS2-HUANXIANGSHI_ZOUMING.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为0，获得{SupportPoint:diff()}点支援点数\\n支援点数2：额外从弃牌堆中选一张加入手卡",

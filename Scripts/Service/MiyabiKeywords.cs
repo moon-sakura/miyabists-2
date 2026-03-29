@@ -13,4 +13,14 @@ public class MiyabiKeywords
     // 放在原版卡牌描述的位置，这里是卡牌描述的前面
     [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Friends;
+
+    [CustomEnum("OTHERWORLDFRIENDS")]
+    // 放在原版卡牌描述的位置，这里是卡牌描述的前面
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword OtherWorldFriends;
+
+    [CustomEnum("ENDSKILL")]
+    // 放在原版卡牌描述的位置，这里是卡牌描述的前面
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword EndSkill;
 }

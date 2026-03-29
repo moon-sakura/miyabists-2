@@ -18,6 +18,12 @@ namespace Miyabists2.Scripts.Cards
 
         public EJiZhan() : base(3, CardRarity.Rare, TargetType.AnyEnemy, true) { }
 
+        public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [
+            MiyabiKeywords.LieShuang,
+            MiyabiKeywords.EndSkill
+        ];
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(30, ValueProp.Move),
             new DynamicVar(DazeVarName, 10)
