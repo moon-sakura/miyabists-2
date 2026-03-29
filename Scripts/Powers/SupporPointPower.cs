@@ -35,12 +35,14 @@ namespace Miyabists2.Scripts.Powers
             if (base.Amount > MaxPoints)
             {
                 // 如果超过 7，则设回 7
-                Amount = MaxPoints;
+                //Amount = MaxPoints;
+                SetAmount(MaxPoints);
             }
             else if (base.Amount < 1)
             {
                 // 确保不为负数
-                Amount = 1;
+                //Amount = 1;
+                SetAmount(1);
             }
         }
 
@@ -49,12 +51,12 @@ namespace Miyabists2.Scripts.Powers
             if (base.Amount > MaxPoints)
             {
                 // 如果超过 7，则设回 7
-                Amount = MaxPoints;
+                SetAmount(MaxPoints);
             }
             else if (base.Amount < 1)
             {
                 // 确保不为负数
-                Amount = 1;
+                SetAmount(1);
             }
         }
 

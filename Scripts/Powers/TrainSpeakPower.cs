@@ -32,7 +32,8 @@ namespace Miyabists2.Scripts.Powers
         //类似眩晕机制
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            Amount = turnLimit;
+            //Amount = ;
+            SetAmount(turnLimit);
 
             IEnumerable<CardModel> allCards = base.Owner.Player.PlayerCombatState.AllCards;
             foreach (CardModel item in allCards)
@@ -63,7 +64,7 @@ namespace Miyabists2.Scripts.Powers
                     await PowerCmd.Remove(this);
                     return;
                 }
-                Amount--;
+                SetAmount(Amount - 1);
             }
         }
 

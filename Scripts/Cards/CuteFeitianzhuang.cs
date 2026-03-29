@@ -50,7 +50,7 @@ namespace Miyabists2.Scripts.Cards
             }
 
 
-            base.OnPlay(choiceContext, cardPlay);
+            await base.OnPlay(choiceContext, cardPlay);
         }
 
         protected override void OnUpgrade()

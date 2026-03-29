@@ -33,8 +33,9 @@ namespace Miyabists2.Scripts.Powers
             //    await PowerCmd.Apply<DazePower>(base.Owner, 1m - Amount, null, null);
             //    return; 
             //} // 如果已经有BreakPower，不再触发
-            Amount++;
+            //Amount++;
             //await CheckDazeTrigger(base.Owner);
+            SetAmount(Amount + 1);
         }
 
         //public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)

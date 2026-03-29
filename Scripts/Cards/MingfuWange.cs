@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            base.OnPlay(choiceContext, cardPlay);
+            await base.OnPlay(choiceContext, cardPlay);
 
             if (base.DynamicVars.Damage.BaseValue > 0)
             {

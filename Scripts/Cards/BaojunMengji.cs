@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            base.OnPlay(choiceContext, cardPlay);
+            await base.OnPlay(choiceContext, cardPlay);
 
             // 1. 获得护甲
             // 注意：BlockVar 通常会自动关联到 DynamicVars.Block

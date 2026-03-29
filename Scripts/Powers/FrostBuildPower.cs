@@ -58,7 +58,8 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            Amount++;
+            //Amount++;
+            SetAmount(Amount + 1);
             // 检查是否达到100层
             //await CheckMaxStacks();
         }

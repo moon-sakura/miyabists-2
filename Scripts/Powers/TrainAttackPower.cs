@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Map;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Afflictions;
 using System;
@@ -33,7 +34,8 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            Amount = turnLimit;
+            //Amount = turnLimit;
+            SetAmount(turnLimit);
 
             IEnumerable<CardModel> allCards = base.Owner.Player.PlayerCombatState.AllCards;
             foreach (CardModel item in allCards)
@@ -64,7 +66,8 @@ namespace Miyabists2.Scripts.Powers
                     await PowerCmd.Remove(this);
                     return;
                 }
-                Amount--;
+                //Amount--;
+                SetAmount(Amount - 1);
             }
         }
 

@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -32,6 +33,8 @@ namespace Miyabists2.Scripts.Relics
         public override string PackedIconPath => "res://images/relics/commonRelics.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<MingCanXue>()];
 
         public int Threshold {get;set;} = 30; // 触发阈值
 

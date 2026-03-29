@@ -31,7 +31,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            Amount = turnLimit;
+            SetAmount(turnLimit);
         }
 
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
@@ -44,7 +44,8 @@ namespace Miyabists2.Scripts.Powers
                     await PowerCmd.Remove(this);
                     return;
                 }
-                Amount--;
+                //Amount--;
+                SetAmount(Amount - 1);
             }
         }
 

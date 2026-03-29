@@ -41,7 +41,7 @@ namespace Miyabists2.Scripts.Cards
                 IEnumerable<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs));
                 if (cardModel != null)
                 {
-                    foreach (CardModel c in cardModel) CardCmd.Exhaust(choiceContext, c);
+                    foreach (CardModel c in cardModel) await CardCmd.Exhaust(choiceContext, c);
                 }
             }
         }
