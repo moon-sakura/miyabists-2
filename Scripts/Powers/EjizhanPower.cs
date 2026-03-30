@@ -28,7 +28,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            await PowerCmd.Apply<StrengthPower>(Owner, Amount, null, null);
+            //await PowerCmd.Apply<StrengthPower>(Owner, Amount, null, null);
         }
 
         public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)

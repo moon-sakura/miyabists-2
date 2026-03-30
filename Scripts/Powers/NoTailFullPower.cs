@@ -1,0 +1,55 @@
+using BaseLib.Abstracts;
+using Godot;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Afflictions;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Miyabists2.Scripts.Powers
+{
+    internal class NoTailFullPower : CustomPowerModel
+    {
+        public override PowerType Type => PowerType.Buff;
+        public override PowerStackType StackType => PowerStackType.Counter;
+        public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
+        public string BigIconPath => "res://images/powers/commonPowers.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
+
+        public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+        {
+            IEnumerable<CardModel> allCards = base.Owner.Player.PlayerCombatState.AllCards;
+            foreach (CardModel item in allCards)
+            {
+                if (item.Type == CardType.Attack 
+                    && !(item.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || item.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends)))
+                {
+                    item.AddKeyword(CardKeyword.Exhaust);
+                    item.AddKeyword(CardKeyword.Ethereal);
+                    item.SetToFreeThisCombat();
+                    item.UpgradeInternal();
+                }
+            }
+        }
+
+        public override async Task AfterCardEnteredCombat(CardModel card)
+        {
+            if (card.Type == CardType.Attack
+                    && !(card.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || card.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends)))
+            {
+                card.AddKeyword(CardKeyword.Exhaust);
+                card.AddKeyword(CardKeyword.Ethereal);
+                card.SetToFreeThisCombat();
+                card.UpgradeInternal();
+            }
+        }
+    }
+}

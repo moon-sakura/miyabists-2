@@ -3,6 +3,10 @@
   	"MIYABISTS2-SWORD_NOTAIL_RELIC.description": "战斗开始时落霜+3，可积攒喧嚣值，喧嚣值达到30获得终结技",
   	"MIYABISTS2-SWORD_NOTAIL_RELIC.flavor": "很硬很硬的刀",
 
+	"MIYABISTS2-NO_TAIL_FULL_RELIC.title": "妖刀解放",
+  	"MIYABISTS2-NO_TAIL_FULL_RELIC.description": "战斗开始时落霜+3，可积攒喧嚣值，喧嚣值达到30获得终结技；战斗开始时，加入一张《妖刀解放》到手卡，每次使用非伙伴攻击卡都会失去1点生命，获得1点力量",
+  	"MIYABISTS2-NO_TAIL_FULL_RELIC.flavor": "",
+
 	"MIYABISTS2-SECTION_SIX_RELIC.title": "六课徽章",
   	"MIYABISTS2-SECTION_SIX_RELIC.description": "战斗开始时支援点数+6",
   	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "很好很好的课"

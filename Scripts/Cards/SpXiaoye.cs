@@ -35,7 +35,9 @@ namespace Miyabists2.Scripts.Cards
             await PowerCmd.Apply<IntangiblePower>(cardPlay.Target, 1m, base.Owner.Creature, this);
 
             CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, DynamicVars.Cards.IntValue);
-            List<CardModel> cardsIn = base.Owner.PlayerCombatState.AllCards.ToList();
+            List<CardModel> cardsIn = base.Owner.PlayerCombatState.DrawPile.Cards.ToList();
+            cardsIn.AddRange(Owner.PlayerCombatState.DiscardPile.Cards.ToList());
+            cardsIn.AddRange(Owner.PlayerCombatState.Hand.Cards.ToList());
             if (cardsIn.Count != 0)
             {
                 IEnumerable<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs));

@@ -6,8 +6,8 @@
 
 [node name="Visuals" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1.9999886, -252.00002)
-scale = Vector2(0.233839, 0.23383902)
+position = Vector2(2, -185)
+scale = Vector2(0.17100921, 0.17100923)
 texture = ExtResource("1_s6fse")
 
 [node name="Bounds" type="Control" parent="."]
@@ -25,4 +25,4 @@ unique_name_in_owner = true
 
 [node name="CenterPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-2, -462)
+position = Vector2(2, -338)

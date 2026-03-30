@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(StatusCardPool))]
+    //[Pool(typeof(StatusCardPool))]
     internal class XiezouJusha : MiyabiPartnerCardBase
     {
         public XiezouJusha() : base(0, CardRarity.Token, TargetType.AnyEnemy, CardType.Attack) { }

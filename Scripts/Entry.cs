@@ -1,7 +1,22 @@
+using System.Reflection;
+using BaseLib.Config;
+using Godot;
 using Godot.Bridge;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Context;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Events;
+using MegaCrit.Sts2.Core.Models.Monsters;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Runs;
+using MegaCrit.Sts2.Core.Saves.Managers;
+using Miyabists2.Scripts.Relics;
 
 namespace Miyabists2.Scripts;
 
@@ -20,7 +35,42 @@ public class Entry
         // 使得tscn可以加载自定义脚本
         ScriptManagerBridge.LookupScriptsInAssembly(typeof(Entry).Assembly);
 
+        //Log.Debug("星见雅MOD加载完成");
+    }
 
-        Log.Debug("星见雅MOD加载完成");
+    [HarmonyPatch(typeof(TheArchitect), "WinRun")]
+    internal static class WatcherArchitectWinRunPatch
+    {
+        private static bool Prefix(TheArchitect __instance, ref Task __result)
+        {
+            FieldInfo fieldInfo = AccessTools.Field(typeof(TheArchitect), "_dialogue");
+            if (((fieldInfo != null) ? fieldInfo.GetValue(__instance) : null) != null)
+            {
+                return true;
+            }
+
+            if (LocalContext.IsMe(__instance.Owner))
+            {
+                RunManager.Instance.ActChangeSynchronizer.SetLocalPlayerReady();
+            }
+
+            __result = Task.CompletedTask;
+            return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(TouchOfOrobas), "GetUpgradedStarterRelic")]
+    internal static class TouchOfOrobasGetUpgradedStarterRelicPatch
+    {
+        private static bool Prefix(TouchOfOrobas __instance, RelicModel starterRelic, ref RelicModel __result)
+        {
+            if (starterRelic is SwordNotailRelic)
+            {
+                __result = ModelDb.Relic<NoTailFullRelic>();
+                return false;
+            }
+
+            return true;
+        }
     }
 }

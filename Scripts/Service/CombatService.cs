@@ -176,13 +176,18 @@ namespace Miyabists2.Scripts.Service
         {
             // 查找实例
             var myRelic = player.Relics.OfType<SwordNotailRelic>().FirstOrDefault();
+            var myRelic2 = player.Relics.OfType<NoTailFullRelic>().FirstOrDefault();
 
             // 修改属性
             if (myRelic != null)
             {
                 myRelic?.AddCounter(amount);
             }
-        }
 
+            if (myRelic2 != null)
+            {
+                myRelic2?.AddCounter(amount);
+            }
+        }
     }
 }

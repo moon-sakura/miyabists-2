@@ -21,7 +21,7 @@ public class Miyabi : PlaceholderCharacterModel
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
-    public override int StartingHp => 40;
+    public override int StartingHp => 52;
 
     /// <summary>
     /// 初始卡组。你可以在这里添加需要卡组。

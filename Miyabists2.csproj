@@ -35,7 +35,7 @@
 
 		<!-- 本地引用，注意路径是否正确 -->
 		<Reference Include="BaseLib">
-			<HintPath>$(Sts2Dir)/newmods/BaseLib.dll</HintPath>
+			<HintPath>$(Sts2Dir)/mods/BaseLib/BaseLib.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
 
