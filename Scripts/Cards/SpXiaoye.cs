@@ -1,6 +1,7 @@
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -35,9 +36,14 @@ namespace Miyabists2.Scripts.Cards
             await PowerCmd.Apply<IntangiblePower>(cardPlay.Target, 1m, base.Owner.Creature, this);
 
             CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, DynamicVars.Cards.IntValue);
-            List<CardModel> cardsIn = base.Owner.PlayerCombatState.DrawPile.Cards.ToList();
-            cardsIn.AddRange(Owner.PlayerCombatState.DiscardPile.Cards.ToList());
-            cardsIn.AddRange(Owner.PlayerCombatState.Hand.Cards.ToList());
+            List<CardModel> cardsIn = [];
+            foreach(Player player in Owner.Creature.CombatState.Players)
+            {
+                cardsIn.AddRange(player.PlayerCombatState.DrawPile.Cards.ToList());
+                cardsIn.AddRange(player.PlayerCombatState.DiscardPile.Cards.ToList());
+                cardsIn.AddRange(player.PlayerCombatState.Hand.Cards.ToList());
+            }
+            
             if (cardsIn.Count != 0)
             {
                 IEnumerable<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs));

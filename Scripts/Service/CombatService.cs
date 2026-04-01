@@ -126,7 +126,7 @@ namespace Miyabists2.Scripts.Service
         //霜灼增加
         public static async Task FrostApply(Creature target, Creature dealer , PlayerChoiceContext choiceContext)
         {
-            await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
+            //await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
 
             await PowerCmd.SetAmount<FrostBuildPower>(target, 1, dealer, null);
             await PowerCmd.Apply<FrostPower>(target, 1, dealer, null);

@@ -29,7 +29,14 @@ namespace Miyabists2.Scripts.Relics
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<MingCanXue>()];
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromCard<MingCanXue>(),
+            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill),
+            HoverTipFactory.FromCard<NoTailFull>(),
+            HoverTipFactory.FromPower<StrengthPower>()
+        ];
 
         public int Threshold { get; set; } = 30; // 触发阈值
 
@@ -94,7 +101,7 @@ namespace Miyabists2.Scripts.Relics
                 Flash();
                 await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, 4, null, null);
 
-                CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+                CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<NoTailFull>(base.Owner.Creature.Player);
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
             }
             // 此时，syncRnd.Next 在所有客户端产生的结果将完全一致

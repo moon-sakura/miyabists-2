@@ -66,7 +66,7 @@ public class Miyabi : PlaceholderCharacterModel
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
     // 人物头像2号。
-    //public override string CustomIconPath => "res://images/charui/icon.png";
+    public override string CustomIconPath => "res://scenes/miyabi_icon.tscn";
     // 能量表盘tscn路径。要自定义见下。
     //public override string CustomEnergyCounterPath => "res://scenes/miyabi_energy_counter.tscn";
     // 篝火休息动画。

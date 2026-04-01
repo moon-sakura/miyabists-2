@@ -1,0 +1,13 @@
+{
+	"MIYABISTS2-SWORD_NOTAIL_RELIC.title": "妖刀无尾",
+  	"MIYABISTS2-SWORD_NOTAIL_RELIC.description": "战斗开始时[color=skyblue]落霜[/color]+[color=blue]3[/color]，每次使用卡牌可以积攒[color=blue]1[/color]点[color=gold]喧嚣值[/color]，[color=gold]喧嚣值[/color]达到[color=blue]30[/color]添加一张[color=gold]名残雪[/color]到手卡",
+  	"MIYABISTS2-SWORD_NOTAIL_RELIC.flavor": "很硬很硬的刀",
+
+	"MIYABISTS2-NO_TAIL_FULL_RELIC.title": "妖刀解放",
+  	"MIYABISTS2-NO_TAIL_FULL_RELIC.description": "战斗开始时[color=skyblue]落霜[/color]+[color=blue]3[/color]，每次使用卡牌可以积攒[color=blue]1[/color]点[color=gold]喧嚣值[/color]，[color=gold]喧嚣值[/color]达到[color=blue]30[/color]添加一张[color=gold]名残雪[/color]到手卡；战斗开始时，加入一张[color=red]妖刀解放[/color]到手卡，每次使用非伙伴攻击卡都会失去[color=red]1[/color]点生命，获得[color=blue]1[/color]点力量",
+	"MIYABISTS2-NO_TAIL_FULL_RELIC.flavor": "",
+
+	"MIYABISTS2-SECTION_SIX_RELIC.title": "六课徽章",
+  	"MIYABISTS2-SECTION_SIX_RELIC.description": "战斗开始时[color=yellow]支援点数[/color]+[color=blue]6[/color]",
+  	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "很好很好的课"
+}

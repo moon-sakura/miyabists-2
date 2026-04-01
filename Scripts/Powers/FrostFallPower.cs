@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -25,6 +26,11 @@ namespace Miyabists2.Scripts.Powers
         //public override bool AllowNegative => true;
 
         public override int DisplayAmount => Amount - 1;
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromCard<ShuangYue>()
+        ];
 
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;

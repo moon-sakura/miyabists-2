@@ -57,7 +57,7 @@ namespace Miyabists2.Scripts.Cards
                                            select c).ToList();
                 if (cardsIn2.Count != 0)
                 {
-                    CardModel cardModel2 = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
+                    CardModel cardModel2 = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn2, base.Owner, prefs)).FirstOrDefault();
                     if (cardModel2 != null)
                     {
                         cardModel2.SetToFreeThisTurn();

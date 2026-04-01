@@ -36,7 +36,7 @@ namespace Miyabists2.Scripts.Cards
         public ShuangYueSp() : base(0, CardRarity.Token, TargetType.AllEnemies, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(6, ValueProp.Move),
+            new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar("HitCount",2)
         ];

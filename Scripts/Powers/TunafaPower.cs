@@ -27,20 +27,22 @@ namespace Miyabists2.Scripts.Powers
 
         public int CardsCount { get; set; } = 0;
 
+        public override int DisplayAmount => Amount - 1;
+
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
             if (cardPlay.Card.Owner != base.Owner.Player || !(cardPlay.Card is ShuangYue)) return;
 
-            CardsCount += 1;
+            await PowerCmd.SetAmount<TunafaPower>(Owner, Amount + 1, null, null);
 
-            if (CardsCount == 4) 
+            if (DisplayAmount == 4) 
                 Flash();
 
-            if(CardsCount >= 5) 
+            if(DisplayAmount >= 5) 
             {
                 await PowerCmd.Apply<FrostFallPower>(Owner, Amount, Owner, null);
-                CardsCount = 0;
+                await PowerCmd.SetAmount<TunafaPower>(Owner, 1, null, null);
             }
         }
     }

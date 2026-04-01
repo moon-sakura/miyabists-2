@@ -34,7 +34,12 @@ namespace Miyabists2.Scripts.Relics
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<MingCanXue>()];
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+        [
+            HoverTipFactory.FromCard<MingCanXue>(),
+            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill)
+        ];
 
         public int Threshold {get;set;} = 30; // 触发阈值
 
@@ -50,9 +55,9 @@ namespace Miyabists2.Scripts.Relics
             get => _counter;
             private set
             {
-                AssertMutable(); // 确保在合法的修改状态
+                AssertMutable();
                 _counter = value;
-                InvokeDisplayAmountChanged(); // 通知 UI 更新数字
+                InvokeDisplayAmountChanged();
             }
         }
 

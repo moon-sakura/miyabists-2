@@ -5,7 +5,9 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using System;
 using System.Collections.Generic;
@@ -25,33 +27,38 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromKeyword(MiyabiKeywords.Friends),
+            HoverTipFactory.FromKeyword(MiyabiKeywords.OtherWorldFriends)
+        ];
+
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             IEnumerable<CardModel> allCards = base.Owner.Player.PlayerCombatState.AllCards;
             foreach (CardModel item in allCards)
             {
-                if (item.Type == CardType.Attack
-                    && !(item.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || item.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends)))
-                {
-                    //item.AddKeyword(CardKeyword.Exhaust);
-                    //item.AddKeyword(CardKeyword.Ethereal);
-                    item.SetToFreeThisCombat();
+                if (item.Type != CardType.Attack
+                    || item.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || item.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends))
+                    continue;
+                //item.AddKeyword(CardKeyword.Exhaust);
+                //item.AddKeyword(CardKeyword.Ethereal);
+                item.SetToFreeThisCombat();
+                if (item.IsUpgradable)
                     item.UpgradeInternal();
-                }
             }
         }
 
         public override async Task AfterCardEnteredCombat(CardModel card)
         {
-            if (card.Type == CardType.Attack
-                    && !(card.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || card.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends))
-                    && card.Owner.Creature == base.Owner)
-            {
-                //card.AddKeyword(CardKeyword.Exhaust);
-                //card.AddKeyword(CardKeyword.Ethereal);
-                card.SetToFreeThisCombat();
+            if (card.Type != CardType.Attack
+                    || card.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || card.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends))
+                return;
+            //card.AddKeyword(CardKeyword.Exhaust);
+            //card.AddKeyword(CardKeyword.Ethereal);
+            card.SetToFreeThisCombat();
+            if(card.IsUpgradable)
                 card.UpgradeInternal();
-            }
         }
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
