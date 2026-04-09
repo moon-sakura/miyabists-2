@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Service
     {
         public static bool FrostFireKeeped { get; set; } = false;
 
-        // 获取当前状态（可选，直接访问属性也行）
+        // 获取当前状态
         public static bool ShouldKeepFrostFire() => FrostFireKeeped;
 
         // 设置状态
@@ -39,10 +39,64 @@ namespace Miyabists2.Scripts.Service
         //public static void UsedPartnerCard() => ThisTurnUsedPartnerCard = true;
 
         //属性积蓄判断
-        public static int AnoTrigger { get; set; } = 5;
+        private static int _anoTrigger = 5;
+        public static int AnoTrigger { get; set; } = _anoTrigger;
         public static void ChangeAnoT(int amount) => AnoTrigger += amount;
-        public static void ResetAnoT() => AnoTrigger = 5;
+        public static void ResetAnoT() => AnoTrigger = _anoTrigger;
         public static int GetAnoTrigger() => AnoTrigger;
+
+        public static void SetAnoTriggerMultiply(Creature c)
+        {
+            int mul = c.CombatState.PlayerCreatures.Count;
+            if(mul > 1)
+            {
+                ChangeAnoT((mul - 1) * 2);
+            }
+            else
+            {
+                ResetAnoT();
+            }
+        }
+
+        //失衡值判断
+        private static int _dazeTrigger = 100;
+        public static int DazeTrigger { get; set; } = _dazeTrigger;
+        public static void ChangeDazeT(int amount) => DazeTrigger += amount;
+        public static void ResetDazeT() => DazeTrigger = _dazeTrigger;
+        public static int GetDazeTrigger() => DazeTrigger;
+
+        public static void SetDazeTriggerMultiply(Creature c)
+        {
+            int mul = c.CombatState.PlayerCreatures.Count;
+            if (mul > 1)
+            {
+                ChangeDazeT((mul - 1) * 20);
+            }
+            else
+            {
+                ResetDazeT();
+            }
+        }
+
+        //烈霜值判断
+        private static int _frostTrigger = 50;
+        public static int FrostTrigger { get; set; } = _frostTrigger;
+        public static void ChangeFrostT(int amount) => FrostTrigger += amount;
+        public static void ResetFrostT() => FrostTrigger = _frostTrigger;
+        public static int GetFrostTrigger() => FrostTrigger;
+
+        public static void SetFrostTriggerMultiply(Creature c)
+        {
+            int mul = c.CombatState.PlayerCreatures.Count;
+            if (mul > 1)
+            {
+                ChangeFrostT((mul - 1) * 10);
+            }
+            else
+            {
+                ResetFrostT();
+            }
+        }
 
         //新月祝福
         public static bool IsAnyHasMoonBlessing(Creature c)
@@ -66,6 +120,8 @@ namespace Miyabists2.Scripts.Service
 
         public static async Task AddAnoBuildup(Creature target, int anoVar, Creature dealer, CardModel card, PlayerChoiceContext choiceContext)
         {
+            SetAnoTriggerMultiply(target);
+
             //处理Amount而不是DisplayAmount
             int trigger = GetAnoTrigger() + 1;
             bool hasAnomaly = target.HasPower<AttributeAnomalyPower>();
@@ -129,6 +185,7 @@ namespace Miyabists2.Scripts.Service
         //霜灼增加
         public static async Task FrostApply(Creature target, Creature dealer , PlayerChoiceContext choiceContext)
         {
+            SetFrostTriggerMultiply(target);
             //await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
 
             await PowerCmd.SetAmount<FrostBuildPower>(target, 1, dealer, null);
@@ -144,10 +201,10 @@ namespace Miyabists2.Scripts.Service
 
                 //await CreatureCmd.Damage(null, base.Owner, fireAmount * 1.5m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, base.Owner);
 
-                await CreatureCmd.Damage(choiceContext, target, 10m, ValueProp.Unpowered, dealer);
+            await CreatureCmd.Damage(choiceContext, target, 10m, ValueProp.Unpowered, dealer);
 
-                if (!ShouldKeepFrostFire())
-                    await PowerCmd.Remove<FrostFirePower>(target);
+            if (!ShouldKeepFrostFire())
+                await PowerCmd.Remove<FrostFirePower>(target);
             //}
 
             if (target.HasPower<AttributeAnomalyPower>())
@@ -163,11 +220,13 @@ namespace Miyabists2.Scripts.Service
         //失衡值叠加
         public static async Task AddDaze(Creature target,DynamicVar dazeVar,Creature dealer)
         {
+            SetDazeTriggerMultiply(target);
+
             int chkDaze = target.GetPowerAmount<DazePower>() + dazeVar.IntValue;
 
-            if (!target.HasPower<BreakPower>() && chkDaze <= 100)
+            if (!target.HasPower<BreakPower>() && chkDaze <= DazeTrigger)
                 await PowerCmd.Apply<DazePower>(target, dazeVar.BaseValue, dealer, null);
-            else if (chkDaze >= 101)
+            else if (chkDaze >= DazeTrigger + 1)
             {
                 await PowerCmd.SetAmount<DazePower>(target, 1, dealer, null);
                 await PowerCmd.Apply<BreakPower>(target, 1, dealer, null);

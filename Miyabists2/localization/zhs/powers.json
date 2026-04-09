@@ -74,6 +74,10 @@
     "MIYABISTS2-EJIZHAN_POWER.description": "",
 	"MIYABISTS2-EJIZHAN_POWER.smartDescription": "本回合获得[blue]{Amount}[/blue]点[gold]力量[/gold]",
 
+	"MIYABISTS2-CIQUANLJ_POWER.title": "L式轰鸣拳-刺拳连击",
+    "MIYABISTS2-CIQUANLJ_POWER.description": "",
+	"MIYABISTS2-CIQUANLJ_POWER.smartDescription": "2回合内，敌人受到[aqua]烈霜[/aqua]伤害+[blue]50%[/blue]",
+
 	"MIYABISTS2-ZHONGMUYC_POWER.title": "终幕演出",
     "MIYABISTS2-ZHONGMUYC_POWER.description": "",
 	"MIYABISTS2-ZHONGMUYC_POWER.smartDescription": "受到的[purple]属性异常[/purple]和[purple]紊乱[/purple]伤害变为[blue]1.5[/blue]倍",
