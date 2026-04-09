@@ -1,46 +1,46 @@
 {
-	"MIYABISTS2-FROST_BUILD_POWER.smartDescription": "积累到[blue]50[/blue]层后触发[aqua]霜灼[/aqua]，并添加一层[gold]属性异常[/gold]",
-	"MIYABISTS2-FROST_BUILD_POWER.description": "",
+	"MIYABISTS2-FROST_BUILD_POWER.smartDescription": "积累到[blue]50[/blue]层后触发[aqua]霜灼[/aqua]，并添加一层[purple]属性异常[/purple]",
+	"MIYABISTS2-FROST_BUILD_POWER.description": "积累到一定层数后触发[aqua]霜灼[/aqua]，并添加一层[purple]属性异常[/purple]",
 	"MIYABISTS2-FROST_BUILD_POWER.title": "烈霜",
 
 	"MIYABISTS2-DAZE_POWER.smartDescription": "积累到[blue]100[/blue]层后触发[gold]击破[/gold]",
-	"MIYABISTS2-DAZE_POWER.description": "",
+	"MIYABISTS2-DAZE_POWER.description": "积累到一定层数后触发[gold]击破[/gold]",
 	"MIYABISTS2-DAZE_POWER.title": "失衡值",
 
-	"MIYABISTS2-BREAK_POWER.smartDescription": "一回合[gold]眩晕[/gold]，并给予一回合[red]失衡易伤50%[/red]。在此状态下不能叠加[gold]失衡值[/gold]。",
-	"MIYABISTS2-BREAK_POWER.description": "",
+	"MIYABISTS2-BREAK_POWER.smartDescription": "[gold]眩晕[/gold]，获得一回合[gold]失衡易伤[/gold][red]50%[/red]。在此状态下不能叠加[gold]失衡值[/gold]。",
+	"MIYABISTS2-BREAK_POWER.description": "击破时[gold]眩晕[/gold]敌人，并给予一回合[gold]失衡易伤[/gold][red]50%[/red]。在此状态下不能叠加[gold]失衡值[/gold]。",
 	"MIYABISTS2-BREAK_POWER.title": "击破",
 
 	"MIYABISTS2-FROST_FIRE_POWER.title": "冰焰",
-    "MIYABISTS2-FROST_FIRE_POWER.description": "",
+    "MIYABISTS2-FROST_FIRE_POWER.description": "每层使[aqua]烈霜[/aqua]伤害增加[red]5%[/red]（上限[blue]50%[/blue]）。",
     "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[aqua]烈霜[/aqua]伤害增加[red]5%[/red]（上限[blue]50%[/blue]）。",
 
 	"MIYABISTS2-FROST_POWER.title": "霜灼",
-    "MIYABISTS2-FROST_POWER.description": "",
+    "MIYABISTS2-FROST_POWER.description": "受到伤害+[blue]20%[/blue]，不可叠加[aqua]烈霜积蓄值[/aqua]",
     "MIYABISTS2-FROST_POWER.smartDescription": "受到伤害+[blue]20%[/blue]，不可叠加[aqua]烈霜积蓄值[/aqua]",
 
 	"MIYABISTS2-DAZE_VULN_POWER.smartDescription": "一回合内，受伤+[blue]{Amount}%[/blue]",
-	"MIYABISTS2-DAZE_VULN_POWER.description": "",
+	"MIYABISTS2-DAZE_VULN_POWER.description": "使敌人受到伤害增加",
 	"MIYABISTS2-DAZE_VULN_POWER.title": "失衡易伤",
 
 	"MIYABISTS2-FROST_FALL_POWER.title": "霜落",
-    "MIYABISTS2-FROST_FALL_POWER.description": "",
+    "MIYABISTS2-FROST_FALL_POWER.description": "用于释放[gold]霜月[/gold]",
     "MIYABISTS2-FROST_FALL_POWER.smartDescription": "六豆连接大脑，蓄力代替思考",
 
 	"MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.title": "属性异常",
-    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.description": "",
+    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.description": "每回合结束时受到最大生命值[blue]5%[/blue]的伤害。给予时如果已存在该效果则触发[purple]紊乱[/purple]。",
     "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "每回合结束时受到最大生命值[blue]5%[/blue]的伤害。给予时如果已存在该效果则触发[purple]紊乱[/purple]。",
 
 	"MIYABISTS2-ANOMALY_BUILDUP_POWER.title": "属性积蓄",
-    "MIYABISTS2-ANOMALY_BUILDUP_POWER.description": "",
-    "MIYABISTS2-ANOMALY_BUILDUP_POWER.smartDescription": "什么效果都没有哦~",
+    "MIYABISTS2-ANOMALY_BUILDUP_POWER.description": "累积到一定层数后使敌人获得[purple]属性异常[/purple]",
+    "MIYABISTS2-ANOMALY_BUILDUP_POWER.smartDescription": "累积到一定层数后使敌人获得[purple]属性异常[/purple]",
 
 	"MIYABISTS2-DISORDER_POWER.title": "紊乱",
-    "MIYABISTS2-DISORDER_POWER.description": "",
-    "MIYABISTS2-DISORDER_POWER.smartDescription": "立即造成最大生命值[blue]10%[/blue]的伤害，下一击伤害翻倍",
+    "MIYABISTS2-DISORDER_POWER.description": "立即造成最大生命值[blue]10%[/blue]的伤害，下一击伤害变为[blue]2[/blue]倍",
+    "MIYABISTS2-DISORDER_POWER.smartDescription": "立即造成最大生命值[blue]10%[/blue]的伤害，下一击伤害变为[blue]2[/blue]倍",
 
 	"MIYABISTS2-SUPPORT_POINT_POWER.title": "支援点数",
-    "MIYABISTS2-SUPPORT_POINT_POWER.description": "",
+    "MIYABISTS2-SUPPORT_POINT_POWER.description": "上限为[blue]6[/blue]，用于触发伙伴卡的额外能力",
     "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块,上限为[blue]6[/blue]",
 
 	"MIYABISTS2-TUNAFA_POWER.title": "吐纳法",
@@ -63,7 +63,7 @@
 	"MIYABISTS2-BLESSING_MOON_POWER.smartDescription": "受到致命伤害时，避免死亡并恢复[blue]{Amount}%[/blue]的生命\\n触发[gold]属性异常[/gold]与[gold]紊乱[/gold]时额外造成[blue]5%[/blue]最大生命值伤害",
 
 	"MIYABISTS2-SHUANGYUEJS_POWER.title": "霜月架势",
-    "MIYABISTS2-SHUANGYUEJS_POWER.smartDescription": "每回合开始时获得[blue]2[/blue]点[gold]落霜[/gold]",
+    "MIYABISTS2-SHUANGYUEJS_POWER.smartDescription": "每回合开始时获得[blue]{Amount}[/blue]点[gold]落霜[/gold]",
 	"MIYABISTS2-SHUANGYUEJS_POWER.description": "每回合开始时获得[blue]2[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2-TIANMIJX_POWER.title": "甜蜜惊吓",
@@ -131,8 +131,8 @@
     "MIYABISTS2-LUOYUSH_POWER.smartDescription": "每回合使用单体攻击卡后给予敌人[blue]1[/blue]层[gold]属性积蓄[/gold]，最多可触发[blue]{Amount}[/blue]次",
 
 	"MIYABISTS2-MIYABI_PARRY_POWER.title": "招架",
-    "MIYABISTS2-MIYABI_PARRY_POWER.description": "弹刀这一块",
-    "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被格挡下来的伤害，将一张[gold]花辞[/gold]加入手牌，然后层数减[blue]1[/blue]。",
+    "MIYABISTS2-MIYABI_PARRY_POWER.description": "每次受到被格挡下来的伤害，将一张[gold]花辞[/gold]加入手牌，然后层数减[red]1[/red]。",
+    "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被格挡下来的伤害，将一张[gold]花辞[/gold]加入手牌，然后层数减[red]1[/red]。",
 
 	"MIYABISTS2-TONGMU_SHUANGXUE_POWER.title": "同沐霜雪",
     "MIYABISTS2-TONGMU_SHUANGXUE_POWER.description": "每次使用非[gold]伙伴[/gold]攻击卡时，获得[blue]1[/blue]点[gold]支援点数[/gold]",

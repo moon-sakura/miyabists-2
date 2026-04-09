@@ -1,16 +1,17 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -24,6 +25,16 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(DazeVarName, 8),
             new DynamicVar(AnomalyBuildupVarName,1),
             new DynamicVar("Strength",1)
+        ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<SupportPointPower>(),
+            HoverTipFactory.FromPower<DazePower>(),
+            HoverTipFactory.FromPower<BreakPower>(),
+            HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromPower<AnomalyBuildupPower>(),
+            HoverTipFactory.FromPower<StrengthPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

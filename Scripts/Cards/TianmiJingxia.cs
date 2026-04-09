@@ -18,6 +18,14 @@ namespace Miyabists2.Scripts.Cards
     {
         public TianmiJingxia() : base(1, CardRarity.Common, TargetType.Self, CardType.Power) { }
 
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<SupportPointPower>(),
+            HoverTipFactory.FromPower<AnomalyBuildupPower>(),
+            HoverTipFactory.FromPower<AttributeAnomalyPower>(),
+            HoverTipFactory.FromPower<DisorderPower>()
+        ];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<TianmijxPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);

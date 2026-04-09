@@ -2,6 +2,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
@@ -24,6 +25,18 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(12, ValueProp.Move),
             new DynamicVar(DazeVarName, 4)
         ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromPower<DazePower>(),
+            HoverTipFactory.FromPower<BreakPower>(),
+            HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromPower<FrostPower>(),
+            HoverTipFactory.FromPower<AttributeAnomalyPower>(),
+            HoverTipFactory.FromPower<DisorderPower>()
+        ];
+
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [

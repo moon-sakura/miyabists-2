@@ -32,7 +32,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
-            if (cardPlay.Card.Owner != base.Owner.Player || !(cardPlay.Card is ShuangYue)) return;
+            if (cardPlay.Card.Owner != base.Owner.Player || !(cardPlay.Card is FengHua)) return;
 
             await PowerCmd.SetAmount<TunafaPower>(Owner, Amount + 1, null, null);
 

@@ -27,13 +27,13 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(3, ValueProp.Move),
-            new DynamicVar(DazeVarName, 5)
+            new DynamicVar(DazeVarName, 8)
         ];
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(2);
-            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
+            DynamicVars.Damage.UpgradeValueBy(1);
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(4);
         }
     }
 }

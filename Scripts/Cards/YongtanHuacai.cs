@@ -2,10 +2,11 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using Miyabists2.Scripts.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace Miyabists2.Scripts.Cards
     {
         public override string PortraitPath => $"res://images/cards/yongtanHuacai.png";
         public YongtanHuacai() : base(3, CardRarity.Rare, TargetType.Self, CardType.Power) { }
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<SupportPointPower>(),
+        ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

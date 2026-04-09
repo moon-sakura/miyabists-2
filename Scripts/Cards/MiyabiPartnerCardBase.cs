@@ -25,6 +25,7 @@ namespace Miyabists2.Scripts.Cards
         protected const string ParryVarName = "PARRY_POWER";
         protected const string SlipperyVarName = "SLIPPERY_POWER";
         protected const string AnomalyBuildupVarName = "ANOBUILD_POWER";
+        protected const string SupportVarName = "SUPPORT_POINT_POWER";
 
         //protected const bool isDirectAno = false;
 

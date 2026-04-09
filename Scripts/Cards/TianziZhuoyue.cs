@@ -22,7 +22,11 @@ namespace Miyabists2.Scripts.Cards
             await PowerCmd.Apply<TianzizyPower>(Owner.Creature, 1, Owner.Creature, this);
         }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<ShuangYueSp>()];
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+        [
+            HoverTipFactory.FromCard<ShuangYue>(),
+            HoverTipFactory.FromCard<ShuangYueSp>()
+        ];
 
         protected override void OnUpgrade()
         {

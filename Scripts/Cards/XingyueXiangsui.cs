@@ -2,6 +2,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
@@ -16,12 +17,20 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class XingyueXiangsui : MiyabiPartnerCardBase
     {
-        public XingyueXiangsui() : base(1, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
+        public XingyueXiangsui() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar(AnomalyBuildupVarName,1)
+        ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<SupportPointPower>(),
+            HoverTipFactory.FromPower<AnomalyBuildupPower>(),
+            HoverTipFactory.FromPower<AttributeAnomalyPower>(),
+            HoverTipFactory.FromPower<DisorderPower>()
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

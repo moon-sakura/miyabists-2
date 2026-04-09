@@ -21,7 +21,17 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(DazeVarName, 4)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<FeiXueTwo>()];
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromPower<DazePower>(),
+            HoverTipFactory.FromPower<BreakPower>(),
+            HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromPower<FrostPower>(),
+            HoverTipFactory.FromPower<AttributeAnomalyPower>(),
+            HoverTipFactory.FromPower<DisorderPower>(),
+            HoverTipFactory.FromCard<FeiXueTwo>()
+        ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using Miyabists2.Scripts.Powers;
@@ -20,6 +21,12 @@ namespace Miyabists2.Scripts.Cards
     {
         public override string PortraitPath => $"res://images/cards/xueshangJiashuang.png";
         public XueshangJiashuang() : base(2,CardType.Power, CardRarity.Uncommon,TargetType.Self, true) { }
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromCard<ShuangYue>(),
+            HoverTipFactory.FromPower<StrengthPower>(),
+        ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

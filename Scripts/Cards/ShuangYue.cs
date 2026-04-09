@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -39,6 +40,17 @@ namespace Miyabists2.Scripts.Cards
             MiyabiKeywords.LieShuang,
             CardKeyword.Exhaust,
             CardKeyword.Retain
+        ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromPower<DazePower>(),
+            HoverTipFactory.FromPower<BreakPower>(),
+            HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromPower<FrostPower>(),
+            HoverTipFactory.FromPower<AttributeAnomalyPower>(),
+            HoverTipFactory.FromPower<DisorderPower>()
         ];
 
         public ShuangYue() : base(0, CardRarity.Token, TargetType.AllEnemies, true) { }

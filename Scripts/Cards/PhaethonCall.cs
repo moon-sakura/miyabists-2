@@ -2,7 +2,9 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,12 @@ namespace Miyabists2.Scripts.Cards
     internal class PhaethonCall : MiyabiCardBase
     {
         public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromKeyword(MiyabiKeywords.Friends),
+            HoverTipFactory.FromKeyword(MiyabiKeywords.OtherWorldFriends)
+        ];
 
         public PhaethonCall()
             : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)

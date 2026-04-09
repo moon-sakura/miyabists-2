@@ -5,8 +5,10 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
@@ -25,6 +27,13 @@ namespace Miyabists2.Scripts.Cards
             new BlockVar(0, ValueProp.Move),
             new DynamicVar(ParryVarName, 0),
             new DynamicVar(SlipperyVarName, 1)
+        ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<MiyabiParryPower>(),
+            HoverTipFactory.FromCard<HuaCi>(),
+            HoverTipFactory.FromPower<SlipperyPower>(),
         ];
 
         protected override void OnUpgrade()

@@ -2,6 +2,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -63,7 +64,8 @@ namespace Miyabists2.Scripts.Cards
 
         private async Task CheckReduce()
         {
-            if(base.Owner != null && base.Owner.Creature.IsAlive)
+            if(base.Owner != null && base.Owner.Creature.IsAlive
+                && !(base.Owner.Creature.HasPower<NoTailFullPower>() || base.Owner.Creature.HasPower<MiyabiFullPower>()))
             {
                 if (base.Owner.Creature.HasPower<SlipperyPower>())
                     SetCost(0);

@@ -1,9 +1,11 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +18,29 @@ namespace Miyabists2.Scripts.Cards
     {
         public override string PortraitPath => $"res://images/cards/baojunMengji.png";
 
-        public BaojunMengji() : base(3,CardRarity.Uncommon, TargetType.AnyEnemy) { }
+        public BaojunMengji() : base(2,CardRarity.Uncommon, TargetType.AnyEnemy) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(20, ValueProp.Move),
+            new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 12),
             new BlockVar(12,ValueProp.Move),
             new DynamicVar(ParryVarName, 2)
+        ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<PlatingPower>(),
+            HoverTipFactory.FromPower<MiyabiParryPower>(),
+            HoverTipFactory.FromPower<DazePower>(),
+            HoverTipFactory.FromPower<BreakPower>(),
+            HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromPower<SupportPointPower>()
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            // 1. 获得护甲
-            // 注意：BlockVar 通常会自动关联到 DynamicVars.Block
             if (DynamicVars.Block.BaseValue > 0)
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 
@@ -52,7 +62,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(6);
+            DynamicVars.Damage.UpgradeValueBy(2);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
             DynamicVars.Block.UpgradeValueBy(4);
             if (base.DynamicVars.TryGetValue(ParryVarName, out DynamicVar p)) p.UpgradeValueBy(1);
