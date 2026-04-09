@@ -76,7 +76,7 @@
 
 	"MIYABISTS2-CIQUANLJ_POWER.title": "L式轰鸣拳-刺拳连击",
     "MIYABISTS2-CIQUANLJ_POWER.description": "",
-	"MIYABISTS2-CIQUANLJ_POWER.smartDescription": "2回合内，敌人受到[aqua]烈霜[/aqua]伤害+[blue]50%[/blue]",
+	"MIYABISTS2-CIQUANLJ_POWER.smartDescription": "2回合内，敌人受到[aqua]烈霜[/aqua]伤害+[blue]{Amount}%[/blue]",
 
 	"MIYABISTS2-ZHONGMUYC_POWER.title": "终幕演出",
     "MIYABISTS2-ZHONGMUYC_POWER.description": "",
