@@ -150,6 +150,12 @@
 	"MIYABISTS2-TU_NA_FA.title": "吐纳法",
     "MIYABISTS2-TU_NA_FA.description": "每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]",
 
+	"MIYABISTS2-MIYABI_DUEL.title": "对决",
+    "MIYABISTS2-MIYABI_DUEL.description": "将敌人的意图变为造成10点伤害\\n招架1",
+
+	"MIYABISTS2-ZHONGMU_YANCHU.title": "终幕演出",
+    "MIYABISTS2-ZHONGMU_YANCHU.description": "造成3次{Damage:diff()}点伤害[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}\\n[gold]支援点数[/gold][blue]3[/blue]：敌人受到的[purple]属性异常[/purple]和[purple]紊乱[/purple]伤害变为[blue]1.5[/blue]倍",
+
 	"MIYABISTS2-JUN_LIE.title": "皲裂",
     "MIYABISTS2-JUN_LIE.description": "每次使用[aqua]烈霜[/aqua]卡牌时，获得[blue]1[/blue]点[gold]喧嚣值[/gold]",
 

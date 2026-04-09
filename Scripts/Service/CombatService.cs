@@ -112,6 +112,7 @@ namespace Miyabists2.Scripts.Service
         {
 
             bool moonBless = IsAnyHasMoonBlessing(dealer);
+            bool hasZmyc = target.HasPower<ZhongmuycPower>();
 
             await PowerCmd.Remove<AttributeAnomalyPower>(target);
             await PowerCmd.Apply<DisorderPower>(target, 1, dealer, null);
@@ -119,6 +120,8 @@ namespace Miyabists2.Scripts.Service
             decimal damage = target.MaxHp * DisorderDamageRate;
 
             if (moonBless) damage += target.MaxHp * 0.05m;
+
+            if (hasZmyc) damage *= 1.5m;
 
             await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered & ValueProp.Unblockable, dealer);
         }

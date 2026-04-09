@@ -78,9 +78,12 @@ namespace Miyabists2.Scripts.Powers
         public async Task DealAno(PlayerChoiceContext choiceContext)
         {
             decimal damage = Owner.MaxHp * 0.05m;
+            bool hasZmyc = base.Owner.HasPower<ZhongmuycPower>();
 
             if (MiyabiCombatService.IsAnyHasMoonBlessing(Owner))
                 damage += Owner.MaxHp * 0.05m;
+
+            damage *= hasZmyc ? 1.5m : 1m;
 
             await CreatureCmd.Damage(choiceContext, base.Owner, damage, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
         }

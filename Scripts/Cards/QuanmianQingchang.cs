@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts.Cards
         public QuanmianQingchang() : base(1, CardRarity.Common, TargetType.Self) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(11,ValueProp.Move),
+            new BlockVar(7,ValueProp.Move),
             new DynamicVar(SupportVarName, 2)
         ];
 

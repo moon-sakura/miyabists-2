@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromKeyword(MiyabiKeywords.LieShuang)
+            //HoverTipFactory.FromKeyword(MiyabiKeywords.LieShuang)
         ];
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
