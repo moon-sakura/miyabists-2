@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<DisorderPower>()
+            //HoverTipFactory.FromPower<DisorderPower>()
         ];
 
         // 效果 1：受到伤害 +20%

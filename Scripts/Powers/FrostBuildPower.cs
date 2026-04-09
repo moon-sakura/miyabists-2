@@ -28,8 +28,8 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<FrostPower>(),
-            HoverTipFactory.FromPower<AnomalyBuildupPower>()
+            //HoverTipFactory.FromPower<FrostPower>(),
+            //HoverTipFactory.FromPower<AnomalyBuildupPower>()
         ];
 
 

@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<FrostFallPower>()
+            //HoverTipFactory.FromPower<FrostFallPower>()
         ];
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)

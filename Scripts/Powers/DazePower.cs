@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<BreakPower>()
+            //HoverTipFactory.FromPower<BreakPower>()
         ];
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)

@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<DazeVulnPower>()
+            //HoverTipFactory.FromPower<DazeVulnPower>()
         ];
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)

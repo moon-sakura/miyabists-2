@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<AttributeAnomalyPower>(),
+            //HoverTipFactory.FromPower<AttributeAnomalyPower>(),
             //HoverTipFactory.FromPower<DisorderPower>()
         ];
 
