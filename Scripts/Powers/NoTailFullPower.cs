@@ -4,10 +4,13 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Afflictions;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Cards;
+using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +63,16 @@ namespace Miyabists2.Scripts.Powers
             card.SetToFreeThisCombat();
             if (card.IsUpgradable)
                 card.UpgradeInternal();
+        }
+
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (cardPlay.Card.Owner != base.Owner.Player || !cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang)) return;
+
+            Flash();
+
+            await CreatureCmd.Damage(choiceContext, base.Owner, 1, ValueProp.Unpowered, null, null);
+            await PowerCmd.Apply<StrengthPower>(base.Owner, 1, null, null);
         }
     }
 }

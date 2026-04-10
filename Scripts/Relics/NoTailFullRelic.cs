@@ -104,19 +104,8 @@ namespace Miyabists2.Scripts.Relics
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<NoTailFull>(base.Owner.Creature.Player);
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
             }
-            // 此时，syncRnd.Next 在所有客户端产生的结果将完全一致
-            int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, 4); ;
         }
 
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            if (cardPlay.Card.Owner != base.Owner || !cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang)) return;
-
-            Flash();
-
-            await CreatureCmd.Damage(choiceContext,base.Owner.Creature, 1, ValueProp.Unpowered, null, null);
-            await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, null, null);
-
-        }
+        
     }
 }

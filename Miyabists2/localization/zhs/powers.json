@@ -96,11 +96,11 @@
 
 	"MIYABISTS2-NO_TAIL_FULL_POWER.title": "妖刀解放",
     "MIYABISTS2-NO_TAIL_FULL_POWER.description": "",
-	"MIYABISTS2-NO_TAIL_FULL_POWER.smartDescription": "所有非[gold]伙伴[/gold]攻击卡全部[gold]升级[/gold]，费用变为[blue]0[/blue]，添加[gold]消耗[/gold]、[gold]虚无[/gold]",
+	"MIYABISTS2-NO_TAIL_FULL_POWER.smartDescription": "所有非[gold]伙伴[/gold]攻击卡全部[gold]升级[/gold]，费用变为[blue]0[/blue]，添加[gold]消耗[/gold]、[gold]虚无[/gold]；每次使用非[gold]伙伴[/gold]攻击卡都会失去[red]1[/red]点生命，获得[blue]1[/blue]点[gold]力量[/gold]",
 
 	"MIYABISTS2-MIYABI_FULL_POWER.title": "妖刀解放",
     "MIYABISTS2-MIYABI_FULL_POWER.description": "",
-	"MIYABISTS2-MIYABI_FULL_POWER.smartDescription": "所有非[gold]伙伴[/gold]攻击卡全部[gold]升级[/gold]，费用变为[blue]0[/blue]，每使用一张非[gold]伙伴[/gold]攻击牌抽[blue]1[/blue]张卡",
+	"MIYABISTS2-MIYABI_FULL_POWER.smartDescription": "所有非[gold]伙伴[/gold]攻击卡全部[gold]升级[/gold]，费用变为[blue]0[/blue]，每使用一张非[gold]伙伴[/gold]攻击牌抽[blue]1[/blue]张卡；每次使用非[gold]伙伴[/gold]攻击卡都会失去[red]1[/red]点生命，获得[blue]1[/blue]点[gold]力量[/gold]",
 
 	"MIYABISTS2-TRAIN_SPEAK_POWER.title": "说话不超过五个字修行",
     "MIYABISTS2-TRAIN_SPEAK_POWER.description": "",

@@ -7,8 +7,10 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,6 +71,16 @@ namespace Miyabists2.Scripts.Powers
             {
                 await CardPileCmd.Draw(context, Amount, base.Owner.Player);
             }
+        }
+
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (cardPlay.Card.Owner != base.Owner.Player || !cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang)) return;
+
+            Flash();
+
+            await CreatureCmd.Damage(choiceContext, base.Owner, 1, ValueProp.Unpowered, null, null);
+            await PowerCmd.Apply<StrengthPower>(base.Owner, 1, null, null);
         }
     }
 }
