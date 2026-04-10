@@ -11,7 +11,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class HanQue: MiyabiAttackCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        protected override string ArtPath => $"res://images/cards/hanQue.png";
 
         public HanQue() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, true) { }
 

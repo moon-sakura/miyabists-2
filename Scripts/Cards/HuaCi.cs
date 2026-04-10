@@ -15,7 +15,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class HuaCi : MiyabiAttackCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        protected override string ArtPath => $"res://images/cards/huaCi.png";
 
         public HuaCi() : base(0, CardRarity.Token, TargetType.AnyEnemy, true) { }
 

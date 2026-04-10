@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
     //[Pool(typeof(StatusCardPool))]
     internal class FeiXueTwo:MiyabiAttackCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        protected override string ArtPath => $"res://images/cards/feiXueTwo.png";
 
         public FeiXueTwo() : base(2, CardRarity.Token, TargetType.AnyEnemy, true) { }
 
