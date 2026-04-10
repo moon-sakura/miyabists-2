@@ -165,6 +165,26 @@
 	"MIYABISTS2-ZHONGMO_CAIJUE.title": "终末裁决",
     "MIYABISTS2-ZHONGMO_CAIJUE.description": "造成{Damage:diff()}点伤害，若敌人处于[gold]击破[/gold]状态，伤害变为[blue]3[/blue]倍，移除敌人的[gold]击破[/gold]与[gold]失衡易伤[/gold]，移除后[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]3[/blue]：伤害+[blue]8[/blue]",
 
+	"MIYABISTS2-PRINCESS.title": "超时空辉夜姬",
+    "MIYABISTS2-PRINCESS.description": "来自超时空辉夜姬的祝福",
+	"MIYABISTS2-PRINCESS.selectionScreenPrompt": "选择祝福",
+
+	"MIYABISTS2-PRINCESS_KAGUYA.title": "辉夜姬",
+    "MIYABISTS2-PRINCESS_KAGUYA.description": "消耗卡组中所有[gold]超人彩叶[/gold]，每回合开始时随机触发{Kaguya:diff()}种增益",
+
+	"MIYABISTS2-PRINCESS_INOP.title": "彩叶的祝福",
+    "MIYABISTS2-PRINCESS_INOP.description": "获得1层[gold]人工制品[/gold]，1层[gold]滑溜[/gold]，2层[gold]覆甲[/gold]",
+
+	"MIYABISTS2-PRINCESS_YACHIYO.title": "八千代的守望",
+    "MIYABISTS2-PRINCESS_YACHIYO.description": "选择一张手卡[gold]消耗[/gold]，下回合加入到目标手卡并变为0费",
+	"MIYABISTS2-PRINCESS_YACHIYO.selectionScreenPrompt": "选择一张卡送往未来",
+
+	"MIYABISTS2-PRINCESS_YEARS.title": "八千年的等待",
+    "MIYABISTS2-PRINCESS_YEARS.description": "加入一张[gold]超人彩叶[/gold]到弃牌堆",
+
+	"MIYABISTS2-PRINCESS_INOHA.title": "超人彩叶",
+    "MIYABISTS2-PRINCESS_INOHA.description": "与[gold]八千年的等待[/gold]同时在手卡时，升级所有卡牌，将[gold]八千年的等待[/gold]变化为[gold]辉夜姬[/gold]到手卡",
+
 	"MIYABISTS2-TRAINING_TODAY.title": "今日修行",
     "MIYABISTS2-TRAINING_TODAY.description": "选择今天的修行",
 	"MIYABISTS2-TRAINING_TODAY.selectionScreenPrompt": "选择修行",

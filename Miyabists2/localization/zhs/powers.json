@@ -70,6 +70,14 @@
     "MIYABISTS2-TIANMIJX_POWER.description": "每回合结束时，所有敌人受到[blue]3[/blue]点伤害，给予[blue]1[/blue]层[gold]属性异常[/gold]",
 	"MIYABISTS2-TIANMIJX_POWER.smartDescription": "每回合结束时，所有敌人受到[blue]3[/blue]点伤害，给予[blue]1[/blue]层[gold]属性异常[/gold]",
 
+	"MIYABISTS2-YACHIYO_POWER.title": "八千代的守望",
+    "MIYABISTS2-YACHIYO_POWER.description": "",
+	"MIYABISTS2-YACHIYO_POWER.smartDescription": "下回合将[blue]{Amount}[/blue]张[gold]{Card}[/gold]加入手卡，且当回合变为0费",
+
+	"MIYABISTS2-KAGUYA_POWER.title": "辉夜姬",
+    "MIYABISTS2-KAGUYA_POWER.description": "",
+	"MIYABISTS2-KAGUYA_POWER.smartDescription": "回合开始随机触发[blue]{Amount}[/blue]个效果",
+
 	"MIYABISTS2-EJIZHAN_POWER.title": "大份鹅鸡斩",
     "MIYABISTS2-EJIZHAN_POWER.description": "",
 	"MIYABISTS2-EJIZHAN_POWER.smartDescription": "本回合获得[blue]{Amount}[/blue]点[gold]力量[/gold]",
