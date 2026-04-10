@@ -1,6 +1,7 @@
 using BaseLib.Abstracts;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
@@ -16,10 +17,13 @@ public class Miyabi : PlaceholderCharacterModel
     public static readonly Color Color = new("4682B4");
 
     // 能量图标轮廓颜色
-    public override Color EnergyLabelOutlineColor => new(0.1f, 0.1f, 1f);
+    public override Color EnergyLabelOutlineColor => Color;//new(0.1f, 0.1f, 1f);
+
+    public override Color MapDrawingColor => Color;
 
 
-    public override Color NameColor => Color;
+    //public override Color NameColor => Color;
+    public override Color NameColor => StsColors.blue;
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override int StartingHp => 52;
 
@@ -74,13 +78,13 @@ public class Miyabi : PlaceholderCharacterModel
     // 商店人物动画。
     //public override string CustomMerchantAnimPath => "res://scenes/miyabi_char.tscn";
     // 多人模式-手指。
-    // public override string CustomArmPointingTexturePath => null;
+    public override string CustomArmPointingTexturePath => null;
     // 多人模式剪刀石头布-石头。
-    // public override string CustomArmRockTexturePath => null;
+    public override string CustomArmRockTexturePath => null;
     // 多人模式剪刀石头布-布。
-    // public override string CustomArmPaperTexturePath => null;
+    public override string CustomArmPaperTexturePath => null;
     // 多人模式剪刀石头布-剪刀。
-    // public override string CustomArmScissorsTexturePath => null;
+    public override string CustomArmScissorsTexturePath => null;
 
     // 人物选择背景。
     public override string CustomCharacterSelectBg => "res://scenes/char_select/char_select_bg_miyabi.tscn";

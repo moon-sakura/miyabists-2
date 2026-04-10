@@ -15,7 +15,7 @@
     "MIYABISTS2-SHUI_NIAO.description": "[gold]滑溜[/gold][blue]1[/blue]",
 
 	"MIYABISTS2-DONG_FENG.title": "冬蜂",
-    "MIYABISTS2-DONG_FENG.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n抽[blue]{Cards:diff()}[/blue]张卡，若拥有[gold]滑溜[/gold]则费用为[blue]0[/blue]",
+    "MIYABISTS2-DONG_FENG.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n抽{Cards:diff()}张卡，若拥有[gold]滑溜[/gold]则费用为[blue]0[/blue]",
 
 	"MIYABISTS2-DONG_FENG_SP.title": "冬蜂·极",
     "MIYABISTS2-DONG_FENG_SP.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n下一张攻击卡伤害+[blue]50%[/blue]，若拥有[gold]滑溜[/gold]则费用为[blue]0[/blue]",
@@ -24,19 +24,19 @@
     "MIYABISTS2-HAN_QUE.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n若拥有[gold]滑溜[/gold]则伤害+[blue]4[/blue]",
 
 	"MIYABISTS2-MIYABI_BLOCK.title": "防御",
-    "MIYABISTS2-MIYABI_BLOCK.description": "获得[blue]{Block:diff()}[/blue]点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}",
+    "MIYABISTS2-MIYABI_BLOCK.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}",
 
 	"MIYABISTS2-HUA_CI.title": "花辞",
     "MIYABISTS2-HUA_CI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2-HUA_FA.title": "花筏",
-    "MIYABISTS2-HUA_FA.description": "获得[blue]{Block:diff()}[/blue]点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n若本回合使用过[gold]伙伴[/gold]牌，则额外获得[blue]6[/blue]点格挡，获得[blue]1[/blue]点[gold]招架[/gold]",
+    "MIYABISTS2-HUA_FA.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n若本回合使用过[gold]伙伴[/gold]牌，则额外获得[blue]6[/blue]点格挡，获得[blue]1[/blue]点[gold]招架[/gold]",
 
 	"MIYABISTS2-QUICK_PARRY.title": "快速招架",
-    "MIYABISTS2-QUICK_PARRY.description": "获得[blue]{Block:diff()}[/blue]点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n获得[blue]1[/blue]点[gold]支援点数[/gold]，将抽牌堆中随机一张[gold]伙伴[/gold]卡加入手卡",
+    "MIYABISTS2-QUICK_PARRY.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n获得[blue]1[/blue]点[gold]支援点数[/gold]，将抽牌堆中随机一张[gold]伙伴[/gold]卡加入手卡",
 
 	"MIYABISTS2-ZHANSHU_CHONGZHENG.title": "战术重整",
-    "MIYABISTS2-ZHANSHU_CHONGZHENG.description": "抽[blue]{Cards:diff()}[/blue]张卡\\n每有一张[gold]伙伴[/gold]卡，获得[blue]1[/blue]点[gold]支援点数[/gold]",
+    "MIYABISTS2-ZHANSHU_CHONGZHENG.description": "抽{Cards:diff()}张卡\\n每有一张[gold]伙伴[/gold]卡，获得[blue]1[/blue]点[gold]支援点数[/gold]",
 
 	"MIYABISTS2-RANYOUYIN_SHARE.title": "燃油饮分享装",
     "MIYABISTS2-RANYOUYIN_SHARE.description": "自己获得[blue]1[/blue]层[gold]易伤[/gold]，获得[blue]{Decible:diff()}[/blue]点[gold]喧嚣值[/gold]，获得[blue]1[/blue]点[gold]支援点数[/gold]\\n如果本回合使用过[gold]伙伴[/gold]卡，则[gold]重放[/gold][blue]1[/blue]",
@@ -67,8 +67,8 @@
     "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用[gold]终结技[/gold]后获得[blue]5[/blue]点[gold]喧嚣值[/gold]，使用[gold]伙伴[/gold]卡后获得[blue]2[/blue]点[gold]喧嚣值[/gold]",
 
 	"MIYABISTS2-SP_XIAOYE.title": "SP：小夜骑士",
-    "MIYABISTS2-SP_XIAOYE.description": "自己和敌方各获得[blue]1[/blue]层[gold]无实体[/gold]，从所有卡牌里选择[blue]{Cards:diff()}[/blue]张卡牌[gold]消耗[/gold]",
-	"MIYABISTS2-SP_XIAOYE.selectionScreenPrompt": "选择[blue]{Cards:diff()}[/blue]张卡牌[gold]消耗[/gold]",
+    "MIYABISTS2-SP_XIAOYE.description": "自己和敌方各获得[blue]1[/blue]层[gold]无实体[/gold]，从所有卡牌里选择{Cards:diff()}张卡牌[gold]消耗[/gold]",
+	"MIYABISTS2-SP_XIAOYE.selectionScreenPrompt": "选择{Cards:diff()}张卡牌[gold]消耗[/gold]",
 
 	"MIYABISTS2-BLESSING_OFMOON.title": "新月的祝福",
     "MIYABISTS2-BLESSING_OFMOON.description": "受到致命伤害时，避免死亡并恢复[blue]{Bless:diff()}%[/blue]的生命\\n触发[gold]属性异常[/gold]与[gold]紊乱[/gold]时额外造成敌人最大生命值[blue]5%[/blue]的伤害",
@@ -92,7 +92,7 @@
     "MIYABISTS2-XIEZOU_JUSHA.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]15%[/blue][gold]失衡易伤[/gold]",
 
 	"MIYABISTS2-BYE_QUANLEIDA.title": "再见全垒打！",
-    "MIYABISTS2-BYE_QUANLEIDA.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]2[/blue]：从弃牌堆中选[blue]{Cards:diff()}[/blue]张攻击卡加入手卡，本场战斗伤害+[blue]3[/blue]\\n若敌人已处于[gold]击破[/gold]状态，则不消耗[gold]支援点数[/gold]",
+    "MIYABISTS2-BYE_QUANLEIDA.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]2[/blue]：从弃牌堆中选{Cards:diff()}张攻击卡加入手卡，本场战斗伤害+[blue]3[/blue]\\n若敌人已处于[gold]击破[/gold]状态，则不消耗[gold]支援点数[/gold]",
 	"MIYABISTS2-BYE_QUANLEIDA.selectionScreenPrompt": "选择一张[gold]伙伴[/gold]卡",
 
 	"MIYABISTS2-HUA_XIN_FENG.title": "花信风",
@@ -105,7 +105,7 @@
     "MIYABISTS2-MING_CAN_XUE.description": "全体造成[blue]5[/blue]次[aqua]烈霜[/aqua]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n本回合每使用一张攻击牌次数获得[blue]1[/blue]点，每攻击[blue]2[/blue]次，获得[blue]1[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2-BAOJUN_MENGJI.title": "暴君猛击",
-    "MIYABISTS2-BAOJUN_MENGJI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，获得[blue]{Block:diff()}[/blue]点格挡，[gold]招架[/gold]{PARRY_POWER:diff()}\\n[gold]支援点数[/gold][blue]2[/blue]：获得[blue]4[/blue]点[gold]覆甲[/gold]",
+    "MIYABISTS2-BAOJUN_MENGJI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，获得{Block:diff()}点格挡，[gold]招架[/gold]{PARRY_POWER:diff()}\\n[gold]支援点数[/gold][blue]2[/blue]：获得[blue]4[/blue]点[gold]覆甲[/gold]",
 
 	"MIYABISTS2-CHAOQIANGLI_DUNJI.title": "超强力盾击",
     "MIYABISTS2-CHAOQIANGLI_DUNJI.description": "获得{Block:diff()}点格挡，[gold]招架[/gold]{PARRY_POWER:diff()}\\n[gold]支援点数[/gold][blue]3[/blue]：获得[gold]招架[/gold]层数的[gold]花辞[/gold]",
@@ -157,7 +157,7 @@
     "MIYABISTS2-ZUIHUA_YUEYUNZHUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]1[/blue]：额外施加3层[gold]羁服[/gold]",
 
 	"MIYABISTS2-CIQUAN_LIANJI.title": "L式轰鸣拳-刺拳连击",
-    "MIYABISTS2-CIQUAN_LIANJI.description": "造成{HitCount:diff()}次{Damage:diff()}伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n两回合内，敌人受到[aqua]烈霜[/aqua]伤害+[blue]50%[/blue]，[gold]支援点数[/gold][blue]2[/blue]：改为+[blue]75%[/blue]",
+    "MIYABISTS2-CIQUAN_LIANJI.description": "造成{HitCount:diff()}次{Damage:diff()}伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n两回合内，敌人受到[aqua]烈霜[/aqua]伤害+[blue]50%[/blue]，[gold]支援点数[/gold][blue]3[/blue]：改为+[blue]75%[/blue]",
 
 	"MIYABISTS2-ZHONGMU_YANCHU.title": "终幕演出",
     "MIYABISTS2-ZHONGMU_YANCHU.description": "造成3次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}\\n[gold]支援点数[/gold][blue]3[/blue]：敌人受到的[purple]属性异常[/purple]和[purple]紊乱[/purple]伤害变为[blue]1.5[/blue]倍",

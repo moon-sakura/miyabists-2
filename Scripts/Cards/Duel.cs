@@ -28,6 +28,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class MiyabiDuel : MiyabiCardBase
     {
+        protected override string ArtPath => $"res://images/cards/miyabiDuel.png";
         public MiyabiDuel() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy) { }
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>

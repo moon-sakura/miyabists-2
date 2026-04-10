@@ -18,6 +18,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class TrainingToday : MiyabiCardBase
     {
+        protected override string ArtPath => $"res://images/cards/trainingToday.png";
         public TrainingToday() : base(0,CardType.Skill, CardRarity.Rare,TargetType.Self, true) { }
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>

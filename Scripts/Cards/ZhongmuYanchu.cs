@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ZhongmuYanchu : MiyabiPartnerCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/zhongmoCaijue.png";
+        public override string PortraitPath => $"res://images/cards/zhongmuYanchu.png";
 
         public ZhongmuYanchu() : base(2, CardRarity.Rare, TargetType.AnyEnemy, CardType.Attack) { }
 

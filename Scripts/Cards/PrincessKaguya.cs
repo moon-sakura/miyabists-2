@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class PrincessKaguya : MiyabiCardBase
     {
-        //protected override string ArtPath => "res://images/cards/SPxiaoye.png";
+        protected override string ArtPath => "res://images/cards/princessKaguya.png";
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [

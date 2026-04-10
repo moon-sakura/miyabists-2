@@ -16,6 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class TianmiJingxia : MiyabiPartnerCardBase
     {
+        protected override string ArtPath => $"res://images/cards/tianmiJingxia.png";
         public TianmiJingxia() : base(1, CardRarity.Common, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>

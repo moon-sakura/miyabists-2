@@ -12,6 +12,7 @@ namespace Miyabists2.Scripts.Cards
     [Pool(typeof(StatusCardPool))]
     internal class TrainStep : MiyabiCardBase
     {
+        protected override string ArtPath => $"res://images/cards/trainStep.png";
         public TrainStep() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
     }
 }

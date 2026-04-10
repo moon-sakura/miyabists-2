@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Cards
     {
         //public override string PortraitPath => $"res://images/cards/baojunMengji.png";
 
-        public CiquanLianji() : base(2, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
+        public CiquanLianji() : base(2, CardRarity.Rare, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(2, ValueProp.Move),
@@ -48,7 +48,7 @@ namespace Miyabists2.Scripts.Cards
                     .Execute(choiceContext);
             }
 
-            if (base.CheckSupportCost(2) != 0)
+            if (base.CheckSupportCost(3) != 0)
             {
                 if(base.DynamicVars.TryGetValue("LieshuangUp", out DynamicVar u))
                 {
@@ -80,7 +80,7 @@ namespace Miyabists2.Scripts.Cards
 
                 await PowerCmd.Apply<CiquanljPower>(cardPlay.Target, DynamicVars["LieshuangUp"].IntValue, base.Owner.Creature, this);
                 
-                await CostSupporPoint(2);
+                await CostSupporPoint(3);
             }
 
         }

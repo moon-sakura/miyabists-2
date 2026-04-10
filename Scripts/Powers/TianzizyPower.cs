@@ -43,7 +43,9 @@ namespace Miyabists2.Scripts.Powers
             {
                 reward1.UpgradeInternal();
             }
-            await CardCmd.AutoPlay(context, reward1, cardPlay.Target, AutoPlayType.Default, skipXCapture: false, !flag);
+            for(int i = 0; i < this.Amount; i++)
+                await CardCmd.AutoPlay(context, reward1, cardPlay.Target, AutoPlayType.Default, skipXCapture: false, !flag);
+
             flag = false;
         }
     }

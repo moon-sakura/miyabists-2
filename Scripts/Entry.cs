@@ -1,4 +1,3 @@
-using System.Reflection;
 using BaseLib.Config;
 using Godot;
 using Godot.Bridge;
@@ -6,6 +5,7 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
@@ -16,7 +16,9 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves.Managers;
+using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Relics;
+using System.Reflection;
 
 namespace Miyabists2.Scripts;
 
@@ -73,4 +75,20 @@ public class Entry
             return true;
         }
     }
+
+
+    //[HarmonyPatch(typeof(CharacterModel), "EnergyCounterPath", MethodType.Getter)]
+    //public static class EnergyIconPatch
+    //{
+    //    // 这个方法会在游戏读取能量球路径时触发
+    //    public static void Postfix(CharacterModel __instance, ref string __result)
+    //    {
+    //        // 判定：如果是你的角色，就强行把返回值改成机器人的
+    //        // 请将 Miyabi 替换为你角色类的真实名称
+    //        if (__instance is Miyabi)
+    //        {
+    //            __result = SceneHelper.GetScenePath("combat/energy_counters/defect_energy_counter.scn");
+    //        }
+    //    }
+    //}
 }

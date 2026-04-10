@@ -19,6 +19,8 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class LuoyuShenghua : MiyabiPartnerCardBase
     {
+
+        public override string PortraitPath => $"res://images/cards/luoyuShenghua.png";
         public LuoyuShenghua() : base(1, CardRarity.Uncommon, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

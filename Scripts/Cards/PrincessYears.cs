@@ -14,7 +14,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class PrincessYears : MiyabiCardBase
     {
-        //protected override string ArtPath => "res://images/cards/SPxiaoye.png";
+        protected override string ArtPath => "res://images/cards/princessYears.png";
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
