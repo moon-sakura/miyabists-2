@@ -15,7 +15,9 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class TianziZhuoyue : MiyabiCardBase
     {
-        public TianziZhuoyue() : base(4, CardType.Power, CardRarity.Rare, TargetType.Self) { }
+        public TianziZhuoyue() : base(6, CardType.Power, CardRarity.Rare, TargetType.Self) { }
+
+        public override int MaxUpgradeLevel => 6;
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

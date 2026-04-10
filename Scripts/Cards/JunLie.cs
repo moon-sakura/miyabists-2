@@ -13,6 +13,9 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class JunLie : MiyabiCardBase
     {
+
+        public override string PortraitPath => $"res://images/cards/junLie.png";
+
         public JunLie() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -14,7 +14,8 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     internal class TuNaFa : MiyabiCardBase
-    { 
+    {
+        public override string PortraitPath => $"res://images/cards/tunafa.png";
         public TuNaFa() : base(1,CardType.Power,CardRarity.Common,TargetType.Self) { }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>

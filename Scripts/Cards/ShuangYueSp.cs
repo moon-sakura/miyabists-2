@@ -24,6 +24,8 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ShuangYueSp : MiyabiAttackCardBase
     {
+        public override string PortraitPath => $"res://images/cards/shuangYue.png";
+
         public override int MaxUpgradeLevel => 100;
 
 

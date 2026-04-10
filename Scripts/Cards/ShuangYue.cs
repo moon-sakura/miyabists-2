@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Cards
     //[Pool(typeof(StatusCardPool))]
     internal class ShuangYue:MiyabiAttackCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        public override string PortraitPath => $"res://images/cards/shuangYue.png";
 
         //private int _atkCount = 0;
         public override int MaxUpgradeLevel => 100;

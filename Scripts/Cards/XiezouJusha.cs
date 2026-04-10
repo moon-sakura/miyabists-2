@@ -19,6 +19,7 @@ namespace Miyabists2.Scripts.Cards
     //[Pool(typeof(StatusCardPool))]
     internal class XiezouJusha : MiyabiPartnerCardBase
     {
+        public override string PortraitPath => $"res://images/cards/mingfuWange.png";
         public XiezouJusha() : base(0, CardRarity.Token, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
