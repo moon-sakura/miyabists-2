@@ -48,7 +48,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(15);
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(5);
         }
     }
 }

@@ -12,6 +12,6 @@ namespace Miyabists2.Scripts.Cards
     [Pool(typeof(StatusCardPool))]
     internal class TrainAttack : MiyabiCardBase
     {
-        public TrainAttack() : base(0, CardType.Status, CardRarity.None, TargetType.Self, true) { }
+        public TrainAttack() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
     }
 }

@@ -22,7 +22,7 @@ namespace Miyabists2.Scripts.Cards
         ];
 
         public PrincessInoha()
-            : base(-1, CardType.Curse, CardRarity.None, TargetType.None)
+            : base(-1, CardType.Curse, CardRarity.Token, TargetType.None)
         {
         }
 

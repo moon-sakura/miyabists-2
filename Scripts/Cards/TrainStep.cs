@@ -12,6 +12,6 @@ namespace Miyabists2.Scripts.Cards
     [Pool(typeof(StatusCardPool))]
     internal class TrainStep : MiyabiCardBase
     {
-        public TrainStep() : base(0, CardType.Status, CardRarity.None, TargetType.Self, true) { }
+        public TrainStep() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
     }
 }

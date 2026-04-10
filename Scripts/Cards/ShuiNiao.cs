@@ -31,8 +31,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<MiyabiParryPower>(),
-            HoverTipFactory.FromCard<HuaCi>(),
+            //HoverTipFactory.FromPower<MiyabiParryPower>(),
+            //HoverTipFactory.FromCard<HuaCi>(),
             HoverTipFactory.FromPower<SlipperyPower>(),
         ];
 

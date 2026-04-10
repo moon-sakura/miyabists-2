@@ -31,7 +31,7 @@ namespace Miyabists2.Scripts.Cards
         ];
 
         public PrincessInop()
-            : base(0, CardType.Skill, CardRarity.None, TargetType.Self)
+            : base(0, CardType.Skill, CardRarity.Token, TargetType.Self)
         {
         }
 

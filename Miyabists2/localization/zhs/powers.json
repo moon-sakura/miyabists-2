@@ -43,6 +43,10 @@
     "MIYABISTS2-SUPPORT_POINT_POWER.description": "上限为[blue]6[/blue]，用于触发伙伴卡的额外能力",
     "MIYABISTS2-SUPPORT_POINT_POWER.smartDescription": "羁绊这一块,上限为[blue]6[/blue]",
 
+	"MIYABISTS2-JIFU_POWER.title": "羁服",
+    "MIYABISTS2-JIFU_POWER.description": "击破时额外提供额外的[gold]失衡易伤[/gold]",
+    "MIYABISTS2-JIFU_POWER.smartDescription": "击破时额外提供[blue]{Amount}*2%[/blue]的[gold]失衡易伤[/gold]",
+
 	"MIYABISTS2-TUNAFA_POWER.title": "吐纳法",
     "MIYABISTS2-TUNAFA_POWER.description": "",
     "MIYABISTS2-TUNAFA_POWER.smartDescription": "每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]",

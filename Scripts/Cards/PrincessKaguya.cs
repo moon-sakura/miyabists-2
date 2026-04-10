@@ -31,7 +31,7 @@ namespace Miyabists2.Scripts.Cards
         ];
 
         public PrincessKaguya()
-            : base(0, CardType.Power, CardRarity.None, TargetType.Self)
+            : base(0, CardType.Power, CardRarity.Token, TargetType.Self)
         {
         }
 

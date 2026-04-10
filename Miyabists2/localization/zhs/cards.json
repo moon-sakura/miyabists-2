@@ -129,7 +129,7 @@
     "MIYABISTS2-NO_TAIL_FULL.description": "你能[jitter][gold]驾驭[/gold][/jitter][red]它[/red]吗？",
 
 	"MIYABISTS2-PHAETHON_CALL.title": "法厄同的呼朋引伴",
-    "MIYABISTS2-PHAETHON_CALL.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡\\n(包括[gold]异世伙伴[/gold]！)",
+    "MIYABISTS2-PHAETHON_CALL.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡\\n(包括[gold]异界伙伴[/gold]！)",
 
 	"MIYABISTS2-BIG_EJIZHAN.title": "大份鹅鸡斩",
     "MIYABISTS2-BIG_EJIZHAN.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}，本回合获得[blue]{Strength:diff()}[/blue]点[gold]力量[/gold]\\n[gold]支援点数[/gold][blue]1[/blue]：额外获得[blue]1[/blue]点[gold]力量[/gold]",
@@ -152,6 +152,9 @@
 
 	"MIYABISTS2-MIYABI_DUEL.title": "对决",
     "MIYABISTS2-MIYABI_DUEL.description": "将敌人的意图变为造成10点伤害\\n招架1",
+
+	"MIYABISTS2-ZUIHUA_YUEYUNZHUAN.title": "醉花月云转",
+    "MIYABISTS2-ZUIHUA_YUEYUNZHUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]1[/blue]：额外施加3层[gold]羁服[/gold]",
 
 	"MIYABISTS2-CIQUAN_LIANJI.title": "L式轰鸣拳-刺拳连击",
     "MIYABISTS2-CIQUAN_LIANJI.description": "造成{HitCount:diff()}次{Damage:diff()}伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n两回合内，敌人受到[aqua]烈霜[/aqua]伤害+[blue]50%[/blue]，[gold]支援点数[/gold][blue]2[/blue]：改为+[blue]75%[/blue]",

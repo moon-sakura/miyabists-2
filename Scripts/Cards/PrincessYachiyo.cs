@@ -33,7 +33,7 @@ namespace Miyabists2.Scripts.Cards
         ];
 
         public PrincessYachiyo()
-            : base(0, CardType.Skill, CardRarity.None, TargetType.AnyPlayer)
+            : base(0, CardType.Skill, CardRarity.Token, TargetType.AnyPlayer)
         {
         }
 

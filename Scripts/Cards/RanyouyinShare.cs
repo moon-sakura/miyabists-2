@@ -54,18 +54,31 @@ namespace Miyabists2.Scripts.Cards
             }
         }
 
-        public override async Task BeforeCardPlayed(CardPlay cardPlay)
+        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
             int amount = CombatManager.Instance.History.CardPlaysFinished
                 .Count((CardPlayFinishedEntry e)
                 => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
                 && e.CardPlay.Card.Owner == base.Owner
                 && e.HappenedThisTurn(base.CombatState));
-            if (amount > 0)
+            if (amount > 0 && BaseReplayCount < 1)
             {
-                BaseReplayCount = 1;
+                BaseReplayCount += 1;
             }
         }
+
+        //public override async Task BeforeCardPlayed(CardPlay cardPlay)
+        //{
+        //    int amount = CombatManager.Instance.History.CardPlaysFinished
+        //        .Count((CardPlayFinishedEntry e)
+        //        => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
+        //        && e.CardPlay.Card.Owner == base.Owner
+        //        && e.HappenedThisTurn(base.CombatState));
+        //    if (amount > 0)
+        //    {
+        //        BaseReplayCount = 1;
+        //    }
+        //}
 
 
         protected override void OnUpgrade()

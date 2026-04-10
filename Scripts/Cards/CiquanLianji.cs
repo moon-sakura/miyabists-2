@@ -16,15 +16,15 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class CiquanLianji : MiyabiPartnerCardBase
     {
-        public override string PortraitPath => $"res://images/cards/baojunMengji.png";
+        //public override string PortraitPath => $"res://images/cards/baojunMengji.png";
 
         public CiquanLianji() : base(2, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(1, ValueProp.Move),
+            new DamageVar(2, ValueProp.Move),
             new DynamicVar(DazeVarName, 12),
             new DynamicVar("LieshuangUp", 50),
-            new DynamicVar("HitCount", 5),
+            new DynamicVar("HitCount", 3),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>

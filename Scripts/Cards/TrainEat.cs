@@ -13,6 +13,6 @@ namespace Miyabists2.Scripts.Cards
     internal class TrainEat : MiyabiCardBase
     {
         public override string PortraitPath => $"res://images/cards/trainEat.png";
-        public TrainEat() : base(0, CardType.Status, CardRarity.None, TargetType.Self, true) { }
+        public TrainEat() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
     }
 }

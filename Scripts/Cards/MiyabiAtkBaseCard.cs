@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected const bool isAOE = false;
 
-        protected const int trigger = 50;
+        protected int trigger = 50;
 
         protected MiyabiAttackCardBase(int energy, CardRarity rarity, TargetType target, bool showInLib)
             : base(energy, CardType.Attack, rarity, target, showInLib)
@@ -64,6 +64,10 @@ namespace Miyabists2.Scripts.Cards
         public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
         {
             if (cardSource != this || target == null || target.IsDead) return;
+
+            MiyabiCombatService.SetFrostTriggerMultiply(base.Owner.Creature);
+            trigger = MiyabiCombatService.GetFrostTrigger();
+
             int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
 
             // 确保是本卡造成的实际伤害，且目标存活

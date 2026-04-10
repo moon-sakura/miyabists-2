@@ -13,6 +13,6 @@ namespace Miyabists2.Scripts.Cards
     internal class TrainSpeak:MiyabiCardBase
     {
         public override string PortraitPath => $"res://images/cards/trainSpeak.png";
-        public TrainSpeak() : base(0, CardType.Status, CardRarity.None, TargetType.Self, true) { }
+        public TrainSpeak() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
     }
 }

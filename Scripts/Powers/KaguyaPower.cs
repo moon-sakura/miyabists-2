@@ -9,6 +9,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,12 +33,15 @@ namespace Miyabists2.Scripts.Powers
         public override async Task AfterPlayerTurnStartEarly(PlayerChoiceContext choiceContext, Player player)
         {
             for(int i = 0; i < base.Amount; i++)
+            {
                 await DoRandomEffect(choiceContext);
+            }
+            Flash();
         }
 
         private async Task DoRandomEffect(PlayerChoiceContext choiceContext)
         {
-            int result = base.Owner.Player.RunState.Rng.Shuffle.NextInt(1, 14);
+            int result = base.Owner.Player.RunState.Rng.Shuffle.NextInt(1, 13);
             if (result == 1)
             {
                 await CreatureCmd.Heal(base.Owner, 3m);
@@ -81,7 +86,8 @@ namespace Miyabists2.Scripts.Powers
                 {
                     if (Enemy != null && Enemy.IsAlive)
                     {
-                        await PowerCmd.Apply<AnomalyBuildupPower>(Enemy, 1m, null, null);
+                        //await PowerCmd.Apply<AnomalyBuildupPower>(Enemy, 1m, null, null);
+                        await MiyabiCombatService.AddAnoBuildup(Enemy, 1, base.Owner, null, choiceContext);
                     }
                 }
             }
@@ -91,7 +97,8 @@ namespace Miyabists2.Scripts.Powers
                 {
                     if (Enemy != null && Enemy.IsAlive)
                     {
-                        await PowerCmd.Apply<DazePower>(Enemy, 10m, null, null);
+                        //await PowerCmd.Apply<DazePower>(Enemy, 10m, null, null);
+                        await MiyabiCombatService.AddDaze(Enemy, new DynamicVar("Daze",10), base.Owner);
                     }
                 }
             }
@@ -101,21 +108,11 @@ namespace Miyabists2.Scripts.Powers
                 {
                     if (Enemy != null && Enemy.IsAlive)
                     {
-                        await PowerCmd.Apply<FrostBuildPower>(Enemy, 5m, null, null);
-                    }
-                }
-            }
-            else if (result == 12)
-            {
-                foreach (Creature Enemy in base.CombatState.Enemies)
-                {
-                    if (Enemy != null && Enemy.IsAlive)
-                    {
                         await PowerCmd.Apply<WeakPower>(Enemy, 1m, null, null);
                     }
                 }
             }
-            else if (result == 13)
+            else if (result == 12)
             {
                 foreach (Creature Enemy in base.CombatState.Enemies)
                 {
