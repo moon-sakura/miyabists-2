@@ -20,7 +20,7 @@ namespace Miyabists2.Scripts.Powers
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
 
-        public string BigIconPath => "res://images/powers/ano.png";
+        public string BigIconPath => "res://images/powers/anoatt.png";
         public string BigBetaIconPath => BigIconPath;
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;

@@ -14,38 +14,34 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class QuanmianQingchang : MiyabiPartnerCardBase
+    internal class ZhaojiaZhunbei : MiyabiBlockCardBase
     {
-        protected override string ArtPath => $"res://images/cards/quanmianQingchang.png";
-
-        public QuanmianQingchang() : base(1, CardRarity.Common, TargetType.Self) { }
+        public ZhaojiaZhunbei() : base(1, CardRarity.Common, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(7,ValueProp.Move),
-            new DynamicVar(SupportVarName, 2)
+            new BlockVar(10,ValueProp.Move),
+            new DynamicVar(ParryVarName, 3)
         ];
+
+        public override bool GainsBlock => false;
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<SupportPointPower>(),
+            HoverTipFactory.FromPower<MiyabiParryPower>(),
+            HoverTipFactory.FromCard<HuaCi>()
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            if (DynamicVars.Block.BaseValue > 0)
-                await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
-
-            if (base.DynamicVars.TryGetValue(SupportVarName, out DynamicVar s))
-                await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, s.IntValue, base.Owner.Creature, this);
+            PlayerCmd.EndTurn(base.Owner, false);
         }
+
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Block.UpgradeValueBy(2);
-            if (base.DynamicVars.TryGetValue(SupportVarName, out DynamicVar s)) s.UpgradeValueBy(1);
-
+            DynamicVars.Block.UpgradeValueBy(3);
         }
     }
 }

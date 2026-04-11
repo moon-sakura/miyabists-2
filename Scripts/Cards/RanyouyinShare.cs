@@ -39,6 +39,8 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Exhaust
         ];
 
+        private int count = 0;
+
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
@@ -52,6 +54,7 @@ namespace Miyabists2.Scripts.Cards
             {
                 await MiyabiCombatService.AddDecible(Owner, n);
             }
+            count = 0;
         }
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
@@ -61,9 +64,10 @@ namespace Miyabists2.Scripts.Cards
                 => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
                 && e.CardPlay.Card.Owner == base.Owner
                 && e.HappenedThisTurn(base.CombatState));
-            if (amount > 0 && BaseReplayCount < 1)
+            if (amount > 0 && count == 0)
             {
                 BaseReplayCount += 1;
+                count++;
             }
         }
 

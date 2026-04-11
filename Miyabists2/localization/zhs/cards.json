@@ -26,6 +26,9 @@
 	"MIYABISTS2-MIYABI_BLOCK.title": "防御",
     "MIYABISTS2-MIYABI_BLOCK.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}",
 
+	"MIYABISTS2-JIXIAN_SHIYU.title": "极限视域",
+    "MIYABISTS2-JIXIAN_SHIYU.description": "[gold]滑溜[/gold]{SLIPPERY_POWER:diff()}\\n手卡中加入{Cards:diff()}张带有[gold]消耗[/gold]的[gold]寒雀[/gold]",
+
 	"MIYABISTS2-HUA_CI.title": "花辞",
     "MIYABISTS2-HUA_CI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
 
@@ -34,6 +37,12 @@
 
 	"MIYABISTS2-QUICK_PARRY.title": "快速招架",
     "MIYABISTS2-QUICK_PARRY.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n获得[blue]1[/blue]点[gold]支援点数[/gold]，将抽牌堆中随机一张[gold]伙伴[/gold]卡加入手卡",
+
+	"MIYABISTS2-QUICK_SUPPORT.title": "快速支援",
+    "MIYABISTS2-QUICK_SUPPORT.description": "对自己造成{Damage:diff()}点伤害，随机使用抽卡堆中一张伙伴卡",
+
+	"MIYABISTS2-ZHAOJIA_ZHUNBEI.title": "招架准备",
+    "MIYABISTS2-ZHAOJIA_ZHUNBEI.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n结束自己的回合",
 
 	"MIYABISTS2-ZHANSHU_CHONGZHENG.title": "战术重整",
     "MIYABISTS2-ZHANSHU_CHONGZHENG.description": "抽{Cards:diff()}张卡\\n每有一张[gold]伙伴[/gold]卡，获得[blue]1[/blue]点[gold]支援点数[/gold]",
@@ -187,7 +196,7 @@
     "MIYABISTS2-PRINCESS_YEARS.description": "加入一张[gold]超人彩叶[/gold]到弃牌堆",
 
 	"MIYABISTS2-PRINCESS_INOHA.title": "超人彩叶",
-    "MIYABISTS2-PRINCESS_INOHA.description": "与[gold]八千年的等待[/gold]同时在手卡时，升级所有卡牌，将[gold]八千年的等待[/gold]变化为[gold]辉夜姬[/gold]到手卡",
+    "MIYABISTS2-PRINCESS_INOHA.description": "与[gold]八千年的等待[/gold]同时在手卡时，升级所有卡牌，将[gold]八千年的等待[/gold]变化为[gold]辉夜姬[/gold]",
 
 	"MIYABISTS2-TRAINING_TODAY.title": "今日修行",
     "MIYABISTS2-TRAINING_TODAY.description": "选择今天的修行",

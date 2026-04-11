@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ManhanQuanxi : MiyabiPartnerCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/baojunMengji.png";
+        protected override string ArtPath => $"res://images/cards/manhanQuanxi.png";
 
         public ManhanQuanxi() : base(1, CardRarity.Uncommon, TargetType.Self) { }
 

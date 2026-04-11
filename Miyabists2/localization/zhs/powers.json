@@ -1,19 +1,19 @@
 {
-	"MIYABISTS2-FROST_BUILD_POWER.smartDescription": "积累到[blue]50[/blue]层后触发[aqua]霜灼[/aqua]，并添加一层[purple]属性异常[/purple]",
+	"MIYABISTS2-FROST_BUILD_POWER.smartDescription": "积累到一定层数层后触发[aqua]霜灼[/aqua]，并添加一层[purple]属性异常[/purple](单人[blue]50[/blue]层触发，每多一个玩家触发层数+[blue]15[/blue])",
 	"MIYABISTS2-FROST_BUILD_POWER.description": "积累到一定层数后触发[aqua]霜灼[/aqua]，并添加一层[purple]属性异常[/purple]",
 	"MIYABISTS2-FROST_BUILD_POWER.title": "烈霜",
 
-	"MIYABISTS2-DAZE_POWER.smartDescription": "积累到[blue]100[/blue]层后触发[gold]击破[/gold]",
+	"MIYABISTS2-DAZE_POWER.smartDescription": "积累到一定层数层后触发[gold]击破[/gold](单人[blue]100[/blue]层触发，每多一个玩家触发层数+[blue]20[/blue])",
 	"MIYABISTS2-DAZE_POWER.description": "积累到一定层数后触发[gold]击破[/gold]",
 	"MIYABISTS2-DAZE_POWER.title": "失衡值",
 
-	"MIYABISTS2-BREAK_POWER.smartDescription": "[gold]眩晕[/gold]，获得一回合[gold]失衡易伤[/gold][red]50%[/red]。在此状态下不能叠加[gold]失衡值[/gold]。",
-	"MIYABISTS2-BREAK_POWER.description": "击破时[gold]眩晕[/gold]敌人，并给予一回合[gold]失衡易伤[/gold][red]50%[/red]。在此状态下不能叠加[gold]失衡值[/gold]。",
+	"MIYABISTS2-BREAK_POWER.smartDescription": "[gold]眩晕[/gold]，获得一回合[gold]失衡易伤[/gold][blue]50%[/blue]。在此状态下不能叠加[gold]失衡值[/gold]。",
+	"MIYABISTS2-BREAK_POWER.description": "击破时[gold]眩晕[/gold]敌人，并给予一回合[gold]失衡易伤[/gold][blue]50%[/blue]。在此状态下不能叠加[gold]失衡值[/gold]。",
 	"MIYABISTS2-BREAK_POWER.title": "击破",
 
 	"MIYABISTS2-FROST_FIRE_POWER.title": "冰焰",
-    "MIYABISTS2-FROST_FIRE_POWER.description": "每层使[aqua]烈霜[/aqua]伤害增加[red]5%[/red]（上限[blue]50%[/blue]）。",
-    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[aqua]烈霜[/aqua]伤害增加[red]5%[/red]（上限[blue]50%[/blue]）。",
+    "MIYABISTS2-FROST_FIRE_POWER.description": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（上限[blue]50%[/blue]）。",
+    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（上限[blue]50%[/blue]）。",
 
 	"MIYABISTS2-FROST_POWER.title": "霜灼",
     "MIYABISTS2-FROST_POWER.description": "受到伤害+[blue]20%[/blue]，不可叠加[aqua]烈霜积蓄值[/aqua]",
@@ -24,16 +24,16 @@
 	"MIYABISTS2-DAZE_VULN_POWER.title": "失衡易伤",
 
 	"MIYABISTS2-FROST_FALL_POWER.title": "霜落",
-    "MIYABISTS2-FROST_FALL_POWER.description": "用于释放[gold]霜月[/gold]",
+    "MIYABISTS2-FROST_FALL_POWER.description": "用于释放[gold]霜月[/gold]，两豆且手卡中没有[gold]霜月[/gold]时，加入一张[gold]霜月[/gold]到手卡",
     "MIYABISTS2-FROST_FALL_POWER.smartDescription": "六豆连接大脑，蓄力代替思考",
 
 	"MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.title": "属性异常",
-    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.description": "每回合结束时受到最大生命值[blue]5%[/blue]的伤害。给予时如果已存在该效果则触发[purple]紊乱[/purple]。",
-    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "每回合结束时受到最大生命值[blue]5%[/blue]的伤害。给予时如果已存在该效果则触发[purple]紊乱[/purple]。",
+    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.description": "每回合结束时受到最大生命值[blue]5%[/blue]的伤害。给予时如果已存在该效果则触发[purple]紊乱[/purple]",
+    "MIYABISTS2-ATTRIBUTE_ANOMALY_POWER.smartDescription": "每回合结束时受到最大生命值[blue]5%[/blue]的伤害。给予时如果已存在该效果则触发[purple]紊乱[/purple]",
 
 	"MIYABISTS2-ANOMALY_BUILDUP_POWER.title": "属性积蓄",
-    "MIYABISTS2-ANOMALY_BUILDUP_POWER.description": "累积到一定层数后使敌人获得[purple]属性异常[/purple]",
-    "MIYABISTS2-ANOMALY_BUILDUP_POWER.smartDescription": "累积到一定层数后使敌人获得[purple]属性异常[/purple]",
+    "MIYABISTS2-ANOMALY_BUILDUP_POWER.description": "累积到一定层数后使敌人获得[purple]属性异常[/purple](单人[blue]5[/blue]层触发，每多一个玩家触发层数+[blue]2[/blue])",
+    "MIYABISTS2-ANOMALY_BUILDUP_POWER.smartDescription": "累积到一定层数后使敌人获得[purple]属性异常[/purple](单人[blue]5[/blue]层触发，每多一个玩家触发层数+[blue]2[/blue])",
 
 	"MIYABISTS2-DISORDER_POWER.title": "紊乱",
     "MIYABISTS2-DISORDER_POWER.description": "立即造成最大生命值[blue]10%[/blue]的伤害，下一击伤害变为[blue]2[/blue]倍",

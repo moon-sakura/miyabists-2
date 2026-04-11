@@ -17,6 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class BamianWeifeng : MiyabiPartnerCardBase
     {
+
         public BamianWeifeng() : base(2,CardRarity.Uncommon,TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>

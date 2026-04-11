@@ -90,7 +90,7 @@ namespace Miyabists2.Scripts.Service
             int mul = c.CombatState.PlayerCreatures.Count;
             if (mul > 1)
             {
-                ChangeFrostT((mul - 1) * 10);
+                ChangeFrostT((mul - 1) * 15);
             }
             else
             {

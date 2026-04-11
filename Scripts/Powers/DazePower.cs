@@ -20,9 +20,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override int DisplayAmount => Amount - 1;
 
-        private int _max = 100;
-
-        public string BigIconPath => "res://images/powers/commonPowers.png";
+        public string BigIconPath => "res://images/powers/daze.png";
         public string BigBetaIconPath => BigIconPath;
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
