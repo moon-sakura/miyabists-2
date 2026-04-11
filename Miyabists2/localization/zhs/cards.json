@@ -27,7 +27,7 @@
     "MIYABISTS2-MIYABI_BLOCK.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}",
 
 	"MIYABISTS2-JIXIAN_SHIYU.title": "极限视域",
-    "MIYABISTS2-JIXIAN_SHIYU.description": "[gold]滑溜[/gold]{SLIPPERY_POWER:diff()}\\n手卡中加入{Cards:diff()}张带有[gold]消耗[/gold]的[gold]寒雀[/gold]",
+    "MIYABISTS2-JIXIAN_SHIYU.description": "[gold]滑溜[/gold]{SLIPPERY_POWER:diff()}\\n手卡中加入{Cards:diff()}张带有[gold]消耗[/gold]的[gold]寒雀[/gold]\\n本回合不能再抽卡",
 
 	"MIYABISTS2-HUA_CI.title": "花辞",
     "MIYABISTS2-HUA_CI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",

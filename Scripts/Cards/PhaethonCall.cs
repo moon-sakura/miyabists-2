@@ -31,7 +31,8 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             List<CardModel> cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
-                                                                               where c.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || c.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends)
+                                                                               where (c.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || c.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends)) 
+                                                                               && (c.Rarity != CardRarity.Token || c.Rarity != CardRarity.None || c.Rarity != CardRarity.Curse || c.Rarity != CardRarity.Status)
                                                                                select c, 3, base.Owner.RunState.Rng.CombatCardGeneration).ToList();
             CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, cardModel, base.Owner);
             if (chosen != null)

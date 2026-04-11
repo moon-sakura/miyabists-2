@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwx4x6mwmh1jc"]
 
-[ext_resource type="Texture2D" uid="uid://ck7vu40vneun" path="res://images/charui/miyabi_char.png" id="1_s6fse"]
+[ext_resource type="Texture2D" uid="uid://na5sswaf8puf" path="res://images/charui/miyabi_char_33.png" id="1_s6fse"]
 
 [node name="miyabi_char" type="Node2D"]
 
 [node name="Visuals" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-2.9999962, -208)
-scale = Vector2(0.19264747, 0.19264749)
+position = Vector2(0, -195)
+scale = Vector2(0.55270654, 0.55270666)
 texture = ExtResource("1_s6fse")
 
 [node name="Bounds" type="Control" parent="."]
