@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
     {
         //public override string PortraitPath => $"res://images/cards/feng_hua.png";
 
-        public TongmuShuangxue():base(2,CardType.Power,CardRarity.Rare,TargetType.Self) { }
+        public TongmuShuangxue():base(2,CardType.Power,CardRarity.Uncommon,TargetType.Self) { }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [

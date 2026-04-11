@@ -19,10 +19,10 @@ namespace Miyabists2.Scripts.Cards
     internal class HuanxiangshiZouming : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/huanxiangshiZouming.png";
-        public HuanxiangshiZouming() : base(2, CardRarity.Uncommon, TargetType.Self, CardType.Skill) { }
+        public HuanxiangshiZouming() : base(3, CardRarity.Uncommon, TargetType.Self, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("SupportPoint",1)
+            //new DynamicVar("SupportPoint",1)
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -73,13 +73,14 @@ namespace Miyabists2.Scripts.Cards
                 await CostSupporPoint(2);
             }
 
-            if (base.DynamicVars.TryGetValue("SupportPoint", out DynamicVar s))
-                await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, s.BaseValue, Owner.Creature, this);
+            //if (base.DynamicVars.TryGetValue("SupportPoint", out DynamicVar s))
+                //await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, s.BaseValue, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
         {
-            if (base.DynamicVars.TryGetValue("SupportPoint", out DynamicVar s)) s.UpgradeValueBy(2);
+            //if (base.DynamicVars.TryGetValue("SupportPoint", out DynamicVar s)) s.UpgradeValueBy(2);
+            EnergyCost.UpgradeBy(-1);
         }
     }
 }

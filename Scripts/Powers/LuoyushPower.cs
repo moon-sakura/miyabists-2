@@ -23,7 +23,7 @@ namespace Miyabists2.Scripts.Powers
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
-        public string BigIconPath => "res://images/powers/commonPowers.png";
+        public string BigIconPath => "res://images/powers/luoyuShenghua.png";
         public string BigBetaIconPath => BigIconPath;
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;

@@ -60,7 +60,7 @@
 
 	"MIYABISTS2-YONGTAN_HUACAI_POWER.title": "咏叹华彩",
     "MIYABISTS2-YONGTAN_HUACAI_POWER.description": "每次使用[gold]伙伴[/gold]卡获得{Energy:energyIcons()}",
-	"MIYABISTS2-YONGTAN_HUACAI_POWER.smartDescription": "每次使用[gold]伙伴[/gold]卡获得{Energy:energyIcons()}",
+	"MIYABISTS2-YONGTAN_HUACAI_POWER.smartDescription": "每次使用[gold]伙伴[/gold]卡获得[blue]{Amount}[/blue]点能量",
 
 	"MIYABISTS2-BLESSING_MOON_POWER.title": "新月的祝福",
     "MIYABISTS2-BLESSING_MOON_POWER.description": "受到致命伤害时，避免死亡并恢复[blue]{Amount}%[/blue]的生命\\n触发[gold]属性异常[/gold]与[gold]紊乱[/gold]时额外造成[blue]5%[/blue]最大生命值伤害",

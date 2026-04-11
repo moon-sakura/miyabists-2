@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class YongtanHuacai : MiyabiPartnerCardBase
     {
-        public override string PortraitPath => $"res://images/cards/yongtanHuacai.png";
+        protected override string ArtPath => $"res://images/cards/yongtanHuacai.png";
         public YongtanHuacai() : base(3, CardRarity.Rare, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -26,10 +26,12 @@ namespace Miyabists2.Scripts.Cards
             HoverTipFactory.FromPower<SupportPointPower>(),
         ];
 
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new EnergyVar(1)
+        ];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<YongtanHuacaiPower>(Owner.Creature, 1, base.Owner.Creature, this);
-
             if (base.CheckSupportCost(2) != 0)
             {
                 CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
@@ -44,9 +46,13 @@ namespace Miyabists2.Scripts.Cards
                     {
                         await CardPileCmd.Add(cardModel, PileType.Hand);
                     }
+                    await CostSupporPoint(2);
                 }
-                await CostSupporPoint(2);
             }
+
+            await PowerCmd.Apply<YongtanHuacaiPower>(Owner.Creature, 1, base.Owner.Creature, this);
+
+            
         }
 
 
