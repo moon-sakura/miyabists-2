@@ -56,7 +56,7 @@
     "MIYABISTS2-JUN_LIE_POWER.smartDescription": "每次使用[aqua]烈霜[/aqua]卡牌时，获得[blue]1[/blue]点[gold]喧嚣值[/gold]",
 
 	"MIYABISTS2-TIANZIZY_POWER.title": "天资卓越",
-    "MIYABISTS2-TIANZIZY_POWER.smartDescription": "每次使用[gold]霜月[/gold]，自动使用{Amount次[gold]霜月·极意[/gold]",
+    "MIYABISTS2-TIANZIZY_POWER.smartDescription": "每次使用[gold]霜月[/gold]，自动使用{Amount}次[gold]霜月·极意[/gold]",
 
 	"MIYABISTS2-YONGTAN_HUACAI_POWER.title": "咏叹华彩",
     "MIYABISTS2-YONGTAN_HUACAI_POWER.description": "每次使用[gold]伙伴[/gold]卡获得{Energy:energyIcons()}",
@@ -71,8 +71,8 @@
 	"MIYABISTS2-SHUANGYUEJS_POWER.description": "每回合开始时获得[blue]2[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2-TIANMIJX_POWER.title": "甜蜜惊吓",
-    "MIYABISTS2-TIANMIJX_POWER.description": "每回合结束时，所有敌人受到[blue]3[/blue]点伤害，给予[blue]1[/blue]层[gold]属性异常[/gold]",
-	"MIYABISTS2-TIANMIJX_POWER.smartDescription": "每回合结束时，所有敌人受到[blue]3[/blue]点伤害，给予[blue]1[/blue]层[gold]属性异常[/gold]",
+    "MIYABISTS2-TIANMIJX_POWER.description": "每回合结束时，给予所有敌人[blue]{Amount}[/blue]层[gold]属性异常[/gold]",
+	"MIYABISTS2-TIANMIJX_POWER.smartDescription": "每回合结束时，给予所有敌人[blue]{Amount}[/blue]层[gold]属性异常[/gold]",
 
 	"MIYABISTS2-YACHIYO_POWER.title": "八千代的守望",
     "MIYABISTS2-YACHIYO_POWER.description": "",
@@ -147,18 +147,18 @@
     "MIYABISTS2-BAMIANWF_POWER.smartDescription": "每次使用[gold]终结技[/gold]后获得[blue]5[/blue]点[gold]喧嚣值[/gold]，使用[gold]伙伴[/gold]卡后获得[blue]2[/blue]点[gold]喧嚣值[/gold]",
 
 	"MIYABISTS2-LUOYUSH_POWER.title": "落羽生花",
-	"MIYABISTS2-LUOYUSH_POWER.description": "每回合使用单体攻击卡后给予敌人[blue]1[/blue]层[gold]属性积蓄[/gold]，最多可触发[blue]{Amount}[/blue]次",
-    "MIYABISTS2-LUOYUSH_POWER.smartDescription": "每回合使用单体攻击卡后给予敌人[blue]1[/blue]层[gold]属性积蓄[/gold]，最多可触发[blue]{Amount}[/blue]次",
+	"MIYABISTS2-LUOYUSH_POWER.description": "每回合对敌人造成伤害后给予敌人[blue]1[/blue]层[gold]属性积蓄[/gold]，最多可触发[blue]{Amount}[/blue]次",
+    "MIYABISTS2-LUOYUSH_POWER.smartDescription": "每回合对敌人造成伤害后给予敌人[blue]1[/blue]层[gold]属性积蓄[/gold]，最多可触发[blue]{Amount}[/blue]次",
 
 	"MIYABISTS2-MIYABI_PARRY_POWER.title": "招架",
     "MIYABISTS2-MIYABI_PARRY_POWER.description": "每次受到被格挡下来的伤害，将一张[gold]花辞[/gold]加入手牌，然后层数减[red]1[/red]。",
     "MIYABISTS2-MIYABI_PARRY_POWER.smartDescription": "每次受到被格挡下来的伤害，将一张[gold]花辞[/gold]加入手牌，然后层数减[red]1[/red]。",
 
 	"MIYABISTS2-TONGMU_SHUANGXUE_POWER.title": "同沐霜雪",
-    "MIYABISTS2-TONGMU_SHUANGXUE_POWER.description": "每次使用非[gold]伙伴[/gold]攻击卡时，获得[blue]1[/blue]点[gold]支援点数[/gold]",
-	"MIYABISTS2-TONGMU_SHUANGXUE_POWER.smartDescription": "每次使用非[gold]伙伴[/gold]攻击卡时，获得[blue]1[/blue]点[gold]支援点数[/gold]",
+    "MIYABISTS2-TONGMU_SHUANGXUE_POWER.description": "每次使用非[gold]伙伴[/gold]卡时，获得[blue]1[/blue]点[gold]支援点数[/gold]",
+	"MIYABISTS2-TONGMU_SHUANGXUE_POWER.smartDescription": "每次使用非[gold]伙伴[/gold]卡时，获得[blue]1[/blue]点[gold]支援点数[/gold]",
 
 	"MIYABISTS2-DONG_FENG_SP_POWER.title": "冬蜂·极",
     "MIYABISTS2-DONG_FENG_SP_POWER.description": "弹刀这一块",
-    "MIYABISTS2-DONG_FENG_SP_POWER.smartDescription": "下一张攻击卡伤害+[blue]50%[/blue]。"
+    "MIYABISTS2-DONG_FENG_SP_POWER.smartDescription": "下一张攻击卡伤害+[blue]25%[/blue]。"
 }

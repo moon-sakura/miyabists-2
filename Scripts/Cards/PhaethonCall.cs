@@ -32,7 +32,8 @@ namespace Miyabists2.Scripts.Cards
         {
             List<CardModel> cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
                                                                                where (c.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || c.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends)) 
-                                                                               && (c.Rarity != CardRarity.Token || c.Rarity != CardRarity.None || c.Rarity != CardRarity.Curse || c.Rarity != CardRarity.Status)
+                                                                               && (c.Rarity != CardRarity.Token && c.Rarity != CardRarity.None && c.Rarity != CardRarity.Curse && c.Rarity != CardRarity.Status)
+                                                                               && (c.Type != CardType.Status && c.Type != CardType.Curse && c.Type != CardType.Quest && c.Type != CardType.None)
                                                                                select c, 3, base.Owner.RunState.Rng.CombatCardGeneration).ToList();
             CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, cardModel, base.Owner);
             if (chosen != null)

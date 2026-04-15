@@ -22,6 +22,8 @@ namespace Miyabists2.Scripts.Powers
             public CardModel? selectedCard;
         }
 
+        public string BigIconPath => "res://images/powers/commonPowers.png";
+
         private const string _cardKey = "Card";
 
         public override PowerType Type => PowerType.Buff;

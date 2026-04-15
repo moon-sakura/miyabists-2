@@ -41,6 +41,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            decimal damageor = DynamicVars.Damage.BaseValue;
+
             if (base.CheckSupportCost(3) != 0)
             {
                 DynamicVars.Damage.BaseValue += 8;
@@ -52,7 +54,7 @@ namespace Miyabists2.Scripts.Cards
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v))
             {
                 daze = v.BaseValue;
-                v.BaseValue = 0;
+                //v.BaseValue = 0;
             }
 
             await base.OnPlay(choiceContext, cardPlay);
@@ -71,6 +73,8 @@ namespace Miyabists2.Scripts.Cards
                 await PowerCmd.Remove<DazeVulnPower>(cardPlay.Target);
                 await PowerCmd.Apply<DazePower>(cardPlay.Target, daze, base.Owner.Creature, this);
             }
+
+            DynamicVars.Damage.BaseValue = damageor;
         }
 
         protected override void OnUpgrade()

@@ -41,13 +41,13 @@ namespace Miyabists2.Scripts.Cards
                 => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends) 
                 && e.CardPlay.Card.Owner == base.Owner 
                 && e.HappenedThisTurn(base.CombatState));
+            await base.OnPlay(choiceContext, cardPlay);
             if (amount > 0)
             {
-                DynamicVars.Block.BaseValue += 6; // 如果本回合已经使用过伙伴卡，增加额外的 6 点护甲
-                if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.BaseValue += 1;
+                await CreatureCmd.GainBlock(base.Owner.Creature, 6m, ValueProp.Unpowered, cardPlay);
+                await PowerCmd.Apply<MiyabiParryPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
             }
-            await base.OnPlay(choiceContext, cardPlay);
-            
+
         }
 
         protected override void OnUpgrade()

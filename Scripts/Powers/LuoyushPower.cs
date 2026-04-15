@@ -3,11 +3,14 @@ using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Service;
 using System;
@@ -35,17 +38,24 @@ namespace Miyabists2.Scripts.Powers
             HoverTipFactory.FromPower<AnomalyBuildupPower>()
         ];
 
-        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
+        //public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
+        //{
+        //    if (cardPlay.Card.Owner != base.Owner.Player || cardPlay.Card.Type != CardType.Attack 
+        //        || cardPlay.Target == null || cardPlay.Target.IsDead) return;
+
+        //    if (countOneTurn < Amount)
+        //    {
+        //        countOneTurn++;
+        //        await MiyabiCombatService.AddAnoBuildup(cardPlay.Target, 1, base.Owner, null, context);
+        //    }
+        //}
+
+        public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
         {
-            if (cardPlay.Card.Owner != base.Owner.Player || cardPlay.Card.Type != CardType.Attack 
-                || cardPlay.Target == null || cardPlay.Target.IsDead) return;
+            if(dealer != base.Owner || countOneTurn >= Amount || target.IsDead) return;
 
-            if (countOneTurn < Amount)
-            {
-                countOneTurn++;
-                await MiyabiCombatService.AddAnoBuildup(cardPlay.Target, 1, base.Owner, null, context);
-            }
-
+            countOneTurn++;
+            await MiyabiCombatService.AddAnoBuildup(target, 1, base.Owner, null, choiceContext);
 
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(StatusCardPool))]
+    //[Pool(typeof(StatusCardPool))]
     internal class TrainEat : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/trainEat.png";

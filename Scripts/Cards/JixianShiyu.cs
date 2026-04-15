@@ -46,6 +46,7 @@ namespace Miyabists2.Scripts.Cards
             {
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<HanQue>(base.Owner.Creature.Player);
                 if (base.IsUpgraded) reward1.UpgradeInternal();
+                reward1.AddKeyword(CardKeyword.Exhaust);
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
             }
 

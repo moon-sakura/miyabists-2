@@ -54,7 +54,11 @@ namespace Miyabists2.Scripts.Cards
             {
                 await MiyabiCombatService.AddDecible(Owner, n);
             }
-            count = 0;
+            if (count != 0)
+            {
+                count = 0;
+                BaseReplayCount -= 1;
+            }
         }
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)

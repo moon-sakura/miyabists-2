@@ -18,7 +18,7 @@
     "MIYABISTS2-DONG_FENG.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n抽{Cards:diff()}张卡，若拥有[gold]滑溜[/gold]则费用为[blue]0[/blue]",
 
 	"MIYABISTS2-DONG_FENG_SP.title": "冬蜂·极",
-    "MIYABISTS2-DONG_FENG_SP.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n下一张攻击卡伤害+[blue]50%[/blue]，若拥有[gold]滑溜[/gold]则费用为[blue]0[/blue]",
+    "MIYABISTS2-DONG_FENG_SP.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n下一张攻击卡伤害+[blue]25%[/blue]，若拥有[gold]滑溜[/gold]则费用为[blue]0[/blue]",
 
 	"MIYABISTS2-HAN_QUE.title": "寒雀",
     "MIYABISTS2-HAN_QUE.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n若拥有[gold]滑溜[/gold]则伤害+[blue]4[/blue]",
@@ -64,7 +64,7 @@
     "MIYABISTS2-SHUANG_YUE_SP.description": "全体造成[blue]{HitCount:diff()}[/blue]次[aqua]烈霜[/aqua]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2-TONGMU_SHUANGXUE.title": "同沐霜雪",
-    "MIYABISTS2-TONGMU_SHUANGXUE.description": "每次使用非[gold]伙伴[/gold]攻击卡时，获得[blue]1[/blue]点[gold]支援点数[/gold]",
+    "MIYABISTS2-TONGMU_SHUANGXUE.description": "每次使用非[gold]伙伴[/gold]卡时，获得[blue]1[/blue]点[gold]支援点数[/gold]",
 
 	"MIYABISTS2-XUESHANG_JIASHUANG.title": "雪上加霜",
     "MIYABISTS2-XUESHANG_JIASHUANG.description": "每次使用[gold]霜月[/gold]时，本回合获得[blue]1[/blue]点[gold]力量[/gold]",
@@ -83,7 +83,10 @@
     "MIYABISTS2-BLESSING_OFMOON.description": "受到致命伤害时，避免死亡并恢复[blue]{Bless:diff()}%[/blue]的生命\\n触发[gold]属性异常[/gold]与[gold]紊乱[/gold]时额外造成敌人最大生命值[blue]5%[/blue]的伤害",
 
 	"MIYABISTS2-TIANMI_JINGXIA.title": "甜蜜惊吓",
-    "MIYABISTS2-TIANMI_JINGXIA.description": "每回合结束时，对所有敌人造成[blue]3[/blue]点伤害，给予[blue]1[/blue]层[gold]属性异常[/gold]\\n[gold]支援点数[/gold][blue]1[/blue]：所有敌人[gold]属性积蓄[/gold][blue]1[/blue]",
+    "MIYABISTS2-TIANMI_JINGXIA.description": "自己回合结束时，对所有敌人给予{Jingxia:diff()}层[gold]属性异常[/gold]\\n[gold]支援点数[/gold][blue]1[/blue]：改为[blue]2[/blue]层",
+
+	"MIYABISTS2-XIEZUO_SHIGONG.title": "协作施工",
+    "MIYABISTS2-XIEZUO_SHIGONG.description": "发动{RepeatCount:diff()}次对随机敌人造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予{ANOBUILD_POWER:diff()}层[gold]属性异常[/gold]\\n[gold]支援点数[/gold][blue]1[/blue]：本场战斗中下次发动次数+[blue]1[/blue]",
 
 	"MIYABISTS2-CUTE_FEITIANZHUANG.title": "可爱地雷飞天撞",
     "MIYABISTS2-CUTE_FEITIANZHUANG.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n敌人每有[blue]1[/blue]层[gold]属性积蓄[/gold]，额外造成[gold]失衡值[/gold][blue]5[/blue]（[gold]属性异常[/gold]视为[blue]3[/blue]层，[gold]紊乱[/gold]视为[blue]5[/blue]层）\\n[gold]支援点数[/gold][blue]1[/blue]：造成[gold]失衡值[/gold]+[blue]20%[/blue]",
@@ -92,7 +95,7 @@
     "MIYABISTS2-SONG_KE.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]3[/blue]：将一张费用为[blue]0[/blue]的[gold]虚无[/gold][gold]终结技[/gold]（[gold]名残雪[/gold]）加入手卡",
 
 	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
-    "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合使用单体攻击卡后给予敌人[gold]属性积蓄[/gold][blue]1[/blue]，最多可触发[blue]{LuoYu:diff()}[/blue]次\\n[gold]支援点数[/gold][blue]1[/blue]：所有敌人[gold]属性积蓄[/gold][blue]1[/blue]",
+    "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合对敌人造成伤害后给予敌人[gold]属性积蓄[/gold][blue]1[/blue]，最多可触发[blue]{LuoYu:diff()}[/blue]次\\n[gold]支援点数[/gold][blue]1[/blue]：所有敌人[gold]属性积蓄[/gold][blue]1[/blue]",
 
 	"MIYABISTS2-MINGFU_WANGE.title": "冥府挽歌",
     "MIYABISTS2-MINGFU_WANGE.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]35%[/blue][gold]失衡易伤[/gold]\\n在[blue]{WanGe:diff()}[/blue]回合内，每回合开始时增加一张[gold]协奏狙杀[/gold]到手里\\n[gold]支援点数[/gold][blue]1[/blue]：将一张[gold]协奏狙杀[/gold]加入手卡",
@@ -127,6 +130,9 @@
 
 	"MIYABISTS2-MENGHU_ZHAKAIHUA.title": "恶虎七式·猛虎炸开花",
     "MIYABISTS2-MENGHU_ZHAKAIHUA.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]1[/blue]：获得[blue]{Decible:diff()}[/blue]点[gold]喧嚣值[/gold]",
+
+	"MIYABISTS2-ALL_FOR_HUPOWANG.title": "一切献给虎破王",
+    "MIYABISTS2-ALL_FOR_HUPOWANG.description": "消耗卡组中所有[gold]失衡值[/gold]大于[blue]15[/blue]的卡\\n如果消耗[blue]3[/blue]张以上，[gold]击破[/gold]敌人\\n不足[blue]3[/blue]张则在抽卡堆中添加[blue]3[/blue]张[gold]恶虎七式·猛虎炸开花[/gold]",
 
 	"MIYABISTS2-YONGTAN_HUACAI.title": "咏叹华彩",
     "MIYABISTS2-YONGTAN_HUACAI.description": "每次使用[gold]伙伴[/gold]卡获得{Energy:energyIcons()}\\n[gold]支援点数[/gold][blue]2[/blue]：从抽牌堆中选一张[gold]伙伴[/gold]卡加入手卡",
@@ -212,7 +218,7 @@
     "MIYABISTS2-TRAIN_EAT.description": "[gold]修行[/gold]\\n[blue]3[/blue]回合内，不能打出攻击牌\\n[gold]修行[/gold]结束后，所有攻击牌耗能-[blue]1[/blue]",
 
 	"MIYABISTS2-TRAIN_ATTACK.title": "只出三招",
-    "MIYABISTS2-TRAIN_ATTACK.description": "[gold]修行[/gold]\\n[blue]3[/blue]回合内，每回合只可使用[blue]3[/blue]张卡，所有卡免费使用\\n[gold]修行[/gold]结束后，每回合开始获得[blue]3[/blue][energy]",
+    "MIYABISTS2-TRAIN_ATTACK.description": "[gold]修行[/gold]\\n[blue]3[/blue]回合内，每回合只可使用[blue]3[/blue]张卡，所有卡免费使用\\n[gold]修行[/gold]结束后，每回合开始获得{Energy:energyIcons()}",
 
 	"MIYABISTS2-TEST_CARD_DAZE.title": "失衡测试卡",
     "MIYABISTS2-TEST_CARD_DAZE.description": "[gold]失衡值[/gold][blue]50[/blue]",

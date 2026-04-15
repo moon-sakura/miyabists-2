@@ -22,11 +22,13 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            decimal damageor = DynamicVars.Damage.BaseValue;
             if (base.Owner.Creature.HasPower<SlipperyPower>())
             {
                 DynamicVars.Damage.BaseValue += 4;
             }
             await base.OnPlay(choiceContext, cardPlay);
+            DynamicVars.Damage.BaseValue = damageor;
         }
 
         protected override void OnUpgrade()

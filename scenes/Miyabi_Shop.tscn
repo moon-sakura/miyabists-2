@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1qbn5fp55oh"]
+
+[ext_resource type="Texture2D" uid="uid://na5sswaf8puf" path="res://images/charui/miyabi_char_33.png" id="1_m81c7"]
+
+[node name="MiyabiRest" type="Node2D"]
+
+[node name="MiyabiChar33" type="TextureRect" parent="."]
+offset_left = -252.0
+offset_top = -443.0
+offset_right = 248.0
+offset_bottom = 259.0
+texture = ExtResource("1_m81c7")

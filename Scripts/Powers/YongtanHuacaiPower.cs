@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Cards;
 using System;
@@ -30,6 +31,10 @@ namespace Miyabists2.Scripts.Powers
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
             HoverTipFactory.FromKeyword(MiyabiKeywords.Friends)
+        ];
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new EnergyVar(Amount)
         ];
 
         bool init = false;

@@ -5,8 +5,10 @@ using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Relics;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Char;
 
@@ -43,14 +45,20 @@ public class Miyabi : PlaceholderCharacterModel
         ModelDb.Card<ShenXue>()
     ];
 
-    /// <summary>
-    /// 初始遗物。你可以在这里添加一个或多个遗物，或者留空。
-    /// </summary>
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
         ModelDb.Relic<SwordNotailRelic>(),
         ModelDb.Relic<SectionSixRelic>()
     ];
+
+    public override async Task AfterRoomEntered(AbstractRoom room)
+    {
+        MiyabiCombatService.ResetAnoT();
+        MiyabiCombatService.ResetDazeT();
+        MiyabiCombatService.ResetFrostT();
+
+        MiyabiCombatService.ResetCheck();
+    }
 
     public override CardPoolModel CardPool => ModelDb.CardPool<MiyabiCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<MiyabiRelicPool>();
@@ -74,9 +82,9 @@ public class Miyabi : PlaceholderCharacterModel
     // 能量表盘tscn路径。要自定义见下。
     //public override string CustomEnergyCounterPath => "res://scenes/miyabi_energy_counter.tscn";
     // 篝火休息动画。
-    //public override string CustomRestSiteAnimPath => "res://scenes/miyabi_char.tscn";
+    //public override string CustomRestSiteAnimPath => "res://scenes/Miyabi_Rest.tscn";
     // 商店人物动画。
-    //public override string CustomMerchantAnimPath => "res://scenes/miyabi_char.tscn";
+    //public override string CustomMerchantAnimPath => "res://scenes/Miyabi_Shop.tscn";
     // 多人模式-手指。
     public override string CustomArmPointingTexturePath => null;
     // 多人模式剪刀石头布-石头。

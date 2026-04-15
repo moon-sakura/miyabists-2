@@ -38,6 +38,18 @@ namespace Miyabists2.Scripts.Service
         //public static void ResetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard = false;
         //public static void UsedPartnerCard() => ThisTurnUsedPartnerCard = true;
 
+
+        public static bool AnoNeedCheck { get; set; } = true;
+        public static bool DazeNeedCheck { get; set; } = true;
+        public static bool FrostNeedCheck { get; set; } = true;
+
+        public static void ResetCheck()
+        {
+            AnoNeedCheck = true;
+            DazeNeedCheck = true;
+            FrostNeedCheck = true;
+        }
+
         //属性积蓄判断
         private static int _anoTrigger = 5;
         public static int AnoTrigger { get; set; } = _anoTrigger;
@@ -48,13 +60,15 @@ namespace Miyabists2.Scripts.Service
         public static void SetAnoTriggerMultiply(Creature c)
         {
             int mul = c.CombatState.PlayerCreatures.Count;
-            if(mul > 1)
+            if(mul > 1 && AnoNeedCheck)
             {
                 ChangeAnoT((mul - 1) * 2);
+                AnoNeedCheck = false;
             }
             else
             {
                 ResetAnoT();
+                AnoNeedCheck = false;
             }
         }
 
@@ -68,13 +82,15 @@ namespace Miyabists2.Scripts.Service
         public static void SetDazeTriggerMultiply(Creature c)
         {
             int mul = c.CombatState.PlayerCreatures.Count;
-            if (mul > 1)
+            if (mul > 1 && DazeNeedCheck)
             {
                 ChangeDazeT((mul - 1) * 20);
+                DazeNeedCheck = false;
             }
             else
             {
                 ResetDazeT();
+                DazeNeedCheck = false;
             }
         }
 
@@ -88,13 +104,15 @@ namespace Miyabists2.Scripts.Service
         public static void SetFrostTriggerMultiply(Creature c)
         {
             int mul = c.CombatState.PlayerCreatures.Count;
-            if (mul > 1)
+            if (mul > 1 && FrostNeedCheck)
             {
                 ChangeFrostT((mul - 1) * 15);
+                FrostNeedCheck = false;
             }
             else
             {
                 ResetFrostT();
+                FrostNeedCheck = false;
             }
         }
 

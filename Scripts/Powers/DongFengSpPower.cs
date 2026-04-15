@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Powers
             bool isValidMove = !props.HasFlag(ValueProp.Unpowered);
             if (dealer == base.Owner && isValidMove)
             {
-                return 1.5m;
+                return 1.25m;
             }
             return 1m;
         }

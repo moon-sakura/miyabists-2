@@ -39,7 +39,8 @@ namespace Miyabists2.Scripts.Powers
         {
             if (cardPlay.Card.Owner.Creature != base.Owner
                 || cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
-                || cardPlay.Card.Type != CardType.Attack) 
+                //|| cardPlay.Card.Type != CardType.Attack
+                )
                 return;
             await PowerCmd.Apply<SupportPointPower>(base.Owner,Amount,null,null);
         }

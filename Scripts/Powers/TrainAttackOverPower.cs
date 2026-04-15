@@ -2,6 +2,7 @@ using BaseLib.Abstracts;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,10 @@ namespace Miyabists2.Scripts.Powers
         public string BigBetaIconPath => BigIconPath;
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new EnergyVar(Amount)
+        ];
 
         public override decimal ModifyMaxEnergy(Player player, decimal amount)
         {
