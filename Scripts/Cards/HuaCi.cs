@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -29,6 +30,18 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(3, ValueProp.Move),
             new DynamicVar(DazeVarName, 8)
         ];
+
+        public override async Task AfterCardGeneratedForCombat(CardModel card, bool addedByPlayer)
+        {
+            if(card == this && addedByPlayer)
+            {
+                if(base.Owner.PlayerCombatState.Hand.Cards.Count >= 10)
+                {
+                    var target = base.CombatState.HittableEnemies.TakeRandom(1, base.Owner.RunState.Rng.CombatCardSelection).FirstOrDefault();
+                    await CardCmd.AutoPlay(null, this, target);
+                }
+            }
+        }
 
         protected override void OnUpgrade()
         {

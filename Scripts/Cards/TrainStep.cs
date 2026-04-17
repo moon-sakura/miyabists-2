@@ -13,6 +13,7 @@ namespace Miyabists2.Scripts.Cards
     internal class TrainStep : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/trainStep.png";
-        public TrainStep() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
+        public TrainStep() : base(-1, CardType.Status, CardRarity.Token, TargetType.Self) { }
+        public override int MaxUpgradeLevel => 0;
     }
 }

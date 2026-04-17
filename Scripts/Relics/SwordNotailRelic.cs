@@ -78,7 +78,7 @@ namespace Miyabists2.Scripts.Relics
         {
             // 1. 检查是否是特定的卡（或者任意卡，根据你的需求）
             // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"
-            if (cardPlay.Card.Owner == base.Owner)
+            if (cardPlay.Card.Owner == base.Owner && !base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue))
             {
                 Counter++;
 

@@ -27,10 +27,10 @@
     "MIYABISTS2-MIYABI_BLOCK.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}",
 
 	"MIYABISTS2-JIXIAN_SHIYU.title": "极限视域",
-    "MIYABISTS2-JIXIAN_SHIYU.description": "[gold]滑溜[/gold]{SLIPPERY_POWER:diff()}\\n手卡中加入{Cards:diff()}张带有[gold]消耗[/gold]的[gold]寒雀[/gold]\\n本回合不能再抽卡",
+    "MIYABISTS2-JIXIAN_SHIYU.description": "[gold]滑溜[/gold]{SLIPPERY_POWER:diff()}\\n手卡中加入{Cards:diff()}张带有[gold]消耗[/gold]的[gold]寒雀[/gold]，本回合免费打出\\n本回合不能再抽卡",
 
 	"MIYABISTS2-HUA_CI.title": "花辞",
-    "MIYABISTS2-HUA_CI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
+    "MIYABISTS2-HUA_CI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n添加到手牌时溢出则会自动使用",
 
 	"MIYABISTS2-HUA_FA.title": "花筏",
     "MIYABISTS2-HUA_FA.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n若本回合使用过[gold]伙伴[/gold]牌，则额外获得[blue]6[/blue]点格挡，获得[blue]1[/blue]点[gold]招架[/gold]",
@@ -92,7 +92,7 @@
     "MIYABISTS2-CUTE_FEITIANZHUANG.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n敌人每有[blue]1[/blue]层[gold]属性积蓄[/gold]，额外造成[gold]失衡值[/gold][blue]5[/blue]（[gold]属性异常[/gold]视为[blue]3[/blue]层，[gold]紊乱[/gold]视为[blue]5[/blue]层）\\n[gold]支援点数[/gold][blue]1[/blue]：造成[gold]失衡值[/gold]+[blue]20%[/blue]",
 
 	"MIYABISTS2-SONG_KE.title": "送客！",
-    "MIYABISTS2-SONG_KE.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]3[/blue]：将一张费用为[blue]0[/blue]的[gold]虚无[/gold][gold]终结技[/gold]（[gold]名残雪[/gold]）加入手卡",
+    "MIYABISTS2-SONG_KE.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]4[/blue]：将一张费用为[blue]0[/blue]的[gold]虚无[/gold][gold]终结技[/gold]（[gold]名残雪[/gold]）加入手卡",
 
 	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
     "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合对敌人造成伤害后给予敌人[gold]属性积蓄[/gold][blue]1[/blue]，最多可触发[blue]{LuoYu:diff()}[/blue]次\\n[gold]支援点数[/gold][blue]1[/blue]：所有敌人[gold]属性积蓄[/gold][blue]1[/blue]",

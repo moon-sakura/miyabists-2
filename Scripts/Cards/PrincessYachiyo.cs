@@ -32,6 +32,8 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Ethereal,
         ];
 
+        public override int MaxUpgradeLevel => 0;
+
         public PrincessYachiyo()
             : base(0, CardType.Skill, CardRarity.Token, TargetType.AnyPlayer)
         {

@@ -19,6 +19,8 @@ namespace Miyabists2.Scripts.Cards
     {
         public JixianShiyu() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 
+        protected override string ArtPath => $"res://images/cards/jixianShiyu.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new CardsVar(1),
             new DynamicVar("SLIPPERY_POWER", 2)
@@ -47,6 +49,7 @@ namespace Miyabists2.Scripts.Cards
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<HanQue>(base.Owner.Creature.Player);
                 if (base.IsUpgraded) reward1.UpgradeInternal();
                 reward1.AddKeyword(CardKeyword.Exhaust);
+                reward1.SetToFreeThisTurn();
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
             }
 

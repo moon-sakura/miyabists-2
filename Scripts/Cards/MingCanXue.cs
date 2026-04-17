@@ -50,7 +50,7 @@ namespace Miyabists2.Scripts.Cards
         public MingCanXue() : base(1, CardRarity.Token, TargetType.AllEnemies, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(4, ValueProp.Move),
+            new DamageVar(3, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar("HitCount",5)
         ];

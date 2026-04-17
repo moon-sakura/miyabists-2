@@ -35,13 +35,13 @@ namespace Miyabists2.Scripts.Cards
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            if (base.CheckSupportCost(3) != 0)
+            if (base.CheckSupportCost(4) != 0)
             {
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
                 reward1.AddKeyword(CardKeyword.Ethereal);
                 reward1.SetToFreeThisTurn();
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-                await CostSupporPoint(3);
+                await CostSupporPoint(4);
             }
 
         }

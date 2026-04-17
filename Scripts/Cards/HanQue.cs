@@ -13,7 +13,7 @@ namespace Miyabists2.Scripts.Cards
     {
         protected override string ArtPath => $"res://images/cards/hanQue_50.png";
 
-        public HanQue() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, true) { }
+        public HanQue() : base(1, CardRarity.Common, TargetType.AnyEnemy, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),

@@ -20,6 +20,8 @@ namespace Miyabists2.Scripts.Cards
 
         public QuickSupport() : base(1, CardRarity.Uncommon, true) { }
 
+        protected override string ArtPath => $"res://images/cards/quickSupport.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4,ValueProp.Unpowered),
             new DynamicVar(ParryVarName, 1)
@@ -34,8 +36,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<MiyabiParryPower>(),
-            HoverTipFactory.FromCard<HuaCi>()
+            //HoverTipFactory.FromPower<MiyabiParryPower>(),
+            //HoverTipFactory.FromCard<HuaCi>()
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

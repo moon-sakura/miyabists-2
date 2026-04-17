@@ -36,7 +36,7 @@ namespace Miyabists2.Scripts.Powers
             if(cardPlay.Card.Owner.Creature != base.Owner 
                 || !cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang)) { return; }
 
-            await MiyabiCombatService.AddDecible(Owner.Player, 1);
+            await MiyabiCombatService.AddDecible(Owner.Player, Amount);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class TongmuShuangxue : MiyabiCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        protected override string ArtPath => $"res://images/cards/tongmuShuangxue.png";
 
         public TongmuShuangxue():base(2,CardType.Power,CardRarity.Uncommon,TargetType.Self) { }
 

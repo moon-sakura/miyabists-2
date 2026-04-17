@@ -23,6 +23,8 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Retain
         ];
 
+        public override int MaxUpgradeLevel => 0;
+
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
             HoverTipFactory.FromPower<PlatingPower>(),

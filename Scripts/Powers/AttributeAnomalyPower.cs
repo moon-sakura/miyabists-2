@@ -67,7 +67,7 @@ namespace Miyabists2.Scripts.Powers
         //}
 
         // 效果 3：每回合结束受到 5% 伤害
-        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if (side == base.Owner.Side)
             {

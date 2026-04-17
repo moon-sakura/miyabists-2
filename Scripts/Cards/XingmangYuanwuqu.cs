@@ -18,6 +18,8 @@ namespace Miyabists2.Scripts.Cards
     {
         public XingmangYuanwuqu() : base(3, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
 
+        protected override string ArtPath => $"res://images/cards/xingmangZhongzhang.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(8, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),

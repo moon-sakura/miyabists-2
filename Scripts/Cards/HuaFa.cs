@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class HuaFa : MiyabiBlockCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/feng_hua.png";
+        protected override string ArtPath => $"res://images/cards/huaFa.png";
 
         public HuaFa() : base(2, CardRarity.Uncommon,true) { }
 

@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    //[Pool(typeof(StatusCardPool))]
+    [Pool(typeof(StatusCardPool))]
     internal class TrainEat : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/trainEat.png";
-        public TrainEat() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
+        public TrainEat() : base(-1, CardType.Status, CardRarity.Token, TargetType.Self) { }
+        public override int MaxUpgradeLevel => 0;
     }
 }

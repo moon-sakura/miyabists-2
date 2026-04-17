@@ -23,6 +23,8 @@ namespace Miyabists2.Scripts.Cards
     {
         public RanyouyinShare() : base(0, CardRarity.Common, true) { }
 
+        protected override string ArtPath => $"res://images/cards/ranyouyinShare.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Decible", 5)
         ];

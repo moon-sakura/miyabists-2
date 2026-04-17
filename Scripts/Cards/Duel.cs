@@ -46,8 +46,9 @@ namespace Miyabists2.Scripts.Cards
         {
             var duelAttack = new MoveState(
                 "MIYABI_DUEL_ATTACK",
-                async targets => await DamageCmd // 意图2实际执行效果，这里直接用lambda
+                async targets => await DamageCmd
                     .Attack(10)
+                    .Unpowered()
                     //.Targeting(base.Owner.Creature)
                     .FromMonster(cardPlay.Target.Monster)
                     //.WithAttackerFx()

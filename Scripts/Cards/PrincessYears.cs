@@ -1,9 +1,11 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [Pool(typeof(StatusCardPool))]
     internal class PrincessYears : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/princessYears.png";
@@ -28,6 +31,6 @@ namespace Miyabists2.Scripts.Cards
         {
         }
 
-        
+        public override int MaxUpgradeLevel => 0;
     }
 }

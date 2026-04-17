@@ -1,8 +1,10 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [Pool(typeof(StatusCardPool))]
     internal class PrincessInoha : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/princessInoha.png";
@@ -20,6 +23,8 @@ namespace Miyabists2.Scripts.Cards
             MiyabiKeywords.OtherWorldFriends,
             CardKeyword.Unplayable
         ];
+
+        public override int MaxUpgradeLevel => 0;
 
         public PrincessInoha()
             : base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)

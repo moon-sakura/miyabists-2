@@ -60,16 +60,21 @@ namespace Miyabists2.Scripts.Service
         public static void SetAnoTriggerMultiply(Creature c)
         {
             int mul = c.CombatState.PlayerCreatures.Count;
-            if(mul > 1 && AnoNeedCheck)
+
+            if (AnoNeedCheck)
             {
-                ChangeAnoT((mul - 1) * 2);
-                AnoNeedCheck = false;
+                if (mul > 1)
+                {
+                    ChangeAnoT((mul - 1) * 2);
+                    AnoNeedCheck = false;
+                }
+                else
+                {
+                    ResetAnoT();
+                    AnoNeedCheck = false;
+                }
             }
-            else
-            {
-                ResetAnoT();
-                AnoNeedCheck = false;
-            }
+            
         }
 
         //失衡值判断
@@ -82,16 +87,21 @@ namespace Miyabists2.Scripts.Service
         public static void SetDazeTriggerMultiply(Creature c)
         {
             int mul = c.CombatState.PlayerCreatures.Count;
-            if (mul > 1 && DazeNeedCheck)
+
+            if (DazeNeedCheck)
             {
-                ChangeDazeT((mul - 1) * 20);
-                DazeNeedCheck = false;
+                if (mul > 1)
+                {
+                    ChangeDazeT((mul - 1) * 20);
+                    DazeNeedCheck = false;
+                }
+                else
+                {
+                    ResetDazeT();
+                    DazeNeedCheck = false;
+                }
             }
-            else
-            {
-                ResetDazeT();
-                DazeNeedCheck = false;
-            }
+            
         }
 
         //烈霜值判断
@@ -104,15 +114,18 @@ namespace Miyabists2.Scripts.Service
         public static void SetFrostTriggerMultiply(Creature c)
         {
             int mul = c.CombatState.PlayerCreatures.Count;
-            if (mul > 1 && FrostNeedCheck)
+            if (FrostNeedCheck)
             {
-                ChangeFrostT((mul - 1) * 15);
-                FrostNeedCheck = false;
-            }
-            else
-            {
-                ResetFrostT();
-                FrostNeedCheck = false;
+                if (mul > 1)
+                {
+                    ChangeFrostT((mul - 1) * 15);
+                    FrostNeedCheck = false;
+                }
+                else
+                {
+                    ResetFrostT();
+                    FrostNeedCheck = false;
+                }
             }
         }
 
@@ -222,12 +235,12 @@ namespace Miyabists2.Scripts.Service
             await CreatureCmd.Damage(choiceContext, target, 10m, ValueProp.Unpowered, dealer);
 
             if (!ShouldKeepFrostFire())
-                await PowerCmd.Remove<FrostFirePower>(target);
+                //await PowerCmd.Remove<FrostFirePower>(target);
             //}
 
             if (target.HasPower<AttributeAnomalyPower>())
             {
-                await MiyabiCombatService.DisorderApply(target,dealer, choiceContext);
+                await DisorderApply(target, dealer, choiceContext);
             }
             else
             {

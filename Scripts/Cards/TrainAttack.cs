@@ -10,14 +10,16 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    //[Pool(typeof(StatusCardPool))]
+    [Pool(typeof(StatusCardPool))]
     internal class TrainAttack : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/trainAtk.png";
-        public TrainAttack() : base(0, CardType.Status, CardRarity.Token, TargetType.Self) { }
+        public TrainAttack() : base(-1, CardType.Status, CardRarity.Token, TargetType.Self) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new EnergyVar(3)
         ];
+
+        public override int MaxUpgradeLevel => 0;
     }
 }
