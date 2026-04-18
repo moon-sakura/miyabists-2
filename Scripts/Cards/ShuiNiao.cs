@@ -26,7 +26,8 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(0, ValueProp.Move),
             new DynamicVar(ParryVarName, 0),
-            new DynamicVar(SlipperyVarName, 1)
+            new DynamicVar(SlipperyVarName, 1),
+            new DynamicVar("ExhaustCount", 2),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -34,16 +35,31 @@ namespace Miyabists2.Scripts.Cards
             //HoverTipFactory.FromPower<MiyabiParryPower>(),
             //HoverTipFactory.FromCard<HuaCi>(),
             HoverTipFactory.FromPower<SlipperyPower>(),
+            //HoverTipFactory.FromKeyword(CardKeyword.Exhaust),
         ];
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
+        {
+            if(cardPlay.Card == this)
+            {
+                DynamicVars["ExhaustCount"].BaseValue -= 1;
+
+                if (DynamicVars["ExhaustCount"].BaseValue <= 0)
+                {
+                    await CardCmd.Exhaust(context, this);
+                    DynamicVars["ExhaustCount"].BaseValue = 2;
+                }
+            }
+        }
+
+        
 
         protected override void OnUpgrade()
         {
-            // 升级增加 2 点护甲
             //DynamicVars.Block.UpgradeValueBy(2);
 
-            base.EnergyCost.UpgradeBy(-1); // 升级后改为消耗 1 点能量
+            base.EnergyCost.UpgradeBy(-1); 
 
-            // 如果需要升级 Parry 或 Slippery，可以在此添加逻辑
             // if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
         }
     }

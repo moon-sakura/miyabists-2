@@ -46,8 +46,9 @@ namespace Miyabists2.Scripts.Powers
             }
         }
 
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
+            if (power != this) return;
             if (base.Amount > MaxPoints)
             {
                 // 如果超过 7，则设回 7
@@ -59,6 +60,7 @@ namespace Miyabists2.Scripts.Powers
                 SetAmount(1);
             }
         }
+
 
         public int CanUsePoint(int a)
         {

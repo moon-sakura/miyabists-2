@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<PlatingPower>(),
+            //HoverTipFactory.FromPower<PlatingPower>(),
             HoverTipFactory.FromPower<ArtifactPower>(),
             HoverTipFactory.FromPower<SlipperyPower>(),
         ];
@@ -41,7 +41,7 @@ namespace Miyabists2.Scripts.Cards
         {
             await PowerCmd.Apply<ArtifactPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
             await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, 2, base.Owner.Creature, this);
+            //await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, 2, base.Owner.Creature, this);
         }
     }
 }

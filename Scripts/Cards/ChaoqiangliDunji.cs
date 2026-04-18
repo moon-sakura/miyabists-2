@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,22 +42,18 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            int parryCount = base.Owner.Creature.GetPower<MiyabiParryPower>()?.Amount ?? 0;
-
+            
             await base.OnPlay(choiceContext, cardPlay);
+
+            int parryCount = base.Owner.Creature.GetPower<MiyabiParryPower>()?.Amount ?? 0;
 
             if (DynamicVars.Block.BaseValue > 0)
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 
-
             if (base.CheckSupportCost(3) != 0)
             {
-                if (base.DynamicVars.TryGetValue(ParryVarName, out DynamicVar p))
-                    for (int i = 0; i < parryCount + p.IntValue; i++)
-                    {
-                        CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<HuaCi>(base.Owner);
-                        await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-                    }
+                if (parryCount > 0)
+                    await MiyabiCombatService.AddHuaCiReward(base.Owner.Creature, null, choiceContext, parryCount);
                 await CostSupporPoint(3);
             }
         }

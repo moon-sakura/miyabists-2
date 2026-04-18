@@ -58,7 +58,7 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
-            new DynamicVar("HitCount",1)
+            new DynamicVar("HitCount",2)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -110,11 +110,12 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            //base.OnUpgrade();
-            //DynamicVars.Damage.UpgradeValueBy(3);
-            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
             if (base.DynamicVars.TryGetValue("HitCount", out DynamicVar hc)) hc.UpgradeValueBy(1);
-            //base.up
+            
+            if(base.CurrentUpgradeLevel >= 3)
+            {
+                EnergyCost.SetThisTurn(1);
+            }
         }
 
 

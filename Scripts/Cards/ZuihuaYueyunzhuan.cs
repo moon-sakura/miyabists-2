@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Cards
         [
             HoverTipFactory.FromPower<DazePower>(),
             HoverTipFactory.FromPower<BreakPower>(),
-
+            HoverTipFactory.FromPower<JifuPower>(),
             HoverTipFactory.FromPower<DazeVulnPower>(),
             HoverTipFactory.FromPower<SupportPointPower>()
         ];

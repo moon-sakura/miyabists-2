@@ -1,21 +1,22 @@
 using BaseLib.Abstracts;
-using Godot;
 using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Afflictions;
-using MegaCrit.Sts2.Core.Models.Relics;
+using Godot;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class BreakPower : CustomPowerModel
+    internal class BreakPlayerPower : CustomPowerModel
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -31,38 +32,18 @@ namespace Miyabists2.Scripts.Powers
             //HoverTipFactory.FromPower<DazeVulnPower>()
         ];
 
-        public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+        public override bool ShouldPlay(CardModel card, AutoPlayType _)
         {
-            //眩晕
-            //if (!base.Owner.IsPlayer)
+            if (card.Owner.Creature != base.Owner || !base.Owner.IsPlayer)
             {
-                await CreatureCmd.Stun(base.Owner);
-                //添加一回合失衡易伤50%
-                await PowerCmd.Apply<DazeVulnPower>(base.Owner, 50m, null, null);
+                return true;
             }
-
-            foreach (Creature Player in base.CombatState.PlayerCreatures)
-            {
-                if (Player != null && Player.IsAlive && Player.HasPower<SupportPointPower>())
-                {
-                    await PowerCmd.Apply<SupportPointPower>(Player, 3, base.Owner, null);
-                }
-                //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
-            }
+            return false;
         }
-
-        //public override bool ShouldPlay(CardModel card, AutoPlayType _)
-        //{
-        //    if (card.Owner.Creature != base.Owner || !base.Owner.IsPlayer)
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
 
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
-            if(side == base.Owner.Side)
+            if (side == base.Owner.Side)
             {
                 //回合结束移除
                 await PowerCmd.Remove<BreakPower>(base.Owner);

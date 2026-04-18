@@ -12,7 +12,7 @@
     "MIYABISTS2-FEI_XUE_TWO.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]2[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2-SHUI_NIAO.title": "水鸟",
-    "MIYABISTS2-SHUI_NIAO.description": "[gold]滑溜[/gold][blue]1[/blue]",
+    "MIYABISTS2-SHUI_NIAO.description": "[gold]滑溜[/gold][blue]1[/blue]\\n[gold]消耗{ExhaustCount:diff()}[/gold]",
 
 	"MIYABISTS2-DONG_FENG.title": "冬蜂",
     "MIYABISTS2-DONG_FENG.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n抽{Cards:diff()}张卡，若拥有[gold]滑溜[/gold]则费用为[blue]0[/blue]",
@@ -58,7 +58,7 @@
     "MIYABISTS2-E_JI_ZHAN.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]3[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2-SHUANG_YUE.title": "霜月",
-    "MIYABISTS2-SHUANG_YUE.description": "全体造成[blue]{HitCount:diff()}[/blue]次[aqua]烈霜[/aqua]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n若[gold]落霜[/gold]不小于[blue]2[/blue]点，将一张升级后的[gold]霜月[/gold]加入手卡",
+    "MIYABISTS2-SHUANG_YUE.description": "全体造成[blue]{HitCount:diff()}[/blue]次[aqua]烈霜[/aqua]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n若[gold]落霜[/gold]不小于[blue]2[/blue]点，则消耗[blue]2[/blue]点[gold]落霜[/gold]，将一张升级后的[gold]霜月[/gold]加入手卡\\n（等级大于2时，费用变为1！回合结束会降级！）",
 
 	"MIYABISTS2-SHUANG_YUE_SP.title": "霜月·极意",
     "MIYABISTS2-SHUANG_YUE_SP.description": "全体造成[blue]{HitCount:diff()}[/blue]次[aqua]烈霜[/aqua]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}",
@@ -92,7 +92,7 @@
     "MIYABISTS2-CUTE_FEITIANZHUANG.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n敌人每有[blue]1[/blue]层[gold]属性积蓄[/gold]，额外造成[gold]失衡值[/gold][blue]5[/blue]（[gold]属性异常[/gold]视为[blue]3[/blue]层，[gold]紊乱[/gold]视为[blue]5[/blue]层）\\n[gold]支援点数[/gold][blue]1[/blue]：造成[gold]失衡值[/gold]+[blue]20%[/blue]",
 
 	"MIYABISTS2-SONG_KE.title": "送客！",
-    "MIYABISTS2-SONG_KE.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]4[/blue]：将一张费用为[blue]0[/blue]的[gold]虚无[/gold][gold]终结技[/gold]（[gold]名残雪[/gold]）加入手卡",
+    "MIYABISTS2-SONG_KE.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SupportPoint:diff()}[/blue]：将一张费用为[blue]0[/blue]的[gold]虚无[/gold][gold]终结技[/gold]（[gold]名残雪[/gold]）加入手卡",
 
 	"MIYABISTS2-LUOYU_SHENGHUA.title": "落羽生花",
     "MIYABISTS2-LUOYU_SHENGHUA.description": "每回合对敌人造成伤害后给予敌人[gold]属性积蓄[/gold][blue]1[/blue]，最多可触发[blue]{LuoYu:diff()}[/blue]次\\n[gold]支援点数[/gold][blue]1[/blue]：所有敌人[gold]属性积蓄[/gold][blue]1[/blue]",
@@ -160,11 +160,11 @@
     "MIYABISTS2-XINGMANG_YUANWUQU.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}",
 
 	"MIYABISTS2-HUANXIANGSHI_ZOUMING.title": "幻想式奏鸣",
-    "MIYABISTS2-HUANXIANGSHI_ZOUMING.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为[blue]0[/blue]\\n[gold]支援点数[/gold][blue]2[/blue]：额外从弃牌堆中选一张加入手卡",
+    "MIYABISTS2-HUANXIANGSHI_ZOUMING.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为[blue]0[/blue]\\n[gold]支援点数[/gold][blue]{SupportPoint:diff()}[/blue]：额外从弃牌堆中选一张加入手卡",
 	"MIYABISTS2-HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2-TU_NA_FA.title": "吐纳法",
-    "MIYABISTS2-TU_NA_FA.description": "每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]",
+    "MIYABISTS2-TU_NA_FA.description": "每回合前[blue]1[/blue]张[gold]风花[/gold]变为0费，每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2-MIYABI_DUEL.title": "对决",
     "MIYABISTS2-MIYABI_DUEL.description": "将敌人的意图变为造成10点伤害\\n[gold]招架[/gold]1",
@@ -189,10 +189,10 @@
 	"MIYABISTS2-PRINCESS.selectionScreenPrompt": "选择祝福",
 
 	"MIYABISTS2-PRINCESS_KAGUYA.title": "辉夜姬",
-    "MIYABISTS2-PRINCESS_KAGUYA.description": "消耗卡组中所有[gold]超人彩叶[/gold]，每回合开始时随机触发{Kaguya:diff()}种增益",
+    "MIYABISTS2-PRINCESS_KAGUYA.description": "消耗卡组中所有[gold]超人彩叶[/gold]，每消耗一张触发一次强力效果\\n每回合开始时随机触发{Kaguya:diff()}次效果",
 
 	"MIYABISTS2-PRINCESS_INOP.title": "彩叶的祝福",
-    "MIYABISTS2-PRINCESS_INOP.description": "获得1层[gold]人工制品[/gold]，1层[gold]滑溜[/gold]，2层[gold]覆甲[/gold]",
+    "MIYABISTS2-PRINCESS_INOP.description": "获得1层[gold]人工制品[/gold]，1层[gold]滑溜[/gold]",
 
 	"MIYABISTS2-PRINCESS_YACHIYO.title": "八千代的守望",
     "MIYABISTS2-PRINCESS_YACHIYO.description": "选择一张手卡[gold]消耗[/gold]，下回合加入到目标手卡并变为0费",
@@ -203,6 +203,9 @@
 
 	"MIYABISTS2-PRINCESS_INOHA.title": "超人彩叶",
     "MIYABISTS2-PRINCESS_INOHA.description": "与[gold]八千年的等待[/gold]同时在手卡时，升级所有卡牌，将[gold]八千年的等待[/gold]变化为[gold]辉夜姬[/gold]",
+
+	"MIYABISTS2-WEIMING_DOUDAOSHU.title": "苇名抖刀术",
+    "MIYABISTS2-WEIMING_DOUDAOSHU.description": "未被[gold]击破[/gold]时受到伤害降低[blue]25%[/blue]，每次受击时添加1张[gold]花辞[/gold]到手卡\\n受到未被格挡的伤害时为自己添加{Daze:diff()}层失衡，累计[blue]100[/blue]层后触发[gold]击破[/gold]",
 
 	"MIYABISTS2-TRAINING_TODAY.title": "今日修行",
     "MIYABISTS2-TRAINING_TODAY.description": "选择今天的修行",

@@ -22,7 +22,7 @@ namespace Miyabists2.Scripts.Cards
         public HuanxiangshiZouming() : base(3, CardRarity.Uncommon, TargetType.Self, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            //new DynamicVar("SupportPoint",1)
+            new DynamicVar("SupportPoint",3)
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -54,7 +54,7 @@ namespace Miyabists2.Scripts.Cards
                 }
             }
 
-            if (base.CheckSupportCost(2) != 0)
+            if (base.CheckSupportCost(DynamicVars["SupportPoint"].IntValue) != 0)
             {
                 CardSelectorPrefs prefs2 = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
                 List<CardModel> cardsIn2 = (from c in PileType.Discard.GetPile(base.Owner).Cards
@@ -70,7 +70,7 @@ namespace Miyabists2.Scripts.Cards
                         await CardPileCmd.Add(cardModel2, PileType.Hand);
                     }
                 }
-                await CostSupporPoint(2);
+                await CostSupporPoint(DynamicVars["SupportPoint"].IntValue);
             }
 
             //if (base.DynamicVars.TryGetValue("SupportPoint", out DynamicVar s))

@@ -10,6 +10,10 @@
 	"MIYABISTS2-BREAK_POWER.smartDescription": "[gold]眩晕[/gold]，获得一回合[gold]失衡易伤[/gold][blue]50%[/blue]。在此状态下不能叠加[gold]失衡值[/gold]。",
 	"MIYABISTS2-BREAK_POWER.description": "击破时[gold]眩晕[/gold]敌人，并给予一回合[gold]失衡易伤[/gold][blue]50%[/blue]。在此状态下不能叠加[gold]失衡值[/gold]。",
 	"MIYABISTS2-BREAK_POWER.title": "击破",
+	
+	"MIYABISTS2-BREAK_PLAYER_POWER.smartDescription": "一回合无法使用卡牌",
+	"MIYABISTS2-BREAK_PLAYER_POWER.description": "一回合无法使用卡牌",
+	"MIYABISTS2-BREAK_PLAYER_POWER.title": "击破",
 
 	"MIYABISTS2-FROST_FIRE_POWER.title": "冰焰",
     "MIYABISTS2-FROST_FIRE_POWER.description": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（上限[blue]50%[/blue]）。",
@@ -23,7 +27,7 @@
 	"MIYABISTS2-DAZE_VULN_POWER.description": "使敌人受到伤害增加",
 	"MIYABISTS2-DAZE_VULN_POWER.title": "失衡易伤",
 
-	"MIYABISTS2-FROST_FALL_POWER.title": "霜落",
+	"MIYABISTS2-FROST_FALL_POWER.title": "落霜",
     "MIYABISTS2-FROST_FALL_POWER.description": "用于释放[gold]霜月[/gold]，两豆且手卡中没有[gold]霜月[/gold]时，加入一张[gold]霜月[/gold]到手卡",
     "MIYABISTS2-FROST_FALL_POWER.smartDescription": "六豆连接大脑，蓄力代替思考",
 
@@ -49,7 +53,7 @@
 
 	"MIYABISTS2-TUNAFA_POWER.title": "吐纳法",
     "MIYABISTS2-TUNAFA_POWER.description": "",
-    "MIYABISTS2-TUNAFA_POWER.smartDescription": "每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]",
+    "MIYABISTS2-TUNAFA_POWER.smartDescription": "每回合前{Amount}张[gold]风花[/gold]变为0费，每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]，已使用{CardCount:diff()}张",
 
 	"MIYABISTS2-JUN_LIE_POWER.title": "皲裂",
     "MIYABISTS2-JUN_LIE_POWER.description": "",
@@ -57,6 +61,10 @@
 
 	"MIYABISTS2-TIANZIZY_POWER.title": "天资卓越",
     "MIYABISTS2-TIANZIZY_POWER.smartDescription": "每次使用[gold]霜月[/gold]，自动使用{Amount}次[gold]霜月·极意[/gold]",
+
+	"MIYABISTS2-WEIMINGDDS_POWER.title": "苇名抖刀术",
+    "MIYABISTS2-WEIMINGDDS_POWER.description": "",
+    "MIYABISTS2-WEIMINGDDS_POWER.smartDescription": "未被[gold]击破[/gold]时受到伤害降低[blue]25%[/blue]，每次受击时添加[blue]{Amount}[/blue]张[gold]花辞[/gold]到手卡\\n受到未被格挡的伤害时为自己添加[blue]{Daze:diff()}[/blue]层失衡，累计[blue]100[/blue]层后触发[gold]击破[/gold]",
 
 	"MIYABISTS2-YONGTAN_HUACAI_POWER.title": "咏叹华彩",
     "MIYABISTS2-YONGTAN_HUACAI_POWER.description": "每次使用[gold]伙伴[/gold]卡获得{Energy:energyIcons()}",

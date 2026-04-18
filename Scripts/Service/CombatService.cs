@@ -6,11 +6,13 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -143,7 +145,7 @@ namespace Miyabists2.Scripts.Service
             return false;
         }
 
-        //冰焰
+        //烈霜
         public static decimal FrostFireLimit { get; set; } = 0.5m;
         public static decimal GetFrostFireLimit() => FrostFireLimit;
         public static decimal SetFrostFireLimit(decimal value) => FrostFireLimit = value;
@@ -164,10 +166,16 @@ namespace Miyabists2.Scripts.Service
             // 情况 A：已经有异常状态了
             if (hasAnomaly)
             {
-                if (chkAno >= trigger) // 满溢则紊乱
+                if (chkAno >= trigger && chkAno < 2 * trigger) // 满溢则紊乱
                 {
                     await DisorderApply(target, dealer, choiceContext);
                     await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
+                }
+                else if(chkAno >= 2 * trigger)
+                {
+                    await DisorderApply(target, dealer, choiceContext);
+                    await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, dealer, card);
+                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
                 }
                 else // 未满则继续堆积蓄
                 {
@@ -177,11 +185,16 @@ namespace Miyabists2.Scripts.Service
             // 情况 B：还没有异常状态
             else
             {
-                if (chkAno >= trigger) // 满溢则触发异常
+                if (chkAno >= trigger && chkAno < 2 * trigger) // 满溢则触发异常
                 {
                     await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, dealer, card);
                     //await PowerCmd.Apply<AnomalyBuildupPower>(target, 1-trigger, dealer, card);
                     await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
+                }
+                else if(chkAno >= 2 * trigger)
+                {
+                    await DisorderApply(target, dealer, choiceContext);
+                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
                 }
                 else // 未满则仅仅添加积蓄
                 {
@@ -202,7 +215,7 @@ namespace Miyabists2.Scripts.Service
             bool hasZmyc = target.HasPower<ZhongmuycPower>();
 
             await PowerCmd.Remove<AttributeAnomalyPower>(target);
-            await PowerCmd.Apply<DisorderPower>(target, 1, dealer, null);
+
             //造成10%点伤害
             decimal damage = target.MaxHp * DisorderDamageRate;
 
@@ -211,6 +224,8 @@ namespace Miyabists2.Scripts.Service
             if (hasZmyc) damage *= 1.5m;
 
             await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered & ValueProp.Unblockable, dealer);
+
+            await PowerCmd.Apply<DisorderPower>(target, 1, dealer, null);
         }
 
         //霜灼增加
@@ -264,6 +279,26 @@ namespace Miyabists2.Scripts.Service
             }
         }
 
+        public static async Task DazeAddtoPlayer(PlayerChoiceContext choiceContext, Creature player, int count)
+        {
+            int chkDaze = count;
+            if (player.HasPower<DazePower>())
+            {
+                chkDaze += player.GetPowerAmount<DazePower>();
+            }
+            
+            if(chkDaze >= 100)
+            {
+                await PowerCmd.Apply<BreakPlayerPower>(player, 1, null, null);
+                await PowerCmd.Remove<DazePower>(player);
+            }
+            else if(!player.HasPower<BreakPlayerPower>())
+            {
+                await PowerCmd.Apply<DazePower>(player, count, null, null);
+            }
+
+        }
+
         //加喧嚣值
         public static async Task AddDecible(Player player, int amount)
         {
@@ -280,6 +315,24 @@ namespace Miyabists2.Scripts.Service
             if (myRelic2 != null)
             {
                 myRelic2?.AddCounter(amount);
+            }
+        }
+
+        //花辞
+        public static async Task AddHuaCiReward(Creature owner, Creature target, PlayerChoiceContext choiceContext, int Count)
+        {
+            int handSize = owner.Player.PlayerCombatState.Hand.Cards.Count;
+            if (target == null)
+                target = owner.CombatState.HittableEnemies.TakeRandom(1, owner.Player.RunState.Rng.CombatCardSelection).FirstOrDefault();
+
+            for (int i = 0; i < Count; i++)
+            {
+                CardModel reward1 = owner.CombatState.CreateCard<HuaCi>(owner.Player);
+
+                if (handSize + i < 10)
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                else
+                    await CardCmd.AutoPlay(choiceContext, reward1, target);
             }
         }
     }

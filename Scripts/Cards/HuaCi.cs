@@ -31,17 +31,19 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(DazeVarName, 8)
         ];
 
-        public override async Task AfterCardGeneratedForCombat(CardModel card, bool addedByPlayer)
-        {
-            if(card == this && addedByPlayer)
-            {
-                if(base.Owner.PlayerCombatState.Hand.Cards.Count >= 10)
-                {
-                    var target = base.CombatState.HittableEnemies.TakeRandom(1, base.Owner.RunState.Rng.CombatCardSelection).FirstOrDefault();
-                    await CardCmd.AutoPlay(null, this, target);
-                }
-            }
-        }
+        //public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
+        //{
+        //    int handSize = base.Owner.PlayerCombatState.Hand.Cards.Count;
+
+        //    if (card == this)
+        //    {
+        //        if(handSize >= 10)
+        //        {
+        //            var target = base.CombatState.HittableEnemies.TakeRandom(1, base.Owner.RunState.Rng.CombatCardSelection).FirstOrDefault();
+        //            await CardCmd.AutoPlay(choiceContext, this, target);
+        //        }
+        //    }
+        //}
 
         protected override void OnUpgrade()
         {

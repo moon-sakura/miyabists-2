@@ -35,13 +35,13 @@ namespace Miyabists2.Scripts.Powers
             HoverTipFactory.FromPower<AnomalyBuildupPower>()
         ];
 
-        public override async Task AfterTurnEndLate(PlayerChoiceContext choiceContext, CombatSide side)
+        public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if (side != Owner.Side) return;
 
             //for (int i = 0; i < Amount; i++)
             {
-                foreach (Creature enemy in base.CombatState.Enemies)
+                foreach (Creature enemy in base.CombatState.Enemies.ToList())
                 {
                     //await CreatureCmd.Damage(choiceContext, enemy, Amount * 3m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, (Creature)null);
                     if(enemy.IsAlive)
@@ -49,6 +49,9 @@ namespace Miyabists2.Scripts.Powers
                         await MiyabiCombatService.AddAnoBuildup(enemy, Amount, base.Owner, null, choiceContext);
                     }
                 }
+
+
+                await Cmd.CustomScaledWait(0.1f, 0.25f);
             }
         }
     }

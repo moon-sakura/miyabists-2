@@ -20,8 +20,10 @@ namespace Miyabists2.Scripts.Cards
         public SongKe() : base(3, CardRarity.Rare, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar(DazeVarName, 20)
+            new DynamicVar(DazeVarName, 20),
+            new DynamicVar("SupportPoint",4)
         ];
+
         protected override IEnumerable<IHoverTip> ExtraHoverTips => 
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
@@ -35,13 +37,13 @@ namespace Miyabists2.Scripts.Cards
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            if (base.CheckSupportCost(4) != 0)
+            if (base.CheckSupportCost(DynamicVars["SupportPoint"].IntValue) != 0)
             {
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
                 reward1.AddKeyword(CardKeyword.Ethereal);
                 reward1.SetToFreeThisTurn();
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-                await CostSupporPoint(4);
+                await CostSupporPoint(DynamicVars["SupportPoint"].IntValue);
             }
 
         }

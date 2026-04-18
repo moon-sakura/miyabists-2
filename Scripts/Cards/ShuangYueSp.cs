@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
-            new DynamicVar("HitCount",1)
+            new DynamicVar("HitCount",2)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -80,6 +80,12 @@ namespace Miyabists2.Scripts.Cards
             .TargetingAllOpponents(base.CombatState)
             .WithHitFx("vfx/vfx_giant_horizontal_slash")
             .Execute(choiceContext);
+        }
+
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            if (side != Owner.Creature.Side) return;
+            CardCmd.Downgrade(this);
         }
 
         protected override void OnUpgrade()

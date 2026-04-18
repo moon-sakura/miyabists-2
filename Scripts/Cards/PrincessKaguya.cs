@@ -7,11 +7,13 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Godot.HttpRequest;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -44,7 +46,45 @@ namespace Miyabists2.Scripts.Cards
                 if (Card is PrincessInoha)
                 {
                     await CardCmd.Exhaust(choiceContext, Card);
+                    await DoRandomEffectSP(choiceContext);
                 }
+            }
+        }
+
+        private async Task DoRandomEffectSP(PlayerChoiceContext choiceContext)
+        {
+            int effect =  base.Owner.RunState.Rng.Shuffle.NextInt(1, 7);
+            switch (effect)
+            {
+                case 1:
+                    await CreatureCmd.Heal(base.Owner.Creature, 8m);
+                    break;
+                case 2:
+                    foreach (Creature Enemy in base.Owner.Creature.CombatState.HittableEnemies)
+                    {
+                        await CreatureCmd.Damage(choiceContext, Enemy, 12m, ValueProp.Unpowered, null, null);
+                    }
+                    break;
+                case 3:
+                    await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 3m, base.Owner.Creature, null);
+                    break;
+                case 4:
+                    await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, 6m, base.Owner.Creature, null);
+                    break;
+                case 5:
+                    foreach (Creature Enemy in base.Owner.Creature.CombatState.Enemies)
+                    {
+                        await PowerCmd.Apply<WeakPower>(Enemy, 3m, base.Owner.Creature, null);
+                    }
+                    break;
+                case 6:
+                    foreach (Creature Enemy in base.Owner.Creature.CombatState.Enemies)
+                    {
+                        await PowerCmd.Apply<VulnerablePower>(Enemy, 3m, base.Owner.Creature, null);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
 
