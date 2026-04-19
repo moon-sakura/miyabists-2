@@ -45,8 +45,7 @@ namespace Miyabists2.Scripts.Powers
         {
             if (side == base.Owner.Side)
             {
-                //回合结束移除
-                await PowerCmd.Remove<BreakPower>(base.Owner);
+                await PowerCmd.Remove(this);
             }
         }
     }

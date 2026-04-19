@@ -14,7 +14,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class WeimingDoudaoshu : MiyabiCardBase
     {
-        protected override string ArtPath => "res://images/cards/commonCards.png";
+        protected override string ArtPath => "res://images/cards/weimingDoudaoshu.png";
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.OtherWorldFriends];
 

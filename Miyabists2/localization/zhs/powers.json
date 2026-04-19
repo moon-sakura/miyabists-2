@@ -51,9 +51,13 @@
     "MIYABISTS2-JIFU_POWER.description": "击破时额外提供额外的[gold]失衡易伤[/gold]",
     "MIYABISTS2-JIFU_POWER.smartDescription": "击破时额外提供[blue]{Amount}*2%[/blue]的[gold]失衡易伤[/gold]",
 
+	"MIYABISTS2-TEBIE_PZJQ_POWER.title": "特别拍照技巧",
+    "MIYABISTS2-TEBIE_PZJQ_POWER.description": "敌人被[gold]击破[/gold]时额外获得[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有小概率不造成伤害",
+    "MIYABISTS2-TEBIE_PZJQ_POWER.smartDescription": "敌人被[gold]击破[/gold]时额外获得{DazeVuln:diff()}%[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有小概率不造成伤害",
+
 	"MIYABISTS2-TUNAFA_POWER.title": "吐纳法",
     "MIYABISTS2-TUNAFA_POWER.description": "",
-    "MIYABISTS2-TUNAFA_POWER.smartDescription": "每回合前{Amount}张[gold]风花[/gold]变为0费，每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]，已使用{CardCount:diff()}张",
+    "MIYABISTS2-TUNAFA_POWER.smartDescription": "每回合前[blue]{Amount}[/blue]张[gold]风花[/gold]变为0费，每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]{Amount}[/blue]点[gold]落霜[/gold]，已使用{CardCount:diff()}张",
 
 	"MIYABISTS2-JUN_LIE_POWER.title": "皲裂",
     "MIYABISTS2-JUN_LIE_POWER.description": "",

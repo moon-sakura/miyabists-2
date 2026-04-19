@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Afflictions;
 using MegaCrit.Sts2.Core.Models.Relics;
+using System.Buffers;
 
 namespace Miyabists2.Scripts.Powers
 {
@@ -38,7 +39,14 @@ namespace Miyabists2.Scripts.Powers
             {
                 await CreatureCmd.Stun(base.Owner);
                 //添加一回合失衡易伤50%
-                await PowerCmd.Apply<DazeVulnPower>(base.Owner, 50m, null, null);
+                //if(IsAnyHasTBPZJQ())
+                //{ 
+                //    await PowerCmd.Apply<DazeVulnPower>(base.Owner, 80m, null, null); 
+                //}
+                //else
+                {
+                    await PowerCmd.Apply<DazeVulnPower>(base.Owner, 50m, null, null);
+                }
             }
 
             foreach (Creature Player in base.CombatState.PlayerCreatures)
@@ -50,6 +58,19 @@ namespace Miyabists2.Scripts.Powers
                 //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
             }
         }
+
+        //private bool IsAnyHasTBPZJQ()
+        //{
+        //    foreach (Creature Player in base.CombatState.PlayerCreatures)
+        //    {
+        //        if (Player != null && Player.IsAlive && Player.HasPower<TebiePzjqPower>())
+        //        {
+        //            return true;
+        //        }
+        //        //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
+        //    }
+        //    return false;
+        //}
 
         //public override bool ShouldPlay(CardModel card, AutoPlayType _)
         //{
@@ -65,7 +86,7 @@ namespace Miyabists2.Scripts.Powers
             if(side == base.Owner.Side)
             {
                 //回合结束移除
-                await PowerCmd.Remove<BreakPower>(base.Owner);
+                await PowerCmd.Remove(this);
             }
         }
     }

@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -7,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using System;
@@ -31,7 +33,17 @@ namespace Miyabists2.Scripts.Powers
             new DynamicVar("CardCount", 0)
         ];
 
-        private int FHC = 0; // FengHua Count, 用于记录本回合中打出的风花数量
+
+        // 定义内部数据类，用于记录本回合已打出的卡牌数
+        private class Data
+        {
+            public int cardsPlayedThisTurn;
+        }
+
+        protected override object InitInternalData()
+        {
+            return new Data();
+        }
 
         //public override int DisplayAmount => Amount - 1;
 
@@ -41,7 +53,12 @@ namespace Miyabists2.Scripts.Powers
             if (cardPlay.Card.Owner != base.Owner.Player || !(cardPlay.Card is FengHua)) return;
 
             //await PowerCmd.SetAmount<TunafaPower>(Owner, Amount + 1, null, null);
-            DynamicVars["CardCount"].BaseValue += 1;
+
+            if (cardPlay != null && !cardPlay.IsAutoPlay && cardPlay.IsLastInSeries)
+            {
+                GetInternalData<Data>().cardsPlayedThisTurn++;
+                DynamicVars["CardCount"].BaseValue += 1;
+            }
 
             if (DynamicVars["CardCount"].IntValue == 4) 
                 Flash();
@@ -53,18 +70,43 @@ namespace Miyabists2.Scripts.Powers
             }
         }
 
+
+
+        // 核心逻辑 1：修改能量消耗
         public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
         {
             modifiedCost = originalCost;
-            if (!(card is FengHua) || FHC >= Amount)
+            if (ShouldSkip(card))
             {
                 return false;
             }
 
             // 源码参考：这里不再设为 default(decimal)，而是减 1，且不能小于 0
-            modifiedCost = 0m;
-            FHC++;
+            modifiedCost = 0;
             return true;
+        }
+
+        // 回合开始重置计数
+        public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+        {
+            if (side == base.Owner.Side)
+            {
+                GetInternalData<Data>().cardsPlayedThisTurn = 0;
+            }
+            return Task.CompletedTask;
+        }
+
+        // 判定条件：是否应该跳过减费效果
+        private bool ShouldSkip(CardModel card)
+        {
+            // 1. 如果卡牌拥有者不是该 Power 拥有者，跳过
+            if (card.Owner.Creature != base.Owner || !(card is FengHua)) return true;
+
+            // 2. 只有手牌中的卡显示减费效果
+            bool inHand = card.Pile?.Type == PileType.Hand || card.Pile?.Type == PileType.Play;
+            if (!inHand) return true;
+
+            return GetInternalData<Data>().cardsPlayedThisTurn >= Amount;
         }
     }
 }

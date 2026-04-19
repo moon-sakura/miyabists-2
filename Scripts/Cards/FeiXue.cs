@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
         public FeiXue() : base(2, CardRarity.Uncommon, TargetType.AnyEnemy, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(12, ValueProp.Move),
+            new DamageVar(9, ValueProp.Move),
             new DynamicVar(DazeVarName, 4)
         ];
 

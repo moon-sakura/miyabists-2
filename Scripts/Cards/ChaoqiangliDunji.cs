@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ChaoqiangliDunji : MiyabiPartnerCardBase
     {
-        public override string PortraitPath => $"res://images/cards/baojunMengji.png";
+        protected override string ArtPath => $"res://images/cards/chaoqiangliDunji.png";
 
         public ChaoqiangliDunji() : base(1, CardRarity.Uncommon, TargetType.Self) { }
 

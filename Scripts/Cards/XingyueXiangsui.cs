@@ -19,6 +19,7 @@ namespace Miyabists2.Scripts.Cards
     {
         public XingyueXiangsui() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
 
+        protected override string ArtPath => $"res://images/cards/xingyueXiangsui.png";
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),

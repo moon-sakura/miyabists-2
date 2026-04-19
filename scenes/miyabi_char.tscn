@@ -16,6 +16,7 @@ custom_minimum_size = Vector2(240, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -120.0
+offset_top = -401.0
 offset_right = 120.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true

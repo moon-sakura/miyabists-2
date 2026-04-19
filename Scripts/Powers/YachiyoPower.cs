@@ -22,7 +22,10 @@ namespace Miyabists2.Scripts.Powers
             public CardModel? selectedCard;
         }
 
-        public string BigIconPath => "res://images/powers/commonPower.png";
+        public string BigIconPath => "res://images/powers/yachiyo.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
 
         private const string _cardKey = "Card";
 

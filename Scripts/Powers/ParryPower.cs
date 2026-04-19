@@ -33,7 +33,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            if (result.BlockedDamage > 0 && base.Amount > 0 && target == base.Owner)
+            if (result.BlockedDamage >= 0 && base.Amount > 0 && target == base.Owner)
             {
                 await MiyabiCombatService.AddHuaCiReward(target, dealer!, choiceContext, 1);
 

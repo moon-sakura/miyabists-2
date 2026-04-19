@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class CiquanLianji : MiyabiPartnerCardBase
     {
-        //public override string PortraitPath => $"res://images/cards/baojunMengji.png";
+        protected override string ArtPath => $"res://images/cards/ciquanLianji.png";
 
         public CiquanLianji() : base(2, CardRarity.Rare, TargetType.AnyEnemy, CardType.Attack) { }
 

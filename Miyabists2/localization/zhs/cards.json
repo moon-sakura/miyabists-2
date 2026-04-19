@@ -169,6 +169,9 @@
 	"MIYABISTS2-MIYABI_DUEL.title": "对决",
     "MIYABISTS2-MIYABI_DUEL.description": "将敌人的意图变为造成10点伤害\\n[gold]招架[/gold]1",
 
+	"MIYABISTS2-TEBIE_PAIZHAO_JIQIAO.title": "特别拍照技巧",
+    "MIYABISTS2-TEBIE_PAIZHAO_JIQIAO.description": "敌人被[gold]击破[/gold]时额外获得{DazeVuln:diff()}%[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有小概率不造成伤害",
+
 	"MIYABISTS2-ZUIHUA_YUEYUNZHUAN.title": "醉花月云转",
     "MIYABISTS2-ZUIHUA_YUEYUNZHUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]1[/blue]：额外施加3层[gold]羁服[/gold]",
 
