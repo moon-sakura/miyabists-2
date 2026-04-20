@@ -7,6 +7,10 @@
   	"MIYABISTS2-NO_TAIL_FULL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]；战斗开始时，加入一张[red]妖刀解放[/red]到手卡",
   	"MIYABISTS2-NO_TAIL_FULL_RELIC.flavor": "",
 
+	"MIYABISTS2-JINGHUA_NIYING_RELIC.title": "镜花匿影",
+  	"MIYABISTS2-JINGHUA_NIYING_RELIC.description": "每场战斗第一次受到攻击前自动使用一张[gold]极限视域[/gold]",
+  	"MIYABISTS2-JINGHUA_NIYING_RELIC.flavor": "闪",
+
 	"MIYABISTS2-SECTION_SIX_RELIC.title": "六课徽章",
   	"MIYABISTS2-SECTION_SIX_RELIC.description": "战斗开始时获得[blue]6[/blue]点[gold]支援点数[/gold]",
   	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "很好很好的课"

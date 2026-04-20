@@ -7,7 +7,7 @@ namespace Miyabists2.Scripts.Char
     {
         public override Color LabOutlineColor => Miyabi.Color;
 
-        public override string EnergyColorName => "ironclad";
+        public override string EnergyColorName => "defect";
 
 
         //public override string BigEnergyIconPath => "charui/big_energy.png".ImagePath();
