@@ -11,6 +11,10 @@
   	"MIYABISTS2-JINGHUA_NIYING_RELIC.description": "每场战斗第一次受到攻击前自动使用一张[gold]极限视域[/gold]",
   	"MIYABISTS2-JINGHUA_NIYING_RELIC.flavor": "闪",
 
+	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.title": "霰落星殿",
+  	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.description": "每次战斗胜利获得计数：普通敌人，计数+[blue]1[/blue]；精英，计数+[blue]2[/blue]；boss，计数+[blue]3[/blue]；累计[blue]7[/blue]点之后，战斗开始时加入一张[gold]武之极致[/gold]到手牌，累计[blue]15[/blue]点之后改为加入一张[gold]斩尽罪恶[/gold]",
+  	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.flavor": "「我认为它会很适合用于修行…前提是我能变成和它同等的大小。」",
+
 	"MIYABISTS2-SECTION_SIX_RELIC.title": "六课徽章",
   	"MIYABISTS2-SECTION_SIX_RELIC.description": "战斗开始时获得[blue]6[/blue]点[gold]支援点数[/gold]",
   	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "很好很好的课"

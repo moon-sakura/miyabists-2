@@ -65,6 +65,30 @@ namespace Miyabists2.Scripts.Powers
                 card.UpgradeInternal();
         }
 
+        public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
+        {
+            modifiedCost = originalCost;
+            if (card.Owner.Creature != base.Owner || card.Type != CardType.Attack || card.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || card.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends))
+            {
+                return false;
+            }
+            // 源码参考：这里不再设为 default(decimal)，而是减 1，且不能小于 0
+            modifiedCost = Math.Max(0m, originalCost - 1m);
+            return true;
+        }
+
+        // 核心逻辑 2：修改星能/特殊消耗（保持逻辑一致）
+        public override bool TryModifyStarCost(CardModel card, decimal originalCost, out decimal modifiedCost)
+        {
+            modifiedCost = originalCost;
+            if (card.Owner.Creature != base.Owner || card.Type != CardType.Attack || card.CanonicalKeywords.Contains(MiyabiKeywords.Friends) || card.CanonicalKeywords.Contains(MiyabiKeywords.OtherWorldFriends))
+            {
+                return false;
+            }
+            modifiedCost = Math.Max(0m, originalCost - 1m);
+            return true;
+        }
+
         public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (cardPlay.Card.Owner != base.Owner.Player || !cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang)) return;
