@@ -49,7 +49,7 @@ namespace Miyabists2.Scripts.Cards
             if (base.CheckSupportCost(1) != 0 && cardPlay.Target.HasPower<AttributeAnomalyPower>())
             {
                 var ano = cardPlay.Target.Powers.OfType<AttributeAnomalyPower>().FirstOrDefault();
-                await ano.DealAno(choiceContext);
+                await ano.DealAno(choiceContext, 1m);
                 await CostSupporPoint(1);
             }
         }

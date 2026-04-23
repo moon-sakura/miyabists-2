@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class SheWen : MiyabiPartnerCardBase
     {
-        public override string PortraitPath => $"res://images/cards/sheWen.png";
+        protected override string ArtPath => $"res://images/cards/sheWen.png";
 
         public SheWen() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy) { }
 
