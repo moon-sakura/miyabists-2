@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -29,6 +30,19 @@ namespace Miyabists2.Scripts.Powers
         [
             //HoverTipFactory.FromPower<FrostBuildPower>()
         ];
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar ("DamageVuln", 20),
+        ];
+
+        public override Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        {
+            if (power == this)
+            {
+                DynamicVars["DamageVuln"].BaseValue = amount * 20;
+            }
+            return base.AfterPowerAmountChanged(power, amount, applier, cardSource);
+        }
 
         //public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         //{
@@ -61,9 +75,10 @@ namespace Miyabists2.Scripts.Powers
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
             bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
+            decimal damageMultiplier = 1m + 0.2m * Amount;
             if (target == base.Owner && isValidMove)
             {
-                return 1.20m;
+                return damageMultiplier;
             }
             return 1m;
         }

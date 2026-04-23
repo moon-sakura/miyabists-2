@@ -16,12 +16,12 @@
 	"MIYABISTS2-BREAK_PLAYER_POWER.title": "击破",
 
 	"MIYABISTS2-FROST_FIRE_POWER.title": "冰焰",
-    "MIYABISTS2-FROST_FIRE_POWER.description": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（上限[blue]50%[/blue]）。",
-    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（上限[blue]50%[/blue]）。",
+    "MIYABISTS2-FROST_FIRE_POWER.description": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（存在上限）。",
+    "MIYABISTS2-FROST_FIRE_POWER.smartDescription": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（上限[blue]{Limit:diff()}%[/blue]）。",
 
 	"MIYABISTS2-FROST_POWER.title": "霜灼",
-    "MIYABISTS2-FROST_POWER.description": "受到伤害+[blue]20%[/blue]，不可叠加[aqua]烈霜积蓄值[/aqua]",
-    "MIYABISTS2-FROST_POWER.smartDescription": "受到伤害+[blue]20%[/blue]，不可叠加[aqua]烈霜积蓄值[/aqua]",
+    "MIYABISTS2-FROST_POWER.description": "受到伤害增加，不可叠加[aqua]烈霜积蓄值[/aqua]",
+    "MIYABISTS2-FROST_POWER.smartDescription": "受到伤害+[blue]{DamageVuln:diff()}%[/blue]，不可叠加[aqua]烈霜积蓄值[/aqua]",
 
 	"MIYABISTS2-DAZE_VULN_POWER.smartDescription": "一回合内，受伤+[blue]{Amount}%[/blue]",
 	"MIYABISTS2-DAZE_VULN_POWER.description": "使敌人受到伤害增加",

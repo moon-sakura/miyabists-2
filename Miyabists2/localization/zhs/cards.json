@@ -108,7 +108,7 @@
 	"MIYABISTS2-BYE_QUANLEIDA.selectionScreenPrompt": "选择一张[gold]伙伴[/gold]卡",
 
 	"MIYABISTS2-SHE_WEN.title": "蛇吻",
-    "MIYABISTS2-SHE_WEN.description": "对敌人造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n从手卡、抽卡堆中最多选{Cards:diff()}张卡[gold]消耗[/gold]，如果已经[gold]消耗[/gold][blue]5[/blue]张以上，改为对所有敌人造成15点伤害并添加2层[gold]易伤[/gold]]\\n[gold]支援点数[/gold][blue]{SupportPoint:diff()}[/blue]：此次一定不会偷吃！\\n(已经吃了{Eat:diff()}张)",
+    "MIYABISTS2-SHE_WEN.description": "对敌人造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n从手卡、抽卡堆中最多选{Cards:diff()}张卡[gold]消耗[/gold]，如果已经[gold]消耗[/gold][blue]5[/blue]张以上，改为对所有敌人造成15点伤害并添加2层[gold]易伤[/gold]\\n[gold]支援点数[/gold][blue]{SupportPoint:diff()}[/blue]：此次一定不会偷吃！\\n(已经吃了{Eat:diff()}张)",
 	"MIYABISTS2-SHE_WEN.selectionScreenPrompt": "给希希芙的食物（最多选择{Cards:diff()}张消耗）",
 
 	"MIYABISTS2-HUA_XIN_FENG.title": "花信风",

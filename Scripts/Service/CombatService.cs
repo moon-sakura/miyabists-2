@@ -26,14 +26,6 @@ namespace Miyabists2.Scripts.Service
 {
     public class MiyabiCombatService
     {
-        public static bool FrostFireKeeped { get; set; } = false;
-
-        // 获取当前状态
-        public static bool ShouldKeepFrostFire() => FrostFireKeeped;
-
-        // 设置状态
-        public static void SetShouldKeepFrostFire(bool value) => FrostFireKeeped = value;
-
         //伙伴卡牌的特殊处理
         //public static bool ThisTurnUsedPartnerCard { set; get; } = false;
         //public static bool GetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard;
@@ -112,6 +104,12 @@ namespace Miyabists2.Scripts.Service
         public static void ChangeFrostT(int amount) => FrostTrigger += amount;
         public static void ResetFrostT() => FrostTrigger = _frostTrigger;
         public static int GetFrostTrigger() => FrostTrigger;
+
+        public static bool CanAddFrostWhenFire { get; set; } = false;
+        public static bool GetCanAddWhenFire() => CanAddFrostWhenFire;
+        public static bool SetCanAddWhenFire(bool value) => CanAddFrostWhenFire = value;
+        public static void ResetCanAddWhenFire() => CanAddFrostWhenFire = false;
+
 
         public static void SetFrostTriggerMultiply(Creature c)
         {
@@ -249,7 +247,7 @@ namespace Miyabists2.Scripts.Service
 
             await CreatureCmd.Damage(choiceContext, target, 10m, ValueProp.Unpowered, dealer);
 
-            if (!ShouldKeepFrostFire())
+            //if (!ShouldKeepFrostFire())
                 //await PowerCmd.Remove<FrostFirePower>(target);
             //}
 

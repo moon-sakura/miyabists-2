@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Service;
@@ -27,6 +28,10 @@ namespace Miyabists2.Scripts.Powers
             //HoverTipFactory.FromKeyword(MiyabiKeywords.LieShuang)
         ];
 
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar ("Limit", 50),
+        ];
+
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
             if (target != base.Owner)
@@ -40,6 +45,7 @@ namespace Miyabists2.Scripts.Powers
                 return 1m;
 
             decimal limit = MiyabiCombatService.GetFrostFireLimit();
+            DynamicVars["Limit"].BaseValue = limit * 100;
 
             //烈霜伤害+5%（效果上限150%，层数无上限）
             decimal damageIncrease = base.Amount * 0.05m;

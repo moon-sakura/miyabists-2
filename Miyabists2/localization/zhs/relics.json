@@ -11,6 +11,10 @@
   	"MIYABISTS2-JINGHUA_NIYING_RELIC.description": "每场战斗第一次受到攻击前自动使用一张[gold]极限视域[/gold]",
   	"MIYABISTS2-JINGHUA_NIYING_RELIC.flavor": "闪",
 
+	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.title": "霜炎烈灼",
+  	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.description": "触发[gold]霜灼[/gold]之后仍可以叠加[gold]烈霜积蓄值[/gold]，[gold]冰焰[/gold]给予的伤害增幅上限变为[blue]100%[/blue]",
+  	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.flavor": "",
+
 	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.title": "霰落星殿",
   	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.description": "每次战斗胜利获得计数：普通敌人，计数+[blue]1[/blue]；精英，计数+[blue]2[/blue]；boss，计数+[blue]3[/blue]；累计[blue]7[/blue]点之后，战斗开始时加入一张[gold]武之极致[/gold]到手牌，累计[blue]15[/blue]点之后改为加入一张[gold]斩尽罪恶[/gold]",
   	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.flavor": "「我认为它会很适合用于修行…前提是我能变成和它同等的大小。」",
