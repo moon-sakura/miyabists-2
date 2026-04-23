@@ -49,7 +49,6 @@ namespace Miyabists2.Scripts.Cards
             // 3. 施加滑步 (SlipperyPower)
             if (base.DynamicVars.TryGetValue(SlipperyVarName, out var slipVar) && slipVar.BaseValue > 0)
             {
-                // 注意：这里修正了你原代码中 Slippery 误写成 ParryPower 的问题
                 await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
             }
             //施加失衡
