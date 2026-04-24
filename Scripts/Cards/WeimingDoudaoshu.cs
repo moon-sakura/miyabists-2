@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            (await PowerCmd.Apply<WeimingddsPower>(base.Owner.Creature, 1m, Owner.Creature, this)).SetDazeAdd(DynamicVars["Daze"].IntValue);
+            (await PowerCmd.Apply<WeimingddsPower>(choiceContext, base.Owner.Creature, 1m, Owner.Creature, this)).SetDazeAdd(DynamicVars["Daze"].IntValue);
         }
 
         protected override void OnUpgrade()

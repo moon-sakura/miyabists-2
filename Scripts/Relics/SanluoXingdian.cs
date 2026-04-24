@@ -65,13 +65,13 @@ namespace Miyabists2.Scripts.Relics
                     if (Counter >= 15)
                     {
                         CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<EJiZhan>(base.Owner.Creature.Player);
-                        await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                        await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
 
                     }
                     else
                     {
                         CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
-                        await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                        await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
                     }
                 }
             }

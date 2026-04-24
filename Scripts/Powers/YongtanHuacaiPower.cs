@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts.Powers
 
         bool init = false;
 
-        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext context, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if(power != this || amount <= 0) return;
             init = true;

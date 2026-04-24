@@ -48,19 +48,19 @@ namespace Miyabists2.Scripts.Powers
             }
             else if (result == 2)
             {
-                await PowerCmd.Apply<SlipperyPower>(base.Owner, 1m, base.Owner, null);
+                await PowerCmd.Apply<SlipperyPower>(choiceContext, base.Owner, 1m, base.Owner, null);
             }
             else if (result == 3)
             {
-                await PowerCmd.Apply<PlatingPower>(base.Owner, 3m, base.Owner, null);
+                await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner, 3m, base.Owner, null);
             }
             else if (result == 4)
             {
-                await PowerCmd.Apply<ArtifactPower>(base.Owner, 1m, base.Owner, null);
+                await PowerCmd.Apply<ArtifactPower>(choiceContext, base.Owner, 1m, base.Owner, null);
             }
             else if (result == 5)
             {
-                await PowerCmd.Apply<StrengthPower>(base.Owner, 1m, base.Owner, null);
+                await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner, 1m, base.Owner, null);
             }
             else if (result == 6)
             {
@@ -98,7 +98,7 @@ namespace Miyabists2.Scripts.Powers
                     if (Enemy != null && Enemy.IsAlive)
                     {
                         //await PowerCmd.Apply<DazePower>(Enemy, 10m, null, null);
-                        await MiyabiCombatService.AddDaze(Enemy, new DynamicVar("Daze",10), base.Owner);
+                        await MiyabiCombatService.AddDaze(choiceContext, Enemy, new DynamicVar("Daze",10), base.Owner);
                     }
                 }
             }
@@ -108,7 +108,7 @@ namespace Miyabists2.Scripts.Powers
                 {
                     if (Enemy != null && Enemy.IsAlive)
                     {
-                        await PowerCmd.Apply<WeakPower>(Enemy, 1m, null, null);
+                        await PowerCmd.Apply<WeakPower>(choiceContext, Enemy, 1m, null, null);
                     }
                 }
             }
@@ -118,7 +118,7 @@ namespace Miyabists2.Scripts.Powers
                 {
                     if (Enemy != null && Enemy.IsAlive)
                     {
-                        await PowerCmd.Apply<VulnerablePower>(Enemy, 1m, null, null);
+                        await PowerCmd.Apply<VulnerablePower>(choiceContext, Enemy, 1m, null, null);
                     }
                 }
             }

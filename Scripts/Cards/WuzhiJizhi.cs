@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class WuzhiJizhi : MiyabiAttackCardBase
     {
-        public override string PortraitPath => $"res://images/cards/wuzhiJizhi.png";
+        public override string PortraitPath => $"res://images/cards/commonCard.png";
 
         public WuzhiJizhi() : base(0, CardRarity.Token, TargetType.AnyEnemy, true) { }
 
@@ -47,8 +47,8 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await base.OnPlay(choiceContext, cardPlay);
-            await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, 2, base.Owner.Creature, this);
-            await PowerCmd.Apply<FrailPower>(base.Owner.Creature, 99, base.Owner.Creature, this);
+            await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 2, base.Owner.Creature, this);
+            await PowerCmd.Apply<FrailPower>(choiceContext, base.Owner.Creature, 99, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

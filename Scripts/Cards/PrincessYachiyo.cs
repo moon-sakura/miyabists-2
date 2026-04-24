@@ -48,7 +48,7 @@ namespace Miyabists2.Scripts.Cards
             {
                 if(target == null) target = base.Owner.Creature;
 
-                (await PowerCmd.Apply<YachiyoPower>(target, 1m, base.Owner.Creature, this)).SetSelectedCard(selectedCard);
+                (await PowerCmd.Apply<YachiyoPower>(choiceContext, target, 1m, base.Owner.Creature, this)).SetSelectedCard(selectedCard);
 
                 await CardCmd.Exhaust(choiceContext, selectedCard);
             }

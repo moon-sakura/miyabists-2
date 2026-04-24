@@ -24,7 +24,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(11,ValueProp.Move),
-            new DynamicVar(ParryVarName, 2)
+            new DynamicVar(ParryVarName, 2),
+            new DynamicVar(SupportVarName,3),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => 
@@ -38,6 +39,7 @@ namespace Miyabists2.Scripts.Cards
             HoverTipFactory.FromPower<SupportPointPower>(),
             HoverTipFactory.FromPower<MiyabiParryPower>(),
             HoverTipFactory.FromCard<HuaCi>(),
+
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -50,12 +52,12 @@ namespace Miyabists2.Scripts.Cards
             if (DynamicVars.Block.BaseValue > 0)
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 
-            if (base.CheckSupportCost(3) != 0)
-            {
-                if (parryCount > 0)
-                    await MiyabiCombatService.AddHuaCiReward(base.Owner.Creature, null, choiceContext, parryCount);
-                await CostSupporPoint(3);
-            }
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext, parryCount));
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext, int parryCount)
+        {
+            await MiyabiCombatService.AddHuaCiReward(base.Owner.Creature, null, choiceContext, parryCount);
         }
 
         protected override void OnUpgrade()

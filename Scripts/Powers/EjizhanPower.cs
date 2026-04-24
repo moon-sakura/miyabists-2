@@ -37,16 +37,17 @@ namespace Miyabists2.Scripts.Powers
             //await PowerCmd.Apply<StrengthPower>(Owner, Amount, null, null);
         }
 
-        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if (power != this || power.Owner != this.Owner) return;
 
-            await PowerCmd.Apply<StrengthPower>(Owner, amount, null, null);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, amount, null, null);
         }
+
 
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
-            await PowerCmd.Apply<StrengthPower>(Owner, -Amount, null, null);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, -Amount, null, null);
             await PowerCmd.Remove(this);
         }
     }

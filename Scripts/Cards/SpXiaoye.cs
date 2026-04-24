@@ -39,8 +39,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<IntangiblePower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
-            await PowerCmd.Apply<IntangiblePower>(cardPlay.Target, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<IntangiblePower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<IntangiblePower>(choiceContext, cardPlay.Target, 1m, base.Owner.Creature, this);
 
             CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, DynamicVars.Cards.IntValue);
             List<CardModel> cardsIn = [];

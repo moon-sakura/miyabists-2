@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar(DazeVarName, 20),
-            new DynamicVar("SupportPoint",4)
+            new DynamicVar(SupportVarName,4)
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -37,13 +37,13 @@ namespace Miyabists2.Scripts.Cards
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            if (base.CheckSupportCost(DynamicVars["SupportPoint"].IntValue) != 0)
+            if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
             {
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
                 reward1.AddKeyword(CardKeyword.Ethereal);
                 reward1.SetToFreeThisTurn();
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-                await CostSupporPoint(DynamicVars["SupportPoint"].IntValue);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                await CostSupporPoint(DynamicVars[SupportVarName].IntValue, choiceContext);
             }
 
         }

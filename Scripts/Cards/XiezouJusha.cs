@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts.Cards
                     .Execute(choiceContext);
             }
 
-            await PowerCmd.Apply<DazeVulnPower>(cardPlay.Target, 15, base.Owner.Creature, this);
+            await PowerCmd.Apply<DazeVulnPower>(choiceContext, cardPlay.Target, 15, base.Owner.Creature, this);
             
         }
         protected override void OnUpgrade()

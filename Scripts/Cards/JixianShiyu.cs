@@ -42,7 +42,7 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (DynamicVars.TryGetValue("SLIPPERY_POWER", out DynamicVar s))
-                await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, s.BaseValue, Owner.Creature, this);
+                await PowerCmd.Apply<SlipperyPower>(choiceContext, base.Owner.Creature, s.BaseValue, Owner.Creature, this);
 
             for(int i = 0; i < DynamicVars.Cards.BaseValue; i++)
             {
@@ -50,10 +50,10 @@ namespace Miyabists2.Scripts.Cards
                 if (base.IsUpgraded) reward1.UpgradeInternal();
                 reward1.AddKeyword(CardKeyword.Exhaust);
                 reward1.SetToFreeThisCombat();
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
             }
 
-            await PowerCmd.Apply<NoDrawPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<NoDrawPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
 
         }
 

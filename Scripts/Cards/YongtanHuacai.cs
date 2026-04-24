@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
@@ -27,32 +28,33 @@ namespace Miyabists2.Scripts.Cards
         ];
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new EnergyVar(1)
+            new EnergyVar(1),
+            new DynamicVar(SupportVarName,2),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (base.CheckSupportCost(2) != 0)
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+
+            await PowerCmd.Apply<YongtanHuacaiPower>(choiceContext, Owner.Creature, 1, base.Owner.Creature, this);
+
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
+            List<CardModel> cardsIn = (from c in PileType.Draw.GetPile(base.Owner).Cards
+                                       where c.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
+                                       orderby c.Rarity, c.Id
+                                       select c).ToList();
+            if (cardsIn.Count != 0)
             {
-                CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
-                List<CardModel> cardsIn = (from c in PileType.Draw.GetPile(base.Owner).Cards
-                                           where c.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
-                                           orderby c.Rarity, c.Id
-                                           select c).ToList();
-                if (cardsIn.Count != 0)
+                CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
+                if (cardModel != null)
                 {
-                    CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
-                    if (cardModel != null)
-                    {
-                        await CardPileCmd.Add(cardModel, PileType.Hand);
-                    }
-                    await CostSupporPoint(2);
+                    await CardPileCmd.Add(cardModel, PileType.Hand);
                 }
             }
-
-            await PowerCmd.Apply<YongtanHuacaiPower>(Owner.Creature, 1, base.Owner.Creature, this);
-
-            
         }
 
 

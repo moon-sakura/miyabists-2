@@ -4,6 +4,8 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using System;
@@ -23,7 +25,8 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(3, ValueProp.Move),
             new DynamicVar(DazeVarName, 10),
-            new DynamicVar(AnomalyBuildupVarName, 3)
+            new DynamicVar(AnomalyBuildupVarName, 3),
+            new DynamicVar(SupportVarName,3),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -55,11 +58,12 @@ namespace Miyabists2.Scripts.Cards
                     .Execute(choiceContext);
             }
 
-            if (base.CheckSupportCost(3) != 0 && cardPlay.Target.IsAlive)
-            {
-                await PowerCmd.Apply<ZhongmuycPower>(cardPlay.Target, 1, cardPlay.Target, this);
-                await CostSupporPoint(3);
-            }
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext,cardPlay.Target));
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext, Creature target)
+        {
+            await PowerCmd.Apply<ZhongmuycPower>(choiceContext, target, 1, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

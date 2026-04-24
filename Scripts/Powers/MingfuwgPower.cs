@@ -3,7 +3,9 @@ using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Cards;
@@ -25,11 +27,20 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<XiezouJusha>()];
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        
+        //public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        //{
+        //    if(side != base.Owner.Side) return;
+        //    CardModel reward1 = base.Owner.CombatState.CreateCard<XiezouJusha>(base.Owner.Player);
+        //    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+
+        //    await PowerCmd.TickDownDuration(this);
+        //}
+
+        public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            if(side != base.Owner.Side) return;
             CardModel reward1 = base.Owner.CombatState.CreateCard<XiezouJusha>(base.Owner.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
 
             await PowerCmd.TickDownDuration(this);
         }

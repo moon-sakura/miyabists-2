@@ -38,7 +38,7 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (base.DynamicVars.TryGetValue("Bless", out DynamicVar b))
-                await PowerCmd.Apply<BlessingMoonPower>(base.Owner.Creature, b.BaseValue, Owner.Creature, this);
+                await PowerCmd.Apply<BlessingMoonPower>(choiceContext, base.Owner.Creature, b.BaseValue, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

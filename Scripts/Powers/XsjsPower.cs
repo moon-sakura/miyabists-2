@@ -40,14 +40,14 @@ namespace Miyabists2.Scripts.Powers
         {
             if (cardPlay.Card.Owner != base.Owner.Player || !(cardPlay.Card is ShuangYue)) return;
 
-            await PowerCmd.Apply<StrengthPower>(base.Owner, Amount, null, null);
+            await PowerCmd.Apply<StrengthPower>(context, base.Owner, Amount, null, null);
             strenthAdded += Amount;
         }
 
         public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if(side != base.Owner.Side) return;
-            await PowerCmd.Apply<StrengthPower>(base.Owner, -strenthAdded, null, null);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner, -strenthAdded, null, null);
             strenthAdded = 0;
         }
     }

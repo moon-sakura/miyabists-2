@@ -23,7 +23,8 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 15),
-            new DynamicVar("WanGe",3)
+            new DynamicVar("WanGe",3),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -46,17 +47,19 @@ namespace Miyabists2.Scripts.Cards
                     .Execute(choiceContext);
             }
 
-
             if (base.DynamicVars.TryGetValue("WanGe", out DynamicVar w))
-                await PowerCmd.Apply<MingfuwgPower>(base.Owner.Creature, w.BaseValue, base.Owner.Creature, this);
-            await PowerCmd.Apply<DazeVulnPower>(cardPlay.Target, 35, base.Owner.Creature, this);
-            if (base.CheckSupportCost(1) != 0)
-            {
-                CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XiezouJusha>(base.Owner.Creature.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-                await CostSupporPoint(1);
-            }
+                await PowerCmd.Apply<MingfuwgPower>(choiceContext, base.Owner.Creature, w.BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<DazeVulnPower>(choiceContext, cardPlay.Target, 35, base.Owner.Creature, this);
+
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
         }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XiezouJusha>(base.Owner.Creature.Player);
+            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+        }
+
         protected override void OnUpgrade()
         {
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(5);

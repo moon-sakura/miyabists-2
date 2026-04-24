@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Service;
@@ -27,9 +28,11 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomPackedIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        public int TurnCount = 2;
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar("TurnCount",2),
+        ];
 
-        public void ResetCount() { TurnCount = 2; }
+        public void ResetCount() { DynamicVars["TurnCount"].BaseValue = 2; }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
@@ -56,9 +59,9 @@ namespace Miyabists2.Scripts.Powers
         {
             if (side == CombatSide.Enemy)
             {
-                TurnCount--;
+                DynamicVars["TurnCount"].BaseValue--;
             }
-            if(TurnCount <= 0)
+            if(DynamicVars["TurnCount"].BaseValue <= 0)
             {
                 await PowerCmd.Remove(this);
             }

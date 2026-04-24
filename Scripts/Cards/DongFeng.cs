@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts.Cards
             await CheckReduce();
         }
 
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if (side == base.Owner.Creature.Side)
             {
@@ -83,6 +83,14 @@ namespace Miyabists2.Scripts.Cards
         {
             base.EnergyCost.SetThisTurn(a);
         }
+
+        //public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        //{
+        //    if (side == base.Owner.Creature.Side)
+        //    {
+        //        await CheckReduce();
+        //    }
+        //}
 
     }
 }

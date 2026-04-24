@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -24,7 +25,8 @@ namespace Miyabists2.Scripts.Cards
         public LuoyuShenghua() : base(1, CardRarity.Uncommon, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("LuoYu", 3)
+            new DynamicVar("LuoYu", 3),
+            new DynamicVar(SupportVarName,2),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -40,20 +42,22 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (base.DynamicVars.TryGetValue("LuoYu", out DynamicVar v))
-                await PowerCmd.Apply<LuoyushPower>(base.Owner.Creature, v.BaseValue, base.Owner.Creature, this);
-            if (base.CheckSupportCost(1) != 0)
-            {
-                foreach (Creature Enemy in base.CombatState.Enemies)
-                {
-                    if (Enemy != null && Enemy.IsAlive) 
-                    {
-                        await PowerCmd.Apply<AnomalyBuildupPower>(Enemy, 1, base.Owner.Creature, this); ;
-                    }
-                    //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
-                }
-                await CostSupporPoint(1);
-            }
+                await PowerCmd.Apply<LuoyushPower>(choiceContext, base.Owner.Creature, v.BaseValue, base.Owner.Creature, this);
 
+
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            foreach (Creature Enemy in base.CombatState.Enemies)
+            {
+                if (Enemy != null && Enemy.IsAlive)
+                {
+                    await MiyabiCombatService.AddAnoBuildup(Enemy, 1, Owner.Creature, this, choiceContext);
+                }
+            }
         }
 
         protected override void OnUpgrade()

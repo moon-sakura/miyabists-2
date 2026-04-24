@@ -24,7 +24,8 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(12, ValueProp.Move),
             new DynamicVar(DazeVarName, 8),
             new DynamicVar(AnomalyBuildupVarName,1),
-            new DynamicVar("Strength",1)
+            new DynamicVar("Strength",1),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -49,14 +50,15 @@ namespace Miyabists2.Scripts.Cards
                     .Execute(choiceContext);
             }
 
-            if (base.CheckSupportCost(1) != 0 && base.DynamicVars.TryGetValue("Strength", out DynamicVar s))
-            {
-                s.BaseValue += 1;
-                await CostSupporPoint(1);
-            }
-
             if (base.DynamicVars.TryGetValue("Strength", out DynamicVar t))
-                await PowerCmd.Apply<EjizhanPower>(base.Owner.Creature, t.BaseValue, Owner.Creature, this);
+                await PowerCmd.Apply<EjizhanPower>(choiceContext, base.Owner.Creature, t.BaseValue, Owner.Creature, this);
+
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.ModifyAmount(choiceContext, base.Owner.Creature.GetPower<EjizhanPower>(), 1, Owner.Creature, this);
         }
 
 

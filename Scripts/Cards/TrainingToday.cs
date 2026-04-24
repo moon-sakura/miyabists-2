@@ -44,19 +44,19 @@ namespace Miyabists2.Scripts.Cards
                 CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, base.Owner);
                 if (chosen is TrainSpeak)
                 {
-                    await PowerCmd.Apply<TrainSpeakPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                    await PowerCmd.Apply<TrainSpeakPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
                 }
                 else if (chosen is TrainAttack)
                 {
-                    await PowerCmd.Apply<TrainAttackPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                    await PowerCmd.Apply<TrainAttackPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
                 }
                 else if (chosen is TrainEat)
                 {
-                    await PowerCmd.Apply<TrainEatPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                    await PowerCmd.Apply<TrainEatPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
                 }
                 else if(chosen is TrainStep)
                 {
-                    await PowerCmd.Apply<TrainStepPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                    await PowerCmd.Apply<TrainStepPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
                 }
             }
         }

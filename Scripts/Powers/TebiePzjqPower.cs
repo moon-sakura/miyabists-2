@@ -73,11 +73,11 @@ namespace Miyabists2.Scripts.Powers
             }
         }
 
-        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if (power is BreakPower && amount > 0)
             {
-                await PowerCmd.Apply<DazeVulnPower>(power.Owner, DynamicVars["DazeVuln"].BaseValue, null, null);
+                await PowerCmd.Apply<DazeVulnPower>(choiceContext, power.Owner, DynamicVars["DazeVuln"].BaseValue, null, null);
             }
         }
 

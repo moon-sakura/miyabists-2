@@ -23,7 +23,8 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
-            new DynamicVar(AnomalyBuildupVarName,4)
+            new DynamicVar(AnomalyBuildupVarName,4),
+            new DynamicVar(SupportVarName,3),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -50,8 +51,8 @@ namespace Miyabists2.Scripts.Cards
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XingmangYuanwuqu>(base.Owner.Creature.Player);
                 reward1.SetToFreeThisTurn();
                 reward1.AddKeyword(CardKeyword.Exhaust);
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-                await CostSupporPoint(3);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                await CostSupporPoint(3, choiceContext);
             }
         }
 

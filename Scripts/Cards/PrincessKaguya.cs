@@ -40,7 +40,7 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (DynamicVars.TryGetValue("Kaguya", out DynamicVar var))
-                await PowerCmd.Apply<KaguyaPower>(base.Owner.Creature, var.BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<KaguyaPower>(choiceContext, base.Owner.Creature, var.BaseValue, base.Owner.Creature, this);
             foreach (CardModel Card in base.Owner.PlayerCombatState.AllCards)
             {
                 if (Card is PrincessInoha)
@@ -66,21 +66,21 @@ namespace Miyabists2.Scripts.Cards
                     }
                     break;
                 case 3:
-                    await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 3m, base.Owner.Creature, null);
+                    await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 3m, base.Owner.Creature, null);
                     break;
                 case 4:
-                    await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, 6m, base.Owner.Creature, null);
+                    await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, 6m, base.Owner.Creature, null);
                     break;
                 case 5:
                     foreach (Creature Enemy in base.Owner.Creature.CombatState.Enemies)
                     {
-                        await PowerCmd.Apply<WeakPower>(Enemy, 3m, base.Owner.Creature, null);
+                        await PowerCmd.Apply<WeakPower>(choiceContext, Enemy, 3m, base.Owner.Creature, null);
                     }
                     break;
                 case 6:
                     foreach (Creature Enemy in base.Owner.Creature.CombatState.Enemies)
                     {
-                        await PowerCmd.Apply<VulnerablePower>(Enemy, 3m, base.Owner.Creature, null);
+                        await PowerCmd.Apply<VulnerablePower>(choiceContext, Enemy, 3m, base.Owner.Creature, null);
                     }
                     break;
                 default:

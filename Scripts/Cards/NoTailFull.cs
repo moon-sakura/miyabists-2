@@ -27,9 +27,9 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if(!base.IsUpgraded)
-                await PowerCmd.Apply<NoTailFullPower>(base.Owner.Creature, 1m, Owner.Creature, this);
+                await PowerCmd.Apply<NoTailFullPower>(choiceContext, base.Owner.Creature, 1m, Owner.Creature, this);
             else
-                await PowerCmd.Apply<MiyabiFullPower>(base.Owner.Creature, 1m, Owner.Creature, this);
+                await PowerCmd.Apply<MiyabiFullPower>(choiceContext, base.Owner.Creature, 1m, Owner.Creature, this);
         }
 
         public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)

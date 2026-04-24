@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts.Cards
             if (chosen != null)
             {
                 //cardModel.SetToFreeThisTurn();
-                await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner);
             }
         }
 

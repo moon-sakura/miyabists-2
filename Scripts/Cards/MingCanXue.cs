@@ -84,7 +84,7 @@ namespace Miyabists2.Scripts.Cards
             .Execute(choiceContext);
 
             int add = num / 2;
-            await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, add, null, null);
+            await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, add, null, null);
         }
 
 

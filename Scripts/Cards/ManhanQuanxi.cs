@@ -23,6 +23,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(8,ValueProp.Move),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -38,11 +39,12 @@ namespace Miyabists2.Scripts.Cards
             if (DynamicVars.Block.BaseValue > 0)
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 
-            if (base.CheckSupportCost(1) != 0)
-            {
-                await PowerCmd.Apply<RegenPower>(base.Owner.Creature, 2, base.Owner.Creature, this);
-                await CostSupporPoint(1);
-            }
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Apply<RegenPower>(choiceContext, base.Owner.Creature, 2, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

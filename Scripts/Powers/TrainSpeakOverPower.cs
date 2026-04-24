@@ -74,7 +74,7 @@ namespace Miyabists2.Scripts.Powers
         }
 
         // 回合开始重置计数
-        public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+        public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
         {
             if (side == base.Owner.Side)
             {

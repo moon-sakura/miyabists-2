@@ -45,7 +45,7 @@ namespace Miyabists2.Scripts.Cards
             if (amount > 0)
             {
                 await CreatureCmd.GainBlock(base.Owner.Creature, 6m, ValueProp.Unpowered, cardPlay);
-                await PowerCmd.Apply<MiyabiParryPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+                await PowerCmd.Apply<MiyabiParryPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
             }
 
         }

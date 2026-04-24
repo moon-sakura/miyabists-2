@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<XsjsPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<XsjsPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
 
         }
 

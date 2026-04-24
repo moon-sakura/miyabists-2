@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar("Eat", 0),
-            new DynamicVar("SupportPoint", 1),
+            new DynamicVar(SupportVarName,1),
             new CardsVar(2),
         ];
 
@@ -76,10 +76,10 @@ namespace Miyabists2.Scripts.Cards
                     count++;
                 }
 
-                if (base.CheckSupportCost(1) != 0)
+                if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
                 {
                     try2Eat = false;
-                    await CostSupporPoint(1);
+                    await CostSupporPoint(DynamicVars[SupportVarName].IntValue, choiceContext);
                 }
             }
             else
@@ -92,7 +92,7 @@ namespace Miyabists2.Scripts.Cards
 
                 foreach(Creature enemy in base.CombatState.Enemies)
                 {
-                    await PowerCmd.Apply<VulnerablePower>(enemy, 2, base.Owner.Creature, this);
+                    await PowerCmd.Apply<VulnerablePower>(choiceContext, enemy, 2, base.Owner.Creature, this);
                 }
 
                 try2Eat = false;
@@ -113,6 +113,8 @@ namespace Miyabists2.Scripts.Cards
                         await CardCmd.Exhaust(choiceContext, c);
                         DynamicVars["Eat"].BaseValue++;
                     }
+
+                    count = 0;
                 }
             }
         }
@@ -132,6 +134,7 @@ namespace Miyabists2.Scripts.Cards
                     await CardCmd.Exhaust(choiceContext, c);
                     DynamicVars["Eat"].BaseValue++;
                 }
+                count = 0;
             }
         }
 

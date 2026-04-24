@@ -63,7 +63,7 @@ namespace Miyabists2.Scripts.Cards
 
             cardPlay.Target.Monster.SetMoveImmediate(duelAttack, true);
 
-            await PowerCmd.Apply<MiyabiParryPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+            await PowerCmd.Apply<MiyabiParryPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

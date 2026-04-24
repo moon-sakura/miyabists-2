@@ -43,13 +43,13 @@ namespace Miyabists2.Scripts.Cards
             // 2. 施加招架 (ParryPower)
             if (base.DynamicVars.TryGetValue(ParryVarName, out var parryVar) && parryVar.BaseValue > 0)
             {
-                await PowerCmd.Apply<MiyabiParryPower>(base.Owner.Creature, parryVar.BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<MiyabiParryPower>(choiceContext, base.Owner.Creature, parryVar.BaseValue, base.Owner.Creature, this);
             }
 
             // 3. 施加滑步 (SlipperyPower)
             if (base.DynamicVars.TryGetValue(SlipperyVarName, out var slipVar) && slipVar.BaseValue > 0)
             {
-                await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<SlipperyPower>(choiceContext, base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
             }
             //施加失衡
             //if(base.DynamicVars.TryGetValue(DazeVarName, out var dazeVar) && dazeVar.BaseValue > 0)
@@ -59,7 +59,7 @@ namespace Miyabists2.Scripts.Cards
             //}
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar) && dazeVar.BaseValue > 0)
             {
-                await MiyabiCombatService.AddDaze(cardPlay.Target, dazeVar,base.Owner.Creature);
+                await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, dazeVar,base.Owner.Creature);
             }
 
             //属性积蓄与异常
@@ -96,6 +96,22 @@ namespace Miyabists2.Scripts.Cards
             
         }
 
+        //以下卡牌没有使用该函数
+        //蛇吻
+        //甜蜜惊吓
+        //终末裁决
+        //醉花月云转
+        protected async Task SupportPointFunc(PlayerChoiceContext choiceContext, int supportT, Func<Task> FriendFunc, bool isForceTrigger = false, bool isFreeThis = false)
+        {
+            if (CheckSupportCost(supportT) != 0 || isForceTrigger)
+            {
+                await FriendFunc();
+
+                if(!isFreeThis)
+                    await CostSupporPoint(supportT, choiceContext);
+            }
+        }
+
 
         public virtual int CheckSupportCost(int a)
         {
@@ -107,11 +123,11 @@ namespace Miyabists2.Scripts.Cards
             //return true;
         }
 
-        public virtual async Task CostSupporPoint(int amount) 
+        public virtual async Task CostSupporPoint(int amount, PlayerChoiceContext choiceContext) 
         {
             if (CheckSupportCost(amount) == 0) return;
             if (CheckSupportCost(amount) == 1)
-                await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature,-amount,null,null);
+                await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature,-amount,null,null);
             if (CheckSupportCost(amount) == 2) return;
         }
     }

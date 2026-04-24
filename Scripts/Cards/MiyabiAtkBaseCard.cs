@@ -76,15 +76,16 @@ namespace Miyabists2.Scripts.Cards
                 // 如果拥有烈霜词条，按伤害量施加积蓄值
                 if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
                 {
-                    await PowerCmd.Apply<FrostBuildPower>(target, result.TotalDamage, base.Owner.Creature, this);
+                    await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, result.TotalDamage, base.Owner.Creature, this);
                 }
             }
             //烈霜积蓄值积攒逻辑
             if (chkFB >= trigger + 1 && (!target.HasPower<FrostPower>()||MiyabiCombatService.GetCanAddWhenFire()))
             {
                 //await MiyabiCombatService.FrostApply(target,base.Owner.Creature,choiceContext);
-                await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<FrostPower>(target, 1, base.Owner.Creature, this);
+                //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
+                await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
+                await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, base.Owner.Creature, this);
 
                 //int fireAmount = target.GetPowerAmount<FrostFirePower>();
                 //await CreatureCmd.Damage(null, target, 10m, ValueProp.Unpowered, dealer);
@@ -96,18 +97,18 @@ namespace Miyabists2.Scripts.Cards
                 }
                 else
                 {
-                    await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, base.Owner.Creature, this);
+                    await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, base.Owner.Creature, this);
                 }
             }
 
             // 2. 施加 1 层冰焰 (FrostFirePower)
             if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
-                await PowerCmd.Apply<FrostFirePower>(target, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<FrostFirePower>(choiceContext, target, 1, base.Owner.Creature, this);
 
             // 3. 施加动态配置的失衡值 (DazePower)
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar))
             {
-                await MiyabiCombatService.AddDaze(target, dazeVar, base.Owner.Creature);
+                await MiyabiCombatService.AddDaze(choiceContext, target, dazeVar, base.Owner.Creature);
             }
 
         }

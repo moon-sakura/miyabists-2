@@ -38,7 +38,7 @@ namespace Miyabists2.Scripts.Cards
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 
             if (base.DynamicVars.TryGetValue(SupportVarName, out DynamicVar s))
-                await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, s.IntValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, s.IntValue, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

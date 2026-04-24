@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
         protected override async  Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (base.DynamicVars.TryGetValue("FrostFall", out DynamicVar v))
-                await PowerCmd.Apply<ShuangyuejsPower>(Owner.Creature, v.BaseValue, Owner.Creature, this);
+                await PowerCmd.Apply<ShuangyuejsPower>(choiceContext, Owner.Creature, v.BaseValue, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

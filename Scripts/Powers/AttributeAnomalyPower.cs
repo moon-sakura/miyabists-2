@@ -41,14 +41,6 @@ namespace Miyabists2.Scripts.Powers
         //    return 1m;
         //}
 
-        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
-        {
-            //if (base.Amount >= 2)
-            //{
-            //    await PowerCmd.Apply<DisorderPower>(base.Owner, 1, null, null);
-            //    //await PowerCmd.Remove(this);
-            //}
-        }
         //public override async Task BeforeCardPlayed(CardPlay cardPlay)
         //{
         //    if (base.Amount >= 2)

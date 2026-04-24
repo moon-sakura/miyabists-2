@@ -23,6 +23,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(DazeVarName, 15),
             new DynamicVar("Jifu", 5),
             new DynamicVar("HitCount", 5),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -53,15 +54,14 @@ namespace Miyabists2.Scripts.Cards
                 if (base.CheckSupportCost(1) != 0)
                 {
                     u.BaseValue += 3;
-                    await CostSupporPoint(1);
+                    await CostSupporPoint(1, choiceContext);
                 }
                 if (base.Owner.Creature.HasPower<SlipperyPower>())
                 {
                     u.BaseValue += 2;
                 }
-                await PowerCmd.Apply<JifuPower>(cardPlay.Target, u.IntValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<JifuPower>(choiceContext, cardPlay.Target, u.IntValue, base.Owner.Creature, this);
             }
-
         }
 
         protected override void OnUpgrade()

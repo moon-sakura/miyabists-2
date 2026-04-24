@@ -42,7 +42,7 @@ namespace Miyabists2.Scripts.Powers
             return new Data();
         }
 
-        public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, CombatState combatState)
+        public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
         {
             if (player == base.Owner.Player)
             {
@@ -51,7 +51,7 @@ namespace Miyabists2.Scripts.Powers
                 {
                     CardModel card2 = card.CreateClone();
                     card2.SetToFreeThisTurn();
-                    await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, addedByPlayer: true);
+                    await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, Owner.Player);
                 }
                 await PowerCmd.Remove(this);
             }

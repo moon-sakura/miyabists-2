@@ -65,7 +65,7 @@ namespace Miyabists2.Scripts.Powers
 
             if(DynamicVars["CardCount"].IntValue >= 5) 
             {
-                await PowerCmd.Apply<FrostFallPower>(Owner, Amount, Owner, null);
+                await PowerCmd.Apply<FrostFallPower>(context, Owner, Amount, Owner, null);
                 DynamicVars["CardCount"].BaseValue = 0;
             }
         }
@@ -87,7 +87,7 @@ namespace Miyabists2.Scripts.Powers
         }
 
         // 回合开始重置计数
-        public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, CombatState combatState)
+        public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
         {
             if (side == base.Owner.Side)
             {

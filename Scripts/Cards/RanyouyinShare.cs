@@ -46,8 +46,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<VulnerablePower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
-            await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<VulnerablePower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
             bool hasIt = base.Owner.Relics.Any(r => r is SwordNotailRelic);
             int n = 0;
             if (base.DynamicVars.TryGetValue("Decible", out var d))

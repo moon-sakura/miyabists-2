@@ -36,14 +36,14 @@ namespace Miyabists2.Scripts.Cards
             // 2. 施加招架 (ParryPower)
             if (base.DynamicVars.TryGetValue(ParryVarName, out var parryVar) && parryVar.BaseValue > 0)
             {
-                await PowerCmd.Apply<MiyabiParryPower>(base.Owner.Creature, parryVar.BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<MiyabiParryPower>(choiceContext, base.Owner.Creature, parryVar.BaseValue, base.Owner.Creature, this);
             }
 
             // 3. 施加滑步 (SlipperyPower)
             if (base.DynamicVars.TryGetValue(SlipperyVarName, out var slipVar) && slipVar.BaseValue > 0)
             {
                 // 注意：这里修正了你原代码中 Slippery 误写成 ParryPower 的问题
-                await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<SlipperyPower>(choiceContext, base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
             }
         }
     }

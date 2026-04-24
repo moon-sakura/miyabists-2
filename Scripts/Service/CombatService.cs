@@ -167,17 +167,19 @@ namespace Miyabists2.Scripts.Service
                 if (chkAno >= trigger && chkAno < 2 * trigger) // 满溢则紊乱
                 {
                     await DisorderApply(target, dealer, choiceContext);
-                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
+                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
+                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - trigger + 1, dealer, null);
                 }
                 else if(chkAno >= 2 * trigger)
                 {
                     await DisorderApply(target, dealer, choiceContext);
-                    await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, dealer, card);
-                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
+                    await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, dealer, card);
+                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
+                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - 2 * trigger + 1, dealer, null);
                 }
                 else // 未满则继续堆积蓄
                 {
-                    await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar, dealer, card);
+                    await PowerCmd.Apply<AnomalyBuildupPower>(choiceContext, target, anoVar, dealer, card);
                 }
             }
             // 情况 B：还没有异常状态
@@ -185,18 +187,21 @@ namespace Miyabists2.Scripts.Service
             {
                 if (chkAno >= trigger && chkAno < 2 * trigger) // 满溢则触发异常
                 {
-                    await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, dealer, card);
+                    await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, dealer, card);
                     //await PowerCmd.Apply<AnomalyBuildupPower>(target, 1-trigger, dealer, card);
-                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
+                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(choiceContext, target, chkAno - trigger + 1, dealer, card);
+                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - trigger + 1, dealer, null);
+
                 }
                 else if(chkAno >= 2 * trigger)
                 {
                     await DisorderApply(target, dealer, choiceContext);
-                    await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
+                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
+                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - 2 * trigger + 1, dealer, null);
                 }
                 else // 未满则仅仅添加积蓄
                 {
-                    await PowerCmd.Apply<AnomalyBuildupPower>(target, anoVar, dealer, card);
+                    await PowerCmd.Apply<AnomalyBuildupPower>(choiceContext, target, anoVar, dealer, card);
                 }
             }
         }
@@ -223,7 +228,7 @@ namespace Miyabists2.Scripts.Service
 
             await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered & ValueProp.Unblockable, dealer);
 
-            await PowerCmd.Apply<DisorderPower>(target, 1, dealer, null);
+            await PowerCmd.Apply<DisorderPower>(choiceContext, target, 1, dealer, null);
         }
 
         //霜灼增加
@@ -232,8 +237,9 @@ namespace Miyabists2.Scripts.Service
             SetFrostTriggerMultiply(target);
             //await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
 
-            await PowerCmd.SetAmount<FrostBuildPower>(target, 1, dealer, null);
-            await PowerCmd.Apply<FrostPower>(target, 1, dealer, null);
+            //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, dealer, null);
+            await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
+            await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, dealer, null);
 
 
             int fireAmount = target.GetPowerAmount<Miyabists2.Scripts.Powers.FrostFirePower>();
@@ -257,23 +263,24 @@ namespace Miyabists2.Scripts.Service
             }
             else
             {
-                await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, dealer, null);
+                await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, dealer, null);
             }
         }
 
         //失衡值叠加
-        public static async Task AddDaze(Creature target,DynamicVar dazeVar,Creature dealer)
+        public static async Task AddDaze(PlayerChoiceContext choiceContext, Creature target,DynamicVar dazeVar,Creature dealer)
         {
             SetDazeTriggerMultiply(target);
 
             int chkDaze = target.GetPowerAmount<DazePower>() + dazeVar.IntValue;
 
             if (!target.HasPower<BreakPower>() && chkDaze <= DazeTrigger)
-                await PowerCmd.Apply<DazePower>(target, dazeVar.BaseValue, dealer, null);
+                await PowerCmd.Apply<DazePower>(choiceContext, target, dazeVar.BaseValue, dealer, null);
             else if (chkDaze >= DazeTrigger + 1)
             {
-                await PowerCmd.SetAmount<DazePower>(target, 1, dealer, null);
-                await PowerCmd.Apply<BreakPower>(target, 1, dealer, null);
+                //await PowerCmd.SetAmount<DazePower>(target, 1, dealer, null);
+                await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<DazePower>(), 1, dealer, null);
+                await PowerCmd.Apply<BreakPower>(choiceContext, target, 1, dealer, null);
             }
         }
 
@@ -287,12 +294,12 @@ namespace Miyabists2.Scripts.Service
             
             if(chkDaze >= 100)
             {
-                await PowerCmd.Apply<BreakPlayerPower>(player, 1, null, null);
+                await PowerCmd.Apply<BreakPlayerPower>(choiceContext, player, 1, null, null);
                 await PowerCmd.Remove<DazePower>(player);
             }
             else if(!player.HasPower<BreakPlayerPower>())
             {
-                await PowerCmd.Apply<DazePower>(player, count, null, null);
+                await PowerCmd.Apply<DazePower>(choiceContext, player, count, null, null);
             }
 
         }
@@ -328,7 +335,7 @@ namespace Miyabists2.Scripts.Service
                 CardModel reward1 = owner.CombatState.CreateCard<HuaCi>(owner.Player);
 
                 if (handSize + i < 10)
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, owner.Player, CardPilePosition.Random);
                 else
                     await CardCmd.AutoPlay(choiceContext, reward1, target);
             }

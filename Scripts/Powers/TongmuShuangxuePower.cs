@@ -32,17 +32,17 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await CheckCard(cardPlay);
+            await CheckCard(cardPlay, choiceContext);
         }
 
-        private async Task CheckCard(CardPlay cardPlay) 
+        private async Task CheckCard(CardPlay cardPlay, PlayerChoiceContext choiceContext) 
         {
             if (cardPlay.Card.Owner.Creature != base.Owner
                 || cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
                 //|| cardPlay.Card.Type != CardType.Attack
                 )
                 return;
-            await PowerCmd.Apply<SupportPointPower>(base.Owner,Amount,null,null);
+            await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner,Amount,null,null);
         }
     }
 }

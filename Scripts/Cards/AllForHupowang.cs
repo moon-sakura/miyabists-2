@@ -54,14 +54,14 @@ namespace Miyabists2.Scripts.Cards
             }
             if(count >= 3)
             {
-                await PowerCmd.Apply<BreakPower>(cardPlay.Target, 1m, base.Owner.Creature, this);
+                await PowerCmd.Apply<BreakPower>(choiceContext, cardPlay.Target, 1m, base.Owner.Creature, this);
             }
             else
             {
                 for(int i  = 0; i < 3; i++)
                 {
                     CardModel card = base.Owner.Creature.CombatState.CreateCard<MenghuZhakaihua>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Draw, addedByPlayer: true, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Draw, Owner, CardPilePosition.Random);
                 }
             }
         }

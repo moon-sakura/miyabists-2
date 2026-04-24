@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(8, ValueProp.Move),
             new DynamicVar(DazeVarName, 4),
             new DynamicVar (AnomalyBuildupVarName, 1),
-            new DynamicVar ("SupportPoint", 1),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -67,14 +67,14 @@ namespace Miyabists2.Scripts.Cards
                 }
             }
 
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+        }
 
-            if (base.CheckSupportCost(DynamicVars["SupportPoint"].IntValue) != 0)
-            {
-                CardModel card = this.CreateClone();
-                card.AddKeyword(CardKeyword.Exhaust);
-                await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
-                await CostSupporPoint(DynamicVars["SupportPoint"].IntValue);
-            }
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            CardModel card = this.CreateClone();
+            card.AddKeyword(CardKeyword.Exhaust);
+            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner, CardPilePosition.Random);
         }
 
         protected override void OnUpgrade()

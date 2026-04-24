@@ -91,7 +91,7 @@ namespace Miyabists2.Scripts.Relics
                     Flash();
 
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
                 }
             }
         }
@@ -104,7 +104,7 @@ namespace Miyabists2.Scripts.Relics
             if (base.Owner.Creature.CombatState.RoundNumber == 1)
             {
                 Flash();
-                await PowerCmd.Apply<FrostFallPower>(base.Owner.Creature, 4, null, null);
+                await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 4, null, null);
             }
             // 此时，syncRnd.Next 在所有客户端产生的结果将完全一致
             int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, 4); ;

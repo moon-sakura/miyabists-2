@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
@@ -23,7 +24,8 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             //new DamageVar(5, ValueProp.Move),
             new DynamicVar(DazeVarName, 20),
-            new DynamicVar("Decible",5)
+            new DynamicVar("Decible",5),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -46,12 +48,13 @@ namespace Miyabists2.Scripts.Cards
             //        .Execute(choiceContext);
             //}
 
-            if (base.CheckSupportCost(1) != 0)
-            {
-                if (base.DynamicVars.TryGetValue("Decible", out DynamicVar d))
-                    await MiyabiCombatService.AddDecible(base.Owner, d.IntValue);
-                await CostSupporPoint(1);
-            }
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            if (base.DynamicVars.TryGetValue("Decible", out DynamicVar d))
+                await MiyabiCombatService.AddDecible(base.Owner, d.IntValue);
         }
 
 

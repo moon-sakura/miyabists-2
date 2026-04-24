@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<TianzizyPower>(Owner.Creature, 1, Owner.Creature, this);
+            await PowerCmd.Apply<TianzizyPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
         }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips => 

@@ -109,7 +109,7 @@ namespace Miyabists2.Scripts.Powers
             Flash();
 
             await CreatureCmd.Damage(choiceContext, base.Owner, 1, ValueProp.Unpowered, null, null);
-            await PowerCmd.Apply<StrengthPower>(base.Owner, 1, null, null);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner, 1, null, null);
         }
     }
 }

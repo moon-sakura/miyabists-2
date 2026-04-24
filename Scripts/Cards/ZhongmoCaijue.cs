@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Cards
             if (base.CheckSupportCost(3) != 0)
             {
                 DynamicVars.Damage.BaseValue += 8;
-                await CostSupporPoint(3);
+                await CostSupporPoint(3, choiceContext);
             }
             if(cardPlay.Target.HasPower<BreakPower>()) DynamicVars.Damage.BaseValue *= 3;
 
@@ -71,7 +71,7 @@ namespace Miyabists2.Scripts.Cards
             {
                 await PowerCmd.Remove<BreakPower>(cardPlay.Target);
                 await PowerCmd.Remove<DazeVulnPower>(cardPlay.Target);
-                await PowerCmd.Apply<DazePower>(cardPlay.Target, daze, base.Owner.Creature, this);
+                await PowerCmd.Apply<DazePower>(choiceContext, cardPlay.Target, daze, base.Owner.Creature, this);
             }
 
             DynamicVars.Damage.BaseValue = damageor;

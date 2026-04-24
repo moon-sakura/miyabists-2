@@ -24,7 +24,8 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 12),
             new BlockVar(12,ValueProp.Move),
-            new DynamicVar(ParryVarName, 2)
+            new DynamicVar(ParryVarName, 2),
+            new DynamicVar(SupportVarName,2),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -50,14 +51,14 @@ namespace Miyabists2.Scripts.Cards
                     .FromCard(this)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);
-            } 
-
-
-            if (base.CheckSupportCost(2) != 0) 
-            {
-                await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, 4, base.Owner.Creature, this);
-                await CostSupporPoint(2);
             }
+
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, 4, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

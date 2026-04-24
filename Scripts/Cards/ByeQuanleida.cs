@@ -24,7 +24,8 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 12),
-            new CardsVar(1)
+            new CardsVar(1),
+            new DynamicVar(SupportVarName,2),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -50,29 +51,28 @@ namespace Miyabists2.Scripts.Cards
 
             bool isBreak = cardPlay.Target.HasPower<BreakPower>();
 
-            if (base.CheckSupportCost(2) != 0 || isBreak)
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext), isBreak, isBreak);
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            //选择一张攻击卡加入手卡
+            CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, DynamicVars.Cards.IntValue);
+            List<CardModel> cardsIn = (from c in PileType.Discard.GetPile(base.Owner).Cards
+                                       where c.Type == CardType.Attack
+                                       orderby c.Rarity, c.Id
+                                       select c).ToList();
+            if (cardsIn.Count != 0)
             {
-                //选择一张攻击卡加入手卡
-                CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, DynamicVars.Cards.IntValue);
-                List<CardModel> cardsIn = (from c in PileType.Discard.GetPile(base.Owner).Cards
-                                           where c.Type == CardType.Attack
-                                           orderby c.Rarity, c.Id
-                                           select c).ToList();
-                if (cardsIn.Count != 0)
+                IEnumerable<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs));
+                if (cardModel != null)
                 {
-                    IEnumerable<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs));
-                    if (cardModel != null)
+                    foreach (CardModel card in cardModel)
                     {
-                        foreach(CardModel card in cardModel)
-                        {
-                            card.DynamicVars.Damage.BaseValue += 3;
-                            await CardPileCmd.Add(cardModel, PileType.Hand); 
-                        }
+                        card.DynamicVars.Damage.BaseValue += 3;
+                        await CardPileCmd.Add(cardModel, PileType.Hand);
                     }
                 }
-
-                if(!isBreak)
-                    await CostSupporPoint(2);
             }
         }
 
@@ -81,7 +81,6 @@ namespace Miyabists2.Scripts.Cards
             DynamicVars.Damage.UpgradeValueBy(3);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
             DynamicVars.Cards.UpgradeValueBy(1);
-
         }
     }
 }

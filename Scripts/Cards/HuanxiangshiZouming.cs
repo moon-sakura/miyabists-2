@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
@@ -22,7 +23,7 @@ namespace Miyabists2.Scripts.Cards
         public HuanxiangshiZouming() : base(3, CardRarity.Uncommon, TargetType.Self, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("SupportPoint",3)
+            new DynamicVar(SupportVarName,3)
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -54,27 +55,28 @@ namespace Miyabists2.Scripts.Cards
                 }
             }
 
-            if (base.CheckSupportCost(DynamicVars["SupportPoint"].IntValue) != 0)
-            {
-                CardSelectorPrefs prefs2 = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
-                List<CardModel> cardsIn2 = (from c in PileType.Discard.GetPile(base.Owner).Cards
-                                           where c.Type != CardType.Power
-                                           orderby c.Rarity, c.Id
-                                           select c).ToList();
-                if (cardsIn2.Count != 0)
-                {
-                    CardModel cardModel2 = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn2, base.Owner, prefs)).FirstOrDefault();
-                    if (cardModel2 != null)
-                    {
-                        cardModel2.SetToFreeThisTurn();
-                        await CardPileCmd.Add(cardModel2, PileType.Hand);
-                    }
-                }
-                await CostSupporPoint(DynamicVars["SupportPoint"].IntValue);
-            }
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
 
             //if (base.DynamicVars.TryGetValue("SupportPoint", out DynamicVar s))
-                //await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, s.BaseValue, Owner.Creature, this);
+            //await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, s.BaseValue, Owner.Creature, this);
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            CardSelectorPrefs prefs2 = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
+            List<CardModel> cardsIn2 = (from c in PileType.Discard.GetPile(base.Owner).Cards
+                                        where c.Type != CardType.Power
+                                        orderby c.Rarity, c.Id
+                                        select c).ToList();
+            if (cardsIn2.Count != 0)
+            {
+                CardModel cardModel2 = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn2, base.Owner, prefs2)).FirstOrDefault();
+                if (cardModel2 != null)
+                {
+                    cardModel2.SetToFreeThisTurn();
+                    await CardPileCmd.Add(cardModel2, PileType.Hand);
+                }
+            }
         }
 
         protected override void OnUpgrade()

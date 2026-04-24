@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            (await PowerCmd.Apply<TebiePzjqPower>(base.Owner.Creature, 1, base.Owner.Creature, this)).SetDazeVuln(DynamicVars["DazeVuln"].IntValue);
+            (await PowerCmd.Apply<TebiePzjqPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this)).SetDazeVuln(DynamicVars["DazeVuln"].IntValue);
 
         }
 

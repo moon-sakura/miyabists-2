@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Models.Relics;
@@ -32,12 +33,10 @@ namespace Miyabists2.Scripts.Cards
             Creature target = cardPlay.Target;
             ArgumentNullException.ThrowIfNull(target, "cardPlay.Target");
             if (cardPlay.Card != this || target == null || target.IsDead) return;
-            int chkFB = target.GetPowerAmount<FrostBuildPower>() + 50;
+            int chkFB = target.GetPowerAmount<FrostBuildPower>() + 30;
 
             MiyabiCombatService.SetFrostTriggerMultiply(base.Owner.Creature);
             int trigger = MiyabiCombatService.GetFrostTrigger();
-
-            //int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
 
             // 确保是本卡造成的实际伤害，且目标存活
             if (chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
@@ -45,15 +44,16 @@ namespace Miyabists2.Scripts.Cards
                 // 如果拥有烈霜词条，按伤害量施加积蓄值
                 if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
                 {
-                    await PowerCmd.Apply<FrostBuildPower>(target, 50, base.Owner.Creature, this);
+                    await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, 30, base.Owner.Creature, this);
                 }
             }
             //烈霜积蓄值积攒逻辑
             if (chkFB >= trigger + 1 && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
             {
                 //await MiyabiCombatService.FrostApply(target,base.Owner.Creature,choiceContext);
-                await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<FrostPower>(target, 1, base.Owner.Creature, this);
+                //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
+                await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, Owner.Creature, null);
+                await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, base.Owner.Creature, this);
 
                 //int fireAmount = target.GetPowerAmount<FrostFirePower>();
                 //await CreatureCmd.Damage(null, target, 10m, ValueProp.Unpowered, dealer);
@@ -65,7 +65,7 @@ namespace Miyabists2.Scripts.Cards
                 }
                 else
                 {
-                    await PowerCmd.Apply<AttributeAnomalyPower>(target, 1, base.Owner.Creature, this);
+                    await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, base.Owner.Creature, this);
                 }
             }
         }

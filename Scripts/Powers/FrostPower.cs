@@ -35,14 +35,14 @@ namespace Miyabists2.Scripts.Powers
             new DynamicVar ("DamageVuln", 20),
         ];
 
-        public override Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if (power == this)
             {
                 DynamicVars["DamageVuln"].BaseValue = amount * 20;
             }
-            return base.AfterPowerAmountChanged(power, amount, applier, cardSource);
         }
+
 
         //public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         //{

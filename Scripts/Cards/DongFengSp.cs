@@ -1,6 +1,8 @@
+using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -30,7 +32,7 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await base.OnPlay(choiceContext, cardPlay);
-            await PowerCmd.Apply<DongFengSpPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<DongFengSpPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
             
         }
 
@@ -39,12 +41,9 @@ namespace Miyabists2.Scripts.Cards
             await CheckReduce();
         }
 
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            if (side == base.Owner.Creature.Side)
-            {
-                await CheckReduce();
-            }
+            await CheckReduce();
         }
 
         public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
@@ -83,5 +82,14 @@ namespace Miyabists2.Scripts.Cards
             base.EnergyCost.SetThisTurn(a);
         }
 
+
+
+        //public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        //{
+        //    if (side == base.Owner.Creature.Side)
+        //    {
+        //        await CheckReduce();
+        //    }
+        //}
     }
 }

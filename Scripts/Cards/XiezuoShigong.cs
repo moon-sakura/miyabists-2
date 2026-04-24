@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -29,7 +30,8 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(2, ValueProp.Move),
             new DynamicVar(DazeVarName, 1),
             new DynamicVar(AnomalyBuildupVarName,1),
-            new DynamicVar("RepeatCount", 1)
+            new DynamicVar("RepeatCount", 1),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -48,7 +50,7 @@ namespace Miyabists2.Scripts.Cards
                 Creature target = enemies.TakeRandom(1,base.Owner.RunState.Rng.Shuffle).FirstOrDefault();
 
                 if (DynamicVars.TryGetValue(DazeVarName, out DynamicVar daze))
-                    await MiyabiCombatService.AddDaze(target, daze, base.Owner.Creature);
+                    await MiyabiCombatService.AddDaze(choiceContext, target, daze, base.Owner.Creature);
                 if (DynamicVars.TryGetValue(AnomalyBuildupVarName, out DynamicVar anomalyBuildup))
                     await MiyabiCombatService.AddAnoBuildup(target, anomalyBuildup.IntValue, base.Owner.Creature, this, choiceContext);
 
@@ -65,12 +67,17 @@ namespace Miyabists2.Scripts.Cards
                
             }
 
-            if (base.CheckSupportCost(1) != 0)
-            {
-                if (DynamicVars.TryGetValue("RepeatCount", out DynamicVar repeat)) repeat.BaseValue += 1;
-                await CostSupporPoint(1);
-            }
-            
+            //if (base.CheckSupportCost(1) != 0)
+            //{
+            //    if (DynamicVars.TryGetValue("RepeatCount", out DynamicVar repeat)) repeat.BaseValue += 1;
+            //    await CostSupporPoint(1, choiceContext);
+            //}
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext));
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            if (DynamicVars.TryGetValue("RepeatCount", out DynamicVar repeat)) repeat.BaseValue += 1;
         }
 
         public override Task AfterCombatEnd(CombatRoom room)

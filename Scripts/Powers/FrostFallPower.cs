@@ -60,7 +60,7 @@ namespace Miyabists2.Scripts.Powers
             await CheckFallPower();
         }
 
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if (side == base.Owner.Side)
             {
@@ -83,16 +83,17 @@ namespace Miyabists2.Scripts.Powers
 
         private async Task CheckFallPower()
         {
-            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < CardPile.maxCardsInHand && GetCards().ToList().Count() == 0 && DisplayAmount >= 2)
+            PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner.Player, Owner.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
+            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < CardPile.MaxCardsInHand && GetCards().ToList().Count() == 0 && DisplayAmount >= 2)
             {
                 // 加入一张《霜月》到手中
                 CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, addedByPlayer: true, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
 
                 // 如果你的逻辑是触发后消耗层数，可以加在这里。
                 // 如果只是“大于 2 点就给一张”且不消耗，则不写 Reduce。
                 //await AmountChange(2);
-                await PowerCmd.Apply<FrostFallPower>(base.Owner, -2, null, null);
+                await PowerCmd.ModifyAmount(choiceContext, this, -2, null, null);
                 //base.Owner.Player.GetRelic<SwordNotailRelic>().LuoShuangCostThisTurn -= 2;
             }
         }

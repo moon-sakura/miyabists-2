@@ -48,12 +48,12 @@ namespace Miyabists2.Scripts.Cards
 
                 CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, base.Owner);
 
-                await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, addedByPlayer: true);
+                await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner);
 
                 if (chosen is PrincessYears) 
                 {
                     CardModel card = base.Owner.Creature.CombatState?.CreateCard<PrincessInoha>(base.Owner);
-                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, addedByPlayer: true);
+                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, Owner);
                 }
             }
         }

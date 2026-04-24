@@ -39,8 +39,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<ArtifactPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            await PowerCmd.Apply<SlipperyPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+            await PowerCmd.Apply<ArtifactPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
+            await PowerCmd.Apply<SlipperyPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
             //await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, 2, base.Owner.Creature, this);
         }
     }

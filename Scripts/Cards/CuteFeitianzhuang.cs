@@ -24,7 +24,8 @@ namespace Miyabists2.Scripts.Cards
         public CuteFeitianzhuang() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Skill) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar(DazeVarName, 15)
+            new DynamicVar(DazeVarName, 15),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -54,13 +55,13 @@ namespace Miyabists2.Scripts.Cards
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v))
                 v.BaseValue += add * 5;
 
-            if (base.CheckSupportCost(2) != 0)
-            {
-                v.BaseValue *= 1.2m;
+            //if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
+            //{
+            //    v.BaseValue *= 1.2m;
+            //    await CostSupporPoint(DynamicVars[SupportVarName].IntValue, choiceContext);
+            //}
 
-                await CostSupporPoint(2);
-            }
-
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => { v.BaseValue *= 1.2m; });
 
             await base.OnPlay(choiceContext, cardPlay);
         }

@@ -45,7 +45,7 @@ namespace Miyabists2.Scripts.Relics
             if (base.Owner.Creature.CombatState.RoundNumber == 1)
             {
                 Flash();
-                await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, 7, null, null);
+                await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, 7, null, null);
             }
         }
 

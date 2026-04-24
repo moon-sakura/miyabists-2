@@ -51,7 +51,8 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterRemoved(Creature oldOwner)
         {
-            await PowerCmd.Apply<TrainEatOverPower>(oldOwner, 1, null, null);
+            PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(oldOwner.Player, oldOwner.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
+            await PowerCmd.Apply<TrainEatOverPower>(choiceContext, oldOwner, 1, null, null);
             //return Task.CompletedTask;
         }
 

@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using System;
@@ -21,7 +22,8 @@ namespace Miyabists2.Scripts.Cards
         public TianmiJingxia() : base(1, CardRarity.Common, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("Jingxia", 1)
+            new DynamicVar("Jingxia", 1),
+            new DynamicVar(SupportVarName,1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -35,24 +37,21 @@ namespace Miyabists2.Scripts.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             decimal jx = 0;
-            if (base.CheckSupportCost(1) != 0)
+            if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
             {
                 if(DynamicVars.TryGetValue("Jingxia", out DynamicVar v))
                 {
                     jx = v.BaseValue;
                     v.BaseValue = 2;
-
                 }
-                await CostSupporPoint(1);
+                await CostSupporPoint(DynamicVars[SupportVarName].IntValue, choiceContext);
             }
 
             if (DynamicVars.TryGetValue("Jingxia", out var value))
             {
-                await PowerCmd.Apply<TianmijxPower>(base.Owner.Creature, value.IntValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<TianmijxPower>(choiceContext, base.Owner.Creature, value.IntValue, base.Owner.Creature, this);
                 value.BaseValue = jx;
             }
-
-            
         }
 
         protected override void OnUpgrade()

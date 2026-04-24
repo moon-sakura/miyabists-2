@@ -56,7 +56,7 @@ namespace Miyabists2.Scripts.Cards
                 }
             }
 
-            await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, 1, null, null);
+            await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, 1, null, null);
         }
 
 

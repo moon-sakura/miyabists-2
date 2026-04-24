@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Cards
                 {
                     if (card.CanonicalKeywords.Contains(MiyabiKeywords.Friends))
                     {
-                        await PowerCmd.Apply<SupportPointPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+                        await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
                     }
                 }
             }
