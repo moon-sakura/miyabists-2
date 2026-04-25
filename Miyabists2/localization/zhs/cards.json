@@ -72,6 +72,12 @@
 	"MIYABISTS2-TIANZI_ZHUOYUE.title": "天资卓越",
     "MIYABISTS2-TIANZI_ZHUOYUE.description": "每次使用[gold]霜月[/gold]，自动使用一次[gold]霜月·极意[/gold]",
 
+	"MIYABISTS2-ZHANJIN_ZUIE.title": "斩尽罪恶",
+    "MIYABISTS2-ZHANJIN_ZUIE.description": "本回合造成伤害变为双倍",
+
+	"MIYABISTS2-WUZHI_JIZHI.title": "武之极致",
+    "MIYABISTS2-WUZHI_JIZHI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]2[/blue]点[gold]落霜[/gold]",
+
 	"MIYABISTS2-BAMIAN_WEIFENG.title": "八面威风",
     "MIYABISTS2-BAMIAN_WEIFENG.description": "每次使用[gold]终结技[/gold]后获得[blue]5[/blue]点[gold]喧嚣值[/gold]，使用[gold]伙伴[/gold]卡后获得[blue]2[/blue]点[gold]喧嚣值[/gold]",
 

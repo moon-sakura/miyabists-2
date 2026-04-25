@@ -41,11 +41,8 @@ namespace Miyabists2.Scripts.Cards
             // 确保是本卡造成的实际伤害，且目标存活
             if (chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
             {
-                // 如果拥有烈霜词条，按伤害量施加积蓄值
-                if (this.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
-                {
-                    await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, 30, base.Owner.Creature, this);
-                }
+                await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, 30, base.Owner.Creature, this);
+
             }
             //烈霜积蓄值积攒逻辑
             if (chkFB >= trigger + 1 && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))

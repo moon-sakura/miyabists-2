@@ -32,6 +32,13 @@ namespace Miyabists2.Scripts.Powers
             new DynamicVar ("Limit", 50),
         ];
 
+        public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+        {
+            decimal limit = MiyabiCombatService.GetFrostFireLimit();
+            DynamicVars["Limit"].BaseValue = limit * 100;
+            return base.AfterApplied(applier, cardSource);
+        }
+
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
             if (target != base.Owner)
@@ -45,7 +52,7 @@ namespace Miyabists2.Scripts.Powers
                 return 1m;
 
             decimal limit = MiyabiCombatService.GetFrostFireLimit();
-            DynamicVars["Limit"].BaseValue = limit * 100;
+            //DynamicVars["Limit"].BaseValue = limit * 100;
 
             //烈霜伤害+5%（效果上限150%，层数无上限）
             decimal damageIncrease = base.Amount * 0.05m;

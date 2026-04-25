@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Relics
     [Pool(typeof(MiyabiRelicPool))]
     internal class SanluoXingdianRelic : CustomRelicModel
     {
-        public override RelicRarity Rarity => RelicRarity.Event;
+        public override RelicRarity Rarity => RelicRarity.Rare;
         public override string PackedIconPath => "res://images/relics/sanluoXingdian.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
@@ -52,6 +52,8 @@ namespace Miyabists2.Scripts.Relics
             //HoverTipFactory.FromCard<JixianShiyu>(),
             //HoverTipFactory.FromPower<FrostFallPower>(),
             //HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill)
+            HoverTipFactory.FromCard<WuzhiJizhi>(),
+            HoverTipFactory.FromCard<ZhanjinZuie>(),
         ];
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
@@ -64,13 +66,13 @@ namespace Miyabists2.Scripts.Relics
                     Flash();
                     if (Counter >= 15)
                     {
-                        CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<EJiZhan>(base.Owner.Creature.Player);
+                        CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<WuzhiJizhi>(base.Owner.Creature.Player);
                         await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
 
                     }
                     else
                     {
-                        CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+                        CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<ZhanjinZuie>(base.Owner.Creature.Player);
                         await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
                     }
                 }

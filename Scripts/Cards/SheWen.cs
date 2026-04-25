@@ -67,8 +67,11 @@ namespace Miyabists2.Scripts.Cards
                     IEnumerable<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs));
                     if (cardModel != null)
                     {
-                        foreach (CardModel c in cardModel) await CardCmd.Exhaust(choiceContext, c);
-                        DynamicVars["Eat"].BaseValue++;
+                        foreach (CardModel c in cardModel) 
+                        {
+                            await CardCmd.Exhaust(choiceContext, c);
+                            DynamicVars["Eat"].BaseValue++;
+                        }
                     }
                 }
                 else

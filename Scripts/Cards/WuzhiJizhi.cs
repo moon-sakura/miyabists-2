@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class WuzhiJizhi : MiyabiAttackCardBase
     {
-        public override string PortraitPath => $"res://images/cards/commonCard.png";
+        //protected override string ArtPath => $"res://images/cards/commonCard.png";
 
         public WuzhiJizhi() : base(0, CardRarity.Token, TargetType.AnyEnemy, true) { }
 
