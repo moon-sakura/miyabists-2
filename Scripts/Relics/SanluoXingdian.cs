@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Relics
     [Pool(typeof(MiyabiRelicPool))]
     internal class SanluoXingdianRelic : CustomRelicModel
     {
-        public override RelicRarity Rarity => RelicRarity.Rare;
+        public override RelicRarity Rarity => RelicRarity.Event;
         public override string PackedIconPath => "res://images/relics/sanluoXingdian.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
