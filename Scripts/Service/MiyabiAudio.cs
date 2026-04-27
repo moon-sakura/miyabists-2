@@ -10,7 +10,7 @@ namespace MiyabiMod.Scripts.Services
     public static class MiyabiAudioService
     {
         // 🛠️ 【修改这里】指向你的音频文件夹路径
-        private const string ModAudioRootPath = "res://MiyabiMod/assets/audio";
+        private const string ModAudioRootPath = "res://scenes/audio/";
 
         // 缓存：防止重复从硬盘读取文件
         private static readonly Dictionary<string, AudioStream> StreamCache = new Dictionary<string, AudioStream>(StringComparer.OrdinalIgnoreCase);
@@ -136,13 +136,8 @@ namespace MiyabiMod.Scripts.Services
 
         private static void IndexDirectory(string path)
         {
-            // ✨ 修正：Godot 4 的 DirAccess
             using var dir = DirAccess.Open(path);
-            if (dir == null)
-            {
-                GD.PrintErr($"[MiyabiAudio] 找不到音频目录: {path}");
-                return;
-            }
+            if (dir == null) return;
 
             dir.ListDirBegin();
             string fileName = dir.GetNext();
@@ -151,27 +146,89 @@ namespace MiyabiMod.Scripts.Services
                 if (dir.CurrentIsDir())
                 {
                     if (fileName != "." && fileName != "..")
-                    {
-                        IndexDirectory($"{path}/{fileName}"); // 递归搜索子文件夹
-                    }
+                        IndexDirectory($"{path}/{fileName}");
                 }
                 else
                 {
-                    // 判断后缀，目前 Godot 处理短音效建议用 .wav，长音效可以用 .ogg
-                    string ext = Path.GetExtension(fileName).ToLowerInvariant();
-                    if (ext == ".wav" || ext == ".ogg" || ext == ".mp3")
+                    // 💡 关键修改：检查是否是 .import 文件，或者是原始音频格式
+                    string lowerName = fileName.ToLowerInvariant();
+                    if (lowerName.EndsWith(".mp3.import") || lowerName.EndsWith(".wav.import") || lowerName.EndsWith(".ogg.import") ||
+                        lowerName.EndsWith(".mp3") || lowerName.EndsWith(".wav") || lowerName.EndsWith(".ogg"))
                     {
-                        string key = NormalizeKey(fileName);
-                        string fullPath = $"{path}/{fileName}";
+                        // 还原出原始文件名（去掉 .import）
+                        string realFileName = fileName.EndsWith(".import") ? fileName.Replace(".import", "") : fileName;
+
+                        string key = NormalizeKey(realFileName);
+                        string fullPath = $"{path}/{realFileName}"; // 映射到原始资源的 res:// 路径
+
                         if (!AudioPathToIndex.ContainsKey(key))
                         {
                             AudioPathToIndex[key] = fullPath;
+                            GD.Print($"[MiyabiAudio] 成功索引资源: {key} -> {fullPath}");
                         }
                     }
                 }
                 fileName = dir.GetNext();
             }
         }
+
+        private static readonly List<AudioStreamPlayer> ActivePlayers = new List<AudioStreamPlayer>();
+        public static void StopAll()
+        {
+            lock (ActivePlayers)
+            {
+                foreach (var player in ActivePlayers)
+                {
+                    if (GodotObject.IsInstanceValid(player))
+                    {
+                        player.Stop();
+                        player.QueueFree();
+                    }
+                }
+                ActivePlayers.Clear();
+            }
+            GD.Print("[MiyabiAudio] 所有正在播放的语音已停止并清理。");
+        }
+
+        //private static void IndexDirectory(string path)
+        //{
+        //    // ✨ 修正：Godot 4 的 DirAccess
+        //    using var dir = DirAccess.Open(path);
+        //    if (dir == null)
+        //    {
+        //        GD.PrintErr($"[MiyabiAudio] 找不到音频目录: {path}");
+        //        return;
+        //    }
+
+        //    dir.ListDirBegin();
+        //    string fileName = dir.GetNext();
+        //    while (fileName != "")
+        //    {
+        //        GD.PrintErr($"[MiyabiAudio] 当前文件: {fileName}");
+        //        if (dir.CurrentIsDir())
+        //        {
+        //            if (fileName != "." && fileName != "..")
+        //            {
+        //                IndexDirectory($"{path}/{fileName}"); // 递归搜索子文件夹
+        //            }
+        //        }
+        //        else
+        //        {
+        //            // 判断后缀，目前 Godot 处理短音效建议用 .wav，长音效可以用 .ogg
+        //            string ext = Path.GetExtension(fileName).ToLowerInvariant();
+        //            if (ext == ".wav" || ext == ".ogg" || ext == ".mp3")
+        //            {
+        //                string key = NormalizeKey(fileName);
+        //                string fullPath = $"{path}/{fileName}";
+        //                if (!AudioPathToIndex.ContainsKey(key))
+        //                {
+        //                    AudioPathToIndex[key] = fullPath;
+        //                }
+        //            }
+        //        }
+        //        fileName = dir.GetNext();
+        //    }
+        //}
 
         private static float LinearToDb(float linearVolume)
         {

@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
+using Godot;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
@@ -18,6 +19,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using MiyabiMod.Scripts.Services;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
@@ -49,9 +51,21 @@ namespace Miyabists2.Scripts.Relics
             }
         }
 
-        public override async Task AfterRoomEntered(AbstractRoom room)
+        private static readonly string[] MiyabiHurtedVoices = { "hurted_1", "hurted_2"};
+
+        public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            MiyabiCombatService.ResetAnoT();
+            if(target != base.Owner.Creature || result.WasFullyBlocked) { return; }
+
+            // 随机选一句
+            int idx = (int)(GD.Randi() % MiyabiHurtedVoices.Length);
+
+            // 它会自动处理加载、播放、音量转换和自动销毁
+            MiyabiAudioService.Play(MiyabiHurtedVoices[idx]);
+
+            GD.Print("[MiyabiMod] 播放受伤语音: " + MiyabiHurtedVoices[idx]);
         }
+
+
     }
 }

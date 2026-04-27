@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.Saves;
 using MegaCrit.Sts2.Core.Settings;
 using MegaCrit.Sts2.Core.ValueProps;
+using MiyabiMod.Scripts.Services;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
@@ -59,6 +60,8 @@ namespace Miyabists2.Scripts.Cards
         {
             //ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 
+            MiyabiAudioService.Play("yicidaoWeishi");
+
             int amount = CombatManager.Instance.History.CardPlaysFinished
                 .Count((CardPlayFinishedEntry e)
                 => e.CardPlay.Card.Type == CardType.Attack
@@ -93,5 +96,6 @@ namespace Miyabists2.Scripts.Cards
             DynamicVars.Damage.UpgradeValueBy(2);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
         }
+
     }
 }

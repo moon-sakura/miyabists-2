@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using MiyabiMod.Scripts.Services;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            MiyabiAudioService.Play("Ejizhan");
             await base.OnPlay(choiceContext, cardPlay);
             await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 3, base.Owner.Creature, this);
         }
