@@ -36,6 +36,12 @@ namespace Miyabists2.Scripts.Service
             await PowerCmd.ModifyAmount(context, power, powerAmount - currentAmount, applier, cardSource);
         }
 
+        public static int RadomInt(int Min , int exMax, Player player)
+        {
+            int result = player.RunState.Rng.Shuffle.NextInt(Min, exMax);
+            return result;
+        }
+
         //通用PlayerChoiceContext
         //public static PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner, Owner.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
     }

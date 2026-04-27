@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-		<Sts2Dir>D:\Games\Steam\steamapps\common\Slay the Spire 2</Sts2Dir>
+		<Sts2Dir>C:\SteamLibrary\steamapps\common\Slay the Spire 2</Sts2Dir>
 		<Sts2DataDir>$(Sts2Dir)\data_sts2_windows_x86_64</Sts2DataDir>
 	</PropertyGroup>
 	<ItemGroup>

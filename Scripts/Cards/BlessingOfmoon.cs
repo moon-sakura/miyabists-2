@@ -1,10 +1,14 @@
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using MiyabiMod.Scripts.Services;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
@@ -35,15 +39,24 @@ namespace Miyabists2.Scripts.Cards
             HoverTipFactory.FromPower<DisorderPower>(),
         ];
 
+        private static readonly string[] MiyabiBlessingMoonVoices = { "card_BlessingMoon_1", "card_BlessingMoon_2", "card_BlessingMoon_3" };
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (base.DynamicVars.TryGetValue("Bless", out DynamicVar b))
                 await PowerCmd.Apply<BlessingMoonPower>(choiceContext, base.Owner.Creature, b.BaseValue, Owner.Creature, this);
+
+            // 随机选一句
+            int idx = (int)(GD.Randi() % MiyabiBlessingMoonVoices.Length);
+
+            // 它会自动处理加载、播放、音量转换和自动销毁
+            MiyabiAudioService.Play(MiyabiBlessingMoonVoices[idx],1.2f);
         }
 
         protected override void OnUpgrade()
         {
             if (base.DynamicVars.TryGetValue("Bless", out DynamicVar b)) b.UpgradeValueBy(15);
         }
+
     }
 }

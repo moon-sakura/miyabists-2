@@ -42,6 +42,8 @@ namespace MiyabiMod.Scripts.Services
 
             Initialize(); // 确保已初始化
 
+            StopAll();
+
             string normalizedKey = NormalizeKey(key);
 
             // 1. 查找路径

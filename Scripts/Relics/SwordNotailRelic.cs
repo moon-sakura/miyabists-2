@@ -1,5 +1,7 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
+using Godot;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
@@ -17,6 +19,8 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Relics;
+using MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -24,6 +28,7 @@ using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
 using System.Diagnostics.Metrics;
+using static Godot.OpenXRInterface;
 
 namespace Miyabists2.Scripts.Relics
 {
@@ -114,7 +119,53 @@ namespace Miyabists2.Scripts.Relics
             }
         }
 
+        //[HarmonyPatch(typeof(NRelic), "_GuiInput")]
+        //public static async Task Postfix(NRelic __instance, InputEvent @event)
+        //{
+        //    // 判断是否是鼠标右键按下
+        //    if (@event is InputEventMouseButton mouseEvent &&
+        //        mouseEvent.ButtonIndex == MouseButton.Right &&
+        //        mouseEvent.Pressed)
+        //    {
+        //        var relicModel = __instance.Model;
 
+        //        // 检查是不是你的特定遗物（比如星见雅的初始遗物）
+        //        if (relicModel is SwordNotailRelic)
+        //        {
+        //            GD.Print("[MiyabiMod] 右键点击了遗物，准备执行终结技逻辑...");
+        //            var battle = __instance.GetTree().Root.GetNodeOrNull<NBattleScreen>("NBattleScreen");
+
+        //            if (battle != null)
+        //            {
+        //                // 获取终结技卡牌模型
+        //                CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+
+        //                // 核心修改：不要直接 await，而是丢进队列
+        //                // STS2 的 MakeTempCardInHandAction 会自动处理 Task 逻辑
+        //                battle.BattleModel.ActionQueue.Enqueue(new MakeTempCardInHandAction(card, 1));
+
+        //                GD.Print("[MiyabiMod] 终结技已加入动作队列");
+        //            }
+        //        }
+        //    }
+        //}
+
+        //private async Task TriggerMiyabiUltimate()
+        //{
+        //    // 这里执行添加卡牌的逻辑
+        //    if (Counter >= Threshold && !hasEnd)
+        //    {
+        //        Counter -= Threshold; // 重置计数器
+        //        if (Counter > Max - Threshold)
+        //            Counter = Max - Threshold;
+
+        //        // 3. 触发效果：闪烁并加入一张卡
+        //        Flash();
+
+        //        CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+        //        await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+        //    }
+        //}
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
@@ -124,8 +175,6 @@ namespace Miyabists2.Scripts.Relics
                 Flash();
                 await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 4, null, null);
             }
-            // 此时，syncRnd.Next 在所有客户端产生的结果将完全一致
-            int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, 4); ;
         }
 
         //public override Task AfterCombatEnd(CombatRoom _)

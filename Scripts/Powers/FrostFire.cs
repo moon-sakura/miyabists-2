@@ -48,6 +48,9 @@ namespace Miyabists2.Scripts.Powers
             bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
             if (!isValidMove) return 1m;
 
+            if (cardSource == null)
+                return 1m;
+
             if(!cardSource.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang))
                 return 1m;
 
