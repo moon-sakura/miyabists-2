@@ -16,6 +16,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -42,6 +43,7 @@ namespace Miyabists2.Scripts.Relics
         ];
 
         public int Threshold {get;set;} = 30; // 触发阈值
+        public int Max {get; set; } = 30;
 
         private int _counter;
 
@@ -69,23 +71,39 @@ namespace Miyabists2.Scripts.Relics
         public void AddCounter(int amount)
         {
             // 这里在类内部，可以访问 private set
-            this.Counter += amount;
+            int counter = 0;
+            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
+            // 1. 检查是否是特定的卡（或者任意卡，根据你的需求）
+            // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"
+            if (hasEnd) counter += Threshold;
+
+            if (counter < Max)
+                this.Counter += amount;
             //this.Flash(); // 让遗物闪烁一下，视觉效果更好
         }
+
+        public void SetMax(int amount) => Max = amount;
+        public void ResetMax() => Max = Threshold;
 
         // 每次打出卡牌后检查
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
+            int counter = 0;
+            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
             // 1. 检查是否是特定的卡（或者任意卡，根据你的需求）
             // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"
-            if (cardPlay.Card.Owner == base.Owner && !base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue))
+            if (hasEnd) counter += Threshold;
+
+            if (cardPlay.Card.Owner == base.Owner && counter < Max)
             {
                 Counter++;
 
                 // 2. 检查是否达到 30 次
-                if (Counter >= Threshold)
+                if (Counter >= Threshold && !hasEnd)
                 {
-                    Counter = 0; // 重置计数器
+                    Counter -= Threshold; // 重置计数器
+                    if(Counter > Max - Threshold)
+                        Counter = Max - Threshold;
 
                     // 3. 触发效果：闪烁并加入一张卡
                     Flash();
