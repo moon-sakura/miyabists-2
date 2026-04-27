@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class Yuanqi100 : MiyabiPartnerCardBase
     {
-        //protected override string ArtPath => $"res://images/cards/baojunMengji.png";
+        protected override string ArtPath => $"res://images/cards/yuanqi100.png";
 
         public Yuanqi100() : base(1, CardRarity.Rare, TargetType.AnyEnemy) { }
 

@@ -16,6 +16,8 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ZuihuaYueyunzhuan : MiyabiPartnerCardBase
     {
+        protected override string ArtPath => $"res://images/cards/zuihuaYueyunzhuan.png";
+
         public ZuihuaYueyunzhuan() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

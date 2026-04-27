@@ -17,6 +17,8 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ZhanjinZuie : MiyabiCardBase
     {
+        protected override string ArtPath => $"res://images/cards/zhanjinZuie.png";
+
         public ZhanjinZuie() : base(0, CardType.Power, CardRarity.Token, TargetType.AnyEnemy, true) { }
 
         public override int MaxUpgradeLevel => 0;

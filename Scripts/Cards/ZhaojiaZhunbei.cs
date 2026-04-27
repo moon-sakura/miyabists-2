@@ -16,6 +16,8 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class ZhaojiaZhunbei : MiyabiBlockCardBase
     {
+        protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
+
         public ZhaojiaZhunbei() : base(1, CardRarity.Common, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

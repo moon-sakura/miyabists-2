@@ -113,7 +113,7 @@ public class Miyabi : PlaceholderCharacterModel
     // 角色选择音效
     // public override string CharacterSelectSfx => null;
     // 过渡音效。这个不能删。
-    public override string CharacterTransitionSfx => "event:/sfx/ui/wipe_ironclad";
+    public override string CharacterTransitionSfx => "res://scenes/audio/select_ZhunbeiBadao.mp3";
 
     // 攻击建筑师的攻击特效列表
     public override List<string> GetArchitectAttackVfx() => [
