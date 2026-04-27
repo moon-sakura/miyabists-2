@@ -21,5 +21,9 @@
 
 	"MIYABISTS2-SECTION_SIX_RELIC.title": "六课徽章",
   	"MIYABISTS2-SECTION_SIX_RELIC.description": "战斗开始时获得[blue]6[/blue]点[gold]支援点数[/gold]",
-  	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "很好很好的课"
+  	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "很好很好的课",
+
+	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "超越绝境之志",
+  	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "血量高于[blue]80%[/blue]时，伤害降低[red]50%[/red]；血量低于[blue]50%[/blue]时，伤害增加[blue]20%[/blue]；血量低于[blue]20%[/blue]时，伤害增加[blue]50%[/blue]",
+  	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "在绝境中绽放的意志"
 }

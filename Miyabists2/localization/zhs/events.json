@@ -1,14 +1,13 @@
 {
     "MIYABISTS2-GET_SLXD_EVENT.title" : "妖刀的试炼",
-
-    "MIYABISTS2-GET_SLXD_EVENT.pages.INITIAL.description" : "你似乎来到了一场梦境。",
+    "MIYABISTS2-GET_SLXD_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]你似乎来到了一场梦境。[/outline_color][/outline_size]",
 
     "MIYABISTS2-GET_SLXD_EVENT.pages.INITIAL.options.DEEP_IN_HEART.title": "接受试炼",
     "MIYABISTS2-GET_SLXD_EVENT.pages.INITIAL.options.DEEP_IN_HEART.description": "受到[red]{Damage}[/red]点伤害。",
     "MIYABISTS2-GET_SLXD_EVENT.pages.INITIAL.options.LEAVE.title": "离开",
     "MIYABISTS2-GET_SLXD_EVENT.pages.INITIAL.options.LEAVE.description": "妖刀无权为我授勋。",
 
-    "MIYABISTS2-GET_SLXD_EVENT.pages.DEEP_PAGE.description" : "还要继续坚持吗？",
+    "MIYABISTS2-GET_SLXD_EVENT.pages.DEEP_PAGE.description" : "[outline_size=10][outline_color=black]还要继续坚持吗？[/outline_color][/outline_size]",
 
     "MIYABISTS2-GET_SLXD_EVENT.pages.DEEP_PAGE.options.CONTINUE_DEEP.title": "继续",
     "MIYABISTS2-GET_SLXD_EVENT.pages.DEEP_PAGE.options.CONTINUE_DEEP.description": "受到[red]{Damage}[/red]点伤害。",
@@ -16,16 +15,29 @@
     "MIYABISTS2-GET_SLXD_EVENT.pages.DEEP_PAGE.options.CANNOT_BARE.description": "及时放弃未尝不是一种选择，从5张随机卡牌中获取一张。",
 
 
-    "MIYABISTS2-GET_SLXD_EVENT.pages.CORE_PAGE.description" : "你已经来到试炼的最后阶段了。",
+    "MIYABISTS2-GET_SLXD_EVENT.pages.CORE_PAGE.description" : "[outline_size=10][outline_color=black]你已经来到试炼的最后阶段了。[/outline_color][/outline_size]",
 
     "MIYABISTS2-GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.title": "完成试炼",
     "MIYABISTS2-GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.description": "受到[red]{Damage}[/red]点伤害，获取{Relic}。",
     "MIYABISTS2-GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.title": "放弃",
     "MIYABISTS2-GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.description": "也许不应该继续，从3张随机稀有卡牌中获取一张。",
 
-    "MIYABISTS2-GET_SLXD_EVENT.pages.LEAVE.description" : "这是一个明智的选择。",
-    "MIYABISTS2-GET_SLXD_EVENT.pages.CANNOT_BARE_LEAVE.description" : "这是一个明智的选择。",
-    "MIYABISTS2-GET_SLXD_EVENT.pages.GET_SLXD.description" : "你已经通过试炼了，我们还会再见的。",
-    "MIYABISTS2-GET_SLXD_EVENT.pages.GIVE_UP_LEAVE.description" : "这是一个明智的选择。"
+    "MIYABISTS2-GET_SLXD_EVENT.pages.LEAVE.description" : "[outline_size=10][outline_color=black]这是一个明智的选择。[/outline_color][/outline_size]",
+    "MIYABISTS2-GET_SLXD_EVENT.pages.CANNOT_BARE_LEAVE.description" : "[outline_size=10][outline_color=black]这是一个明智的选择。[/outline_color][/outline_size]",
+    "MIYABISTS2-GET_SLXD_EVENT.pages.GET_SLXD.description" : "[outline_size=10][outline_color=black]你已经通过试炼了，我们还会再见的。[/outline_color][/outline_size]",
+    "MIYABISTS2-GET_SLXD_EVENT.pages.GIVE_UP_LEAVE.description" : "[outline_size=10][outline_color=black]这是一个明智的选择。[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.title" : "谁是最强击破手？",
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]几位击破手正在讨论谁是最强击破手。\\n“嗯？南宫羽”\\n“要视具体情况而定，不过应该是南宫羽吧”\\n“应该是南宫羽吧，如果把琉音也计算在内的话，恐怕结果就不一样了”\\n“除了我和琉音……”\\n“是我！”，橘福福突然加入讨论并如此宣言。\\n“小师妹，你觉得呢？”[/outline_color][/outline_size]",
+
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.title": "当然是橘福福！",
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.description": "大师姐会给你奖励的。",
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.title": "也许另有其人",
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.description": "真的不是大师姐吗？",
+
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.pages.JUFUFU.description" : "[outline_size=10][outline_color=black]小师妹如此看好我，我一定要给你露两手！[/outline_color][/outline_size]",
+    "MIYABISTS2-ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]你让大师姐伤心了！[/outline_color][/outline_size]"
 
 }

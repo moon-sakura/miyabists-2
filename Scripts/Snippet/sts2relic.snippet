@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>StS2 Relic Template</Title>
+      <Shortcut>sts2relic</Shortcut>
+      <Description>生成杀戮尖塔2自定义遗物基础模板</Description>
+      <Author>Gemini</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ClassName</ID>
+          <ToolTip>类名</ToolTip>
+          <Default>MyNewRelic</Default>
+        </Literal>
+        <Literal>
+          <ID>Rarity</ID>
+          <ToolTip>稀有度</ToolTip>
+          <Default>Common</Default>
+        </Literal>
+        <Literal>
+          <ID>IconName</ID>
+          <ToolTip>图标文件名</ToolTip>
+          <Default>commonRelics</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Saves.Runs;
+using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts.Char;
+using Miyabists2.Scripts.Powers;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Miyabists2.Scripts.Relics
+{
+    [Pool(typeof(MiyabiRelicPool))]
+    internal class $ClassName$Relic : CustomRelicModel
+    {
+        public override RelicRarity Rarity => RelicRarity.$Rarity$;
+        public override string PackedIconPath => "res://images/relics/$IconName$.png";
+        protected override string PackedIconOutlinePath => PackedIconPath;
+        protected override string BigIconPath => PackedIconPath;
+
+        // --- 计数器逻辑 (如不需要可删除) ---
+        private int _counter;
+        public override bool ShowCounter => true;
+        public override int DisplayAmount => Counter;
+
+        [SavedProperty]
+        public int Counter
+        {
+            get => _counter;
+            private set
+            {
+                AssertMutable();
+                _counter = value;
+                InvokeDisplayAmountChanged();
+            }
+        }
+        // ------------------------------
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+            // HoverTipFactory.FromCard<MyCard>(),
+        ];
+
+        public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        {
+            if (player != base.Owner || base.Owner.Creature.CombatState.RoundNumber != 1) return;
+            
+            Flash();
+            $end$
+        }
+    }
+}
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
