@@ -246,5 +246,14 @@
     "MIYABISTS2-TEST_CARD_ANO.description": "[gold]属性积蓄[/gold][blue]3[/blue]",
 
 	"MIYABISTS2-TEST_CARD_FROST.title": "烈霜测试卡",
-    "MIYABISTS2-TEST_CARD_FROST.description": "[aqua]烈霜积蓄[/aqua][blue]50[/blue]"
+    "MIYABISTS2-TEST_CARD_FROST.description": "[aqua]烈霜积蓄[/aqua][blue]50[/blue]",
+
+	"MIYABISTS2-EARS_ALL.title": "All Ears",
+    "MIYABISTS2-EARS_ALL.description": "将手卡中的所有[gold]攻击卡[/gold]变为[gold]左耳高伤害[/gold]，所有[gold]技能卡[/gold]变为[gold]右耳伤害高[/gold]",
+
+	"MIYABISTS2-EARS_LEFT.title": "左耳高伤害",
+    "MIYABISTS2-EARS_LEFT.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n抽{Cards:diff()}张卡",
+
+	"MIYABISTS2-EARS_RIGHT.title": "右耳伤害高",
+    "MIYABISTS2-EARS_RIGHT.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n获得{Block:diff()}点格挡\\n[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}"
 }
