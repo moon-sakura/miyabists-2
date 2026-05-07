@@ -31,7 +31,7 @@ namespace Miyabists2.Scripts.Potions
 
         // 药水图片。不一定svg，只要最终能变成Texture的格式就行。
         public override string? CustomPackedImagePath => "res://images/potions/commonPotions.png";
-        public override string? CustomPackedOutlinePath => "res://images/potions/commonPotions.png";
+        public override string? CustomPackedOutlinePath => CustomPackedImagePath;
 
     }
 }
