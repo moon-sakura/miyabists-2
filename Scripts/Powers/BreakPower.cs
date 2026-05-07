@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner.Player, Owner.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
+            PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(applier.Player, applier.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
 
             await CreatureCmd.Stun(base.Owner);
                 //添加一回合失衡易伤50%
