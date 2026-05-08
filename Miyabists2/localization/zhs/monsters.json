@@ -4,5 +4,6 @@
     "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.BASIC_ATTACK.banter": "[jitter]接下这招！[/jitter]",
     "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.HEAVY_ATTACK.title": "恶，即斩",
     "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.MULTIHIT_ATTACK.title": "名残雪",
-    "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.title": "强化"
+    "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.title": "强化",
+    "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.banter": "[jitter]……[/jitter]"
 }
