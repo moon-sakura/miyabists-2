@@ -48,7 +48,7 @@ namespace Miyabists2.Scripts.Cards
         {
             await base.OnPlay(choiceContext, cardPlay);
             await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 2, base.Owner.Creature, this);
-            await PowerCmd.Apply<FrailPower>(choiceContext, base.Owner.Creature, 99, base.Owner.Creature, this);
+            //await PowerCmd.Apply<FrailPower>(choiceContext, base.Owner.Creature, 99, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

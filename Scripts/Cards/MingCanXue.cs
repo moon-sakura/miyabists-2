@@ -14,7 +14,7 @@ using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.Saves;
 using MegaCrit.Sts2.Core.Settings;
 using MegaCrit.Sts2.Core.ValueProps;
-using MiyabiMod.Scripts.Services;
+using Miyabists2.Scripts.Service;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;

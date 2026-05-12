@@ -31,7 +31,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override PowerType Type => PowerType.Buff;
 
-        public override bool IsInstanced => true;
+        //public override bool  IsInstanced => true;
 
         public override PowerStackType StackType => PowerStackType.Counter;
 

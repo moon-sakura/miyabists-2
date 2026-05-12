@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts.Relics
     internal class NoTailFullRelic : CustomRelicModel
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
-        public override string PackedIconPath => "res://images/relics/commonRelics.png";
+        public override string PackedIconPath => "res://images/relics/notailFull33.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 

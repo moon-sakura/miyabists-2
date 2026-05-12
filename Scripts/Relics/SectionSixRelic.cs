@@ -19,7 +19,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
-using MiyabiMod.Scripts.Services;
+using Miyabists2.Scripts.Service;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
@@ -55,7 +55,7 @@ namespace Miyabists2.Scripts.Relics
 
         public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            if(target != base.Owner.Creature || result.WasFullyBlocked) { return; }
+            if(target != base.Owner.Creature || result.WasFullyBlocked || result.UnblockedDamage <= 1) { return; }
 
             // 随机选一句
             int idx = (int)(GD.Randi() % MiyabiHurtedVoices.Length);

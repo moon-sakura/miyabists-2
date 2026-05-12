@@ -23,6 +23,8 @@ public class Miyabi : PlaceholderCharacterModel
 
     public override Color MapDrawingColor => Color;
 
+    public override string PlaceholderID => "defect";
+
 
     //public override Color NameColor => Color;
     public override Color NameColor => StsColors.blue;

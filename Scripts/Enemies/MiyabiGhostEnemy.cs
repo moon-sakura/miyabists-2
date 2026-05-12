@@ -29,8 +29,8 @@ namespace Miyabists2.Scripts.Enemies
         public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 170, 150);
 
         // 意图1的数值，伤害和格挡，根据进阶提高伤害
-        private int BasicDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 8, 5);
-        private int BasicBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 4);
+        private int BasicDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 10, 8);
+        private int BasicBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 15, 10);
 
         // 意图2的数值，重击伤害，根据进阶提高伤害
         private int HeavyDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 30, 25);
@@ -49,7 +49,7 @@ namespace Miyabists2.Scripts.Enemies
         // 战斗开始时，在这里给自己上buff之类
         public override async Task AfterAddedToRoom()
         {
-            
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 6m*CombatState.Players.Count, base.Creature, null);
         }
 
         protected override MonsterMoveStateMachine GenerateMoveStateMachine()
@@ -136,7 +136,7 @@ namespace Miyabists2.Scripts.Enemies
         {
             TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 2m, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 2m * CombatState.Players.Count, base.Creature, null);
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 3m, base.Creature, null);
         }
     }

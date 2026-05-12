@@ -2,7 +2,7 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect;
-using MiyabiMod.Scripts.Services;
+using Miyabists2.Scripts.Service;
 using Miyabists2.Scripts.Char;
 
 

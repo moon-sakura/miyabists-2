@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.IO;
 
 // 请把这个命名空间改为你自己的 Mod 命名空间
-namespace MiyabiMod.Scripts.Services
+namespace Miyabists2.Scripts.Service
 {
     public static class MiyabiAudioService
     {

@@ -5,5 +5,20 @@
     "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.HEAVY_ATTACK.title": "恶，即斩",
     "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.MULTIHIT_ATTACK.title": "名残雪",
     "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.title": "强化",
-    "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.banter": "[jitter]……[/jitter]"
+    "MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.banter": "[jitter]……[/jitter]",
+
+    "MIYABISTS2-YIXUAN_ENEMY.name": "仪玄",
+    "MIYABISTS2-YIXUAN_ENEMY.moves.START_MOVE.title": "起势",
+    "MIYABISTS2-YIXUAN_ENEMY.moves.ATTACK_AND_DEFENCE.title": "攻守兼备",
+    "MIYABISTS2-YIXUAN_ENEMY.moves.HEAVY_ATTACK.title": "玄天剑舞",
+    "MIYABISTS2-YIXUAN_ENEMY.moves.POWER_UP.title": "蓄势",
+    "MIYABISTS2-YIXUAN_ENEMY.moves.DEBUFF_ADD.title": "玄冥诀",
+    "MIYABISTS2-YIXUAN_ENEMY.moves.UNCLEAR_MOVE.title": "不明",
+
+    "MIYABISTS2-MIYABI_BOSS.name": "星见雅",
+    "MIYABISTS2-MIYABI_BOSS.moves.BASIC_MOVE.title": "轻击",
+    "MIYABISTS2-MIYABI_BOSS.moves.EJIZHAN.title": "恶，即斩",
+    "MIYABISTS2-MIYABI_BOSS.moves.MINGCANXUE.title": "名残雪",
+    "MIYABISTS2-MIYABI_BOSS.moves.POWER_UP.title": "增强",
+    "MIYABISTS2-MIYABI_BOSS.moves.DASH_ATTACK.title": "闪避反击"
 }

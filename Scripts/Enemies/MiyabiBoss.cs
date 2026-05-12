@@ -1,15 +1,21 @@
 using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.MonsterMoves;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +33,8 @@ namespace Miyabists2.Scripts.Enemies
         public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 170, 170);
 
         // 轻击伤害
-        private int BasicDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 8, 5);
-        private int BasicBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 12, 8);
+        private int BasicDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 15, 12);
+        private int BasicBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 20, 15);
 
         // 重击伤害
         private int HeavyDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 42, 30);
@@ -47,8 +53,11 @@ namespace Miyabists2.Scripts.Enemies
         // 战斗开始时，在这里给自己上buff之类
         public override async Task AfterAddedToRoom()
         {
-
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 10m * CombatState.Players.Count, base.Creature, null);
         }
+
+        private bool HeavyAttackUsed = false;
+        private bool MultiHitUsed = false;
 
         protected override MonsterMoveStateMachine GenerateMoveStateMachine()
         {
@@ -58,7 +67,7 @@ namespace Miyabists2.Scripts.Enemies
             var basicAttack = new MoveState(
                 "BASIC_MOVE", // 状态ID
                 BasicMove, // 执行函数，或者直接用lambda也可
-                                 // 以下是可变参数，可以填写任意数量的意图，全部展示
+                           // 以下是可变参数，可以填写任意数量的意图，全部展示
                 new SingleAttackIntent(BasicDamage),
                 new DefendIntent()
             );
@@ -79,29 +88,156 @@ namespace Miyabists2.Scripts.Enemies
             var powerUp = new MoveState(
                 "POWER_UP",
                 PowerUp,
+                new BuffIntent(),
+                new DefendIntent()
+            );
+
+            var dashAttack = new MoveState(
+                "DASH_ATTACK",
+                DashAttackF,
+                new SingleAttackIntent(BasicDamage),
                 new BuffIntent()
             );
 
-            RandomBranchState randomBranchState = new RandomBranchState("RAND");
+
+
+            RandomBranchState randomBranchState = new RandomBranchState("ATK");
             randomBranchState.AddBranch(multiHitAttack, MoveRepeatType.CannotRepeat);
             randomBranchState.AddBranch(heavyAttack, MoveRepeatType.CannotRepeat);
 
-            // 或者你也可以创建RandomBranchState（随机意图分支）和ConditionalBranchState（条件意图分支）来实现更复杂的状态转换逻辑
+            RandomBranchState randomBranchState2 = new RandomBranchState("SLIP");
+            randomBranchState2.AddBranch(powerUp, MoveRepeatType.CannotRepeat);
+            randomBranchState2.AddBranch(dashAttack, MoveRepeatType.CannotRepeat);
+
+            ConditionalBranchState conditionalBranchState = new ConditionalBranchState("COND");
+
+            conditionalBranchState.AddState(heavyAttack,
+                () =>
+                {
+                    foreach(Player player in base.Creature.CombatState.Players)
+                    {
+                        if ((player.Creature.HasPower<BreakPlayerPower>() && player.Creature.HasPower<SlipperyPower>())
+                        || (player.PlayerCombatState.DrawPile.Cards.CountBy(c => !c.GainsBlock).Count() < 3
+                        && !(player.Creature.HasPower<SlipperyPower>() || player.Creature.HasPower<IntangiblePower>()))
+                        )
+                        {
+                            if (!HeavyAttackUsed)
+                            {
+                                HeavyAttackUsed = true;
+                                MultiHitUsed = false;
+                                return true;
+                            }
+                        }
+                    }
+                    return false;
+                });
+
+            conditionalBranchState.AddState(multiHitAttack,
+                () =>
+                {
+                    foreach (Player player in Creature.CombatState.Players)
+                    {
+                        if (player.Creature.HasPower<BreakPlayerPower>()
+                        || (player.PlayerCombatState.DrawPile.Cards.CountBy(c => !c.GainsBlock).Count() < 3
+                        && !(player.Creature.HasPower<IntangiblePower>()))
+                        )
+                        {
+                            if (!MultiHitUsed)
+                            {
+                                MultiHitUsed = true;
+                                HeavyAttackUsed = false;
+                                return true;
+                            }
+                        }
+                    }
+                    return false;
+                });
+
+            conditionalBranchState.AddState(randomBranchState2,
+                () =>
+                {
+                    foreach (Player player in Creature.CombatState.Players)
+                    {
+                        if (!player.Creature.CombatState.Enemies.FirstOrDefault().HasPower<SlipperyPower>())
+                        {
+                            MultiHitUsed = false;
+                            HeavyAttackUsed = false;
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+
+            conditionalBranchState.AddState(powerUp, () => 
+            {
+                MultiHitUsed = false;
+                HeavyAttackUsed = false;
+                return true;
+            });
 
             // 设置状态转换，意图1后接意图2，意图2后接意图1
             basicAttack.FollowUpState = randomBranchState;
-            multiHitAttack.FollowUpState = powerUp;
-            heavyAttack.FollowUpState = powerUp;
-            powerUp.FollowUpState = basicAttack;
+            multiHitAttack.FollowUpState = conditionalBranchState;
+            heavyAttack.FollowUpState = conditionalBranchState;
+            powerUp.FollowUpState = randomBranchState;
+            dashAttack.FollowUpState = randomBranchState;
 
             list.Add(basicAttack);
             list.Add(multiHitAttack);
             list.Add(heavyAttack);
             list.Add(powerUp);
             list.Add(randomBranchState);
+            list.Add(dashAttack);
+            list.Add(conditionalBranchState);
+            list.Add(randomBranchState2);
 
             // 添加2个意图，并且初始意图设成 basicAttack
             return new MonsterMoveStateMachine(list, basicAttack);
+        }
+
+        public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
+        {
+            if (dealer == base.Creature && target.IsPlayer && target.IsAlive)
+            {
+                await MiyabiCombatService.DazeAddtoPlayer(choiceContext, target, result.UnblockedDamage * 5);
+
+                ///
+                ///
+                ///
+
+                MiyabiCombatService.SetFrostTriggerMultiply(base.Creature);
+                int trigger = 50;
+
+                int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
+
+                // 确保是本卡造成的实际伤害，且目标存活
+                if (result.TotalDamage > 0 && chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
+                {
+                    await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, result.TotalDamage, base.Creature, null);
+                }
+                //烈霜积蓄值积攒逻辑
+                if (chkFB >= trigger + 1)
+                {
+                    //await MiyabiCombatService.FrostApply(target,base.Owner.Creature,choiceContext);
+                    //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
+                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
+                    //await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, base.Creature, null);
+                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, 10m, ValueProp.Unpowered, (Creature)null);
+
+                    //int fireAmount = target.GetPowerAmount<FrostFirePower>();
+                    //await CreatureCmd.Damage(null, target, 10m, ValueProp.Unpowered, dealer);
+
+
+                    if (target.HasPower<AttributeAnomalyPower>())
+                    {
+                        await MiyabiCombatService.DisorderApply(target, base.Creature, choiceContext);
+                    }
+                    else
+                    {
+                        await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, base.Creature, null);
+                    }
+                }
+            }
         }
 
         // 意图1执行实际效果
@@ -121,13 +257,20 @@ namespace Miyabists2.Scripts.Enemies
 
         private async Task PowerUp(IReadOnlyList<Creature> targets)
         {
-            TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-MIYABI_BOSS.moves.POWER_UP.banter"), Creature, VfxColor.Blue);
+            //TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-MIYABI_BOSS.moves.POWER_UP.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 2m, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 4m * targets.Count, base.Creature, null);
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 3m, base.Creature, null);
+
+            foreach (var target in targets) 
+            { 
+                await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), target, 3m, base.Creature, null);
+                await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), target, 3m, base.Creature, null);
+            }
+
         }
 
-        private async Task EJiZhan(IReadOnlyList<Creature> targets) 
+        private async Task EJiZhan(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
                     .Attack(HeavyDamage)
@@ -148,5 +291,16 @@ namespace Miyabists2.Scripts.Enemies
                     .Execute(null);
         }
 
+        private async Task DashAttackF(IReadOnlyList<Creature> targets)
+        {
+            await DamageCmd
+                    .Attack(BasicDamage)
+                    .FromMonster(this)
+                    .WithAttackerFx(null, AttackSfx)
+                    .WithHitFx("vfx/vfx_giant_horizontal_slash")
+                    .Execute(null);
+
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 4m * targets.Count, base.Creature, null);
+        }
     }
 }

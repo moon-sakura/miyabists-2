@@ -34,13 +34,15 @@ namespace Miyabists2.Scripts.Powers
             //await CreatureCmd.Damage((PlayerChoiceContext)null, base.Owner, 50m, ValueProp.Unpowered, (Creature)null);
             //await DamageCmd.Attack(20m).Targeting(base.Owner).Execute(null);
 
-            PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner.Player, Owner.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
+            //PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(applier.Player, applier.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
+
+            if (applier.IsMonster) return;
 
             foreach (Creature Player in base.CombatState.PlayerCreatures)
             {
                 if (Player != null && Player.IsAlive && Player.HasPower<SupportPointPower>())
                 {
-                    await PowerCmd.Apply<FrostFallPower>(choiceContext, Player, 2, base.Owner, null);
+                    await PowerCmd.Apply<FrostFallPower>(new ThrowingPlayerChoiceContext(), Player, 2, base.Owner, null);
                 }
                 //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
             }

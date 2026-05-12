@@ -1,4 +1,5 @@
 using BaseLib.Abstracts;
+using BaseLib.Hooks;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -213,8 +214,11 @@ namespace Miyabists2.Scripts.Service
         //紊乱触发
         public static async Task DisorderApply(Creature target, Creature dealer, PlayerChoiceContext choiceContext)
         {
-
-            bool moonBless = IsAnyHasMoonBlessing(dealer);
+            bool moonBless = false;
+            if (dealer.IsPlayer)
+            {
+                moonBless = IsAnyHasMoonBlessing(dealer);
+            }
             bool hasZmyc = target.HasPower<ZhongmuycPower>();
 
             await PowerCmd.Remove<AttributeAnomalyPower>(target);
@@ -334,7 +338,7 @@ namespace Miyabists2.Scripts.Service
             {
                 CardModel reward1 = owner.CombatState.CreateCard<HuaCi>(owner.Player);
 
-                if (handSize + i < 10)
+                if (handSize + i < CardPile.MaxCardsInHand)
                     await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, owner.Player, CardPilePosition.Random);
                 else
                     await CardCmd.AutoPlay(choiceContext, reward1, target);

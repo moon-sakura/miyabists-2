@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsu82j67y6ous"]
+
+[ext_resource type="Texture2D" uid="uid://na5sswaf8puf" path="res://images/charui/miyabi_char_33.png" id="1_dwmbd"]
+
+[node name="MiyabiGhost" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -208)
+scale = Vector2(0.586, 0.586)
+texture = ExtResource("1_dwmbd")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -119.0
+offset_top = -418.0
+offset_right = 121.0
+offset_bottom = 38.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-2, -433)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3, -353)

@@ -1,6 +1,7 @@
 
 using BaseLib.Abstracts;
 using BaseLib.Utils;
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -42,7 +43,8 @@ namespace Miyabists2.Scripts.Relics
             bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
             if (!isValidMove) return 1m;
 
-            decimal percent = base.Owner.Creature.CurrentHp / base.Owner.Creature.MaxHp;
+            decimal percent = (decimal)base.Owner.Creature.CurrentHp / base.Owner.Creature.MaxHp;
+            //GD.Print($"[MiyabiSTS2] 此时生命值比例为: {percent}");
             if (percent >= 0.8m) return 0.5m;
             if (percent <= 0.2m) return 1.5m;
             if (percent <= 0.5m) return 1.2m;

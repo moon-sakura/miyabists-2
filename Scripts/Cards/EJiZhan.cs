@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
-using MiyabiMod.Scripts.Services;
+using Miyabists2.Scripts.Service;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;

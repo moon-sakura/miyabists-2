@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
     {
         protected override string ArtPath => $"res://images/cards/zhanjinZuie.png";
 
-        public ZhanjinZuie() : base(0, CardType.Power, CardRarity.Token, TargetType.AnyEnemy, true) { }
+        public ZhanjinZuie() : base(0, CardType.Power, CardRarity.Token, TargetType.Self, true) { }
 
         public override int MaxUpgradeLevel => 0;
 
@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 2, base.Owner.Creature, this);
+            await PowerCmd.Apply<ZhanjinzePower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
         }
 
     }

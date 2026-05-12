@@ -146,6 +146,10 @@
     "MIYABISTS2-TRAIN_EAT_OVER_POWER.description": "",
     "MIYABISTS2-TRAIN_EAT_OVER_POWER.smartDescription": "所有攻击卡费用减[blue]1[/blue]",
 
+	"MIYABISTS2-ZHANJINZE_POWER.title": "斩尽罪恶",
+    "MIYABISTS2-ZHANJINZE_POWER.description": "",
+    "MIYABISTS2-ZHANJINZE_POWER.smartDescription": "本回合伤害翻倍",
+
 	"MIYABISTS2-XSJS_POWER.title": "雪上加霜",
     "MIYABISTS2-XSJS_POWER.description": "",
     "MIYABISTS2-XSJS_POWER.smartDescription": "每次使用[gold]霜月[/gold]时，本回合获得[blue]{Amount}[/blue]点[gold]力量[/gold]",
@@ -172,5 +176,13 @@
 
 	"MIYABISTS2-DONG_FENG_SP_POWER.title": "冬蜂·极",
     "MIYABISTS2-DONG_FENG_SP_POWER.description": "弹刀这一块",
-    "MIYABISTS2-DONG_FENG_SP_POWER.smartDescription": "下一张攻击卡伤害+[blue]25%[/blue]。"
+    "MIYABISTS2-DONG_FENG_SP_POWER.smartDescription": "下一张攻击卡伤害+[blue]25%[/blue]。",
+
+	"MIYABISTS2-MIYABI_BOSS_POWER.title": "寒炎",
+    "MIYABISTS2-MIYABI_BOSS_POWER.description": "",
+    "MIYABISTS2-MIYABI_BOSS_POWER.smartDescription": "攻击会积累[gold]烈霜积蓄值[/gold]与[gold]失衡值[/gold]。造成[gold]击破[/gold]后，清除自身所有[gold]负面效果[/gold]；造成[gold]紊乱[/gold]后，获得[blue]2[/blue]点[gold]力量[/gold]。",
+
+	"MIYABISTS2-YIXUAN_ENEMY_POWER.title": "青冥护佑",
+    "MIYABISTS2-YIXUAN_ENEMY_POWER.description": "",
+    "MIYABISTS2-YIXUAN_ENEMY_POWER.smartDescription": "所有[gold]负面效果[/gold]获得量减少[blue]{DebuffReduce:diff()}%[/blue]。每回合受击[blue]{HittedTrigger:diff()}[/blue]次后，获得[blue]{DamageReduce:diff()}%[/blue]减伤。每失去最大生命值[blue]33%[/blue]的血量或者获得等数值的[gold]中毒[/gold]或者[gold]灾厄[/gold]（[gold]中毒[/gold]或者[gold]灾厄[/gold]层数减半），并获得一层[blue]无实体[/blue]，加强效果抵抗能力，并结束所有玩家回合。"
 }
