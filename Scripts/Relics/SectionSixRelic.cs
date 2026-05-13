@@ -23,7 +23,6 @@ using Miyabists2.Scripts.Service;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
-using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Relics
 {

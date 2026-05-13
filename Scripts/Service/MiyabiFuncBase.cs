@@ -15,6 +15,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Relics;
 using MegaCrit.Sts2.Core.Runs.Metrics;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
@@ -40,6 +41,11 @@ namespace Miyabists2.Scripts.Service
         {
             int result = player.RunState.Rng.Shuffle.NextInt(Min, exMax);
             return result;
+        }
+
+        public static T GetRelic<T>(Player player) where T : RelicModel
+        {
+            return player.Relics.OfType<T>().FirstOrDefault();
         }
 
         //通用PlayerChoiceContext

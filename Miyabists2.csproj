@@ -39,6 +39,11 @@
 			<Private>false</Private>
 		</Reference>
 
+		<Reference Include="MinionLib">
+			<HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+
 		<Reference Include="Steamworks.NET">
 			<HintPath>$(Sts2DataDir)\Steamworks.NET.dll</HintPath>
 			<Private>false</Private>
