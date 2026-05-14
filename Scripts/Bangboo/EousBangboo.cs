@@ -20,7 +20,7 @@ namespace Miyabists2.Scripts.Bangboo
 
         public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, Creature self, MinionSummonOptions options) // 注意使用 self 而非 this
         {
-            await base.OnSummon(choiceContext, owner, self, options); // 先调用基类的 OnSummon 来设置血量等基础属性
+            //await base.OnSummon(choiceContext, owner, self, options); // 先调用基类的 OnSummon 来设置血量等基础属性
 
             //base.IsHealthBarVisible = true;
             //if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)

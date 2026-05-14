@@ -18,6 +18,7 @@ using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves.Managers;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Relics;
+using Miyabists2.Scripts.Service;
 using System.Reflection;
 
 namespace Miyabists2.Scripts;
@@ -32,6 +33,10 @@ public class Entry
         // 打patch（即修改游戏代码的功能）用
         // 传入参数随意，只要不和其他人撞车即可
         var harmony = new Harmony("sts2.SakuraYue.Miyabi");
+
+        var config = new MiyabiModConfig();
+
+        ModConfigRegistry.Register("Miyabists2", config);
 
         harmony.PatchAll();
         // 使得tscn可以加载自定义脚本

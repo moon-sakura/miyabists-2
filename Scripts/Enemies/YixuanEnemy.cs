@@ -44,7 +44,7 @@ namespace Miyabists2.Scripts.Enemies
 
         private int AAD_Damage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 10, 8);
 
-        private int MultiHitDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 3);
+        private int MultiHitDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 2);
 
         private bool isjustMultihit = false;
 
@@ -110,27 +110,29 @@ namespace Miyabists2.Scripts.Enemies
 
         private async Task StartMoveF(IReadOnlyList<Creature> targets)
         {
-            TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-YIXUAN_ENEMY.moves.START_MOVE.banter"), Creature, VfxColor.Blue);
+            //TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-YIXUAN_ENEMY.moves.START_MOVE.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<PlatingPower>(new ThrowingPlayerChoiceContext(), base.Creature, base.Creature.MaxHp * 0.1m, base.Creature, null);
-            await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
+            //await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
         }
 
         private async Task AttackAndDefenceF(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                .Attack(AAD_Damage)
+                .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 15 : AAD_Damage)
                 .FromMonster(this)
                 // .WithAttackerAnim("Attack", 0.5f) // 如果有攻击动画，可以取消注释并替换成实际动画名称和延迟
                 .WithAttackerFx(null, AttackSfx) // 攻击音效
                 .WithHitFx("vfx/vfx_attack_blunt") // 攻击特效
                 .Execute(null);
-            await CreatureCmd.GainBlock(Creature, 15m, ValueProp.Move, null);
+
+            decimal block = MiyabiModConfig.MiyabiEnemiesStronger ? 20 : 15;
+            await CreatureCmd.GainBlock(Creature, block, ValueProp.Move, null);
         }
 
         private async Task HeavyAttackF(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                    .Attack(MultiHitDamage)
+                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 5 : MultiHitDamage)
                     .WithHitCount(8)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
@@ -146,7 +148,7 @@ namespace Miyabists2.Scripts.Enemies
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
 
-            await CreatureCmd.GainBlock(Creature, 20m, ValueProp.Move, null);
+            await CreatureCmd.GainBlock(Creature, MiyabiModConfig.MiyabiEnemiesStronger ? 30m : 20m, ValueProp.Move, null);
         }
 
         private async Task DebuffAddF(IReadOnlyList<Creature> targets)
@@ -156,6 +158,7 @@ namespace Miyabists2.Scripts.Enemies
                 await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), creature, 2m, base.Creature, null);
                 await PowerCmd.Apply<DazeVulnPower>(new ThrowingPlayerChoiceContext(), creature, 2m, base.Creature, null);
             }
+            await CreatureCmd.GainBlock(Creature, MiyabiModConfig.MiyabiEnemiesStronger ? 30m : 20m, ValueProp.Move, null);
         }
 
         private async Task UnclearMoveF(IReadOnlyList<Creature> targets)

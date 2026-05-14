@@ -20,6 +20,8 @@ namespace Miyabists2.Scripts.Potions
 {
     internal class WanquanZhunbeiPotion : MiyabiPotionBase
     {
+        public override string? CustomPackedImagePath => "res://images/potions/wanquanZhunbeiPotion.png";
+
         // 稀有度
         public override PotionRarity Rarity => PotionRarity.Uncommon;
 

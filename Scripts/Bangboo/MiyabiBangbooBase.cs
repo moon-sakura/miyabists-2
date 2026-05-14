@@ -5,8 +5,10 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Action;
 using MinionLib.Commands;
@@ -36,7 +38,9 @@ namespace Miyabists2.Scripts.Bangboo
         public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, Creature self, MinionSummonOptions options)
         {
             if (options.MaxHp is decimal maxHp)
+            {
                 await CreatureCmd.SetMaxAndCurrentHp(self, maxHp); // 设置血量
+            }
         }
     }
 

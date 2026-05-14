@@ -31,7 +31,19 @@
   	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧嚣值[/gold]，最大喧嚣值上限变为[blue]{MAX:diff()}[/blue]",
   	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
 
+
+
+
+
+
+
+
+
+	"MIYABISTS2-LUCKYBOO_RELIC.title": "招财布",
+  	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]",
+  	"MIYABISTS2-LUCKYBOO_RELIC.flavor": "真的会招财吗？",
+
 	"MIYABISTS2-EOUS_BANGBOO_RELIC.title": "伊埃斯",
-  	"MIYABISTS2-EOUS_BANGBOO_RELIC.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线",
+  	"MIYABISTS2-EOUS_BANGBOO_RELIC.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线。",
   	"MIYABISTS2-EOUS_BANGBOO_RELIC.flavor": "最好的的伊埃斯"
 }

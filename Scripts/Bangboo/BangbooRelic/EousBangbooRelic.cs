@@ -1,11 +1,17 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Map;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Monsters;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves.Runs;
@@ -13,6 +19,7 @@ using MinionLib.Commands;
 using MinionLib.Minion;
 using Miyabists2.Scripts.Bangboo;
 using Miyabists2.Scripts.Char;
+using Miyabists2.Scripts.Enemies;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
@@ -57,17 +64,25 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            if (player != base.Owner) { return; }
-            if (base.Owner.Creature.CombatState.RoundNumber == 1)
-            {
-                Flash();
+            //await base.AfterPlayerTurnStart(choiceContext, player);
 
-                await MinionCmd.AddMinion<EousBangboo>(choiceContext, Owner, new MinionSummonOptions(
-                    MaxHp: 6m,                              // 血量
-                    PrimaryStatAmount: 0m,                  // 主要参数（具体内容在随从的 OnSummon 里定义），还有次要参数等可以按需传入
-                    Source: null,                           // 召唤来源（通常是这张牌）
-                    Position: MinionPosition.Front));       // 站位（见后文，默认是前排）
-                }
+            var bangboo = await PlayerCmd.AddPet<EousBangboo>(Owner);
+
+            NCreature node = NCombatRoom.Instance?.GetCreatureNode(bangboo);
+            if (node != null)
+            {
+                node.Modulate = Colors.Transparent;
+                Tween tween = node.CreateTween();
+                tween.TweenProperty(node, "modulate", Colors.White, 0.3499999940395355).SetDelay(0.10000000149011612);
+                //node.StartReviveAnim();
+            }
+            await PowerCmd.Apply<DieForYouPower>(choiceContext, bangboo, 1m, null, null);
+            node?.TrackBlockStatus(Owner.Creature);
+            node?.ToggleIsInteractable(on:true);
+            await CreatureCmd.SetMaxHp(bangboo, 6);
+            await CreatureCmd.Heal(bangboo, 6);
+
+
         }
 
         public override bool IsAllowed(IRunState runState)
