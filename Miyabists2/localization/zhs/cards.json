@@ -129,6 +129,9 @@
 	"MIYABISTS2-BAOJUN_MENGJI.title": "暴君猛击",
     "MIYABISTS2-BAOJUN_MENGJI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，获得{Block:diff()}点格挡，[gold]招架[/gold]{PARRY_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]4[/blue]点[gold]覆甲[/gold]",
 
+	"MIYABISTS2-BINGYUAN_QIANXI.title": "冰渊潜袭",
+    "MIYABISTS2-BINGYUAN_QIANXI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：每造成{Buffer:diff()}点伤害，获得[blue]1[/blue]层[gold]招架[/gold]和[gold]滑溜[/gold]",
+
 	"MIYABISTS2-CHAOQIANGLI_DUNJI.title": "超强力盾击",
     "MIYABISTS2-CHAOQIANGLI_DUNJI.description": "获得{Block:diff()}点格挡，[gold]招架[/gold]{PARRY_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[gold]招架[/gold]层数的[gold]花辞[/gold]",
 
@@ -164,7 +167,7 @@
     "MIYABISTS2-XINGYUE_XIANGSUI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：若敌方已处于[gold]属性异常[/gold]状态，则立即触发一次结算效果",
 
 	"MIYABISTS2-YUANQI100.title": "元气百分百",
-    "MIYABISTS2-YUANQI100.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}\\n若敌方已处于[gold]属性异常[/gold]状态，则额外触发一次[blue]50%[/blue]伤害的结算效果；若敌人同时处于[gold]击破[/gold]状态，改为[blue]100%[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张带有[gold]消耗[/gold]的自身的复制加入手卡",
+    "MIYABISTS2-YUANQI100.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}\\n若敌方已处于[gold]属性异常[/gold]状态，则额外触发一次[blue]50%[/blue]伤害的结算效果；若敌人同时处于[gold]击破[/gold]状态，改为[blue]100%[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张带有[gold]消耗[/gold]的自身的复制加入手卡，本回合可以免费打出。",
 
 	"MIYABISTS2-XINGMANG_ZHONGZHANG.title": "星芒终章",
     "MIYABISTS2-XINGMANG_ZHONGZHANG.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张[gold]星芒圆舞曲[/gold]加入手卡，本回合费用为[blue]0[/blue]",

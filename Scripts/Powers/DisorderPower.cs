@@ -63,7 +63,7 @@ namespace Miyabists2.Scripts.Powers
         public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
             bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
-            if (result.TotalDamage > 0 && isValidMove)
+            if (result.TotalDamage > 0 && isValidMove && target == base.Owner)
             {
                 // 触发一次后移除
                 await PowerCmd.Remove(this);

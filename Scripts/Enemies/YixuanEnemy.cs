@@ -112,7 +112,8 @@ namespace Miyabists2.Scripts.Enemies
         {
             //TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-YIXUAN_ENEMY.moves.START_MOVE.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<PlatingPower>(new ThrowingPlayerChoiceContext(), base.Creature, base.Creature.MaxHp * 0.1m, base.Creature, null);
-            //await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
+            if(MiyabiModConfig.MiyabiEnemiesStronger)
+                await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
         }
 
         private async Task AttackAndDefenceF(IReadOnlyList<Creature> targets)
@@ -163,12 +164,12 @@ namespace Miyabists2.Scripts.Enemies
 
         private async Task UnclearMoveF(IReadOnlyList<Creature> targets)
         {
-            foreach (Creature creature in targets) 
-            { 
+            Creature creature = targets.OrderBy(t => t.CurrentHp).FirstOrDefault();
+            //{ 
                 if(!isjustMultihit 
                     && (creature.Block <= 8 * MultiHitDamage - 8 
                     || (creature.HasPower<VulnerablePower>() 
-                    && creature.Block <= 8 * MultiHitDamage - 8)))
+                    && creature.Block <= 8 * MultiHitDamage * 1.5 - 8)))
                 {
                     await HeavyAttackF(targets);
                     return;
@@ -191,7 +192,7 @@ namespace Miyabists2.Scripts.Enemies
                     isjustMultihit = false;
                     return;
                 }
-            }
+            //}
 
             isjustMultihit = false;
             await CreatureCmd.GainBlock(Creature, 60m, ValueProp.Move, null);

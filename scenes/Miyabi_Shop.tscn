@@ -4,9 +4,7 @@
 
 [node name="MiyabiRest" type="Node2D"]
 
-[node name="MiyabiChar33" type="TextureRect" parent="."]
-offset_left = -252.0
-offset_top = -443.0
-offset_right = 248.0
-offset_bottom = 259.0
+[node name="MiyabiChar33" type="Sprite2D" parent="."]
+position = Vector2(1.9999943, -286.00003)
+scale = Vector2(0.807, 0.807)
 texture = ExtResource("1_m81c7")

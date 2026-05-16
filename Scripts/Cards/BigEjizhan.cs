@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Cards
     internal class BigEjizhan : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/bigEjizhan.png";
-        public BigEjizhan() : base(2, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
+        public BigEjizhan() : base(1, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(12, ValueProp.Move),
@@ -64,6 +64,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
+            //EnergyCost.UpgradeBy(-1);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
             if (base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out DynamicVar a)) a.UpgradeValueBy(1);
             if (base.DynamicVars.TryGetValue("Strength", out DynamicVar s)) s.UpgradeValueBy(1);

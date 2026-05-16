@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
@@ -48,14 +49,13 @@ namespace Miyabists2.Scripts.Cards
         {
             await PowerCmd.Apply<VulnerablePower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
             await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
-            bool hasIt = base.Owner.Relics.Any(r => r is SwordNotailRelic);
+            //bool hasIt = base.Owner.Relics.Any(r => r is SwordNotailRelic);
             int n = 0;
             if (base.DynamicVars.TryGetValue("Decible", out var d))
                 n = d.IntValue;
-            if (hasIt) 
-            {
-                await MiyabiCombatService.AddDecible(Owner, n);
-            }
+
+            await MiyabiCombatService.AddDecible(Owner, n);
+
             if (count != 0)
             {
                 count = 0;
@@ -75,6 +75,16 @@ namespace Miyabists2.Scripts.Cards
                 BaseReplayCount += 1;
                 count++;
             }
+            else
+            {
+                BaseReplayCount = 0;
+            }
+        }
+
+        public override Task AfterCombatVictory(CombatRoom room)
+        {
+            BaseReplayCount = 0;
+            return base.AfterCombatVictory(room);
         }
 
         //public override async Task BeforeCardPlayed(CardPlay cardPlay)

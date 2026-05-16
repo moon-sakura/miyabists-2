@@ -32,14 +32,14 @@ namespace Miyabists2.Scripts.Service
         {
             if(dealer == null) return 1m;
 
-            if(dealer == Owner)
+            if(dealer == Owner && props.IsPoweredAttack())
             {
                 if (dealer.Player.Character is Miyabi) return (decimal)MiyabiModConfig.DamageDealtLimit;
 
                 if (dealer.IsPlayer && MiyabiModConfig.ChangeToAllPlayers) return (decimal)MiyabiModConfig.DamageDealtLimit;
             }
 
-            if(dealer.IsEnemy)
+            if(dealer.IsEnemy && target == Owner)
             {
                 if (target.Player.Character is Miyabi) return (decimal)MiyabiModConfig.DamageTakenMultiplier;
 
@@ -60,7 +60,21 @@ namespace Miyabists2.Scripts.Service
             {
                 await PowerCmd.Apply<ModConfigEffect>(new ThrowingPlayerChoiceContext(),player.Creature, 1, null, null);
             }
-            
+        }
+    }
+
+    [HarmonyPatch(typeof(CombatState), "CreateCreature")]
+    internal static class MonsterMaxHpPatch
+    {
+        private static void Postfix(Creature __result, CombatSide side)
+        {
+            if (side == CombatSide.Enemy && (__result.CombatState.Players.Any(c => c.Character is Miyabi) || MiyabiModConfig.ChangeToAllPlayers))
+            {
+                int num = (int)Math.Ceiling(__result.MaxHp * (decimal)MiyabiModConfig.MonsterHpMax);
+                //int num2 = __result.MaxHp + num;
+                __result.SetMaxHpInternal(num);
+                __result.SetCurrentHpInternal(num);
+            }
         }
     }
 

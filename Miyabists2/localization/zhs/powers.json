@@ -193,7 +193,7 @@
 
 	"MIYABISTS2-MIYABI_BOSS_POWER.title": "寒炎",
     "MIYABISTS2-MIYABI_BOSS_POWER.description": "",
-    "MIYABISTS2-MIYABI_BOSS_POWER.smartDescription": "攻击会积累[gold]烈霜积蓄值[/gold]与[gold]失衡值[/gold]。造成[gold]击破[/gold]后，清除自身所有[gold]负面效果[/gold]；造成[gold]紊乱[/gold]后，获得[blue]2[/blue]点[gold]力量[/gold]。",
+    "MIYABISTS2-MIYABI_BOSS_POWER.smartDescription": "攻击会积累[gold]烈霜积蓄值[/gold]与[gold]失衡值[/gold]。造成[gold]击破[/gold]后，清除自身所有[gold]负面效果[/gold]；造成[gold]紊乱[/gold]后，获得[blue]2[/blue]点[gold]力量[/gold]。可以抵挡[blue]{DeathPrevent:diff()}[/blue]次致命伤害,清除自身所有[gold]负面效果[/gold],获得[blue]1[/blue]层无实体并回复至生命值上限。",
 
 	"MIYABISTS2-YIXUAN_ENEMY_POWER.title": "青冥护佑",
     "MIYABISTS2-YIXUAN_ENEMY_POWER.description": "",

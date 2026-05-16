@@ -19,8 +19,12 @@ namespace Miyabists2.Scripts.Service
         //[ConfigHoverTip]
         public static bool MiyabiEnemiesStronger { get; set; } = false;
 
+        [ConfigSlider(0.5, 5.0, 0.1, Format = "{0:0.#}x")]
+        [ConfigHoverTip]
+        public static double MonsterHpMax { get; set; } = 1.0;
+
         // 2. 限制造成伤害 (使用百分比滑块展示，范围 0% 到 100%)
-        [ConfigSlider(0.3, 1.5, 0.05, Format = "0:0.#}x")]
+        [ConfigSlider(0.3, 1.5, 0.05, Format = "{0:0.#}x")]
         [ConfigHoverTip]
         public static double DamageDealtLimit { get; set; } = 1.0;
 

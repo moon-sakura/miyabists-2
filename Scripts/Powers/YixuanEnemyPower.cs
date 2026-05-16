@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Miyabists2.Scripts.Powers
         private int HittedThisTurn = 0;
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("HittedTrigger", 5),
-            new DynamicVar("DamageReduce", 80),
+            new DynamicVar("DamageReduce", 50),
             new DynamicVar("DebuffReduce", 20),
         ];
 
@@ -48,6 +49,15 @@ namespace Miyabists2.Scripts.Powers
         private bool isDebuffTarget = false;
 
 
+        public override async Task BeforeApplied(Creature target, decimal amount, Creature? applier, CardModel? cardSource)
+        {
+            if (MiyabiModConfig.MiyabiEnemiesStronger)
+            {
+                DynamicVars["HittedTrigger"].BaseValue = 3;
+                DynamicVars["DamageReduce"].BaseValue = 80;
+            }
+        }
+
         public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
             if(target != base.Owner)
@@ -56,6 +66,11 @@ namespace Miyabists2.Scripts.Powers
             }
             await CheckPhase(choiceContext);
             HittedThisTurn++;
+        }
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await CheckPhase(choiceContext);
         }
 
 
@@ -147,7 +162,7 @@ namespace Miyabists2.Scripts.Powers
                 await PowerCmd.Apply<DoomPower>(context, base.Owner, -doomAmount/2, base.Owner, null);
                 await PowerCmd.Apply<PoisonPower>(context, base.Owner, -poisonAmount/2, base.Owner, null);
 
-                DynamicVars["DebuffReduce"].BaseValue = 50;
+                DynamicVars["DebuffReduce"].BaseValue = MiyabiModConfig.MiyabiEnemiesStronger ? 50 : 35;
 
                 foreach (Player player in Owner.CombatState.Players)
                 {
@@ -164,7 +179,7 @@ namespace Miyabists2.Scripts.Powers
                 await PowerCmd.Apply<DoomPower>(context, base.Owner, -doomAmount / 2, base.Owner, null);
                 await PowerCmd.Apply<PoisonPower>(context, base.Owner, -poisonAmount / 2, base.Owner, null);
 
-                DynamicVars["DebuffReduce"].BaseValue = 80;
+                DynamicVars["DebuffReduce"].BaseValue = MiyabiModConfig.MiyabiEnemiesStronger ? 80 : 50;
 
                 foreach (Player player in Owner.CombatState.Players)
                 {
@@ -181,7 +196,7 @@ namespace Miyabists2.Scripts.Powers
                 await PowerCmd.Apply<DoomPower>(context, base.Owner, -doomAmount / 2, base.Owner, null);
                 await PowerCmd.Apply<PoisonPower>(context, base.Owner, -poisonAmount / 2, base.Owner, null);
 
-                DynamicVars["DebuffReduce"].BaseValue = 100;
+                DynamicVars["DebuffReduce"].BaseValue = MiyabiModConfig.MiyabiEnemiesStronger ? 100 : 70;
 
 
                 foreach (Player player in Owner.CombatState.Players)

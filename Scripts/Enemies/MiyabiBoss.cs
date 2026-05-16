@@ -37,10 +37,10 @@ namespace Miyabists2.Scripts.Enemies
         private int BasicBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 20, 15);
 
         // 重击伤害
-        private int HeavyDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 42, 30);
+        private int HeavyDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 35, 30);
 
         // 多段攻击的数值
-        private int MultiHitDamage => 6;
+        private int MultiHitDamage => 5;
         private int MultiHitCount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 4);
 
         // 怪物场景，如果你的场景没有挂载脚本，参考这个
@@ -195,50 +195,6 @@ namespace Miyabists2.Scripts.Enemies
             return new MonsterMoveStateMachine(list, basicAttack);
         }
 
-        public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
-        {
-            if (dealer == base.Creature && target.IsPlayer && target.IsAlive)
-            {
-                await MiyabiCombatService.DazeAddtoPlayer(choiceContext, target, result.UnblockedDamage * 5);
-
-                ///
-                ///
-                ///
-
-                MiyabiCombatService.SetFrostTriggerMultiply(base.Creature);
-                int trigger = 50;
-
-                int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
-
-                // 确保是本卡造成的实际伤害，且目标存活
-                if (result.TotalDamage > 0 && chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
-                {
-                    await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, result.TotalDamage, base.Creature, null);
-                }
-                //烈霜积蓄值积攒逻辑
-                if (chkFB >= trigger + 1)
-                {
-                    //await MiyabiCombatService.FrostApply(target,base.Owner.Creature,choiceContext);
-                    //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
-                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
-                    //await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, base.Creature, null);
-                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, 10m, ValueProp.Unpowered, (Creature)null);
-
-                    //int fireAmount = target.GetPowerAmount<FrostFirePower>();
-                    //await CreatureCmd.Damage(null, target, 10m, ValueProp.Unpowered, dealer);
-
-
-                    if (target.HasPower<AttributeAnomalyPower>())
-                    {
-                        await MiyabiCombatService.DisorderApply(target, base.Creature, choiceContext);
-                    }
-                    else
-                    {
-                        await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, base.Creature, null);
-                    }
-                }
-            }
-        }
 
         // 意图1执行实际效果
         private async Task BasicMove(IReadOnlyList<Creature> targets)
@@ -246,26 +202,30 @@ namespace Miyabists2.Scripts.Enemies
             // 说话
             //TalkCmd.Play(L10NMonsterLookup("TEST-TEST_MONSTER.moves.BASIC_ATTACK.banter"), Creature, VfxColor.Blue);
             await DamageCmd
-                .Attack(BasicDamage)
+                .Attack(MiyabiModConfig.MiyabiEnemiesStronger? 18: BasicDamage)
                 .FromMonster(this)
                 // .WithAttackerAnim("Attack", 0.5f) // 如果有攻击动画，可以取消注释并替换成实际动画名称和延迟
                 .WithAttackerFx(null, AttackSfx) // 攻击音效
                 .WithHitFx("vfx/vfx_attack_blunt") // 攻击特效
                 .Execute(null);
-            await CreatureCmd.GainBlock(Creature, BasicBlock, ValueProp.Move, null);
+            await CreatureCmd.GainBlock(Creature, MiyabiModConfig.MiyabiEnemiesStronger ? 25m : BasicBlock, ValueProp.Move, null);
         }
 
         private async Task PowerUp(IReadOnlyList<Creature> targets)
         {
             //TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-MIYABI_BOSS.moves.POWER_UP.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 4m * targets.Count, base.Creature, null);
+
+            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 4m : 2m;
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * targets.Count, base.Creature, null);
+
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 3m, base.Creature, null);
 
+            decimal debuffAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 3m : 2m;
             foreach (var target in targets) 
             { 
-                await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), target, 3m, base.Creature, null);
-                await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), target, 3m, base.Creature, null);
+                await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), target, debuffAmount, base.Creature, null);
+                await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), target, debuffAmount, base.Creature, null);
             }
 
         }
@@ -273,7 +233,7 @@ namespace Miyabists2.Scripts.Enemies
         private async Task EJiZhan(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                    .Attack(HeavyDamage)
+                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 42 : HeavyDamage)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
                     .WithHitFx("vfx/vfx_giant_horizontal_slash")
@@ -283,7 +243,7 @@ namespace Miyabists2.Scripts.Enemies
         private async Task MingCanXue(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                    .Attack(MultiHitDamage)
+                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 6 : MultiHitDamage)
                     .WithHitCount(MultiHitCount)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
@@ -300,7 +260,8 @@ namespace Miyabists2.Scripts.Enemies
                     .WithHitFx("vfx/vfx_giant_horizontal_slash")
                     .Execute(null);
 
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 4m * targets.Count, base.Creature, null);
+            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 4m : 2m;
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * targets.Count, base.Creature, null);
         }
     }
 }

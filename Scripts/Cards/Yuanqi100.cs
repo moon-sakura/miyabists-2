@@ -74,6 +74,8 @@ namespace Miyabists2.Scripts.Cards
         {
             CardModel card = this.CreateClone();
             card.AddKeyword(CardKeyword.Exhaust);
+            //card.AddKeyword(CardKeyword.Ethereal);
+            card.SetToFreeThisTurn();
             await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner, CardPilePosition.Random);
         }
 

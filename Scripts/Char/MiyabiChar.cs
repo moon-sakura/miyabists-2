@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Relics;
+using Miyabists2.Scripts.Relics.SpecRelic;
 using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Char;
@@ -50,7 +51,8 @@ public class Miyabi : PlaceholderCharacterModel
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
         ModelDb.Relic<SwordNotailRelic>(),
-        ModelDb.Relic<SectionSixRelic>()
+        ModelDb.Relic<SectionSixRelic>(),
+        ModelDb.Relic<ChoukaRelic>()
     ];
 
     public override async Task AfterRoomEntered(AbstractRoom room)
@@ -84,9 +86,9 @@ public class Miyabi : PlaceholderCharacterModel
     // 能量表盘tscn路径。要自定义见下。
     //public override string CustomEnergyCounterPath => "res://scenes/miyabi_energy_counter.tscn";
     // 篝火休息动画。
-    //public override string CustomRestSiteAnimPath => "res://scenes/Miyabi_Rest.tscn";
+    public override string CustomRestSiteAnimPath => "res://scenes/Miyabi_Rest.tscn";
     // 商店人物动画。
-    //public override string CustomMerchantAnimPath => "res://scenes/Miyabi_Shop.tscn";
+    public override string CustomMerchantAnimPath => "res://scenes/Miyabi_Shop.tscn";
     // 多人模式-手指。
     public override string CustomArmPointingTexturePath => null;
     // 多人模式剪刀石头布-石头。

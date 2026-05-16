@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,8 @@ namespace Miyabists2.Scripts.Enemies
         // 战斗开始时，在这里给自己上buff之类
         public override async Task AfterAddedToRoom()
         {
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 6m*CombatState.Players.Count, base.Creature, null);
+            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger?6m:4m;
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount*CombatState.Players.Count, base.Creature, null);
         }
 
         protected override MonsterMoveStateMachine GenerateMoveStateMachine()
@@ -69,7 +71,7 @@ namespace Miyabists2.Scripts.Enemies
             var heavyAttack = new MoveState(
                 "HEAVY_ATTACK",
                 async targets => await DamageCmd // 意图2实际执行效果，这里直接用lambda
-                    .Attack(HeavyDamage)
+                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 36m : HeavyDamage)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
                     .WithHitFx("vfx/vfx_giant_horizontal_slash")
@@ -80,7 +82,7 @@ namespace Miyabists2.Scripts.Enemies
             var multiHitAttack = new MoveState(
                 "MULTIHIT_ATTACK",
                 async targets => await DamageCmd
-                    .Attack(MultiHitDamage)
+                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 5m : MultiHitDamage)
                     .WithHitCount(MultiHitCount)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
@@ -123,20 +125,23 @@ namespace Miyabists2.Scripts.Enemies
             // 说话
             //TalkCmd.Play(L10NMonsterLookup("TEST-TEST_MONSTER.moves.BASIC_ATTACK.banter"), Creature, VfxColor.Blue);
             await DamageCmd
-                .Attack(BasicDamage)
+                .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 14m : BasicDamage)
                 .FromMonster(this)
                 // .WithAttackerAnim("Attack", 0.5f) // 如果有攻击动画，可以取消注释并替换成实际动画名称和延迟
                 .WithAttackerFx(null, AttackSfx) // 攻击音效
                 .WithHitFx("vfx/vfx_attack_blunt") // 攻击特效
                 .Execute(null);
-            await CreatureCmd.GainBlock(Creature, BasicBlock, ValueProp.Move, null);
+            await CreatureCmd.GainBlock(Creature, MiyabiModConfig.MiyabiEnemiesStronger ? 20m : BasicBlock, ValueProp.Move, null);
         }
 
         private async Task PowerUp(IReadOnlyList<Creature> targets)
         {
             TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 2m * CombatState.Players.Count, base.Creature, null);
+
+            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 4m : 2m;
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Players.Count, base.Creature, null);
+
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 3m, base.Creature, null);
         }
     }

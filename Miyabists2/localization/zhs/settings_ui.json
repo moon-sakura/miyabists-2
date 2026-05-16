@@ -4,10 +4,14 @@
     "MIYABISTS2-COMBAT_CONFIG.title" : "战斗配置",
 
     "MIYABISTS2-MIYABI_ENEMIES_STRONGER.title" : "加强模组敌人",
+
+    "MIYABISTS2-MONSTER_HP_MAX.title" : "敌人最大生命值",
+    "MIYABISTS2-MONSTER_HP_MAX.hover.title" : "敌人最大生命值倍率",
+    "MIYABISTS2-MONSTER_HP_MAX.hover.desc" : "敌人最大生命值倍率，1x为正常生命值。此为苦行，亦为修行。",
     
-    "MIYABISTS2-DAMAGE_DEALT_LIMIT.title" : "限制星见雅伤害",
-    "MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.title" : "限制伤害",
-    "MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.desc" : "限制星见雅对敌人的伤害，1x为正常伤害。此为苦行，亦为修行。",
+    "MIYABISTS2-DAMAGE_DEALT_LIMIT.title" : "星见雅伤害倍率",
+    "MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.title" : "伤害倍率",
+    "MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.desc" : "星见雅对敌人的伤害，1x为正常伤害。此为苦行，亦为修行。",
 
     "MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.title" : "星见雅受伤倍率",
     "MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.title" : "受伤倍率",

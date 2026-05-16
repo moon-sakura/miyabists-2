@@ -41,7 +41,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-
+            decimal ori = DynamicVars[DazeVarName].BaseValue;
             int add = 0;
             Creature target = cardPlay.Target;
 
@@ -64,6 +64,8 @@ namespace Miyabists2.Scripts.Cards
             await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => { v.BaseValue *= 1.2m; });
 
             await base.OnPlay(choiceContext, cardPlay);
+
+            DynamicVars[DazeVarName].BaseValue = ori;
         }
 
         protected override void OnUpgrade()
