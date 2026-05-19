@@ -35,7 +35,7 @@
 
 
 	"MIYABISTS2-CHOUKA_RELIC.title": "加密母带",
-  	"MIYABISTS2-CHOUKA_RELIC.description": "现在在休息处可以进行抽卡！\\n当前影画：[gold]{CINIMA:diff()}[/gold]",
+  	"MIYABISTS2-CHOUKA_RELIC.description": "现在在休息处可以进行抽卡！每击败一名敌人获得[blue]1[/blue]次免费抽取次数。\\n当前影画：[gold]{CINIMA:diff()}[/gold]\\n当前免费抽取次数：[blue]{FreeCount:diff()}[/blue]",
   	"MIYABISTS2-CHOUKA_RELIC.flavor": "搏一搏，单车变摩托！",
 
 

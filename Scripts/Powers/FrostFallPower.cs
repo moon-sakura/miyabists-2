@@ -1,4 +1,5 @@
 using BaseLib.Abstracts;
+using BaseLib.Patches.Hooks;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -75,7 +76,7 @@ namespace Miyabists2.Scripts.Powers
                 IEnumerable<CardModel> enumerable = base.Owner.Player.PlayerCombatState.AllCards.Where((CardModel c) => c.IsUpgraded && c is ShuangYue);
                 foreach (CardModel item in enumerable)
                 {
-                    GetInternalData<Data>().downgradedCardsToOldUpgradeLevels.Add(item, item.CurrentUpgradeLevel);
+                    //GetInternalData<Data>().downgradedCardsToOldUpgradeLevels.Add(item, item.CurrentUpgradeLevel);
                     CardCmd.Downgrade(item);
                 }
             }
@@ -84,7 +85,7 @@ namespace Miyabists2.Scripts.Powers
         private async Task CheckFallPower()
         {
             PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner.Player, Owner.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
-            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < CardPile.MaxCardsInHand && GetCards().ToList().Count() == 0 && DisplayAmount >= 2)
+            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < MaxHandSizePatch.GetMaxHandSize(base.Owner.Player, CardPile.MaxCardsInHand) && GetCards().ToList().Count() == 0 && DisplayAmount >= 2)
             {
                 // 加入一张《霜月》到手中
                 CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);

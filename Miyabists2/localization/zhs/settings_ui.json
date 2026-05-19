@@ -1,22 +1,41 @@
 {
-    "MIYABISTS2.mod_title" : "星见雅模组配置",
+	"MIYABISTS2.mod_title" : "星见雅模组配置",
 
-    "MIYABISTS2-COMBAT_CONFIG.title" : "战斗配置",
+	"MIYABISTS2-COMBAT_CONFIG.title" : "战斗配置",
 
-    "MIYABISTS2-MIYABI_ENEMIES_STRONGER.title" : "加强模组敌人",
+	"MIYABISTS2-MIYABI_ENEMIES_STRONGER.title" : "加强模组敌人",
 
-    "MIYABISTS2-MONSTER_HP_MAX.title" : "敌人最大生命值",
-    "MIYABISTS2-MONSTER_HP_MAX.hover.title" : "敌人最大生命值倍率",
-    "MIYABISTS2-MONSTER_HP_MAX.hover.desc" : "敌人最大生命值倍率，1x为正常生命值。此为苦行，亦为修行。",
-    
-    "MIYABISTS2-DAMAGE_DEALT_LIMIT.title" : "星见雅伤害倍率",
-    "MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.title" : "伤害倍率",
-    "MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.desc" : "星见雅对敌人的伤害，1x为正常伤害。此为苦行，亦为修行。",
+	"MIYABISTS2-MONSTER_HP_MAX.title" : "敌人最大生命值",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.title" : "敌人最大生命值倍率",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.desc" : "敌人最大生命值倍率，1x为正常生命值。此为苦行，亦为修行。",
+	
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.title" : "星见雅伤害倍率",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.title" : "伤害倍率",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.desc" : "星见雅对敌人的伤害，1x为正常伤害。此为苦行，亦为修行。",
 
-    "MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.title" : "星见雅受伤倍率",
-    "MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.title" : "受伤倍率",
-    "MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.desc" : "星见雅受到敌人伤害的倍率，1x为正常伤害。此为苦行，亦为修行。",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.title" : "星见雅受伤倍率",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.title" : "受伤倍率",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.desc" : "星见雅受到敌人伤害的倍率，1x为正常伤害。此为苦行，亦为修行。",
 
-    "MIYABISTS2-CHANGE_TO_ALL_PLAYERS.title" : "将战斗配置应用于所有角色"
+	"MIYABISTS2-CHANGE_TO_ALL_PLAYERS.title" : "将战斗配置应用于所有角色",
+
+	"MIYABISTS2-ELSE_CONFIG.title" : "其它配置",
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "星见雅战斗皮肤选项",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.title" : "星见雅战斗皮肤",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
+
+	"MIYABISTS2-SHOP_SELECTED_SLOT.title" : "星见雅商店皮肤选项",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.title" : "星见雅商店皮肤",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
+
+	"MIYABISTS2-REST_SELECTED_SLOT.title" : "星见雅休息皮肤选项",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.title" : "星见雅休息皮肤",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
+
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0" : "默认皮肤",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.Slot0" : "默认皮肤",
+	"MIYABISTS2-REST_SELECTED_SLOT.Slot0" : "小雅"
 
 }

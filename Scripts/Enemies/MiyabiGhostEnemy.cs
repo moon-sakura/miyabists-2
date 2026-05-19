@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,7 @@ namespace Miyabists2.Scripts.Enemies
         {
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger?6m:4m;
             await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount*CombatState.Players.Count, base.Creature, null);
+            //await PowerCmd.Apply<MiyabiBossPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1, base.Creature, null);
         }
 
         protected override MonsterMoveStateMachine GenerateMoveStateMachine()

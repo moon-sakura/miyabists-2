@@ -52,6 +52,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Miyabists2\localization\zhs\" />
+	  <Folder Include="Scripts\Service\Patch\" />
 	</ItemGroup>
 
 	<Target Name="Copy Mod" AfterTargets="PostBuildEvent">

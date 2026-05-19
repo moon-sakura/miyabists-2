@@ -19,6 +19,97 @@ public class Miyabi : PlaceholderCharacterModel
 
     public static readonly Color Color = new("4682B4");
 
+
+    public MiyabiCombatSkinSlot CombatSkinSlot => MiyabiModConfig.CombatSelectedSlot;
+    public MiyabiRestSkinSlot RestSkinSlot => MiyabiModConfig.RestSelectedSlot;
+    public MiyabiShopSkinSlot ShopSkinSlot => MiyabiModConfig.ShopSelectedSlot;
+
+
+    public static List<string> CombatSkinPaths = new()
+    {
+        "res://scenes/miyabi_char.tscn" // Slot 0 默认是原皮肤
+    };
+    public static List<string> RestSkinPaths = new()
+    {
+        "res://scenes/Miyabi_Rest.tscn" // Slot 0 默认是原皮肤
+    };
+    public static List<string> ShopSkinPaths = new()
+    {
+        "res://scenes/Miyabi_Shop.tscn" // Slot 0 默认是原皮肤
+    };
+
+    public string CombatDynamicVisualPath
+    {
+        get
+        {
+            int index = (int)CombatSkinSlot; // 把枚举转成 0, 1, 2, 3...
+
+            // 安全防御：如果玩家在工具里选了 Slot_3，但实际上只下载了 1 个皮肤（List长度只有2）
+            if (index < CombatSkinPaths.Count)
+            {
+                return CombatSkinPaths[index];
+            }
+            return CombatSkinPaths[0]; // 越界了就安全回退到默认皮肤
+        }
+    }
+
+    public string RestDynamicVisualPath
+        {
+            get
+            {
+                int index = (int)RestSkinSlot; // 把枚举转成 0, 1, 2, 3...
+    
+                // 安全防御：如果玩家在工具里选了 Slot_3，但实际上只下载了 1 个皮肤（List长度只有2）
+                if (index < RestSkinPaths.Count)
+                {
+                    return RestSkinPaths[index];
+                }
+                return RestSkinPaths[0]; // 越界了就安全回退到默认皮肤
+            }
+        }
+
+    public string ShopDynamicVisualPath
+        {
+            get
+            {
+                int index = (int)ShopSkinSlot; // 把枚举转成 0, 1, 2, 3...
+    
+                // 安全防御：如果玩家在工具里选了 Slot_3，但实际上只下载了 1 个皮肤（List长度只有2）
+                if (index < ShopSkinPaths.Count)
+                {
+                    return ShopSkinPaths[index];
+                }
+                return ShopSkinPaths[0]; // 越界了就安全回退到默认皮肤
+            }
+        }
+
+    //public static void RegisterCombatSkin(string tscnPath)
+    //{
+    //    if (CombatSkinPaths.Count < 4) // 取决于你写了多少个 Slot
+    //    {
+    //        CombatSkinPaths.Add(tscnPath);
+    //        GD.Print($"[MiyabiMod] 外部皮肤成功入驻槽位 Slot_{CombatSkinPaths.Count - 1}!");
+    //    }
+    //}
+
+    //public static void RegisterRestSkin(string tscnPath)
+    //    {
+    //        if (RestSkinPaths.Count < 4) // 取决于你写了多少个 Slot
+    //        {
+    //            RestSkinPaths.Add(tscnPath);
+    //            GD.Print($"[MiyabiMod] 外部皮肤成功入驻槽位 Slot_{RestSkinPaths.Count - 1}!");
+    //        }
+    //    }
+
+    //public static void RegisterShopSkin(string tscnPath)
+    //    {
+    //        if (ShopSkinPaths.Count < 4) // 取决于你写了多少个 Slot
+    //        {
+    //            ShopSkinPaths.Add(tscnPath);
+    //            GD.Print($"[MiyabiMod] 外部皮肤成功入驻槽位 Slot_{ShopSkinPaths.Count - 1}!");
+    //        }
+    //    }
+
     // 能量图标轮廓颜色
     public override Color EnergyLabelOutlineColor => Color;//new(0.1f, 0.1f, 1f);
 
@@ -78,7 +169,7 @@ public class Miyabi : PlaceholderCharacterModel
     public override string CustomCharacterSelectLockedIconPath => "res://images/charui/char_select_char_name_locked.png";
     //public override string CustomMapMarkerPath => "res://images/charui/map_marker_char_name.png";
     // 人物模型tscn路径。要自定义见下。
-    public override string CustomVisualPath => "res://scenes/miyabi_char.tscn";
+    public override string CustomVisualPath => CombatDynamicVisualPath;
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
     // 人物头像2号。
@@ -86,9 +177,9 @@ public class Miyabi : PlaceholderCharacterModel
     // 能量表盘tscn路径。要自定义见下。
     //public override string CustomEnergyCounterPath => "res://scenes/miyabi_energy_counter.tscn";
     // 篝火休息动画。
-    public override string CustomRestSiteAnimPath => "res://scenes/Miyabi_Rest.tscn";
+    public override string CustomRestSiteAnimPath => RestDynamicVisualPath;
     // 商店人物动画。
-    public override string CustomMerchantAnimPath => "res://scenes/Miyabi_Shop.tscn";
+    public override string CustomMerchantAnimPath => ShopDynamicVisualPath;
     // 多人模式-手指。
     public override string CustomArmPointingTexturePath => null;
     // 多人模式剪刀石头布-石头。

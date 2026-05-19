@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Merchant;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Potions;
@@ -81,14 +82,34 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             //this.Flash(); // 让遗物闪烁一下，视觉效果更好
         }
 
+        private int _freeCounter = 0;
+
+        [SavedProperty]
+        public int FreeCounter
+        {
+            get => _freeCounter;
+            private set
+            {
+                _freeCounter = value;
+            }
+        }
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("CINIMA",0),
-            new DynamicVar("Uppercount", 50m)
+            new DynamicVar("Uppercount", 50m),
+            new DynamicVar("FreeCount", 0m)
         ];
+
+        public override Task AfterRoomEntered(AbstractRoom room)
+        {
+            DynamicVars["FreeCount"].BaseValue = FreeCounter;
+            return base.AfterRoomEntered(room);
+        }
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
             if (player != base.Owner) { return; }
+
             if (base.Owner.Creature.CombatState.RoundNumber == 1)
             {
                 Flash();
@@ -124,6 +145,15 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
+        public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+        {
+            if(creature.IsMonster && creature.PetOwner == null)
+            {
+                FreeCounter++;
+                DynamicVars["FreeCount"].BaseValue++;
+            }
+        }
+
 
         public override decimal ModifyMerchantPrice(Player player, MerchantEntry entry, decimal originalPrice)
         {
@@ -152,9 +182,32 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         private bool _hasDone = false;
         private bool _isBusy = false;
         private int _lastCinima = 0;
+        private int _lastRare = 0;
+
+        [SavedProperty]
+        public int LastCinima
+        {
+            get => _lastCinima;
+            private set
+            {
+                _lastCinima = value;
+            }
+        }
+
+        [SavedProperty]
+        public int LastRare
+        {
+            get => _lastRare;
+            private set
+            {
+                _lastRare = value;
+            }
+        }
+
         public async Task OnUsed()
         {
-            if(Owner.Gold < ChoukaRestSiteOption.Cost)
+            DynamicVars["FreeCount"].BaseValue = FreeCounter;
+            if (Owner.Gold < ChoukaRestSiteOption.Cost && DynamicVars["FreeCount"].BaseValue < 1)
             {
                 return;
             }
@@ -166,35 +219,51 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
                     Flash();
                     AddCounter(1);
-                    Owner.Gold -= ChoukaRestSiteOption.Cost;
-
-                    if (DynamicVars["CINIMA"].BaseValue < 6 && Counter - _lastCinima >= 80)
+                    if(DynamicVars["FreeCount"].BaseValue >= 1)
                     {
-                        DynamicVars["CINIMA"].BaseValue += 1;
-                        _lastCinima = Counter;
+                        DynamicVars["FreeCount"].BaseValue -= 1;
+                        FreeCounter--;
+                    }
+                    else
+                    {
+                        Owner.Gold -= ChoukaRestSiteOption.Cost;
+                    }
+
+                    if (Counter - LastCinima >= 80)
+                    {
+                        if (DynamicVars["CINIMA"].BaseValue < 6)
+                            DynamicVars["CINIMA"].BaseValue += 1;
+                        else
+                            await AnicientRewards();
+
+                        LastCinima = Counter;
                         _hasDone = true;
                     }
 
-                    int result = MiyabiFuncBase.RadomInt(0, 50, Owner);
+                    int result = MiyabiFuncBase.RadomInt(0, 100, Owner);
                     if (DynamicVars["CINIMA"].BaseValue < 6 && !_hasDone)
                     {
-                        if (result == 0)
+                        if (result <= 1)
                         {
                             DynamicVars["CINIMA"].BaseValue += 1;
+                            LastCinima = Counter;
+                            LastRare = DynamicVars["CINIMA"].IntValue;
                             _hasDone = true;
                         }
                     }
-                    if (result <= 4 && !_hasDone)
-                    {
-                        await AnicientRewards();
-                        _hasDone = true;
-                    }
                     if (result <= 9 && !_hasDone)
                     {
-                        await RareRewards();
+                        await AnicientRewards();
+                        LastRare = DynamicVars["CINIMA"].IntValue;
                         _hasDone = true;
                     }
-                    if (result <= 24 && !_hasDone)
+                    if ((result <= 19 && !_hasDone)|| DynamicVars["CINIMA"].BaseValue - LastRare >= 10)
+                    {
+                        await RareRewards();
+                        LastRare = DynamicVars["CINIMA"].IntValue;
+                        _hasDone = true;
+                    }
+                    if (result <= 49 && !_hasDone)
                     {
                         await UncommonRewards();
                         _hasDone = true;
@@ -243,7 +312,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if (result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Ancient | RelicRarity.Shop, Owner);
-                if (relic != null)
+                if (relic != null || relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
                     _hasDone = true;
@@ -357,7 +426,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if (result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Rare | RelicRarity.Event, Owner);
-                if (relic != null)
+                if (relic != null || relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
                     _hasDone = true;
@@ -504,7 +573,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if(result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Uncommon, Owner);
-                if (relic != null)
+                if (relic != null || relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
                     _hasDone = true;
@@ -627,7 +696,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if(result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Common, Owner);
-                if(relic != null)
+                if(relic != null || relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
                     _hasDone = true;

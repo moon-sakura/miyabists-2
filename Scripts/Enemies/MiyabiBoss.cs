@@ -54,6 +54,7 @@ namespace Miyabists2.Scripts.Enemies
         public override async Task AfterAddedToRoom()
         {
             await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 10m * CombatState.Players.Count, base.Creature, null);
+            await PowerCmd.Apply<MiyabiBossPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
         }
 
         private bool HeavyAttackUsed = false;

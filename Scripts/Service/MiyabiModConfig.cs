@@ -12,8 +12,36 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Service
 {
+    public enum MiyabiCombatSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+    public enum MiyabiRestSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+    public enum MiyabiShopSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+
     [ConfigHoverTipsByDefault]
-    public sealed class MiyabiModConfig:SimpleModConfig
+    public sealed class MiyabiModConfig : SimpleModConfig
     {
         [ConfigSection("CombatConfig")] // 创建一个战斗设置分组
         //[ConfigHoverTip]
@@ -34,5 +62,17 @@ namespace Miyabists2.Scripts.Service
         public static double DamageTakenMultiplier { get; set; } = 1.0;
 
         public static bool ChangeToAllPlayers { get; set; } = false;
+
+        [ConfigSection("ElseConfig")] // 创建一个战斗设置分组
+        [ConfigHoverTip]
+        public static MiyabiCombatSkinSlot CombatSelectedSlot { get; set; } = MiyabiCombatSkinSlot.Slot0;
+
+        [ConfigHoverTip]
+        public static MiyabiRestSkinSlot RestSelectedSlot { get; set; } = MiyabiRestSkinSlot.Slot0;
+
+        [ConfigHoverTip]
+        public static MiyabiShopSkinSlot ShopSelectedSlot { get; set; } = MiyabiShopSkinSlot.Slot0;
+
     }
 }
+

@@ -28,14 +28,14 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomBigIconPath => BigIconPath;
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("DeathPrevent", 1),
+            new DynamicVar("DeathPrevent", 2),
         ];
 
         public override async Task BeforeApplied(Creature target, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if(MiyabiModConfig.MiyabiEnemiesStronger)
             {
-                DynamicVars["DeathPrevent"].BaseValue = 2;
+                DynamicVars["DeathPrevent"].BaseValue = 3;
             }
         }
 
@@ -63,27 +63,26 @@ namespace Miyabists2.Scripts.Powers
             }
         }
 
-        public override bool ShouldDie(Creature creature)
+        public override async Task BeforeDamageReceived(PlayerChoiceContext choiceContext, Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            if(creature == base.Owner && DynamicVars["DeathPrevent"].IntValue > 0)
+            if (target != base.Owner || amount < target.CurrentHp) return;
+
+            GD.Print($"[MiyabiBoss] ShouldDie check for {target.Name}, DeathPrevent = {DynamicVars["DeathPrevent"].IntValue}");
+
+            if (DynamicVars["DeathPrevent"].IntValue > 0)
             {
+                GD.Print("[MiyabiBoss] Preventing death and removing one stack of DeathPrevent.");
                 DynamicVars["DeathPrevent"].BaseValue -= 1;
-                
-                return false;
-            }
-            return base.ShouldDie(creature);
-        }
-        public override async Task AfterPreventingDeath(Creature creature)
-        {
-            if(creature == base.Owner)
-            {
-                foreach (var powerItem in base.Owner.Powers)
+                foreach (var powerItem in base.Owner.Powers.ToList())
                 {
                     if (powerItem.Type == PowerType.Debuff)
                     {
                         await PowerCmd.Remove(powerItem);
                     }
                 }
+                decimal heal = Math.Max(1m, base.Owner.MaxHp);
+                await CreatureCmd.Heal(base.Owner, heal);
+                await PowerCmd.Apply<IntangiblePower>(choiceContext, base.Owner, 1m, base.Owner, null);
             }
         }
 
@@ -133,5 +132,44 @@ namespace Miyabists2.Scripts.Powers
                 }
             }
         }
+
+        //private bool _isHandlingDeath = false; // 状态锁
+        //public override bool ShouldDie(Creature creature)
+        //{
+        //    if (creature != base.Owner) return true;
+
+        //    // 如果正在处理免死回血期间，直接返回 false，拒绝重复检测
+        //    if (_isHandlingDeath) return false;
+
+        //    GD.Print($"[MiyabiBoss] ShouldDie check for {creature.Name}, DeathPrevent = {DynamicVars["DeathPrevent"].IntValue}");
+
+        //    if (DynamicVars["DeathPrevent"].IntValue > 0)
+        //    {
+        //        GD.Print("[MiyabiBoss] Preventing death and removing one stack of DeathPrevent.");
+        //        DynamicVars["DeathPrevent"].BaseValue -= 1;
+        //        _isHandlingDeath = true; // 上锁
+
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
+        //public override async Task AfterPreventingDeath(Creature creature)
+        //{
+        //    if (creature == base.Owner)
+        //    {
+        //        //foreach (var powerItem in base.Owner.Powers)
+        //        //{
+        //        //    if (powerItem.Type == PowerType.Debuff)
+        //        //    {
+        //        //        await PowerCmd.Remove(powerItem);
+        //        //    }
+        //        //}
+        //        decimal amount = Math.Max(1m, base.Owner.MaxHp);
+        //        await CreatureCmd.Heal(base.Owner, amount);
+        //        _isHandlingDeath = false; // ⬇️ 解锁，恢复正常的死亡检测机制
+        //        GD.Print($"[MiyabiBoss] AfterPreventingDeath triggered for {creature.Name}");
+        //    }
+        //}
     }
 }

@@ -41,6 +41,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterPreventingDeath(Creature creature)
         {
+            if (creature != base.Owner) return;
             Flash();
             decimal amount = Math.Max(1m, (decimal)creature.MaxHp * (Amount / 100m));
             await CreatureCmd.Heal(creature, amount);

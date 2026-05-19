@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6w6tf5ivwm8t"]
+
+[ext_resource type="Texture2D" uid="uid://b2p4dpep4lbs1" path="res://images/charui/miyabi_yinxing_char75.png" id="1_kmi4v"]
+
+[node name="miyabi_yinxing_char" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -207.00002)
+scale = Vector2(0.49294704, 0.492947)
+texture = ExtResource("1_kmi4v")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -93.0
+offset_top = -407.0
+offset_right = 83.0
+offset_bottom = 35.0
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5, -282)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -428)

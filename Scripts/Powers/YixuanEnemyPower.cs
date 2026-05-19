@@ -98,7 +98,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
-            await CheckPhase(choiceContext);
+            //await CheckPhase(choiceContext);
 
             //if (isDoomTarget)
             //{
@@ -117,9 +117,19 @@ namespace Miyabists2.Scripts.Powers
             //}
         }
 
+        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await CheckPhase(choiceContext);
+        }
+
+        public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            await CheckPhase(choiceContext);
+        }
+
         public override bool TryModifyPowerAmountReceived(PowerModel canonicalPower, Creature target, decimal amount, Creature? applier, out decimal modifiedAmount)
         {
-            if(canonicalPower.Type != PowerType.Debuff || target != base.Owner)
+            if(canonicalPower.Type != PowerType.Debuff || target != base.Owner || amount < 1)
             {
                 modifiedAmount = amount;
                 return false;

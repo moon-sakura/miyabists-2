@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using BaseLib.Hooks;
+using BaseLib.Patches.Hooks;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -54,6 +55,7 @@ namespace Miyabists2.Scripts.Service
 
         public static void SetAnoTriggerMultiply(Creature c)
         {
+
             int mul = c.CombatState.PlayerCreatures.Count;
 
             if (AnoNeedCheck)
@@ -152,6 +154,8 @@ namespace Miyabists2.Scripts.Service
 
         public static async Task AddAnoBuildup(Creature target, int anoVar, Creature dealer, CardModel card, PlayerChoiceContext choiceContext)
         {
+            if (target == null || target.IsDead) return;
+
             SetAnoTriggerMultiply(target);
 
             //处理Amount而不是DisplayAmount
@@ -214,6 +218,8 @@ namespace Miyabists2.Scripts.Service
         //紊乱触发
         public static async Task DisorderApply(Creature target, Creature dealer, PlayerChoiceContext choiceContext)
         {
+            if (target == null || target.IsDead) return;
+
             bool moonBless = false;
             if (dealer.IsPlayer)
             {
@@ -238,6 +244,8 @@ namespace Miyabists2.Scripts.Service
         //霜灼增加
         public static async Task FrostApply(Creature target, Creature dealer , PlayerChoiceContext choiceContext)
         {
+            if (target == null || target.IsDead) return;
+
             SetFrostTriggerMultiply(target);
             //await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
 
@@ -274,6 +282,8 @@ namespace Miyabists2.Scripts.Service
         //失衡值叠加
         public static async Task AddDaze(PlayerChoiceContext choiceContext, Creature target,DynamicVar dazeVar,Creature dealer)
         {
+            if (target == null || target.IsDead) return;
+
             SetDazeTriggerMultiply(target);
 
             int chkDaze = target.GetPowerAmount<DazePower>() + dazeVar.IntValue;
@@ -290,6 +300,8 @@ namespace Miyabists2.Scripts.Service
 
         public static async Task DazeAddtoPlayer(PlayerChoiceContext choiceContext, Creature player, int count)
         {
+            if (player == null || player.IsDead) return;
+
             int chkDaze = count;
             if (player.HasPower<DazePower>())
             {
@@ -338,7 +350,7 @@ namespace Miyabists2.Scripts.Service
             {
                 CardModel reward1 = owner.CombatState.CreateCard<HuaCi>(owner.Player);
 
-                if (handSize + i < CardPile.MaxCardsInHand)
+                if (handSize + i <= MaxHandSizePatch.GetMaxHandSize(owner.Player, CardPile.MaxCardsInHand))
                     await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, owner.Player, CardPilePosition.Random);
                 else
                     await CardCmd.AutoPlay(choiceContext, reward1, target);

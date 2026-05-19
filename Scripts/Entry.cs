@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
@@ -36,34 +37,18 @@ public class Entry
 
         var config = new MiyabiModConfig();
 
+        MiyabiSkinManager.RegisterCombatSkin("银庭花信", "res://scenes/miyabi_yinxing_char.tscn");
+        //MiyabiSkinManager.RegisterRestSkin("","res://scenes/miyabi_yinxing_rest.tscn");
+        MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn");
+        //MiyabiSkinManager.RegisterCombatSkin("仪玄", "res://scenes/monsters/yixuan_enemy.tscn");
+
         ModConfigRegistry.Register("Miyabists2", config);
 
         harmony.PatchAll();
         // 使得tscn可以加载自定义脚本
-        ScriptManagerBridge.LookupScriptsInAssembly(typeof(Entry).Assembly);
+        ScriptManagerBridge.LookupScriptsInAssembly(typeof(Entry).Assembly); 
 
         //Log.Debug("星见雅MOD加载完成");
-    }
-
-    [HarmonyPatch(typeof(TheArchitect), "WinRun")]
-    internal static class WatcherArchitectWinRunPatch
-    {
-        private static bool Prefix(TheArchitect __instance, ref Task __result)
-        {
-            FieldInfo fieldInfo = AccessTools.Field(typeof(TheArchitect), "_dialogue");
-            if (((fieldInfo != null) ? fieldInfo.GetValue(__instance) : null) != null)
-            {
-                return true;
-            }
-
-            if (LocalContext.IsMe(__instance.Owner))
-            {
-                RunManager.Instance.ActChangeSynchronizer.SetLocalPlayerReady();
-            }
-
-            __result = Task.CompletedTask;
-            return false;
-        }
     }
 
     [HarmonyPatch(typeof(TouchOfOrobas), "GetUpgradedStarterRelic")]
@@ -81,6 +66,37 @@ public class Entry
         }
     }
 
+    //[HarmonyPatch(typeof(LocTable))]
+    //public class LocTableAccessTrackerPatch
+    //{
+    //    // 🎯 目标方法：LocTable 内部的 HasEntry
+    //    [HarmonyPatch(nameof(LocTable.HasEntry), new Type[] { typeof(string) })]
+    //    [HarmonyPrefix]
+    //    public static void Prefix(LocTable __instance, string key)
+    //    {
+    //        // __instance.Name 可以获取当前正在被查询的表名（比如 "settings_ui"）
+    //        // 过滤我们关心的设置表，以及包含你的 mod 前缀或 slot 的请求
+    //        //if (__instance.Name == "settings_ui")
+    //        {
+    //            GD.Print($"[MiyabiTracker] UI正在查询表 [settings_ui] 的 Key: \"{key}\"");
+
+    //            // 顺便在这里检测一下，此时这个表里到底有没有这个 Key
+    //            // 如果你发现 UI 查了 "miyabi_slot_1.title"，但紧接着打印出“未找到”，说明你的注入时机或者 Key 拼错了。
+    //        }
+    //    }
+    //}
+
+    //[HarmonyPatch(typeof(Miyabi), "get_CustomVisualPath")]
+    //public class MiyabiSkinPatch
+    //{
+    //    public static bool Prefix(ref string __result)
+    //    {
+    //        __result = "res://scenes/monsters/yixuan_enemy.tscn";
+
+    //        return false;
+    //    }
+    //}
+
 
     //[HarmonyPatch(typeof(CharacterModel), "EnergyCounterPath", MethodType.Getter)]
     //public static class EnergyIconPatch
@@ -94,6 +110,27 @@ public class Entry
     //        {
     //            __result = SceneHelper.GetScenePath("combat/energy_counters/defect_energy_counter.scn");
     //        }
+    //    }
+    //}
+
+    //[HarmonyPatch(typeof(TheArchitect), "WinRun")]
+    //internal static class WatcherArchitectWinRunPatch
+    //{
+    //    private static bool Prefix(TheArchitect __instance, ref Task __result)
+    //    {
+    //        FieldInfo fieldInfo = AccessTools.Field(typeof(TheArchitect), "_dialogue");
+    //        if (((fieldInfo != null) ? fieldInfo.GetValue(__instance) : null) != null)
+    //        {
+    //            return true;
+    //        }
+
+    //        if (LocalContext.IsMe(__instance.Owner))
+    //        {
+    //            RunManager.Instance.ActChangeSynchronizer.SetLocalPlayerReady();
+    //        }
+
+    //        __result = Task.CompletedTask;
+    //        return false;
     //    }
     //}
 }
