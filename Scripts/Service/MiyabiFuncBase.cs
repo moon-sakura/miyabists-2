@@ -43,6 +43,15 @@ namespace Miyabists2.Scripts.Service
             return result;
         }
 
+        public static bool GetIsTrue100(int trueRate, Player player)
+        {
+            int randomValue = RadomInt(1, 101, player);
+            if (randomValue <= trueRate)
+                return true;
+            else
+                return false;
+        }
+
         public static T GetRelic<T>(Player player) where T : RelicModel
         {
             return player.Relics.OfType<T>().FirstOrDefault();

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Service
 {
-    internal class MiyabiSkinManager
+    public static class MiyabiSkinManager
     {
         static int MAX_SLOTS = 6; // 你写了多少个 Slot 就改成多少
 

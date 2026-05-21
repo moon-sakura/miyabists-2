@@ -42,6 +42,8 @@ public class Entry
         MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn");
         //MiyabiSkinManager.RegisterCombatSkin("仪玄", "res://scenes/monsters/yixuan_enemy.tscn");
 
+        //MiyabiSkinManager.RegisterCombatSkin("大黄蜂", "res://scenes/modSkin/HollowKnight.tscn");
+
         ModConfigRegistry.Register("Miyabists2", config);
 
         harmony.PatchAll();
