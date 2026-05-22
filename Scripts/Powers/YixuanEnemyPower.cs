@@ -74,12 +74,12 @@ namespace Miyabists2.Scripts.Powers
         }
 
 
-        public override Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if(side == base.Owner.Side)
                 HittedThisTurn = 0;
 
-            return base.AfterTurnEnd(choiceContext, side);
+            return base.AfterSideTurnEnd(choiceContext, side, participants);
         }
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
@@ -122,8 +122,8 @@ namespace Miyabists2.Scripts.Powers
             await CheckPhase(choiceContext);
         }
 
-        public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-        {
+        public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+        { 
             await CheckPhase(choiceContext);
         }
 

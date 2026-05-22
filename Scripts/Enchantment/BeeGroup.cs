@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Enchantment
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(CardKeyword.Retain)];
 
         // 图标位置。大小1:1就行，原版是64x64
-        protected override string? CustomIconPath => "res://icon.svg";
+        protected override string? CustomIconPath => "res://images/enchant/beeGroup.png";
 
         // 决定是否可以附魔到某张卡牌上
         public override bool CanEnchant(CardModel card)

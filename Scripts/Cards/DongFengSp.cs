@@ -36,23 +36,32 @@ namespace Miyabists2.Scripts.Cards
             
         }
 
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
         {
-            await CheckReduce();
+            if (card != this || !base.Owner.Creature.HasPower<SlipperyPower>())
+                return base.TryModifyEnergyCostInCombat(card, originalCost, out modifiedCost);
+
+            modifiedCost = 0;
+            return true;
         }
 
-        public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-        {
-            await CheckReduce();
-        }
+        //public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        //{
+        //    await CheckReduce();
+        //}
 
-        public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-        {
-            if (card == this)
-            {
-                await CheckReduce();
-            }
-        }
+        //public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        //{
+        //    await CheckReduce();
+        //}
+
+        //public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
+        //{
+        //    if (card == this)
+        //    {
+        //        await CheckReduce();
+        //    }
+        //}
 
         protected override void OnUpgrade()
         {

@@ -1,6 +1,7 @@
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -34,33 +35,42 @@ namespace Miyabists2.Scripts.Cards
             await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
         }
 
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
         {
-            await CheckReduce();
+            if(card != this || !base.Owner.Creature.HasPower<SlipperyPower>())
+                return base.TryModifyEnergyCostInCombat(card, originalCost, out modifiedCost);
+
+            modifiedCost = 0;
+            return true;
         }
 
-        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-        {
-            if (side == base.Owner.Creature.Side)
-            {
-                await CheckReduce();
-            }
-        }
+        //public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        //{
+        //    await CheckReduce();
+        //}
 
-        public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-        {
-            if(card == this)
-            {
-                await CheckReduce();
-            }
-        }
+        //public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+        //{
+        //    if (side == base.Owner.Creature.Side)
+        //    {
+        //        await CheckReduce();
+        //    }
+        //}
 
-        protected override void OnUpgrade()
-        {
-            DynamicVars.Damage.UpgradeValueBy(1);
-            DynamicVars.Cards.UpgradeValueBy(1);
-            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
-        }
+        //public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
+        //{
+        //    if(card == this)
+        //    {
+        //        await CheckReduce();
+        //    }
+        //}
+
+        //protected override void OnUpgrade()
+        //{
+        //    DynamicVars.Damage.UpgradeValueBy(1);
+        //    DynamicVars.Cards.UpgradeValueBy(1);
+        //    //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
+        //}
 
         private async Task CheckReduce()
         {

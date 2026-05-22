@@ -45,7 +45,7 @@ namespace Miyabists2.Scripts.Powers
         }
 
 
-        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, -Amount, null, null);
             await PowerCmd.Remove(this);

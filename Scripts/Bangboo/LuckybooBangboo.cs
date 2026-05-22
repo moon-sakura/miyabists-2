@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Bangboo
                 await PowerCmd.Apply<LuckybooAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
         }
 
-        public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
+        public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
         {
             if (side != base.Creature.Side || base.Creature.IsDead || base.Creature.HasPower<LuckybooAct>())
                 return;

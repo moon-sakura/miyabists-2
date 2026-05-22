@@ -101,7 +101,7 @@ namespace Miyabists2.Scripts.Cards
             }
         }
 
-        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (side != Owner.Creature.Side) return;
             CardCmd.Downgrade(this);
