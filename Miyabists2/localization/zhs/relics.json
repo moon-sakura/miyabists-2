@@ -35,7 +35,7 @@
 
 
 	"MIYABISTS2-CHOUKA_RELIC.title": "加密母带",
-  	"MIYABISTS2-CHOUKA_RELIC.description": "现在在休息处可以进行抽卡！每击败一名敌人获得[blue]1[/blue]次免费抽取次数。\\n当前影画：[gold]{CINIMA:diff()}[/gold]\\n当前免费抽取次数：[blue]{FreeCount:diff()}[/blue]",
+  	"MIYABISTS2-CHOUKA_RELIC.description": "现在在休息处可以进行抽卡！\\n当前影画：[gold]{CINIMA:diff()}[/gold]",
   	"MIYABISTS2-CHOUKA_RELIC.flavor": "搏一搏，单车变摩托！",
 
 
@@ -45,6 +45,14 @@
 	"MIYABISTS2-LUCKYBOO_RELIC.title": "招财布",
   	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]",
   	"MIYABISTS2-LUCKYBOO_RELIC.flavor": "真的会招财吗？",
+
+	"MIYABISTS2-EXPLOREBOO_RELIC.title": "寻宝布",
+  	"MIYABISTS2-EXPLOREBOO_RELIC.description": "回合开始时召唤[gold]寻宝布[/gold]。",
+  	"MIYABISTS2-EXPLOREBOO_RELIC.flavor": "要发财了！",
+
+	"MIYABISTS2-SUMOBOO_RELIC.title": "扑击布",
+  	"MIYABISTS2-SUMOBOO_RELIC.description": "回合开始时召唤[gold]扑击布[/gold]。",
+  	"MIYABISTS2-SUMOBOO_RELIC.flavor": "起飞。",
 
 	"MIYABISTS2-EOUS_BANGBOO_RELIC.title": "伊埃斯",
   	"MIYABISTS2-EOUS_BANGBOO_RELIC.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线。",

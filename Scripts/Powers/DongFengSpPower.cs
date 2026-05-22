@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Service;
 namespace Miyabists2.Scripts.Powers
@@ -32,10 +33,21 @@ namespace Miyabists2.Scripts.Powers
             return 1m;
         }
 
-        public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
+        //public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
+        //{
+        //    bool isValidMove = !props.HasFlag(ValueProp.Unpowered);
+        //    if (dealer != base.Owner && !isValidMove)
+        //    {
+        //        return;
+        //    }
+        //    // 触发一次后移除
+        //    await PowerCmd.Remove(this);
+        //}
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            bool isValidMove = !props.HasFlag(ValueProp.Unpowered);
-            if (dealer != base.Owner && !isValidMove)
+            bool isValidMove = !cardPlay.Card.DynamicVars.Damage.Props.HasFlag(ValueProp.Unpowered);
+            if (cardPlay.Card.Owner.Creature != base.Owner && !isValidMove)
             {
                 return;
             }

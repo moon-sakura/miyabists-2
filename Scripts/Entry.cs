@@ -37,6 +37,8 @@ public class Entry
 
         var config = new MiyabiModConfig();
 
+        MiyabiSkinManager.PreSkinRegister();
+
         MiyabiSkinManager.RegisterCombatSkin("银庭花信", "res://scenes/miyabi_yinxing_char.tscn");
         //MiyabiSkinManager.RegisterRestSkin("","res://scenes/miyabi_yinxing_rest.tscn");
         MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn");
@@ -53,20 +55,20 @@ public class Entry
         //Log.Debug("星见雅MOD加载完成");
     }
 
-    [HarmonyPatch(typeof(TouchOfOrobas), "GetUpgradedStarterRelic")]
-    internal static class TouchOfOrobasGetUpgradedStarterRelicPatch
-    {
-        private static bool Prefix(TouchOfOrobas __instance, RelicModel starterRelic, ref RelicModel __result)
-        {
-            if (starterRelic is SwordNotailRelic)
-            {
-                __result = ModelDb.Relic<NoTailFullRelic>();
-                return false;
-            }
+    //[HarmonyPatch(typeof(TouchOfOrobas), "GetUpgradedStarterRelic")]
+    //internal static class TouchOfOrobasGetUpgradedStarterRelicPatch
+    //{
+    //    private static bool Prefix(TouchOfOrobas __instance, RelicModel starterRelic, ref RelicModel __result)
+    //    {
+    //        if (starterRelic is SwordNotailRelic)
+    //        {
+    //            __result = ModelDb.Relic<NoTailFullRelic>();
+    //            return false;
+    //        }
 
-            return true;
-        }
-    }
+    //        return true;
+    //    }
+    //}
 
     //[HarmonyPatch(typeof(LocTable))]
     //public class LocTableAccessTrackerPatch

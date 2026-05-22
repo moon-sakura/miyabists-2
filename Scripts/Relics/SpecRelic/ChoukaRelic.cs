@@ -97,7 +97,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("CINIMA",0),
-            new DynamicVar("Uppercount", 50m),
+            new DynamicVar("Uppercount", 25m),
             new DynamicVar("FreeCount", 0m)
         ];
 
@@ -146,14 +146,21 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
-        public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
-        {
-            if(creature.IsMonster && creature.PetOwner == null)
-            {
-                FreeCounter++;
-                DynamicVars["FreeCount"].BaseValue++;
-            }
-        }
+        //public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+        //{
+        //    if(creature.IsMonster && creature.PetOwner == null)
+        //    {
+        //        FreeCounter++;
+        //        DynamicVars["FreeCount"].BaseValue++;
+        //    }
+        //}
+
+        //public override Task BeforeRoomEntered(AbstractRoom room)
+        //{
+        //    FreeCounter++;
+        //    DynamicVars["FreeCount"].BaseValue++;
+        //    return base.BeforeRoomEntered(room);
+        //}
 
 
         public override decimal ModifyMerchantPrice(Player player, MerchantEntry entry, decimal originalPrice)
@@ -208,7 +215,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         public async Task OnUsed()
         {
             DynamicVars["FreeCount"].BaseValue = FreeCounter;
-            if (Owner.Gold < ChoukaRestSiteOption.Cost && DynamicVars["FreeCount"].BaseValue < 1)
+            if (Owner.Gold < ChoukaRestSiteOption.Cost)// && DynamicVars["FreeCount"].BaseValue < 1)
             {
                 return;
             }
@@ -220,12 +227,12 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
                     Flash();
                     AddCounter(1);
-                    if(DynamicVars["FreeCount"].BaseValue >= 1)
-                    {
-                        DynamicVars["FreeCount"].BaseValue -= 1;
-                        FreeCounter--;
-                    }
-                    else
+                    //if(DynamicVars["FreeCount"].BaseValue >= 1)
+                    //{
+                    //    DynamicVars["FreeCount"].BaseValue -= 1;
+                    //    FreeCounter--;
+                    //}
+                    //else
                     {
                         Owner.Gold -= ChoukaRestSiteOption.Cost;
                     }
@@ -666,7 +673,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 int enchantResult = MiyabiFuncBase.RadomInt(0, 5, Owner);
                 if (enchantResult == 0)
                 {
-                    if (await TryEnchantCard<Nimble>())
+                    if (await TryEnchantCard<Nimble>(2m))
                     {
                         _hasDone = true;
                     }
@@ -773,12 +780,12 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             return card.Rarity == CardRarity.Common || card.Rarity == CardRarity.Uncommon;
         }
 
-        private async Task<bool> TryEnchantCard<T>() where T : EnchantmentModel
+        private async Task<bool> TryEnchantCard<T>(decimal amount = 1m) where T : EnchantmentModel
         {
             CardModel cardModel = (await CardSelectCmd.FromDeckForEnchantment(base.Owner, ModelDb.Enchantment<T>(), 1, new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt,0, 1))).FirstOrDefault();
             if (cardModel != null)
             {
-                CardCmd.Enchant<T>(cardModel, 1m);
+                CardCmd.Enchant<T>(cardModel, amount);
                 NCardEnchantVfx nCardEnchantVfx = NCardEnchantVfx.Create(cardModel);
                 if (nCardEnchantVfx != null)
                 {

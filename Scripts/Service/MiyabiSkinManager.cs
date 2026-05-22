@@ -1,6 +1,8 @@
 using Godot;
+using BaseLib.Extensions;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using Miyabists2.Scripts.Char;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,8 @@ namespace Miyabists2.Scripts.Service
             if (Miyabi.CombatSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
             {
                 Miyabi.CombatSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
+
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{Miyabi.CombatSkinPaths.Count - 1}!");
                 //UpdateSkin("COMBAT", Miyabi.CombatSkinPaths.Count - 1, name);
                 skinDatas.Add($"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot{Miyabi.CombatSkinPaths.Count - 1}", name );
@@ -32,6 +36,8 @@ namespace Miyabists2.Scripts.Service
             if (Miyabi.RestSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
             {
                 Miyabi.RestSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
+
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{Miyabi.RestSkinPaths.Count - 1}!");
                 //UpdateSkin("REST", Miyabi.RestSkinPaths.Count - 1, name);
                 skinDatas.Add($"MIYABISTS2-REST_SELECTED_SLOT.Slot{Miyabi.RestSkinPaths.Count - 1}", name );
@@ -43,9 +49,27 @@ namespace Miyabists2.Scripts.Service
             if (Miyabi.ShopSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
             {
                 Miyabi.ShopSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
+
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{Miyabi.ShopSkinPaths.Count - 1}!");
                 //UpdateSkin("SHOP", Miyabi.ShopSkinPaths.Count - 1, name);
                 skinDatas.Add($"MIYABISTS2-SHOP_SELECTED_SLOT.Slot{Miyabi.ShopSkinPaths.Count - 1}", name );
+            }
+        }
+
+        public static void PreSkinRegister()
+        {
+            foreach(var skin in Miyabi.ShopSkinPaths)
+            {
+                skin?.RegisterSceneForConversion<NCreatureVisuals>();
+            }
+            foreach (var skin in Miyabi.RestSkinPaths)
+            {
+                skin?.RegisterSceneForConversion<NCreatureVisuals>();
+            }
+            foreach (var skin in Miyabi.CombatSkinPaths)
+            {
+                skin?.RegisterSceneForConversion<NCreatureVisuals>();
             }
         }
 

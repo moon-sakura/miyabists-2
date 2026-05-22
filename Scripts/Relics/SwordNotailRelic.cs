@@ -36,6 +36,9 @@ namespace Miyabists2.Scripts.Relics
     internal class SwordNotailRelic : CustomRelicModel
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
+
+        public override RelicModel? GetUpgradeReplacement() => ModelDb.Relic<NoTailFullRelic>();
+
         public override string PackedIconPath => "res://images/relics/swordNotail200.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;

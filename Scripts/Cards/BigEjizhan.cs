@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts.Cards
         public BigEjizhan() : base(1, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(12, ValueProp.Move),
+            new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 8),
             new DynamicVar(AnomalyBuildupVarName,1),
             new DynamicVar("Strength",1),

@@ -59,6 +59,7 @@ namespace Miyabists2.Scripts.Cards
         {
             decimal bufferAmount = damage / DynamicVars["Buffer"].BaseValue;
             await PowerCmd.Apply<SlipperyPower>(choiceContext, base.Owner.Creature, bufferAmount, Owner.Creature, this);
+            await PowerCmd.Apply<MiyabiParryPower>(choiceContext, base.Owner.Creature, bufferAmount, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

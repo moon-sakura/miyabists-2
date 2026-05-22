@@ -1,8 +1,11 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Minion;
 using Miyabists2.Scripts.Bangboo.BangbooRelic;
 using Miyabists2.Scripts.Service;
@@ -18,28 +21,37 @@ namespace Miyabists2.Scripts.Bangboo
     {
         protected override string VisualsPath => "res://scenes/bangboo/eous_bangboo.tscn";
 
-        public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, Creature self, MinionSummonOptions options) // 注意使用 self 而非 this
+        public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options) // 注意使用 self 而非 this
         {
-            //await base.OnSummon(choiceContext, owner, self, options); // 先调用基类的 OnSummon 来设置血量等基础属性
+            await base.OnSummon(owner, self, options);
 
-            //base.IsHealthBarVisible = true;
-            //if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)
-                //await PowerCmd.Apply<EousAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
+            if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)
+                await PowerCmd.Apply<EousAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
         }
+
     }
 
     internal class EousAct : MiyabiBangbooActBase
     {
-        //protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
-        //{
-        //    var relic = MiyabiFuncBase.GetRelic<EousBangbooRelic>(Owner.PetOwner);
+        public override TargetType TargetType => TargetType.AnyPlayer;
+        public string BigIconPath => "res://images/bangboo/relicMode/eousRelic.png";
+        public string BigBetaIconPath => BigIconPath;
 
-        //    if (relic == null || relic.Counter <= 0)
-        //        return;
+        private bool used = false;
 
-        //    await PowerCmd.Apply<BufferPower>(choiceContext, Owner.PetOwner.Creature, 1m, Owner, null);
+        protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
+        {
+            if(Owner.PetOwner.PlayerCombatState.Energy < 1 || used) return;
 
-        //    relic.DecreaseCounter();
-        //}
+            await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
+            await CreatureCmd.GainBlock(Owner.PetOwner.Creature,6m,ValueProp.Unpowered,null);
+            used = true;
+        }
+
+        public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        {
+            used = false;
+            return base.AfterPlayerTurnStart(choiceContext, player);
+        }
     }
 }

@@ -1,11 +1,6 @@
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Monsters;
-using MegaCrit.Sts2.Core.Nodes.Combat;
-using MegaCrit.Sts2.Core.Nodes.Rooms;
-using MinionLib.Commands;
 using MinionLib.Minion;
 using Miyabists2.Scripts.Service;
 using System;
@@ -16,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
-    internal class LuckybooRelic : MiyabiBangbooRelicBase
+    internal class SumobooRelic : MiyabiBangbooRelicBase
     {
         public override RelicRarity Rarity => RelicRarity.Common;
-        public override string PackedIconPath => "res://images/bangboo/relicMode/luckybooRelic.png";
+        public override string PackedIconPath => "res://images/bangboo/relicMode/sumobooRelic.png";
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
@@ -29,7 +24,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
             await base.AfterPlayerTurnStart(choiceContext, player);
-            await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(Owner, 4m, MinionPosition.BackUpper,null,1m);
+            await MiyabiBangbooService.SummonBangboo<SumobooBangboo>(Owner, 6m, MinionPosition.Front,null,1m);
         }
     }
 }

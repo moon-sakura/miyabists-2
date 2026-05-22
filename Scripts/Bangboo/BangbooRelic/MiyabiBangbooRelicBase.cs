@@ -28,18 +28,11 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
             if (player != base.Owner) { return; }
-            if (base.Owner.Creature.CombatState.RoundNumber == 1)
-            {
-                Flash();
-
-                var pet = await MinionCmd.AddMinion<EousBangboo>(choiceContext, Owner, new MinionSummonOptions(
-                    MaxHp: 6m,                              // 血量
-                    PrimaryStatAmount: 0m,                  // 主要参数（具体内容在随从的 OnSummon 里定义），还有次要参数等可以按需传入
-                    Source: null,                           // 召唤来源（通常是这张牌）
-                    Position: MinionPosition.Front));       // 站位（见后文，默认是前排）
-
-                //NCombatRoom.Instance?.GetCreatureNode(pet)?.TrackBlockStatus(Owner.Creature);
-            }
+            if (base.Owner.Creature.CombatState.RoundNumber != 1) return;
+            
+            Flash();
         }
+
+        //public virtual void AddMinion<T>()
     }
 }
