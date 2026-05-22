@@ -68,32 +68,26 @@ namespace Miyabists2.Scripts.Enchantment
             List<CardModel> cards = [];
             cards.AddRange(base.Card.Owner.PlayerCombatState.DrawPile.Cards.ToList());
             cards.AddRange(base.Card.Owner.PlayerCombatState.Hand.Cards.ToList());
-            foreach (var cardin in cards) 
-            {
-                if (!CanEnchant(cardin))
-                {
-                    cards.Remove(cardin);
-                }
-            }
 
-            var card = cards.TakeRandom(1, base.Card.Owner.RunState.Rng.Shuffle).FirstOrDefault();
+            List<CardModel> validCards = cards.Where(cardin => CanEnchant(cardin)).ToList();
+            var targetCard = validCards.TakeRandom(1, base.Card.Owner.RunState.Rng.Shuffle).FirstOrDefault();
 
-            if(card != null)
-                CardCmd.Enchant<BeeGroupEnchantment>(card,1m).SetTemporary(true);
+            if (targetCard != null)
+                CardCmd.Enchant<BeeGroupEnchantment>(targetCard, 1m).SetTemporary(true);
         }
 
 
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if(base.Card.Pile == null) { return; }
-            if (base.Card.Pile.Type != PileType.Hand || base.Card.Pile.Type != PileType.Draw)
+            if (base.Card.Pile.Type != PileType.Hand && base.Card.Pile.Type != PileType.Draw)
             {
                 return;
             }
 
-            if (MiyabiFuncBase.GetIsTrue100(10, base.Card.Owner))
+            if (MiyabiFuncBase.GetIsTrue100(10, base.Card.Owner)||(cardPlay.Card.Enchantment is BeeGroupEnchantment && MiyabiFuncBase.GetIsTrue100(25, base.Card.Owner)))
             {
-                await CardCmd.AutoPlay(choiceContext,base.Card,null); return;
+                await CardCmd.AutoPlay(choiceContext, base.Card, null);
             }
         }
 

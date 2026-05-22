@@ -28,7 +28,7 @@ namespace Miyabists2.Scripts.Cards
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new CardsVar(2),
+            new CardsVar(1),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -41,25 +41,23 @@ namespace Miyabists2.Scripts.Cards
             List<CardModel> cards = [];
             cards.AddRange(base.Owner.PlayerCombatState.DrawPile.Cards.ToList());
             cards.AddRange(base.Owner.PlayerCombatState.Hand.Cards.ToList());
-            var beeEnchant = new BeeGroupEnchantment();
-            foreach (var cardin in cards)
+            var beeEnchant = ModelDb.Enchantment<BeeGroupEnchantment>();
+
+            List<CardModel> validCards = cards.Where(cardin => beeEnchant.CanEnchant(cardin)).ToList();
+            var targetCard = validCards.TakeRandom(DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.Shuffle);
+
+            if (targetCard != null)
             {
-                if (!beeEnchant.CanEnchant(cardin))
-                {
-                    cards.Remove(cardin);
-                }
+                foreach (var card in targetCard)
+                { CardCmd.Enchant<BeeGroupEnchantment>(card, 1m).SetTemporary(true); }
+               
             }
-
-            var card = cards.TakeRandom(1, base.Owner.RunState.Rng.Shuffle).FirstOrDefault();
-
-            if (card != null)
-                CardCmd.Enchant<BeeGroupEnchantment>(card, 1m).SetTemporary(true);
         }
 
         protected override void OnUpgrade()
         {
             AddKeyword(CardKeyword.Innate);
-            DynamicVars.Cards.UpgradeValueBy(1);
+            //DynamicVars.Cards.UpgradeValueBy(1);
         }
     }
 }

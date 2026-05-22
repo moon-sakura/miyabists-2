@@ -22,7 +22,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(10, ValueProp.Move),
-            new DynamicVar(DazeVarName, 10)
+            new DynamicVar(DazeVarName, 10),
+            new DynamicVar(SupportVarName,3),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => 
@@ -43,10 +44,10 @@ namespace Miyabists2.Scripts.Cards
         {
             decimal damageor = DynamicVars.Damage.BaseValue;
 
-            if (base.CheckSupportCost(3) != 0)
+            if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
             {
                 DynamicVars.Damage.BaseValue += 8;
-                await CostSupporPoint(3, choiceContext);
+                await CostSupporPoint(DynamicVars[SupportVarName].IntValue, choiceContext);
             }
             if(cardPlay.Target.HasPower<BreakPower>()) DynamicVars.Damage.BaseValue *= 3;
 

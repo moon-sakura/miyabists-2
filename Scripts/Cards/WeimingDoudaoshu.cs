@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.OtherWorldFriends];
 
         public WeimingDoudaoshu()
-            : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+            : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
         {
         }
 

@@ -28,7 +28,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(3, ValueProp.Move),
-            new DynamicVar(DazeVarName, 8)
+            new DynamicVar(DazeVarName, 12)
         ];
 
         //public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
@@ -48,7 +48,7 @@ namespace Miyabists2.Scripts.Cards
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(1);
-            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(4);
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
         }
     }
 }

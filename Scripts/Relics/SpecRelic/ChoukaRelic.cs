@@ -39,6 +39,7 @@ using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Runs.Metrics;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using Miyabists2.Scripts.Char;
+using Miyabists2.Scripts.Enchantment;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using System;
@@ -292,7 +293,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if (result == 0)
             {
-                int enchantResult = MiyabiFuncBase.RadomInt(0, 2, Owner);
+                int enchantResult = MiyabiFuncBase.RadomInt(0, 3, Owner);
                 if (enchantResult == 0)
                 {
                     if (await TryEnchantCard<Instinct>())
@@ -302,7 +303,14 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 }
                 if (enchantResult <= 1 && !_hasDone)
                 {
-                    if (await TryEnchantCard< TezcatarasEmber>())
+                    if (await TryEnchantCard<TezcatarasEmber>())
+                    {
+                        _hasDone = true;
+                    }
+                }
+                if (enchantResult <= 2 && !_hasDone)
+                {
+                    if (await TryEnchantCard<BeeGroupEnchantment>())
                     {
                         _hasDone = true;
                     }
