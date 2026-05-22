@@ -162,6 +162,13 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         //    return base.BeforeRoomEntered(room);
         //}
 
+        public override Task AfterCombatVictory(CombatRoom room)
+        {
+            FreeCounter++;
+            DynamicVars["FreeCount"].BaseValue++;
+            return base.AfterCombatVictory(room);
+        }
+
 
         public override decimal ModifyMerchantPrice(Player player, MerchantEntry entry, decimal originalPrice)
         {
@@ -215,7 +222,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         public async Task OnUsed()
         {
             DynamicVars["FreeCount"].BaseValue = FreeCounter;
-            if (Owner.Gold < ChoukaRestSiteOption.Cost)// && DynamicVars["FreeCount"].BaseValue < 1)
+            if (Owner.Gold < ChoukaRestSiteOption.Cost && DynamicVars["FreeCount"].BaseValue < 1)
             {
                 return;
             }
@@ -227,12 +234,12 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
                     Flash();
                     AddCounter(1);
-                    //if(DynamicVars["FreeCount"].BaseValue >= 1)
-                    //{
-                    //    DynamicVars["FreeCount"].BaseValue -= 1;
-                    //    FreeCounter--;
-                    //}
-                    //else
+                    if (DynamicVars["FreeCount"].BaseValue >= 1)
+                    {
+                        DynamicVars["FreeCount"].BaseValue -= 1;
+                        FreeCounter--;
+                    }
+                    else
                     {
                         Owner.Gold -= ChoukaRestSiteOption.Cost;
                     }
