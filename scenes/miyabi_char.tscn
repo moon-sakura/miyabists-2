@@ -6,8 +6,8 @@
 
 [node name="Visuals" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -195)
-scale = Vector2(0.55270654, 0.55270666)
+position = Vector2(2.3841858e-07, -201)
+scale = Vector2(0.56837595, 0.56837606)
 texture = ExtResource("1_s6fse")
 
 [node name="Bounds" type="Control" parent="."]

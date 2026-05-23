@@ -32,18 +32,24 @@ namespace Miyabists2.Scripts.Bangboo
     {
         public override TargetType TargetType => TargetType.None;
 
-        public string BigIconPath => "res://images/bangboo/relicMode/explorebooRelic.png";
-        public string BigBetaIconPath => BigIconPath;
+        public override string BigIconPath => "res://images/bangboo/relicMode/explorebooRelic.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Gold", 0m),
-            new DynamicVar("MaxGold",25m)
+            new DynamicVar("MaxGold",25m),
+            new DynamicVar ("MAXUSE", 1),
         ];
+
+        public int UsedCount { get; set; } = 0;
 
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             decimal gold = 5m * Owner.PetOwner.Creature.CombatState.RoundNumber > DynamicVars["MaxGold"].BaseValue ? DynamicVars["MaxGold"].BaseValue : 5m * Owner.PetOwner.Creature.CombatState.RoundNumber;
-            DynamicVars["Gold"].BaseValue += gold;
+            
+            for (int i = 0; i < DynamicVars["MAXUSE"].IntValue; i++)
+            {
+                DynamicVars["Gold"].BaseValue += gold;
+            }
         }
 
         public override async Task AfterCombatVictory(CombatRoom room)

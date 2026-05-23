@@ -32,26 +32,30 @@ namespace Miyabists2.Scripts.Bangboo
     {
         public override TargetType TargetType => TargetType.AnyEnemy;
 
-        public string BigIconPath => "res://images/bangboo/relicMode/sumobooRelic.png";
-        public string BigBetaIconPath => BigIconPath;
+        public override string BigIconPath => "res://images/bangboo/relicMode/sumobooRelic.png";
 
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar ("MAXUSE", 1),
+            new DynamicVar("Daze", 25m),
+        ];
+
+        public int UsedCount { get; set; } = 0;
 
         private bool used = false;
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Daze", 25m)];
-
         protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
         {
+            used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
             if (Owner.PetOwner.PlayerCombatState.Energy < 1 || used) return;
 
             await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
             await MiyabiCombatService.AddDaze(choiceContext, target, DynamicVars["Daze"],base.Owner);
-            used = true;
+            UsedCount++;
         }
 
         public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            used = false;
+            UsedCount = 0;
             return base.AfterPlayerTurnStart(choiceContext, player);
         }
     }

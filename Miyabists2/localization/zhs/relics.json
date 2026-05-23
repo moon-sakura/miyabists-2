@@ -40,10 +40,12 @@
 
 
 
-
+	"MIYABISTS2-OVERTIMEBOO_RELIC.title": "加班布",
+  	"MIYABISTS2-OVERTIMEBOO_RELIC.description": "回合开始时召唤[gold]加班布[/gold]。",
+  	"MIYABISTS2-OVERTIMEBOO_RELIC.flavor": "牛马布",
 
 	"MIYABISTS2-LUCKYBOO_RELIC.title": "招财布",
-  	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]",
+  	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]。",
   	"MIYABISTS2-LUCKYBOO_RELIC.flavor": "真的会招财吗？",
 
 	"MIYABISTS2-EXPLOREBOO_RELIC.title": "寻宝布",

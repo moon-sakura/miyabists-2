@@ -226,7 +226,7 @@
 	"MIYABISTS2-WEIMING_DOUDAOSHU.title": "苇名抖刀术",
     "MIYABISTS2-WEIMING_DOUDAOSHU.description": "未被[gold]击破[/gold]时受到伤害降低[blue]25%[/blue]，每次受击时添加1张[gold]花辞[/gold]到手卡\\n受到未被格挡的伤害时为自己添加{Daze:diff()}层失衡，累计[blue]100[/blue]层后触发[gold]击破[/gold]",
 
-	"MIYABISTS2-BEE_GROUP.title": "蜂群",
+	"MIYABISTS2-BEE_GROUP.title": "蜂群集结",
     "MIYABISTS2-BEE_GROUP.description": "为手卡与抽牌堆中任意{Cards:diff()}张卡附上[gold]蜂群[/gold]",
 
 	"MIYABISTS2-BANGBOO_SUMMON_ONE.title": "邦布来袭！",

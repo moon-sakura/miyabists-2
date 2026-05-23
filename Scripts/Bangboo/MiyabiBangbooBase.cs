@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Action;
 using MinionLib.Commands;
 using MinionLib.Minion;
+//using MinionLib.BaseLibAdapters;
 using Miyabists2.Scripts.Bangboo.BangbooRelic;
 using Miyabists2.Scripts.Service;
 using System;
@@ -55,6 +56,11 @@ namespace Miyabists2.Scripts.Bangboo
         public override bool AutoRemoveAtTurnEnd => false;                       // 是否在回合结束自动移除
         public override PowerType Type => PowerType.Buff;                       // Power 的类型
         public override PowerStackType StackType => PowerStackType.Counter;     // Power 的堆叠属性
+
+        public virtual string BigIconPath => "res://images/bangboo/relicMode/eousRelic.png";
+        public string BigBetaIconPath => BigIconPath;
+        //public override string CustomPackedIconPath => BigIconPath;
+        //public override string CustomBigIconPath => BigIconPath;
 
 
         // 核心重载，定义 Action 被触发时的行为，类似于卡牌的 OnPlay

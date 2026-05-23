@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Minion;
 using System;
@@ -33,26 +34,30 @@ namespace Miyabists2.Scripts.Bangboo
     {
         public override TargetType TargetType => TargetType.AnyEnemy;
 
-        public string BigIconPath => "res://images/bangboo/relicMode/luckybooRelic.png";
-        public string BigBetaIconPath => BigIconPath;
+        public override string BigIconPath => "res://images/bangboo/relicMode/luckybooRelic.png";
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar ("MAXUSE", 1),
+        ];
+
+        public int UsedCount { get; set; } = 0;
 
         private bool used = false;
 
         protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
         {
+            used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
             if (Owner.PetOwner.Gold < 10m || used)
                 return;
 
             await PlayerCmd.LoseGold(10m, Owner.PetOwner);
             await CreatureCmd.Damage(choiceContext, target, 20m, ValueProp.Move, Owner);
-            used = true;
-
-            //await PowerCmd.TickDownDuration(this);
+            UsedCount++;
         }
 
         public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            used = false;
+            UsedCount = 0;
             return base.AfterPlayerTurnStart(choiceContext, player);
         }
     }
