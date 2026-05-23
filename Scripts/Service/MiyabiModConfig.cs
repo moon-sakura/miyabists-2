@@ -40,26 +40,44 @@ namespace Miyabists2.Scripts.Service
         Slot5
     }
 
+    public enum MiyabiSelectedHard
+    {
+        Zero = 0,
+        Sb,
+        Zn,
+        Sn,
+        Mn,
+        Cd,
+        Ni,
+        Cu,
+        Bi,
+        Pb,
+        Hg
+    }
+
     [ConfigHoverTipsByDefault]
     public sealed class MiyabiModConfig : SimpleModConfig
     {
         [ConfigSection("CombatConfig")] // 创建一个战斗设置分组
+        [ConfigHoverTip]
+        public static MiyabiSelectedHard CombatHardSelected { get; set; } = MiyabiSelectedHard.Zero;
+
         //[ConfigHoverTip]
         public static bool MiyabiEnemiesStronger { get; set; } = false;
 
-        [ConfigSlider(0.5, 5.0, 0.1, Format = "{0:0.#}x")]
-        [ConfigHoverTip]
-        public static double MonsterHpMax { get; set; } = 1.0;
+        //[ConfigSlider(0.5, 5.0, 0.1, Format = "{0:0.#}x")]
+        //[ConfigHoverTip]
+        //public static double MonsterHpMax { get; set; } = 1.0;
 
-        // 2. 限制造成伤害 (使用百分比滑块展示，范围 0% 到 100%)
-        [ConfigSlider(0.3, 1.5, 0.05, Format = "{0:0.#}x")]
-        [ConfigHoverTip]
-        public static double DamageDealtLimit { get; set; } = 1.0;
+        //// 2. 限制造成伤害 (使用百分比滑块展示，范围 0% 到 100%)
+        //[ConfigSlider(0.3, 1.5, 0.05, Format = "{0:0.#}x")]
+        //[ConfigHoverTip]
+        //public static double DamageDealtLimit { get; set; } = 1.0;
 
-        // 3. 受到更多伤害 (范围 1x 到 5x)
-        [ConfigSlider(0.5, 3.0, 0.1, Format = "{0:0.#}x")]
-        [ConfigHoverTip]
-        public static double DamageTakenMultiplier { get; set; } = 1.0;
+        //// 3. 受到更多伤害 (范围 1x 到 5x)
+        //[ConfigSlider(0.5, 3.0, 0.1, Format = "{0:0.#}x")]
+        //[ConfigHoverTip]
+        //public static double DamageTakenMultiplier { get; set; } = 1.0;
 
         public static bool ChangeToAllPlayers { get; set; } = false;
 

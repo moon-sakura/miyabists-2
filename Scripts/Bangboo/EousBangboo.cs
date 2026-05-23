@@ -37,28 +37,49 @@ namespace Miyabists2.Scripts.Bangboo
         public override TargetType TargetType => TargetType.AnyPlayer;
         public override string BigIconPath => "res://images/bangboo/relicMode/eousRelic.png";
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar ("MAXUSE", 1),
-        ];
+        //protected override IEnumerable<DynamicVar> CanonicalVars => [
+        //    new DynamicVar ("MAXUSE", MAXUSE),
+        //];
 
-        public int UsedCount { get; set; } = 0;
+        //public int UsedCount { get; set; } = 0;
 
         private bool used = false;
 
+        //public bool isFree { get; set; } = false;
 
         protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
         {
-            used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
-            if(Owner.PetOwner.PlayerCombatState.Energy < 1 || used) return;
+            DynamicVars["MAXUSE"].BaseValue = MAXUSE;
+            DynamicVars["Used"].BaseValue = UsedCount;
 
+            used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
+            if ((Owner.PetOwner.PlayerCombatState.Energy < 1 || used) && !isFree) return;
+
+            await ActEffect(target);
+            if (!isFree)
+            {
+                await ActCost();
+            }
+            isFree = false;
+        }
+
+        public async Task ActCost()
+        {
             await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
-            await CreatureCmd.GainBlock(Owner.PetOwner.Creature,6m,ValueProp.Unpowered,null);
             UsedCount++;
+            DynamicVars["Used"].BaseValue = UsedCount;
+            isFree = false;
+        }
+
+        public async Task ActEffect(Creature target)
+        {
+            await CreatureCmd.GainBlock(target, 6m, ValueProp.Unpowered, null);
         }
 
         public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
             UsedCount = 0;
+            DynamicVars["Used"].BaseValue = UsedCount;
             return base.AfterPlayerTurnStart(choiceContext, player);
         }
     }

@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -33,8 +34,6 @@ namespace Miyabists2.Scripts.Bangboo
 
         public virtual MinionPosition Position { get; set; } = MinionPosition.Front;
 
-
-
         public MiyabiBangbooBase()
         {
             VisualsPath?.RegisterSceneForConversion<NCreatureVisuals>();
@@ -61,6 +60,19 @@ namespace Miyabists2.Scripts.Bangboo
         public string BigBetaIconPath => BigIconPath;
         //public override string CustomPackedIconPath => BigIconPath;
         //public override string CustomBigIconPath => BigIconPath;
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar("MAXUSE", MAXUSE),
+            new DynamicVar("Used",0),
+        ];
+
+        public int UsedCount { get; set; } = 0;
+
+        public int MAXUSE { get; set; } = 1;
+
+        public bool isFree { get; set; } = false;
+
+
+        public void SetFree() => isFree = true;
 
 
         // 核心重载，定义 Action 被触发时的行为，类似于卡牌的 OnPlay
@@ -68,6 +80,12 @@ namespace Miyabists2.Scripts.Bangboo
         protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
         {
             
+        }
+
+        public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            DynamicVars["MAXUSE"].BaseValue = MAXUSE;
+            return base.AfterCardPlayed(choiceContext, cardPlay);
         }
     }
 }

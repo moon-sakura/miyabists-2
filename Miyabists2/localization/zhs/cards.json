@@ -232,6 +232,15 @@
 	"MIYABISTS2-BANGBOO_SUMMON_ONE.title": "邦布来袭！",
     "MIYABISTS2-BANGBOO_SUMMON_ONE.description": "随机召唤一个邦布",
 
+	"MIYABISTS2-BANGBOO_ACTIVE_ONE.title": "邦布出击！",
+    "MIYABISTS2-BANGBOO_ACTIVE_ONE.description": "指定一个邦布，可以免费使用其1次能力",
+
+	"MIYABISTS2-BANGBOO_USE_ONEMORE.title": "邦布爆发！",
+    "MIYABISTS2-BANGBOO_USE_ONEMORE.description": "指定一个邦布，每回合可额外使用其1次能力",
+
+	"MIYABISTS2-BANGBOO_CHARGE_ALL.title": "邦布充能！",
+    "MIYABISTS2-BANGBOO_CHARGE_ALL.description": "所有邦布回复1次能力使用次数",
+
 	"MIYABISTS2-TRAINING_TODAY.title": "今日修行",
     "MIYABISTS2-TRAINING_TODAY.description": "选择今天的修行",
 	"MIYABISTS2-TRAINING_TODAY.selectionScreenPrompt": "选择修行",

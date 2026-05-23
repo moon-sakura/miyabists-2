@@ -181,32 +181,32 @@
 
 
 	"LUCKYBOO_ACT.title": "招财布",
-    "LUCKYBOO_ACT.description": "每回合结束[blue]{MAXUSE:diff()}[/blue]次，可以消耗[red]10[/red][gold]金币[/gold]对一个敌人造成[blue]20[/blue]点伤害。",
-    "LUCKYBOO_ACT.smartDescription": "每回合结束[blue]{MAXUSE:diff()}[/blue]次，可以消耗[red]10[/red][gold]金币[/gold]对一个敌人造成[blue]20[/blue]点伤害。",
+    "LUCKYBOO_ACT.description": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以消耗[red]10[/red][gold]金币[/gold]对一个敌人造成[blue]20[/blue]点伤害。",
+    "LUCKYBOO_ACT.smartDescription": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以消耗[red]10[/red][gold]金币[/gold]对一个敌人造成[blue]20[/blue]点伤害。\\n已使用[blue]{Used:diff()}[/blue]次。",
 
 	"EOUS_ACT.title": "伊埃斯",
-    "EOUS_ACT.description": "每回合结束[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，获得[blue]6[/blue]点格挡。",
-    "EOUS_ACT.smartDescription": "每回合结束[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，获得[blue]6[/blue]点格挡。",
+    "EOUS_ACT.description": "每回合[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，获得[blue]6[/blue]点格挡。",
+    "EOUS_ACT.smartDescription": "每回合[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，获得[blue]6[/blue]点格挡。\\n已使用[blue]{Used:diff()}[/blue]次。",
 
 	"EXPLOREBOO_ACT.title": "寻宝布",
     "EXPLOREBOO_ACT.description": "每回合结束触发[blue]{MAXUSE:diff()}[/blue]次，获得当前回合数*[blue]5[/blue]的[gold]金币[/gold]，获得上限为[blue]{MaxGold}[/blue]。",
     "EXPLOREBOO_ACT.smartDescription": "每回合结束触发[blue]{MAXUSE:diff()}[/blue]次，获得当前回合数*[blue]5[/blue]的[gold]金币[/gold]，每回合获得上限为[blue]{MaxGold:diff()}[/blue]。当前已获得[blue]{Gold:diff()}[/blue][gold]金币[/gold]。",
 
 	"SUMOBOO_ACT.title": "扑击布",
-    "SUMOBOO_ACT.description": "每回合结束触发[blue]{MAXUSE:diff()}[/blue]次，可以使用[red]1[/red]点能量，对一个敌人施加[blue]{Daze:diff()}[/blue]失衡值。",
-    "SUMOBOO_ACT.smartDescription": "每回合结束触发[blue]{MAXUSE:diff()}[/blue]次，可以使用[red]1[/red]点能量，对一个敌人施加[blue]{Daze:diff()}[/blue]失衡值。",
+    "SUMOBOO_ACT.description": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以使用[red]1[/red]点能量，对一个敌人施加[blue]{Daze:diff()}[/blue]失衡值。",
+    "SUMOBOO_ACT.smartDescription": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以使用[red]1[/red]点能量，对一个敌人施加[blue]{Daze:diff()}[/blue]失衡值。\\n已使用[blue]{Used:diff()}[/blue]次。",
 
 	"OVERTIMEBOO_ACT.title": "加班布",
     "OVERTIMEBOO_ACT.description": "可以消耗[red]1[/red][gold]点生命[/gold]，让一个玩家获得{Energy:energyIcons()}。",
     "OVERTIMEBOO_ACT.smartDescription": "可以消耗[red]1[/red][gold]点生命[/gold]，让一个玩家获得{Energy:energyIcons()}。加班失去所有生命时会[red]失去遗物[/red]！",
 
+    "PAPERBOO_ACT.title": "纸壳布",
+    "PAPERBOO_ACT.description": "每回合[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，获得[blue]10[/blue]点格挡。",
+    "PAPERBOO_ACT.smartDescription": "每回合[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，获得[blue]10[/blue]点格挡。\\n已使用[blue]{Used:diff()}[/blue]次。",
 
 
 
 
-
-	"static_hover_tips.MinionLib-Action.title": "请无视",
-	"static_hover_tips.MinionLib-Action.description": "请无视此条",
 
 
 

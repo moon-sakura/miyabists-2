@@ -25,6 +25,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(0, ValueProp.Move),
+            new DamageVar(0, ValueProp.Move),
             new DynamicVar(ParryVarName, 0),
             new DynamicVar(SlipperyVarName, 1),
             new DynamicVar("ExhaustCount", 2),

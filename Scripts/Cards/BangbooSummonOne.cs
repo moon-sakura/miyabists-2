@@ -27,29 +27,38 @@ namespace Miyabists2.Scripts.Cards
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
-            CardKeyword.Exhaust
+            //CardKeyword.Exhaust
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            int result = MiyabiFuncBase.RadomInt(0, 4, Owner);
+            int result = MiyabiFuncBase.RadomInt(0, 6, Owner);
 
             if (result == 0)
             {
-                await MiyabiBangbooService.SummonBangboo<EousBangboo>(Owner, 6m, MinionPosition.Back,null,1m);
+                await MiyabiBangbooService.SummonBangboo<EousBangboo>(Owner, 6m, MinionPosition.Back, null, 1m);
             }
             else if (result == 1)
             {
-                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(Owner, 4m, MinionPosition.BackUpper, null, 1m);
-            } 
-            else if (result == 2) 
+                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+            }
+            else if (result == 2)
             {
                 await MiyabiBangbooService.SummonBangboo<ExplorebooBangboo>(Owner, 4m, MinionPosition.Back);
             }
-            else if(result == 3)
+            else if (result == 3)
             {
                 await MiyabiBangbooService.SummonBangboo<SumobooBangboo>(Owner, 4m, MinionPosition.Front, null, 1m);
             }
+            else if (result == 4)
+            {
+                await MiyabiBangbooService.SummonBangboo<PaperbooBangboo>(Owner, 15m, MinionPosition.Front, null, 1m);
+            }
+            else if (result == 5) 
+            {
+                await MiyabiBangbooService.SummonBangboo<OvertimebooBangboo>(Owner, 3m, MinionPosition.Back, null, 1m);
+            }
+
 
             
         }

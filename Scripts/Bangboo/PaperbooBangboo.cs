@@ -1,4 +1,3 @@
-using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -7,6 +6,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Minion;
+using MinionLib.Powers;
+using Miyabists2.Scripts.Bangboo.BangbooRelic;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,29 +17,31 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Bangboo
 {
-    internal class LuckybooBangboo : MiyabiBangbooBase
+    internal class PaperbooBangboo : MiyabiBangbooBase
     {
-        protected override string VisualsPath => "res://scenes/bangboo/luckyboo.tscn";
+        protected override string VisualsPath => "res://scenes/bangboo/paperboo.tscn";
 
         public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options) // 注意使用 self 而非 this
         {
-            await base.OnSummon(owner, self, options); // 先调用基类的 OnSummon 来设置血量等基础属性
+            await base.OnSummon(owner, self, options);
 
-            //base.IsHealthBarVisible = true;
             if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)
-                await PowerCmd.Apply<LuckybooAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
-        }
+                await PowerCmd.Apply<PaperbooAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
 
+            await PowerCmd.Apply<MinionGuardianPower>(new ThrowingPlayerChoiceContext(), self, 1m, owner.Creature, options.Source);
+        }
     }
 
-    internal class LuckybooAct : MiyabiBangbooActBase
+    internal class PaperbooAct : MiyabiBangbooActBase
     {
-        public override TargetType TargetType => TargetType.AnyEnemy;
+        public override TargetType TargetType => TargetType.AnyPlayer;
 
-        public override string BigIconPath => "res://images/bangboo/relicMode/luckybooRelic.png";
+        public override string BigIconPath => "res://images/bangboo/relicMode/paperbooRelic.png";
 
         //protected override IEnumerable<DynamicVar> CanonicalVars => [
         //    new DynamicVar ("MAXUSE", MAXUSE),
+        //    //new DynamicVar("TurnGap", 2m),
+        //    //new EnergyVar(1)
         //];
 
         //public int UsedCount { get; set; } = 0;
@@ -52,10 +56,9 @@ namespace Miyabists2.Scripts.Bangboo
             DynamicVars["Used"].BaseValue = UsedCount;
 
             used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
-            if (Owner.PetOwner.Gold < 10m || used)
-                return;
+            if ((Owner.PetOwner.PlayerCombatState.Energy < 1 || used) && !isFree) return;
 
-            await ActEffect(choiceContext,target);
+            await ActEffect();
             if (!isFree)
             {
                 await ActCost();
@@ -65,15 +68,15 @@ namespace Miyabists2.Scripts.Bangboo
 
         public async Task ActCost()
         {
-            await PlayerCmd.LoseGold(10m, Owner.PetOwner);
+            await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
             UsedCount++;
             DynamicVars["Used"].BaseValue = UsedCount;
             isFree = false;
         }
 
-        public async Task ActEffect(PlayerChoiceContext choiceContext,Creature target)
+        public async Task ActEffect()
         {
-            await CreatureCmd.Damage(choiceContext, target, 20m, ValueProp.Move, Owner);
+            await CreatureCmd.GainBlock(Owner.PetOwner.Creature, 10m, ValueProp.Unpowered, null);
         }
 
         public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)

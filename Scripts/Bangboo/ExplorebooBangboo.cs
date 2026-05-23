@@ -37,19 +37,30 @@ namespace Miyabists2.Scripts.Bangboo
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Gold", 0m),
             new DynamicVar("MaxGold",25m),
-            new DynamicVar ("MAXUSE", 1),
+            new DynamicVar ("MAXUSE", MAXUSE),
+            new DynamicVar("Used",0),
         ];
 
-        public int UsedCount { get; set; } = 0;
+        //public int UsedCount { get; set; } = 0;
 
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
+            DynamicVars["MAXUSE"].BaseValue = MAXUSE;
+            DynamicVars["Used"].BaseValue = UsedCount;
+
             decimal gold = 5m * Owner.PetOwner.Creature.CombatState.RoundNumber > DynamicVars["MaxGold"].BaseValue ? DynamicVars["MaxGold"].BaseValue : 5m * Owner.PetOwner.Creature.CombatState.RoundNumber;
             
             for (int i = 0; i < DynamicVars["MAXUSE"].IntValue; i++)
             {
-                DynamicVars["Gold"].BaseValue += gold;
+                await ActEffect();
             }
+        }
+
+        public async Task ActEffect()
+        {
+            decimal gold = 5m * Owner.PetOwner.Creature.CombatState.RoundNumber > DynamicVars["MaxGold"].BaseValue ? DynamicVars["MaxGold"].BaseValue : 5m * Owner.PetOwner.Creature.CombatState.RoundNumber;
+
+            DynamicVars["Gold"].BaseValue += gold;
         }
 
         public override async Task AfterCombatVictory(CombatRoom room)

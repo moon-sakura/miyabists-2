@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
-    internal class OvertimebooRelic : MiyabiBangbooRelicBase
+    internal class PaperbooRelic:MiyabiBangbooRelicBase
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
         public override string PackedIconPath => "res://images/bangboo/relicMode/overtimebooRelic.png";
@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
             await base.AfterPlayerTurnStart(choiceContext, player);
-            await MiyabiBangbooService.SummonBangboo<OvertimebooBangboo>(Owner, 3m, MinionPosition.Back, null, 1m);
+            await MiyabiBangbooService.SummonBangboo<PaperbooBangboo>(Owner, 15m, MinionPosition.Front, null, 1m);
         }
     }
 }
