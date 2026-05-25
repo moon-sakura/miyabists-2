@@ -5,19 +5,28 @@
 
 	"MIYABISTS2-COMBAT_HARD_SELECTED.title" : "挑战难度",
 	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.title" : "难度选择",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.desc" : "选择不同的难度进行挑战，此为苦行，亦为修行。\\n",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.desc" : "选择不同的难度进行挑战。提高难度也会获得[gold]额外增益[/gold]。此为苦行，亦为修行。\\n[gold]1.锑级[/gold]：敌人+10%生命值\\n[gold]2.锌级[/gold]：开局金币减少50%\\n[gold]3.锡级[/gold]：战斗开始后，使用的第一张牌[red]费用+1[/red]\\n[gold]4.锰级[/gold]：战斗开始时，敌人获得1点力量，自己失去1点力量\\n[gold]5.镉级[/gold]：敌人改为+20%生命\\n[gold]6.镍级[/gold]：前三个回合[red]少抽1张牌[/red]\\n[gold]7.铜级[/gold]：敌人在死亡时造成6点伤害\\n[gold]8.铋级[/gold]：敌人改为+30%生命，额外获得1点力量\\n[gold]9.铅级[/gold]：进入新的一幕后会向卡组里加一张随机[red]诅咒[/red]\\n[gold]10.汞级[/gold]：敌人第一次受到致命伤害前会获得1层[gold]缓冲[/gold]与2点[gold]力量[/gold]并恢复30%生命",
 
 	"MIYABISTS2-COMBAT_HARD_SELECTED.Zero" : "无进阶",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Sb" : "锑级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Zn" : "锌级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Sn" : "锡级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Mn" : "锰级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Cd" : "镉级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Ni" : "镍级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Cu" : "铜级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Bi" : "铋级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Pb" : "铅级",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.Hg" : "汞级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sb" : "1.锑级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Zn" : "2.锌级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sn" : "3.锡级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Mn" : "4.锰级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cd" : "5.镉级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Ni" : "6.镍级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cu" : "7.铜级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Bi" : "8.铋级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Pb" : "9.铅级",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Hg" : "10.汞级",
+
+
+	"MIYABISTS2-FUN_PILE_SELECTED.title" : "特殊初始卡组",
+	"MIYABISTS2-FUN_PILE_SELECTED.hover.title" : "选择初始卡组",
+	"MIYABISTS2-FUN_PILE_SELECTED.hover.desc" : "选择不同的特殊初始卡组进行挑战。\\n[gold]默认[/gold]：无变化\\n[gold]邦布当家[/gold]：初始卡组变为邦布相关卡组\\n[gold]蜂群集结[/gold]：初始卡组中添加1张升级后的[gold]蜂群集结[/gold]",
+
+	"MIYABISTS2-FUN_PILE_SELECTED.Default" : "默认卡组",
+	"MIYABISTS2-FUN_PILE_SELECTED.AllBangboo" : "邦布当家",
+	"MIYABISTS2-FUN_PILE_SELECTED.BeeGroup" : "蜂群集结",
 
 
 

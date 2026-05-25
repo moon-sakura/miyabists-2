@@ -55,6 +55,14 @@ namespace Miyabists2.Scripts.Service
         Hg
     }
 
+    public enum MiyabiFunPile
+    {
+        Default = 0,
+        AllBangboo,
+        BeeGroup,
+        //UltimateGrace
+    }
+
     [ConfigHoverTipsByDefault]
     public sealed class MiyabiModConfig : SimpleModConfig
     {
@@ -82,6 +90,10 @@ namespace Miyabists2.Scripts.Service
         public static bool ChangeToAllPlayers { get; set; } = false;
 
         [ConfigSection("ElseConfig")] // 创建一个战斗设置分组
+
+        [ConfigHoverTip]
+        public static MiyabiFunPile FunPileSelected { get; set; } = MiyabiFunPile.Default;
+
         [ConfigHoverTip]
         public static MiyabiCombatSkinSlot CombatSelectedSlot { get; set; } = MiyabiCombatSkinSlot.Slot0;
 

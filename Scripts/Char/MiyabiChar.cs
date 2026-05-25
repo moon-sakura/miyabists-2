@@ -126,7 +126,8 @@ public class Miyabi : PlaceholderCharacterModel
     /// <summary>
     /// 初始卡组。你可以在这里添加需要卡组。
     /// </summary>
-    public override IEnumerable<CardModel> StartingDeck => [
+
+    private IEnumerable<CardModel> GetDefaultDeck() => [
         ModelDb.Card<FengHua>(),
         ModelDb.Card<FengHua>(),
         ModelDb.Card<FengHua>(),
@@ -138,6 +139,35 @@ public class Miyabi : PlaceholderCharacterModel
         ModelDb.Card<MiyabiBlock>(),
         ModelDb.Card<ShenXue>()
     ];
+
+    private IEnumerable<CardModel> GetBangbooDeck() => [
+        ModelDb.Card<BangbooSummonOne>(),
+        ModelDb.Card<BangbooSummonOne>(),
+        ModelDb.Card<BangbooSummonOne>(),
+        ModelDb.Card<BangbooSummonOne>(),
+        ModelDb.Card<BangbooActiveOne>(),
+        ModelDb.Card<BangbooActiveOne>(),
+        ModelDb.Card<BangbooChargeAll>(),
+        ModelDb.Card<BangbooHelpmeOne>(),
+        ModelDb.Card<BangbooHelpmeOne>(),
+        ModelDb.Card<BangbooUseOnemore>()
+    ];
+
+
+    public override IEnumerable<CardModel> StartingDeck
+    {
+        get
+        {
+            switch (MiyabiModConfig.FunPileSelected)
+            {
+                case MiyabiFunPile.AllBangboo:
+                    return GetBangbooDeck(); // 🌟 此时调用，ModelDb 100% 已经就绪了！
+
+                default:
+                    return GetDefaultDeck();
+            }
+        }
+    }
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [

@@ -8,3 +8,37 @@ obj/
 /images/elseui/option_chouka.psd
 /images/dongzuozu
 /scenes/modSkin
+
+# VS Code 自身的配置和缓存
+.vscode/
+# Visual Studio 编译产生的用户临时数据和庞大的缓存库（必须防范）
+*.suo
+*.userosscache
+*.sln.docstates
+.nx/
+*.openeddf
+*.VC.db
+*.VC.opendb
+
+# NuGet 下载的本地依赖包（如果不排除，AI 可能会去扫描几万行的第三方库）
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# 排除所有 Photoshop 源文件（AI 看不懂纯二进制，白白浪费 Token）
+*.psd
+*.aseprite
+*.clip
+
+# 排除常见的音视频和大体积图片格式
+*.mp3
+*.wav
+*.ogg
+*.mp4
+*.zip
+*.rar
+*.7z
+
+Thumbs.db
+.DS_Store

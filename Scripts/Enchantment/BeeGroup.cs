@@ -85,7 +85,12 @@ namespace Miyabists2.Scripts.Enchantment
                 return;
             }
 
-            if (MiyabiFuncBase.GetIsTrue100(10, base.Card.Owner)||(cardPlay.Card.Enchantment is BeeGroupEnchantment && MiyabiFuncBase.GetIsTrue100(25, base.Card.Owner)))
+            if (cardPlay.IsAutoPlay)
+            {
+                return;
+            }
+
+            if (MiyabiFuncBase.GetIsTrue100(20, base.Card.Owner)||(cardPlay.Card.Enchantment is BeeGroupEnchantment && MiyabiFuncBase.GetIsTrue100(35, base.Card.Owner)))
             {
                 await CardCmd.AutoPlay(choiceContext, base.Card, null);
             }

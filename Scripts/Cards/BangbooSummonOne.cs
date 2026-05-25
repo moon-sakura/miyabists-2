@@ -32,7 +32,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            int result = MiyabiFuncBase.RadomInt(0, 6, Owner);
+            int result = MiyabiFuncBase.RadomInt(0, 9, Owner);
 
             if (result == 0)
             {
@@ -58,8 +58,18 @@ namespace Miyabists2.Scripts.Cards
             {
                 await MiyabiBangbooService.SummonBangboo<OvertimebooBangboo>(Owner, 3m, MinionPosition.Back, null, 1m);
             }
-
-
+            else if(result == 6)
+            {
+                await MiyabiBangbooService.SummonBangboo<SharkbooBangboo>(Owner, 8m, MinionPosition.FrontUpper, null, 1m);
+            }
+            else if(result == 7)
+            {
+                await MiyabiBangbooService.SummonBangboo<ExcalibooBangboo>(Owner, 8m, MinionPosition.BackUpper);
+            }
+            else if(result == 8)
+            {
+                await MiyabiBangbooService.SummonBangboo<AgentBangboo>(Owner, 10m, MinionPosition.FrontUpper);
+            }
             
         }
 

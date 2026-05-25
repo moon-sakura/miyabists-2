@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -28,7 +29,7 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(0, ValueProp.Move),
             new DynamicVar(ParryVarName, 0),
             new DynamicVar(SlipperyVarName, 1),
-            new DynamicVar("ExhaustCount", 2),
+            new DynamicVar("ExhaustCount", (int)MiyabiModConfig.CombatHardSelected >= 6 ? 4 : 2),
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -48,7 +49,7 @@ namespace Miyabists2.Scripts.Cards
                 if (DynamicVars["ExhaustCount"].BaseValue <= 0)
                 {
                     await CardCmd.Exhaust(context, this);
-                    DynamicVars["ExhaustCount"].BaseValue = 2;
+                    DynamicVars["ExhaustCount"].BaseValue = (int)MiyabiModConfig.CombatHardSelected >= 6 ? 4 : 2;
                 }
             }
         }

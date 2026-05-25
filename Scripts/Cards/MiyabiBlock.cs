@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -22,7 +23,7 @@ namespace Miyabists2.Scripts.Cards
         public MiyabiBlock() : base(1, CardRarity.Basic, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(4, ValueProp.Move),
+            new BlockVar((int)MiyabiModConfig.CombatHardSelected >= 4 ? 6 : 4, ValueProp.Move),
             new DynamicVar(ParryVarName, 1),
             new DynamicVar(SlipperyVarName, 0)
         ];

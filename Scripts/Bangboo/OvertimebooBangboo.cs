@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts.Bangboo
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar ("MAXUSE", MAXUSE),
-            //new DynamicVar("TurnGap", 2m),
+            new DynamicVar("Used", 0m),
             new EnergyVar(1)
         ];
 
@@ -52,24 +52,24 @@ namespace Miyabists2.Scripts.Bangboo
         protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
         {
             await ActEffect(target);
-            if (!isFree)
+            if (isFree<1)
             {
                 await ActCost(choiceContext);
             }
-            isFree = false;
+            isFree--;
+            if(isFree < 0) isFree = 0;
         }
 
         public async Task ActCost(PlayerChoiceContext choiceContext)
         {
-            if (Owner.CurrentHp < 1)
+            if (Owner.CurrentHp <= 1)
             {
                 await RelicCmd.Remove(MiyabiFuncBase.GetRelic<OvertimebooRelic>(Owner.PetOwner));
             }
-            await CreatureCmd.Damage(choiceContext, base.Owner, 1m, ValueProp.Unpowered & ValueProp.Unblockable, base.Owner);
+            await CreatureCmd.Damage(choiceContext, base.Owner, 1m, ValueProp.Unblockable, base.Owner);
         
-            UsedCount++;
-            DynamicVars["Used"].BaseValue = UsedCount;
-            isFree = false;
+            //UsedCount++;
+            //DynamicVars["Used"].BaseValue = UsedCount;
         }
 
         public async Task ActEffect(Creature target)
@@ -79,8 +79,8 @@ namespace Miyabists2.Scripts.Bangboo
 
         public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            UsedCount = 0;
-            DynamicVars["Used"].BaseValue = UsedCount;
+            //UsedCount = 0;
+            //DynamicVars["Used"].BaseValue = UsedCount;
             return base.AfterPlayerTurnStart(choiceContext, player);
         }
     }

@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts.Service
                 return false;
         }
 
-        public static T GetRelic<T>(Player player) where T : RelicModel
+        public static RelicModel GetRelic<T>(Player player) where T : RelicModel
         {
             return player.Relics.OfType<T>().FirstOrDefault();
         }

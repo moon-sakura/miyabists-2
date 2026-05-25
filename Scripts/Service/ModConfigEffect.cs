@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -12,12 +13,14 @@ using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using System;
 using System.Collections.Generic;
@@ -44,11 +47,28 @@ namespace Miyabists2.Scripts.Service
             }
         }
 
+        public async override Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+        {
+            if (!creature.IsEnemy) return;
+
+            if ((int)MiyabiModConfig.CombatHardSelected >= 7 && (Owner.Player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+            {
+                //foreach (var player in creature.CombatState.Players)
+                {
+                    await CreatureCmd.Damage(choiceContext, Owner, 6m, ValueProp.Unpowered, base.Owner);
+                }
+            }
+        }
+
         public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
         {
             modifiedCost = originalCost;
 
             if (card.Owner.Creature != base.Owner) return false;
+
+            if((int)MiyabiModConfig.CombatHardSelected < 3)
+                return false;
+
             bool inHand = card.Pile?.Type == PileType.Hand || card.Pile?.Type == PileType.Play;
             if (!inHand) return false;
 
@@ -62,15 +82,16 @@ namespace Miyabists2.Scripts.Service
             return true;
         }
 
-        public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        public async override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            if (cardPlay.Card.Owner.Creature != base.Owner) return;
+
             playcount++;
-            return base.AfterCardPlayed(choiceContext, cardPlay);
         }
 
         public override decimal ModifyHandDraw(Player player, decimal count)
         {
-            if((int)MiyabiModConfig.CombatHardSelected >= 7 && (Owner.Player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+            if((int)MiyabiModConfig.CombatHardSelected >= 6 && (Owner.Player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
             {
                 if(player.Creature.CombatState.RoundNumber <= 3)
                     return base.ModifyHandDraw(player, count) - 1;
@@ -86,36 +107,35 @@ namespace Miyabists2.Scripts.Service
 
         protected override bool IsVisibleInternal => false;
 
-        public async override Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
-        {
-            if(creature != base.Owner) return;
+        private bool isRevealed = false;
 
-            if((int)MiyabiModConfig.CombatHardSelected >= 6 && (Owner.Player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+        //public async override Task BeforeDeath(Creature creature)
+        //{
+        //    if(creature != base.Owner) return;
+
+        //    if((int)MiyabiModConfig.CombatHardSelected >= 6 && (creature.CombatState.Players.Any(c => c.Character is Miyabi) || MiyabiModConfig.ChangeToAllPlayers))
+        //    {
+        //        foreach(var player in creature.CombatState.Players)
+        //        {
+        //            await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), player.Creature, 10m, ValueProp.Unpowered, base.Owner);
+        //        }
+        //    }
+        //}
+
+        public override async Task BeforeDamageReceived(PlayerChoiceContext choiceContext, Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        {
+            if (target != base.Owner || amount < target.CurrentHp) return;
+
+            if (!isRevealed && (int)MiyabiModConfig.CombatHardSelected >= 10)
             {
-                foreach(var player in creature.CombatState.Players)
-                {
-                    await CreatureCmd.Damage(choiceContext, player.Creature, 10m, ValueProp.Unpowered, base.Owner);
-                }
+                decimal heal = Math.Max(1m, base.Owner.MaxHp*0.3m);
+                await CreatureCmd.Heal(base.Owner, heal);
+                await PowerCmd.Apply<BufferPower>(choiceContext, base.Owner, 1m, base.Owner, null);
+                await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner, 2m, base.Owner, null);
+                isRevealed = true;
             }
         }
 
-        public override bool ShouldDie(Creature creature)
-        {
-            if(creature != base.Owner)
-                return base.ShouldDie(creature);
-
-            if((int)MiyabiModConfig.CombatHardSelected >= 10)
-            {
-                return false;
-            }
-            return base.ShouldDie(creature);
-        }
-
-        public async override Task AfterPreventingDeath(Creature creature)
-        {
-            await CreatureCmd.Heal(creature, creature.MaxHp / 2);
-        }
-        
     }
 
 
@@ -174,6 +194,13 @@ namespace Miyabists2.Scripts.Service
                 {
                     player.Gold /= 2;
                 }
+
+                if(player.Character is Miyabi && MiyabiModConfig.FunPileSelected == MiyabiFunPile.BeeGroup)
+                {
+                    CardModel card = player.RunState.CreateCard<BeeGroup>(player);
+                    card.UpgradeInternal();
+                    CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
+                }
             }
         }
     }
@@ -217,10 +244,10 @@ namespace Miyabists2.Scripts.Service
                 PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), __result, strength, null, null);
 
 
-                if ((int)MiyabiModConfig.CombatHardSelected >= 5)
-                {
-                    CreatureCmd.GainBlock(__result, 10m, ValueProp.Unpowered, null);
-                }
+                //if ((int)MiyabiModConfig.CombatHardSelected >= 5)
+                //{
+                //    CreatureCmd.GainBlock(__result, 10m, ValueProp.Unpowered, null);
+                //}
             }
         }
     }

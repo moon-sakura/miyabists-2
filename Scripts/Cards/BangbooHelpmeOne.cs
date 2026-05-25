@@ -1,8 +1,14 @@
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MinionLib.Commands;
+using MinionLib.Layout;
+using MinionLib.Powers;
 using MinionLib.Targeting;
 using Miyabists2.Scripts.Bangboo;
+using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,33 +17,38 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class BangbooUseOnemore : MiyabiCardBase
+    internal class BangbooHelpmeOne : MiyabiCardBase
     {
         //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
 
-        public BangbooUseOnemore() : base(0, CardType.Skill, CardRarity.Uncommon, MinionTargetTypes.AnyMinion) { }
+        public BangbooHelpmeOne() : base(1, CardType.Skill, CardRarity.Common, MinionTargetTypes.AnyMinion) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
+            
+        ];
 
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+            HoverTipFactory.FromPower<MiyabiGuardianPower>(),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
-            CardKeyword.Exhaust
+            //CardKeyword.Exhaust
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (cardPlay.Target is not { Monster: MiyabiBangbooBase } target) return;
 
-            var act = target.Powers.Where(p => p is MiyabiBangbooActBase).FirstOrDefault();
+            
 
-            ((MiyabiBangbooActBase)act).MAXUSE++;            
+            await PowerCmd.Apply<MiyabiGuardianPower>(choiceContext, target, 1m, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
         {
-            RemoveKeyword(CardKeyword.Exhaust);
+            //RemoveKeyword(CardKeyword.Exhaust);
+            AddKeyword(CardKeyword.Retain);
             base.OnUpgrade();
         }
     }

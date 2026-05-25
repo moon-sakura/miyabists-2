@@ -53,14 +53,15 @@ namespace Miyabists2.Scripts.Bangboo
             DynamicVars["Used"].BaseValue = UsedCount;
 
             used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
-            if ((Owner.PetOwner.PlayerCombatState.Energy < 1 || used) && !isFree) return;
+            if ((Owner.PetOwner.PlayerCombatState.Energy < 1 || used) && isFree < 1) return;
 
             await ActEffect(target);
-            if (!isFree)
+            if (isFree < 1)
             {
                 await ActCost();
             }
-            isFree = false;
+            isFree--;
+            if (isFree < 0) isFree = 0;
         }
 
         public async Task ActCost()
@@ -68,7 +69,6 @@ namespace Miyabists2.Scripts.Bangboo
             await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
             UsedCount++;
             DynamicVars["Used"].BaseValue = UsedCount;
-            isFree = false;
         }
 
         public async Task ActEffect(Creature target)

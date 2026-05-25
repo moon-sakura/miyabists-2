@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
 {
     internal class BeeGroup : MiyabiCardBase
     {
-        protected override string ArtPath => "res://images/cards/beeGroup.png";
+        protected override string ArtPath => "res://images/cards/beeGroup2.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.OtherWorldFriends];
 
         public BeeGroup()

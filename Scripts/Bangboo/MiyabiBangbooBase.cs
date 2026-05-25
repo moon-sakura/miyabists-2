@@ -32,7 +32,7 @@ namespace Miyabists2.Scripts.Bangboo
         public override int MaxInitialHp => 8; // 作为敌方方怪物生成时的血量，通常无需在意
         protected override string VisualsPath => null; // 随从的视觉资源路径，tscn 格式，建议参考原版游戏的怪物
 
-        public virtual MinionPosition Position { get; set; } = MinionPosition.Front;
+        //public virtual MinionPosition Position { get; set; } = MinionPosition.Front;
 
         public MiyabiBangbooBase()
         {
@@ -69,10 +69,10 @@ namespace Miyabists2.Scripts.Bangboo
 
         public int MAXUSE { get; set; } = 1;
 
-        public bool isFree { get; set; } = false;
+        public int isFree { get; set; } = 0 ;
 
 
-        public void SetFree() => isFree = true;
+        public void AddFree() => isFree++;
 
 
         // 核心重载，定义 Action 被触发时的行为，类似于卡牌的 OnPlay
@@ -85,6 +85,7 @@ namespace Miyabists2.Scripts.Bangboo
         public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             DynamicVars["MAXUSE"].BaseValue = MAXUSE;
+            DynamicVars["Used"].BaseValue = UsedCount;
             return base.AfterCardPlayed(choiceContext, cardPlay);
         }
     }

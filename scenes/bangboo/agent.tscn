@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbitteq7jvglj"]
+
+[ext_resource type="Texture2D" uid="uid://dnvky7cdoj8q3" path="res://images/bangboo/bangboo_image/agentGulliver.png" id="1_xef0a"]
+
+[node name="EousBangboo" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-2, -87)
+scale = Vector2(0.32279795, 0.32279795)
+texture = ExtResource("1_xef0a")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -58.0
+offset_top = -171.0
+offset_right = 53.0
+offset_bottom = 29.0
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, -88)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -190)

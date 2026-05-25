@@ -180,6 +180,11 @@
 
 
 
+
+    "MIYABISTS2-MIYABI_GUARDIAN_POWER.title": "守护者",
+    "MIYABISTS2-MIYABI_GUARDIAN_POWER.description": "为你而死",
+    "MIYABISTS2-MIYABI_GUARDIAN_POWER.smartDescription": "抵挡敌人造成的伤害。",
+
 	"LUCKYBOO_ACT.title": "招财布",
     "LUCKYBOO_ACT.description": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以消耗[red]10[/red][gold]金币[/gold]对一个敌人造成[blue]20[/blue]点伤害。",
     "LUCKYBOO_ACT.smartDescription": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以消耗[red]10[/red][gold]金币[/gold]对一个敌人造成[blue]20[/blue]点伤害。\\n已使用[blue]{Used:diff()}[/blue]次。",
@@ -191,6 +196,18 @@
 	"EXPLOREBOO_ACT.title": "寻宝布",
     "EXPLOREBOO_ACT.description": "每回合结束触发[blue]{MAXUSE:diff()}[/blue]次，获得当前回合数*[blue]5[/blue]的[gold]金币[/gold]，获得上限为[blue]{MaxGold}[/blue]。",
     "EXPLOREBOO_ACT.smartDescription": "每回合结束触发[blue]{MAXUSE:diff()}[/blue]次，获得当前回合数*[blue]5[/blue]的[gold]金币[/gold]，每回合获得上限为[blue]{MaxGold:diff()}[/blue]。当前已获得[blue]{Gold:diff()}[/blue][gold]金币[/gold]。",
+
+    "SHARKBOO_ACT.title": "鲨牙布",
+    "SHARKBOO_ACT.description": "每回合结束积攒{Damage:diff()} * {MAXUSE:diff()}点伤害。",
+    "SHARKBOO_ACT.smartDescription": "每回合结束积攒{Damage:diff()} * {MAXUSE:diff()}点伤害。敌人攻击主人前对敌人造成[blue]{AllDamage:diff()}[/blue]点伤害。",
+
+    "EXCALIBOO_ACT.title": "圣剑布",
+    "EXCALIBOO_ACT.description": "每回合结束时蓄能，如果蓄能3次以上，对所有敌人造成伤害。",
+    "EXCALIBOO_ACT.smartDescription": "每回合结束时蓄能[blue]{MAXUSE:diff()}[/blue]次。如果蓄能3次以上，对所有敌人造成[blue]{Damage:diff()}[/blue]点伤害。\\n已蓄能[blue]{Charged:diff()}[/blue]次。",
+
+    "AGENT_ACT.title": "格列佛探员",
+    "AGENT_ACT.description": "每回合[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，对一名敌人造成[blue]{Damage:diff()}[/blue]点伤害，并使其受到的来自伙伴卡的伤害增加。",
+    "AGENT_ACT.smartDescription": "每回合[blue]{MAXUSE:diff()}[/blue]次，使用[red]1[/red]点能量，对一名敌人造成[blue]{Damage:diff()}[/blue]点伤害，并使其受到的来自伙伴卡的伤害增加[blue]{DamageUp:diff()}%[/blue]。\\n已使用[blue]{Used:diff()}[/blue]次。",
 
 	"SUMOBOO_ACT.title": "扑击布",
     "SUMOBOO_ACT.description": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以使用[red]1[/red]点能量，对一个敌人施加[blue]{Daze:diff()}[/blue]失衡值。",

@@ -44,6 +44,22 @@
   	"MIYABISTS2-OVERTIMEBOO_RELIC.description": "回合开始时召唤[gold]加班布[/gold]。",
   	"MIYABISTS2-OVERTIMEBOO_RELIC.flavor": "牛马布",
 
+	"MIYABISTS2-PAPERBOO_RELIC.title": "纸壳布",
+  	"MIYABISTS2-PAPERBOO_RELIC.description": "回合开始时召唤[gold]纸壳布[/gold]。",
+  	"MIYABISTS2-PAPERBOO_RELIC.flavor": "我来护你！",
+
+	"MIYABISTS2-SHARKBOO_RELIC.title": "鲨牙布",
+  	"MIYABISTS2-SHARKBOO_RELIC.description": "回合开始时召唤[gold]鲨牙布[/gold]。",
+  	"MIYABISTS2-SHARKBOO_RELIC.flavor": "我在启动！",
+
+	"MIYABISTS2-EXCALIBOO_RELIC.title": "圣剑布",
+  	"MIYABISTS2-EXCALIBOO_RELIC.description": "回合开始时召唤[gold]圣剑布[/gold]。",
+  	"MIYABISTS2-EXCALIBOO_RELIC.flavor": "马上就好！",
+
+	"MIYABISTS2-AGENT_RELIC.title": "格列佛探员",
+  	"MIYABISTS2-AGENT_RELIC.description": "回合开始时召唤[gold]格列佛探员[/gold]。",
+  	"MIYABISTS2-AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
+
 	"MIYABISTS2-LUCKYBOO_RELIC.title": "招财布",
   	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]。",
   	"MIYABISTS2-LUCKYBOO_RELIC.flavor": "真的会招财吗？",

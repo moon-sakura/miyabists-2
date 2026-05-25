@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
-    internal class PaperbooRelic:MiyabiBangbooRelicBase
+    internal class ExcalibooRelic : MiyabiBangbooRelicBase
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
-        public override string PackedIconPath => "res://images/bangboo/relicMode/paperbooRelic.png";
+        public override string PackedIconPath => "res://images/bangboo/relicMode/excalibooRelic.png";
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
             await base.AfterPlayerTurnStart(choiceContext, player);
-            await MiyabiBangbooService.SummonBangboo<PaperbooBangboo>(Owner, 15m, MinionPosition.Front, null, 1m);
+            await MiyabiBangbooService.SummonBangboo<ExcalibooBangboo>(Owner, 8m, MinionPosition.BackUpper);
         }
     }
 }

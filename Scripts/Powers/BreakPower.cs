@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(applier.Player, applier.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
+            //PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(applier.Player, applier.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
 
             await CreatureCmd.Stun(base.Owner);
                 //添加一回合失衡易伤50%
@@ -44,14 +44,14 @@ namespace Miyabists2.Scripts.Powers
                 //    await PowerCmd.Apply<DazeVulnPower>(base.Owner, 80m, null, null); 
                 //}
                 //else
-            await PowerCmd.Apply<DazeVulnPower>(choiceContext,base.Owner, 50m, null, null);
+            await PowerCmd.Apply<DazeVulnPower>(new ThrowingPlayerChoiceContext(),base.Owner, 50m, null, null);
 
 
             foreach (Creature Player in base.CombatState.PlayerCreatures)
             {
                 if (Player != null && Player.IsAlive && Player.HasPower<SupportPointPower>())
                 {
-                    await PowerCmd.Apply<SupportPointPower>(choiceContext, Player, 3, base.Owner, null);
+                    await PowerCmd.Apply<SupportPointPower>(new ThrowingPlayerChoiceContext(), Player, 3, base.Owner, null);
                 }
                 //NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
             }

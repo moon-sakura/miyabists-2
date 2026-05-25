@@ -146,14 +146,14 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
-        //public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
-        //{
-        //    if(creature.IsMonster && creature.PetOwner == null)
-        //    {
-        //        FreeCounter++;
-        //        DynamicVars["FreeCount"].BaseValue++;
-        //    }
-        //}
+        public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+        {
+            if (creature.IsMonster && creature.PetOwner == null && (int)MiyabiModConfig.CombatHardSelected >= 8)
+            {
+                FreeCounter++;
+                DynamicVars["FreeCount"].BaseValue = FreeCounter;
+            }
+        }
 
         //public override Task BeforeRoomEntered(AbstractRoom room)
         //{
@@ -165,7 +165,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         public override Task AfterCombatVictory(CombatRoom room)
         {
             FreeCounter++;
-            DynamicVars["FreeCount"].BaseValue++;
+            DynamicVars["FreeCount"].BaseValue = FreeCounter;
             return base.AfterCombatVictory(room);
         }
 

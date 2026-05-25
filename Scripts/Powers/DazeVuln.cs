@@ -47,7 +47,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
-            if (side == CombatSide.Enemy)
+            if (side == Owner.Side)
             {
                 //回合结束全部清除
                 await PowerCmd.Remove(this);

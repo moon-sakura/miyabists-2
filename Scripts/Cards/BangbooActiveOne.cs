@@ -39,8 +39,14 @@ namespace Miyabists2.Scripts.Cards
                 await ((ExplorebooAct)act).ActEffect();
                 return;
             }
+            if(act is SharkbooAct)
+            {
+                await ((SharkbooAct)act).ActEffect();
+                return;
+            }
+            
 
-            ((MiyabiBangbooActBase)act).SetFree();
+            ((MiyabiBangbooActBase)act).AddFree();
         }
 
         protected override void OnUpgrade()
