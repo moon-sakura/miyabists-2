@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
@@ -26,5 +27,10 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             await base.AfterPlayerTurnStart(choiceContext, player);
             await MiyabiBangbooService.SummonBangboo<ExcalibooBangboo>(Owner, 8m, MinionPosition.BackUpper);
         }
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<ExcalibooAct>(),
+        ];
     }
 }

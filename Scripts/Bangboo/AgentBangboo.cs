@@ -33,7 +33,7 @@ namespace Miyabists2.Scripts.Bangboo
     {
         public override TargetType TargetType => TargetType.AnyEnemy;
 
-        public override string BigIconPath => "res://images/bangboo/relicMode/agentRelic.png";
+        public override string BigIconPath => "res://images/bangboo/relicMode/agentGulliverRelic.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar ("MAXUSE", MAXUSE),

@@ -28,6 +28,7 @@ using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
@@ -146,5 +147,10 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
                 //base.Status = RelicStatus.Disabled;
             }
         }
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<EousAct>(),
+        ];
     }
 }

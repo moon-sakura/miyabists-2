@@ -44,10 +44,10 @@
 			<Private>false</Private>
 		</Reference>
 		
-		<!--<Reference Include="MinionLibBaseLibAdapter">
+		<Reference Include="MinionLibBaseLibAdapter">
 			<HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.BaseLibAdapters.dll</HintPath>
 			<Private>false</Private>
-		</Reference>-->
+		</Reference>
 
 		<Reference Include="Steamworks.NET">
 			<HintPath>$(Sts2DataDir)\Steamworks.NET.dll</HintPath>

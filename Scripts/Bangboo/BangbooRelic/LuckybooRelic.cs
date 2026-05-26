@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
@@ -29,7 +30,17 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
             await base.AfterPlayerTurnStart(choiceContext, player);
-            await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(Owner, 4m, MinionPosition.FrontUpper,null,1m);
+
+            if (MiyabiFuncBase.GetIsTrue100(10, Owner))
+                await MiyabiBangbooService.SummonBangboo<OneDennybooBangboo>(Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+            else
+                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(Owner, 4m, MinionPosition.FrontUpper, null, 1m);
         }
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<LuckybooAct>(),
+            HoverTipFactory.FromPower<OneDennybooAct>(),
+        ];
     }
 }

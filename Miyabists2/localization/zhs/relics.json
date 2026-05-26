@@ -61,7 +61,7 @@
   	"MIYABISTS2-AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
 
 	"MIYABISTS2-LUCKYBOO_RELIC.title": "招财布",
-  	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]。",
+  	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]，有小概率会召唤[gold]一丁尼布[/gold]。",
   	"MIYABISTS2-LUCKYBOO_RELIC.flavor": "真的会招财吗？",
 
 	"MIYABISTS2-EXPLOREBOO_RELIC.title": "寻宝布",
@@ -74,5 +74,9 @@
 
 	"MIYABISTS2-EOUS_BANGBOO_RELIC.title": "伊埃斯",
   	"MIYABISTS2-EOUS_BANGBOO_RELIC.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线。",
-  	"MIYABISTS2-EOUS_BANGBOO_RELIC.flavor": "最好的的伊埃斯"
+  	"MIYABISTS2-EOUS_BANGBOO_RELIC.flavor": "最好的的伊埃斯",
+
+	"MIYABISTS2-MAGNETIBOO_RELIC.title": "磁力布",
+	"MIYABISTS2-MAGNETIBOO_RELIC.description": "回合开始时召唤[gold]磁力布[/gold]。",
+	"MIYABISTS2-MAGNETIBOO_RELIC.flavor": "磁力全开！"
 }

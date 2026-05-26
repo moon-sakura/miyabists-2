@@ -12,10 +12,10 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
-    internal class AgentRelic : MiyabiBangbooRelicBase
+    internal class MagnetibooRelic : MiyabiBangbooRelicBase
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
-        public override string PackedIconPath => "res://images/bangboo/relicMode/agentGulliverRelic.png";
+        public override string PackedIconPath => "res://images/bangboo/relicMode/magnetibooRelic.png";
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
@@ -25,12 +25,12 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
             await base.AfterPlayerTurnStart(choiceContext, player);
-            await MiyabiBangbooService.SummonBangboo<AgentBangboo>(Owner, 10m, MinionPosition.FrontUpper);
+            await MiyabiBangbooService.SummonBangboo<MagnetibooBangboo>(Owner, 8m, MinionPosition.FrontUpper,null,1m);
         }
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            HoverTipFactory.FromPower<AgentAct>(),
+            HoverTipFactory.FromPower<MagnetibooAct>(),
         ];
     }
 }

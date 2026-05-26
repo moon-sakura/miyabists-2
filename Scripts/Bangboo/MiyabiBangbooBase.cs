@@ -15,7 +15,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Action;
 using MinionLib.Commands;
 using MinionLib.Minion;
-//using MinionLib.BaseLibAdapters;
+using MinionLib.BaseLibAdapters;
 using Miyabists2.Scripts.Bangboo.BangbooRelic;
 using Miyabists2.Scripts.Service;
 using System;
@@ -26,7 +26,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Bangboo
 {
-    internal class MiyabiBangbooBase : MinionModel
+    internal class MiyabiBangbooBase : CustomMinionModel
     {
         public override int MinInitialHp => 8; // 作为敌方方怪物生成时的血量，通常无需在意
         public override int MaxInitialHp => 8; // 作为敌方方怪物生成时的血量，通常无需在意
@@ -49,7 +49,7 @@ namespace Miyabists2.Scripts.Bangboo
         }
     }
 
-    internal class MiyabiBangbooActBase : ActionModel
+    internal class MiyabiBangbooActBase : CustomActionModel
     {
         public override TargetType TargetType => TargetType.AnyPlayer;           // 目标类型
         public override bool AutoRemoveAtTurnEnd => false;                       // 是否在回合结束自动移除
@@ -58,8 +58,8 @@ namespace Miyabists2.Scripts.Bangboo
 
         public virtual string BigIconPath => "res://images/bangboo/relicMode/eousRelic.png";
         public string BigBetaIconPath => BigIconPath;
-        //public override string CustomPackedIconPath => BigIconPath;
-        //public override string CustomBigIconPath => BigIconPath;
+        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("MAXUSE", MAXUSE),
             new DynamicVar("Used",0),
