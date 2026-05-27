@@ -5,7 +5,7 @@
 
 	"MIYABISTS2-COMBAT_HARD_SELECTED.title" : "挑战难度",
 	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.title" : "难度选择",
-	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.desc" : "选择不同的难度进行挑战。提高难度也会获得[gold]额外增益[/gold]。此为苦行，亦为修行。\\n[gold]1.锑级[/gold]：敌人+10%生命值\\n[gold]2.锌级[/gold]：开局金币减少50%\\n[gold]3.锡级[/gold]：战斗开始后，使用的第一张牌[red]费用+1[/red]\\n[gold]4.锰级[/gold]：战斗开始时，敌人获得1点力量，自己失去1点力量\\n[gold]5.镉级[/gold]：敌人改为+20%生命\\n[gold]6.镍级[/gold]：前三个回合[red]少抽1张牌[/red]\\n[gold]7.铜级[/gold]：敌人在死亡时造成6点伤害\\n[gold]8.铋级[/gold]：敌人改为+30%生命，额外获得1点力量\\n[gold]9.铅级[/gold]：进入新的一幕后会向卡组里加一张随机[red]诅咒[/red]\\n[gold]10.汞级[/gold]：敌人第一次受到致命伤害前会获得1层[gold]缓冲[/gold]与2点[gold]力量[/gold]并恢复30%生命",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.desc" : "提高难度也会获得[gold]额外增益[/gold]。此为苦行，亦为修行。\\n[gold]1.锑级[/gold]：敌人+10%生命值\\n[gold]2.锌级[/gold]：每一幕开始时，随机[red]降级[/red]一张卡牌\\n[gold]3.锡级[/gold]：使用的第一张牌[red]费用+1[/red]\\n[gold]4.锰级[/gold]：战斗开始时，敌人获得1点力量，自己失去1点力量\\n[gold]5.镉级[/gold]：敌人改为+20%生命\\n[gold]6.镍级[/gold]：前三个回合[red]少抽1张牌[/red]\\n[gold]7.铜级[/gold]：敌人在死亡时造成6点伤害\\n[gold]8.铋级[/gold]：敌人改为+30%生命，额外获得1点力量\\n[gold]9.铅级[/gold]：进入新的一幕后会向卡组里加一张随机[red]诅咒[/red]\\n[gold]10.汞级[/gold]：敌人第一次受到致命伤害前会获得1层[gold]缓冲[/gold]与2点[gold]力量[/gold]并恢复30%生命",
 
 	"MIYABISTS2-COMBAT_HARD_SELECTED.Zero" : "无进阶",
 	"MIYABISTS2-COMBAT_HARD_SELECTED.Sb" : "1.锑级",
@@ -61,8 +61,8 @@
 	"MIYABISTS2-REST_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
 
 
-	"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0" : "默认皮肤",
-	"MIYABISTS2-SHOP_SELECTED_SLOT.Slot0" : "默认皮肤",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0" : "烈露濯霜",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.Slot0" : "烈露濯霜",
 	"MIYABISTS2-REST_SELECTED_SLOT.Slot0" : "小雅"
 
 }

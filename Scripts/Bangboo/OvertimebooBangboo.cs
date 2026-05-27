@@ -12,7 +12,6 @@ using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,7 +33,6 @@ namespace Miyabists2.Scripts.Bangboo
     internal class OvertimebooAct : MiyabiBangbooActBase
     {
         public override TargetType TargetType => TargetType.AnyPlayer;
-
         public override string BigIconPath => "res://images/bangboo/relicMode/overtimebooRelic.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -43,45 +41,25 @@ namespace Miyabists2.Scripts.Bangboo
             new EnergyVar(1)
         ];
 
-        //public int UsedCount { get; set; } = 0;
-
-        private bool used = false;
-
-        //public bool isFree { get; set; } = false;
-
         protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
         {
-            await ActEffect(target);
-            if (isFree<1)
-            {
-                await ActCost(choiceContext);
-            }
+            await ActEffect(choiceContext, target);
+            if (isFree < 1)
+                await ActCost();
             isFree--;
-            if(isFree < 0) isFree = 0;
+            if (isFree < 0) isFree = 0;
         }
 
-        public async Task ActCost(PlayerChoiceContext choiceContext)
+        public override async Task ActCost()
         {
             if (Owner.CurrentHp <= 1)
-            {
                 await RelicCmd.Remove(MiyabiFuncBase.GetRelic<OvertimebooRelic>(Owner.PetOwner));
-            }
-            await CreatureCmd.Damage(choiceContext, base.Owner, 1m, ValueProp.Unblockable, base.Owner);
-        
-            //UsedCount++;
-            //DynamicVars["Used"].BaseValue = UsedCount;
+            await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), base.Owner, 1m, ValueProp.Unblockable, base.Owner);
         }
 
-        public async Task ActEffect(Creature target)
+        public override async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
         {
             await PlayerCmd.GainEnergy(1, target.Player);
-        }
-
-        public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-        {
-            //UsedCount = 0;
-            //DynamicVars["Used"].BaseValue = UsedCount;
-            return base.AfterPlayerTurnStart(choiceContext, player);
         }
     }
 }

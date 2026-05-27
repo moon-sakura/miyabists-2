@@ -11,7 +11,9 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <Compile Remove="template\**" />
+	  <Compile Remove="_sts2\**" />
 	  <EmbeddedResource Remove="template\**" />
+	  <EmbeddedResource Remove="_sts2\**" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Content Include="miyabists2\localization\zhs\ancients.json" />

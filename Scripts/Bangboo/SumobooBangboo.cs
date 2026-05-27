@@ -31,7 +31,6 @@ namespace Miyabists2.Scripts.Bangboo
     internal class SumobooAct : MiyabiBangbooActBase
     {
         public override TargetType TargetType => TargetType.AnyEnemy;
-
         public override string BigIconPath => "res://images/bangboo/relicMode/sumobooRelic.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -40,46 +39,9 @@ namespace Miyabists2.Scripts.Bangboo
             new DynamicVar("Used",0),
         ];
 
-        //public int UsedCount { get; set; } = 0;
-
-        private bool used = false;
-
-        //public bool isFree { get; set; } = false;
-
-        protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
-        {
-            DynamicVars["MAXUSE"].BaseValue = MAXUSE;
-            DynamicVars["Used"].BaseValue = UsedCount;
-
-            used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
-            if ((Owner.PetOwner.PlayerCombatState.Energy < 1 || used) && isFree < 1) return;
-
-            await ActEffect(choiceContext,target);
-            if (isFree < 1)
-            {
-                await ActCost();
-            }
-            isFree--;
-            if (isFree < 0) isFree = 0;
-        }
-
-        public async Task ActCost()
-        {
-            await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
-            UsedCount++;
-            DynamicVars["Used"].BaseValue = UsedCount;
-        }
-
-        public async Task ActEffect(PlayerChoiceContext choiceContext,Creature target)
+        public override async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
         {
             await MiyabiCombatService.AddDaze(choiceContext, target, DynamicVars["Daze"], base.Owner);
-        }
-
-        public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-        {
-            UsedCount = 0;
-            DynamicVars["Used"].BaseValue = UsedCount;
-            return base.AfterPlayerTurnStart(choiceContext, player);
         }
     }
 }

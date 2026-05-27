@@ -51,10 +51,10 @@ namespace Miyabists2.Scripts.Bangboo
 
     internal class MiyabiBangbooActBase : CustomActionModel
     {
-        public override TargetType TargetType => TargetType.AnyPlayer;           // 目标类型
-        public override bool AutoRemoveAtTurnEnd => false;                       // 是否在回合结束自动移除
-        public override PowerType Type => PowerType.Buff;                       // Power 的类型
-        public override PowerStackType StackType => PowerStackType.Counter;     // Power 的堆叠属性
+        public override TargetType TargetType => TargetType.AnyPlayer;
+        public override bool AutoRemoveAtTurnEnd => false;
+        public override PowerType Type => PowerType.Buff;
+        public override PowerStackType StackType => PowerStackType.Counter;
 
         public virtual string BigIconPath => "res://images/bangboo/relicMode/eousRelic.png";
         public string BigBetaIconPath => BigIconPath;
@@ -66,20 +66,51 @@ namespace Miyabists2.Scripts.Bangboo
         ];
 
         public int UsedCount { get; set; } = 0;
-
         public int MAXUSE { get; set; } = 1;
-
-        public int isFree { get; set; } = 0 ;
-
+        public int isFree { get; set; } = 0;
 
         public void AddFree() => isFree++;
 
+        protected virtual bool CanPayCost => Owner.PetOwner.PlayerCombatState.Energy >= 1;
 
-        // 核心重载，定义 Action 被触发时的行为，类似于卡牌的 OnPlay
-        // 和卡牌一样，如果目标无需选定（如所有敌人），target 将会是 null
+        /// <summary>Bangboo 的具体效果，子类重写。choiceContext 和 target 由调用方传入。</summary>
+        public virtual async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
+        {
+        }
+
+        /// <summary>默认消耗 1 能量，子类可重写为消耗金币/血量等。</summary>
+        public virtual async Task ActCost()
+        {
+            await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
+            UsedCount++;
+            DynamicVars["Used"].BaseValue = UsedCount;
+        }
+
+        /// <summary>被卡牌激活时的行为。默认给一次免费使用，自动触发的 Bangboo 重写为直接执行 ActEffect。</summary>
+        public virtual async Task OnCardActivate(PlayerChoiceContext choiceContext)
+        {
+            AddFree();
+        }
+
         protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
         {
-            
+            DynamicVars["MAXUSE"].BaseValue = MAXUSE;
+            DynamicVars["Used"].BaseValue = UsedCount;
+
+            if ((!CanPayCost || UsedCount >= MAXUSE) && isFree < 1) return;
+
+            await ActEffect(choiceContext, target);
+            if (isFree < 1)
+                await ActCost();
+            isFree--;
+            if (isFree < 0) isFree = 0;
+        }
+
+        public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        {
+            UsedCount = 0;
+            DynamicVars["Used"].BaseValue = UsedCount;
+            return base.AfterPlayerTurnStart(choiceContext, player);
         }
 
         public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)

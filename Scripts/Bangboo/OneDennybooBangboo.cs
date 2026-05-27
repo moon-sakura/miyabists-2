@@ -34,12 +34,7 @@ namespace Miyabists2.Scripts.Bangboo
     internal class OneDennybooAct : MiyabiBangbooActBase
     {
         public override TargetType TargetType => TargetType.None;
-
         public override string BigIconPath => "res://images/bangboo/relicMode/luckybooRelic.png";
-
-        //protected override IEnumerable<DynamicVar> CanonicalVars => [
-        //    new DynamicVar("MAXUSE", MAXUSE),
-        //];
 
         public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {

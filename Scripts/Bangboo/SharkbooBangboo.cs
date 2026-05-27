@@ -32,7 +32,6 @@ namespace Miyabists2.Scripts.Bangboo
     internal class SharkbooAct : MiyabiBangbooActBase
     {
         public override TargetType TargetType => TargetType.None;
-
         public override string BigIconPath => "res://images/bangboo/relicMode/sharkbooRelic.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -42,21 +41,23 @@ namespace Miyabists2.Scripts.Bangboo
             new DynamicVar("Used",0),
         ];
 
-        //public int UsedCount { get; set; } = 0;
-
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (side != Owner.Side) return;
-
-            await ActEffect();
+            await ActEffect(choiceContext, null);
         }
 
-        public async Task ActEffect()
+        public override async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
         {
             for (int i = 0; i < DynamicVars["MAXUSE"].IntValue; i++)
             {
                 DynamicVars["AllDamage"].BaseValue += DynamicVars["Damage"].BaseValue;
             }
+        }
+
+        public override async Task OnCardActivate(PlayerChoiceContext choiceContext)
+        {
+            await ActEffect(choiceContext, null);
         }
 
         public override async Task BeforeDamageReceived(PlayerChoiceContext choiceContext, Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)

@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MinionLib.Minion;
 using MinionLib.Targeting;
 using Miyabists2.Scripts.Bangboo;
-using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,20 +32,7 @@ namespace Miyabists2.Scripts.Cards
             if (cardPlay.Target is not { Monster: MiyabiBangbooBase } target) return;
 
             var act = target.Powers.Where(p => p is MiyabiBangbooActBase).FirstOrDefault();
-
-            if (act is ExplorebooAct)
-            {
-                await ((ExplorebooAct)act).ActEffect();
-                return;
-            }
-            if(act is SharkbooAct)
-            {
-                await ((SharkbooAct)act).ActEffect();
-                return;
-            }
-            
-
-            ((MiyabiBangbooActBase)act).AddFree();
+            await ((MiyabiBangbooActBase)act).OnCardActivate(choiceContext);
         }
 
         protected override void OnUpgrade()

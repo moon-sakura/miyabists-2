@@ -7,7 +7,10 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Helpers;
 using MinionLib.Commands;
 using MinionLib.Minion;
 using Miyabists2.Scripts.Service;
@@ -44,35 +47,51 @@ namespace Miyabists2.Scripts.Bangboo
             new DamageVar(25m, ValueProp.Move),
         ];
 
-        //public int UsedCount { get; set; } = 0;
-
-        private bool used = false;
-
-        //public bool isFree { get; set; } = false;
-
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (side != Owner.Side) return;
-
-            await ActEffect(choiceContext);
+            await ActEffect(choiceContext, null);
         }
 
-
-        public async Task ActEffect(PlayerChoiceContext choiceContext)
+        public override async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
         {
             DynamicVars["Charged"].BaseValue += MAXUSE;
 
-            if (DynamicVars["Used"].BaseValue >= 3 || MiyabiFuncBase.GetIsTrue100(20,Owner.PetOwner))
+            if (DynamicVars["Charged"].BaseValue >= 3 || MiyabiFuncBase.GetIsTrue100(20, Owner.PetOwner))
             {
-                await MinionAnimCmd.PlayBumpAttackAsync(Owner, Owner.CombatState.Enemies.FirstOrDefault());
-                await CreatureCmd.Damage(choiceContext, Owner.CombatState.Enemies, DynamicVars.Damage, Owner);
-                DynamicVars["Charged"].BaseValue = 0;
+                var bangboo = base.Owner;
+
+                List<Creature> enemies = base.CombatState.Enemies
+                    .Where((Creature e) => e != null && e.IsAlive)
+                    .ToList();
+
+                if (enemies.Count > 0)
+                {
+                    NHyperbeamVfx nHyperbeamVfx = NHyperbeamVfx.Create(bangboo, enemies.Last());
+                    if (nHyperbeamVfx != null)
+                    {
+                        NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nHyperbeamVfx);
+                        await Cmd.Wait(0.5f);
+                    }
+
+                    foreach (Creature item in enemies)
+                    {
+                        NHyperbeamImpactVfx nHyperbeamImpactVfx = NHyperbeamImpactVfx.Create(bangboo, item);
+                        if (nHyperbeamImpactVfx != null)
+                        {
+                            NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nHyperbeamImpactVfx);
+                        }
+                    }
+
+                    await CreatureCmd.Damage(choiceContext, enemies, DynamicVars.Damage, Owner);
+                    DynamicVars["Charged"].BaseValue = 0;
+                }
             }
         }
 
-        public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        public override async Task OnCardActivate(PlayerChoiceContext choiceContext)
         {
-            return base.AfterPlayerTurnStart(choiceContext, player);
+            await ActEffect(choiceContext, null);
         }
     }
 }

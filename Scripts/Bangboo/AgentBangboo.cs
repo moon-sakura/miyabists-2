@@ -32,7 +32,6 @@ namespace Miyabists2.Scripts.Bangboo
     internal class AgentAct : MiyabiBangbooActBase
     {
         public override TargetType TargetType => TargetType.AnyEnemy;
-
         public override string BigIconPath => "res://images/bangboo/relicMode/agentGulliverRelic.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -44,42 +43,10 @@ namespace Miyabists2.Scripts.Bangboo
 
         private List<Creature> _monsterModels = new List<Creature>();
 
-        //public int UsedCount { get; set; } = 0;
-
-        private bool used = false;
-
-        //public bool isFree { get; set; } = false;
-
-        protected override async Task OnAct(PlayerChoiceContext choiceContext, Creature? target)
-        {
-            DynamicVars["MAXUSE"].BaseValue = MAXUSE;
-            DynamicVars["Used"].BaseValue = UsedCount;
-
-            used = UsedCount >= DynamicVars["MAXUSE"].IntValue;
-            if ((Owner.PetOwner.PlayerCombatState.Energy < 1 || used) && isFree < 1)
-                return;
-
-            await ActEffect(choiceContext, target);
-            if (isFree < 1)
-            {
-                await ActCost();
-            }
-            isFree--;
-            if (isFree < 0) isFree = 0;
-        }
-
-        public async Task ActCost()
-        {
-            await PlayerCmd.LoseEnergy(1, Owner.PetOwner);
-            UsedCount++;
-            DynamicVars["Used"].BaseValue = UsedCount;
-        }
-
-        public async Task ActEffect(PlayerChoiceContext choiceContext, Creature target)
+        public override async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
         {
             await MinionAnimCmd.PlayBumpAttackAsync(Owner, target);
             await CreatureCmd.Damage(choiceContext, target, DynamicVars.Damage, Owner);
-
             _monsterModels.Add(target);
         }
 
@@ -94,8 +61,6 @@ namespace Miyabists2.Scripts.Bangboo
 
         public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            UsedCount = 0;
-            DynamicVars["Used"].BaseValue = UsedCount;
             _monsterModels.Clear();
             return base.AfterPlayerTurnStart(choiceContext, player);
         }

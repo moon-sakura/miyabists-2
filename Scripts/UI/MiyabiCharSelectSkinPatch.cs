@@ -1,0 +1,247 @@
+using Godot;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect;
+using MegaCrit.Sts2.Core.Models;
+using Miyabists2.Scripts.Char;
+using Miyabists2.Scripts.Service;
+using System.Collections.Generic;
+
+namespace Miyabists2.Scripts.UI;
+
+/// <summary>
+/// 在选人界面当 Miyabi 被选中时显示难度选择面板 + 皮肤切换面板。
+/// </summary>
+[HarmonyPatch]
+public static class MiyabiCharSelectSkinPatch
+{
+    private static MiyabiSkinPanel _skinPanel;
+    private static MiyabiDifficultyPanel _difficultyPanel;
+    private static Miyabi _currentMiyabi;
+    private static SkinType _currentSkinType = SkinType.Combat;
+    private static bool _skinHandlerWired;
+    private static bool _diffHandlerWired;
+
+    // ============================================================
+    // Patch: NCharacterSelectScreen.SelectCharacter
+    // ============================================================
+
+    [HarmonyPatch(typeof(NCharacterSelectScreen), "SelectCharacter")]
+    [HarmonyPostfix]
+    public static void Postfix(
+        NCharacterSelectScreen __instance,
+        NCharacterSelectButton charSelectButton,
+        CharacterModel characterModel)
+    {
+        if (characterModel is Miyabi miyabi)
+        {
+            _currentMiyabi = miyabi;
+
+            // --- 难度面板 ---
+            var diffPanel = GetOrCreateDifficultyPanel(__instance);
+            if (!_diffHandlerWired)
+            {
+                diffPanel.LevelChanged += OnDifficultyChanged;
+                diffPanel.EnemyStrongerChanged += OnEnemyStrongerChanged;
+                _diffHandlerWired = true;
+            }
+            diffPanel.CurrentLevel = (int)MiyabiModConfig.CombatHardSelected;
+            diffPanel.EnemyStronger = MiyabiModConfig.MiyabiEnemiesStronger;
+            diffPanel.Visible = true;
+
+            // --- 皮肤面板 ---
+            var skinPanel = GetOrCreateSkinPanel(__instance);
+            if (!_skinHandlerWired)
+            {
+                skinPanel.SkinChanged += OnSkinChanged;
+                skinPanel.SkinTypeChanged += OnSkinTypeChanged;
+                _skinHandlerWired = true;
+            }
+            LoadSkinData(skinPanel, _currentSkinType);
+            skinPanel.Visible = true;
+        }
+        else
+        {
+            _currentMiyabi = null;
+            if (_skinPanel != null && GodotObject.IsInstanceValid(_skinPanel))
+                _skinPanel.Visible = false;
+            if (_difficultyPanel != null && GodotObject.IsInstanceValid(_difficultyPanel))
+                _difficultyPanel.Visible = false;
+        }
+    }
+
+    // ============================================================
+    // 面板创建
+    // ============================================================
+
+    private static MiyabiDifficultyPanel GetOrCreateDifficultyPanel(NCharacterSelectScreen screen)
+    {
+        if (_difficultyPanel != null && GodotObject.IsInstanceValid(_difficultyPanel))
+            return _difficultyPanel;
+
+        _difficultyPanel = new MiyabiDifficultyPanel();
+        _difficultyPanel.Name = "MiyabiDifficultyPanel";
+        _difficultyPanel.Position = new Vector2(1460, 40);
+        screen.AddChild(_difficultyPanel);
+        _diffHandlerWired = false;
+        return _difficultyPanel;
+    }
+
+    private static MiyabiSkinPanel GetOrCreateSkinPanel(NCharacterSelectScreen screen)
+    {
+        if (_skinPanel != null && GodotObject.IsInstanceValid(_skinPanel))
+            return _skinPanel;
+
+        _skinPanel = new MiyabiSkinPanel();
+        _skinPanel.Name = "MiyabiSkinPanel";
+        _skinPanel.Position = new Vector2(1460, 380);
+        screen.AddChild(_skinPanel);
+        _skinHandlerWired = false;
+        return _skinPanel;
+    }
+
+    // ============================================================
+    // 事件：难度变更
+    // ============================================================
+
+    private static void OnDifficultyChanged(int newLevel)
+    {
+        MiyabiModConfig.CombatHardSelected = (MiyabiSelectedHard)newLevel;
+    }
+
+    private static void OnEnemyStrongerChanged(bool toggled)
+    {
+        MiyabiModConfig.MiyabiEnemiesStronger = toggled;
+    }
+
+    // ============================================================
+    // 事件：皮肤类型标签
+    // ============================================================
+
+    private static void OnSkinTypeChanged(SkinType newType)
+    {
+        _currentSkinType = newType;
+        if (_skinPanel == null || !GodotObject.IsInstanceValid(_skinPanel)) return;
+        LoadSkinData(_skinPanel, newType);
+    }
+
+    // ============================================================
+    // 事件：皮肤槽位
+    // ============================================================
+
+    private static void OnSkinChanged(int newIndex)
+    {
+        if (_currentMiyabi == null) return;
+        if (_skinPanel == null || !GodotObject.IsInstanceValid(_skinPanel)) return;
+
+        switch (_currentSkinType)
+        {
+            case SkinType.Combat:
+                MiyabiModConfig.CombatSelectedSlot = (MiyabiCombatSkinSlot)newIndex;
+                break;
+            case SkinType.Rest:
+                MiyabiModConfig.RestSelectedSlot = (MiyabiRestSkinSlot)newIndex;
+                break;
+            case SkinType.Shop:
+                MiyabiModConfig.ShopSelectedSlot = (MiyabiShopSkinSlot)newIndex;
+                break;
+        }
+
+        if (_currentSkinType == SkinType.Combat)
+        {
+            var screen = _skinPanel.GetParent();
+            if (screen != null)
+                RefreshBackground(screen, _currentMiyabi);
+        }
+    }
+
+    // ============================================================
+    // 皮肤数据加载
+    // ============================================================
+
+    private static void LoadSkinData(MiyabiSkinPanel panel, SkinType skinType)
+    {
+        int skinCount;
+        string keyPrefix;
+        int currentSlot;
+        string previewFallbackPrefix;
+
+        switch (skinType)
+        {
+            case SkinType.Combat:
+                skinCount = Miyabi.CombatSkinPaths.Count;
+                keyPrefix = "COMBAT";
+                currentSlot = (int)MiyabiModConfig.CombatSelectedSlot;
+                previewFallbackPrefix = "combat";
+                break;
+            case SkinType.Rest:
+                skinCount = Miyabi.RestSkinPaths.Count;
+                keyPrefix = "REST";
+                currentSlot = (int)MiyabiModConfig.RestSelectedSlot;
+                previewFallbackPrefix = "rest";
+                break;
+            case SkinType.Shop:
+                skinCount = Miyabi.ShopSkinPaths.Count;
+                keyPrefix = "SHOP";
+                currentSlot = (int)MiyabiModConfig.ShopSelectedSlot;
+                previewFallbackPrefix = "shop";
+                break;
+            default:
+                return;
+        }
+
+        var names = new List<string>(skinCount);
+        var previews = new List<string>(skinCount);
+
+        for (int i = 0; i < skinCount; i++)
+        {
+            string dataKey = $"MIYABISTS2-{keyPrefix}_SELECTED_SLOT.Slot{i}";
+            string name = MiyabiSkinManager.skinDatas.TryGetValue(dataKey, out var n) ? n : $"{skinType} Skin {i}";
+            names.Add(name);
+
+            if (MiyabiSkinManager.previewDatas.TryGetValue(dataKey, out var previewPath))
+            {
+                previews.Add(previewPath);
+            }
+            else
+            {
+                previews.Add($"res://images/skins/{previewFallbackPrefix}_preview_{i}.png");
+            }
+        }
+
+        if (currentSlot >= skinCount) currentSlot = 0;
+
+        panel.CurrentSkinType = skinType;
+        panel.PreviewImagePaths = previews;
+        panel.SkinDisplayNames = names;
+        panel.CurrentIndex = currentSlot;
+    }
+
+    // ============================================================
+    // 背景刷新
+    // ============================================================
+
+    private static void RefreshBackground(Node screen, Miyabi miyabi)
+    {
+        var bgField = typeof(NCharacterSelectScreen).GetField(
+            "_bgContainer",
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+
+        var bgContainer = bgField?.GetValue(screen) as Control;
+        if (bgContainer == null) return;
+
+        foreach (Node child in bgContainer.GetChildren())
+        {
+            bgContainer.RemoveChild(child);
+            child.QueueFree();
+        }
+
+        string bgPath = miyabi.CustomCharacterSelectBg;
+        var scene = ResourceLoader.Load<PackedScene>(bgPath);
+        if (scene != null)
+        {
+            var control = scene.Instantiate<Control>(PackedScene.GenEditState.Disabled);
+            control.Name = miyabi.Id.Entry + "_bg";
+            bgContainer.AddChild(control);
+        }
+    }
+}

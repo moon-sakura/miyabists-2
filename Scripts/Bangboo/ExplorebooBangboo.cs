@@ -31,7 +31,6 @@ namespace Miyabists2.Scripts.Bangboo
     internal class ExplorebooAct : MiyabiBangbooActBase
     {
         public override TargetType TargetType => TargetType.None;
-
         public override string BigIconPath => "res://images/bangboo/relicMode/explorebooRelic.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -41,26 +40,26 @@ namespace Miyabists2.Scripts.Bangboo
             new DynamicVar("Used",0),
         ];
 
-        //public int UsedCount { get; set; } = 0;
-
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             DynamicVars["MAXUSE"].BaseValue = MAXUSE;
             DynamicVars["Used"].BaseValue = UsedCount;
 
-            decimal gold = 5m * Owner.PetOwner.Creature.CombatState.RoundNumber > DynamicVars["MaxGold"].BaseValue ? DynamicVars["MaxGold"].BaseValue : 5m * Owner.PetOwner.Creature.CombatState.RoundNumber;
-            
             for (int i = 0; i < DynamicVars["MAXUSE"].IntValue; i++)
             {
-                await ActEffect();
+                await ActEffect(choiceContext, null);
             }
         }
 
-        public async Task ActEffect()
+        public override async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
         {
             decimal gold = 5m * Owner.PetOwner.Creature.CombatState.RoundNumber > DynamicVars["MaxGold"].BaseValue ? DynamicVars["MaxGold"].BaseValue : 5m * Owner.PetOwner.Creature.CombatState.RoundNumber;
-
             DynamicVars["Gold"].BaseValue += gold;
+        }
+
+        public override async Task OnCardActivate(PlayerChoiceContext choiceContext)
+        {
+            await ActEffect(choiceContext, null);
         }
 
         public override async Task AfterCombatVictory(CombatRoom room)

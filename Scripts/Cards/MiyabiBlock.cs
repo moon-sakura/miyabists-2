@@ -24,6 +24,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar((int)MiyabiModConfig.CombatHardSelected >= 4 ? 6 : 4, ValueProp.Move),
+            new DamageVar(0,ValueProp.Unpowered),
             new DynamicVar(ParryVarName, 1),
             new DynamicVar(SlipperyVarName, 0)
         ];

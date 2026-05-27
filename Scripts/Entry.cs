@@ -39,9 +39,9 @@ public class Entry
 
         MiyabiSkinManager.PreSkinRegister();
 
-        MiyabiSkinManager.RegisterCombatSkin("银庭花信", "res://scenes/miyabi_yinxing_char.tscn");
+        MiyabiSkinManager.RegisterCombatSkin("银庭花信", "res://scenes/miyabi_yinxing_char.tscn", "res://images/charui/miyabi_yinxing_char75.png");
         //MiyabiSkinManager.RegisterRestSkin("","res://scenes/miyabi_yinxing_rest.tscn");
-        MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn");
+        MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn", "res://images/charui/miyabi_yinxing_char75.png");
         //MiyabiSkinManager.RegisterCombatSkin("仪玄", "res://scenes/monsters/yixuan_enemy.tscn");
 
         //MiyabiSkinManager.RegisterCombatSkin("大黄蜂", "res://scenes/modSkin/HollowKnight.tscn");

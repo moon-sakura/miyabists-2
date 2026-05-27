@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
@@ -184,16 +185,26 @@ namespace Miyabists2.Scripts.Service
                         CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
                     }
                 }
+
+                if (runState.Act.ActNumber() == 1)
+                    continue;
+                if ((int)MiyabiModConfig.CombatHardSelected >= 2 && (player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+                {
+                    CardModel card = player.Deck.Cards.Where(c => c.IsUpgraded).TakeRandom(1,player.RunState.Rng.Shuffle).FirstOrDefault();
+                    if(card != null)
+                        CardCmd.Downgrade(card);
+                    GD.Print($"[MiyabiMod] : 已降级{card.ToString()}");
+                }
             }
 
             if (runState.Act.ActNumber() != 1) return;
 
             foreach (var player in runState.Players)
             {
-                if ((int)MiyabiModConfig.CombatHardSelected >= 2 && (player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
-                {
-                    player.Gold /= 2;
-                }
+                //if ((int)MiyabiModConfig.CombatHardSelected >= 2 && (player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+                //{
+                //    player.Gold /= 2;
+                //}
 
                 if(player.Character is Miyabi && MiyabiModConfig.FunPileSelected == MiyabiFunPile.BeeGroup)
                 {
@@ -204,6 +215,8 @@ namespace Miyabists2.Scripts.Service
             }
         }
     }
+
+
 
     [HarmonyPatch(typeof(CombatState), "CreateCreature")]
     internal static class MonsterMaxHpPatch
