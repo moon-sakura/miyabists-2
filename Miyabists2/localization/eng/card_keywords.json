@@ -1,0 +1,14 @@
+{
+	"LIESHUANG.description": "Deal damage equal to [gold]Frostburn Buildup[/gold] to the enemy",
+    "LIESHUANG.title": "Frostburn",
+
+	"FRIENDS.description": "Don't underestimate our bond, dammit!",
+    "FRIENDS.title": "Companion",
+
+	"OTHERWORLDFRIENDS.description" : "Blessings from another world",
+	"OTHERWORLDFRIENDS.title": "Otherworld Companion",
+
+	"ENDSKILL.description": "A very, very powerful skill",
+    "ENDSKILL.title": "Ultimate"
+
+}

@@ -1,0 +1,81 @@
+{
+	"MIYABISTS2-SWORD_NOTAIL_RELIC.title": "Tailless Cursed Blade",
+  	"MIYABISTS2-SWORD_NOTAIL_RELIC.description": "At the start of combat, gain [blue]3[/blue] [gold]Frostfall[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].",
+  	"MIYABISTS2-SWORD_NOTAIL_RELIC.flavor": "A very, very hard blade.",
+
+	"MIYABISTS2-NO_TAIL_FULL_RELIC.title": "Cursed Blade Unleashed",
+  	"MIYABISTS2-NO_TAIL_FULL_RELIC.description": "At the start of combat, gain [blue]3[/blue] [gold]Frostfall[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold]. At the start of combat, add a [red]Cursed Blade Unleashed[/red] to your hand.",
+  	"MIYABISTS2-NO_TAIL_FULL_RELIC.flavor": "",
+
+	"MIYABISTS2-JINGHUA_NIYING_RELIC.title": "Mirrored Bloom, Hidden Shadow",
+  	"MIYABISTS2-JINGHUA_NIYING_RELIC.description": "The first time you would take damage each combat, automatically play [gold]Limit Vision[/gold].",
+  	"MIYABISTS2-JINGHUA_NIYING_RELIC.flavor": "Dodge.",
+
+	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.title": "Frostflame Scorch",
+  	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.description": "After triggering [gold]Frostburn[/gold], you can still stack [gold]Frostburn Buildup[/gold]. The damage bonus cap from [gold]Iceflame[/gold] becomes [blue]100%[/blue].",
+  	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.flavor": "",
+
+	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.title": "Scattered Star Palace",
+  	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.description": "Gain counts from victories: Normal enemies +[blue]1[/blue]; Elites +[blue]2[/blue]; Bosses +[blue]3[/blue]. After accumulating [blue]7[/blue] points, add [gold]Pinnacle of Martial Arts[/gold] to your hand at combat start. After [blue]15[/blue] points, add [gold]Slay All Evil[/gold] instead.",
+  	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.flavor": "\"I think it would be perfect for training... if only I could shrink down to its size.\"",
+
+	"MIYABISTS2-SECTION_SIX_RELIC.title": "Section 6 Badge",
+  	"MIYABISTS2-SECTION_SIX_RELIC.description": "At the start of combat, gain [blue]6[/blue] [gold]Support Points[/gold].",
+  	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "A very, very good section.",
+
+	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "Will to Transcend Despair",
+  	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "When HP is above [blue]80%[/blue], damage dealt is reduced by [red]50%[/red]. When HP is below [blue]50%[/blue], damage dealt is increased by [blue]20%[/blue]. When HP is below [blue]20%[/blue], damage dealt is increased by [blue]50%[/blue].",
+  	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "A will that blossoms in the face of despair.",
+
+	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.title": "Vital Nurturing Sachet",
+  	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.description": "Every [blue]3[/blue] turns, gain [blue]{ADD:diff()}[/blue] [gold]Decibel[/gold]. Maximum Decibel cap becomes [blue]{MAX:diff()}[/blue].",
+  	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.flavor": "A sachet filled with mysterious energy, steadily accumulating power.",
+
+
+
+	"MIYABISTS2-CHOUKA_RELIC.title": "Encrypted Master Tape",
+  	"MIYABISTS2-CHOUKA_RELIC.description": "You can now pull cards at Rest Sites! At the end of each combat, gain [blue]1[/blue] free pull.\\nCurrent Cinema: [gold]{CINIMA:diff()}[/gold]\\nCurrent Free Pulls: [blue]{FreeCount:diff()}[/blue]",
+  	"MIYABISTS2-CHOUKA_RELIC.flavor": "Take a gamble, turn a bike into a sports car!",
+
+
+
+	"MIYABISTS2-OVERTIMEBOO_RELIC.title": "Overtimeboo",
+  	"MIYABISTS2-OVERTIMEBOO_RELIC.description": "At the start of your turn, summon [gold]Overtimeboo[/gold].",
+  	"MIYABISTS2-OVERTIMEBOO_RELIC.flavor": "Workhorse Boo.",
+
+	"MIYABISTS2-PAPERBOO_RELIC.title": "Paperboo",
+  	"MIYABISTS2-PAPERBOO_RELIC.description": "At the start of your turn, summon [gold]Paperboo[/gold].",
+  	"MIYABISTS2-PAPERBOO_RELIC.flavor": "I'll protect you!",
+
+	"MIYABISTS2-SHARKBOO_RELIC.title": "Sharkboo",
+  	"MIYABISTS2-SHARKBOO_RELIC.description": "At the start of your turn, summon [gold]Sharkboo[/gold].",
+  	"MIYABISTS2-SHARKBOO_RELIC.flavor": "I'm charging up!",
+
+	"MIYABISTS2-EXCALIBOO_RELIC.title": "Excaliboo",
+  	"MIYABISTS2-EXCALIBOO_RELIC.description": "At the start of your turn, summon [gold]Excaliboo[/gold].",
+  	"MIYABISTS2-EXCALIBOO_RELIC.flavor": "Almost ready!",
+
+	"MIYABISTS2-AGENT_RELIC.title": "Agent Gulliver",
+  	"MIYABISTS2-AGENT_RELIC.description": "At the start of your turn, summon [gold]Agent Gulliver[/gold].",
+  	"MIYABISTS2-AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
+
+	"MIYABISTS2-LUCKYBOO_RELIC.title": "Luckyboo",
+  	"MIYABISTS2-LUCKYBOO_RELIC.description": "At the start of your turn, summon [gold]Luckyboo[/gold]. Has a small chance to summon [gold]One-Dennyboo[/gold].",
+  	"MIYABISTS2-LUCKYBOO_RELIC.flavor": "Does it really bring fortune?",
+
+	"MIYABISTS2-EXPLOREBOO_RELIC.title": "Exploreboo",
+  	"MIYABISTS2-EXPLOREBOO_RELIC.description": "At the start of your turn, summon [gold]Exploreboo[/gold].",
+  	"MIYABISTS2-EXPLOREBOO_RELIC.flavor": "We're gonna be rich!",
+
+	"MIYABISTS2-SUMOBOO_RELIC.title": "Sumoboo",
+  	"MIYABISTS2-SUMOBOO_RELIC.description": "At the start of your turn, summon [gold]Sumoboo[/gold].",
+  	"MIYABISTS2-SUMOBOO_RELIC.flavor": "Takeoff.",
+
+	"MIYABISTS2-EOUS_BANGBOO_RELIC.title": "Eous",
+  	"MIYABISTS2-EOUS_BANGBOO_RELIC.description": "At the start of your turn, summon [gold]Eous[/gold]. When choosing the next floor, you have [blue]{Rooms:diff()}[/blue] chance(s) to ignore the current route.",
+  	"MIYABISTS2-EOUS_BANGBOO_RELIC.flavor": "The very best Eous.",
+
+	"MIYABISTS2-MAGNETIBOO_RELIC.title": "Magnetiboo",
+	"MIYABISTS2-MAGNETIBOO_RELIC.description": "At the start of your turn, summon [gold]Magnetiboo[/gold].",
+	"MIYABISTS2-MAGNETIBOO_RELIC.flavor": "Full magnetic power!"
+}

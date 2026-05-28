@@ -1,0 +1,68 @@
+{
+	"MIYABISTS2.mod_title" : "Miyabi Mod Config",
+
+	"MIYABISTS2-COMBAT_CONFIG.title" : "Combat Config",
+
+	"MIYABISTS2-COMBAT_HARD_SELECTED.title" : "Challenge Difficulty",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.title" : "Difficulty Selection",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.desc" : "Higher difficulty also grants [gold]bonus benefits[/gold]. This is penance, and also training.\\n[gold]1. Antimony[/gold]: Enemies +10% HP\\n[gold]2. Zinc[/gold]: At the start of each Act, randomly [red]downgrade[/red] a card\\n[gold]3. Tin[/gold]: The first card played each turn costs [red]+1[/red]\\n[gold]4. Manganese[/gold]: At combat start, enemies gain 1 Strength, you lose 1 Strength\\n[gold]5. Cadmium[/gold]: Enemies +20% HP instead\\n[gold]6. Nickel[/gold]: [red]Draw 1 fewer card[/red] for the first 3 turns\\n[gold]7. Copper[/gold]: Enemies deal 6 damage on death\\n[gold]8. Bismuth[/gold]: Enemies +30% HP, gain 1 additional Strength\\n[gold]9. Lead[/gold]: Upon entering a new Act, add a random [red]Curse[/red] to your deck\\n[gold]10. Mercury[/gold]: The first time an enemy would take lethal damage, they gain 1 [gold]Buffer[/gold], 2 [gold]Strength[/gold], and recover 30% HP",
+
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Zero" : "No Ascension",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sb" : "1. Antimony",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Zn" : "2. Zinc",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sn" : "3. Tin",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Mn" : "4. Manganese",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cd" : "5. Cadmium",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Ni" : "6. Nickel",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cu" : "7. Copper",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Bi" : "8. Bismuth",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Pb" : "9. Lead",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Hg" : "10. Mercury",
+
+
+	"MIYABISTS2-FUN_PILE_SELECTED.title" : "Special Starting Deck",
+	"MIYABISTS2-FUN_PILE_SELECTED.hover.title" : "Choose Starting Deck",
+	"MIYABISTS2-FUN_PILE_SELECTED.hover.desc" : "Choose a different special starting deck for your challenge.\\n[gold]Default[/gold]: No change\\n[gold]Bangboo Rulers[/gold]: Starting deck becomes Bangboo-themed\\n[gold]Swarm Assembly[/gold]: Add 1 upgraded [gold]Swarm Assembly[/gold] to your starting deck",
+
+	"MIYABISTS2-FUN_PILE_SELECTED.Default" : "Default Deck",
+	"MIYABISTS2-FUN_PILE_SELECTED.AllBangboo" : "Bangboo Rulers",
+	"MIYABISTS2-FUN_PILE_SELECTED.BeeGroup" : "Swarm Assembly",
+
+
+
+	"MIYABISTS2-MIYABI_ENEMIES_STRONGER.title" : "Strengthen Mod Enemies",
+
+	"MIYABISTS2-MONSTER_HP_MAX.title" : "Enemy Max HP",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.title" : "Enemy Max HP Multiplier",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.desc" : "Multiplier for enemy max HP. 1x is normal HP. This is penance, and also training.",
+
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.title" : "Miyabi Damage Dealt Multiplier",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.title" : "Damage Dealt Multiplier",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.desc" : "Damage dealt by Hoshimi Miyabi. 1x is normal damage. This is penance, and also training.",
+
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.title" : "Miyabi Damage Taken Multiplier",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.title" : "Damage Taken Multiplier",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.desc" : "Multiplier for damage taken by Hoshimi Miyabi. 1x is normal damage. This is penance, and also training.",
+
+	"MIYABISTS2-CHANGE_TO_ALL_PLAYERS.title" : "Apply Combat Config to All Players",
+
+	"MIYABISTS2-ELSE_CONFIG.title" : "Other Config",
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "Miyabi Combat Skin",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.title" : "Miyabi Combat Skin",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.desc" : "Select a different setting to use a different skin.",
+
+	"MIYABISTS2-SHOP_SELECTED_SLOT.title" : "Miyabi Shop Skin",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.title" : "Miyabi Shop Skin",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.desc" : "Select a different setting to use a different skin.",
+
+	"MIYABISTS2-REST_SELECTED_SLOT.title" : "Miyabi Rest Skin",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.title" : "Miyabi Rest Skin",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.desc" : "Select a different setting to use a different skin.",
+
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0" : "Frost Dew Cleansing Frost",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.Slot0" : "Frost Dew Cleansing Frost",
+	"MIYABISTS2-REST_SELECTED_SLOT.Slot0" : "Little Miyabi"
+
+}

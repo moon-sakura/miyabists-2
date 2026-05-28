@@ -31,6 +31,10 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Service
 {
+    //internal class MiyabiModifier : CustomModifierModel
+    //{
+
+    //}
     internal class ModConfigEffect : CustomPowerModel
     {
         public override PowerType Type => PowerType.None;

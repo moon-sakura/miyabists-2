@@ -1,0 +1,10 @@
+{
+    "MIYABISTS2-MIYABI_TEST_ENCOUNTER.title": "Encounter Hoshimi Miyabi",
+    "MIYABISTS2-MIYABI_TEST_ENCOUNTER.loss": "{character} was defeated by {encounter}.",
+
+    "MIYABISTS2-MIYABI_BOSS_ENCOUNTER.title": "Encounter Hoshimi Miyabi",
+    "MIYABISTS2-MIYABI_BOSS_ENCOUNTER.loss": "{character} was defeated by {encounter}.",
+
+    "MIYABISTS2-YIXUAN_TEST_ENCOUNTER.title": "Encounter Yi Xuan",
+    "MIYABISTS2-YIXUAN_TEST_ENCOUNTER.loss": "{character} was defeated by {encounter}."
+}

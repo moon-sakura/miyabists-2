@@ -91,6 +91,8 @@ namespace Miyabists2.Scripts.Service
 
         [ConfigSection("ElseConfig")] // 创建一个战斗设置分组
 
+        public static bool MiyabiPanelOpen { get; set; } = true;
+
         [ConfigHoverTip]
         public static MiyabiFunPile FunPileSelected { get; set; } = MiyabiFunPile.Default;
 
