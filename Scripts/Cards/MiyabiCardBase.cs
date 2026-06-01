@@ -16,6 +16,11 @@ namespace Miyabists2.Scripts.Cards
         public override string PortraitPath => ArtPath;
         public override string BetaPortraitPath => ArtPath;
 
+        protected const string DazeVarName = "DAZE_POWER";
+        protected const string ParryVarName = "PARRY_POWER";
+        protected const string SlipperyVarName = "SLIPPERY_POWER";
+        protected const string AnomalyBuildupVarName = "ANOBUILD_POWER";
+
         //public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.LieShuang];
 
         protected MiyabiCardBase(int baseCost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = true)

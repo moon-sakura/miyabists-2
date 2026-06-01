@@ -20,8 +20,6 @@ namespace Miyabists2.Scripts.Cards
     /// </summary>
     internal abstract class MiyabiAttackCardBase : MiyabiCardBase
     {
-        protected const string DazeVarName = "DAZE_POWER";
-
         protected const bool isAOE = false;
 
         protected int trigger = 50;

@@ -16,21 +16,27 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ShuiNiao : MiyabiBlockCardBase
+    internal class ShuiNiao : MiyabiCardBase
     {
         public override string PortraitPath => $"res://images/cards/shuiNiao.png";
 
         public override bool GainsBlock => false;
 
-        public ShuiNiao() : base(1, CardRarity.Basic, true) { }
+        public ShuiNiao() : base(1, CardType.Skill,CardRarity.Basic, TargetType.Self) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(0, ValueProp.Move),
-            new DamageVar(0, ValueProp.Move),
             new DynamicVar(ParryVarName, 0),
             new DynamicVar(SlipperyVarName, 1),
             new DynamicVar("ExhaustCount", (int)MiyabiModConfig.CombatHardSelected >= 6 ? 4 : 2),
         ];
+
+        public override void AfterCreated()
+        {
+            DynamicVars["ExhaustCount"].BaseValue = Count();
+            base.AfterCreated();
+        }
+
+        decimal Count() => (int)MiyabiModConfig.CombatHardSelected >= 6 ? 4m : 2m;
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [

@@ -21,10 +21,6 @@ namespace Miyabists2.Scripts.Cards
         // 伙伴卡通常消耗的支援点数变量名
         protected int _supportCost = 0; // 默认需要 0 点支援点数
 
-        protected const string DazeVarName = "DAZE_POWER";
-        protected const string ParryVarName = "PARRY_POWER";
-        protected const string SlipperyVarName = "SLIPPERY_POWER";
-        protected const string AnomalyBuildupVarName = "ANOBUILD_POWER";
         protected const string SupportVarName = "SUPPORT_POINT_POWER";
 
         //protected const bool isDirectAno = false;

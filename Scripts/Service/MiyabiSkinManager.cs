@@ -1,8 +1,9 @@
-using Godot;
 using BaseLib.Extensions;
+using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Screens.Shops;
 using Miyabists2.Scripts.Char;
 using System;
 using System.Collections.Generic;
@@ -79,7 +80,7 @@ namespace Miyabists2.Scripts.Service
             if (Miyabi.ShopSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
             {
                 Miyabi.ShopSkinPaths.Add(tscnPath);
-                tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
+                tscnPath?.RegisterSceneForConversion<NMerchantCharacter>();
 
                 int slot = Miyabi.ShopSkinPaths.Count - 1;
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{slot}!");
@@ -95,18 +96,9 @@ namespace Miyabists2.Scripts.Service
 
         public static void PreSkinRegister()
         {
-            foreach(var skin in Miyabi.ShopSkinPaths)
-            {
-                skin?.RegisterSceneForConversion<NCreatureVisuals>();
-            }
-            foreach (var skin in Miyabi.RestSkinPaths)
-            {
-                skin?.RegisterSceneForConversion<NCreatureVisuals>();
-            }
-            foreach (var skin in Miyabi.CombatSkinPaths)
-            {
-                skin?.RegisterSceneForConversion<NCreatureVisuals>();
-            }
+            "res://scenes/miyabi_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
+            "res://scenes/Miyabi_Rest.tscn".RegisterSceneForConversion<NCreatureVisuals>();
+            "res://scenes/Miyabi_Shop.tscn".RegisterSceneForConversion<NMerchantCharacter>();
         }
 
         public static void UpdateSkin(string key, int slot, string skinName)

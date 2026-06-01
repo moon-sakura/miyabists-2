@@ -16,10 +16,6 @@ namespace Miyabists2.Scripts.Cards
     /// </summary>
     internal abstract class MiyabiBlockCardBase : MiyabiCardBase
     {
-        protected const string ParryVarName = "PARRY_POWER";
-        protected const string SlipperyVarName = "SLIPPERY_POWER";
-
-
         protected MiyabiBlockCardBase(int energy, CardRarity rarity, bool showInLib)
             : base(energy, CardType.Skill, rarity, TargetType.Self, showInLib=true)
         {

@@ -1,10 +1,12 @@
 using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Relics;
@@ -77,6 +79,7 @@ public class Miyabi : PlaceholderCharacterModel
                 // 安全防御：如果玩家在工具里选了 Slot_3，但实际上只下载了 1 个皮肤（List长度只有2）
                 if (index < ShopSkinPaths.Count)
                 {
+                    GD.Print($"[MiyabiSkin]: Load Skin {index}");
                     return ShopSkinPaths[index];
                 }
                 return ShopSkinPaths[0]; // 越界了就安全回退到默认皮肤

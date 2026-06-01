@@ -157,7 +157,7 @@ namespace Miyabists2.Scripts.Enemies
             foreach (Creature creature in targets)
             {
                 await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), creature, 2m, base.Creature, null);
-                await PowerCmd.Apply<DazeVulnPower>(new ThrowingPlayerChoiceContext(), creature, 2m, base.Creature, null);
+                await PowerCmd.Apply<WeakPower>(new ThrowingPlayerChoiceContext(), creature, 2m, base.Creature, null);
             }
             await CreatureCmd.GainBlock(Creature, MiyabiModConfig.MiyabiEnemiesStronger ? 30m : 20m, ValueProp.Move, null);
         }

@@ -217,10 +217,11 @@ namespace Miyabists2.Scripts.Enemies
             //TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-MIYABI_BOSS.moves.POWER_UP.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
 
-            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 4m : 2m;
+            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 6m : 4m;
             await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * targets.Count, base.Creature, null);
 
-            await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 3m, base.Creature, null);
+            decimal thornsAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 3m : 2m;
+            await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, thornsAmount, base.Creature, null);
 
             decimal debuffAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 3m : 2m;
             foreach (var target in targets) 
@@ -261,7 +262,7 @@ namespace Miyabists2.Scripts.Enemies
                     .WithHitFx("vfx/vfx_giant_horizontal_slash")
                     .Execute(null);
 
-            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 4m : 2m;
+            decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 6m : 4m;
             await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * targets.Count, base.Creature, null);
         }
     }

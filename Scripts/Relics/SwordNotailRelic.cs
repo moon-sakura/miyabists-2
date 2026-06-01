@@ -76,16 +76,14 @@ namespace Miyabists2.Scripts.Relics
         //    SwordNotailRelic.Counter += counter;
         //}
 
-        public void AddCounter(int amount)
+        public void AddCounter(int amount,bool forceAdd = false)
         {
             // 这里在类内部，可以访问 private set
-            int counter = 0;
+            int counter = Counter;
             bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
-            // 1. 检查是否是特定的卡（或者任意卡，根据你的需求）
-            // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"
             if (hasEnd) counter += Threshold;
 
-            if (counter < Max)
+            if (counter < Max || forceAdd)
                 this.Counter += amount;
             //this.Flash(); // 让遗物闪烁一下，视觉效果更好
         }
