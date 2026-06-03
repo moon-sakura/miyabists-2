@@ -1,13 +1,15 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,7 @@ using static Godot.HttpRequest;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [Pool(typeof(StatusCardPool))]
     internal class PrincessKaguya : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/princessKaguya.png";
@@ -41,13 +44,11 @@ namespace Miyabists2.Scripts.Cards
         {
             if (DynamicVars.TryGetValue("Kaguya", out DynamicVar var))
                 await PowerCmd.Apply<KaguyaPower>(choiceContext, base.Owner.Creature, var.BaseValue, base.Owner.Creature, this);
-            foreach (CardModel Card in base.Owner.PlayerCombatState.AllCards)
+            var inohas = base.Owner.PlayerCombatState.AllCards.Where(c => c is PrincessInoha).ToList();
+            foreach (CardModel Card in inohas)
             {
-                if (Card is PrincessInoha)
-                {
-                    await CardCmd.Exhaust(choiceContext, Card);
-                    await DoRandomEffectSP(choiceContext);
-                }
+                await CardCmd.Exhaust(choiceContext, Card);
+                await DoRandomEffectSP(choiceContext);
             }
         }
 
@@ -57,19 +58,19 @@ namespace Miyabists2.Scripts.Cards
             switch (effect)
             {
                 case 1:
-                    await CreatureCmd.Heal(base.Owner.Creature, 8m);
+                    await CreatureCmd.Heal(base.Owner.Creature, Owner.Creature.MaxHp * 0.2m);
                     break;
                 case 2:
                     foreach (Creature Enemy in base.Owner.Creature.CombatState.HittableEnemies)
                     {
-                        await CreatureCmd.Damage(choiceContext, Enemy, 12m, ValueProp.Unpowered, null, null);
+                        await CreatureCmd.Damage(choiceContext, Enemy, Enemy.MaxHp * 0.1m, ValueProp.Unpowered, null, null);
                     }
                     break;
                 case 3:
                     await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 3m, base.Owner.Creature, null);
                     break;
                 case 4:
-                    await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, 6m, base.Owner.Creature, null);
+                    await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, 8m, base.Owner.Creature, null);
                     break;
                 case 5:
                     foreach (Creature Enemy in base.Owner.Creature.CombatState.Enemies)

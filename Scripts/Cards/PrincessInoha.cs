@@ -61,29 +61,41 @@ namespace Miyabists2.Scripts.Cards
 
             if (hasYears && hasInoha)
             {
-                var yearsInstance = hand.FirstOrDefault(c => c is PrincessYears);
+                var yearsInstance = hand.FindAll(c => c is PrincessYears);
                 //var inohaInstance = hand.FirstOrDefault(c => c is PrincessInoha);
 
                 //await CardCmd.Exhaust(null, yearsInstance);
                 //await CardCmd.Exhaust(null, inohaInstance);
 
-                foreach (CardModel allCard in base.Owner.PlayerCombatState.AllCards)
+                for (int i = 0; i < yearsInstance.Count; i++)
                 {
-                    if (allCard.IsUpgradable)
+                    var cards = base.Owner.PlayerCombatState.AllCards.ToList();
+                    foreach (CardModel allCard in cards)
                     {
-                        // 只有不在消耗列表里的才升级（保险起见）
-                        if (!(allCard is PrincessYears || allCard is PrincessInoha))
+                        if (allCard.IsUpgradable)
                         {
-                            // Upgrade 内部会自动判断是否能升级，不需要额外判断
-                            CardCmd.Upgrade(allCard);
+                            // 只有不在消耗列表里的才升级（保险起见）
+                            if (!(allCard is PrincessYears || allCard is PrincessInoha))
+                            {
+                                // Upgrade 内部会自动判断是否能升级，不需要额外判断
+                                CardCmd.Upgrade(allCard);
+                            }
                         }
+                        if (allCard.Type != CardType.Status && allCard.Type != CardType.Curse)
+                            allCard.BaseReplayCount++;
+
                     }
                 }
+                
+                foreach (var year in yearsInstance)
+                {
+                    CardModel card2 = base.Owner.Creature.CombatState?.CreateCard<PrincessKaguya>(base.Owner);
+                    await CardCmd.Transform(year, card2);
+                }
 
-                CardModel card2 = base.Owner.Creature.CombatState?.CreateCard<PrincessKaguya>(base.Owner); ;
-                await CardCmd.Transform(yearsInstance, card2);
-
+                isActived = true;
             }
+
         }
     }
 }

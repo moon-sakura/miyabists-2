@@ -53,9 +53,9 @@ namespace Miyabists2.Scripts.Relics
             get => _counter;
             private set
             {
-                AssertMutable(); // 确保在合法的修改状态
+                AssertMutable();
                 _counter = value;
-                InvokeDisplayAmountChanged(); // 通知 UI 更新数字
+                InvokeDisplayAmountChanged();
             }
         }
 
@@ -77,7 +77,7 @@ namespace Miyabists2.Scripts.Relics
         }
 
         public void SetMax(int amount) => Max = amount;
-        public void ResetMax() => Max = Threshold;
+        public void ResetMax() => Max = 30;
 
         // 每次打出卡牌后检查
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
@@ -86,9 +86,9 @@ namespace Miyabists2.Scripts.Relics
             bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
             // 1. 检查是否是特定的卡（或者任意卡，根据你的需求）
             // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"
-            if (hasEnd) counter += 30;
+            if (hasEnd) counter += Threshold;
 
-            if (cardPlay.Card.Owner == base.Owner && counter <= Max)
+            if (cardPlay.Card.Owner == base.Owner && counter < Max)
             {
                 Counter++;
 
@@ -96,6 +96,8 @@ namespace Miyabists2.Scripts.Relics
                 if (Counter >= Threshold && !hasEnd)
                 {
                     Counter -= Threshold; // 重置计数器
+                    if (Counter > Max - Threshold)
+                        Counter = Max - Threshold;
 
                     // 3. 触发效果：闪烁并加入一张卡
                     Flash();

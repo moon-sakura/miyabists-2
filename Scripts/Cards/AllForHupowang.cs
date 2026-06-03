@@ -58,12 +58,8 @@ namespace Miyabists2.Scripts.Cards
                 await PowerCmd.Apply<BreakPower>(choiceContext, cardPlay.Target, 1m, base.Owner.Creature, this);
             }
             else
-            {
-                for(int i  = 0; i < 3; i++)
-                {
-                    //CardModel card = base.Owner.Creature.CombatState.CreateCard<MenghuZhakaihua>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddToCombatAndPreview<MenghuZhakaihua>(Owner.Creature, PileType.Draw, 3, null);
-                }
+            {                
+                await CardPileCmd.AddToCombatAndPreview<MenghuZhakaihua>(Owner.Creature, PileType.Draw, 3, null);
             }
         }
 

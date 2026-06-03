@@ -59,7 +59,8 @@
 
 	<ItemGroup>
 	  <Folder Include="Miyabists2\localization\zhs\" />
-	  <Folder Include="Scripts\Cards\Yixuan\" />
+	  <Folder Include="Scripts\_YiXuan\" />
+	  <Folder Include="Scripts\_Guang\" />
 	</ItemGroup>
 
 	<Target Name="Copy Mod" AfterTargets="PostBuildEvent">

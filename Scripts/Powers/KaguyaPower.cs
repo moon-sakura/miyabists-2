@@ -64,7 +64,7 @@ namespace Miyabists2.Scripts.Powers
             }
             else if (result == 6)
             {
-                await CreatureCmd.GainBlock(base.Owner, 4, ValueProp.Unpowered, null);
+                await CreatureCmd.GainBlock(base.Owner, 6, ValueProp.Unpowered, null);
             }
             else if (result == 7)
             {
@@ -76,7 +76,7 @@ namespace Miyabists2.Scripts.Powers
                 {
                     if (Enemy != null && Enemy.IsAlive)
                     {
-                        await CreatureCmd.Damage(choiceContext, Enemy, 4m, ValueProp.Unpowered, base.Owner, null);
+                        await CreatureCmd.Damage(choiceContext, Enemy, 6m, ValueProp.Unpowered, base.Owner, null);
                     }
                 }
             }
