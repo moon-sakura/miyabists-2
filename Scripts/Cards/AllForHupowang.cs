@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using Miyabists2.Scripts.Powers;
@@ -60,8 +61,8 @@ namespace Miyabists2.Scripts.Cards
             {
                 for(int i  = 0; i < 3; i++)
                 {
-                    CardModel card = base.Owner.Creature.CombatState.CreateCard<MenghuZhakaihua>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Draw, Owner, CardPilePosition.Random);
+                    //CardModel card = base.Owner.Creature.CombatState.CreateCard<MenghuZhakaihua>(base.Owner.Creature.Player);
+                    await CardPileCmd.AddToCombatAndPreview<MenghuZhakaihua>(Owner.Creature, PileType.Draw, 3, null);
                 }
             }
         }

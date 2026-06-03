@@ -9,6 +9,9 @@ public class MiyabiKeywords
     //[KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword LieShuang;
 
+    [CustomEnum("EXHUASTX")]
+    public static CardKeyword ExhaustX;
+
     [CustomEnum("FRIENDS")]
     // 放在原版卡牌描述的位置，这里是卡牌描述的前面
     [KeywordProperties(AutoKeywordPosition.Before)]

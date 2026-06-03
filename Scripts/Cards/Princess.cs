@@ -52,8 +52,8 @@ namespace Miyabists2.Scripts.Cards
 
                 if (chosen is PrincessYears) 
                 {
-                    CardModel card = base.Owner.Creature.CombatState?.CreateCard<PrincessInoha>(base.Owner);
-                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, Owner);
+                    //CardModel card = base.Owner.Creature.CombatState?.CreateCard<PrincessInoha>(base.Owner);
+                    await CardPileCmd.AddToCombatAndPreview<PrincessInoha>(Owner.Creature, PileType.Discard, 1, null);
                 }
             }
         }

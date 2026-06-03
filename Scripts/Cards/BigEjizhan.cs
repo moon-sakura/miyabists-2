@@ -66,7 +66,7 @@ namespace Miyabists2.Scripts.Cards
         {
             //EnergyCost.UpgradeBy(-1);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
-            if (base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out DynamicVar a)) a.UpgradeValueBy(1);
+            //if (base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out DynamicVar a)) a.UpgradeValueBy(1);
             if (base.DynamicVars.TryGetValue("Strength", out DynamicVar s)) s.UpgradeValueBy(1);
         }
     }

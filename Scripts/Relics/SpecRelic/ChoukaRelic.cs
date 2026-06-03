@@ -346,10 +346,11 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if (result == 2)
             {
-                CardModel cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 0, 2))).FirstOrDefault();
-                if (cardModel != null)
+                List<CardModel> cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 0, 3))).ToList();
+                if (cardModel.Count > 0) 
                 {
-                    CardCmd.Upgrade(cardModel);
+                    foreach (var card in cardModel)
+                        CardCmd.Upgrade(card);
                     rewardGiven = true;
                 }
             }
@@ -397,9 +398,16 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if (result == 8)
             {
                 List<CardModel> cards = (await CardSelectCmd.FromDeckForRemoval(prefs: new CardSelectorPrefs(CardSelectorPrefs.RemoveSelectionPrompt, 0, 2), player: base.Owner)).ToList();
-                await CardPileCmd.RemoveFromDeck(cards);
-                NDebugAudioManager.Instance?.Play("card_smith.mp3", 1f, PitchVariance.Small);
-                NGame.Instance.ScreenShakeTrauma(ShakeStrength.Strong);
+                if (cards.Count > 0)
+                {
+                    await CardPileCmd.RemoveFromDeck(cards);
+                    NDebugAudioManager.Instance?.Play("card_smith.mp3", 1f, PitchVariance.Small);
+                    NGame.Instance.ScreenShakeTrauma(ShakeStrength.Strong);
+                }
+                else
+                {
+                    await PlayerCmd.GainGold(200m, Owner);
+                }
             }
         }
 
@@ -460,10 +468,11 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if (result == 2)
             {
-                CardModel cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 0, 2))).FirstOrDefault();
-                if (cardModel != null)
+                List<CardModel> cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 0, 2))).ToList();
+                if (cardModel.Count > 0)
                 {
-                    CardCmd.Upgrade(cardModel);
+                    foreach (var card in cardModel)
+                        CardCmd.Upgrade(card);
                     rewardGiven = true;
                 }
             }
@@ -508,9 +517,16 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if (result == 8)
             {
                 List<CardModel> cards = (await CardSelectCmd.FromDeckForRemoval(prefs: new CardSelectorPrefs(CardSelectorPrefs.RemoveSelectionPrompt, 0, 1), player: base.Owner)).ToList();
-                await CardPileCmd.RemoveFromDeck(cards);
-                NDebugAudioManager.Instance?.Play("card_smith.mp3", 1f, PitchVariance.Small);
-                NGame.Instance.ScreenShakeTrauma(ShakeStrength.Strong);
+                if (cards.Count > 0)
+                {
+                    await CardPileCmd.RemoveFromDeck(cards);
+                    NDebugAudioManager.Instance?.Play("card_smith.mp3", 1f, PitchVariance.Small);
+                    NGame.Instance.ScreenShakeTrauma(ShakeStrength.Strong);
+                }
+                else
+                {
+                    await PlayerCmd.GainGold(100m, Owner);
+                }
             }
         }
 
@@ -664,6 +680,10 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 if (cardModel != null)
                 {
                     await CardCmd.TransformToRandom(cardModel, base.Owner.PlayerRng.Rewards, CardPreviewStyle.EventLayout);
+                }
+                else
+                {
+                    await PlayerCmd.GainGold(60m, Owner);
                 }
             }
         }

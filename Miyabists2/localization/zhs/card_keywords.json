@@ -2,6 +2,9 @@
 	"LIESHUANG.description": "给予敌人伤害值数量的[gold]烈霜积蓄值[/gold]",
     "LIESHUANG.title": "烈霜",
 
+	"EXHUASTX.description": "使用X次后消耗。",
+    "EXHUASTX.title": "消耗X",
+
 	"FRIENDS.description": "不要小看我们的羁绊啊，kora",
     "FRIENDS.title": "伙伴",
 

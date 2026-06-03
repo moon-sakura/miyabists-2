@@ -23,7 +23,7 @@ namespace Miyabists2.Scripts.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.OtherWorldFriends];
 
         public BeeGroup()
-            : base(0, CardType.Power, CardRarity.Rare, TargetType.Self)
+            : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
         {
         }
 
@@ -49,7 +49,7 @@ namespace Miyabists2.Scripts.Cards
             if (targetCard != null)
             {
                 foreach (var card in targetCard)
-                { CardCmd.Enchant<BeeGroupEnchantment>(card, 1m).SetTemporary(true); }
+                {CardCmd.Enchant<BeeGroupEnchantment>(card, 1m)?.SetTemporary(true); }
                
             }
         }

@@ -1,8 +1,10 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
@@ -24,6 +26,13 @@ namespace Miyabists2.Scripts.Cards
             new DamageVar(10, ValueProp.Move),
             new DynamicVar("ANOBUILD_POWER", 1),
             new BlockVar(10, ValueProp.Move),
+        ];
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<FrostPower>(),
+            HoverTipFactory.FromPower<AttributeAnomalyPower>(),
+            HoverTipFactory.FromPower<DisorderPower>()
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>

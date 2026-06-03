@@ -1,18 +1,13 @@
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -26,12 +21,13 @@ namespace Miyabists2.Scripts.Cards
             new BlockVar(11,ValueProp.Move),
             new DynamicVar(ParryVarName, 2),
             new DynamicVar(SupportVarName,3),
+            new DynamicVar(ExhaustCountVarName, GetExhaustUses()),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => 
         [
             MiyabiKeywords.Friends,
-            CardKeyword.Exhaust
+            MiyabiKeywords.ExhaustX
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -44,13 +40,14 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            
             await base.OnPlay(choiceContext, cardPlay);
 
             int parryCount = base.Owner.Creature.GetPower<MiyabiParryPower>()?.Amount ?? 0;
 
             if (DynamicVars.Block.BaseValue > 0)
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
+
+            await TryExhaustAfterUse(choiceContext, cardPlay);
 
             await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext, parryCount));
         }
@@ -62,7 +59,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Block.UpgradeValueBy(2);
+            DynamicVars.Block.UpgradeValueBy(3);
             //if (base.DynamicVars.TryGetValue(ParryVarName, out DynamicVar p)) p.UpgradeValueBy(1);
 
         }
