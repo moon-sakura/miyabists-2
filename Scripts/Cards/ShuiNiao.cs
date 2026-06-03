@@ -16,16 +16,16 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ShuiNiao : MiyabiCardBase
+    internal class ShuiNiao : MiyabiBlockCardBase
     {
         public override string PortraitPath => $"res://images/cards/shuiNiao.png";
 
         public override bool GainsBlock => false;
 
-        public ShuiNiao() : base(1, CardType.Skill,CardRarity.Basic, TargetType.Self) { }
+        public ShuiNiao() : base(1, CardRarity.Basic,true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar(ParryVarName, 0),
+            //new DynamicVar(ParryVarName, 0),
             new DynamicVar(SlipperyVarName, 1),
             new DynamicVar("ExhaustCount", (int)MiyabiModConfig.CombatHardSelected >= 6 ? 4 : 2),
         ];

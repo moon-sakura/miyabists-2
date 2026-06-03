@@ -173,7 +173,7 @@
     "MIYABISTS2-XINGMANG_ZHONGZHANG.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张[gold]星芒圆舞曲[/gold]加入手卡，本回合费用为[blue]0[/blue]",
 
 	"MIYABISTS2-XINGMANG_YUANWUQU.title": "星芒圆舞曲",
-    "MIYABISTS2-XINGMANG_YUANWUQU.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}",
+    "MIYABISTS2-XINGMANG_YUANWUQU.description": "造成{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}",
 
 	"MIYABISTS2-HUANXIANGSHI_ZOUMING.title": "幻想式奏鸣",
     "MIYABISTS2-HUANXIANGSHI_ZOUMING.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为[blue]0[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外从弃牌堆中选一张加入手卡",

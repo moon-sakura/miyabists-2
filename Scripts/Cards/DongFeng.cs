@@ -65,12 +65,12 @@ namespace Miyabists2.Scripts.Cards
         //    }
         //}
 
-        //protected override void OnUpgrade()
-        //{
-        //    DynamicVars.Damage.UpgradeValueBy(1);
-        //    DynamicVars.Cards.UpgradeValueBy(1);
-        //    //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
-        //}
+        protected override void OnUpgrade()
+        {
+            //DynamicVars.Damage.UpgradeValueBy(1);
+            DynamicVars.Cards.UpgradeValueBy(1);
+            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
+        }
 
         private async Task CheckReduce()
         {

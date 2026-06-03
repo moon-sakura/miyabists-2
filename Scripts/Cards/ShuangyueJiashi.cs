@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
         public ShuangyueJiashi():base(3,CardType.Power,CardRarity.Common,TargetType.Self) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("FrostFall", 1)
+            new DynamicVar("FrostFall", 2)
         ];
 
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -35,8 +35,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            //EnergyCost.UpgradeBy(-1);
-            if (base.DynamicVars.TryGetValue("FrostFall", out DynamicVar v)) v.UpgradeValueBy(1);
+            EnergyCost.UpgradeBy(-1);
+            //if (base.DynamicVars.TryGetValue("FrostFall", out DynamicVar v)) v.UpgradeValueBy(1);
         }
     }
 }

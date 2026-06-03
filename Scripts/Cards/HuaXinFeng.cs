@@ -22,52 +22,66 @@ namespace Miyabists2.Scripts.Cards
 
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(4, ValueProp.Move),
-            new DynamicVar(DazeVarName, 2)
+            new DamageVar(7, ValueProp.Move),
+            new DynamicVar(DazeVarName, 4)
         ];
 
-
-        public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            await CheckReduce();
-        }
-
-        public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-        {
-            if (card == this)
-            {
-                await CheckReduce();
-            }
-        }
-
-        protected override void OnUpgrade()
-        {
-            DynamicVars.Damage.UpgradeValueBy(2);
-            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
-        }
-
-        private async Task CheckReduce()
+        public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
         {
             int amount = CombatManager.Instance.History.CardPlaysFinished
                 .Count((CardPlayFinishedEntry e)
                 => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
                 && e.CardPlay.Card.Owner == base.Owner
                 && e.HappenedThisTurn(base.CombatState));
-            if (base.Owner != null && base.Owner.Creature.IsAlive)
-            {
-                if (amount > 0)
-                    SetCost(0);
-            }
+            if (card != this || amount == 0)
+                return base.TryModifyEnergyCostInCombat(card, originalCost, out modifiedCost);
+
+            modifiedCost = 0;
+            return true;
         }
 
-        private void ReduceCostBy(int amount)
+
+        //public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        //{
+        //    await CheckReduce();
+        //}
+
+        //public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
+        //{
+        //    if (card == this)
+        //    {
+        //        await CheckReduce();
+        //    }
+        //}
+
+        protected override void OnUpgrade()
         {
-            base.EnergyCost.AddThisTurn(-amount);
+            DynamicVars.Damage.UpgradeValueBy(3);
+            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
         }
 
-        private void SetCost(int a)
-        {
-            base.EnergyCost.SetThisTurn(a);
-        }
+        //private async Task CheckReduce()
+        //{
+        //    int amount = CombatManager.Instance.History.CardPlaysFinished
+        //        .Count((CardPlayFinishedEntry e)
+        //        => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
+        //        && e.CardPlay.Card.Owner == base.Owner
+        //        && e.HappenedThisTurn(base.CombatState));
+        //    if (base.Owner != null && base.Owner.Creature.IsAlive)
+        //    {
+        //        if (amount > 0)
+        //            SetCost(0);
+        //    }
+        //}
+
+        //private void ReduceCostBy(int amount)
+        //{
+        //    base.EnergyCost.AddThisTurn(-amount);
+        //}
+
+        //private void SetCost(int a)
+        //{
+        //    base.EnergyCost.SetThisTurn(a);
+        //}
     }
 }

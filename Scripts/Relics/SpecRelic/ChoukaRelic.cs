@@ -91,6 +91,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             get => _freeCounter;
             private set
             {
+                AssertMutable();
                 _freeCounter = value;
             }
         }
@@ -205,6 +206,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             get => _lastCinima;
             private set
             {
+                AssertMutable();
                 _lastCinima = value;
             }
         }
@@ -215,6 +217,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             get => _lastRare;
             private set
             {
+                AssertMutable();
                 _lastRare = value;
             }
         }
@@ -249,7 +252,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                         if (DynamicVars["CINIMA"].BaseValue < 6)
                             DynamicVars["CINIMA"].BaseValue += 1;
                         else
-                            await AnicientRewards();
+                            await AncientRewards();
 
                         LastCinima = Counter;
                         _hasDone = true;
@@ -262,20 +265,20 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                         {
                             DynamicVars["CINIMA"].BaseValue += 1;
                             LastCinima = Counter;
-                            LastRare = DynamicVars["CINIMA"].IntValue;
+                            LastRare = Counter;
                             _hasDone = true;
                         }
                     }
                     if (result <= 9 && !_hasDone)
                     {
-                        await AnicientRewards();
-                        LastRare = DynamicVars["CINIMA"].IntValue;
+                        await AncientRewards();
+                        LastRare = Counter;
                         _hasDone = true;
                     }
-                    if ((result <= 19 && !_hasDone)|| DynamicVars["CINIMA"].BaseValue - LastRare >= 10)
+                    if ((result <= 19 && !_hasDone)|| Counter - LastRare >= 10)
                     {
                         await RareRewards();
-                        LastRare = DynamicVars["CINIMA"].IntValue;
+                        LastRare = Counter;
                         _hasDone = true;
                     }
                     if (result <= 49 && !_hasDone)
@@ -300,10 +303,10 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             
         }
 
-        private async Task AnicientRewards()
+        private async Task AncientRewards()
         {
             int result = MiyabiFuncBase.RadomInt(0, 9, Owner);
-            bool _hasDone = false;
+            bool rewardGiven = false;
 
             if (result == 0)
             {
@@ -312,21 +315,21 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 {
                     if (await TryEnchantCard<Instinct>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 1 && !_hasDone)
+                if (enchantResult <= 1 && !rewardGiven)
                 {
                     if (await TryEnchantCard<TezcatarasEmber>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 2 && !_hasDone)
+                if (enchantResult <= 2 && !rewardGiven)
                 {
                     if (await TryEnchantCard<BeeGroupEnchantment>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
             }
@@ -334,10 +337,10 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if (result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Ancient | RelicRarity.Shop, Owner);
-                if (relic != null || relic.Relic is not Circlet)
+                if (relic != null && relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
             }
 
@@ -347,12 +350,11 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 if (cardModel != null)
                 {
                     CardCmd.Upgrade(cardModel);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
-                _hasDone = true;
             }
 
-            if (result <= 3 && !_hasDone)
+            if (result <= 3 && !rewardGiven)
             {
                 await PlayerCmd.GainGold(200m, Owner);
             }
@@ -369,13 +371,14 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                                                  select p;
                 PotionModel potionModel = base.Owner.PlayerRng.Rewards.NextItem(items);
                 PotionModel potionModel2 = base.Owner.PlayerRng.Rewards.NextItem(items);
-                if (potionModel != null || potionModel2 != null)
+                List<Reward> rewards = new List<Reward>();
+                if (potionModel != null)
+                    rewards.Add(new PotionReward(potionModel.ToMutable(), base.Owner));
+                if (potionModel2 != null)
+                    rewards.Add(new PotionReward(potionModel2.ToMutable(), base.Owner));
+                if (rewards.Count > 0)
                 {
-                    await RewardsCmd.OfferCustom(base.Owner, new List<Reward>(1)
-                    {
-                        new PotionReward(potionModel.ToMutable(), base.Owner),
-                        new PotionReward(potionModel2.ToMutable(), base.Owner)
-                    });
+                    await RewardsCmd.OfferCustom(base.Owner, rewards);
                 }
             }
 
@@ -403,7 +406,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         private async Task RareRewards()
         {
             int result = MiyabiFuncBase.RadomInt(0, 9, Owner);
-            bool _hasDone = false;
+            bool rewardGiven = false;
 
             if (result == 0)
             {
@@ -412,35 +415,35 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 {
                     if (await TryEnchantCard<Corrupted>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 1 && !_hasDone)
+                if (enchantResult <= 1 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Imbued>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 2 && !_hasDone)
+                if (enchantResult <= 2 && !rewardGiven)
                 {
                     if (await TryEnchantCard< RoyallyApproved>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 3 && !_hasDone)
+                if (enchantResult <= 3 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Spiral>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 4 && !_hasDone)
+                if (enchantResult <= 4 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Clone>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
             }
@@ -448,10 +451,10 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if (result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Rare | RelicRarity.Event, Owner);
-                if (relic != null || relic.Relic is not Circlet)
+                if (relic != null && relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
             }
 
@@ -461,12 +464,11 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 if (cardModel != null)
                 {
                     CardCmd.Upgrade(cardModel);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
-                _hasDone = true;
             }
 
-            if (result <= 3 && !_hasDone)
+            if (result <= 3 && !rewardGiven)
             {
                 await PlayerCmd.GainGold(100m, Owner);
             }
@@ -515,79 +517,79 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         private async Task UncommonRewards()
         {
             int result = MiyabiFuncBase.RadomInt(0, 9, Owner);
-            bool _hasDone = false;
+            bool rewardGiven = false;
 
-            if (result == 0) 
+            if (result == 0)
             {
                 int enchantResult = MiyabiFuncBase.RadomInt(0, 10, Owner);
                 if (enchantResult == 0)
                 {
                     if (await TryEnchantCard<SoulsPower>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 1 && !_hasDone)
+                if (enchantResult <= 1 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Inky>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 2 && !_hasDone)
+                if (enchantResult <= 2 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Momentum>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 3 && !_hasDone)
+                if (enchantResult <= 3 && !rewardGiven)
                 {
                     if (await TryEnchantCard<PerfectFit>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 4 && !_hasDone)
+                if (enchantResult <= 4 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Glam>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 5 && !_hasDone)
+                if (enchantResult <= 5 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Adroit>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 6 && !_hasDone)
+                if (enchantResult <= 6 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Sown>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 7 && !_hasDone)
+                if (enchantResult <= 7 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Steady>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 8 && !_hasDone)
+                if (enchantResult <= 8 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Vigorous>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if(enchantResult <= 9 && !_hasDone)
+                if(enchantResult <= 9 && !rewardGiven)
                 {
                     if (await TryEnchantCard<SlumberingEssence>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
             }
@@ -595,10 +597,10 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             if(result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Uncommon, Owner);
-                if (relic != null || relic.Relic is not Circlet)
+                if (relic != null && relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
             }
 
@@ -608,11 +610,11 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 if (cardModel != null)
                 {
                     CardCmd.Upgrade(cardModel);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
             }
 
-            if (result <= 3 && !_hasDone)
+            if (result <= 3 && !rewardGiven)
             {
                 await PlayerCmd.GainGold(60m, Owner);
             }
@@ -669,7 +671,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         private async Task CommonRewards()
         {
             int result = MiyabiFuncBase.RadomInt(0, 7, Owner);
-            bool _hasDone = false;
+            bool rewardGiven = false;
 
             if (result == 5)
                 await RewardsCmd.OfferCustom(Owner!, [new CardReward(CardCreationOptions.
@@ -682,46 +684,46 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 {
                     if (await TryEnchantCard<Nimble>(2m))
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 1 && !_hasDone)
+                if (enchantResult <= 1 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Sharp>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 2 && !_hasDone)
+                if (enchantResult <= 2 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Swift>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 3 && !_hasDone)
+                if (enchantResult <= 3 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Goopy>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
-                if (enchantResult <= 4 && !_hasDone)
+                if (enchantResult <= 4 && !rewardGiven)
                 {
                     if (await TryEnchantCard<Slither>())
                     {
-                        _hasDone = true;
+                        rewardGiven = true;
                     }
                 }
             }
-            
+
             if(result == 1)
             {
                 var relic = new RelicReward(RelicRarity.Common, Owner);
-                if(relic != null || relic.Relic is not Circlet)
+                if(relic != null && relic.Relic is not Circlet)
                 {
                     await RewardsCmd.OfferCustom(Owner!, [relic]);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
             }
 
@@ -732,11 +734,11 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 foreach (CardModel item in enumerable)
                 {
                     CardCmd.Upgrade(item);
-                    _hasDone = true;
+                    rewardGiven = true;
                 }
             }
 
-            if (result <= 3 && !_hasDone)
+            if (result <= 3 && !rewardGiven)
             {
                 await PlayerCmd.GainGold(30m, Owner);
             }
@@ -835,7 +837,6 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         public override async Task<bool> OnSelect()
         {
             await base.Owner.GetRelic<ChoukaRelic>().OnUsed();
-            await Task.FromResult(result: true);
             return false;
         }
 

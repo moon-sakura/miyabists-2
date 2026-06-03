@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (DynamicVars.Block.BaseValue > 0 )
+            if (GainsBlock)
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 
             // 2. 施加招架 (ParryPower)
