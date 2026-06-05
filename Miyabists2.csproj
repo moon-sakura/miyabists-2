@@ -66,8 +66,9 @@
 	  <Folder Include="Miyabists2\localization\zhs\" />
 	  <Folder Include="Scripts\_NCV\Bangboo\" />
 	  <Folder Include="Scripts\_NCV\Monster\" />
-	  <Folder Include="Scripts\_YiXuan\" />
 	  <Folder Include="Scripts\_Guang\" />
+	  <Folder Include="Scripts\_Yixuan\Char\" />
+	  <Folder Include="Scripts\_Yixuan\Cards\" />
 	</ItemGroup>
 
 	<Target Name="Copy Mod" AfterTargets="PostBuildEvent">
