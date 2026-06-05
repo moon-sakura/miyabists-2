@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Relics
 {
     [RegisterRelic(typeof(MiyabiRelicPool))]
     [RegisterTouchOfOrobasRefinement(typeof(NoTailFullRelic))]
-    internal class SwordNotailRelic : ModRelicTemplate
+    internal class SwordNotailRelic : ModRelicTemplate, IDecibleCounter
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
 

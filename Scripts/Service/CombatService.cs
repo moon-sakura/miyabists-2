@@ -321,19 +321,12 @@ namespace Miyabists2.Scripts.Service
         //加喧嚣值
         public static async Task AddDecible(Player player, int amount)
         {
-            // 查找实例
-            var myRelic = player.Relics.OfType<SwordNotailRelic>().FirstOrDefault();
-            var myRelic2 = player.Relics.OfType<NoTailFullRelic>().FirstOrDefault();
+            // 查找所有实现IDecibleCounter接口的遗物（包括Miyabi/Yixuan/Guang的喧嚣值遗物）
+            var decibleRelics = player.Relics.OfType<IDecibleCounter>();
 
-            // 修改属性
-            if (myRelic != null)
+            foreach (var relic in decibleRelics)
             {
-                myRelic?.AddCounter(amount);
-            }
-
-            if (myRelic2 != null)
-            {
-                myRelic2?.AddCounter(amount);
+                relic.AddCounter(amount);
             }
         }
 

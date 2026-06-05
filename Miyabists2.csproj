@@ -10,8 +10,10 @@
 		<Sts2DataDir>$(Sts2Dir)\data_sts2_windows_x86_64</Sts2DataDir>
 	</PropertyGroup>
 	<ItemGroup>
+	  <Compile Remove="Scripts\_NCV\**" />
 	  <Compile Remove="template\**" />
 	  <Compile Remove="_sts2\**" />
+	  <EmbeddedResource Remove="Scripts\_NCV\**" />
 	  <EmbeddedResource Remove="template\**" />
 	  <EmbeddedResource Remove="_sts2\**" />
 	</ItemGroup>
@@ -64,9 +66,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Miyabists2\localization\zhs\" />
-	  <Folder Include="Scripts\_NCV\Bangboo\" />
-	  <Folder Include="Scripts\_NCV\Monster\" />
-	  <Folder Include="Scripts\_Guang\" />
+	  <Folder Include="Scripts\_Guang\Relics\" />
 	  <Folder Include="Scripts\_Yixuan\Char\" />
 	  <Folder Include="Scripts\_Yixuan\Relics\" />
 	</ItemGroup>

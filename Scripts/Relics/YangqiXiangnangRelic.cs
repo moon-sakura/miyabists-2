@@ -61,18 +61,11 @@ namespace Miyabists2.Scripts.Relics
 
             if(base.Owner.Creature.CombatState.RoundNumber == 1)
             {
-                // 查找实例
-                var myRelic = Owner.Relics.OfType<SwordNotailRelic>().FirstOrDefault();
-                var myRelic2 = Owner.Relics.OfType<NoTailFullRelic>().FirstOrDefault();
-
-                if (myRelic != null)
+                // 查找所有喧嚣值遗物
+                var decibleRelics = Owner.Relics.OfType<IDecibleCounter>();
+                foreach (var relic in decibleRelics)
                 {
-                    myRelic?.SetMax(DynamicVars["MAX"].IntValue);
-                }
-
-                if (myRelic2 != null)
-                {
-                    myRelic2?.SetMax(DynamicVars["MAX"].IntValue);
+                    relic.SetMax(DynamicVars["MAX"].IntValue);
                 }
             }
 
@@ -88,18 +81,11 @@ namespace Miyabists2.Scripts.Relics
 
         public override Task AfterCombatEnd(CombatRoom room)
         {
-            // 查找实例
-            var myRelic = Owner.Relics.OfType<SwordNotailRelic>().FirstOrDefault();
-            var myRelic2 = Owner.Relics.OfType<NoTailFullRelic>().FirstOrDefault();
-
-            if (myRelic != null)
+            // 重置所有喧嚣值遗物
+            var decibleRelics = Owner.Relics.OfType<IDecibleCounter>();
+            foreach (var relic in decibleRelics)
             {
-                myRelic?.ResetMax();
-            }
-
-            if (myRelic2 != null)
-            {
-                myRelic2?.ResetMax();
+                relic.ResetMax();
             }
             return base.AfterCombatEnd(room);
         }

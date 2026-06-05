@@ -12,19 +12,19 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
-using Miyabists2.Scripts._Yixuan.Relics;
+using Miyabists2.Scripts._Guang.Relics;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
 
 namespace Miyabists2.Scripts.Char;
 
 [RegisterCharacter]
-class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotionPool>
+class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPool, YeshunGuangPotionPool>
 {
-    public const string CharacterId = "Yixuan";
+    public const string CharacterId = "YeshunGuang";
 
-    // 墨金色 - 暗雅金色主题
-    public static readonly Color Color = new("8B7539");
+    // 白粉色 - 淡雅粉白主题
+    public static readonly Color Color = new("E8B4C8");
 
     // 角色名称颜色
     public override Color NameColor => Color;
@@ -36,59 +36,23 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     public override string? PlaceholderCharacterId => "defect";
 
     // TODO: 添加皮肤管理（参考Miyabi的皮肤系统）
-    // public YixuanCombatSkinSlot CombatSkinSlot => YixuanModConfig.CombatSelectedSlot;
-    // public YixuanRestSkinSlot RestSkinSlot => YixuanModConfig.RestSelectedSlot;
-    // public YixuanShopSkinSlot ShopSkinSlot => YixuanModConfig.ShopSelectedSlot;
+    // public YeshunGuangCombatSkinSlot CombatSkinSlot => YeshunGuangModConfig.CombatSelectedSlot;
+    // public YeshunGuangRestSkinSlot RestSkinSlot => YeshunGuangModConfig.RestSelectedSlot;
+    // public YeshunGuangShopSkinSlot ShopSkinSlot => YeshunGuangModConfig.ShopSelectedSlot;
 
     // TODO: 添加皮肤路径列表
     // public static List<string> CombatSkinPaths = new()
     // {
-    //     "res://scenes/yixuan_char.tscn" // Slot 0 默认是原皮肤
+    //     "res://scenes/yeshunguang_char.tscn" // Slot 0 默认是原皮肤
     // };
     // public static List<string> RestSkinPaths = new()
     // {
-    //     "res://scenes/Yixuan_Rest.tscn" // Slot 0 默认是原皮肤
+    //     "res://scenes/YeshunGuang_Rest.tscn" // Slot 0 默认是原皮肤
     // };
     // public static List<string> ShopSkinPaths = new()
     // {
-    //     "res://scenes/Yixuan_Shop.tscn" // Slot 0 默认是原皮肤
+    //     "res://scenes/YeshunGuang_Shop.tscn" // Slot 0 默认是原皮肤
     // };
-
-    // public string CombatDynamicVisualPath
-    // {
-    //     get
-    //     {
-    //         int index = (int)CombatSkinSlot;
-    //         if (index < CombatSkinPaths.Count)
-    //             return CombatSkinPaths[index];
-    //         return CombatSkinPaths[0];
-    //     }
-    // }
-
-    // public string RestDynamicVisualPath
-    // {
-    //     get
-    //     {
-    //         int index = (int)RestSkinSlot;
-    //         if (index < RestSkinPaths.Count)
-    //             return RestSkinPaths[index];
-    //         return RestSkinPaths[0];
-    //     }
-    // }
-
-    // public string ShopDynamicVisualPath
-    // {
-    //     get
-    //     {
-    //         int index = (int)ShopSkinSlot;
-    //         if (index < ShopSkinPaths.Count)
-    //         {
-    //             GD.Print($"[YixuanSkin]: Load Skin {index}");
-    //             return ShopSkinPaths[index];
-    //         }
-    //         return ShopSkinPaths[0];
-    //     }
-    // }
 
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override int StartingHp => 52;
@@ -99,29 +63,29 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
 
     /// <summary>
     /// 初始卡组。你可以在这里添加需要卡组。
-    /// TODO: 替换为Yixuan专属卡牌
+    /// TODO: 替换为YeshunGuang专属卡牌
     /// </summary>
     protected override IEnumerable<StartingDeckEntry> StartingDeckEntries => [
-        // TODO: 添加Yixuan初始卡牌
-        // new(typeof(YixuanAttack), 5),
-        // new(typeof(YixuanSkill), 2),
-        // new(typeof(YixuanBlock), 2),
-        // new(typeof(YixuanSpecial), 1),
+        // TODO: 添加YeshunGuang初始卡牌
+        // new(typeof(YeshunGuangAttack), 5),
+        // new(typeof(YeshunGuangSkill), 2),
+        // new(typeof(YeshunGuangBlock), 2),
+        // new(typeof(YeshunGuangSpecial), 1),
     ];
 
     // 初始遗物
     protected override IEnumerable<Type> StartingRelicTypes => [
-        typeof(QingmingShufaRelic),
+        typeof(QingmingJianxiaRelic),
     ];
 
     public override async Task AfterRoomEntered(AbstractRoom room)
     {
-        // TODO: 添加Yixuan专属房间进入逻辑
-        // YixuanCombatService.ResetAll();
+        // TODO: 添加YeshunGuang专属房间进入逻辑
+        // YeshunGuangCombatService.ResetAll();
     }
 
     // 人物头像路径。
-    // TODO: 替换为Yixuan专属资源路径
+    // TODO: 替换为YeshunGuang专属资源路径
     public override string CustomIconTexturePath => "res://images/charui/icon.png";
     public override string CustomCharacterSelectIconPath => "res://images/charui/Miyabi_select.png";
     public override string CustomCharacterSelectLockedIconPath => "res://images/charui/char_select_char_name_locked.png";
@@ -130,9 +94,9 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
     // 人物头像2号。
-    // public override string CustomIconPath => "res://scenes/yixuan_icon.tscn";
+    // public override string CustomIconPath => "res://scenes/yeshunguang_icon.tscn";
     // 能量表盘tscn路径。
-    // public override string CustomEnergyCounterPath => "res://scenes/yixuan_energy_counter.tscn";
+    // public override string CustomEnergyCounterPath => "res://scenes/yeshunguang_energy_counter.tscn";
     // 篝火休息动画。
     // public override string CustomRestSiteAnimPath => RestDynamicVisualPath;
     // 商店人物动画。
@@ -147,7 +111,7 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     public override string CustomArmScissorsTexturePath => null;
 
     // 人物选择背景。
-    // TODO: 替换为Yixuan专属背景
+    // TODO: 替换为YeshunGuang专属背景
     public override string CustomCharacterSelectBgPath => "res://scenes/char_select/char_select_bg_miyabi.tscn";
     // 地图上的角色标记图标、表情轮盘上的角色头像
     public override string CustomMapMarkerPath => "res://images/charui/icon.png";

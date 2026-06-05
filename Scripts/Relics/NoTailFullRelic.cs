@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Relics
 {
     [RegisterRelic(typeof(MiyabiRelicPool))]
-    internal class NoTailFullRelic : ModRelicTemplate
+    internal class NoTailFullRelic : ModRelicTemplate, IDecibleCounter
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
         public override string PackedIconPath => "res://images/relics/notailFull33.png";
