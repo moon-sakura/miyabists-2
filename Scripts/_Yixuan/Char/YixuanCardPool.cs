@@ -14,7 +14,7 @@ namespace Miyabists2.Scripts.Char
         public override string EnergyColorName => "regent";
 
         // 金色卡框
-        public override string CardFrameMaterialPath => "card_frame_gold";
+        public override string CardFrameMaterialPath => "card_frame_orange";
 
         //Color of small card icons - 墨金色
         public override Color DeckEntryCardColor => new("8B7539");

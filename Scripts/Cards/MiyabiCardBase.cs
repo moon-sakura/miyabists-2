@@ -9,7 +9,10 @@ using MegaCrit.Sts2.GameInfo.Objects;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [RegisterCard(typeof(MiyabiCardPool))]
+    /// <summary>
+    /// The base class for all Miyabi cards.
+    /// </summary>
+    //[RegisterCard(typeof(MiyabiCardPool))]
     public abstract class MiyabiCardBase : ModCardTemplate
     {
         protected virtual string ArtPath => "res://images/cards/commonCards.png";
@@ -30,11 +33,11 @@ namespace Miyabists2.Scripts.Cards
         {
         }
 
-        /// <summary> 鏍规嵁闅惧害鑾峰彇"X娆″悗娑堣€?鐨勫熀纭€娆℃暟锛屽瓙绫诲彲閲嶅啓 </summary>
+        /// <summary> 获取消耗次数 </summary>
         protected virtual decimal GetExhaustUses()
             => 2m;
 
-        /// <summary> 閫掑噺娑堣€楄鏁帮紝褰掗浂鏃惰嚜鍔ㄨ€楀敖骞堕噸缃€傝皟鐢ㄦ柟鍙渶涓€琛?await </summary>
+        /// <summary> 此次使用是否消耗 </summary>
         protected async Task TryExhaustAfterUse(PlayerChoiceContext context, CardPlay cardPlay)
         {
             if (cardPlay.Card != this) return;

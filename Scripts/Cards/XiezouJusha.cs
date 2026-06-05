@@ -17,8 +17,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    //[RegisterCard(typeof(StatusCardPool))]
-    [RegisterCard(typeof(MiyabiCardPool))]
+    [RegisterCard(typeof(TokenCardPool))]
+    //[RegisterCard(typeof(MiyabiCardPool))]
     internal class XiezouJusha : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/mingfuWange.png";

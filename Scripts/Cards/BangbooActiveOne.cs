@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-        internal class BangbooActiveOne : MiyabiCardBase
+    internal class BangbooActiveOne : MiyabiCardBase
     {
         //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
 

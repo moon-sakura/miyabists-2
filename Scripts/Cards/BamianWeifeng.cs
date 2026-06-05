@@ -17,11 +17,11 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-        internal class BamianWeifeng : MiyabiPartnerCardBase
+    internal class BamianWeifeng : MiyabiPartnerCardBase
     {
         protected override string ArtPath => $"res://images/cards/bamianWeifeng.png";
 
-        public BamianWeifeng() : base(2,CardRarity.Uncommon,TargetType.Self, CardType.Power) { }
+        public BamianWeifeng() : base(2, CardRarity.Uncommon, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
@@ -43,4 +43,5 @@ namespace Miyabists2.Scripts.Cards
             EnergyCost.UpgradeBy(-1);
         }
     }
+
 }
