@@ -4,14 +4,11 @@ using MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Service;
+using System;
 using System.Collections.Generic;
 
 namespace Miyabists2.Scripts.UI;
 
-/// <summary>
-/// 在选人界面当 Miyabi 被选中时显示进阶选项 / 皮肤 / 特殊挑战三个面板。
-/// 受 MiyabiModConfig.MiyabiPanelOpen 控制整体显隐。
-/// </summary>
 [HarmonyPatch]
 public static class MiyabiCharSelectSkinPatch
 {
@@ -35,55 +32,106 @@ public static class MiyabiCharSelectSkinPatch
         NCharacterSelectButton charSelectButton,
         CharacterModel characterModel)
     {
+        GD.Print($"[MiyabiSkinPatch] Postfix 触发 | char={characterModel?.Id.Entry ?? "null"} | "
+            + $"isMiyabi={characterModel is Miyabi} | panelOpen={MiyabiModConfig.MiyabiPanelOpen}");
+
         bool showPanels = characterModel is Miyabi && MiyabiModConfig.MiyabiPanelOpen;
+        GD.Print($"[MiyabiSkinPatch] showPanels={showPanels}");
 
-        if (characterModel is Miyabi miyabi && MiyabiModConfig.MiyabiPanelOpen)
+        try
         {
-            _currentMiyabi = miyabi;
-
-            // --- 进阶选项 ---
-            var diffPanel = GetOrCreateDifficultyPanel(__instance);
-            if (!_diffHandlerWired)
+            if (characterModel is Miyabi miyabi && MiyabiModConfig.MiyabiPanelOpen)
             {
-                diffPanel.LevelChanged += OnDifficultyChanged;
-                diffPanel.EnemyStrongerChanged += OnEnemyStrongerChanged;
-                _diffHandlerWired = true;
-            }
-            diffPanel.CurrentLevel = (int)MiyabiModConfig.CombatHardSelected;
-            diffPanel.EnemyStronger = MiyabiModConfig.MiyabiEnemiesStronger;
+                _currentMiyabi = miyabi;
+                GD.Print("[MiyabiSkinPatch] Miyabi 已选中，开始初始化面板...");
 
-            // --- 皮肤面板 ---
-            var skinPanel = GetOrCreateSkinPanel(__instance);
-            if (!_skinHandlerWired)
-            {
-                skinPanel.SkinChanged += OnSkinChanged;
-                skinPanel.SkinTypeChanged += OnSkinTypeChanged;
-                _skinHandlerWired = true;
-            }
-            LoadSkinData(skinPanel, _currentSkinType);
+                // --- 进阶选项 ---
+                GD.Print("[MiyabiSkinPatch] 创建/获取进阶选项面板...");
+                var diffPanel = GetOrCreateDifficultyPanel(__instance);
+                GD.Print($"[MiyabiSkinPatch] 进阶面板 ready | valid={GodotObject.IsInstanceValid(diffPanel)}");
+                if (!_diffHandlerWired)
+                {
+                    diffPanel.LevelChanged += OnDifficultyChanged;
+                    diffPanel.EnemyStrongerChanged += OnEnemyStrongerChanged;
+                    _diffHandlerWired = true;
+                    GD.Print("[MiyabiSkinPatch] 进阶面板事件已绑定");
+                }
+                diffPanel.CurrentLevel = (int)MiyabiModConfig.CombatHardSelected;
+                diffPanel.EnemyStronger = MiyabiModConfig.MiyabiEnemiesStronger;
+                GD.Print($"[MiyabiSkinPatch] 进阶面板数据已设置 | level={diffPanel.CurrentLevel} | stronger={diffPanel.EnemyStronger}");
 
-            // --- 特殊挑战 ---
-            var funPilePanel = GetOrCreateFunPilePanel(__instance);
-            if (!_funPileHandlerWired)
-            {
-                funPilePanel.FunPileChanged += OnFunPileChanged;
-                _funPileHandlerWired = true;
+                // --- 皮肤面板 ---
+                GD.Print("[MiyabiSkinPatch] 创建/获取皮肤面板...");
+                var skinPanel = GetOrCreateSkinPanel(__instance);
+                GD.Print($"[MiyabiSkinPatch] 皮肤面板 ready | valid={GodotObject.IsInstanceValid(skinPanel)}");
+                if (!_skinHandlerWired)
+                {
+                    skinPanel.SkinChanged += OnSkinChanged;
+                    skinPanel.SkinTypeChanged += OnSkinTypeChanged;
+                    _skinHandlerWired = true;
+                    GD.Print("[MiyabiSkinPatch] 皮肤面板事件已绑定");
+                }
+                LoadSkinData(skinPanel, _currentSkinType);
+                GD.Print($"[MiyabiSkinPatch] 皮肤数据已加载 | type={_currentSkinType} | index={skinPanel.CurrentIndex}");
+
+                // --- 特殊挑战 ---
+                GD.Print("[MiyabiSkinPatch] 创建/获取特殊挑战面板...");
+                var funPilePanel = GetOrCreateFunPilePanel(__instance);
+                GD.Print($"[MiyabiSkinPatch] 特殊挑战面板 ready | valid={GodotObject.IsInstanceValid(funPilePanel)}");
+                if (!_funPileHandlerWired)
+                {
+                    funPilePanel.FunPileChanged += OnFunPileChanged;
+                    _funPileHandlerWired = true;
+                    GD.Print("[MiyabiSkinPatch] 特殊挑战面板事件已绑定");
+                }
+                funPilePanel.CurrentIndex = (int)MiyabiModConfig.FunPileSelected;
+                GD.Print($"[MiyabiSkinPatch] 特殊挑战数据已设置 | index={funPilePanel.CurrentIndex}");
             }
-            funPilePanel.CurrentIndex = (int)MiyabiModConfig.FunPileSelected;
+            else
+            {
+                _currentMiyabi = null;
+            }
+
+            // 统一控制显隐
+            bool diffValid = _difficultyPanel != null && GodotObject.IsInstanceValid(_difficultyPanel);
+            bool skinValid = _skinPanel != null && GodotObject.IsInstanceValid(_skinPanel);
+            bool funValid = _funPilePanel != null && GodotObject.IsInstanceValid(_funPilePanel);
+            GD.Print($"[MiyabiSkinPatch] 显隐控制 | show={showPanels} | diffValid={diffValid} | skinValid={skinValid} | funValid={funValid}");
+
+            if (diffValid)
+            {
+                _difficultyPanel.Visible = showPanels;
+                GD.Print($"[MiyabiSkinPatch] 进阶面板 Visible={_difficultyPanel.Visible}");
+            }
+            else if (showPanels)
+            {
+                GD.Print("[MiyabiSkinPatch] ⚠ 进阶面板无效但应该显示！");
+            }
+
+            if (skinValid)
+            {
+                _skinPanel.Visible = showPanels;
+                GD.Print($"[MiyabiSkinPatch] 皮肤面板 Visible={_skinPanel.Visible}");
+            }
+            else if (showPanels)
+            {
+                GD.Print("[MiyabiSkinPatch] ⚠ 皮肤面板无效但应该显示！");
+            }
+
+            if (funValid)
+            {
+                _funPilePanel.Visible = showPanels;
+                GD.Print($"[MiyabiSkinPatch] 特殊挑战面板 Visible={_funPilePanel.Visible}");
+            }
+            else if (showPanels)
+            {
+                GD.Print("[MiyabiSkinPatch] ⚠ 特殊挑战面板无效但应该显示！");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            _currentMiyabi = null;
+            GD.PrintErr($"[MiyabiSkinPatch] ❌ 异常: {ex.GetType().Name} — {ex.Message}\n{ex.StackTrace}");
         }
-
-        // 统一控制显隐
-        bool diffValid = _difficultyPanel != null && GodotObject.IsInstanceValid(_difficultyPanel);
-        bool skinValid = _skinPanel != null && GodotObject.IsInstanceValid(_skinPanel);
-        bool funValid = _funPilePanel != null && GodotObject.IsInstanceValid(_funPilePanel);
-
-        if (diffValid) _difficultyPanel.Visible = showPanels;
-        if (skinValid) _skinPanel.Visible = showPanels;
-        if (funValid) _funPilePanel.Visible = showPanels;
     }
 
     // ============================================================
@@ -93,39 +141,54 @@ public static class MiyabiCharSelectSkinPatch
     private static MiyabiDifficultyPanel GetOrCreateDifficultyPanel(NCharacterSelectScreen screen)
     {
         if (_difficultyPanel != null && GodotObject.IsInstanceValid(_difficultyPanel))
+        {
+            GD.Print("[MiyabiSkinPatch] 进阶面板已存在，复用");
             return _difficultyPanel;
+        }
 
+        GD.Print("[MiyabiSkinPatch] 🔨 新建进阶面板...");
         _difficultyPanel = new MiyabiDifficultyPanel();
         _difficultyPanel.Name = "MiyabiDifficultyPanel";
         _difficultyPanel.Position = new Vector2(1460, 40);
         screen.AddChild(_difficultyPanel);
         _diffHandlerWired = false;
+        GD.Print($"[MiyabiSkinPatch] 进阶面板已添加到屏幕 | parent={_difficultyPanel.GetParent()?.GetType().Name ?? "null"}");
         return _difficultyPanel;
     }
 
     private static MiyabiSkinPanel GetOrCreateSkinPanel(NCharacterSelectScreen screen)
     {
         if (_skinPanel != null && GodotObject.IsInstanceValid(_skinPanel))
+        {
+            GD.Print("[MiyabiSkinPatch] 皮肤面板已存在，复用");
             return _skinPanel;
+        }
 
+        GD.Print("[MiyabiSkinPatch] 🔨 新建皮肤面板...");
         _skinPanel = new MiyabiSkinPanel();
         _skinPanel.Name = "MiyabiSkinPanel";
         _skinPanel.Position = new Vector2(1460, 380);
         screen.AddChild(_skinPanel);
         _skinHandlerWired = false;
+        GD.Print($"[MiyabiSkinPatch] 皮肤面板已添加到屏幕 | parent={_skinPanel.GetParent()?.GetType().Name ?? "null"}");
         return _skinPanel;
     }
 
     private static MiyabiFunPilePanel GetOrCreateFunPilePanel(NCharacterSelectScreen screen)
     {
         if (_funPilePanel != null && GodotObject.IsInstanceValid(_funPilePanel))
+        {
+            GD.Print("[MiyabiSkinPatch] 特殊挑战面板已存在，复用");
             return _funPilePanel;
+        }
 
+        GD.Print("[MiyabiSkinPatch] 🔨 新建特殊挑战面板...");
         _funPilePanel = new MiyabiFunPilePanel();
         _funPilePanel.Name = "MiyabiFunPilePanel";
         _funPilePanel.Position = new Vector2(1460, 770);
         screen.AddChild(_funPilePanel);
         _funPileHandlerWired = false;
+        GD.Print($"[MiyabiSkinPatch] 特殊挑战面板已添加到屏幕 | parent={_funPilePanel.GetParent()?.GetType().Name ?? "null"}");
         return _funPilePanel;
     }
 
@@ -135,11 +198,13 @@ public static class MiyabiCharSelectSkinPatch
 
     private static void OnDifficultyChanged(int newLevel)
     {
+        GD.Print($"[MiyabiSkinPatch] 难度变更: {newLevel}");
         MiyabiModConfig.CombatHardSelected = (MiyabiSelectedHard)newLevel;
     }
 
     private static void OnEnemyStrongerChanged(bool toggled)
     {
+        GD.Print($"[MiyabiSkinPatch] 加强敌人变更: {toggled}");
         MiyabiModConfig.MiyabiEnemiesStronger = toggled;
     }
 
@@ -149,6 +214,7 @@ public static class MiyabiCharSelectSkinPatch
 
     private static void OnSkinTypeChanged(SkinType newType)
     {
+        GD.Print($"[MiyabiSkinPatch] 皮肤类型变更: {newType}");
         _currentSkinType = newType;
         if (_skinPanel == null || !GodotObject.IsInstanceValid(_skinPanel)) return;
         LoadSkinData(_skinPanel, newType);
@@ -156,6 +222,7 @@ public static class MiyabiCharSelectSkinPatch
 
     private static void OnSkinChanged(int newIndex)
     {
+        GD.Print($"[MiyabiSkinPatch] 皮肤槽位变更: {newIndex} | type={_currentSkinType}");
         if (_currentMiyabi == null) return;
         if (_skinPanel == null || !GodotObject.IsInstanceValid(_skinPanel)) return;
 
@@ -186,6 +253,7 @@ public static class MiyabiCharSelectSkinPatch
 
     private static void OnFunPileChanged(int newIndex)
     {
+        GD.Print($"[MiyabiSkinPatch] 特殊模式变更: {newIndex}");
         MiyabiModConfig.FunPileSelected = (MiyabiFunPile)newIndex;
     }
 
@@ -249,6 +317,7 @@ public static class MiyabiCharSelectSkinPatch
         panel.PreviewImagePaths = previews;
         panel.SkinDisplayNames = names;
         panel.CurrentIndex = currentSlot;
+        GD.Print($"[MiyabiSkinPatch] LoadSkinData 完成 | type={skinType} | count={skinCount} | slot={currentSlot}");
     }
 
     // ============================================================
@@ -270,7 +339,7 @@ public static class MiyabiCharSelectSkinPatch
             child.QueueFree();
         }
 
-        string bgPath = miyabi.CustomCharacterSelectBg;
+        string bgPath = miyabi.CustomCharacterSelectBgPath;
         var scene = ResourceLoader.Load<PackedScene>(bgPath);
         if (scene != null)
         {

@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -16,7 +17,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    //[Pool(typeof(StatusCardPool))]
+    //[RegisterCard(typeof(StatusCardPool))]
+    [RegisterCard(typeof(MiyabiCardPool))]
     internal class XiezouJusha : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/mingfuWange.png";
@@ -33,7 +35,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Exhaust
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<DazePower>(),
             HoverTipFactory.FromPower<BreakPower>(),

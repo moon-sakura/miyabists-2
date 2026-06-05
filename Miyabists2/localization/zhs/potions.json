@@ -1,7 +1,7 @@
 {
-    "MIYABISTS2-WANQUAN_ZHUNBEI_POTION.title": "万全准备",
-    "MIYABISTS2-WANQUAN_ZHUNBEI_POTION.description": "获得2层[gold]招架[/gold]，2点[gold]支援点数[/gold]，2点[gold]落霜[/gold]，1层[gold]滑溜[/gold]",
+    "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.title": "万全准备",
+    "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.description": "获得2层[gold]招架[/gold]，2点[gold]支援点数[/gold]，2点[gold]落霜[/gold]，1层[gold]滑溜[/gold]",
 
-    "MIYABISTS2-JIPOWANG_YIPIE_POTION.title": "击破王的一瞥",
-    "MIYABISTS2-JIPOWANG_YIPIE_POTION.description": "如果敌人不处于[gold]击破[/gold]状态，[gold]击破[/gold]敌人"
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.title": "击破王的一瞥",
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.description": "如果敌人不处于[gold]击破[/gold]状态，[gold]击破[/gold]敌人"
 }

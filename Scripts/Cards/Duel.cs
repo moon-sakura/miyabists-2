@@ -1,5 +1,4 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils.NodeFactories;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -26,7 +25,8 @@ using static Godot.Performance;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class MiyabiDuel : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class MiyabiDuel : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/miyabiDuel.png";
         public MiyabiDuel() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy) { }
@@ -36,7 +36,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Exhaust
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<MiyabiParryPower>(),
             HoverTipFactory.FromCard<HuaCi>(),

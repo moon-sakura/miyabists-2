@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -16,8 +16,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class MiyabiBangbooRelicBase : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class MiyabiBangbooRelicBase : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.None;
         public override string PackedIconPath => "res://images/bangboo/relicMode/eousRelic.png";

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -16,7 +17,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ByeQuanleida : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ByeQuanleida : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/byeQuanleida.png";
         public ByeQuanleida():base(1,CardRarity.Rare,TargetType.AnyEnemy, CardType.Attack) { }
@@ -28,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName,2),
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
             HoverTipFactory.FromPower<DazePower>(),

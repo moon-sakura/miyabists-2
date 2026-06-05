@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
+using STS2RitsuLib.Interop.AutoRegistration;
+
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class DazeVulnPower : CustomPowerModel
+    internal class DazeVulnPower : ModPowerTemplate
     {
         // 定义你的加成数值变量名
         private const string _damageModifier = "BreakVuln";
@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts.Powers
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/commonPowers.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)

@@ -1,6 +1,6 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -14,7 +14,8 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ShuiNiao : MiyabiBlockCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ShuiNiao : MiyabiBlockCardBase
     {
         public override string PortraitPath => $"res://images/cards/shuiNiao.png";
 
@@ -44,7 +45,7 @@ namespace Miyabists2.Scripts.Cards
             MiyabiKeywords.ExhaustX
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             //HoverTipFactory.FromPower<MiyabiParryPower>(),
             //HoverTipFactory.FromCard<HuaCi>(),

@@ -1,82 +1,82 @@
 {
-	"MIYABISTS2-SWORD_NOTAIL_RELIC.title": "妖刀无尾",
-  	"MIYABISTS2-SWORD_NOTAIL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
-  	"MIYABISTS2-SWORD_NOTAIL_RELIC.flavor": "很硬很硬的刀",
+	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.title": "妖刀无尾",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.flavor": "很硬很硬的刀",
 
-	"MIYABISTS2-NO_TAIL_FULL_RELIC.title": "妖刀解放",
-  	"MIYABISTS2-NO_TAIL_FULL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]；战斗开始时，加入一张[red]妖刀解放[/red]到手卡",
-  	"MIYABISTS2-NO_TAIL_FULL_RELIC.flavor": "",
+	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.title": "妖刀解放",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]；战斗开始时，加入一张[red]妖刀解放[/red]到手卡",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.flavor": "",
 
-	"MIYABISTS2-JINGHUA_NIYING_RELIC.title": "镜花匿影",
-  	"MIYABISTS2-JINGHUA_NIYING_RELIC.description": "每场战斗第一次受到攻击前自动使用一张[gold]极限视域[/gold]",
-  	"MIYABISTS2-JINGHUA_NIYING_RELIC.flavor": "闪",
+	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.title": "镜花匿影",
+  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.description": "每场战斗第一次受到攻击前自动使用一张[gold]极限视域[/gold]",
+  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.flavor": "闪",
 
-	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.title": "霜炎烈灼",
-  	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.description": "触发[gold]霜灼[/gold]之后仍可以叠加[gold]烈霜积蓄值[/gold]，[gold]冰焰[/gold]给予的伤害增幅上限变为[blue]100%[/blue]",
-  	"MIYABISTS2-SHUANGYAN_LIEZHUO_RELIC.flavor": "",
+	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.title": "霜炎烈灼",
+  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.description": "触发[gold]霜灼[/gold]之后仍可以叠加[gold]烈霜积蓄值[/gold]，[gold]冰焰[/gold]给予的伤害增幅上限变为[blue]100%[/blue]",
+  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.flavor": "",
 
-	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.title": "霰落星殿",
-  	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.description": "每次战斗胜利获得计数：普通敌人，计数+[blue]1[/blue]；精英，计数+[blue]2[/blue]；boss，计数+[blue]3[/blue]；累计[blue]7[/blue]点之后，战斗开始时加入一张[gold]武之极致[/gold]到手牌，累计[blue]15[/blue]点之后改为加入一张[gold]斩尽罪恶[/gold]",
-  	"MIYABISTS2-SANLUO_XINGDIAN_RELIC.flavor": "「我认为它会很适合用于修行…前提是我能变成和它同等的大小。」",
+	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.title": "霰落星殿",
+  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.description": "每次战斗胜利获得计数：普通敌人，计数+[blue]1[/blue]；精英，计数+[blue]2[/blue]；boss，计数+[blue]3[/blue]；累计[blue]7[/blue]点之后，战斗开始时加入一张[gold]武之极致[/gold]到手牌，累计[blue]15[/blue]点之后改为加入一张[gold]斩尽罪恶[/gold]",
+  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.flavor": "「我认为它会很适合用于修行…前提是我能变成和它同等的大小。」",
 
-	"MIYABISTS2-SECTION_SIX_RELIC.title": "六课徽章",
-  	"MIYABISTS2-SECTION_SIX_RELIC.description": "战斗开始时获得[blue]6[/blue]点[gold]支援点数[/gold]",
-  	"MIYABISTS2-SECTION_SIX_RELIC.flavor": "很好很好的课",
+	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.title": "六课徽章",
+  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.description": "战斗开始时获得[blue]6[/blue]点[gold]支援点数[/gold]",
+  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.flavor": "很好很好的课",
 
-	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "超越绝境之志",
-  	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "血量高于[blue]80%[/blue]时，伤害降低[red]50%[/red]；血量低于[blue]50%[/blue]时，伤害增加[blue]20%[/blue]；血量低于[blue]20%[/blue]时，伤害增加[blue]50%[/blue]",
-  	"MIYABISTS2-CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "在绝境中绽放的意志",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "超越绝境之志",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "血量高于[blue]80%[/blue]时，伤害降低[red]50%[/red]；血量低于[blue]50%[/blue]时，伤害增加[blue]20%[/blue]；血量低于[blue]20%[/blue]时，伤害增加[blue]50%[/blue]",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "在绝境中绽放的意志",
 
-	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.title": "养气香囊",
-  	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧嚣值[/gold]，最大喧嚣值上限变为[blue]{MAX:diff()}[/blue]",
-  	"MIYABISTS2-YANGQI_XIANGNANG_RELIC.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
-
-
-
-
-	"MIYABISTS2-CHOUKA_RELIC.title": "加密母带",
-  	"MIYABISTS2-CHOUKA_RELIC.description": "现在在休息处可以进行抽卡！每次战斗结束时，获取[blue]1[/blue]次免费抽取次数\\n当前影画：[gold]{CINIMA:diff()}[/gold]\\n当前免费抽取次数：[blue]{FreeCount:diff()}[/blue]",
-  	"MIYABISTS2-CHOUKA_RELIC.flavor": "搏一搏，单车变摩托！",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.title": "养气香囊",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧嚣值[/gold]，最大喧嚣值上限变为[blue]{MAX:diff()}[/blue]",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
 
 
 
-	"MIYABISTS2-OVERTIMEBOO_RELIC.title": "加班布",
-  	"MIYABISTS2-OVERTIMEBOO_RELIC.description": "回合开始时召唤[gold]加班布[/gold]。",
-  	"MIYABISTS2-OVERTIMEBOO_RELIC.flavor": "牛马布",
 
-	"MIYABISTS2-PAPERBOO_RELIC.title": "纸壳布",
-  	"MIYABISTS2-PAPERBOO_RELIC.description": "回合开始时召唤[gold]纸壳布[/gold]。",
-  	"MIYABISTS2-PAPERBOO_RELIC.flavor": "我来护你！",
+	"MIYABISTS2_RELIC_CHOUKA_RELIC.title": "加密母带",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC.description": "现在在休息处可以进行抽卡！每次战斗结束时，获取[blue]1[/blue]次免费抽取次数\\n当前影画：[gold]{CINIMA:diff()}[/gold]\\n当前免费抽取次数：[blue]{FreeCount:diff()}[/blue]",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC.flavor": "搏一搏，单车变摩托！",
 
-	"MIYABISTS2-SHARKBOO_RELIC.title": "鲨牙布",
-  	"MIYABISTS2-SHARKBOO_RELIC.description": "回合开始时召唤[gold]鲨牙布[/gold]。",
-  	"MIYABISTS2-SHARKBOO_RELIC.flavor": "我在启动！",
 
-	"MIYABISTS2-EXCALIBOO_RELIC.title": "圣剑布",
-  	"MIYABISTS2-EXCALIBOO_RELIC.description": "回合开始时召唤[gold]圣剑布[/gold]。",
-  	"MIYABISTS2-EXCALIBOO_RELIC.flavor": "马上就好！",
 
-	"MIYABISTS2-AGENT_RELIC.title": "格列佛探员",
-  	"MIYABISTS2-AGENT_RELIC.description": "回合开始时召唤[gold]格列佛探员[/gold]。",
-  	"MIYABISTS2-AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.title": "加班布",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.description": "回合开始时召唤[gold]加班布[/gold]。",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.flavor": "牛马布",
 
-	"MIYABISTS2-LUCKYBOO_RELIC.title": "招财布",
-  	"MIYABISTS2-LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]，有小概率会召唤[gold]一丁尼布[/gold]。",
-  	"MIYABISTS2-LUCKYBOO_RELIC.flavor": "真的会招财吗？",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC.title": "纸壳布",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.description": "回合开始时召唤[gold]纸壳布[/gold]。",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.flavor": "我来护你！",
 
-	"MIYABISTS2-EXPLOREBOO_RELIC.title": "寻宝布",
-  	"MIYABISTS2-EXPLOREBOO_RELIC.description": "回合开始时召唤[gold]寻宝布[/gold]。",
-  	"MIYABISTS2-EXPLOREBOO_RELIC.flavor": "要发财了！",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC.title": "鲨牙布",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.description": "回合开始时召唤[gold]鲨牙布[/gold]。",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.flavor": "我在启动！",
 
-	"MIYABISTS2-SUMOBOO_RELIC.title": "扑击布",
-  	"MIYABISTS2-SUMOBOO_RELIC.description": "回合开始时召唤[gold]扑击布[/gold]。",
-  	"MIYABISTS2-SUMOBOO_RELIC.flavor": "起飞。",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.title": "圣剑布",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.description": "回合开始时召唤[gold]圣剑布[/gold]。",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.flavor": "马上就好！",
 
-	"MIYABISTS2-EOUS_BANGBOO_RELIC.title": "伊埃斯",
-  	"MIYABISTS2-EOUS_BANGBOO_RELIC.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线。",
-  	"MIYABISTS2-EOUS_BANGBOO_RELIC.flavor": "最好的的伊埃斯",
+	"MIYABISTS2_RELIC_AGENT_RELIC.title": "格列佛探员",
+  	"MIYABISTS2_RELIC_AGENT_RELIC.description": "回合开始时召唤[gold]格列佛探员[/gold]。",
+  	"MIYABISTS2_RELIC_AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
 
-	"MIYABISTS2-MAGNETIBOO_RELIC.title": "磁力布",
-	"MIYABISTS2-MAGNETIBOO_RELIC.description": "回合开始时召唤[gold]磁力布[/gold]。",
-	"MIYABISTS2-MAGNETIBOO_RELIC.flavor": "磁力全开！"
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.title": "招财布",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.description": "回合开始时召唤[gold]招财布[/gold]，有小概率会召唤[gold]一丁尼布[/gold]。",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.flavor": "真的会招财吗？",
+
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.title": "寻宝布",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.description": "回合开始时召唤[gold]寻宝布[/gold]。",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.flavor": "要发财了！",
+
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC.title": "扑击布",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.description": "回合开始时召唤[gold]扑击布[/gold]。",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.flavor": "起飞。",
+
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.title": "伊埃斯",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线。",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.flavor": "最好的的伊埃斯",
+
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.title": "磁力布",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "回合开始时召唤[gold]磁力布[/gold]。",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "磁力全开！"
 }

@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -18,8 +19,8 @@ using static Godot.HttpRequest;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(StatusCardPool))]
-    internal class TestCardFrost : MiyabiCardBase
+    [RegisterCard(typeof(StatusCardPool))]
+        internal class TestCardFrost : MiyabiCardBase
     {
         public TestCardFrost()
             : base(0, CardType.Attack, CardRarity.None, TargetType.AnyEnemy, false)
@@ -27,7 +28,7 @@ namespace Miyabists2.Scripts.Cards
         }
 
 
-        // 通用打出逻辑
+        // 閫氱敤鎵撳嚭閫昏緫
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             Creature target = cardPlay.Target;
@@ -38,13 +39,12 @@ namespace Miyabists2.Scripts.Cards
             MiyabiCombatService.SetFrostTriggerMultiply(base.Owner.Creature);
             int trigger = MiyabiCombatService.GetFrostTrigger();
 
-            // 确保是本卡造成的实际伤害，且目标存活
-            if (chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
+            // 纭繚鏄湰鍗￠€犳垚鐨勫疄闄呬激瀹筹紝涓旂洰鏍囧瓨娲?            if (chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
             {
                 await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, 30, base.Owner.Creature, this);
 
             }
-            //烈霜积蓄值积攒逻辑
+            //鐑堥湝绉搫鍊肩Н鏀掗€昏緫
             if (chkFB >= trigger + 1 && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
             {
                 //await MiyabiCombatService.FrostApply(target,base.Owner.Creature,choiceContext);

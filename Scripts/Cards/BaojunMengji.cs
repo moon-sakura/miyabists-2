@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -14,7 +15,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class BaojunMengji : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class BaojunMengji : MiyabiPartnerCardBase
     {
         protected override string ArtPath => $"res://images/cards/baojunMengji.png";
 
@@ -28,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName,2),
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<PlatingPower>(),
             HoverTipFactory.FromPower<MiyabiParryPower>(),

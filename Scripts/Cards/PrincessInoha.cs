@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(StatusCardPool))]
+    [RegisterCard(typeof(StatusCardPool))]
     internal class PrincessInoha : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/princessInoha.png";
@@ -86,7 +87,7 @@ namespace Miyabists2.Scripts.Cards
 
                     }
                 }
-                
+
                 foreach (var year in yearsInstance)
                 {
                     CardModel card2 = base.Owner.Creature.CombatState?.CreateCard<PrincessKaguya>(base.Owner);

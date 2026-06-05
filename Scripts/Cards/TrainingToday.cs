@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -16,7 +17,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class TrainingToday : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class TrainingToday : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/trainingToday.png";
         public TrainingToday() : base(0,CardType.Skill, CardRarity.Rare,TargetType.Self, true) { }

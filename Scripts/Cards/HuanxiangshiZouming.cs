@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -17,7 +18,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class HuanxiangshiZouming : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class HuanxiangshiZouming : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/huanxiangshiZouming.png";
         public HuanxiangshiZouming() : base(3, CardRarity.Uncommon, TargetType.Self, CardType.Skill) { }
@@ -32,7 +34,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Exhaust
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>()
         ];

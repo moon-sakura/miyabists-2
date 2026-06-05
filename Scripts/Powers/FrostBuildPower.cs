@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class FrostBuildPower : CustomPowerModel
+    internal class FrostBuildPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override int DisplayAmount => Amount - 1;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             //HoverTipFactory.FromPower<FrostPower>(),
             //HoverTipFactory.FromPower<AnomalyBuildupPower>()
@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Powers
 
         public string BigIconPath => "res://images/powers/FrostBuild.png";
         public string BigBetaIconPath => "res://images/powers/FrostBuild.png";
-        public override string CustomPackedIconPath => "res://images/powers/FrostBuild.png";
+        public override string CustomIconPath => "res://images/powers/FrostBuild.png";
         public override string CustomBigIconPath => "res://images/powers/FrostBuild.png";
 
         // 最大堆叠层数常量

@@ -1,6 +1,6 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -14,7 +14,8 @@ using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class HuaCi : MiyabiAttackCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class HuaCi : MiyabiAttackCardBase
     {
         protected override string ArtPath => $"res://images/cards/huaCi.png";
 

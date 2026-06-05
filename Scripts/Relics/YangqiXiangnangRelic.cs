@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -20,8 +20,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Relics
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class YangqiXiangnangRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class YangqiXiangnangRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
         public override string PackedIconPath => "res://images/relics/yangqiXiangnang.png";
@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Relics
         }
         // ------------------------------
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
             // HoverTipFactory.FromCard<MyCard>(),
         ];
 

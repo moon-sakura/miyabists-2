@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -21,8 +21,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Relics
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class SanluoXingdianRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class SanluoXingdianRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Event;
         public override string PackedIconPath => "res://images/relics/sanluoXingdian.png";
@@ -47,7 +47,7 @@ namespace Miyabists2.Scripts.Relics
             }
         }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             //HoverTipFactory.FromCard<JixianShiyu>(),
             //HoverTipFactory.FromPower<FrostFallPower>(),

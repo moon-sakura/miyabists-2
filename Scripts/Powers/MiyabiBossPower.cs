@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -17,14 +17,14 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class MiyabiBossPower : CustomPowerModel
+    internal class MiyabiBossPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Single;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/miyabiFull.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

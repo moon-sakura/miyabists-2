@@ -1,9 +1,13 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
+global using STS2RitsuLib.Interop.AutoRegistration;
+global using STS2RitsuLib.Scaffolding.Content;
+global using STS2RitsuLib.Keywords;
+global using STS2RitsuLib;
+global using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -12,14 +16,26 @@ using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Relics.SpecRelic;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Scaffolding.Characters;
+using STS2RitsuLib.Scaffolding.Godot;
 
 namespace Miyabists2.Scripts.Char;
 
-public class Miyabi : PlaceholderCharacterModel
+[RegisterCharacter]
+class Miyabi : ModCharacterTemplate<MiyabiCardPool, MiyabiRelicPool, MiyabiPotionPool>
 {
     public const string CharacterId = "Miyabi_Sakura";
 
     public static readonly Color Color = new("4682B4");
+
+    // 角色名称颜色
+    public override Color NameColor => Color;
+    // 能量图标轮廓颜色
+    public override Color EnergyLabelOutlineColor => Color;
+    // 地图绘制颜色
+    public override Color MapDrawingColor => Color;
+
+    public override string? PlaceholderCharacterId => "defect";
 
 
     public MiyabiCombatSkinSlot CombatSkinSlot => MiyabiModConfig.CombatSelectedSlot;
@@ -86,98 +102,58 @@ public class Miyabi : PlaceholderCharacterModel
             }
         }
 
-    //public static void RegisterCombatSkin(string tscnPath)
-    //{
-    //    if (CombatSkinPaths.Count < 4) // 取决于你写了多少个 Slot
-    //    {
-    //        CombatSkinPaths.Add(tscnPath);
-    //        GD.Print($"[MiyabiMod] 外部皮肤成功入驻槽位 Slot_{CombatSkinPaths.Count - 1}!");
-    //    }
-    //}
-
-    //public static void RegisterRestSkin(string tscnPath)
-    //    {
-    //        if (RestSkinPaths.Count < 4) // 取决于你写了多少个 Slot
-    //        {
-    //            RestSkinPaths.Add(tscnPath);
-    //            GD.Print($"[MiyabiMod] 外部皮肤成功入驻槽位 Slot_{RestSkinPaths.Count - 1}!");
-    //        }
-    //    }
-
-    //public static void RegisterShopSkin(string tscnPath)
-    //    {
-    //        if (ShopSkinPaths.Count < 4) // 取决于你写了多少个 Slot
-    //        {
-    //            ShopSkinPaths.Add(tscnPath);
-    //            GD.Print($"[MiyabiMod] 外部皮肤成功入驻槽位 Slot_{ShopSkinPaths.Count - 1}!");
-    //        }
-    //    }
-
     // 能量图标轮廓颜色
-    public override Color EnergyLabelOutlineColor => Color;//new(0.1f, 0.1f, 1f);
 
-    public override Color MapDrawingColor => Color;
-
-    public override string PlaceholderID => "defect";
-
-
-    //public override Color NameColor => Color;
-    public override Color NameColor => StsColors.blue;
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override int StartingHp => 52;
+    public override int StartingGold => 99;
+
+    public override float AttackAnimDelay => 0f;
+    public override float CastAnimDelay => 0f;
 
     /// <summary>
     /// 初始卡组。你可以在这里添加需要卡组。
     /// </summary>
 
-    private IEnumerable<CardModel> GetDefaultDeck() => [
-        ModelDb.Card<FengHua>(),
-        ModelDb.Card<FengHua>(),
-        ModelDb.Card<FengHua>(),
-        ModelDb.Card<FengHua>(),
-        ModelDb.Card<FengHua>(),
-        ModelDb.Card<ShuiNiao>(),
-        ModelDb.Card<ShuiNiao>(),
-        ModelDb.Card<MiyabiBlock>(),
-        ModelDb.Card<MiyabiBlock>(),
-        ModelDb.Card<ShenXue>()
+    private IEnumerable<StartingDeckEntry> GetDefaultDeck() => [
+        new(typeof(FengHua), 5),
+        new(typeof(ShuiNiao), 2),
+        new(typeof(MiyabiBlock), 2),
+        new(typeof(ShenXue), 1),
     ];
 
-    private IEnumerable<CardModel> GetBangbooDeck() => [
-        ModelDb.Card<BangbooSummonOne>(),
-        ModelDb.Card<BangbooSummonOne>(),
-        ModelDb.Card<BangbooSummonOne>(),
-        ModelDb.Card<BangbooSummonOne>(),
-        ModelDb.Card<BangbooActiveOne>(),
-        ModelDb.Card<BangbooActiveOne>(),
-        ModelDb.Card<BangbooChargeAll>(),
-        ModelDb.Card<BangbooHelpmeOne>(),
-        ModelDb.Card<BangbooHelpmeOne>(),
-        ModelDb.Card<BangbooUseOnemore>()
+    private IEnumerable<StartingDeckEntry> GetBangbooDeck() => [
+        new(typeof(BangbooSummonOne), 5),
+        new(typeof(BangbooActiveOne), 2),
+        new(typeof(BangbooChargeAll), 1),
+        new(typeof(BangbooHelpmeOne), 2),
+        new(typeof(BangbooUseOnemore), 1),
     ];
 
 
-    public override IEnumerable<CardModel> StartingDeck
+    //初始卡组，或者在卡牌类上用RegisterCharacterStarterCard就不用写这个
+     protected override IEnumerable<StartingDeckEntry> StartingDeckEntries
     {
         get
         {
-            switch (MiyabiModConfig.FunPileSelected)
+            switch(MiyabiModConfig.FunPileSelected)
             {
+                case MiyabiFunPile.Default:
+                    return GetDefaultDeck();
                 case MiyabiFunPile.AllBangboo:
-                    return GetBangbooDeck(); // 🌟 此时调用，ModelDb 100% 已经就绪了！
-
+                    return GetBangbooDeck();
                 default:
                     return GetDefaultDeck();
             }
         }
     }
 
-    public override IReadOnlyList<RelicModel> StartingRelics =>
-    [
-        ModelDb.Relic<SwordNotailRelic>(),
-        ModelDb.Relic<SectionSixRelic>(),
-        ModelDb.Relic<ChoukaRelic>()
-    ];
+    //初始遗物，或者在遗物类上用RegisterCharacterStarterRelic就不用写这个
+    protected override IEnumerable<Type> StartingRelicTypes => [
+        typeof(SwordNotailRelic),
+        typeof(SectionSixRelic),
+        typeof(ChoukaRelic),
+     ];
 
     public override async Task AfterRoomEntered(AbstractRoom room)
     {
@@ -188,21 +164,15 @@ public class Miyabi : PlaceholderCharacterModel
         MiyabiCombatService.ResetCheck();
     }
 
-    public override CardPoolModel CardPool => ModelDb.CardPool<MiyabiCardPool>();
-    public override RelicPoolModel RelicPool => ModelDb.RelicPool<MiyabiRelicPool>();
-    public override PotionPoolModel PotionPool => ModelDb.PotionPool<MiyabiPotionPool>();
+    
 
-    /*  PlaceholderCharacterModel will utilize placeholder basegame assets for most of your character assets until you
-        override all the other methods that define those assets. 
-        These are just some of the simplest assets, given some placeholders to differentiate your character with. 
-        You don't have to, but you're suggested to rename these images. */
     // 人物头像路径。
     public override string CustomIconTexturePath => "res://images/charui/icon.png";
     public override string CustomCharacterSelectIconPath => "res://images/charui/Miyabi_select.png";
     public override string CustomCharacterSelectLockedIconPath => "res://images/charui/char_select_char_name_locked.png";
     //public override string CustomMapMarkerPath => "res://images/charui/map_marker_char_name.png";
     // 人物模型tscn路径。要自定义见下。
-    public override string CustomVisualPath => CombatDynamicVisualPath;
+    public override string CustomVisualsPath => CombatDynamicVisualPath;
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
     // 人物头像2号。
@@ -223,7 +193,7 @@ public class Miyabi : PlaceholderCharacterModel
     public override string CustomArmScissorsTexturePath => null;
 
     // 人物选择背景。
-    public override string CustomCharacterSelectBg => "res://scenes/char_select/char_select_bg_miyabi.tscn";
+    public override string CustomCharacterSelectBgPath => "res://scenes/char_select/char_select_bg_miyabi.tscn";
     // 人物选择图标。
     //public override string CustomCharacterSelectIconPath => "res://test/images/char_select_test.png";
     // 人物选择图标-锁定状态。
@@ -242,6 +212,9 @@ public class Miyabi : PlaceholderCharacterModel
     // public override string CharacterSelectSfx => null;
     // 过渡音效。这个不能删。
     public override string CharacterTransitionSfx => "res://scenes/audio/select_ZhunbeiBadao.mp3";
+
+    // 自动转换人物场景，让你不需要手动挂脚本。复制即可。
+    //protected override NCreatureVisuals? TryCreateCreatureVisuals() => RitsuGodotNodeFactories.CreateFromScenePath<NCreatureVisuals>(AssetProfile.Scenes!.VisualsPath!);
 
     // 攻击建筑师的攻击特效列表
     public override List<string> GetArchitectAttackVfx() => [

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -17,6 +18,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [RegisterCard(typeof(MiyabiCardPool))]
     internal class BangbooHelpmeOne : MiyabiCardBase
     {
         //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
@@ -27,7 +29,7 @@ namespace Miyabists2.Scripts.Cards
             
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
             HoverTipFactory.FromPower<MiyabiGuardianPower>(),
         ];
 

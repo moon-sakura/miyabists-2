@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
@@ -24,7 +25,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class MingCanXue : MiyabiAttackCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class MingCanXue : MiyabiAttackCardBase
     {
         public override string PortraitPath => $"res://images/cards/mingCanxue.png";
 
@@ -37,7 +39,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Retain
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<FrostFallPower>(),
             HoverTipFactory.FromPower<DazePower>(),

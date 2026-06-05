@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Gold;
 using MegaCrit.Sts2.Core.Events;
@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Events
 {
-    internal class GetSlxdEvent : CustomEventModel
+    internal class GetSlxdEvent : ModEventTemplate
     {
         // 背景图位置
         public override string? CustomInitialPortraitPath => "res://images/events/commonEvents.png";
@@ -52,8 +52,8 @@ namespace Miyabists2.Scripts.Events
         // 生成事件初始选项。
         protected override IReadOnlyList<EventOption> GenerateInitialOptions() =>
         [
-            Option(DeepInHeart),
-            Option(Leave),
+            new EventOption(this,DeepInHeart,"DEEP_IN_HEART"),
+            new EventOption(this,Leave,"LEAVE"),
         ];
 
         // 深入
@@ -74,8 +74,8 @@ namespace Miyabists2.Scripts.Events
         private void CountinueDeepPage()
         {
             SetEventState(PageDescription("DEEP_PAGE"), [
-                Option(ContinueDeep, "DEEP_PAGE"), // 第二个参数代表该选项所在页面
-                Option(CannotBare, "DEEP_PAGE"),
+                new EventOption(this,ContinueDeep,"CONTINUE_DEEP"),
+                new EventOption(this,CannotBare,"CANNOT_BARE"),
                 ]);
         }
 
@@ -97,8 +97,8 @@ namespace Miyabists2.Scripts.Events
         private void ReachCorePage() 
         {
             SetEventState(PageDescription("CORE_PAGE"), [
-                Option(GetSlxd, "CORE_PAGE"),
-                Option(GiveUp,"CORE_PAGE")
+                new EventOption(this,GetSlxd,"GET_SLXD"),
+                new EventOption(this,GiveUp,"GIVE_UP")
                 ]);
         }
 

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -19,7 +20,8 @@ using MegaCrit.Sts2.Core.Extensions;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class SheWen : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class SheWen : MiyabiPartnerCardBase
     {
         protected override string ArtPath => $"res://images/cards/sheWen.png";
 
@@ -36,7 +38,7 @@ namespace Miyabists2.Scripts.Cards
         bool try2Eat = true;
         int count = 0;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<DazePower>(),
             HoverTipFactory.FromPower<BreakPower>(),

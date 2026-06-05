@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Factories;
@@ -12,7 +13,8 @@ using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class NoTailFull : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class NoTailFull : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/notailFull.png";
 

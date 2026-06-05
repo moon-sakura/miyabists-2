@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -15,7 +16,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ZhanshuChongzheng : MiyabiBlockCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ZhanshuChongzheng : MiyabiBlockCardBase
     {
         protected override string ArtPath => $"res://images/cards/zhanshuChongzheng.png";
 
@@ -25,7 +27,7 @@ namespace Miyabists2.Scripts.Cards
             new CardsVar(2)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromKeyword(MiyabiKeywords.Friends),
         ];
@@ -55,10 +57,9 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            // 升级增加 2 点护甲
-            DynamicVars.Cards.UpgradeValueBy(1);
+            // 升级增加 2 点护�?            DynamicVars.Cards.UpgradeValueBy(1);
 
-            // 如果需要升级 Parry 或 Slippery，可以在此添加逻辑
+            // 如果需要升�?Parry �?Slippery，可以在此添加逻辑
             // if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
         }
     }

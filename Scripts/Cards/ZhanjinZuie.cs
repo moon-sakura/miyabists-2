@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -15,7 +16,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ZhanjinZuie : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ZhanjinZuie : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/zhanjinZuie.png";
 
@@ -28,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Retain
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             
         ];

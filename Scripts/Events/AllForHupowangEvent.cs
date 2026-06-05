@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Events;
@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Events
 {
-    internal class AllForHupowangEvent : CustomEventModel
+    internal class AllForHupowangEvent : ModEventTemplate
     {
         // 背景图位置
         public override string? CustomInitialPortraitPath => "res://images/events/juFufu.png";
@@ -53,8 +53,8 @@ namespace Miyabists2.Scripts.Events
         // 生成事件初始选项。
         protected override IReadOnlyList<EventOption> GenerateInitialOptions() =>
         [
-            Option(AllForHupowangChoice),
-            Option(Others),
+            new EventOption(this,AllForHupowangChoice,"ALL_FOR_HUPOWANG_CHOICE"),
+            new EventOption(this,Others,"OTHERS"),
         ];
 
         private async Task AllForHupowangChoice()

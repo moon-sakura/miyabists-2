@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -19,8 +20,8 @@ using static Godot.HttpRequest;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(StatusCardPool))]
-    internal class PrincessKaguya : MiyabiCardBase
+    [RegisterCard(typeof(StatusCardPool))]
+        internal class PrincessKaguya : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/princessKaguya.png";
 

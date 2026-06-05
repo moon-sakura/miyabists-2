@@ -1,5 +1,3 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.CardSelection;
@@ -18,6 +16,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
+using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Relics;
 using MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary;
@@ -27,23 +26,26 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using System.Diagnostics.Metrics;
 using static Godot.OpenXRInterface;
 
 namespace Miyabists2.Scripts.Relics
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class SwordNotailRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    [RegisterTouchOfOrobasRefinement(typeof(NoTailFullRelic))]
+    internal class SwordNotailRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
 
-        public override RelicModel? GetUpgradeReplacement() => ModelDb.Relic<NoTailFullRelic>();
+        //public override RelicModel? GetUpgradeReplacement() => ModelDb.Relic<NoTailFullRelic>();
 
         public override string PackedIconPath => "res://images/relics/swordNotail200.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips => 
         [
             HoverTipFactory.FromCard<MingCanXue>(),
             HoverTipFactory.FromPower<FrostFallPower>(),

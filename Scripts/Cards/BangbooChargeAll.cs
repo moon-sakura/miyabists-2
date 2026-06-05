@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -12,7 +13,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class BangbooChargeAll : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class BangbooChargeAll : MiyabiCardBase
     {
         //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
 

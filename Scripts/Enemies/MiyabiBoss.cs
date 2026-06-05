@@ -1,5 +1,4 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
+using BaseLib.Utils.NodeFactories;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -12,10 +11,12 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.MonsterMoves;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,13 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Enemies
 {
-    internal class MiyabiBoss : CustomMonsterModel
+    internal class MiyabiBoss : ModMonsterTemplate
     {
+        public MiyabiBoss()
+        {
+            // 手动注册场景转换，这样你就不用给 .tscn 挂脚本了
+            CustomVisualsPath?.RegisterSceneForConversion<NCreatureVisuals>();
+        }
         // 根据进阶提高最小血量
         public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 170, 170);
 
@@ -47,7 +53,7 @@ namespace Miyabists2.Scripts.Enemies
         //public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene("res://test/scenes/test_monster.tscn");
 
         // 如果你挂载了自己的自定义脚本，使用这个
-        public override string? CustomVisualPath => "res://scenes/miyabi_char.tscn";
+        public override string? CustomVisualsPath => "res://scenes/miyabi_char.tscn";
 
 
         // 战斗开始时，在这里给自己上buff之类

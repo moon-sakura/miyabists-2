@@ -78,7 +78,9 @@ public partial class MiyabiDifficultyPanel : Control
 
     public override void _Ready()
     {
+        GD.Print("[MiyabiDiffPanel] _Ready 调用，开始构建 UI...");
         BuildUI();
+        GD.Print("[MiyabiDiffPanel] UI 构建完成");
     }
 
     // ===== UI 构建 =====

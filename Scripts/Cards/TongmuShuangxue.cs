@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -15,13 +15,14 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class TongmuShuangxue : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class TongmuShuangxue : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/tongmuShuangxue.png";
 
         public TongmuShuangxue():base(2,CardType.Power,CardRarity.Uncommon,TargetType.Self) { }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
         ];

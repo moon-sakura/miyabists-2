@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -16,7 +17,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class BingyuanQianxi : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class BingyuanQianxi : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/bingyuanQianxi.png";
         public BingyuanQianxi() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy, CardType.Attack) { }
@@ -28,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName,1),
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
             HoverTipFactory.FromPower<SlipperyPower>(),

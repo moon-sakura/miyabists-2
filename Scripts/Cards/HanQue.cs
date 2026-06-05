@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -9,6 +10,7 @@ using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [RegisterCard(typeof(MiyabiCardPool))]
     internal class HanQue: MiyabiAttackCardBase
     {
         protected override string ArtPath => $"res://images/cards/hanQue_50.png";

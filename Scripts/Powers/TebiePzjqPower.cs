@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -21,17 +21,17 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class TebiePzjqPower : CustomPowerModel
+    internal class TebiePzjqPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/teshuPzjq.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
 
         ];

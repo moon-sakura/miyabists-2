@@ -1,5 +1,3 @@
-using BaseLib.Abstracts;
-using BaseLib.Patches.Hooks;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -19,7 +17,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class FrostFallPower : CustomPowerModel
+    internal class FrostFallPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -28,7 +26,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override int DisplayAmount => Amount - 1;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromCard<ShuangYue>()
         ];
@@ -37,7 +35,7 @@ namespace Miyabists2.Scripts.Powers
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/frostFall.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
         private class Data
@@ -85,7 +83,7 @@ namespace Miyabists2.Scripts.Powers
         private async Task CheckFallPower()
         {
             PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner.Player, Owner.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
-            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < MaxHandSizePatch.GetMaxHandSize(base.Owner.Player, CardPile.MaxCardsInHand) && GetCards().ToList().Count() == 0 && DisplayAmount >= 2)
+            if (CardPile.GetCards(base.Owner.Player, PileType.Hand).ToList().Count() < RitsuLibFramework.GetMaxHandSize(base.Owner.Player) && GetCards().ToList().Count() == 0 && DisplayAmount >= 2)
             {
                 // 加入一张《霜月》到手中
                 CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);

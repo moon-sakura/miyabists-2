@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://rc3f6p1yfxip"]
+[gd_scene load_steps=3 format=3 uid="uid://rc3f6p1yfxip"]
 
 [ext_resource type="Texture2D" uid="uid://cnpltykqtat57" path="res://images/charui/miyabi_yinxing_char.png" id="1_ihslh"]
+[ext_resource type="Script" uid="uid://d1s2uggf4ea56" path="res://Scripts/_NCV/MiyabiShopY.cs" id="1_olohv"]
 
 [node name="miyabi_yinxing_shop" type="Node2D"]
+script = ExtResource("1_olohv")
 
 [node name="MiyabiYinxingChar" type="Sprite2D" parent="."]
 position = Vector2(-3.0000153, -279.00003)

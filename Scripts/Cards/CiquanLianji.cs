@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -16,7 +17,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class CiquanLianji : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class CiquanLianji : MiyabiPartnerCardBase
     {
         protected override string ArtPath => $"res://images/cards/ciquanLianji.png";
 
@@ -30,7 +32,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName,3),
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<DazePower>(),
             HoverTipFactory.FromPower<BreakPower>(),

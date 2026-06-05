@@ -1,6 +1,7 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -14,7 +15,7 @@ using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(MiyabiCardPool))]
+    [RegisterCard(typeof(MiyabiCardPool))]
     internal class FengHua : MiyabiAttackCardBase
     {
         public override string PortraitPath => $"res://images/cards/fengHua.png";

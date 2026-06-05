@@ -1,6 +1,7 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -16,7 +17,7 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [Pool(typeof(MiyabiCardPool))]
+    [RegisterCard(typeof(MiyabiCardPool))]
     internal class MiyabiBlock : MiyabiBlockCardBase
     {
         protected override string ArtPath => $"res://images/cards/miyabiBlock.png";
@@ -37,7 +38,7 @@ namespace Miyabists2.Scripts.Cards
 
         decimal Block() => (int)MiyabiModConfig.CombatHardSelected >= 4 ? 6m : 4m;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<MiyabiParryPower>(),
             HoverTipFactory.FromCard<HuaCi>(),
@@ -50,10 +51,9 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            // 升级增加 2 点护甲
-            DynamicVars.Block.UpgradeValueBy(2);
+            // 升级增加 2 点护�?            DynamicVars.Block.UpgradeValueBy(2);
 
-            // 如果需要升级 Parry 或 Slippery，可以在此添加逻辑
+            // 如果需要升�?Parry �?Slippery，可以在此添加逻辑
             // if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
         }
     }

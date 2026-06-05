@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class YachiyoPower : CustomPowerModel
+    internal class YachiyoPower : ModPowerTemplate
     {
         private class Data
         {
@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Powers
 
         public string BigIconPath => "res://images/powers/yachiyo.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
         private const string _cardKey = "Card";

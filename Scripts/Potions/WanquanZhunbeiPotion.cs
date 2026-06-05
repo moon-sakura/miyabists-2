@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -18,9 +18,10 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Potions
 {
+    [RegisterPotion(typeof(MiyabiPotionPool))]
     internal class WanquanZhunbeiPotion : MiyabiPotionBase
     {
-        public override string? CustomPackedImagePath => "res://images/potions/wanquanZhunbeiPotion.png";
+        public override string? CustomImagePath => "res://images/potions/wanquanZhunbeiPotion.png";
 
         // 稀有度
         public override PotionRarity Rarity => PotionRarity.Uncommon;
@@ -36,7 +37,7 @@ namespace Miyabists2.Scripts.Potions
 
         ];
 
-        public override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<MiyabiParryPower>(),
             HoverTipFactory.FromCard<HuaCi>(),

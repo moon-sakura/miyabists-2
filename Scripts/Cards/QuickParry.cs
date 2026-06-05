@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -18,6 +19,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [RegisterCard(typeof(MiyabiCardPool))]
     internal class QuickParry : MiyabiBlockCardBase
     {
         protected override string ArtPath => $"res://images/cards/quickParry.png";
@@ -29,7 +31,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(ParryVarName, 1)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<MiyabiParryPower>(),
             HoverTipFactory.FromCard<HuaCi>(),

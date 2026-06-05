@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -17,7 +18,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class BeeGroup : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class BeeGroup : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/beeGroup2.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.OtherWorldFriends];
@@ -31,7 +33,7 @@ namespace Miyabists2.Scripts.Cards
             new CardsVar(1),
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromEnchantment<BeeGroupEnchantment>().FirstOrDefault(),
         ];

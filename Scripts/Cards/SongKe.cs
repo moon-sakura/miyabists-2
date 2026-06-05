@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -14,7 +15,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class SongKe : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class SongKe : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/songKe.png";
         public SongKe() : base(3, CardRarity.Rare, TargetType.AnyEnemy, CardType.Skill) { }
@@ -24,7 +26,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName,4)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips => 
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
             HoverTipFactory.FromPower<DazePower>(),

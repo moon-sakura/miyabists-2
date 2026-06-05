@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -19,17 +19,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Miyabists2.Scripts.Relics
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class JinghuaNiyingRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class JinghuaNiyingRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
         public override string PackedIconPath => "res://images/relics/jinghuaNiying.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromCard<JixianShiyu>(),
             //HoverTipFactory.FromPower<FrostFallPower>(),

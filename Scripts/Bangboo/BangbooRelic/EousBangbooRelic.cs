@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -32,7 +32,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
-    
+    [RegisterRelic(typeof(MiyabiRelicPool))]
     internal class EousBangbooRelic : MiyabiBangbooRelicBase
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
@@ -148,7 +148,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             }
         }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<EousAct>(),
         ];

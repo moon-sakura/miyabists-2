@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -16,17 +16,17 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class FrostPower: CustomPowerModel
+    internal class FrostPower: ModPowerTemplate
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/shuangZhuo.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             //HoverTipFactory.FromPower<FrostBuildPower>()
         ];

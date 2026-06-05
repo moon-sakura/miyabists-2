@@ -1,6 +1,4 @@
-using BaseLib.Abstracts;
-using BaseLib.Hooks;
-using BaseLib.Patches.Hooks;
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -350,7 +348,7 @@ namespace Miyabists2.Scripts.Service
             {
                 CardModel reward1 = owner.CombatState.CreateCard<HuaCi>(owner.Player);
 
-                if (handSize + i <= MaxHandSizePatch.GetMaxHandSize(owner.Player, CardPile.MaxCardsInHand))
+                if (handSize + i <= RitsuLibFramework.GetMaxHandSize(owner.Player))
                     await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, owner.Player, CardPilePosition.Random);
                 else
                     await CardCmd.AutoPlay(choiceContext, reward1, target);

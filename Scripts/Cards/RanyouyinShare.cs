@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -20,7 +21,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class RanyouyinShare : MiyabiBlockCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class RanyouyinShare : MiyabiBlockCardBase
     {
         public RanyouyinShare() : base(0, CardRarity.Common, true) { }
 
@@ -30,7 +32,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar("Decible", 5)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>()
         ];

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -18,6 +19,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [RegisterCard(typeof(MiyabiCardPool))]
     internal class DongFengSp:MiyabiAttackCardBase
     {
         protected override string ArtPath => $"res://images/cards/dongFengSp.png";

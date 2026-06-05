@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
@@ -26,8 +26,8 @@ using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Relics
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class SectionSixRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class SectionSixRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
         public override string PackedIconPath => "res://images/relics/section_six.png";
@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Relics
         protected override string BigIconPath => PackedIconPath;
         protected override IEnumerable<DynamicVar> CanonicalVars => Array.Empty<DynamicVar>();
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>()
         ];

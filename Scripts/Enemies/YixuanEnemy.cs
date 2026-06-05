@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
+using STS2RitsuLib.Interop.AutoRegistration;
+
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -21,12 +21,12 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Enemies
 {
-    internal class YixuanEnemy : CustomMonsterModel
+    internal class YixuanEnemy : ModMonsterTemplate
     {
         public YixuanEnemy()
         {
             // 手动注册场景转换，这样你就不用给 .tscn 挂脚本了
-            CustomVisualPath?.RegisterSceneForConversion<NCreatureVisuals>();
+            CustomVisualsPath?.RegisterSceneForConversion<NCreatureVisuals>();
         }
 
         // 根据进阶提高最小血量，进阶8及以上为225，否则为200
@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Enemies
         // 根据进阶提高最大血量，进阶8及以上为250，否则为220
         public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 250, 220);
 
-        public override string? CustomVisualPath => "res://scenes/monsters/yixuan_enemy.tscn";
+        public override string? CustomVisualsPath => "res://scenes/_Yixuan/yixuan_char.tscn";
 
         public override async Task AfterAddedToRoom()
         {

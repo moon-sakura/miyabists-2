@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Extensions;
@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class MiyabiGuardianPower : CustomPowerModel
+    internal class MiyabiGuardianPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
 
@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts.Powers
 
         public string BigIconPath => "res://images/powers/commonPowers.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
         public override Creature ModifyUnblockedDamageTarget(Creature target, decimal amount, ValueProp props, Creature? dealer)

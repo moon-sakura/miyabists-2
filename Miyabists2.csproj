@@ -36,6 +36,11 @@
 		</Reference>
 
 		<!-- 本地引用，注意路径是否正确 -->
+		<Reference Include="STS2RitsuLib">
+			<HintPath>$(Sts2Dir)\mods\RitsuLib\STS2-RitsuLib.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+
 		<Reference Include="BaseLib">
 			<HintPath>$(Sts2Dir)/mods/BaseLib/BaseLib.dll</HintPath>
 			<Private>false</Private>
@@ -46,8 +51,8 @@
 			<Private>false</Private>
 		</Reference>
 		
-		<Reference Include="MinionLibBaseLibAdapter">
-			<HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.BaseLibAdapters.dll</HintPath>
+		<Reference Include="MinionLibSTS2RitsuLibAdapter">
+			<HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.RitsuAdapters.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
 
@@ -59,6 +64,8 @@
 
 	<ItemGroup>
 	  <Folder Include="Miyabists2\localization\zhs\" />
+	  <Folder Include="Scripts\_NCV\Bangboo\" />
+	  <Folder Include="Scripts\_NCV\Monster\" />
 	  <Folder Include="Scripts\_YiXuan\" />
 	  <Folder Include="Scripts\_Guang\" />
 	</ItemGroup>

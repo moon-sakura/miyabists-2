@@ -16,12 +16,13 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Potions
 {
+    [RegisterPotion(typeof(MiyabiPotionPool))]
     internal class JipowangYipiePotion : MiyabiPotionBase
     {
         // 稀有度
         public override PotionRarity Rarity => PotionRarity.Rare;
 
-        public override string? CustomPackedImagePath => "res://images/potions/jipowangYipiePotion.png";
+        public override string? CustomImagePath => "res://images/potions/jipowangYipiePotion.png";
 
         // 使用方式，CombatOnly表示只能在战斗中使用。
         public override PotionUsage Usage => PotionUsage.CombatOnly;
@@ -34,7 +35,7 @@ namespace Miyabists2.Scripts.Potions
 
         ];
 
-        public override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<BreakPower>(),
             HoverTipFactory.FromPower<DazeVulnPower>(),

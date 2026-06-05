@@ -1,6 +1,4 @@
 using BaseLib.Config;
-using Godot;
-using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Context;
@@ -20,6 +18,8 @@ using MegaCrit.Sts2.Core.Saves.Managers;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib;
+using STS2RitsuLib.Interop;
 using System.Reflection;
 
 namespace Miyabists2.Scripts;
@@ -28,29 +28,30 @@ namespace Miyabists2.Scripts;
 [ModInitializer("Init")]
 public class Entry
 {
+    public const string ModId = "Miyabists2";
+    public static readonly Logger Logger = RitsuLibFramework.CreateLogger(ModId);
     // 初始化函数
     public static void Init()
     {
-        // 打patch（即修改游戏代码的功能）用
-        // 传入参数随意，只要不和其他人撞车即可
-        var harmony = new Harmony("sts2.SakuraYue.Miyabi");
-
-        var config = new MiyabiModConfig();
 
         MiyabiSkinManager.PreSkinRegister();
+
+        var config = new MiyabiModConfig();
+        ModConfigRegistry.Register(ModId, config);
+
+        var assembly = Assembly.GetExecutingAssembly();
+        RitsuLibFramework.EnsureGodotScriptsRegistered(assembly, Logger);
+        // 自动注册内容
+        ModTypeDiscoveryHub.RegisterModAssembly(ModId, assembly);
+
+        var harmony = new Harmony("com.YueSakura.Miyabi");
+        harmony.PatchAll();
+
 
         MiyabiSkinManager.RegisterCombatSkin("银庭花信", "res://scenes/miyabi_yinxing_char.tscn", "res://images/charui/miyabi_yinxing_char75.png");
         //MiyabiSkinManager.RegisterRestSkin("","res://scenes/miyabi_yinxing_rest.tscn");
         MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn", "res://images/charui/miyabi_yinxing_char75.png");
         //MiyabiSkinManager.RegisterCombatSkin("仪玄", "res://scenes/monsters/yixuan_enemy.tscn");
-
-        //MiyabiSkinManager.RegisterCombatSkin("大黄蜂", "res://scenes/modSkin/HollowKnight.tscn");
-
-        ModConfigRegistry.Register("Miyabists2", config);
-
-        harmony.PatchAll();
-        // 使得tscn可以加载自定义脚本
-        ScriptManagerBridge.LookupScriptsInAssembly(typeof(Entry).Assembly); 
 
         //Log.Debug("星见雅MOD加载完成");
     }
@@ -90,7 +91,7 @@ public class Entry
     //    }
     //}
 
-    //[HarmonyPatch(typeof(Miyabi), "get_CustomVisualPath")]
+    //[HarmonyPatch(typeof(Miyabi), "get_CustomVisualsPath")]
     //public class MiyabiSkinPatch
     //{
     //    public static bool Prefix(ref string __result)

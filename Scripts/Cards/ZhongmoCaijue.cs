@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -14,7 +15,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ZhongmoCaijue : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ZhongmoCaijue : MiyabiPartnerCardBase
     {
         public override string PortraitPath => $"res://images/cards/zhongmoCaijue.png";
 
@@ -32,7 +34,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Exhaust
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
             HoverTipFactory.FromPower<DazePower>(),

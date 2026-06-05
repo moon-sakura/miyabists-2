@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Miyabists2.Scripts.Bangboo.BangbooRelic
 {
+    [RegisterRelic(typeof(MiyabiRelicPool))]
     internal class AgentRelic : MiyabiBangbooRelicBase
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
@@ -28,7 +29,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             await MiyabiBangbooService.SummonBangboo<AgentBangboo>(Owner, 10m, MinionPosition.FrontUpper);
         }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<AgentAct>(),
         ];

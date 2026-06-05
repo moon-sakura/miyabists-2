@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -15,7 +16,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class JixianShiyu : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class JixianShiyu : MiyabiCardBase
     {
         public JixianShiyu() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
 
@@ -28,7 +30,7 @@ namespace Miyabists2.Scripts.Cards
 
         public override bool GainsBlock => false;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SlipperyPower>(),
             HoverTipFactory.FromCard<HanQue>()

@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -21,15 +21,15 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Relics
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class NoTailFullRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class NoTailFullRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
         public override string PackedIconPath => "res://images/relics/notailFull33.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromCard<MingCanXue>(),
             HoverTipFactory.FromPower<FrostFallPower>(),

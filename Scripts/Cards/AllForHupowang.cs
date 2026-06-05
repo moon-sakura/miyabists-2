@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -19,7 +20,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class AllForHupowang : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class AllForHupowang : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/allForHupowang.png";
         public AllForHupowang() : base(0, CardType.Skill, CardRarity.Ancient, TargetType.AnyEnemy) { }
@@ -32,7 +34,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Exhaust,
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<BreakPower>(),
             HoverTipFactory.FromPower<DazeVulnPower>(),

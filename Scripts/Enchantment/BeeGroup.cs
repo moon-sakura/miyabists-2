@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Enchantment
 {
-    internal class BeeGroupEnchantment : CustomEnchantmentModel
+    internal class BeeGroupEnchantment : ModEnchantmentTemplate
     {
         // 是否在卡牌上显示数值
         public override bool ShowAmount => false;
@@ -43,10 +43,10 @@ namespace Miyabists2.Scripts.Enchantment
 
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(CardKeyword.Retain)];
+        //protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromKeyword(CardKeyword.Retain)];
 
         // 图标位置。大小1:1就行，原版是64x64
-        protected override string? CustomIconPath => "res://images/enchant/beeGroup.png";
+        public override string? CustomIconPath => "res://images/enchant/beeGroup.png";
 
         // 决定是否可以附魔到某张卡牌上
         public override bool CanEnchant(CardModel card)

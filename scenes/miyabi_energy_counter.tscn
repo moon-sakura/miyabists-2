@@ -10,8 +10,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BurstBack" type="CPUParticles2D" parent="."]
+[node name="EnergyVfxBack" type="CPUParticles2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(91, 94)
+emitting = false
 
 [node name="Layers" type="Control" parent="."]
 unique_name_in_owner = true
@@ -26,13 +28,15 @@ offset_bottom = 40.0
 
 [node name="Layer1" type="TextureRect" parent="Layers"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 103.0
+offset_bottom = 103.0
 texture = ExtResource("1_dghjk")
 expand_mode = 1
 
-[node name="BurstFront" type="CPUParticles2D" parent="."]
+[node name="EnergyVfxFront" type="CPUParticles2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(52, 1)
+emitting = false
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

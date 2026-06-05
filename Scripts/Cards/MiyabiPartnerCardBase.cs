@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -16,6 +16,7 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
+    //[RegisterCard(typeof(MiyabiCardPool))]
     internal abstract class MiyabiPartnerCardBase : MiyabiCardBase
     {
         // 伙伴卡通常消耗的支援点数变量名
@@ -28,8 +29,8 @@ namespace Miyabists2.Scripts.Cards
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];
 
-        protected MiyabiPartnerCardBase(int energy, CardRarity rarity, TargetType target, CardType type = CardType.Skill, bool showInLib=true)
-            : base(energy, type, rarity, target, showInLib=true)
+        protected MiyabiPartnerCardBase(int energy, CardRarity rarity, TargetType target, CardType type = CardType.Skill, bool showInLib = true)
+            : base(energy, type, rarity, target, showInLib = true)
         {
         }
 
@@ -55,7 +56,7 @@ namespace Miyabists2.Scripts.Cards
             //}
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar) && dazeVar.BaseValue > 0)
             {
-                await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, dazeVar,base.Owner.Creature);
+                await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, dazeVar, base.Owner.Creature);
             }
 
             //属性积蓄与异常
@@ -89,7 +90,7 @@ namespace Miyabists2.Scripts.Cards
                 await MiyabiCombatService.AddAnoBuildup(cardPlay.Target, anoVar.IntValue, base.Owner.Creature, this, choiceContext);
             }
 
-            
+
         }
 
         //以下卡牌没有使用该函数
@@ -103,7 +104,7 @@ namespace Miyabists2.Scripts.Cards
             {
                 await FriendFunc();
 
-                if(!isFreeThis)
+                if (!isFreeThis)
                     await CostSupporPoint(supportT, choiceContext);
             }
         }
@@ -111,7 +112,7 @@ namespace Miyabists2.Scripts.Cards
 
         public virtual int CheckSupportCost(int a)
         {
-            if(!base.Owner.Creature.HasPower<SupportPointPower>()) return 0;
+            if (!base.Owner.Creature.HasPower<SupportPointPower>()) return 0;
             return base.Owner.Creature.GetPower<SupportPointPower>().CanUsePoint(a);
             //{
             //    return false;
@@ -119,11 +120,11 @@ namespace Miyabists2.Scripts.Cards
             //return true;
         }
 
-        public virtual async Task CostSupporPoint(int amount, PlayerChoiceContext choiceContext) 
+        public virtual async Task CostSupporPoint(int amount, PlayerChoiceContext choiceContext)
         {
             if (CheckSupportCost(amount) == 0) return;
             if (CheckSupportCost(amount) == 1)
-                await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature,-amount,null,null);
+                await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, -amount, null, null);
             if (CheckSupportCost(amount) == 2) return;
         }
     }

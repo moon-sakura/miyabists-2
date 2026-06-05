@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -18,7 +19,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class BlessingOfmoon : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class BlessingOfmoon : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/moonBlessing.png";
 
@@ -33,7 +35,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar("Bless", 25)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<AttributeAnomalyPower>(),
             HoverTipFactory.FromPower<DisorderPower>(),
@@ -46,11 +48,9 @@ namespace Miyabists2.Scripts.Cards
             if (base.DynamicVars.TryGetValue("Bless", out DynamicVar b))
                 await PowerCmd.Apply<BlessingMoonPower>(choiceContext, base.Owner.Creature, b.BaseValue, Owner.Creature, this);
 
-            // 随机选一句
-            int idx = (int)(GD.Randi() % MiyabiBlessingMoonVoices.Length);
+            // 随机选一�?            int idx = (int)(GD.Randi() % MiyabiBlessingMoonVoices.Length);
 
-            // 它会自动处理加载、播放、音量转换和自动销毁
-            MiyabiAudioService.Play(MiyabiBlessingMoonVoices[idx],1.2f);
+            // 它会自动处理加载、播放、音量转换和自动销�?            MiyabiAudioService.Play(MiyabiBlessingMoonVoices[idx],1.2f);
         }
 
         protected override void OnUpgrade()

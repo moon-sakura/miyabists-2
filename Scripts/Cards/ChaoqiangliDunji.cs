@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -11,7 +12,8 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ChaoqiangliDunji : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ChaoqiangliDunji : MiyabiPartnerCardBase
     {
         protected override string ArtPath => $"res://images/cards/chaoqiangliDunji.png";
 
@@ -30,7 +32,7 @@ namespace Miyabists2.Scripts.Cards
             MiyabiKeywords.ExhaustX
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
             HoverTipFactory.FromPower<MiyabiParryPower>(),

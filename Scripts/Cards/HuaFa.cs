@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -17,7 +18,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class HuaFa : MiyabiBlockCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class HuaFa : MiyabiBlockCardBase
     {
         protected override string ArtPath => $"res://images/cards/huaFa.png";
 
@@ -29,7 +31,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SlipperyVarName, 0)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromKeyword(MiyabiKeywords.Friends),
         ];
@@ -52,10 +54,9 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            // 升级增加 2 点护甲
-            DynamicVars.Block.UpgradeValueBy(4);
+            // 升级增加 2 点护�?            DynamicVars.Block.UpgradeValueBy(4);
 
-            // 如果需要升级 Parry 或 Slippery，可以在此添加逻辑
+            // 如果需要升�?Parry �?Slippery，可以在此添加逻辑
             // if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
         }
     }

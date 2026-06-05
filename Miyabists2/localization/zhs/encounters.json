@@ -1,10 +1,10 @@
 {
-    "MIYABISTS2-MIYABI_TEST_ENCOUNTER.title": "遭遇星见雅",
-    "MIYABISTS2-MIYABI_TEST_ENCOUNTER.loss": "{character}在[gold]{encounter}[/gold]中被击败。",
+    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.title": "遭遇星见雅",
+    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.loss": "{character}在[gold]{encounter}[/gold]中被击败。",
 
-    "MIYABISTS2-MIYABI_BOSS_ENCOUNTER.title": "遭遇星见雅",
-    "MIYABISTS2-MIYABI_BOSS_ENCOUNTER.loss": "{character}在[gold]{encounter}[/gold]中被击败。",
+    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.title": "遭遇星见雅",
+    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.loss": "{character}在[gold]{encounter}[/gold]中被击败。",
 
-    "MIYABISTS2-YIXUAN_TEST_ENCOUNTER.title": "遭遇仪玄",
-    "MIYABISTS2-YIXUAN_TEST_ENCOUNTER.loss": "{character}在[gold]{encounter}[/gold]中被击败。"
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.title": "遭遇仪玄",
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character}在[gold]{encounter}[/gold]中被击败。"
 }

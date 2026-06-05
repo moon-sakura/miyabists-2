@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -14,7 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Service;
 namespace Miyabists2.Scripts.Powers
 {
-    internal class AttributeAnomalyPower : CustomPowerModel
+    internal class AttributeAnomalyPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -22,10 +22,10 @@ namespace Miyabists2.Scripts.Powers
 
         public string BigIconPath => "res://images/powers/anoatt.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             //HoverTipFactory.FromPower<DisorderPower>()
         ];

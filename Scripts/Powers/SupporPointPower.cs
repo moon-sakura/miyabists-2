@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -14,7 +14,7 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class SupportPointPower : CustomPowerModel
+    internal class SupportPointPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Powers
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
         public string BigIconPath => "res://images/powers/support_point.png";
         public string BigBetaIconPath => BigIconPath;
-        public override string CustomPackedIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
         // 核心：当层数改变时，强制限制在 0 到 6 之间

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -16,13 +17,13 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-
-    internal class XueshangJiashuang : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class XueshangJiashuang : MiyabiCardBase
     {
         public override string PortraitPath => $"res://images/cards/xueshangJiashuang.png";
         public XueshangJiashuang() : base(2,CardType.Power, CardRarity.Uncommon,TargetType.Self, true) { }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromCard<ShuangYue>(),
             HoverTipFactory.FromPower<StrengthPower>(),

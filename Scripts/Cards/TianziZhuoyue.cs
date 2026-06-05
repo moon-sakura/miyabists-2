@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -13,7 +14,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class TianziZhuoyue : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class TianziZhuoyue : MiyabiCardBase
     {
         public TianziZhuoyue() : base(6, CardType.Power, CardRarity.Rare, TargetType.Self) { }
 
@@ -24,7 +26,7 @@ namespace Miyabists2.Scripts.Cards
             await PowerCmd.Apply<TianzizyPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
         }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips => 
         [
             HoverTipFactory.FromCard<ShuangYue>(),
             HoverTipFactory.FromCard<ShuangYueSp>()

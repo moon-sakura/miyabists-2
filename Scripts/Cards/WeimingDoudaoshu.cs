@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -12,7 +13,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class WeimingDoudaoshu : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class WeimingDoudaoshu : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/weimingDoudaoshu.png";
 
@@ -27,7 +29,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar("Daze", 25)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromCard<HuaCi>(),
             HoverTipFactory.FromPower<BreakPlayerPower>(),

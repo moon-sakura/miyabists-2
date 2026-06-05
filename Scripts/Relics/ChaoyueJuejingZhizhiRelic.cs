@@ -1,6 +1,6 @@
 
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -22,15 +22,15 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Relics
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class ChaoyueJuejingZhizhiRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class ChaoyueJuejingZhizhiRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Common;
         public override string PackedIconPath => "res://images/relics/chaoyueJuejing.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
             // HoverTipFactory.FromCard<MyCard>(),
         ];
 

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -14,7 +15,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class HuaXinFeng : MiyabiAttackCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class HuaXinFeng : MiyabiAttackCardBase
     {
         protected override string ArtPath => $"res://images/cards/huaXinfeng.png";
 

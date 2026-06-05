@@ -94,7 +94,9 @@ public partial class MiyabiSkinPanel : Control
 
     public override void _Ready()
     {
+        GD.Print("[MiyabiSkinPanel] _Ready 调用，开始构建 UI...");
         BuildUI();
+        GD.Print("[MiyabiSkinPanel] UI 构建完成");
     }
 
     // ===== UI 构建 =====

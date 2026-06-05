@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
@@ -21,7 +22,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class Princess : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class Princess : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/princess.png";
 

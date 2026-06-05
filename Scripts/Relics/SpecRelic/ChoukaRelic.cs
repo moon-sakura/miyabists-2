@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Audio.Debug;
 using MegaCrit.Sts2.Core.CardSelection;
@@ -51,8 +51,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Relics.SpecRelic
 {
-    [Pool(typeof(MiyabiRelicPool))]
-    internal class ChoukaRelic : CustomRelicModel
+    [RegisterRelic(typeof(MiyabiRelicPool))]
+    internal class ChoukaRelic : ModRelicTemplate
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
         public override string PackedIconPath => "res://images/relics/choukaRelic.png";
@@ -829,7 +829,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
     }
 
 
-    public class ChoukaRestSiteOption : CustomRestSiteOption
+    public class ChoukaRestSiteOption : ModRestSiteOptionTemplate
     {
         public static int Cost => 60;
 

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -21,7 +22,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class PrincessYachiyo : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class PrincessYachiyo : MiyabiCardBase
     {
         protected override string ArtPath => "res://images/cards/princessYachiyo.png";
 

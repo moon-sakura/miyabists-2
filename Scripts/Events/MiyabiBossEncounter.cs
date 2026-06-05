@@ -1,7 +1,8 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts.Enemies;
+using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +11,14 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Events
 {
-    internal class MiyabiBossEncounter : CustomEncounterModel
+    internal class MiyabiBossEncounter : ModEncounterTemplate
     {
         // 所有可能出现的怪物
         public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<MiyabiBoss>()];
 
-        // 这个遭遇在那些层级出现
         public override bool IsValidForAct(ActModel act) => act.ActNumber() == 3;
 
-        // 这个遭遇是否是弱怪池
-        //public override bool IsWeak => false;
-
-        public MiyabiBossEncounter() : base(MegaCrit.Sts2.Core.Rooms.RoomType.Elite) // 这个遭遇的房间类型，这里是普通怪物
-        {
-        }
+        public override RoomType RoomType => RoomType.Elite; // 这个遭遇的房间类型，这里是普通怪物
 
         // 不要忘了这里的model需要调用ToMutable()，表示不是标准值而是战斗中的可变数据
         protected override IReadOnlyList<(MonsterModel, string?)> GenerateMonsters() => [

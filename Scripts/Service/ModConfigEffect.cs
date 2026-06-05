@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
+using STS2RitsuLib.Interop.AutoRegistration;
+
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts.Service
     //{
 
     //}
-    internal class ModConfigEffect : CustomPowerModel
+    internal class ModConfigEffect : ModPowerTemplate
     {
         public override PowerType Type => PowerType.None;
         public override PowerStackType StackType => PowerStackType.Single;
@@ -105,7 +105,7 @@ namespace Miyabists2.Scripts.Service
         }
     }
 
-    internal class ModConfigEnemyEffect : CustomPowerModel
+    internal class ModConfigEnemyEffect : ModPowerTemplate
     {
         public override PowerType Type => PowerType.None;
         public override PowerStackType StackType => PowerStackType.Single;

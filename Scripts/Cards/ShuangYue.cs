@@ -1,4 +1,5 @@
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -26,7 +27,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Miyabists2.Scripts.Cards
 {
-    //[Pool(typeof(StatusCardPool))]
+    [RegisterCard(typeof(MiyabiCardPool))]
+    //[RegisterCard(typeof(StatusCardPool))]
     internal class ShuangYue:MiyabiAttackCardBase
     {
         public override string PortraitPath => $"res://images/cards/shuangYue.png";
@@ -42,7 +44,7 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Retain
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<FrostFallPower>(),
             HoverTipFactory.FromPower<DazePower>(),

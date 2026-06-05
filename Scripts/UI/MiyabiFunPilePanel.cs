@@ -52,7 +52,9 @@ public partial class MiyabiFunPilePanel : Control
 
     public override void _Ready()
     {
+        GD.Print("[MiyabiFunPilePanel] _Ready 调用，开始构建 UI...");
         BuildUI();
+        GD.Print("[MiyabiFunPilePanel] UI 构建完成");
     }
 
     // ===== UI 构建 =====

@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -16,7 +17,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class TianmiJingxia : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class TianmiJingxia : MiyabiPartnerCardBase
     {
         protected override string ArtPath => $"res://images/cards/tianmiJingxia.png";
         public TianmiJingxia() : base(1, CardRarity.Common, TargetType.Self, CardType.Power) { }
@@ -26,7 +28,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName,1),
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
             HoverTipFactory.FromPower<AnomalyBuildupPower>(),

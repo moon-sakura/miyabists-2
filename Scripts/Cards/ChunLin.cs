@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -18,7 +19,8 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ChunLin : MiyabiAttackCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ChunLin : MiyabiAttackCardBase
     {
         protected override string ArtPath => $"res://images/cards/chunLin.png";
 
@@ -29,7 +31,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(DazeVarName, 4)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromKeyword(MiyabiKeywords.Friends),
             HoverTipFactory.FromPower<DazePower>(),

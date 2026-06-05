@@ -1,17 +1,17 @@
 {
-	"LIESHUANG.description": "给予敌人伤害值数量的[gold]烈霜积蓄值[/gold]",
-    "LIESHUANG.title": "烈霜",
+	"MIYABISTS2_KEYWORD_LIE_SHUANG.description": "给予敌人伤害值数量的[gold]烈霜积蓄值[/gold]",
+    "MIYABISTS2_KEYWORD_LIESHUANG.title": "烈霜",
 
-	"EXHUASTX.description": "使用X次后消耗。",
-    "EXHUASTX.title": "消耗X",
+	"MIYABISTS2_KEYWORD_EXHUAST_X.description": "使用X次后消耗。",
+    "MIYABISTS2_KEYWORD_EXHUAST_X.title": "消耗X",
 
-	"FRIENDS.description": "不要小看我们的羁绊啊，kora",
-    "FRIENDS.title": "伙伴",
+	"MIYABISTS2_KEYWORD_FRIENDS.description": "不要小看我们的羁绊啊，kora",
+    "MIYABISTS2_KEYWORD_FRIENDS.title": "伙伴",
 
-	"OTHERWORLDFRIENDS.description" : "来自异界的祝福",
-	"OTHERWORLDFRIENDS.title": "异界伙伴",
+	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.description": "来自异界的祝福",
+	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.title": "异界伙伴",
 
-	"ENDSKILL.description": "很强很强的技能",
-    "ENDSKILL.title": "终结技"
+	"MIYABISTS2_KEYWORD_END_SKILL.description": "很强很强的技能",
+    "MIYABISTS2_KEYWORD_END_SKILL.title": "终结技"
 
 }

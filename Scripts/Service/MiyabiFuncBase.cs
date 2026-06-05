@@ -1,4 +1,3 @@
-using BaseLib.Abstracts;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -12,6 +11,7 @@ using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Acts;
 using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -22,6 +22,7 @@ using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System.Drawing;
 
 namespace Miyabists2.Scripts.Service
@@ -60,4 +61,28 @@ namespace Miyabists2.Scripts.Service
         //通用PlayerChoiceContext
         //public static PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner, Owner.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
     }
+
+    //public static class ActModelExtensions
+    //{
+    //    public static int ActNumber(this ActModel actModel)
+    //    {
+    //        if (!(actModel is Overgrowth) && !(actModel is Underdocks))
+    //        {
+    //            if (!(actModel is Hive))
+    //            {
+    //                if (!(actModel is Glory))
+    //                {
+    //                    GD.Print("[MiyabiMod] ActNumber Unknown act type,setting to -1");
+    //                    return -1;
+    //                }
+
+    //                return 3;
+    //            }
+
+    //            return 2;
+    //        }
+
+    //        return 1;
+    //    }
+    //}
 }

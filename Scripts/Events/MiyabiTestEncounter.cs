@@ -1,5 +1,5 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
+using STS2RitsuLib.Interop.AutoRegistration;
+using Miyabists2.Scripts.Service;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Enemies;
 using System;
@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Rooms;
 
 namespace Miyabists2.Scripts.Events
 {
-    internal class MiyabiTestEncounter : CustomEncounterModel
+    internal class MiyabiTestEncounter : ModEncounterTemplate
     {
         // 所有可能出现的怪物
         public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<MiyabiGhostEnemy>()];
@@ -21,7 +22,9 @@ namespace Miyabists2.Scripts.Events
         // 这个遭遇是否是弱怪池
         //public override bool IsWeak => false;
 
-        public MiyabiTestEncounter() : base(MegaCrit.Sts2.Core.Rooms.RoomType.Elite) // 这个遭遇的房间类型，这里是普通怪物
+        public override RoomType RoomType => RoomType.Elite;
+
+        public MiyabiTestEncounter() : base() // 这个遭遇的房间类型，这里是普通怪物
         {
         }
 

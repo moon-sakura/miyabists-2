@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -11,7 +12,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class JunLie : MiyabiCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class JunLie : MiyabiCardBase
     {
 
         public override string PortraitPath => $"res://images/cards/junLie.png";

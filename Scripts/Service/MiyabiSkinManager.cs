@@ -1,4 +1,4 @@
-using BaseLib.Extensions;
+using STS2RitsuLib;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Localization;
@@ -144,7 +144,7 @@ namespace Miyabists2.Scripts.Service
 
             GD.Print($"[MiyabiEarlyInject] 🎬 LocManager 已读取完本地本地化文件。当前语言: {language}");
 
-            // 2. 抢在 BaseLib 之前，从刚读好的 tables 字典里把 "settings_ui" 表捞出来
+            // 2. 抢在 STS2RitsuLib 之前，从刚读好的 tables 字典里把 "settings_ui" 表捞出来
             if (tables != null && tables.TryGetValue("settings_ui", out LocTable settingsUiTable))
             {
                 try
@@ -159,7 +159,7 @@ namespace Miyabists2.Scripts.Service
                     if (mergeMethod != null)
                     {
                         mergeMethod.Invoke(settingsUiTable, new object[] { earlyData });
-                        GD.Print($"[MiyabiEarlyInject] 💥 成功抢占 settings_ui 表！提前注入了 {earlyData.Count} 个 Key。BaseLib 将无法覆盖它们。");
+                        GD.Print($"[MiyabiEarlyInject] 💥 成功抢占 settings_ui 表！提前注入了 {earlyData.Count} 个 Key。STS2RitsuLib 将无法覆盖它们。");
                     }
                     else
                     {

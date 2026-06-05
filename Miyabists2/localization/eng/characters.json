@@ -1,32 +1,32 @@
 {
   // Inner monologue during the Aroma event
-  "MIYABISTS2-MIYABI.aromaPrinciple": "[sine][blue]...Training...[/blue][/sine]",
+  "MIYABISTS2_CHARACTER_MIYABI.aromaPrinciple": "[sine][blue]...Training...[/blue][/sine]",
   // Multiplayer: end-of-turn banter while alive
-  "MIYABISTS2-MIYABI.banter.alive.endTurnPing": "Requesting rally",
+  "MIYABISTS2_CHARACTER_MIYABI.banter.alive.endTurnPing": "Requesting rally",
   // Multiplayer: end-of-turn banter while dead
-  "MIYABISTS2-MIYABI.banter.dead.endTurnPing": "Can't fall yet...",
+  "MIYABISTS2_CHARACTER_MIYABI.banter.dead.endTurnPing": "Can't fall yet...",
   // Custom mode text
-  "MIYABISTS2-MIYABI.cardsModifierDescription": "Cards of Hoshimi Miyabi and her companions now appear in rewards and shops.",
+  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierDescription": "Cards of Hoshimi Miyabi and her companions now appear in rewards and shops.",
   // Card pool name
-  "MIYABISTS2-MIYABI.cardsModifierTitle": "Hoshimi Miyabi & Friends",
+  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierTitle": "Hoshimi Miyabi & Friends",
   // Character select screen description
-  "MIYABISTS2-MIYABI.description": "H.A.N.D. Section 6, Hoshimi Miyabi, ready for duty.",
+  "MIYABISTS2_CHARACTER_MIYABI.description": "H.A.N.D. Section 6, Hoshimi Miyabi, ready for duty.",
   // Death prevention event dialogue
-  "MIYABISTS2-MIYABI.eventDeathPrevention": "Is this... where it ends?",
+  "MIYABISTS2_CHARACTER_MIYABI.eventDeathPrevention": "Is this... where it ends?",
   // Gold monologue during the Sunken Vault event
-  "MIYABISTS2-MIYABI.goldMonologue": "[sine]These coins... can they sharpen my blade?[/sine]",
+  "MIYABISTS2_CHARACTER_MIYABI.goldMonologue": "[sine]These coins... can they sharpen my blade?[/sine]",
   // Possessive adjective, used in dynamic text
-  "MIYABISTS2-MIYABI.possessiveAdjective": "Miyabi's",
+  "MIYABISTS2_CHARACTER_MIYABI.possessiveAdjective": "Miyabi's",
   // Object pronoun
-  "MIYABISTS2-MIYABI.pronounObject": "Miyabi",
+  "MIYABISTS2_CHARACTER_MIYABI.pronounObject": "Miyabi",
   // Possessive pronoun
-  "MIYABISTS2-MIYABI.pronounPossessive": "Miyabi's",
+  "MIYABISTS2_CHARACTER_MIYABI.pronounPossessive": "Miyabi's",
   // Subject pronoun
-  "MIYABISTS2-MIYABI.pronounSubject": "Miyabi",
+  "MIYABISTS2_CHARACTER_MIYABI.pronounSubject": "Miyabi",
   // Character name (title)
-  "MIYABISTS2-MIYABI.title": "Hoshimi Miyabi",
+  "MIYABISTS2_CHARACTER_MIYABI.title": "Hoshimi Miyabi",
   // Character name (object form)
-  "MIYABISTS2-MIYABI.titleObject": "Miyabi",
+  "MIYABISTS2_CHARACTER_MIYABI.titleObject": "Miyabi",
   // Unlock condition text, {Prerequisite} will be replaced
-  "MIYABISTS2-MIYABI.unlockText": "Play a game with the [pink]{Prerequisite}[/pink] to unlock this character."
+  "MIYABISTS2_CHARACTER_MIYABI.unlockText": "Play a game with the [pink]{Prerequisite}[/pink] to unlock this character."
 }

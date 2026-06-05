@@ -1,7 +1,8 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts.Enemies;
+using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Events
 {
-    internal class YixuanTestEncounter : CustomEncounterModel
+    internal class YixuanTestEncounter : ModEncounterTemplate
     {
         // 所有可能出现的怪物
         public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<YixuanEnemy>()];
@@ -21,7 +22,9 @@ namespace Miyabists2.Scripts.Events
         // 这个遭遇是否是弱怪池
         //public override bool IsWeak => false;
 
-        public YixuanTestEncounter() : base(MegaCrit.Sts2.Core.Rooms.RoomType.Elite) // 这个遭遇的房间类型，这里是普通怪物
+        public override RoomType RoomType => RoomType.Elite;
+
+        public YixuanTestEncounter() : base() // 这个遭遇的房间类型，这里是普通怪物
         {
         }
 

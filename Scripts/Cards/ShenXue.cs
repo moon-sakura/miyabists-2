@@ -1,6 +1,6 @@
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using BaseLib.Utils;
+using STS2RitsuLib.Interop.AutoRegistration;
+
+using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -15,7 +15,8 @@ using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class ShenXue : MiyabiAttackCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class ShenXue : MiyabiAttackCardBase
     {
         protected override string ArtPath => $"res://images/cards/shenXue.png";
 
@@ -26,7 +27,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(DazeVarName, 2)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<FrostFallPower>(),
             HoverTipFactory.FromPower<DazePower>(),

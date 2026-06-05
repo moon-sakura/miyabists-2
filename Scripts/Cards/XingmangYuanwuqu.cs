@@ -1,3 +1,4 @@
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -14,7 +15,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    internal class XingmangYuanwuqu : MiyabiPartnerCardBase
+    [RegisterCard(typeof(MiyabiCardPool))]
+        internal class XingmangYuanwuqu : MiyabiPartnerCardBase
     {
         public XingmangYuanwuqu() : base(3, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
 
@@ -26,7 +28,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(AnomalyBuildupVarName,5)
         ];
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<AnomalyBuildupPower>(),
             HoverTipFactory.FromPower<AttributeAnomalyPower>(),

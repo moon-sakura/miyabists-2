@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -11,8 +11,9 @@ using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
+    [RegisterCard(typeof(MiyabiCardPool))]
     /// <summary>
-    /// 雅组通用防御基类：处理 护甲 + 招架 (Parry) + 滑步 (Slippery) 逻辑
+    /// 雅组通用防御基类：处�?护甲 + 招架 (Parry) + 滑步 (Slippery) 逻辑
     /// </summary>
     internal abstract class MiyabiBlockCardBase : MiyabiCardBase
     {
@@ -38,8 +39,7 @@ namespace Miyabists2.Scripts.Cards
             // 3. 施加滑步 (SlipperyPower)
             if (base.DynamicVars.TryGetValue(SlipperyVarName, out var slipVar) && slipVar.BaseValue > 0)
             {
-                // 注意：这里修正了你原代码中 Slippery 误写成 ParryPower 的问题
-                await PowerCmd.Apply<SlipperyPower>(choiceContext,base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
+                // 注意：这里修正了你原代码�?Slippery 误写�?ParryPower 的问�?                await PowerCmd.Apply<SlipperyPower>(choiceContext,base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
             }
         }
     }
