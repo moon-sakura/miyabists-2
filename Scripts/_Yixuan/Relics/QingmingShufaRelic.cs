@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using Miyabists2.Scripts._Yixuan.Powers;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
@@ -31,7 +32,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromCard<MingCanXue>(),
-            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromPower<ShannengPower>(),
             HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill)
         ];
 
@@ -189,7 +190,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             if (base.Owner.Creature.CombatState.RoundNumber == 1)
             {
                 Flash();
-                await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 4, null, null);
+                await PowerCmd.Apply<ShannengPower>(choiceContext, base.Owner.Creature, 151, null, null);
             }
         }
     }

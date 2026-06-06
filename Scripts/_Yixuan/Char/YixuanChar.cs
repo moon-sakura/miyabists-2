@@ -1,9 +1,10 @@
-global using STS2RitsuLib.Interop.AutoRegistration;
-global using STS2RitsuLib.Scaffolding.Content;
-global using STS2RitsuLib.Keywords;
-global using STS2RitsuLib;
 global using BaseLib.Extensions;
-using Godot;
+global using Miyabists2.Scripts._Yixuan.Cards;
+global using STS2RitsuLib;
+global using STS2RitsuLib.Interop.AutoRegistration;
+global using STS2RitsuLib.Keywords;
+global using STS2RitsuLib.Scaffolding.Content;
+global using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
@@ -12,9 +13,9 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
-using Miyabists2.Scripts._Yixuan.Relics;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
+using Miyabists2.Scripts._Yixuan.Powers;
 
 namespace Miyabists2.Scripts.Char;
 
@@ -102,9 +103,8 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     /// TODO: 替换为Yixuan专属卡牌
     /// </summary>
     protected override IEnumerable<StartingDeckEntry> StartingDeckEntries => [
-        // TODO: 添加Yixuan初始卡牌
-        // new(typeof(YixuanAttack), 5),
-        // new(typeof(YixuanSkill), 2),
+        new(typeof(YixuanBlock), 3),
+        new(typeof(XiaoyunJin), 4),
         // new(typeof(YixuanBlock), 2),
         // new(typeof(YixuanSpecial), 1),
     ];

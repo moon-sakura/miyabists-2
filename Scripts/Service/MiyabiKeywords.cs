@@ -4,6 +4,8 @@ using STS2RitsuLib.Content;
 using System.Xml;
 
 [RegisterOwnedCardKeyword(nameof(LieShuang), IconPath = null, CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.None)]
+[RegisterOwnedCardKeyword(nameof(Xuanmo), IconPath = null, CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.None)]
+[RegisterOwnedCardKeyword(nameof(Mingpo), IconPath = null, CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.None)]
 [RegisterOwnedCardKeyword(nameof(ExhaustX), IconPath = null, CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.None)]
 [RegisterOwnedCardKeyword(nameof(Friends), IconPath = null, CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
 [RegisterOwnedCardKeyword(nameof(OtherWorldFriends), IconPath = null, CardDescriptionPlacement = ModKeywordCardDescriptionPlacement.BeforeCardDescription)]
@@ -13,6 +15,10 @@ public class MiyabiKeywords
     // 放在原版卡牌描述的位置，这里是卡牌描述的前面
     //[KeywordProperties(AutoKeywordPosition.Before)]
     public static readonly CardKeyword LieShuang = ModContentRegistry.GetQualifiedKeywordId(Entry.ModId, nameof(LieShuang)).GetModCardKeyword();
+
+    public static readonly CardKeyword Xuanmo = ModContentRegistry.GetQualifiedKeywordId(Entry.ModId, nameof(Xuanmo)).GetModCardKeyword();
+
+    public static readonly CardKeyword Mingpo = ModContentRegistry.GetQualifiedKeywordId(Entry.ModId, nameof(Mingpo)).GetModCardKeyword();
 
     public static readonly CardKeyword ExhaustX = ModContentRegistry.GetQualifiedKeywordId(Entry.ModId, nameof(ExhaustX)).GetModCardKeyword();
 

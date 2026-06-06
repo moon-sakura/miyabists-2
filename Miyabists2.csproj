@@ -68,7 +68,6 @@
 	  <Folder Include="Miyabists2\localization\zhs\" />
 	  <Folder Include="Scripts\_Guang\Relics\" />
 	  <Folder Include="Scripts\_Yixuan\Char\" />
-	  <Folder Include="Scripts\_Yixuan\Relics\" />
 	</ItemGroup>
 
 	<Target Name="Copy Mod" AfterTargets="PostBuildEvent">

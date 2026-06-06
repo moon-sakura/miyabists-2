@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts;
 public class Entry
 {
     public const string ModId = "Miyabists2";
-    public static readonly Logger Logger = RitsuLibFramework.CreateLogger(ModId);
+    public static readonly MegaCrit.Sts2.Core.Logging.Logger Logger = RitsuLibFramework.CreateLogger(ModId);
     // 初始化函数
     public static void Init()
     {

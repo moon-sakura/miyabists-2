@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Yixuan.Cards
 {
-    public abstract class YixuanCardBase : MiyabiCardBase
+    public abstract class YixuanBlockCardBase : MiyabiCardBase
     {
-        protected YixuanCardBase(int baseCost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = true)
+        public YixuanBlockCardBase(int baseCost, CardRarity rarity, TargetType target, CardType type = CardType.Skill, bool showInCardLibrary = true)
             : base(baseCost, type, rarity, target, showInCardLibrary)
         {
         }
+
+        //public override string PortraitPath => $"res://images/cards/fengHua.png";
     }
 }

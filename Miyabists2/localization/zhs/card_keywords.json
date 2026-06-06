@@ -2,6 +2,12 @@
 	"MIYABISTS2_KEYWORD_LIE_SHUANG.description": "给予敌人伤害值数量的[gold]烈霜积蓄值[/gold]",
     "MIYABISTS2_KEYWORD_LIE_SHUANG.title": "烈霜",
 
+	"MIYABISTS2_KEYWORD_XUANMO.description": "贯穿伤害类型，造成[gold]不可抵挡[/gold]的伤害。使用后会恢复闪能。",
+    "MIYABISTS2_KEYWORD_XUANMO.title": "玄墨",
+
+	"MIYABISTS2_KEYWORD_MINGPO.description": "贯穿伤害类型，造成[gold]不可抵挡[/gold]的伤害。",
+    "MIYABISTS2_KEYWORD_MINGPO.title": "命破",
+
 	"MIYABISTS2_KEYWORD_EXHAUST_X.description": "使用X次后消耗。",
     "MIYABISTS2_KEYWORD_EXHAUST_X.title": "消耗X",
 
