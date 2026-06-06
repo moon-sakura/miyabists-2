@@ -1,5 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
-using STS2RitsuLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Audio.Debug;
 using MegaCrit.Sts2.Core.CardSelection;
@@ -42,6 +40,9 @@ using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Enchantment;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Combat.Ui.ExtraCornerAmountLabels;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -52,7 +53,7 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Relics.SpecRelic
 {
     [RegisterRelic(typeof(MiyabiRelicPool))]
-    internal class ChoukaRelic : ModRelicTemplate
+    internal class ChoukaRelic : ModRelicTemplate, IRelicExtraIconAmountLabelSpecsProvider
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
         public override string PackedIconPath => "res://images/relics/choukaRelic.png";
@@ -64,6 +65,19 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         // 显示在遗物图标上的数字
         public override bool ShowCounter => true;
         public override int DisplayAmount => Counter;
+
+        public IReadOnlyList<ExtraIconAmountLabelSpec> GetRelicExtraIconAmountLabelSpecs()
+        {
+            return
+            [
+                ExtraIconAmountLabelSpec.RichText(
+                ExtraIconAmountLabelCorner.TopRight,
+                "[color=gold]"+CinimaCounter.ToString()+"[/color]"),
+                ExtraIconAmountLabelSpec.RichText(
+                ExtraIconAmountLabelCorner.BottomLeft,
+                "[color=blue]"+FreeCounter.ToString()+"[/color]"),
+        ];
+        }
 
         [SavedProperty]
         public int Counter
@@ -96,6 +110,19 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
+        private int _cinimaCounter = 0;
+
+        [SavedProperty]
+        public int CinimaCounter
+        {
+            get => _cinimaCounter;
+            private set
+            {
+                AssertMutable();
+                _cinimaCounter = value;
+            }
+        }
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("CINIMA",0),
             new DynamicVar("Uppercount", 25m),
@@ -112,35 +139,37 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         {
             if (player != base.Owner) { return; }
 
+            DynamicVars["CINIMA"].BaseValue = CinimaCounter;
+
             if (base.Owner.Creature.CombatState.RoundNumber == 1)
             {
                 Flash();
-                if (DynamicVars["CINIMA"].BaseValue >= 1)
+                if (CinimaCounter >= 1)
                 {
                     await PowerCmd.Apply<XsjsPower>(choiceContext, base.Owner.Creature, 2m, null, null);
                 }
 
-                if (DynamicVars["CINIMA"].BaseValue >= 2)
+                if (CinimaCounter >= 2)
                 {
                     await PowerCmd.Apply<TunafaPower>(choiceContext, base.Owner.Creature, 3m, null, null);
                 }
 
-                if (DynamicVars["CINIMA"].BaseValue >= 3)
+                if (CinimaCounter >= 3)
                 {
                     await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 4m, null, null);
                 }
 
-                if (DynamicVars["CINIMA"].BaseValue >= 4)
+                if (CinimaCounter >= 4)
                 {
                     await PowerCmd.Apply<JunLiePower>(choiceContext, base.Owner.Creature, 2m, null, null);
                 }
 
-                if (DynamicVars["CINIMA"].BaseValue >= 5)
+                if (CinimaCounter >= 5)
                 {
                     await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 6m, null, null);
                 }
 
-                if (DynamicVars["CINIMA"].BaseValue >= 6)
+                if (CinimaCounter >= 6)
                 {
                     await PowerCmd.Apply<TianzizyPower>(choiceContext, base.Owner.Creature, 2m, null, null);
                 }
@@ -195,7 +224,6 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             return true;
         }
 
-        private bool _hasDone = false;
         private bool _isBusy = false;
         private int _lastCinima = 0;
         private int _lastRare = 0;
@@ -233,6 +261,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             {
                 try
                 {
+                    bool _hasDone = false;
                     _isBusy = true;
 
                     Flash();
@@ -249,21 +278,28 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
                     if (Counter - LastCinima >= 80)
                     {
-                        if (DynamicVars["CINIMA"].BaseValue < 6)
-                            DynamicVars["CINIMA"].BaseValue += 1;
+                        if (CinimaCounter < 6)
+                        {
+                            CinimaCounter += 1;
+                            DynamicVars["CINIMA"].BaseValue = CinimaCounter;
+                        }
                         else
+                        {
                             await AncientRewards();
+                        }
 
+                        LastRare = Counter;
                         LastCinima = Counter;
                         _hasDone = true;
                     }
 
                     int result = MiyabiFuncBase.RadomInt(0, 100, Owner);
-                    if (DynamicVars["CINIMA"].BaseValue < 6 && !_hasDone)
+                    if (CinimaCounter < 6 && !_hasDone)
                     {
                         if (result <= 1)
                         {
-                            DynamicVars["CINIMA"].BaseValue += 1;
+                            CinimaCounter++;
+                            DynamicVars["CINIMA"].BaseValue = CinimaCounter;
                             LastCinima = Counter;
                             LastRare = Counter;
                             _hasDone = true;
@@ -292,8 +328,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                         _hasDone = true;
                     }
 
-                    _hasDone = false;
-
+                    //_hasDone = false;
                 }
                 finally
                 {

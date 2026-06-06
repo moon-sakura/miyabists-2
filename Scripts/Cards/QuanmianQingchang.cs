@@ -27,6 +27,8 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName, 2)
         ];
 
+        protected override bool ShouldGlowGoldInternal => false;
+
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),

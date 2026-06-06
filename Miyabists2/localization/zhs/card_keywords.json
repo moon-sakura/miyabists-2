@@ -1,9 +1,9 @@
 {
 	"MIYABISTS2_KEYWORD_LIE_SHUANG.description": "给予敌人伤害值数量的[gold]烈霜积蓄值[/gold]",
-    "MIYABISTS2_KEYWORD_LIESHUANG.title": "烈霜",
+    "MIYABISTS2_KEYWORD_LIE_SHUANG.title": "烈霜",
 
-	"MIYABISTS2_KEYWORD_EXHUAST_X.description": "使用X次后消耗。",
-    "MIYABISTS2_KEYWORD_EXHUAST_X.title": "消耗X",
+	"MIYABISTS2_KEYWORD_EXHAUST_X.description": "使用X次后消耗。",
+    "MIYABISTS2_KEYWORD_EXHAUST_X.title": "消耗X",
 
 	"MIYABISTS2_KEYWORD_FRIENDS.description": "不要小看我们的羁绊啊，kora",
     "MIYABISTS2_KEYWORD_FRIENDS.title": "伙伴",

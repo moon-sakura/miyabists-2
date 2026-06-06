@@ -26,6 +26,8 @@ namespace Miyabists2.Scripts.Cards
 
         //protected const bool isDirectAno = false;
 
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<SupportPointPower>() >= DynamicVars[SupportVarName].IntValue;
+
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];
 
