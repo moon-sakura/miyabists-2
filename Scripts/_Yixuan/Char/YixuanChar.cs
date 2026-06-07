@@ -1,10 +1,10 @@
 global using BaseLib.Extensions;
+global using Godot;
 global using Miyabists2.Scripts._Yixuan.Cards;
 global using STS2RitsuLib;
 global using STS2RitsuLib.Interop.AutoRegistration;
 global using STS2RitsuLib.Keywords;
 global using STS2RitsuLib.Scaffolding.Content;
-global using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
@@ -13,13 +13,14 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
+using Miyabists2.Scripts._Yixuan.Powers;
+using Miyabists2.Scripts._Yixuan.Relics;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
-using Miyabists2.Scripts._Yixuan.Powers;
 
 namespace Miyabists2.Scripts.Char;
 
-[RegisterCharacter]
+//[RegisterCharacter]
 class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotionPool>
 {
     public const string CharacterId = "Yixuan";

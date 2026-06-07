@@ -18,7 +18,7 @@ using STS2RitsuLib.Scaffolding.Godot;
 
 namespace Miyabists2.Scripts.Char;
 
-[RegisterCharacter]
+//[RegisterCharacter]
 class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPool, YeshunGuangPotionPool>
 {
     public const string CharacterId = "YeshunGuang";

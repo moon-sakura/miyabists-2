@@ -104,7 +104,7 @@ namespace Miyabists2.Scripts.Powers
                 int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
 
                 // 确保是本卡造成的实际伤害，且目标存活
-                if (result.TotalDamage > 0 && chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
+                if (result.TotalDamage > 0 && chkFB <= trigger)
                 {
                     await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, result.TotalDamage, base.Owner, null);
                 }
@@ -115,7 +115,7 @@ namespace Miyabists2.Scripts.Powers
                     //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
                     await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
                     //await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, base.Creature, null);
-                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, 10m, ValueProp.Unpowered, (Creature)null);
+                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, 10m, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
 
                     //int fireAmount = target.GetPowerAmount<FrostFirePower>();
                     //await CreatureCmd.Damage(null, target, 10m, ValueProp.Unpowered, dealer);

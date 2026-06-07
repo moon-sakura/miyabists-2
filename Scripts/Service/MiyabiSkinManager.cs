@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Nodes.RestSite;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -61,7 +62,7 @@ namespace Miyabists2.Scripts.Service
             if (Miyabi.RestSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
             {
                 Miyabi.RestSkinPaths.Add(tscnPath);
-                tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
+                tscnPath?.RegisterSceneForConversion<NRestSiteCharacter>();
 
                 int slot = Miyabi.RestSkinPaths.Count - 1;
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{slot}!");
@@ -97,7 +98,7 @@ namespace Miyabists2.Scripts.Service
         public static void PreSkinRegister()
         {
             "res://scenes/miyabi_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
-            "res://scenes/Miyabi_Rest.tscn".RegisterSceneForConversion<NCreatureVisuals>();
+            "res://scenes/Miyabi_Rest.tscn".RegisterSceneForConversion<NRestSiteCharacter>();
             "res://scenes/Miyabi_Shop.tscn".RegisterSceneForConversion<NMerchantCharacter>();
         }
 

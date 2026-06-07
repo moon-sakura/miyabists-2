@@ -36,6 +36,10 @@ namespace Miyabists2.Scripts.Cards
 
         public override bool GainsBlock => false;
 
+        protected override bool ShouldGlowRedInternal => Owner.Creature.CurrentHp <= DynamicVars.Damage.IntValue;
+
+        protected override bool ShouldGlowGoldInternal => CardPile.GetCards(Owner, PileType.Draw).Any(c => c.CanonicalKeywords.Contains(MiyabiKeywords.Friends)) && Owner.Creature.CurrentHp > DynamicVars.Damage.IntValue;
+
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             //HoverTipFactory.FromPower<MiyabiParryPower>(),

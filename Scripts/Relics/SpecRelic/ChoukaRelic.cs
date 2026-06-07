@@ -75,7 +75,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 "[color=gold]"+CinimaCounter.ToString()+"[/color]"),
                 ExtraIconAmountLabelSpec.RichText(
                 ExtraIconAmountLabelCorner.BottomLeft,
-                "[color=blue]"+FreeCounter.ToString()+"[/color]"),
+                "[color=aqua]"+FreeCounter.ToString()+"[/color]"),
         ];
         }
 
@@ -132,6 +132,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         public override Task AfterRoomEntered(AbstractRoom room)
         {
             DynamicVars["FreeCount"].BaseValue = FreeCounter;
+            DynamicVars["CINIMA"].BaseValue = CinimaCounter;
             return base.AfterRoomEntered(room);
         }
 
@@ -252,11 +253,21 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
         public async Task OnUsed()
         {
+            bool istest = false;
+
+
+            //istest = true;
+
             DynamicVars["FreeCount"].BaseValue = FreeCounter;
             if (Owner.Gold < ChoukaRestSiteOption.Cost && DynamicVars["FreeCount"].BaseValue < 1)
             {
                 return;
             }
+            if (istest)
+            {
+                return;
+            }
+
             if (!_isBusy)
             {
                 try
@@ -381,7 +392,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if (result == 2)
             {
-                List<CardModel> cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 0, 3))).ToList();
+                List<CardModel> cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 3))).ToList();
                 if (cardModel.Count > 0) 
                 {
                     foreach (var card in cardModel)
@@ -503,7 +514,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if (result == 2)
             {
-                List<CardModel> cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 0, 2))).ToList();
+                List<CardModel> cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 2))).ToList();
                 if (cardModel.Count > 0)
                 {
                     foreach (var card in cardModel)
@@ -657,7 +668,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if (result == 2)
             {
-                CardModel cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 0, 1))).FirstOrDefault();
+                CardModel cardModel = (await CardSelectCmd.FromDeckForUpgrade(base.Owner, new CardSelectorPrefs(CardSelectorPrefs.UpgradeSelectionPrompt, 1))).FirstOrDefault();
                 if (cardModel != null)
                 {
                     CardCmd.Upgrade(cardModel);
@@ -846,7 +857,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
         private async Task<bool> TryEnchantCard<T>(decimal amount = 1m) where T : EnchantmentModel
         {
-            CardModel cardModel = (await CardSelectCmd.FromDeckForEnchantment(base.Owner, ModelDb.Enchantment<T>(), 1, new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt,0, 1))).FirstOrDefault();
+            CardModel cardModel = (await CardSelectCmd.FromDeckForEnchantment(base.Owner, ModelDb.Enchantment<T>(), (int)amount, new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt,1))).FirstOrDefault();
             if (cardModel != null)
             {
                 CardCmd.Enchant<T>(cardModel, amount);
