@@ -79,7 +79,7 @@ namespace Miyabists2.Scripts.Powers
 
             damage *= percent;
 
-            await CreatureCmd.Damage(choiceContext, base.Owner, damage, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
+            await CreatureCmd.Damage(choiceContext, base.Owner, damage, ValueProp.Unpowered | ValueProp.Unblockable, (Creature)null);
         }
 
     }

@@ -234,7 +234,7 @@ namespace Miyabists2.Scripts.Service
 
             if (hasZmyc) damage *= 1.5m;
 
-            await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered & ValueProp.Unblockable, dealer);
+            await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered | ValueProp.Unblockable, dealer);
 
             await PowerCmd.Apply<DisorderPower>(choiceContext, target, 1, dealer, null);
         }

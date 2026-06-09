@@ -8,7 +8,9 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Powers;
 using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts.Patches;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using System;
@@ -42,8 +44,11 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 
-            await CreatureCmd.Damage(choiceContext, cardPlay.Target, DynamicVars.Damage, Owner.Creature);
-
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this)
+                .Unblockable()
+                .Targeting(cardPlay.Target)
+                .WithHitFx("vfx/vfx_attack_blunt")
+                .Execute(choiceContext);
         }
 
         public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
@@ -54,6 +59,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             {
                 await MiyabiCombatService.AddDaze(choiceContext, target, dazeVar, base.Owner.Creature);
             }
+
+            await PowerCmd.Apply<ShannengPower>(choiceContext, target, 1m, base.Owner.Creature, this);
         }
     }
 }

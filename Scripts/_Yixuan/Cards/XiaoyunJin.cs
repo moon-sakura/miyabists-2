@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(5, ValueProp.Unblockable & ValueProp.Move),
+            new DamageVar(5, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 3)
         ];
 

@@ -115,7 +115,7 @@ namespace Miyabists2.Scripts.Powers
                     //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
                     await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
                     //await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, base.Creature, null);
-                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, 10m, ValueProp.Unpowered & ValueProp.Unblockable, (Creature)null);
+                    await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, 10m, ValueProp.Unpowered | ValueProp.Unblockable, (Creature)null);
 
                     //int fireAmount = target.GetPowerAmount<FrostFirePower>();
                     //await CreatureCmd.Damage(null, target, 10m, ValueProp.Unpowered, dealer);

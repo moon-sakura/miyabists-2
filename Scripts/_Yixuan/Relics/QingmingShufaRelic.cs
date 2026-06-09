@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         public override RelicRarity Rarity => RelicRarity.Starter;
 
         // TODO: 替换为Yixuan专属遗物图标
-        public override string PackedIconPath => "res://images/relics/swordNotail200.png";
+        public override string PackedIconPath => "res://images/_YiXuan/char/common.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
@@ -60,7 +60,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         public void AddCounter(int amount, bool forceAdd = false)
         {
             int counter = Counter;
-            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
+            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
             if (counter < Max || forceAdd)
@@ -74,7 +74,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
             int counter = 0;
-            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
+            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
             if (cardPlay.Card.Owner == base.Owner && counter < Max)
@@ -90,7 +90,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
 
                     Flash();
 
-                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<QingmingYunying>(base.Owner.Creature.Player);
                     await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
                 }
             }
@@ -103,6 +103,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             {
                 Flash();
                 //第一回合添加能力
+                await PowerCmd.Apply<ShannengPower>(choiceContext, base.Owner.Creature, 151, null, null);
             }
         }
     }
@@ -115,16 +116,15 @@ namespace Miyabists2.Scripts._Yixuan.Relics
     internal class QingmingNiaoRelic : ModRelicTemplate, IDecibleCounter
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
-        public override string PackedIconPath => "res://images/relics/notailFull33.png";
+        public override string PackedIconPath => "res://images/_YiXuan/char/common.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
-            HoverTipFactory.FromCard<MingCanXue>(),
-            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromCard<QingmingYunying>(),
             HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill),
-            HoverTipFactory.FromPower<StrengthPower>()
+            HoverTipFactory.FromPower<ShannengPower>()
         ];
 
         public int Threshold { get; set; } = 30;
@@ -150,7 +150,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         public void AddCounter(int amount, bool forceAdd = false)
         {
             int counter = Counter;
-            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
+            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
             if (counter < Max || forceAdd)
@@ -163,7 +163,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
             int counter = 0;
-            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
+            bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
             if (cardPlay.Card.Owner == base.Owner && counter < Max)
@@ -178,7 +178,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
 
                     Flash();
 
-                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<QingmingYunying>(base.Owner.Creature.Player);
                     await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
                 }
             }

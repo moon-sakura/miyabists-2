@@ -100,6 +100,10 @@ namespace Miyabists2.Scripts.Service
             "res://scenes/miyabi_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
             "res://scenes/Miyabi_Rest.tscn".RegisterSceneForConversion<NRestSiteCharacter>();
             "res://scenes/Miyabi_Shop.tscn".RegisterSceneForConversion<NMerchantCharacter>();
+
+            "res://scenes/_Yixuan/yixuan_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
+            "res://scenes/_Yixuan/yixuan_Rest.tscn".RegisterSceneForConversion<NRestSiteCharacter>();
+            "res://scenes/_Yixuan/yixuan_Shop.tscn".RegisterSceneForConversion<NMerchantCharacter>();
         }
 
         public static void UpdateSkin(string key, int slot, string skinName)

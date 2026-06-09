@@ -78,5 +78,14 @@
 
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.title": "磁力布",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "回合开始时召唤[gold]磁力布[/gold]。",
-	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "磁力全开！"
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "磁力全开！",
+
+	// ====== 仪玄遗物 ======
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.title": "青溟术法",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "战斗开始时获得[blue]{Shanneng:diff()}[/blue]点[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "青溟鸟",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "战斗开始时获得[blue]{Shanneng:diff()}[/blue]点[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": ""
 }

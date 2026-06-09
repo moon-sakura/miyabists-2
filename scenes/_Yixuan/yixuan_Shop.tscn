@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy8cc2f7pamav"]
+
+[ext_resource type="Texture2D" uid="uid://dmcy8ui25hwv4" path="res://images/charui/yiXuan.png" id="1_ws5iw"]
+
+[node name="MiyabiRest" type="Node2D"]
+
+[node name="MiyabiChar33" type="Sprite2D" parent="."]
+position = Vector2(-14, -269)
+scale = Vector2(0.834721, 0.834721)
+texture = ExtResource("1_ws5iw")

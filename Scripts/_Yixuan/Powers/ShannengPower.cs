@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Yixuan.Powers
 {
+    //[RegisterPower]
     internal class ShannengPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
@@ -19,7 +20,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         public override int DisplayAmount => Amount - 1;
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
-        public string BigIconPath => "res://images/powers/support_point.png";
+        public string BigIconPath => "res://images/_YiXuan/powers/shanneng.png";
         public string BigBetaIconPath => BigIconPath;
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;

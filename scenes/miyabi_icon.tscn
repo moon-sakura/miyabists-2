@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://hbrk82ocyhnd" path="res://images/charui/icon.png" id="1_icjov"]
 
 [node name="miyabiIcon" type="TextureRect"]
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 56.0
-offset_bottom = 56.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 57.0
+offset_bottom = 57.0
 texture = ExtResource("1_icjov")
