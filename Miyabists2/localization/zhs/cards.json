@@ -1,4 +1,4 @@
-{
+﻿{
 	"MIYABISTS2_CARD_FENG_HUA.title": "风花",
     "MIYABISTS2_CARD_FENG_HUA.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
 
@@ -281,6 +281,12 @@
 
 
 
+	// ====== 仪玄专属卡牌 ======
+	"MIYABISTS2_CARD_XUANMO_JIZHEN.title": "玄墨极阵",
+	"MIYABISTS2_CARD_XUANMO_JIZHEN.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]1[/blue]层[gold]无实体[/gold]，回复[blue]20[/blue]点[gold]闪能[/gold]",
+
+	"MIYABISTS2_CARD_FUFA_QIANCHONG.title": "符法千重",
+	"MIYABISTS2_CARD_FUFA_QIANCHONG.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n将一张带有消耗的[gold]玄墨极阵[/gold]加入手卡，本回合免费打出",
 
 	"MIYABISTS2_CARD_XIAOYUN_JIN.title": "霄云劲",
     "MIYABISTS2_CARD_XIAOYUN_JIN.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
@@ -385,4 +391,5 @@
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "醉花月云转",
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]"
+
 }
