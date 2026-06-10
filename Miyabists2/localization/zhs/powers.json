@@ -245,12 +245,19 @@
     "YIXUAN_ENEMY_POWER.description": "",
     "YIXUAN_ENEMY_POWER.smartDescription": "所有[gold]负面效果[/gold]获得量减少[blue]{DebuffReduce:diff()}%[/blue]。每回合受击[blue]{HittedTrigger:diff()}[/blue]次后，获得[blue]{DamageReduce:diff()}%[/blue]减伤。每失去最大生命值[blue]33%[/blue]的血量或者获得等数值的[gold]中毒[/gold]或者[gold]灾厄[/gold]（[gold]中毒[/gold]或者[gold]灾厄[/gold]层数减半），并获得一层[blue]无实体[/blue]，加强效果抵抗能力，并结束所有玩家回合。",
 
+
+
 	// ====== 仪玄能力 ======
 	"SHUFA_ZHI.title": "术法值",
-	"SHUFA_ZHI.description": "",
-	"SHUFA_ZHI.smartDescription": "",
+	"SHUFA_ZHI.description": "敌人生命低于一定值时，受到双倍伤害，造成伤害降低30%",
+	"SHUFA_ZHI.smartDescription": "敌人生命低于[blue]{Amount}%[/blue]时，受到双倍伤害，造成伤害降低30%",
+
+    "SHUFA_ZONGSHI_POWER.title": "术法宗师",
+    "SHUFA_ZONGSHI_POWER.description": "每次造成玄墨伤害时，为敌人附加术法值",
+    "SHUFA_ZONGSHI_POWER.smartDescription": "每次造成玄墨伤害时，为敌人附加{Amount}层术法值",
+
 
 	"SHANNENG_POWER.title": "闪能",
-	"SHANNENG_POWER.description": "可用于发动强力技能。上限为[blue]150[/blue]点。",
-	"SHANNENG_POWER.smartDescription": "可用于发动强力技能。上限为[blue]150[/blue]点。已使用[blue]{Used:diff()}[/blue]点，使用[blue]150[/blue]点后获得一张[gold]符法千重[/gold]。"
+	"SHANNENG_POWER.description": "可用于发动额外效果。上限为[blue]150[/blue]点。",
+	"SHANNENG_POWER.smartDescription": "可用于发动额外效果。上限为[blue]150[/blue]点。已使用[blue]{Used:diff()}[/blue]点，使用[blue]150[/blue]点后获得一张[gold]符法千重[/gold]。"
 }

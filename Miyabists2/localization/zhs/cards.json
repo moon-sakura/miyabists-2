@@ -283,10 +283,10 @@
 
 	// ====== 仪玄专属卡牌 ======
 	"MIYABISTS2_CARD_XUANMO_JIZHEN.title": "玄墨极阵",
-	"MIYABISTS2_CARD_XUANMO_JIZHEN.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]1[/blue]层[gold]无实体[/gold]，回复[blue]20[/blue]点[gold]闪能[/gold]",
+	"MIYABISTS2_CARD_XUANMO_JIZHEN.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加15层[gold]术法值[/gold]\\n获得[blue]1[/blue]层[gold]无实体[/gold]，回复[blue]20[/blue]点[gold]闪能[/gold]",
 
 	"MIYABISTS2_CARD_FUFA_QIANCHONG.title": "符法千重",
-	"MIYABISTS2_CARD_FUFA_QIANCHONG.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n将一张带有消耗的[gold]玄墨极阵[/gold]加入手卡，本回合免费打出",
+	"MIYABISTS2_CARD_FUFA_QIANCHONG.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加15层[gold]术法值[/gold]\\n将一张带有消耗的[gold]玄墨极阵[/gold]加入手卡，本回合免费打出",
 
 	"MIYABISTS2_CARD_XIAOYUN_JIN.title": "霄云劲",
     "MIYABISTS2_CARD_XIAOYUN_JIN.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
@@ -298,10 +298,10 @@
     "MIYABISTS2_CARD_JINYING_JUE.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人是攻击意图，获得{Block:diff()}点格挡与1层[gold]荆棘[/gold]",
 
 	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "青溟云影",
-	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "全场{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}",
+	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "全场{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加25层[gold]术法值[/gold]",
 
     "MIYABISTS2_CARD_MOYING_NINGYUN.title": "墨影凝云",
-    "MIYABISTS2_CARD_MOYING_NINGYUN.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得{Block:diff()}点格挡",
+    "MIYABISTS2_CARD_MOYING_NINGYUN.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得{Block:diff()}点格挡\\n所有敌人施加10层[gold]术法值[/gold]",
 
     "MIYABISTS2_CARD_YINYUN_SHENFA.title": "隐云身法",
     "MIYABISTS2_CARD_YINYUN_SHENFA.description": "获得{Block:diff()}点格挡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得{VIGOR_POWER:diff()}层[gold]活力[/gold]",
@@ -311,6 +311,10 @@
 
     "MIYABISTS2_CARD_QING_XIAO_JIN.title": "清霄劲",
     "MIYABISTS2_CARD_QING_XIAO_JIN.description": "获得{Block:diff()}点格挡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得{THORNS_POWER:diff()}层[gold]荆棘[/gold]与{VIGOR_POWER:diff()}层[gold]活力[/gold]",
+
+	"MIYABISTS2_CARD_SHUFA_ZONGSHI.title": "术法宗师",
+	"MIYABISTS2_CARD_SHUFA_ZONGSHI.description": "每次造成玄墨伤害时，为敌人附加{SHUFA_ZONGSHI_AMOUNT}层[gold]术法值[/gold]",
+
 
 	// ====== 仪玄共享卡牌 ======
 	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.title": "八面威风",
