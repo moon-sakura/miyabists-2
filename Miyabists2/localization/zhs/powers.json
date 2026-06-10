@@ -249,8 +249,12 @@
 
 	// ====== 仪玄能力 ======
 	"SHUFA_ZHI.title": "术法值",
-	"SHUFA_ZHI.description": "敌人生命低于一定值时，受到双倍伤害，造成伤害降低30%",
-	"SHUFA_ZHI.smartDescription": "敌人生命低于[blue]{Amount}%[/blue]时，受到双倍伤害，造成伤害降低30%",
+	"SHUFA_ZHI.description": "敌人生命低于一定值时，受到额外伤害，造成伤害降低",
+	"SHUFA_ZHI.smartDescription": "敌人生命低于[blue]{Amount}%[/blue]时，受到2倍伤害，造成伤害降低20%。术法值超过100后消耗100层添加1层[gold]伏魔[/gold]",
+
+    "FUMO_POWER.title" : "伏魔",
+    "FUMO_POWER.description" : "受到额外伤害，造成伤害降低",
+    "FUMO_POWER.smartDescription" : "额外受到{Amount}倍伤害，造成伤害额外降低{Amount}*20%。与术法值效果为加算。",
 
     "MOHENHX_POWER.title": "术法宗师",
     "MOHENHX_POWER.description": "每次造成玄墨伤害时，为敌人附加术法值",

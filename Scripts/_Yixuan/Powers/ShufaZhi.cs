@@ -1,5 +1,8 @@
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Combat.HealthBars;
@@ -24,18 +27,40 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        {
+            if(power == this)
+            {
+                if(Amount >= 100)
+                {
+                    await PowerCmd.Apply<FumoPower>(choiceContext, Owner, 1, null, null);
+                    SetAmount(Amount - 100);
+                }
+            }
+        }
+
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
-            if(target == Owner && !props.HasFlag(ValueProp.Unpowered)
+            int fumo = Owner.GetPowerAmount<FumoPower>();
+
+            if (target == Owner && !props.HasFlag(ValueProp.Unpowered)
                 && Amount*(Owner.MaxHp/100m) >= Owner.CurrentHp)
             {
+                if (fumo > 0)
+                {
+                    return 2 + fumo;
+                }
                 return 2m;
             }
 
             if (dealer == Owner && !props.HasFlag(ValueProp.Unpowered)
                 && Amount * (Owner.MaxHp / 100m) >= Owner.CurrentHp)
             {
-                return 0.7m;
+                if (fumo > 0)
+                {
+                    return 0.8m - 0.2m * fumo > 0 ? 0.8m - 0.2m * fumo : 0.05m;
+                }
+                return 0.8m;
             }
 
             return 1m;
