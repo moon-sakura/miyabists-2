@@ -260,4 +260,8 @@
 	"SHANNENG_POWER.title": "闪能",
 	"SHANNENG_POWER.description": "可用于发动额外效果。上限为[blue]150[/blue]点。",
 	"SHANNENG_POWER.smartDescription": "可用于发动额外效果。上限为[blue]150[/blue]点。已使用[blue]{Used:diff()}[/blue]点，使用[blue]150[/blue]点后获得一张[gold]符法千重[/gold]。"
+
+	"QINGXIAO_TONGYOU_POWER.title": "清霄同游",
+	"QINGXIAO_TONGYOU_POWER.description": "每回合开始时，获得活力、荆棘和闪能。",
+	"QINGXIAO_TONGYOU_POWER.smartDescription": "每回合开始时，获得[blue]{Vigor}点[/blue][gold]活力[/gold]、[blue]{Thorns}点[/blue][gold]荆棘[/gold]，恢复[blue]{Shanneng}点[/blue][gold]闪能[/gold]。"
 }

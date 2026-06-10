@@ -48,7 +48,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, DynamicVars.Damage, this);
+            var enemy = Owner.Creature.CombatState.Enemies.TakeRandom(1, Owner.Creature.CombatState.RunState.Rng.Shuffle).FirstOrDefault();
+            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, DynamicVars.Damage, enemy);
 
             CardPile discardPile = PileType.Draw.GetPile(base.Owner);
 
