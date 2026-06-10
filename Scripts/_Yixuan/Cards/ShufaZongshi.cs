@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Yixuan.Cards
 {
     [RegisterCard(typeof(YixuanCardPool))]
-    internal class ShufaZongshi : ModCardTemplate
+    internal class ShufaZongshi : YixuanCardBase
     {
         public ShufaZongshi() : base(2, CardType.Power,CardRarity.Rare, TargetType.Self)
         {

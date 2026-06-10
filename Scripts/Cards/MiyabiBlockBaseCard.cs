@@ -13,7 +13,7 @@ namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
     /// <summary>
-    /// 雅组通用防御基类：处�?护甲 + 招架 (Parry) + 滑步 (Slippery) 逻辑
+    /// 闆呯粍閫氱敤闃插尽鍩虹被锛氬鐞?鎶ょ敳 + 鎷涙灦 (Parry) + 婊戞 (Slippery) 閫昏緫
     /// </summary>
     internal abstract class MiyabiBlockCardBase : MiyabiCardBase
     {
@@ -22,7 +22,7 @@ namespace Miyabists2.Scripts.Cards
         {
         }
 
-        // 告知系统这张卡涉及护甲，以便 UI 显示护甲图标
+        // 鍛婄煡绯荤粺杩欏紶鍗℃秹鍙婃姢鐢诧紝浠ヤ究 UI 鏄剧ず鎶ょ敳鍥炬爣
         public override bool GainsBlock => true;
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -30,16 +30,16 @@ namespace Miyabists2.Scripts.Cards
             if (GainsBlock)
                 await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, cardPlay);
 
-            // 2. 施加招架 (ParryPower)
+            // 2. 鏂藉姞鎷涙灦 (ParryPower)
             if (base.DynamicVars.TryGetValue(ParryVarName, out var parryVar) && parryVar.BaseValue > 0)
             {
                 await PowerCmd.Apply<MiyabiParryPower>(choiceContext,base.Owner.Creature, parryVar.BaseValue, base.Owner.Creature, this);
             }
 
-            // 3. 施加滑步 (SlipperyPower)
+            // 3. 鏂藉姞婊戞 (SlipperyPower)
             if (base.DynamicVars.TryGetValue(SlipperyVarName, out var slipVar) && slipVar.BaseValue > 0)
             {
-                // 注意：这里修正了你原代码�?Slippery 误写�?ParryPower 的问�?                await PowerCmd.Apply<SlipperyPower>(choiceContext,base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<SlipperyPower>(choiceContext,base.Owner.Creature, slipVar.BaseValue, base.Owner.Creature, this);
             }
         }
     }

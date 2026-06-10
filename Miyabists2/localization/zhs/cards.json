@@ -313,7 +313,7 @@
     "MIYABISTS2_CARD_QING_XIAO_JIN.description": "获得{Block:diff()}点格挡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得{THORNS_POWER:diff()}层[gold]荆棘[/gold]与{VIGOR_POWER:diff()}层[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_SHUFA_ZONGSHI.title": "术法宗师",
-	"MIYABISTS2_CARD_SHUFA_ZONGSHI.description": "每次造成玄墨伤害时，为敌人附加{SHUFA_ZONGSHI_AMOUNT}层[gold]术法值[/gold]",
+	"MIYABISTS2_CARD_SHUFA_ZONGSHI.description": "每次造成玄墨伤害时，为敌人附加{SHUFA_ZONGSHI_AMOUNT:diff()}层[gold]术法值[/gold]",
 
 
 	// ====== 仪玄共享卡牌 ======
@@ -373,7 +373,7 @@
 	"MIYABISTS2_CARD_QUANMIAN_QINGCHANG_YIXUAN.description": "获得{Block:diff()}点格挡，获得{SUPPORT_POINT_POWER:diff()}点[gold]支援点数[/gold]",
 
 	"MIYABISTS2_CARD_QUICK_PARRY_YIXUAN.title": "快速招架",
-	"MIYABISTS2_CARD_QUICK_PARRY_YIXUAN.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n获得[blue]1[/blue]点[gold]支援点数[/gold]，将抽牌堆中随机一张[gold]伙伴[/gold]卡加入手卡",
+	"MIYABISTS2_CARD_QUICK_PARRY_YIXUAN.description": "获得{Block:diff()}点格挡\\n获得2层[gold]活力[/gold]\\n获得[blue]1[/blue]点[gold]支援点数[/gold]，将抽牌堆中随机一张[gold]伙伴[/gold]卡加入手卡",
 
 	"MIYABISTS2_CARD_QUICK_SUPPORT_YIXUAN.title": "快速支援",
 	"MIYABISTS2_CARD_QUICK_SUPPORT_YIXUAN.description": "对自己造成{Damage:diff()}点伤害，随机使用抽卡堆中一张伙伴卡",
