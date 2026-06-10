@@ -300,6 +300,18 @@
 	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "青溟云影",
 	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "全场{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}",
 
+    "MIYABISTS2_CARD_MOYING_NINGYUN.title": "墨影凝云",
+    "MIYABISTS2_CARD_MOYING_NINGYUN.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得{Block:diff()}点格挡",
+
+    "MIYABISTS2_CARD_YINYUN_SHENFA.title": "隐云身法",
+    "MIYABISTS2_CARD_YINYUN_SHENFA.description": "获得{Block:diff()}点格挡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得{VIGOR_POWER:diff()}层[gold]活力[/gold]",
+
+    "MIYABISTS2_CARD_LINGYUN_PO.title": "凌云破",
+    "MIYABISTS2_CARD_LINGYUN_PO.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得{VIGOR_POWER:diff()}层[gold]活力[/gold]",
+
+    "MIYABISTS2_CARD_QING_XIAO_JIN.title": "清霄劲",
+    "MIYABISTS2_CARD_QING_XIAO_JIN.description": "获得{Block:diff()}点格挡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得{THORNS_POWER:diff()}层[gold]荆棘[/gold]与{VIGOR_POWER:diff()}层[gold]活力[/gold]",
+
 	// ====== 仪玄共享卡牌 ======
 	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.title": "八面威风",
 	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.description": "每次使用[gold]终结技[/gold]后获得[blue]5[/blue]点[gold]喧嚣值[/gold]，使用[gold]伙伴[/gold]卡后获得[blue]2[/blue]点[gold]喧嚣值[/gold]",

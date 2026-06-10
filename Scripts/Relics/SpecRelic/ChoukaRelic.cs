@@ -142,7 +142,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             DynamicVars["CINIMA"].BaseValue = CinimaCounter;
 
-            if (base.Owner.Creature.CombatState.RoundNumber == 1)
+            if (base.Owner.Creature.CombatState.RoundNumber == 1 && Owner.Character is Miyabi)
             {
                 Flash();
                 if (CinimaCounter >= 1)

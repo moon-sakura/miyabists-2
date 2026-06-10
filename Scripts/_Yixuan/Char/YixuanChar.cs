@@ -15,6 +15,7 @@ using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts._Yixuan.Powers;
 using Miyabists2.Scripts._Yixuan.Relics;
+using Miyabists2.Scripts.Relics.SpecRelic;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
 
@@ -105,14 +106,16 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     /// </summary>
     protected override IEnumerable<StartingDeckEntry> StartingDeckEntries => [
         new(typeof(YixuanBlock), 3),
-        new(typeof(XiaoyunJin), 4),
-        // new(typeof(YixuanBlock), 2),
-        // new(typeof(YixuanSpecial), 1),
+        new(typeof(XiaoyunJin), 3),
+        new(typeof(YinyunShenfa), 3),
+        new(typeof(JinyingJue), 1),
     ];
 
     // 初始遗物
     protected override IEnumerable<Type> StartingRelicTypes => [
         typeof(QingmingShufaRelic),
+        typeof(YunkuiShanRelic),
+        typeof(ChoukaRelic),
     ];
 
     public override async Task AfterRoomEntered(AbstractRoom room)

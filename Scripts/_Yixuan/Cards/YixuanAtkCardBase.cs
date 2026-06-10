@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -21,7 +22,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Yixuan.Cards
 {
-    public abstract class YixuanAtkCardBase : MiyabiCardBase
+    public abstract class YixuanAtkCardBase : YixuanCardBase
     {
         public YixuanAtkCardBase(int baseCost, CardRarity rarity, TargetType target, CardType type = CardType.Attack, bool showInCardLibrary = true)
             : base(baseCost, type, rarity, target, showInCardLibrary)
