@@ -1,0 +1,73 @@
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Powers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Miyabists2.Scripts._Yixuan.Cards
+{
+    [RegisterCard(typeof(YixuanCardPool))]
+    internal class MohenHuaxing : YixuanBlockCardBase
+    {
+        public MohenHuaxing() : base(3, CardRarity.Uncommon, TargetType.Self)
+        {
+        }
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new BlockVar(10, ValueProp.Move),
+            new DynamicVar(ThornsVarName, 3),
+            new DynamicVar(VigorVarName, 5),
+            new DynamicVar(ShannengVarName, 10),
+            new DynamicVar("ExtraVigor", 5),
+        ];
+
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<PlatingPower>(),
+            HoverTipFactory.FromPower<ThornsPower>(),
+            HoverTipFactory.FromPower<VigorPower>(),
+            HoverTipFactory.FromPower<ShannengPower>(),
+        ];
+
+        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            // 覆甲
+            await PowerCmd.Apply<PlatingPower>(choiceContext, Owner.Creature, DynamicVars.Block.IntValue, Owner.Creature, this);
+
+            // 荆棘
+            await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
+
+            // 活力
+            await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, DynamicVars[VigorVarName].IntValue, Owner.Creature, this);
+
+            // 恢复闪能
+            await PowerCmd.Apply<ShannengPower>(choiceContext, Owner.Creature, DynamicVars[ShannengVarName].IntValue, Owner.Creature, this);
+
+            // 如果敌人是攻击意图：额外活力 + 下一张玄墨卡0费
+            bool enemyAttacking = Owner.Creature.CombatState.Enemies.Any(e => e.IsAlive && e.Monster.IntendsToAttack);
+            if (enemyAttacking)
+            {
+                await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, DynamicVars["ExtraVigor"].IntValue, Owner.Creature, this);
+
+                await PowerCmd.Apply<MohenhxPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+            }
+        }
+
+        protected override void OnUpgrade()
+        {
+            DynamicVars.Block.UpgradeValueBy(4);
+            DynamicVars[ThornsVarName].UpgradeValueBy(2);
+        }
+    }
+}

@@ -406,7 +406,7 @@
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "造成{Damage:diff()}点伤害，若敌人处于[gold]击破[/gold]状态，伤害变为[blue]3[/blue]倍，移除敌人的[gold]击破[/gold]与[gold]失衡易伤[/gold]，移除后[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：伤害+[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "醉花月云转",
-	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]"
+	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]",
 
 
 	// ====== 仪玄新专属卡牌 ======
@@ -417,5 +417,14 @@
 	"MIYABISTS2_CARD_LIUYUN_YINGSHEN.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n对自己造成[red]{SelfDamage:diff()}[/red]点伤害，获得[blue]{THORNS_POWER:diff()}[/blue]点[gold]荆棘[/gold]",
 
 	"MIYABISTS2_CARD_NINGYUN_SHU.title": "凝云术",
-	"MIYABISTS2_CARD_NINGYUN_SHU.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n施加[blue]{SHUFA_POWER:diff()}[/blue]层[gold]术法值[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：添加一张[gold]消耗[/gold][gold]虚无[/gold]的复制到手卡，本回合免费打出"
+	"MIYABISTS2_CARD_NINGYUN_SHU.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n施加[blue]{SHUFA_POWER:diff()}[/blue]层[gold]术法值[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：添加一张[gold]消耗[/gold][gold]虚无[/gold]的复制到手卡，本回合免费打出",
+
+	"MIYABISTS2_CARD_CHUSUI_YIJI.title": "除祟一击",
+	"MIYABISTS2_CARD_CHUSUI_YIJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n恢复[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]\\n每次消耗[gold]闪能[/gold]时将这张卡自动打出（无论在哪）",
+
+	"MIYABISTS2_CARD_QINGMING_ZHENJI.title": "青溟震击",
+	"MIYABISTS2_CARD_QINGMING_ZHENJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n造成{HitCount:diff()}次伤害，施加[blue]{SHUFA_POWER:diff()}[/blue]层[gold]术法值[/gold]\\n在手卡时每消耗[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]费用[blue]-1[/blue]",
+
+	"MIYABISTS2_CARD_MOHEN_HUAXING.title": "墨痕化形",
+	"MIYABISTS2_CARD_MOHEN_HUAXING.description": "[gold]覆甲[/gold]{Block:diff()}\\n附带[blue]{THORNS_POWER:diff()}[/blue]点[gold]荆棘[/gold]和[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]\\n恢复[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]\\n如果敌人是攻击意图：再获得[blue]{ExtraVigor:diff()}[/blue]点[gold]活力[/gold]，下一张[orange]玄墨[/orange]伤害卡费用变为[blue]0[/blue]"
 }

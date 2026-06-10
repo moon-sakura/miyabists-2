@@ -18,7 +18,6 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Yixuan.Powers
 {
-    //[RegisterPower]
     internal class ShannengPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
@@ -37,17 +36,17 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             new DynamicVar("Used",0),
         ];
 
+        /// <summary>本场战斗累计消耗的闪能总量（供青溟震击等卡牌使用）</summary>
+        public int TotalConsumed { get; private set; } = 0;
+
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             if (base.Amount > MaxPoints)
             {
-                //Amount = MaxPoints;
                 SetAmount(MaxPoints);
             }
             else if (base.Amount < 1)
             {
-                // 确保不为负数
-                //Amount = 1;
                 SetAmount(1);
             }
         }
@@ -61,7 +60,6 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             }
             else if (base.Amount < 1)
             {
-                // 确保不为负数
                 SetAmount(1);
             }
         }
@@ -77,9 +75,10 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         {
             if (!CanUseShanneng(a)) return;
 
-            // 使用后减少杀能点数
+            // 使用后减少闪能点数
             SetAmount(base.Amount - a);
             DynamicVars["Used"].BaseValue += a;
+            TotalConsumed += a;
 
             if (DynamicVars["Used"].BaseValue > MaxPoints - 1)
             {
@@ -98,7 +97,30 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             {
                 qingmingNiaoRelic.SetUsed((int)DynamicVars["Used"].BaseValue);
             }
+
+            // 除祟一击：消耗闪能时自动打出（从任意牌堆）
+            //await AutoPlayChusuiYiji(choiceContext);
         }
+
+        /// <summary>消耗闪能后，自动打出除祟一击（无论在手牌、抽牌堆还是弃牌堆）</summary>
+        //private async Task AutoPlayChusuiYiji(PlayerChoiceContext choiceContext)
+        //{
+        //    var player = Owner.Player;
+        //    var allCards = player.PlayerCombatState.Hand.Cards.ToList();
+        //    allCards.AddRange(player.PlayerCombatState.DrawPile.Cards);
+        //    allCards.AddRange(player.PlayerCombatState.DiscardPile.Cards);
+
+        //    var chusuiCards = allCards.Where(c => c is ChusuiYiji).ToList();
+        //    foreach (var card in chusuiCards)
+        //    {
+        //        if (card.Owner != player) continue;
+        //        var target = Owner.CombatState.HittableEnemies.TakeRandom(1, player.RunState.Rng.CombatCardSelection).FirstOrDefault();
+        //        if (target != null)
+        //        {
+        //            await CardCmd.AutoPlay(choiceContext, card, target);
+        //        }
+        //    }
+        //}
 
         public void SetUsed(int used)
         {
