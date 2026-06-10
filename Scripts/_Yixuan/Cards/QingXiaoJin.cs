@@ -27,6 +27,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             new BlockVar(12, ValueProp.Move),
             new DynamicVar(ThornsVarName, 3),
             new DynamicVar(VigorVarName, 3),
+            new DynamicVar(ShannengVarName, 10),
         ];
 
         protected override bool ShouldGlowGoldInternal => CheckShannengCost(DynamicVars[ShannengVarName].IntValue) > 0;
@@ -35,7 +36,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
-            await ShannengFunc(choiceContext, 10, async () =>
+            await ShannengFunc(choiceContext, DynamicVars[ShannengVarName].IntValue, async () =>
             {
                 await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
                 await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, DynamicVars[VigorVarName].IntValue, Owner.Creature, this);

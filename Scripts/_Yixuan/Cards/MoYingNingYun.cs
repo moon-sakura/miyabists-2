@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Powers;
 using Miyabists2.Scripts.Patches;
 using System;
 using System.Collections.Generic;
@@ -38,12 +39,16 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
-            
+            foreach(var enemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<ShufaZhi>(choiceContext, enemy, 10, Owner.Creature, this);
+            }
         }
 
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(1);
+            DynamicVars[DazeVarName].UpgradeValueBy(2);
             DynamicVars.Block.UpgradeValueBy(2);
         }
     }

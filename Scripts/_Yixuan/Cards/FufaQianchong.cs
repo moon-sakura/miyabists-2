@@ -45,8 +45,10 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             .WithHitFx("vfx/vfx_attack_blunt")
             .Execute(choiceContext);
 
-            //foreach (var target in CombatState.HittableEnemies)
-                //await PowerCmd.Apply<ShufaZhi>(choiceContext, target, 20, Owner.Creature, this);
+            foreach (var enemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<ShufaZhi>(choiceContext, enemy, 15, Owner.Creature, this);
+            }
 
             CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XuanmoJizhen>(base.Owner.Creature.Player);
             reward1.SetToFreeThisTurn();

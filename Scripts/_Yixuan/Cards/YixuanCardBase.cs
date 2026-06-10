@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
-        protected override string ArtPath => base.ArtPath;
+        protected override string ArtPath => "res://images/_YiXuan/cards/common.png";
 
         protected const string VigorVarName = "VIGOR_POWER";
         protected const string ThornsVarName = "THORNS_POWER";

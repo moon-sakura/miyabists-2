@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Powers;
 using Miyabists2.Scripts.Patches;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,11 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             .TargetingAllOpponents(base.CombatState)
             .WithHitFx("vfx/vfx_attack_blunt")
             .Execute(choiceContext);
+
+            foreach (var enemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<ShufaZhi>(choiceContext, enemy, 25, Owner.Creature, this);
+            }
         }
 
         protected override void OnUpgrade()

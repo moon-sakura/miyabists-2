@@ -37,6 +37,11 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             .WithHitFx("vfx/vfx_attack_blunt")
             .Execute(choiceContext);
 
+            foreach (var enemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<ShufaZhi>(choiceContext, enemy, 15, Owner.Creature, this);
+            }
+
             await PowerCmd.Apply<IntangiblePower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
             await PowerCmd.Apply<ShannengPower>(choiceContext, Owner.Creature, 20m, Owner.Creature, this);
         }
