@@ -122,6 +122,8 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                 _shannengUsed = value;
             }
         }
+
+        public void SetUsed(int used) => ShannengUsed = used;
     }
 
     /// <summary>
@@ -225,5 +227,6 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                 _shannengUsed = value;
             }
         }
+        public void SetUsed(int used) => ShannengUsed = used;
     }
 }

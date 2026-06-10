@@ -7,6 +7,8 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Relics;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -83,6 +85,18 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             {
                 CardModel reward1 = base.Owner.CombatState.CreateCard<FufaQianchong>(base.Owner.Player);
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+            }
+
+            var qingmingShufaRelic = (QingmingShufaRelic)MiyabiFuncBase.GetRelic<QingmingShufaRelic>(Owner.Player);
+            var qingmingNiaoRelic = (QingmingNiaoRelic)MiyabiFuncBase.GetRelic<QingmingNiaoRelic>(Owner.Player);
+
+            if (qingmingShufaRelic != null)
+            {
+                qingmingShufaRelic.SetUsed((int)DynamicVars["Used"].BaseValue);
+            }
+            if(qingmingNiaoRelic != null)
+            {
+                qingmingNiaoRelic.SetUsed((int)DynamicVars["Used"].BaseValue);
             }
         }
 
