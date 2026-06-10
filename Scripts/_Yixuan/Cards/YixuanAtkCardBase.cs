@@ -60,7 +60,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 await MiyabiCombatService.AddDaze(choiceContext, target, dazeVar, base.Owner.Creature);
             }
 
-            await PowerCmd.Apply<ShannengPower>(choiceContext, target, 1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<ShannengPower>(choiceContext, Owner.Creature, 1m, base.Owner.Creature, this);
         }
     }
 }

@@ -96,7 +96,7 @@ namespace Miyabists2.Scripts.Relics
         // 每次打出卡牌后检查
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
-            int counter = 0;
+            int counter = Counter;
             bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is MingCanXue);
             // 1. 检查是否是特定的卡（或者任意卡，根据你的需求）
             // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"

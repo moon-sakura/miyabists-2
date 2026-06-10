@@ -31,9 +31,9 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         // TODO: 替换为Yixuan专属触发卡和关键字
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
-            HoverTipFactory.FromCard<MingCanXue>(),
+            HoverTipFactory.FromCard<QingmingYunying>(),
+            HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill),
             HoverTipFactory.FromPower<ShannengPower>(),
-            HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill)
         ];
 
         public int Threshold { get; set; } = 30; // 触发阈值
@@ -73,7 +73,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         // 每次打出卡牌后检查
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
-            int counter = 0;
+            int counter = Counter;
             bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
@@ -84,6 +84,9 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                 // 检查是否达到阈值
                 if (Counter >= Threshold && !hasEnd)
                 {
+                    if (base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is FufaQianchong))
+                        return;
+
                     Counter -= Threshold;
                     if (Counter > Max - Threshold)
                         Counter = Max - Threshold;
@@ -124,7 +127,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         [
             HoverTipFactory.FromCard<QingmingYunying>(),
             HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill),
-            HoverTipFactory.FromPower<ShannengPower>()
+            HoverTipFactory.FromPower<ShannengPower>(),
         ];
 
         public int Threshold { get; set; } = 30;
@@ -162,7 +165,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
-            int counter = 0;
+            int counter = Counter;
             bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
@@ -172,6 +175,9 @@ namespace Miyabists2.Scripts._Yixuan.Relics
 
                 if (Counter >= Threshold && !hasEnd)
                 {
+                    if (base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is FufaQianchong))
+                        return;
+
                     Counter -= Threshold;
                     if (Counter > Max - Threshold)
                         Counter = Max - Threshold;

@@ -1,9 +1,13 @@
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Saves.Runs;
+using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +28,23 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         public string BigBetaIconPath => BigIconPath;
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
+
+        private int _counter;
+
+        [SavedProperty]
+        public int UsedShanneng
+        {
+            get => _counter;
+            private set
+            {
+                AssertMutable();
+                _counter = value;
+            }
+        }
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar("Used",0),
+        ];
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
@@ -59,6 +80,23 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         {
             if (a <= DisplayAmount) return true;
             return false;
+        }
+
+        public async Task UseShanneng(PlayerChoiceContext choiceContext, int a)
+        {
+            if (!CanUseShanneng(a)) return;
+
+            // 使用后减少杀能点数
+            SetAmount(base.Amount - a);
+            UsedShanneng += a;
+
+            if(UsedShanneng > MaxPoints - 1)
+            {
+                
+            }
+
+
+            DynamicVars["Used"].BaseValue = UsedShanneng;
         }
     }
 }
