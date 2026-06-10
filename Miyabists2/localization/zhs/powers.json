@@ -258,7 +258,7 @@
 
     "SHUFA_ZONGSHI_POWER.title": "墨痕化形",
     "SHUFA_ZONGSHI_POWER.description": "",
-    "SHUFA_ZONGSHI_POWER.smartDescription": "{Amount}张[gold]玄墨[/gold]卡牌变为0费",
+    "SHUFA_ZONGSHI_POWER.smartDescription": "接下来{Amount}张[gold]玄墨[/gold]卡牌变为0费",
 
 	"SHANNENG_POWER.title": "闪能",
 	"SHANNENG_POWER.description": "可用于发动额外效果。上限为[blue]150[/blue]点。",
