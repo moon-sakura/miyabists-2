@@ -84,6 +84,8 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             {
                 CardModel reward1 = base.Owner.CombatState.CreateCard<FufaQianchong>(base.Owner.Player);
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+                TotalConsumed = 0;
+                DynamicVars["Used"].BaseValue = 0;
             }
 
             var qingmingShufaRelic = (QingmingShufaRelic)MiyabiFuncBase.GetRelic<QingmingShufaRelic>(Owner.Player);

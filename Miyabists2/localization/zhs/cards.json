@@ -438,7 +438,7 @@
 	"MIYABISTS2_CARD_XIAOYUN_XUNJI_PO.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n造成{HitCount:diff()}次伤害\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.title": "青溟震击·破",
-	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n施加[blue]{SHUFA_POWER:diff()}[/blue]层[gold]术法值[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：[gold]重放[/gold][blue]1[/blue]",
+	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n施加[blue]{SHUFA_POWER:diff()}[/blue]层[gold]术法值[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：施加10层[gold]术法值[/gold]",
 
 	"MIYABISTS2_CARD_XUANMO_XUNJI.title": "玄墨迅击",
 	"MIYABISTS2_CARD_XUANMO_XUNJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：再获得[blue]{ExtraVigor:diff()}[/blue]点[gold]活力[/gold]"

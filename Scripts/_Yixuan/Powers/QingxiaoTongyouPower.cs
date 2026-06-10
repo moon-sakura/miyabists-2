@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,12 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar("Vigor", 0),
+            new DynamicVar("Thorns", 0),
+            new DynamicVar("Shanneng", 0),
+        ];
+
         private int _vigorAmount = 0;
         private int _thornsAmount = 0;
         private int _shannengAmount = 0;
@@ -38,6 +45,10 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             _vigorAmount += vigor;
             _thornsAmount += thorns;
             _shannengAmount += shanneng;
+
+            DynamicVars["Vigor"].BaseValue = _vigorAmount;
+            DynamicVars["Thorns"].BaseValue = _thornsAmount;
+            DynamicVars["Shanneng"].BaseValue = _shannengAmount;
         }
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)

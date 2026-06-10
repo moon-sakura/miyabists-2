@@ -23,7 +23,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(14, ValueProp.Unblockable | ValueProp.Move),
+            new DamageVar(17, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 8),
             new DynamicVar(ShufaVarName, 10),
             new DynamicVar(ShannengVarName, 20),
@@ -39,21 +39,20 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // 闪能20：重放1
-            await ShannengFunc(choiceContext, DynamicVars[ShannengVarName].IntValue, async () =>
-            {
-                BaseReplayCount += 1;
-            });
-
             await base.OnPlay(choiceContext, cardPlay);
 
             // 施加术法值
             await PowerCmd.Apply<ShufaZhi>(choiceContext, cardPlay.Target, DynamicVars[ShufaVarName].IntValue, Owner.Creature, this);
+
+            await ShannengFunc(new ThrowingPlayerChoiceContext(), DynamicVars[ShannengVarName].IntValue, async () =>
+            {
+                await PowerCmd.Apply<ShufaZhi>(choiceContext, cardPlay.Target, 10, Owner.Creature, this);
+            });
         }
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(3);
+            DynamicVars.Damage.UpgradeValueBy(4);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
         }
     }

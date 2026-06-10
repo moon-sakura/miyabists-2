@@ -76,7 +76,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 ExtraIconAmountLabelSpec.RichText(
                 ExtraIconAmountLabelCorner.BottomLeft,
                 "[color=aqua]"+FreeCounter.ToString()+"[/color]"),
-        ];
+            ];
         }
 
         [SavedProperty]
@@ -107,6 +107,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             {
                 AssertMutable();
                 _freeCounter = value;
+                InvokeDisplayAmountChanged();
             }
         }
 
@@ -120,6 +121,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             {
                 AssertMutable();
                 _cinimaCounter = value;
+                InvokeDisplayAmountChanged();
             }
         }
 
