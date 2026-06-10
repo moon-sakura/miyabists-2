@@ -106,7 +106,20 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             {
                 Flash();
                 //第一回合添加能力
-                await PowerCmd.Apply<ShannengPower>(choiceContext, base.Owner.Creature, 151, null, null);
+                (await PowerCmd.Apply<ShannengPower>(choiceContext, base.Owner.Creature, 151, null, null)).SetUsed(ShannengUsed);
+            }
+        }
+
+        private int _shannengUsed;
+
+        [SavedProperty]
+        public int ShannengUsed
+        {
+            get => _shannengUsed;
+            private set
+            {
+                AssertMutable();
+                _shannengUsed = value;
             }
         }
     }
@@ -196,7 +209,20 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             if (base.Owner.Creature.CombatState.RoundNumber == 1)
             {
                 Flash();
-                await PowerCmd.Apply<ShannengPower>(choiceContext, base.Owner.Creature, 151, null, null);
+                (await PowerCmd.Apply<ShannengPower>(choiceContext, base.Owner.Creature, 151, null, null)).SetUsed(ShannengUsed);
+            }
+        }
+
+        private int _shannengUsed;
+
+        [SavedProperty]
+        public int ShannengUsed
+        {
+            get => _shannengUsed;
+            private set
+            {
+                AssertMutable();
+                _shannengUsed = value;
             }
         }
     }

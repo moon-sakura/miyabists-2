@@ -1,3 +1,5 @@
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -28,19 +30,6 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         public string BigBetaIconPath => BigIconPath;
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
-
-        private int _counter;
-
-        [SavedProperty]
-        public int UsedShanneng
-        {
-            get => _counter;
-            private set
-            {
-                AssertMutable();
-                _counter = value;
-            }
-        }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Used",0),
@@ -88,15 +77,18 @@ namespace Miyabists2.Scripts._Yixuan.Powers
 
             // 使用后减少杀能点数
             SetAmount(base.Amount - a);
-            UsedShanneng += a;
+            DynamicVars["Used"].BaseValue += a;
 
-            if(UsedShanneng > MaxPoints - 1)
+            if (DynamicVars["Used"].BaseValue > MaxPoints - 1)
             {
-                
+                CardModel reward1 = base.Owner.CombatState.CreateCard<FufaQianchong>(base.Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
             }
+        }
 
-
-            DynamicVars["Used"].BaseValue = UsedShanneng;
+        public void SetUsed(int used)
+        {
+            DynamicVars["Used"].BaseValue = used;
         }
     }
 }
