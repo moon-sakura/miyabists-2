@@ -47,6 +47,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
             DynamicVars[VigorVarName].UpgradeValueBy(1);
             DynamicVars[ThornsVarName].UpgradeValueBy(1);
+            DynamicVars[ShannengVarName].UpgradeValueBy(5);
         }
     }
 }

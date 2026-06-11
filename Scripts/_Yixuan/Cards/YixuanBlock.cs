@@ -17,7 +17,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         }
         protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Defend };
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(6,ValueProp.Move)
+            new BlockVar(6,ValueProp.Move),
+            new DynamicVar(ThornsVarName,1),
         ];
         protected override void OnUpgrade()
         {

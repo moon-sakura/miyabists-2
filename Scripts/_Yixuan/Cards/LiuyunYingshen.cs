@@ -37,8 +37,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             // 先对自己造成伤害（视为随机敌人造成）
-            var enemy = Owner.Creature.CombatState.Enemies.TakeRandom(1, Owner.Creature.CombatState.RunState.Rng.Shuffle).FirstOrDefault();
-            await CreatureCmd.Damage(choiceContext, Owner.Creature, DynamicVars["SelfDamage"].BaseValue, ValueProp.Unpowered, enemy);
+            //var enemy = Owner.Creature.CombatState.Enemies.TakeRandom(1, Owner.Creature.CombatState.RunState.Rng.Shuffle).FirstOrDefault();
+            //await CreatureCmd.Damage(choiceContext, Owner.Creature, DynamicVars["SelfDamage"].BaseValue, ValueProp.Unpowered, enemy);
 
             // 再执行基础攻击逻辑（玄墨伤害 + 失衡值 + 闪能）
             await base.OnPlay(choiceContext, cardPlay);

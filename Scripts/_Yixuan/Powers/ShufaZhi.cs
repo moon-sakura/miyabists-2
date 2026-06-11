@@ -63,7 +63,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers
                 return 0.8m;
             }
 
-            return 1m;
+            return 1m + fumo;
         }
 
         public IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
