@@ -256,13 +256,13 @@
     "FUMO_POWER.description" : "受到额外伤害，造成伤害降低",
     "FUMO_POWER.smartDescription" : "额外受到{Amount}倍伤害，造成伤害额外降低{Amount}*20%。与术法值效果为加算。",
 
-    "MOHENHX_POWER.title": "术法宗师",
-    "MOHENHX_POWER.description": "每次造成玄墨伤害时，为敌人附加术法值",
-    "MOHENHX_POWER.smartDescription": "每次造成玄墨伤害时，为敌人附加{Amount}层术法值",
+    "SHUFA_ZONGSHI_POWER.title": "术法宗师",
+    "SHUFA_ZONGSHI_POWER.description": "每次造成玄墨伤害时，为敌人附加术法值",
+    "SHUFA_ZONGSHI_POWER.smartDescription": "每次造成玄墨伤害时，为敌人附加{Amount}层术法值",
 
-    "SHUFA_ZONGSHI_POWER.title": "墨痕化形",
-    "SHUFA_ZONGSHI_POWER.description": "",
-    "SHUFA_ZONGSHI_POWER.smartDescription": "接下来{Amount}张[gold]玄墨[/gold]卡牌变为0费",
+    "MOHENHX_POWER.title": "墨痕化形",
+    "MOHENHX_POWER.description": "",
+    "MOHENHX_POWER.smartDescription": "接下来{Amount}张[gold]玄墨[/gold]卡牌变为0费",
 
 	"SHANNENG_POWER.title": "闪能",
 	"SHANNENG_POWER.description": "可用于发动额外效果。上限为[blue]150[/blue]点。",

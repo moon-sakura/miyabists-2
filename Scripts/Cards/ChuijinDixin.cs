@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Cards
     [RegisterCard(typeof(MiyabiCardPool))]
     internal class ChuijinDixin : MiyabiPartnerCardBase
     {
-        public ChuijinDixin() : base(1, CardRarity.Uncommon, TargetType.Self)
+        public ChuijinDixin() : base(1, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
         }
 

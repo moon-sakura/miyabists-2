@@ -36,18 +36,15 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             await PowerCmd.Apply<ShannengPower>(choiceContext, Owner.Creature, DynamicVars[ShannengVarName].IntValue, Owner.Creature, this);
         }
 
-        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
-        {
-            if(power is not ShannengPower || power.Owner != Owner.Creature) return;
-
-            if(amount >= 0)
-            {
-                return;
-            }
-
-            var enemy = Owner.Creature.CombatState.Enemies.TakeRandom(1, Owner.Creature.CombatState.RunState.Rng.Shuffle).FirstOrDefault();
-            await CardCmd.AutoPlay(choiceContext,this,enemy);
-        }
+        //public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        //{
+        //    if(power is ShannengPower && power.Owner == Owner.Creature && amount < 0)
+        //    {
+        //        var enemy = Owner.Creature.CombatState.Enemies.TakeRandom(1, Owner.Creature.CombatState.RunState.Rng.Shuffle).FirstOrDefault();
+        //        await CardCmd.AutoPlay(choiceContext,this,enemy);
+        //    }
+            
+        //}
 
         protected override void OnUpgrade()
         {

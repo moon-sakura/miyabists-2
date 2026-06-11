@@ -15,14 +15,14 @@ namespace Miyabists2.Scripts._Yixuan.Cards
     [RegisterCard(typeof(YixuanCardPool))]
     internal class LingyunPo : YixuanAtkCardBase
     {
-        public LingyunPo() : base(1, CardRarity.Common, TargetType.AnyEnemy, CardType.Skill)
+        public LingyunPo() : base(1, CardRarity.Common, TargetType.AnyEnemy)
         {
         }
 
         //public override string PortraitPath => $"res://images/cards/fengHua.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(4, ValueProp.Unblockable | ValueProp.Move),
+            new DamageVar(7, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar(VigorVarName, 2),
         ];

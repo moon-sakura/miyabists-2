@@ -77,9 +77,12 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
-            if (cardPlay.Card.Owner == base.Owner && counter < Max)
+            if (cardPlay.Card.Owner == base.Owner)
             {
-                Counter++;
+                if (counter < Max)
+                {
+                    Counter++;
+                }
 
                 // 检查是否达到阈值
                 if (Counter >= Threshold && !hasEnd)
@@ -96,6 +99,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<QingmingYunying>(base.Owner.Creature.Player);
                     await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
                 }
+
             }
         }
 
@@ -184,9 +188,10 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             bool hasEnd = base.Owner.PlayerCombatState.Hand.Cards.Any(c => c is QingmingYunying);
             if (hasEnd) counter += Threshold;
 
-            if (cardPlay.Card.Owner == base.Owner && counter < Max)
+            if (cardPlay.Card.Owner == base.Owner)
             {
-                Counter++;
+                if(counter < Max)
+                    Counter++;
 
                 if (Counter >= Threshold && !hasEnd)
                 {

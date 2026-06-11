@@ -2,9 +2,11 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +26,13 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             HoverTipFactory.FromPower<DazeVulnPower>(),
             HoverTipFactory.FromCard<QingmingYunying>(),
         ];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await base.OnPlay(choiceContext, cardPlay);
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar) && dazeVar.BaseValue > 0)
+            {
+                await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, dazeVar, base.Owner.Creature);
+            }
 
             if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
             {

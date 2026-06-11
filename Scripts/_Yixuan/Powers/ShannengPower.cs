@@ -2,6 +2,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -75,12 +76,16 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         {
             if (!CanUseShanneng(a)) return;
 
+            if(!Owner.Player.PlayerCombatState.Hand.Cards.Any(c => c is FufaQianchong))
+            {
+                DynamicVars["Used"].BaseValue += a;
+                TotalConsumed += a;
+            }
+
             // 使用后减少闪能点数
             SetAmount(base.Amount - a);
-            DynamicVars["Used"].BaseValue += a;
-            TotalConsumed += a;
-
-            if (DynamicVars["Used"].BaseValue > MaxPoints - 1)
+            
+            if (DynamicVars["Used"].BaseValue >= MaxPoints - 1)
             {
                 CardModel reward1 = base.Owner.CombatState.CreateCard<FufaQianchong>(base.Owner.Player);
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
@@ -101,28 +106,26 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             }
 
             // 除祟一击：消耗闪能时自动打出（从任意牌堆）
-            //await AutoPlayChusuiYiji(choiceContext);
+            await AutoPlayChusuiYiji(choiceContext);
         }
 
         /// <summary>消耗闪能后，自动打出除祟一击（无论在手牌、抽牌堆还是弃牌堆）</summary>
-        //private async Task AutoPlayChusuiYiji(PlayerChoiceContext choiceContext)
-        //{
-        //    var player = Owner.Player;
-        //    var allCards = player.PlayerCombatState.Hand.Cards.ToList();
-        //    allCards.AddRange(player.PlayerCombatState.DrawPile.Cards);
-        //    allCards.AddRange(player.PlayerCombatState.DiscardPile.Cards);
+        private async Task AutoPlayChusuiYiji(PlayerChoiceContext choiceContext)
+        {
+            var player = Owner.Player;
+            var allCards = player.PlayerCombatState.AllCards;
 
-        //    var chusuiCards = allCards.Where(c => c is ChusuiYiji).ToList();
-        //    foreach (var card in chusuiCards)
-        //    {
-        //        if (card.Owner != player) continue;
-        //        var target = Owner.CombatState.HittableEnemies.TakeRandom(1, player.RunState.Rng.CombatCardSelection).FirstOrDefault();
-        //        if (target != null)
-        //        {
-        //            await CardCmd.AutoPlay(choiceContext, card, target);
-        //        }
-        //    }
-        //}
+            var chusuiCards = allCards.Where(c => c is ChusuiYiji).ToList();
+            foreach (var card in chusuiCards)
+            {
+                if (card.Owner != player) continue;
+                var target = Owner.CombatState.HittableEnemies.TakeRandom(1, player.RunState.Rng.CombatCardSelection).FirstOrDefault();
+                if (target != null)
+                {
+                    await CardCmd.AutoPlay(choiceContext, card, target);
+                }
+            }
+        }
 
         public void SetUsed(int used)
         {

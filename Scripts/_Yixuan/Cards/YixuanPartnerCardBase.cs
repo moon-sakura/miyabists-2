@@ -18,7 +18,17 @@ namespace Miyabists2.Scripts._Yixuan.Cards
     {
         protected const string SupportVarName = "SUPPORT_POINT_POWER";
 
-        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<SupportPointPower>() >= DynamicVars[SupportVarName].IntValue;
+        protected override bool ShouldGlowGoldInternal
+        {
+            get
+            {
+                if (DynamicVars.TryGetValue(SupportVarName, out DynamicVar s))
+                {
+                    return Owner.Creature.GetPowerAmount<SupportPointPower>() >= s.IntValue;
+                }
+                return false;
+            }
+        }
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.Friends];
 
