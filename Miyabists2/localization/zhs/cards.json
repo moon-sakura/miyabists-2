@@ -455,4 +455,13 @@
 
 	"MIYABISTS2_CARD_MIYABI_DUEL_YIXUAN.title": "对决",
 	"MIYABISTS2_CARD_MIYABI_DUEL_YIXUAN.description": "将敌人的意图变为造成4次1点伤害\\n获得{THORNS_POWER:diff()}层[gold]荆棘[/gold]"
+
+	"MIYABISTS2_CARD_MITU_YESONG.title": "迷途夜颂",
+	"MIYABISTS2_CARD_MITU_YESONG.description": "{Turns:diff()}回合内每次使用非攻击卡后获得[blue]2[/blue]点[gold]活力[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复所有角色[blue]6[/blue]点生命",
+
+	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.title": "贴山震脉靠",
+	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.description": "接下来[blue]{MingpoCount:diff()}[/blue]张[purple]命破[/purple]伤害卡伤害[blue]+{MingpoBonus:diff()}%[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：抽[blue]1[/blue]张卡，下一张攻击卡费用[blue]-1[/blue]",
+
+	"MIYABISTS2_CARD_HANTIAN_DONGDI.title": "撼天动地",
+	"MIYABISTS2_CARD_HANTIAN_DONGDI.description": "[purple]命破[/purple]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n造成{HitCount:diff()}次伤害\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得原有层数[gold]活力[/gold]"
 }
