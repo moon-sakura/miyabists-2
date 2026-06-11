@@ -279,6 +279,8 @@
     "MIYABISTS2_CARD_TEST_CARD_FROST.description": "[aqua]烈霜积蓄[/aqua][blue]50[/blue]",
 
 
+	"MIYABISTS2_CARD_TEST_CARD_SHUFA.title": "术法测试卡",
+    "MIYABISTS2_CARD_TEST_CARD_SHUFA.description": "术法值[blue]60[/blue]",
 
 
 	// ====== 仪玄专属卡牌 ======
@@ -287,6 +289,9 @@
 
 	"MIYABISTS2_CARD_FUFA_QIANCHONG.title": "符法千重",
 	"MIYABISTS2_CARD_FUFA_QIANCHONG.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加15层[gold]术法值[/gold]\\n将一张带有消耗的[gold]玄墨极阵[/gold]加入手卡，本回合免费打出",
+
+	"MIYABISTS2_CARD_FUFA_QIANCHONG_PO.title": "符法千重·破",
+	"MIYABISTS2_CARD_FUFA_QIANCHONG_PO.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加20层[gold]术法值[/gold]",
 
 	"MIYABISTS2_CARD_XIAOYUN_JIN.title": "霄云劲",
     "MIYABISTS2_CARD_XIAOYUN_JIN.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",

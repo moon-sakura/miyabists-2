@@ -36,6 +36,9 @@ using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Runs.Metrics;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using Miyabists2.Scripts._Yixuan.Powers;
+using Miyabists2.Scripts._Yixuan.Powers.CinimaPower;
+using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Enchantment;
 using Miyabists2.Scripts.Powers;
@@ -175,6 +178,44 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 if (CinimaCounter >= 6)
                 {
                     await PowerCmd.Apply<TianzizyPower>(choiceContext, base.Owner.Creature, 2m, null, null);
+                }
+            }
+
+            if (base.Owner.Creature.CombatState.RoundNumber == 1 && Owner.Character is Yixuan)
+            {
+                Flash();
+                if (CinimaCounter >= 1)
+                {
+                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<FufaQianchong>(base.Owner.Creature.Player);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                }
+
+                if (CinimaCounter >= 2)
+                {
+                    await PowerCmd.Apply<YixuanCinimatwoPower>(choiceContext, base.Owner.Creature, 1m, null, null);
+                }
+
+                if (CinimaCounter >= 3)
+                {
+                    await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 4m, null, null);
+                }
+
+                if (CinimaCounter >= 4)
+                {
+                    foreach(var enemy in Owner.Creature.CombatState.HittableEnemies)
+                    {
+                        await PowerCmd.Apply<FumoPower>(choiceContext, enemy,1m, null, null);
+                    }
+                }
+
+                if (CinimaCounter >= 5)
+                {
+                    await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 6m, null, null);
+                }
+
+                if (CinimaCounter >= 6)
+                {
+                    await PowerCmd.Apply<YixuanCinimasixPower>(choiceContext, base.Owner.Creature, 2m, null, null);
                 }
             }
         }
