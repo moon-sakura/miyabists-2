@@ -22,9 +22,9 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         //public override string PortraitPath => $"res://images/cards/fengHua.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(4, ValueProp.Unblockable | ValueProp.Move),
+            new DamageVar(5, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
-            new BlockVar(4, ValueProp.Move),
+            new BlockVar(5, ValueProp.Move),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -34,7 +34,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             if(cardPlay.Target.IsEnemy && cardPlay.Target.Monster.IntendsToAttack)
             {
                 await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-                await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+                await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
             }
         }
 

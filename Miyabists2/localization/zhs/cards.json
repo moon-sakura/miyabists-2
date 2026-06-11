@@ -300,7 +300,7 @@
     "MIYABISTS2_CARD_YIXUAN_BLOCK.description": "获得{Block:diff()}点格挡\\n获得{THORNS_POWER:diff()}点[gold]荆棘[/gold]",
 
 	"MIYABISTS2_CARD_JINYING_JUE.title": "烬影诀",
-    "MIYABISTS2_CARD_JINYING_JUE.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人是攻击意图，获得{Block:diff()}点格挡与1层[gold]荆棘[/gold]",
+    "MIYABISTS2_CARD_JINYING_JUE.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人是攻击意图，获得{Block:diff()}点格挡与2层[gold]荆棘[/gold]",
 
 	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "青溟云影",
 	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "全场{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加25层[gold]术法值[/gold]",

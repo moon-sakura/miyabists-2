@@ -63,7 +63,20 @@ namespace Miyabists2.Scripts._Yixuan.Powers
                 return 0.8m;
             }
 
-            return 1m + fumo;
+            if(fumo > 0)
+            {
+                if (target == Owner && !props.HasFlag(ValueProp.Unpowered))
+                {
+                    return 1 + fumo;
+                }
+
+                if (dealer == Owner && !props.HasFlag(ValueProp.Unpowered))
+                {
+                    return 1m - 0.2m * fumo > 0 ? 1m - 0.2m * fumo : 0.05m; ;
+                }
+            }
+
+            return 1m;
         }
 
         public IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)

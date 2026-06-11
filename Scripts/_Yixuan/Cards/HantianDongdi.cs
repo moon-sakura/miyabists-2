@@ -71,6 +71,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         protected override void OnUpgrade()
         {
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
+            AddKeyword(CardKeyword.Retain);
         }
     }
 }

@@ -1,8 +1,10 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,14 @@ namespace Miyabists2.Scripts._Yixuan.Cards
     [RegisterCard(typeof(YixuanCardPool))]
     internal class SongKeYixuan : SongKe
     {
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<SupportPointPower>(),
+            HoverTipFactory.FromPower<DazePower>(),
+            HoverTipFactory.FromPower<BreakPower>(),
+            HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromCard<QingmingYunying>(),
+        ];
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await base.OnPlay(choiceContext, cardPlay);

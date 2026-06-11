@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         protected override bool ShouldGlowGoldInternal => CheckShannengCost(DynamicVars[ShannengVarName].IntValue) > 0;
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(4, ValueProp.Move),
+            new BlockVar(6, ValueProp.Move),
             new DynamicVar(VigorVarName, 2),
             new DynamicVar(ShannengVarName, 10),
         ];
