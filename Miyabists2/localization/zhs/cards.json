@@ -464,4 +464,10 @@
 
 	"MIYABISTS2_CARD_HANTIAN_DONGDI.title": "撼天动地",
 	"MIYABISTS2_CARD_HANTIAN_DONGDI.description": "[purple]命破[/purple]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n造成{HitCount:diff()}次伤害\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得原有层数[gold]活力[/gold]"
+
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN.title": "锤进地心",
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{RongluCount:diff()}[/blue]层[gold]熔炉升温[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外获得[blue]2[/blue]层[gold]熔炉升温[/gold]",
+
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN_YIXUAN.title": "锤进地心",
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN_YIXUAN.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{RongluCount:diff()}[/blue]层[gold]熔炉升温[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外获得[blue]2[/blue]层[gold]熔炉升温[/gold]"
 }

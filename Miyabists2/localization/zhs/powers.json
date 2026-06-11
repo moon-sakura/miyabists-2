@@ -279,4 +279,8 @@
 	"TIESHAN_ZHENMAIKAO_POWER.title": "贴山震脉靠",
 	"TIESHAN_ZHENMAIKAO_POWER.description": "接下来的命破伤害卡伤害提升。",
 	"TIESHAN_ZHENMAIKAO_POWER.smartDescription": "接下来[blue]{Display:diff()}[/blue]张[purple]命破[/purple]伤害卡伤害[blue]+20%[/blue]。"
+
+	"RONGLU_SHENGWEN_POWER.title": "熔炉升温",
+	"RONGLU_SHENGWEN_POWER.description": "每次施加失衡时额外施加5失衡，然后层数-1。",
+	"RONGLU_SHENGWEN_POWER.smartDescription": "每次施加[gold]失衡值[/gold]时额外施加[blue]5[/blue]点，剩余[blue]{Display:diff()}[/blue]层。"
 }
