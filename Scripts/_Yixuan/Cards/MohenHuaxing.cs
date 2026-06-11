@@ -20,7 +20,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
     [RegisterCard(typeof(YixuanCardPool))]
     internal class MohenHuaxing : YixuanBlockCardBase
     {
-        public MohenHuaxing() : base(3, CardRarity.Uncommon, TargetType.Self)
+        public MohenHuaxing() : base(2, CardRarity.Uncommon, TargetType.Self)
         {
         }
 

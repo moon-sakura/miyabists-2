@@ -54,7 +54,7 @@ namespace Miyabists2.Scripts.Cards
             await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext, parryCount));
         }
 
-        async Task FriendFunc(PlayerChoiceContext choiceContext, int parryCount)
+        protected virtual async Task FriendFunc(PlayerChoiceContext choiceContext, int parryCount)
         {
             await MiyabiCombatService.AddHuaCiReward(base.Owner.Creature, null, choiceContext, parryCount);
         }
