@@ -57,7 +57,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             });
 
             // 接下来3张命破伤害卡伤害+20%
-            await PowerCmd.Apply<TieshanZhenmaikaoPower>(choiceContext, Owner.Creature, DynamicVars["MingpoCount"].IntValue, Owner.Creature, this);
+            var p = await PowerCmd.Apply<TieshanZhenmaikaoPower>(choiceContext, Owner.Creature, DynamicVars["MingpoCount"].IntValue, Owner.Creature, this);
+            p.AddFree(fee);
         }
 
         protected override void OnUpgrade()
