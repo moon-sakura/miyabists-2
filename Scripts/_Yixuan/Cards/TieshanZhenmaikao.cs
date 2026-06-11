@@ -25,6 +25,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
+        protected override string ArtPath => "res://images/_YiXuan/cards/tieshanZhenmaikao.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("MingpoCount", 3),
             new DynamicVar("MingpoBonus", 20),

@@ -20,7 +20,7 @@ namespace Miyabists2.Scripts.Powers
         public override int DisplayAmount => Amount;
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
-        public string BigIconPath => "res://images/_YiXuan/char/common.png";
+        public string BigIconPath => "res://images/powers/ronglushengwen.png";
         public string BigBetaIconPath => BigIconPath;
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;

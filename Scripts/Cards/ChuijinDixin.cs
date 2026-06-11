@@ -23,6 +23,8 @@ namespace Miyabists2.Scripts.Cards
         {
         }
 
+        protected override string ArtPath => "res://images/cards/chuijinDixin.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar(DazeVarName, 25),
             new DynamicVar(SupportVarName, 2),

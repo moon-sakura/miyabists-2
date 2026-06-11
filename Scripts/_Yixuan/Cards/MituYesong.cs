@@ -23,6 +23,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
+        protected override string ArtPath => "res://images/_YiXuan/cards/mituYesong.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Turns", 4),
             new DynamicVar(SupportVarName, 1),
