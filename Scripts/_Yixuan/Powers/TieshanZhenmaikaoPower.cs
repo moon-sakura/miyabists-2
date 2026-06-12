@@ -41,6 +41,9 @@ namespace Miyabists2.Scripts._Yixuan.Powers
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
+            if (dealer != Owner || cardSource == null)
+                return 1m;
+
             if(cardSource.CanonicalKeywords.Any(k => k == MiyabiKeywords.Mingpo || k == MiyabiKeywords.Xuanmo)
                 && cardSource.Owner.Creature == Owner)
             {
@@ -59,6 +62,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers
 
             if (cardPlay.Card.Type == CardType.Attack
                 && cardPlay.Card.Owner.Creature == Owner
+                && !cardPlay.IsAutoPlay
                 && DynamicVars["FreeCount"].IntValue > 0)
             {
                 DynamicVars["FreeCount"].BaseValue -= 1;
@@ -67,6 +71,8 @@ namespace Miyabists2.Scripts._Yixuan.Powers
 
         public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
         {
+            modifiedCost = originalCost;
+
             if(card.Type == CardType.Attack
                 && card.Owner.Creature == Owner
                 && DynamicVars["FreeCount"].IntValue > 0)
@@ -75,7 +81,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers
                 return true;
             }
 
-            return base.TryModifyEnergyCostInCombat(card, originalCost, out modifiedCost);
+            return false;
         }
     }
 }

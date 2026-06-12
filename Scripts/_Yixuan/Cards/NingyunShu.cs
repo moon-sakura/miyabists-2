@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             new DamageVar(5, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 3),
             new DynamicVar(ShufaVarName, 5),
-            new DynamicVar(ShannengVarName, 10),
+            new DynamicVar(ShannengVarName, 30),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>

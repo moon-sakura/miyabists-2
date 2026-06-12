@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Cards
         {
             await PowerCmd.Apply<ArtifactPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
             await PowerCmd.Apply<SlipperyPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
-            await PowerCmd.Apply<VigorPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
+            await PowerCmd.Apply<VigorPower>(choiceContext, base.Owner.Creature, 2, base.Owner.Creature, this);
             await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
             await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, 2, base.Owner.Creature, this);
         }
