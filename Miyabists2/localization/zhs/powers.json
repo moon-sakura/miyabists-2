@@ -282,5 +282,9 @@
 
 	"RONGLU_SHENGWEN_POWER.title": "熔炉升温",
 	"RONGLU_SHENGWEN_POWER.description": "每次施加失衡时额外施加5失衡，然后层数-1。",
-	"RONGLU_SHENGWEN_POWER.smartDescription": "每次施加[gold]失衡值[/gold]时额外施加[blue]5[/blue]点，剩余[blue]{Display:diff()}[/blue]层。"
+	"RONGLU_SHENGWEN_POWER.smartDescription": "每次施加[gold]失衡值[/gold]时额外施加[blue]5[/blue]点，剩余[blue]{Display:diff()}[/blue]层。",
+
+	"HUALIAN_XIEYI_POWER.title": "花链协议",
+	"HUALIAN_XIEYI_POWER.description": "右击消耗支援点数使用效果",
+	"HUALIAN_XIEYI_POWER.smartDescription": "右键点击能力：[gold]支援点数[/gold][blue]2[/blue]：获得[blue]{Amount}[/blue]点能量，对所有敌人造成[blue]{Damage:diff()}[/blue]点伤害"
 }

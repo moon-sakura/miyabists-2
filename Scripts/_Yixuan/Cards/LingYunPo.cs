@@ -23,7 +23,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(7, ValueProp.Unblockable | ValueProp.Move),
-            new DynamicVar(DazeVarName, 2),
+            new DynamicVar(DazeVarName, 4),
             new DynamicVar(VigorVarName, 2),
         ];
 

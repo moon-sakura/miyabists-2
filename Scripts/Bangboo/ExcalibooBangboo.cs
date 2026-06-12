@@ -44,7 +44,7 @@ namespace Miyabists2.Scripts.Bangboo
             new DynamicVar("MAXUSE", MAXUSE),
             new DynamicVar("Used",0),
             new DynamicVar("Charged",0),
-            new DamageVar(25m, ValueProp.Move),
+            new DamageVar(40m, ValueProp.Move),
         ];
 
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
