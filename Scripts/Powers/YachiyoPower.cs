@@ -1,12 +1,16 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
+using STS2RitsuLib.Interactions.RightClick;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class YachiyoPower : ModPowerTemplate
+    internal class YachiyoPower : ModPowerTemplate, IModRightClickablePower
     {
         private class Data
         {
@@ -42,19 +46,37 @@ namespace Miyabists2.Scripts.Powers
             return new Data();
         }
 
-        public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
+        //public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
+        //{
+        //    if (player == base.Owner.Player)
+        //    {
+        //        CardModel card = GetInternalData<Data>().selectedCard;
+        //        for (int i = 0; i < base.Amount; i++)
+        //        {
+        //            CardModel card2 = card.CreateClone();
+        //            card2.SetToFreeThisTurn();
+        //            await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, Owner.Player);
+        //        }
+        //        await PowerCmd.Remove(this);
+        //    }
+        //}
+
+        public bool CanHandleRightClickLocal(ModRightClickContext context)
         {
-            if (player == base.Owner.Player)
+            return Amount > 0;
+        }
+
+        // 右键执行（多人下会在所有客户端同步执行）
+        public async Task OnRightClick(ModRightClickExecutionContext context)
+        {
+            CardModel card = GetInternalData<Data>().selectedCard;
+            for (int i = 0; i < base.Amount; i++)
             {
-                CardModel card = GetInternalData<Data>().selectedCard;
-                for (int i = 0; i < base.Amount; i++)
-                {
-                    CardModel card2 = card.CreateClone();
-                    card2.SetToFreeThisTurn();
-                    await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, Owner.Player);
-                }
-                await PowerCmd.Remove(this);
+                CardModel card2 = card.CreateClone();
+                card2.SetToFreeThisTurn();
+                await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, Owner.Player);
             }
+            await PowerCmd.Remove(this);
         }
 
         public void SetSelectedCard(CardModel card)

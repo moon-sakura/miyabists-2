@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Yixuan.Cards
 {
-    [RegisterCard(typeof(YixuanCardPool))]
-    internal class PrincessInopYixuan : PrincessInop
-    {
-    }
+    //[RegisterCard(typeof(YixuanCardPool))]
+    //internal class PrincessInopYixuan : PrincessInop
+    //{
+    //}
 }

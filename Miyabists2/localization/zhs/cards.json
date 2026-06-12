@@ -211,10 +211,10 @@
     "MIYABISTS2_CARD_PRINCESS_KAGUYA.description": "消耗卡组中1张[gold]超人彩叶[/gold]，触发一次强力效果\\n每回合开始时随机触发{Kaguya:diff()}次效果",
 
 	"MIYABISTS2_CARD_PRINCESS_INOP.title": "彩叶的祝福",
-    "MIYABISTS2_CARD_PRINCESS_INOP.description": "获得1层[gold]人工制品[/gold]，1层[gold]滑溜[/gold]\\n获得2层[gold]覆甲[/gold]",
+    "MIYABISTS2_CARD_PRINCESS_INOP.description": "获得1层[gold]人工制品[/gold]，1层[gold]滑溜[/gold]\\n获得2层[gold]活力[/gold]，1层[gold]荆棘[/gold]\\n获得2层[gold]覆甲[/gold]",
 
 	"MIYABISTS2_CARD_PRINCESS_YACHIYO.title": "八千代的守望",
-    "MIYABISTS2_CARD_PRINCESS_YACHIYO.description": "选择一张手卡[gold]消耗[/gold]，下回合加入到目标手卡并变为0费",
+    "MIYABISTS2_CARD_PRINCESS_YACHIYO.description": "选择一张手卡[gold]消耗[/gold]，可在未来加入到目标手卡并变为0费",
 	"MIYABISTS2_CARD_PRINCESS_YACHIYO.selectionScreenPrompt": "选择一张卡送往未来",
 
 	"MIYABISTS2_CARD_PRINCESS_YEARS.title": "八千年的等待",

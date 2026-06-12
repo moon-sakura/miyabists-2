@@ -88,7 +88,7 @@
 
 	"YACHIYO_POWER.title": "八千代的守望",
     "YACHIYO_POWER.description": "",
-	"YACHIYO_POWER.smartDescription": "下回合将[blue]{Amount}[/blue]张[gold]{Card}[/gold]加入手卡，且当回合变为0费",
+	"YACHIYO_POWER.smartDescription": "右键点击触发：将[blue]{Amount}[/blue]张[gold]{Card}[/gold]加入手卡，且当回合变为0费",
 
 	"KAGUYA_POWER.title": "辉夜姬",
     "KAGUYA_POWER.description": "",
