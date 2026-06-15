@@ -58,6 +58,13 @@ namespace Miyabists2.Scripts.Service
             return player.Relics.OfType<T>().FirstOrDefault();
         }
 
+        public static bool IsMiyabiModChar(Player player) 
+        {
+            if(player == null) return false;
+
+            return player.Character is Miyabi || player.Character is Yixuan;
+        }
+
         //通用PlayerChoiceContext
         //public static PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner, Owner.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
     }

@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Service
 
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            if((int)MiyabiModConfig.CombatHardSelected >= 4 && (Owner.Player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+            if((int)MiyabiModConfig.CombatHardSelected >= 4 && (MiyabiFuncBase.IsMiyabiModChar(Owner.Player) || MiyabiModConfig.ChangeToAllPlayers))
             {
                 await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), Owner, -1, null, null);
             }
@@ -56,7 +56,7 @@ namespace Miyabists2.Scripts.Service
         {
             if (!creature.IsEnemy) return;
 
-            if ((int)MiyabiModConfig.CombatHardSelected >= 7 && (Owner.Player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+            if ((int)MiyabiModConfig.CombatHardSelected >= 7 && (MiyabiFuncBase.IsMiyabiModChar(Owner.Player) || MiyabiModConfig.ChangeToAllPlayers))
             {
                 //foreach (var player in creature.CombatState.Players)
                 {
@@ -96,7 +96,7 @@ namespace Miyabists2.Scripts.Service
 
         public override decimal ModifyHandDraw(Player player, decimal count)
         {
-            if((int)MiyabiModConfig.CombatHardSelected >= 6 && (Owner.Player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+            if((int)MiyabiModConfig.CombatHardSelected >= 6 && (MiyabiFuncBase.IsMiyabiModChar(Owner.Player) || MiyabiModConfig.ChangeToAllPlayers))
             {
                 if(player.Creature.CombatState.RoundNumber <= 3)
                     return base.ModifyHandDraw(player, count) - 1;
