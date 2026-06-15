@@ -59,15 +59,17 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             await PowerCmd.Apply<ShufaZhi>(choiceContext, cardPlay.Target, DynamicVars[ShufaVarName].IntValue, Owner.Creature, this);
         }
 
-        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
-        {
-            if(power is ShannengPower && power.Owner == base.Owner.Creature
-                && amount < 0)
-            {
-                int changeamount = (int)amount / 10;
-                EnergyCost.AddUntilPlayed(changeamount);
-            }
-        }
+        //public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        //{
+        //    if(power is ShannengPower && power.Owner == Owner.Creature
+        //        && base.Pile.Type == PileType.Hand
+        //        && amount < 0)
+        //    {
+        //        int changeamount = (int)amount / 10;
+        //        EnergyCost.AddUntilPlayed(changeamount);
+                
+        //    }
+        //}
 
         protected override void OnUpgrade()
         {

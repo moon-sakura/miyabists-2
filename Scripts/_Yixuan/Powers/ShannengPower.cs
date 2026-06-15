@@ -105,8 +105,24 @@ namespace Miyabists2.Scripts._Yixuan.Powers
                 qingmingNiaoRelic.SetUsed((int)DynamicVars["Used"].BaseValue);
             }
 
+            //给青溟震击减费
+            await CheckReduceCardCost(a);
+
             // 除祟一击：消耗闪能时自动打出（从任意牌堆）
             await AutoPlayChusuiYiji(choiceContext);
+        }
+
+        private async Task CheckReduceCardCost(int c)
+        {
+            var player = Owner.Player;
+            var allCards = player.PlayerCombatState.Hand.Cards;
+
+            var Cards = allCards.Where(c => c is QingmingZhenji).ToList();
+
+            foreach (var card in Cards) 
+            {
+                card.EnergyCost.AddUntilPlayed(-c / 10);
+            }
         }
 
         /// <summary>消耗闪能后，自动打出除祟一击（无论在手牌、抽牌堆还是弃牌堆）</summary>

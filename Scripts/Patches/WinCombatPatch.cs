@@ -9,25 +9,44 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Patches
 {
-    [HarmonyPatch(typeof(ProgressSaveManager), "UpdateAfterCombatWon")]
-    public class FixRitsuLibDynamicIdCrashPatch
+    [HarmonyPatch(typeof(ProgressSaveManager))]
+    public class FixEpochSubMethodsPatch
     {
-        static bool Prefix(Player localPlayer)
+        // 1. 拦截 Boss 战后的 Epoch 解锁
+        [HarmonyPatch("ObtainCharUnlockEpoch")]
+        [HarmonyPrefix]
+        static bool PrefixObtain(Player localPlayer)
         {
-            if (localPlayer?.Character?.Id != null)
-            {
-                string charId = localPlayer.Character.Id.ToString();
+            // 如果是你的 Mod 角色，直接拒绝执行这个方法，防止去查不存在的 Epoch ID
+            if (IsModCharacter(localPlayer)) return false;
+            return true;
+        }
 
-                // 🎯 只要检测到是你的 Mod 前缀角色，直接跳过 Epoch 进度检查
-                if (charId.StartsWith("MIYABISTS2_CHARACTER_MIYABI") ||
-                    charId.StartsWith("MIYABISTS2_CHARACTER_YIXUAN"))
-                {
-                    // 返回 false 代表不执行原版的 Epoch 局外结算
-                    // 这样游戏会顺利保存你当前的关卡、金币、血量，直接进入选牌结算，绝不卡死！
-                    return false;
-                }
-            }
-            return true; // 原版铁甲战士、静默猎手等正常放行
+        // 2. 拦截 15 个 Boss 击杀的 Epoch 检查
+        [HarmonyPatch("CheckFifteenBossesDefeatedEpoch")]
+        [HarmonyPrefix]
+        static bool PrefixFifteenBoss(Player localPlayer)
+        {
+            if (IsModCharacter(localPlayer)) return false;
+            return true;
+        }
+
+        // 3. 拦截 15 个精英击杀的 Epoch 检查
+        [HarmonyPatch("CheckFifteenElitesDefeatedEpoch")]
+        [HarmonyPrefix]
+        static bool PrefixFifteenElite(Player localPlayer)
+        {
+            if (IsModCharacter(localPlayer)) return false;
+            return true;
+        }
+
+        // 💡 提取一个通用的判断工具，管它后面带不带数字 2、3
+        private static bool IsModCharacter(Player player)
+        {
+            if (player == null) return false;
+
+            return player.Character is Miyabi ||
+                   player.Character is Yixuan;
         }
     }
 }
