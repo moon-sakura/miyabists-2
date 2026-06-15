@@ -210,7 +210,14 @@ namespace Miyabists2.Scripts.Service
                 //    player.Gold /= 2;
                 //}
 
-                if(player.Character is Miyabi && MiyabiModConfig.FunPileSelected == MiyabiFunPile.BeeGroup)
+                if(player.Character is Miyabi && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.BeeGroup)
+                {
+                    CardModel card = player.RunState.CreateCard<BeeGroup>(player);
+                    card.UpgradeInternal();
+                    CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
+                }
+
+                if (player.Character is Yixuan && MiyabiModConfig.YixuanFunPileSelected == YixuanFunPile.BeeGroup)
                 {
                     CardModel card = player.RunState.CreateCard<BeeGroup>(player);
                     card.UpgradeInternal();

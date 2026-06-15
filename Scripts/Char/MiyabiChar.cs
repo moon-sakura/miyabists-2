@@ -132,11 +132,11 @@ class Miyabi : ModCharacterTemplate<MiyabiCardPool, MiyabiRelicPool, MiyabiPotio
 
 
     //初始卡组，或者在卡牌类上用RegisterCharacterStarterCard就不用写这个
-     protected override IEnumerable<StartingDeckEntry> StartingDeckEntries
+    protected override IEnumerable<StartingDeckEntry> StartingDeckEntries
     {
         get
         {
-            switch(MiyabiModConfig.FunPileSelected)
+            switch(MiyabiModConfig.MiyabiFunPileSelected)
             {
                 case MiyabiFunPile.Default:
                     return GetDefaultDeck();

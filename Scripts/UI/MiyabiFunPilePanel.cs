@@ -4,7 +4,7 @@ using System;
 namespace Miyabists2.Scripts.UI;
 
 /// <summary>
-/// 特殊挑战面板。位于皮肤面板下方，控制 MiyabiModConfig.FunPileSelected。
+/// 特殊挑战面板。选项数据由外部通过 SetOptions 注入，支持不同角色不同挑战。
 /// </summary>
 public partial class MiyabiFunPilePanel : Control
 {
@@ -17,17 +17,9 @@ public partial class MiyabiFunPilePanel : Control
     private RichTextLabel _descriptionLabel;
 
     private int _currentIndex;
+    private (string name, string desc)[] _options = Array.Empty<(string, string)>();
 
-    // ===== 特殊模式数据 =====
-
-    private static readonly (string name, string desc)[] _funPileOptions = new[]
-    {
-        ("默认", "无变化"),
-        ("邦布当家", "初始卡组变为邦布相关卡组"),
-        ("蜂群集结", "初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]"),
-    };
-
-    public static int MaxIndex => _funPileOptions.Length - 1;
+    private int MaxIndex => _options.Length - 1;
 
     // ===== 属性 =====
 
@@ -36,7 +28,7 @@ public partial class MiyabiFunPilePanel : Control
         get => _currentIndex;
         set
         {
-            if (value >= 0 && value <= MaxIndex)
+            if (_options.Length > 0 && value >= 0 && value <= MaxIndex)
             {
                 _currentIndex = value;
                 RefreshDisplay();
@@ -65,13 +57,11 @@ public partial class MiyabiFunPilePanel : Control
         float panelH = 140f;
         SetSize(new Vector2(panelW, panelH));
 
-        // 背景
         _background = new Panel();
         _background.SetSize(new Vector2(panelW, panelH));
         _background.Position = Vector2.Zero;
         AddChild(_background);
 
-        // 标题
         _titleLabel = new Label();
         _titleLabel.Text = "特殊挑战";
         _titleLabel.Position = new Vector2(10, 8);
@@ -79,7 +69,6 @@ public partial class MiyabiFunPilePanel : Control
         _titleLabel.AddThemeFontSizeOverride("font_size", 16);
         AddChild(_titleLabel);
 
-        // 上一个
         _prevButton = new Button();
         _prevButton.Text = "<";
         _prevButton.Position = new Vector2(20, 36);
@@ -87,7 +76,6 @@ public partial class MiyabiFunPilePanel : Control
         _prevButton.Connect(Button.SignalName.Pressed, Callable.From(OnPrevPressed));
         AddChild(_prevButton);
 
-        // 选项名称
         _optionLabel = new Label();
         _optionLabel.Position = new Vector2(90, 36);
         _optionLabel.Size = new Vector2(100, 28);
@@ -97,7 +85,6 @@ public partial class MiyabiFunPilePanel : Control
         _optionLabel.AddThemeFontSizeOverride("font_size", 14);
         AddChild(_optionLabel);
 
-        // 下一个
         _nextButton = new Button();
         _nextButton.Text = ">";
         _nextButton.Position = new Vector2(200, 36);
@@ -105,7 +92,6 @@ public partial class MiyabiFunPilePanel : Control
         _nextButton.Connect(Button.SignalName.Pressed, Callable.From(OnNextPressed));
         AddChild(_nextButton);
 
-        // 描述
         _descriptionLabel = new RichTextLabel();
         _descriptionLabel.Position = new Vector2(10, 74);
         _descriptionLabel.Size = new Vector2(260, 56);
@@ -115,11 +101,28 @@ public partial class MiyabiFunPilePanel : Control
         AddChild(_descriptionLabel);
     }
 
+    // ===== 外部注入 =====
+
+    /// <summary>
+    /// 设置当前角色的挑战选项列表和选中索引。
+    /// </summary>
+    public void SetOptions((string name, string desc)[] options, int currentIndex)
+    {
+        _options = options ?? Array.Empty<(string, string)>();
+        if (_options.Length == 0) return;
+
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex > MaxIndex) currentIndex = 0;
+
+        _currentIndex = currentIndex;
+        RefreshDisplay();
+    }
+
     // ===== 按钮回调 =====
 
     private void OnPrevPressed()
     {
-        if (_currentIndex <= 0) return;
+        if (_options.Length <= 1 || _currentIndex <= 0) return;
         _currentIndex--;
         RefreshDisplay();
         FunPileChanged?.Invoke(_currentIndex);
@@ -127,7 +130,7 @@ public partial class MiyabiFunPilePanel : Control
 
     private void OnNextPressed()
     {
-        if (_currentIndex >= MaxIndex) return;
+        if (_options.Length <= 1 || _currentIndex >= MaxIndex) return;
         _currentIndex++;
         RefreshDisplay();
         FunPileChanged?.Invoke(_currentIndex);
@@ -137,13 +140,13 @@ public partial class MiyabiFunPilePanel : Control
 
     private void RefreshDisplay()
     {
-        if (_optionLabel == null) return;
+        if (_optionLabel == null || _options.Length == 0) return;
 
-        var (name, desc) = _funPileOptions[_currentIndex];
+        var (name, desc) = _options[_currentIndex];
         _optionLabel.Text = name;
 
-        _prevButton.Disabled = _currentIndex <= 0;
-        _nextButton.Disabled = _currentIndex >= MaxIndex;
+        _prevButton.Disabled = _options.Length <= 1 || _currentIndex <= 0;
+        _nextButton.Disabled = _options.Length <= 1 || _currentIndex >= MaxIndex;
 
         _descriptionLabel.Text = $"[color=#FFD700]{name}[/color]：{desc}";
     }

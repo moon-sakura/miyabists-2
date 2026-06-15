@@ -36,6 +36,16 @@ namespace Miyabists2.Scripts.Service
             previewDatas["MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0"] = "res://images/charui/miyabi_char_33.png";
             previewDatas["MIYABISTS2-REST_SELECTED_SLOT.Slot0"] = "res://images/charui/little_miyabi.png";
             previewDatas["MIYABISTS2-SHOP_SELECTED_SLOT.Slot0"] = "res://images/charui/miyabi_char_33.png";
+
+            // ---- Yixuan 默认皮肤名称 ----
+            skinDatas["MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot0"] = "观云同岿";
+            skinDatas["MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot0"] = "青溟鸟";
+            skinDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "观云同岿";
+
+            // ---- Yixuan 默认皮肤预览图 ----
+            previewDatas["MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_select.png";
+            previewDatas["MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_select.png";
+            previewDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_select.png";
         }
 
         public static void RegisterCombatSkin(string name, string tscnPath, string previewPath = null)
@@ -91,6 +101,63 @@ namespace Miyabists2.Scripts.Service
                 {
                     previewDatas[$"MIYABISTS2-SHOP_SELECTED_SLOT.Slot{slot}"] = previewPath;
                     GD.Print($"[MiyabiSkinManager] 商店皮肤预览图已注册: Slot{slot} -> {previewPath}");
+                }
+            }
+        }
+
+        public static void RegisterCombatSkinYixuan(string name, string tscnPath, string previewPath = null)
+        {
+            if (Yixuan.CombatSkinPaths.Count < MAX_SLOTS)
+            {
+                Yixuan.CombatSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
+
+                int slot = Yixuan.CombatSkinPaths.Count - 1;
+                GD.Print($"[MiyabiSkinManager] Yixuan 外部皮肤成功入驻槽位 Slot_{slot}!");
+                skinDatas.Add($"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot{slot}", name);
+
+                if (!string.IsNullOrEmpty(previewPath))
+                {
+                    previewDatas[$"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    GD.Print($"[MiyabiSkinManager] Yixuan 战斗皮肤预览图已注册: Slot{slot} -> {previewPath}");
+                }
+            }
+        }
+
+        public static void RegisterRestSkinYixuan(string name, string tscnPath, string previewPath = null)
+        {
+            if (Yixuan.RestSkinPaths.Count < MAX_SLOTS)
+            {
+                Yixuan.RestSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NRestSiteCharacter>();
+
+                int slot = Yixuan.RestSkinPaths.Count - 1;
+                GD.Print($"[MiyabiSkinManager] Yixuan 外部皮肤成功入驻槽位 Slot_{slot}!");
+                skinDatas.Add($"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot{slot}", name);
+
+                if (!string.IsNullOrEmpty(previewPath))
+                {
+                    previewDatas[$"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    GD.Print($"[MiyabiSkinManager] Yixuan 休息皮肤预览图已注册: Slot{slot} -> {previewPath}");
+                }
+            }
+        }
+
+        public static void RegisterShopSkinYixuan(string name, string tscnPath, string previewPath = null)
+        {
+            if (Yixuan.ShopSkinPaths.Count < MAX_SLOTS)
+            {
+                Yixuan.ShopSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NMerchantCharacter>();
+
+                int slot = Yixuan.ShopSkinPaths.Count - 1;
+                GD.Print($"[MiyabiSkinManager] Yixuan 外部皮肤成功入驻槽位 Slot_{slot}!");
+                skinDatas.Add($"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot{slot}", name);
+
+                if (!string.IsNullOrEmpty(previewPath))
+                {
+                    previewDatas[$"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    GD.Print($"[MiyabiSkinManager] Yixuan 商店皮肤预览图已注册: Slot{slot} -> {previewPath}");
                 }
             }
         }

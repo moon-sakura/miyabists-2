@@ -12,17 +12,20 @@ namespace Miyabists2.Scripts.UI;
 [HarmonyPatch]
 public static class MiyabiCharSelectSkinPatch
 {
+    [Flags]
+    private enum CharType { None = 0, Miyabi = 1, Yixuan = 2 }
+
     private static MiyabiDifficultyPanel _difficultyPanel;
     private static MiyabiSkinPanel _skinPanel;
     private static MiyabiFunPilePanel _funPilePanel;
-    private static Miyabi _currentMiyabi;
+    private static CharType _currentCharType = CharType.None;
     private static SkinType _currentSkinType = SkinType.Combat;
     private static bool _diffHandlerWired;
     private static bool _skinHandlerWired;
     private static bool _funPileHandlerWired;
 
     // ============================================================
-    // Patch: NCharacterSelectScreen.SelectCharacter
+    // Patch
     // ============================================================
 
     [HarmonyPatch(typeof(NCharacterSelectScreen), "SelectCharacter")]
@@ -32,105 +35,70 @@ public static class MiyabiCharSelectSkinPatch
         NCharacterSelectButton charSelectButton,
         CharacterModel characterModel)
     {
-        GD.Print($"[MiyabiSkinPatch] Postfix 触发 | char={characterModel?.Id.Entry ?? "null"} | "
-            + $"isMiyabi={characterModel is Miyabi} | panelOpen={MiyabiModConfig.MiyabiPanelOpen}");
+        CharType charType = characterModel is Miyabi ? CharType.Miyabi
+            : characterModel is Yixuan ? CharType.Yixuan
+            : CharType.None;
 
-        bool showPanels = characterModel is Miyabi && MiyabiModConfig.MiyabiPanelOpen;
-        GD.Print($"[MiyabiSkinPatch] showPanels={showPanels}");
+        bool showPanels = charType != CharType.None && MiyabiModConfig.MiyabiPanelOpen;
+
+        GD.Print($"[MiyabiSkinPatch] Postfix | char={characterModel?.Id.Entry ?? "null"} "
+            + $"| charType={charType} | panelOpen={MiyabiModConfig.MiyabiPanelOpen} | show={showPanels}");
 
         try
         {
-            if (characterModel is Miyabi miyabi && MiyabiModConfig.MiyabiPanelOpen)
+            if (showPanels)
             {
-                _currentMiyabi = miyabi;
-                GD.Print("[MiyabiSkinPatch] Miyabi 已选中，开始初始化面板...");
+                _currentCharType = charType;
 
-                // --- 进阶选项 ---
-                GD.Print("[MiyabiSkinPatch] 创建/获取进阶选项面板...");
+                // --- 进阶选项（共用） ---
                 var diffPanel = GetOrCreateDifficultyPanel(__instance);
-                GD.Print($"[MiyabiSkinPatch] 进阶面板 ready | valid={GodotObject.IsInstanceValid(diffPanel)}");
                 if (!_diffHandlerWired)
                 {
                     diffPanel.LevelChanged += OnDifficultyChanged;
                     diffPanel.EnemyStrongerChanged += OnEnemyStrongerChanged;
                     _diffHandlerWired = true;
-                    GD.Print("[MiyabiSkinPatch] 进阶面板事件已绑定");
                 }
                 diffPanel.CurrentLevel = (int)MiyabiModConfig.CombatHardSelected;
                 diffPanel.EnemyStronger = MiyabiModConfig.MiyabiEnemiesStronger;
-                GD.Print($"[MiyabiSkinPatch] 进阶面板数据已设置 | level={diffPanel.CurrentLevel} | stronger={diffPanel.EnemyStronger}");
 
                 // --- 皮肤面板 ---
-                GD.Print("[MiyabiSkinPatch] 创建/获取皮肤面板...");
                 var skinPanel = GetOrCreateSkinPanel(__instance);
-                GD.Print($"[MiyabiSkinPatch] 皮肤面板 ready | valid={GodotObject.IsInstanceValid(skinPanel)}");
                 if (!_skinHandlerWired)
                 {
                     skinPanel.SkinChanged += OnSkinChanged;
                     skinPanel.SkinTypeChanged += OnSkinTypeChanged;
                     _skinHandlerWired = true;
-                    GD.Print("[MiyabiSkinPatch] 皮肤面板事件已绑定");
                 }
-                LoadSkinData(skinPanel, _currentSkinType);
-                GD.Print($"[MiyabiSkinPatch] 皮肤数据已加载 | type={_currentSkinType} | index={skinPanel.CurrentIndex}");
+                LoadSkinData(skinPanel, _currentSkinType, charType);
 
-                // --- 特殊挑战 ---
-                GD.Print("[MiyabiSkinPatch] 创建/获取特殊挑战面板...");
+                // --- 特殊挑战（按角色分开） ---
                 var funPilePanel = GetOrCreateFunPilePanel(__instance);
-                GD.Print($"[MiyabiSkinPatch] 特殊挑战面板 ready | valid={GodotObject.IsInstanceValid(funPilePanel)}");
                 if (!_funPileHandlerWired)
                 {
                     funPilePanel.FunPileChanged += OnFunPileChanged;
                     _funPileHandlerWired = true;
-                    GD.Print("[MiyabiSkinPatch] 特殊挑战面板事件已绑定");
                 }
-                funPilePanel.CurrentIndex = (int)MiyabiModConfig.FunPileSelected;
-                GD.Print($"[MiyabiSkinPatch] 特殊挑战数据已设置 | index={funPilePanel.CurrentIndex}");
+                LoadFunPileData(funPilePanel, charType);
             }
             else
             {
-                _currentMiyabi = null;
+                _currentCharType = CharType.None;
             }
 
-            // 统一控制显隐
+            // 统一显隐
             bool diffValid = _difficultyPanel != null && GodotObject.IsInstanceValid(_difficultyPanel);
             bool skinValid = _skinPanel != null && GodotObject.IsInstanceValid(_skinPanel);
             bool funValid = _funPilePanel != null && GodotObject.IsInstanceValid(_funPilePanel);
-            GD.Print($"[MiyabiSkinPatch] 显隐控制 | show={showPanels} | diffValid={diffValid} | skinValid={skinValid} | funValid={funValid}");
 
-            if (diffValid)
-            {
-                _difficultyPanel.Visible = showPanels;
-                GD.Print($"[MiyabiSkinPatch] 进阶面板 Visible={_difficultyPanel.Visible}");
-            }
-            else if (showPanels)
-            {
-                GD.Print("[MiyabiSkinPatch] ⚠ 进阶面板无效但应该显示！");
-            }
+            if (diffValid) _difficultyPanel.Visible = showPanels;
+            if (skinValid) _skinPanel.Visible = showPanels;
+            if (funValid) _funPilePanel.Visible = showPanels;
 
-            if (skinValid)
-            {
-                _skinPanel.Visible = showPanels;
-                GD.Print($"[MiyabiSkinPatch] 皮肤面板 Visible={_skinPanel.Visible}");
-            }
-            else if (showPanels)
-            {
-                GD.Print("[MiyabiSkinPatch] ⚠ 皮肤面板无效但应该显示！");
-            }
-
-            if (funValid)
-            {
-                _funPilePanel.Visible = showPanels;
-                GD.Print($"[MiyabiSkinPatch] 特殊挑战面板 Visible={_funPilePanel.Visible}");
-            }
-            else if (showPanels)
-            {
-                GD.Print("[MiyabiSkinPatch] ⚠ 特殊挑战面板无效但应该显示！");
-            }
+            GD.Print($"[MiyabiSkinPatch] 显隐 | show={showPanels} | diffV={diffValid} skinV={skinValid} funV={funValid}");
         }
         catch (Exception ex)
         {
-            GD.PrintErr($"[MiyabiSkinPatch] ❌ 异常: {ex.GetType().Name} — {ex.Message}\n{ex.StackTrace}");
+            GD.PrintErr($"[MiyabiSkinPatch] ❌ {ex.GetType().Name}: {ex.Message}\n{ex.StackTrace}");
         }
     }
 
@@ -141,70 +109,44 @@ public static class MiyabiCharSelectSkinPatch
     private static MiyabiDifficultyPanel GetOrCreateDifficultyPanel(NCharacterSelectScreen screen)
     {
         if (_difficultyPanel != null && GodotObject.IsInstanceValid(_difficultyPanel))
-        {
-            GD.Print("[MiyabiSkinPatch] 进阶面板已存在，复用");
             return _difficultyPanel;
-        }
-
-        GD.Print("[MiyabiSkinPatch] 🔨 新建进阶面板...");
-        _difficultyPanel = new MiyabiDifficultyPanel();
-        _difficultyPanel.Name = "MiyabiDifficultyPanel";
-        _difficultyPanel.Position = new Vector2(1460, 40);
+        _difficultyPanel = new MiyabiDifficultyPanel { Name = "MiyabiDifficultyPanel", Position = new Vector2(1460, 40) };
         screen.AddChild(_difficultyPanel);
         _diffHandlerWired = false;
-        GD.Print($"[MiyabiSkinPatch] 进阶面板已添加到屏幕 | parent={_difficultyPanel.GetParent()?.GetType().Name ?? "null"}");
         return _difficultyPanel;
     }
 
     private static MiyabiSkinPanel GetOrCreateSkinPanel(NCharacterSelectScreen screen)
     {
         if (_skinPanel != null && GodotObject.IsInstanceValid(_skinPanel))
-        {
-            GD.Print("[MiyabiSkinPatch] 皮肤面板已存在，复用");
             return _skinPanel;
-        }
-
-        GD.Print("[MiyabiSkinPatch] 🔨 新建皮肤面板...");
-        _skinPanel = new MiyabiSkinPanel();
-        _skinPanel.Name = "MiyabiSkinPanel";
-        _skinPanel.Position = new Vector2(1460, 380);
+        _skinPanel = new MiyabiSkinPanel { Name = "MiyabiSkinPanel", Position = new Vector2(1460, 380) };
         screen.AddChild(_skinPanel);
         _skinHandlerWired = false;
-        GD.Print($"[MiyabiSkinPatch] 皮肤面板已添加到屏幕 | parent={_skinPanel.GetParent()?.GetType().Name ?? "null"}");
         return _skinPanel;
     }
 
     private static MiyabiFunPilePanel GetOrCreateFunPilePanel(NCharacterSelectScreen screen)
     {
         if (_funPilePanel != null && GodotObject.IsInstanceValid(_funPilePanel))
-        {
-            GD.Print("[MiyabiSkinPatch] 特殊挑战面板已存在，复用");
             return _funPilePanel;
-        }
-
-        GD.Print("[MiyabiSkinPatch] 🔨 新建特殊挑战面板...");
-        _funPilePanel = new MiyabiFunPilePanel();
-        _funPilePanel.Name = "MiyabiFunPilePanel";
-        _funPilePanel.Position = new Vector2(1460, 770);
+        _funPilePanel = new MiyabiFunPilePanel { Name = "MiyabiFunPilePanel", Position = new Vector2(1460, 770) };
         screen.AddChild(_funPilePanel);
         _funPileHandlerWired = false;
-        GD.Print($"[MiyabiSkinPatch] 特殊挑战面板已添加到屏幕 | parent={_funPilePanel.GetParent()?.GetType().Name ?? "null"}");
         return _funPilePanel;
     }
 
     // ============================================================
-    // 事件：难度
+    // 事件：难度（共用）
     // ============================================================
 
     private static void OnDifficultyChanged(int newLevel)
     {
-        GD.Print($"[MiyabiSkinPatch] 难度变更: {newLevel}");
         MiyabiModConfig.CombatHardSelected = (MiyabiSelectedHard)newLevel;
     }
 
     private static void OnEnemyStrongerChanged(bool toggled)
     {
-        GD.Print($"[MiyabiSkinPatch] 加强敌人变更: {toggled}");
         MiyabiModConfig.MiyabiEnemiesStronger = toggled;
     }
 
@@ -214,28 +156,35 @@ public static class MiyabiCharSelectSkinPatch
 
     private static void OnSkinTypeChanged(SkinType newType)
     {
-        GD.Print($"[MiyabiSkinPatch] 皮肤类型变更: {newType}");
         _currentSkinType = newType;
         if (_skinPanel == null || !GodotObject.IsInstanceValid(_skinPanel)) return;
-        LoadSkinData(_skinPanel, newType);
+        LoadSkinData(_skinPanel, newType, _currentCharType);
     }
 
     private static void OnSkinChanged(int newIndex)
     {
-        GD.Print($"[MiyabiSkinPatch] 皮肤槽位变更: {newIndex} | type={_currentSkinType}");
-        if (_currentMiyabi == null) return;
+        if (_currentCharType == CharType.None) return;
         if (_skinPanel == null || !GodotObject.IsInstanceValid(_skinPanel)) return;
 
         switch (_currentSkinType)
         {
             case SkinType.Combat:
-                MiyabiModConfig.CombatSelectedSlot = (MiyabiCombatSkinSlot)newIndex;
+                if (_currentCharType == CharType.Miyabi)
+                    MiyabiModConfig.CombatSelectedSlot = (MiyabiCombatSkinSlot)newIndex;
+                else
+                    MiyabiModConfig.YixuanCombatSelectedSlot = (YixuanCombatSkinSlot)newIndex;
                 break;
             case SkinType.Rest:
-                MiyabiModConfig.RestSelectedSlot = (MiyabiRestSkinSlot)newIndex;
+                if (_currentCharType == CharType.Miyabi)
+                    MiyabiModConfig.RestSelectedSlot = (MiyabiRestSkinSlot)newIndex;
+                else
+                    MiyabiModConfig.YixuanRestSelectedSlot = (YixuanRestSkinSlot)newIndex;
                 break;
             case SkinType.Shop:
-                MiyabiModConfig.ShopSelectedSlot = (MiyabiShopSkinSlot)newIndex;
+                if (_currentCharType == CharType.Miyabi)
+                    MiyabiModConfig.ShopSelectedSlot = (MiyabiShopSkinSlot)newIndex;
+                else
+                    MiyabiModConfig.YixuanShopSelectedSlot = (YixuanShopSkinSlot)newIndex;
                 break;
         }
 
@@ -243,53 +192,86 @@ public static class MiyabiCharSelectSkinPatch
         {
             var screen = _skinPanel.GetParent();
             if (screen != null)
-                RefreshBackground(screen, _currentMiyabi);
+                RefreshBackground(screen, _currentCharType);
         }
     }
 
     // ============================================================
-    // 事件：特殊挑战
+    // 事件：特殊挑战（共用）
     // ============================================================
 
     private static void OnFunPileChanged(int newIndex)
     {
-        GD.Print($"[MiyabiSkinPatch] 特殊模式变更: {newIndex}");
-        MiyabiModConfig.FunPileSelected = (MiyabiFunPile)newIndex;
+        if (_currentCharType == CharType.Miyabi)
+            MiyabiModConfig.MiyabiFunPileSelected = (MiyabiFunPile)newIndex;
+        else if (_currentCharType == CharType.Yixuan)
+            MiyabiModConfig.YixuanFunPileSelected = (YixuanFunPile)newIndex;
     }
 
     // ============================================================
     // 皮肤数据加载
     // ============================================================
 
-    private static void LoadSkinData(MiyabiSkinPanel panel, SkinType skinType)
+    private static void LoadSkinData(MiyabiSkinPanel panel, SkinType skinType, CharType charType)
     {
         int skinCount;
         string keyPrefix;
         int currentSlot;
         string previewFallbackPrefix;
 
-        switch (skinType)
+        switch (charType)
         {
-            case SkinType.Combat:
-                skinCount = Miyabi.CombatSkinPaths.Count;
-                keyPrefix = "COMBAT";
-                currentSlot = (int)MiyabiModConfig.CombatSelectedSlot;
-                previewFallbackPrefix = "combat";
+            case CharType.Miyabi:
+                switch (skinType)
+                {
+                    case SkinType.Combat:
+                        skinCount = Miyabi.CombatSkinPaths.Count;
+                        keyPrefix = "COMBAT";
+                        currentSlot = (int)MiyabiModConfig.CombatSelectedSlot;
+                        previewFallbackPrefix = "combat";
+                        break;
+                    case SkinType.Rest:
+                        skinCount = Miyabi.RestSkinPaths.Count;
+                        keyPrefix = "REST";
+                        currentSlot = (int)MiyabiModConfig.RestSelectedSlot;
+                        previewFallbackPrefix = "rest";
+                        break;
+                    case SkinType.Shop:
+                        skinCount = Miyabi.ShopSkinPaths.Count;
+                        keyPrefix = "SHOP";
+                        currentSlot = (int)MiyabiModConfig.ShopSelectedSlot;
+                        previewFallbackPrefix = "shop";
+                        break;
+                    default: return;
+                }
                 break;
-            case SkinType.Rest:
-                skinCount = Miyabi.RestSkinPaths.Count;
-                keyPrefix = "REST";
-                currentSlot = (int)MiyabiModConfig.RestSelectedSlot;
-                previewFallbackPrefix = "rest";
+
+            case CharType.Yixuan:
+                switch (skinType)
+                {
+                    case SkinType.Combat:
+                        skinCount = Yixuan.CombatSkinPaths.Count;
+                        keyPrefix = "YIXUAN_COMBAT";
+                        currentSlot = (int)MiyabiModConfig.YixuanCombatSelectedSlot;
+                        previewFallbackPrefix = "yixuan_combat";
+                        break;
+                    case SkinType.Rest:
+                        skinCount = Yixuan.RestSkinPaths.Count;
+                        keyPrefix = "YIXUAN_REST";
+                        currentSlot = (int)MiyabiModConfig.YixuanRestSelectedSlot;
+                        previewFallbackPrefix = "yixuan_rest";
+                        break;
+                    case SkinType.Shop:
+                        skinCount = Yixuan.ShopSkinPaths.Count;
+                        keyPrefix = "YIXUAN_SHOP";
+                        currentSlot = (int)MiyabiModConfig.YixuanShopSelectedSlot;
+                        previewFallbackPrefix = "yixuan_shop";
+                        break;
+                    default: return;
+                }
                 break;
-            case SkinType.Shop:
-                skinCount = Miyabi.ShopSkinPaths.Count;
-                keyPrefix = "SHOP";
-                currentSlot = (int)MiyabiModConfig.ShopSelectedSlot;
-                previewFallbackPrefix = "shop";
-                break;
-            default:
-                return;
+
+            default: return;
         }
 
         var names = new List<string>(skinCount);
@@ -302,13 +284,9 @@ public static class MiyabiCharSelectSkinPatch
             names.Add(name);
 
             if (MiyabiSkinManager.previewDatas.TryGetValue(dataKey, out var previewPath))
-            {
                 previews.Add(previewPath);
-            }
             else
-            {
                 previews.Add($"res://images/skins/{previewFallbackPrefix}_preview_{i}.png");
-            }
         }
 
         if (currentSlot >= skinCount) currentSlot = 0;
@@ -317,17 +295,51 @@ public static class MiyabiCharSelectSkinPatch
         panel.PreviewImagePaths = previews;
         panel.SkinDisplayNames = names;
         panel.CurrentIndex = currentSlot;
-        GD.Print($"[MiyabiSkinPatch] LoadSkinData 完成 | type={skinType} | count={skinCount} | slot={currentSlot}");
+    }
+
+    // ============================================================
+    // 特殊挑战数据加载（按角色分开）
+    // ============================================================
+
+    private static void LoadFunPileData(MiyabiFunPilePanel panel, CharType charType)
+    {
+        (string name, string desc)[] options;
+        int currentIndex;
+
+        switch (charType)
+        {
+            case CharType.Miyabi:
+                options = new (string, string)[]
+                {
+                    ("默认", "无变化"),
+                    ("邦布当家", "初始卡组变为邦布相关卡组"),
+                    ("蜂群集结", "初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]"),
+                };
+                currentIndex = (int)MiyabiModConfig.MiyabiFunPileSelected;
+                break;
+
+            case CharType.Yixuan:
+                options = new (string, string)[]
+                {
+                    ("默认", "无变化"),
+                    // 可在此添加 Yixuan 专属挑战
+                };
+                currentIndex = (int)MiyabiModConfig.YixuanFunPileSelected;
+                break;
+
+            default: return;
+        }
+
+        panel.SetOptions(options, currentIndex);
     }
 
     // ============================================================
     // 背景刷新
     // ============================================================
 
-    private static void RefreshBackground(Node screen, Miyabi miyabi)
+    private static void RefreshBackground(Node screen, CharType charType)
     {
-        var bgField = typeof(NCharacterSelectScreen).GetField(
-            "_bgContainer",
+        var bgField = typeof(NCharacterSelectScreen).GetField("_bgContainer",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 
         var bgContainer = bgField?.GetValue(screen) as Control;
@@ -339,12 +351,15 @@ public static class MiyabiCharSelectSkinPatch
             child.QueueFree();
         }
 
-        string bgPath = miyabi.CustomCharacterSelectBgPath;
+        string bgPath = charType == CharType.Miyabi
+            ? "res://scenes/char_select/char_select_bg_miyabi.tscn"
+            : "res://scenes/_Yixuan/char_select_bg_yixuan.tscn";
+
         var scene = ResourceLoader.Load<PackedScene>(bgPath);
         if (scene != null)
         {
             var control = scene.Instantiate<Control>(PackedScene.GenEditState.Disabled);
-            control.Name = miyabi.Id.Entry + "_bg";
+            control.Name = (charType == CharType.Miyabi ? "Miyabi_Sakura" : "Yixuan") + "_bg";
             bgContainer.AddChild(control);
         }
     }

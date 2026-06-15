@@ -20,13 +20,21 @@
 	"MIYABISTS2-COMBAT_HARD_SELECTED.Hg" : "10.汞级",
 
 
-	"MIYABISTS2-FUN_PILE_SELECTED.title" : "特殊初始卡组",
-	"MIYABISTS2-FUN_PILE_SELECTED.hover.title" : "选择初始卡组",
-	"MIYABISTS2-FUN_PILE_SELECTED.hover.desc" : "选择不同的特殊初始卡组进行挑战。\\n[gold]默认[/gold]：无变化\\n[gold]邦布当家[/gold]：初始卡组变为邦布相关卡组\\n[gold]蜂群集结[/gold]：初始卡组中添加1张升级后的[gold]蜂群集结[/gold]",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.title" : "星见雅特殊初始卡组",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.title" : "选择初始卡组",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.desc" : "选择不同的特殊初始卡组进行挑战。\\n[gold]默认[/gold]：无变化\\n[gold]邦布当家[/gold]：初始卡组变为邦布相关卡组\\n[gold]蜂群集结[/gold]：初始卡组中添加1张升级后的[gold]蜂群集结[/gold]",
 
-	"MIYABISTS2-FUN_PILE_SELECTED.Default" : "默认卡组",
-	"MIYABISTS2-FUN_PILE_SELECTED.AllBangboo" : "邦布当家",
-	"MIYABISTS2-FUN_PILE_SELECTED.BeeGroup" : "蜂群集结",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Default" : "默认卡组",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.AllBangboo" : "邦布当家",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.BeeGroup" : "蜂群集结",
+
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.title" : "仪玄特殊初始卡组",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.title" : "选择初始卡组",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.desc" : "选择不同的特殊初始卡组进行挑战。\\n[gold]默认[/gold]：无变化\\n[gold]邦布当家[/gold]：初始卡组变为邦布相关卡组\\n[gold]蜂群集结[/gold]：初始卡组中添加1张升级后的[gold]蜂群集结[/gold]",
+
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Default" : "默认卡组",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.AllBangboo" : "邦布当家",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.BeeGroup" : "蜂群集结",
 
 
 
@@ -48,6 +56,8 @@
 
 	"MIYABISTS2-ELSE_CONFIG.title" : "其它配置",
 
+	"MIYABISTS2-MIYABI_PANEL_OPEN.title" : "选人界面面板是否开启",
+
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "星见雅战斗皮肤选项",
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.title" : "星见雅战斗皮肤",
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
@@ -59,6 +69,18 @@
 	"MIYABISTS2-REST_SELECTED_SLOT.title" : "星见雅休息皮肤选项",
 	"MIYABISTS2-REST_SELECTED_SLOT.hover.title" : "星见雅休息皮肤",
 	"MIYABISTS2-REST_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
+
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.title" : "仪玄战斗皮肤选项",
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.hover.title" : "仪玄战斗皮肤",
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
+
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.title" : "仪玄商店皮肤选项",
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.hover.title" : "仪玄商店皮肤",
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
+
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.title" : "仪玄休息皮肤选项",
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.hover.title" : "仪玄休息皮肤",
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.hover.desc" : "选择不同设置以使用不同皮肤。",
 
 
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0" : "烈露濯霜",

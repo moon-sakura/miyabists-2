@@ -44,6 +44,34 @@ namespace Miyabists2.Scripts.Service
         Slot5
     }
 
+    public enum YixuanCombatSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+    public enum YixuanRestSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+    public enum YixuanShopSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+
     public enum MiyabiSelectedHard
     {
         Zero = 0,
@@ -65,6 +93,14 @@ namespace Miyabists2.Scripts.Service
         AllBangboo,
         BeeGroup,
         //UltimateGrace
+    }
+
+    public enum YixuanFunPile
+    {
+        Default = 0,
+        // 可在此扩展 Yixuan 专属挑战
+        AllBangboo,
+        BeeGroup,
     }
 
     [ConfigHoverTipsByDefault]
@@ -98,7 +134,10 @@ namespace Miyabists2.Scripts.Service
         public static bool MiyabiPanelOpen { get; set; } = true;
 
         [ConfigHoverTip]
-        public static MiyabiFunPile FunPileSelected { get; set; } = MiyabiFunPile.Default;
+        public static MiyabiFunPile MiyabiFunPileSelected { get; set; } = MiyabiFunPile.Default;
+
+        [ConfigHoverTip]
+        public static YixuanFunPile YixuanFunPileSelected { get; set; } = YixuanFunPile.Default;
 
         [ConfigHoverTip]
         public static MiyabiCombatSkinSlot CombatSelectedSlot { get; set; } = MiyabiCombatSkinSlot.Slot0;
@@ -108,6 +147,15 @@ namespace Miyabists2.Scripts.Service
 
         [ConfigHoverTip]
         public static MiyabiShopSkinSlot ShopSelectedSlot { get; set; } = MiyabiShopSkinSlot.Slot0;
+
+        [ConfigHoverTip]
+        public static YixuanCombatSkinSlot YixuanCombatSelectedSlot { get; set; } = YixuanCombatSkinSlot.Slot0;
+
+        [ConfigHoverTip]
+        public static YixuanRestSkinSlot YixuanRestSelectedSlot { get; set; } = YixuanRestSkinSlot.Slot0;
+
+        [ConfigHoverTip]
+        public static YixuanShopSkinSlot YixuanShopSelectedSlot { get; set; } = YixuanShopSkinSlot.Slot0;
 
     }
 

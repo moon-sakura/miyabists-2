@@ -15,7 +15,9 @@ using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts._Yixuan.Powers;
 using Miyabists2.Scripts._Yixuan.Relics;
+using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Relics.SpecRelic;
+using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
 
@@ -39,9 +41,9 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     public override string? PlaceholderCharacterId => "regent";
 
     // TODO: 添加皮肤管理（参考Miyabi的皮肤系统）
-    // public YixuanCombatSkinSlot CombatSkinSlot => YixuanModConfig.CombatSelectedSlot;
-    // public YixuanRestSkinSlot RestSkinSlot => YixuanModConfig.RestSelectedSlot;
-    // public YixuanShopSkinSlot ShopSkinSlot => YixuanModConfig.ShopSelectedSlot;
+    public YixuanCombatSkinSlot CombatSkinSlot => MiyabiModConfig.YixuanCombatSelectedSlot;
+    public YixuanRestSkinSlot RestSkinSlot => MiyabiModConfig.YixuanRestSelectedSlot;
+    public YixuanShopSkinSlot ShopSkinSlot => MiyabiModConfig.YixuanShopSelectedSlot;
 
     // TODO: 添加皮肤路径列表
     public static List<string> CombatSkinPaths = new()
@@ -61,9 +63,9 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     {
         get
         {
-            //int index = (int)CombatSkinSlot;
-            //if (index < CombatSkinPaths.Count)
-            //    return CombatSkinPaths[index];
+            int index = (int)CombatSkinSlot;
+            if (index < CombatSkinPaths.Count)
+                return CombatSkinPaths[index];
             return CombatSkinPaths[0];
         }
     }
@@ -72,9 +74,9 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     {
         get
         {
-            //int index = (int)RestSkinSlot;
-            //if (index < RestSkinPaths.Count)
-            //    return RestSkinPaths[index];
+            int index = (int)RestSkinSlot;
+            if (index < RestSkinPaths.Count)
+                return RestSkinPaths[index];
             return RestSkinPaths[0];
         }
     }
@@ -83,12 +85,12 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     {
         get
         {
-            //int index = (int)ShopSkinSlot;
-            //if (index < ShopSkinPaths.Count)
-            //{
-            //    GD.Print($"[YixuanSkin]: Load Skin {index}");
-            //    return ShopSkinPaths[index];
-            //}
+            int index = (int)ShopSkinSlot;
+            if (index < ShopSkinPaths.Count)
+            {
+                GD.Print($"[YixuanSkin]: Load Skin {index}");
+                return ShopSkinPaths[index];
+            }
             return ShopSkinPaths[0];
         }
     }
@@ -100,16 +102,43 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     public override float AttackAnimDelay => 0f;
     public override float CastAnimDelay => 0f;
 
-    /// <summary>
-    /// 初始卡组。你可以在这里添加需要卡组。
-    /// TODO: 替换为Yixuan专属卡牌
-    /// </summary>
-    protected override IEnumerable<StartingDeckEntry> StartingDeckEntries => [
+
+
+    private IEnumerable<StartingDeckEntry> GetDefaultDeck() => [
         new(typeof(YixuanBlock), 3),
         new(typeof(XiaoyunJin), 3),
         new(typeof(YinyunShenfa), 3),
         new(typeof(JinyingJue), 1),
     ];
+
+    private IEnumerable<StartingDeckEntry> GetBangbooDeck() => [
+        new(typeof(BangbooSummonOne), 5),
+        new(typeof(BangbooActiveOne), 2),
+        new(typeof(BangbooChargeAll), 1),
+        new(typeof(BangbooHelpmeOne), 2),
+        new(typeof(BangbooUseOnemore), 1),
+    ];
+
+    /// <summary>
+    /// 初始卡组。你可以在这里添加需要卡组。
+    /// TODO: 替换为Yixuan专属卡牌
+    /// </summary>
+    /// 
+    protected override IEnumerable<StartingDeckEntry> StartingDeckEntries
+    {
+        get
+        {
+            switch (MiyabiModConfig.YixuanFunPileSelected)
+            {
+                case YixuanFunPile.Default:
+                    return GetDefaultDeck();
+                case YixuanFunPile.AllBangboo:
+                    return GetBangbooDeck();
+                default:
+                    return GetDefaultDeck();
+            }
+        }
+    }
 
     // 初始遗物
     protected override IEnumerable<Type> StartingRelicTypes => [
