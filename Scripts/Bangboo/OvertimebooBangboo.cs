@@ -52,8 +52,11 @@ namespace Miyabists2.Scripts.Bangboo
 
         public override async Task ActCost()
         {
-            if (Owner.CurrentHp <= 1)
-                await RelicCmd.Remove(MiyabiFuncBase.GetRelic<OvertimebooRelic>(Owner.PetOwner));
+            if (Owner.CurrentHp <= 1){
+                var relic = MiyabiFuncBase.GetRelic<OvertimebooRelic>(Owner.PetOwner);
+                if (relic != null)
+                    await RelicCmd.Remove(relic);
+            }
             await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), base.Owner, 1m, ValueProp.Unblockable, base.Owner);
         }
 

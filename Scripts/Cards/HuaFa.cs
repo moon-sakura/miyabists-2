@@ -54,10 +54,10 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            // 升级增加 2 点护�?            DynamicVars.Block.UpgradeValueBy(4);
+            DynamicVars.Block.UpgradeValueBy(4);
 
-            // 如果需要升�?Parry �?Slippery，可以在此添加逻辑
-            // if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
+            // 濡傛灉闇€瑕佸崌绾?Parry 鎴?Slippery锛屽彲浠ュ湪姝ゆ坊鍔犻€昏緫
+            if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
         }
     }
 }
