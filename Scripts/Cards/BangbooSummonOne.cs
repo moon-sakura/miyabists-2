@@ -82,7 +82,7 @@ namespace Miyabists2.Scripts.Cards
             }
             else if(result == 11)
             {
-                await MiyabiBangbooService.SummonBangboo<XixifuBangboo>(Owner, 6m, MinionPosition.FrontUpper, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<XixifuBangboo>(Owner, 8m, MinionPosition.Back, null, 1m);
             }
 
         }

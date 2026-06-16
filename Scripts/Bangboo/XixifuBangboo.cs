@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Minion;
 using Miyabists2.Scripts.Service;
@@ -95,12 +96,13 @@ namespace Miyabists2.Scripts.Bangboo
         /// </summary>
         private async Task TriggerRandomEffect(PlayerChoiceContext choiceContext)
         {
-            int roll = MiyabiFuncBase.RandomInt(0, 3, Owner.PetOwner);
+            int roll = MiyabiFuncBase.RandomInt(0, 5, Owner.PetOwner);
             switch (roll)
             {
                 case 0: // Gain gold
                     await PlayerCmd.GainGold(
                         DynamicVars["Gold"].IntValue, Owner.PetOwner);
+                    TalkCmd.Play(MiyabiFuncBase.GetForMonsterString("XIXIFU_GET_MONEY"), Owner, VfxColor.Blue);
                     break;
                 case 1: // Deal damage to all enemies
                     var enemies = Owner.CombatState.Enemies
@@ -109,12 +111,17 @@ namespace Miyabists2.Scripts.Bangboo
                     if (enemies.Count > 0)
                         await CreatureCmd.Damage(
                             choiceContext, enemies, DynamicVars.Damage, Owner);
+                    TalkCmd.Play(MiyabiFuncBase.GetForMonsterString("XIXIFU_DAMAGE"), Owner, VfxColor.Blue);
                     break;
                 case 2: // Gain block
                     await CreatureCmd.GainBlock(
                         Owner.PetOwner.Creature,
                         DynamicVars["Block"].BaseValue,
                         ValueProp.Unpowered, null);
+                    TalkCmd.Play(MiyabiFuncBase.GetForMonsterString("XIXIFU_BLOCK"), Owner, VfxColor.Blue);
+                    break;
+                default:
+                    TalkCmd.Play(MiyabiFuncBase.GetForMonsterString("XIXIFU_NOMOVE"), Owner, VfxColor.Blue);
                     break;
             }
         }
@@ -124,6 +131,8 @@ namespace Miyabists2.Scripts.Bangboo
         {
             // Intentionally empty — Xixifu has no cost.
             // The UsedCount increment is handled in OnAct override.
+            UsedCount++;
+            DynamicVars["Used"].BaseValue = UsedCount;
         }
 
         // ActEffect is not used directly since OnAct is fully overridden,

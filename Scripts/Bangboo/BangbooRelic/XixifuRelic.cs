@@ -15,7 +15,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
     [RegisterRelic(typeof(MiyabiRelicPool))]
     internal class XixifuRelic : MiyabiBangbooRelicBase
     {
-        public override RelicRarity Rarity => RelicRarity.Uncommon;
+        public override RelicRarity Rarity => RelicRarity.Rare;
         public override string PackedIconPath => "res://images/bangboo/relicMode/xixifuRelic.png";
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
             await base.AfterPlayerTurnStart(choiceContext, player);
-            await MiyabiBangbooService.SummonBangboo<XixifuBangboo>(Owner, 8m, MinionPosition.FrontUpper, null, 1m);
+            await MiyabiBangbooService.SummonBangboo<XixifuBangboo>(Owner, 8m, MinionPosition.Back, null, 1m);
         }
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>

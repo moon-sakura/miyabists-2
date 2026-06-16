@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
@@ -69,6 +70,11 @@ namespace Miyabists2.Scripts.Service
             if(player == null) return false;
 
             return player.Character is Miyabi || player.Character is Yixuan;
+        }
+
+        public static LocString GetForMonsterString(string entryName)
+        {
+            return new LocString("monsters", entryName+".banter");
         }
 
 

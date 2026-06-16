@@ -22,6 +22,12 @@
     "MIYABI_BOSS.moves.POWER_UP.title": "增强",
     "MIYABI_BOSS.moves.DASH_ATTACK.title": "闪避反击",
 
+    "XIXIFU_BANGBOO.name": "希希芙",
+    "XIXIFU_GET_MONEY.banter":"老大，我找到了这些。",
+    "XIXIFU_DAMAGE.banter":"老大，我来帮你！",
+    "XIXIFU_BLOCK.banter":"老大，你不要死啊！",
+    "XIXIFU_NOMOVE.banter":"老大，我还没吃饱……",
+
 
     "EOUS_BANGBOO.name": "伊埃斯",
     "EXPLOREBOO_BANGBOO.name": "寻宝布",
@@ -33,6 +39,6 @@
     "EXCALIBOO_BANGBOO.name": "圣剑布",
     "PAPERBOO_BANGBOO.name": "纸壳布",
     "MAGNETIBOO_BANGBOO.name": "磁力布",
-    "XIXIFU_BANGBOO.name": "希希芙",
+
     "ONE_DENNYBOO_BANGBOO.name": "一丁尼布"
 }

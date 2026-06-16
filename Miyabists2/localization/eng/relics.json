@@ -77,8 +77,9 @@
 
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.title": "Magnetiboo",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "At the start of your turn, summon [gold]Magnetiboo[/gold].",
-	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "Full magnetic power!"
-		"MIYABISTS2_RELIC_XIXIFU_RELIC.title": "Xixifu",
-		"MIYABISTS2_RELIC_XIXIFU_RELIC.description": "At the start of your turn, summon [gold]Xixifu[/gold]. Click her during your turn to select and [gold]Exhaust[/gold] up to 1 card from your hand. If a card is removed, trigger a random effect: gain [blue]10[/blue] Gold, deal [blue]8[/blue] damage to ALL enemies, or gain [blue]6[/blue] Block.",
-		"MIYABISTS2_RELIC_XIXIFU_RELIC.flavor": "What burden shall we push today?",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "Full magnetic power!",
+
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.title": "Xixifu",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.description": "At the start of your turn, summon [gold]Xixifu[/gold]. Click her during your turn to select and [gold]Exhaust[/gold] up to 1 card from your hand. If a card is removed, trigger a random effect: gain [blue]10[/blue] Gold, deal [blue]8[/blue] damage to ALL enemies, or gain [blue]6[/blue] Block.",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.flavor": "What burden shall we push today?"
 }
