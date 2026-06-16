@@ -80,6 +80,54 @@
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "回合开始时召唤[gold]磁力布[/gold]。",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "磁力全开！",
 
+
+
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.title": "加班布",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]加班布[/gold]。",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.flavor": "牛马布",
+
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.title": "纸壳布",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]纸壳布[/gold]。",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.flavor": "我来护你！",
+
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.title": "鲨牙布",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]鲨牙布[/gold]。",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.flavor": "我在启动！",
+
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.title": "圣剑布",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]圣剑布[/gold]。",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.flavor": "马上就好！",
+
+	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.title": "格列佛探员",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.description": "回合开始时召唤[gold]格列佛探员[/gold]。",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.flavor": "FBI, OPEN THE DOOR!",
+
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.title": "招财布",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]招财布[/gold]，有小概率会召唤[gold]一丁尼布[/gold]。",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.flavor": "真的会招财吗？",
+
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.title": "寻宝布",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]寻宝布[/gold]。",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.flavor": "要发财了！",
+
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.title": "扑击布",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]扑击布[/gold]。",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.flavor": "起飞。",
+
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.title": "伊埃斯",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线。",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.flavor": "最好的的伊埃斯",
+
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.title": "磁力布",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]磁力布[/gold]。",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.flavor": "磁力全开！",
+
+
+
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.title": "超越绝境之志",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.description": "血量高于[blue]80%[/blue]时，伤害降低[red]50%[/red]；血量低于[blue]50%[/blue]时，伤害增加[blue]20%[/blue]；血量低于[blue]20%[/blue]时，伤害增加[blue]50%[/blue]",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.flavor": "在绝境中绽放的意志",
+
 	// ====== 仪玄遗物 ======
 	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.title": "云岿山",
 	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.description": "战斗开始时获得6点支援点数",

@@ -129,15 +129,9 @@ namespace Miyabists2.Scripts.Service
 
         public static bool ChangeToAllPlayers { get; set; } = false;
 
-        [ConfigSection("ElseConfig")] // 创建一个战斗设置分组
-
-        public static bool MiyabiPanelOpen { get; set; } = true;
-
+        [ConfigSection("MiyabiConfig")]
         [ConfigHoverTip]
         public static MiyabiFunPile MiyabiFunPileSelected { get; set; } = MiyabiFunPile.Default;
-
-        [ConfigHoverTip]
-        public static YixuanFunPile YixuanFunPileSelected { get; set; } = YixuanFunPile.Default;
 
         [ConfigHoverTip]
         public static MiyabiCombatSkinSlot CombatSelectedSlot { get; set; } = MiyabiCombatSkinSlot.Slot0;
@@ -148,6 +142,11 @@ namespace Miyabists2.Scripts.Service
         [ConfigHoverTip]
         public static MiyabiShopSkinSlot ShopSelectedSlot { get; set; } = MiyabiShopSkinSlot.Slot0;
 
+
+        [ConfigSection("YixuanConfig")]
+        [ConfigHoverTip]
+        public static YixuanFunPile YixuanFunPileSelected { get; set; } = YixuanFunPile.Default;
+
         [ConfigHoverTip]
         public static YixuanCombatSkinSlot YixuanCombatSelectedSlot { get; set; } = YixuanCombatSkinSlot.Slot0;
 
@@ -156,7 +155,13 @@ namespace Miyabists2.Scripts.Service
 
         [ConfigHoverTip]
         public static YixuanShopSkinSlot YixuanShopSelectedSlot { get; set; } = YixuanShopSkinSlot.Slot0;
+        
+        
+        [ConfigSection("ElseConfig")]
 
+        public static bool MiyabiPanelOpen { get; set; } = true;
+
+        public static bool ShowSameRelic {  get; set; } = false;
     }
 
     /// <summary>

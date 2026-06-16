@@ -1,3 +1,4 @@
+using BaseLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -10,20 +11,25 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Logging;
+using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Acts;
 using MegaCrit.Sts2.Core.Models.Badges;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Relics;
 using MegaCrit.Sts2.Core.Runs.Metrics;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Bangboo.BangbooRelic;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Interop.AutoRegistration;
 using System.Drawing;
+using System.Reflection;
+using static Godot.XmlParser;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -64,6 +70,25 @@ namespace Miyabists2.Scripts.Service
 
             return player.Character is Miyabi || player.Character is Yixuan;
         }
+
+
+        //public static void AddRelicToChar<T>(RelicModel r) where T : RelicPoolModel
+        //{
+        //    // 1. 先拿到官方 AddModelToPool 的方法信息
+        //    MethodInfo method = typeof(ModHelper).GetMethod(
+        //        nameof(ModHelper.AddModelToPool),
+        //        BindingFlags.Public | BindingFlags.Static
+        //    );
+
+        //    if (method == null) return;
+
+        //        // 2. 🎯 核心魔法：动态把编译期的 T 和你循环里的 types 融合成双泛型
+        //        // 相当于在运行时强行把 types 塞进了尖括号
+        //    MethodInfo genericMethod = method.MakeGenericMethod(typeof(T), r.GetType());
+
+        //        // 3. 执行这个动态生成的方法
+        //    genericMethod.Invoke(null, null);
+        //}
 
         //通用PlayerChoiceContext
         //public static PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(Owner, Owner.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
