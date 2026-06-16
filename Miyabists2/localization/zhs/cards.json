@@ -269,6 +269,11 @@
 	"MIYABISTS2_CARD_EARS_RIGHT.title": "右耳伤害高",
     "MIYABISTS2_CARD_EARS_RIGHT.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n获得{Block:diff()}点格挡\\n[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}",
 
+	"MIYABISTS2_CARD_JINLONG_SZB.title": "金色威信·璐米欧儿",
+    "MIYABISTS2_CARD_JINLONG_SZB.description": "每回合开始时舍弃最多2张卡牌，然后抽取舍弃数量的卡。\\n每次舍弃或消耗卡牌时对所有敌人造成2点伤害。",
+
+
+
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "失衡测试卡",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]失衡值[/gold][blue]50[/blue]",
 
@@ -449,6 +454,9 @@
 	"MIYABISTS2_CARD_XUANMO_XUNJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：再获得[blue]{ExtraVigor:diff()}[/blue]点[gold]活力[/gold]",
 
 	// ====== 仪玄新增共享卡牌 ======
+	"MIYABISTS2_CARD_JINLONG_SZB_YIXUAN.title": "金色威信·璐米欧儿",
+    "MIYABISTS2_CARD_JINLONG_SZB_YIXUAN.description": "每回合开始时舍弃最多2张卡牌，然后抽取舍弃数量的卡。\\n每次舍弃或消耗卡牌时对所有敌人造成2点伤害。",
+
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG_YIXUAN.title": "一切献给虎破王",
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG_YIXUAN.description": "消耗卡组中所有[gold]失衡值[/gold]大于[blue]15[/blue]的卡\\n如果消耗[blue]3[/blue]张以上，[gold]击破[/gold]敌人\\n不足[blue]3[/blue]张则在抽卡堆中添加[blue]3[/blue]张[gold]恶虎七式·猛虎炸开花[/gold]",
 

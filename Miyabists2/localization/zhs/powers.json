@@ -178,6 +178,10 @@
     "DONG_FENG_SP_POWER.description": "弹刀这一块",
     "DONG_FENG_SP_POWER.smartDescription": "下一张攻击卡伤害+[blue]25%[/blue]。",
 
+    "JINLONG_SZB_POWER.title": "金色威信·璐米欧儿",
+    "JINLONG_SZB_POWER.description": "",
+    "JINLONG_SZB_POWER.smartDescription": "每回合开始时舍弃最多{Amount}张卡牌，然后抽取舍弃数量的卡。\\n每次舍弃或消耗卡牌时对所有敌人造成{Amount}点伤害。",
+
 
 
 
