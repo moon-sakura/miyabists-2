@@ -112,11 +112,11 @@ class Yixuan : ModCharacterTemplate<YixuanCardPool, YixuanRelicPool, YixuanPotio
     ];
 
     private IEnumerable<StartingDeckEntry> GetBangbooDeck() => [
-        new(typeof(BangbooSummonOne), 5),
-        new(typeof(BangbooActiveOne), 2),
-        new(typeof(BangbooChargeAll), 1),
-        new(typeof(BangbooHelpmeOne), 2),
-        new(typeof(BangbooUseOnemore), 1),
+        new(typeof(BangbooSummonOneYixuan), 5),
+        new(typeof(BangbooActiveOneYixuan), 2),
+        new(typeof(BangbooChargeAllYixuan), 1),
+        new(typeof(BangbooHelpmeOneYixuan), 2),
+        new(typeof(BangbooUseOnemoreYixuan), 1),
     ];
 
     /// <summary>

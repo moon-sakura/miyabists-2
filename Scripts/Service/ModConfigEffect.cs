@@ -212,9 +212,20 @@ namespace Miyabists2.Scripts.Service
 
                 if(player.Character is Miyabi && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.BeeGroup)
                 {
-                    CardModel card = player.RunState.CreateCard<BeeGroup>(player);
-                    card.UpgradeInternal();
-                    CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
+                    if(player.Character is Miyabi)
+                    {
+                        CardModel card = player.RunState.CreateCard<BeeGroup>(player);
+                        card.UpgradeInternal();
+                        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
+                    }
+
+                    if(player.Character is Yixuan)
+                    {
+                        CardModel card = player.RunState.CreateCard<BeeGroupYixuan>(player);
+                        card.UpgradeInternal();
+                        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
+                    }
+                    
                 }
 
                 if (player.Character is Yixuan && MiyabiModConfig.YixuanFunPileSelected == YixuanFunPile.BeeGroup)
