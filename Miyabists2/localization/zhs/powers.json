@@ -185,6 +185,7 @@
 
 
 
+
     "MIYABI_GUARDIAN_POWER.title": "守护者",
     "MIYABI_GUARDIAN_POWER.description": "为你而死",
     "MIYABI_GUARDIAN_POWER.smartDescription": "抵挡敌人造成的伤害。",
@@ -292,5 +293,9 @@
 
 	"HUALIAN_XIEYI_POWER.title": "花链协议",
 	"HUALIAN_XIEYI_POWER.description": "右击消耗支援点数使用效果",
-	"HUALIAN_XIEYI_POWER.smartDescription": "右键点击能力：[gold]支援点数[/gold][blue]2[/blue]：获得[blue]{Amount}[/blue]点能量，对所有敌人造成[blue]{Damage:diff()}[/blue]点伤害"
+	"HUALIAN_XIEYI_POWER.smartDescription": "右键点击能力：[gold]支援点数[/gold][blue]2[/blue]：获得[blue]{Amount}[/blue]点能量，对所有敌人造成[blue]{Damage:diff()}[/blue]点伤害",
+
+	"KAKANIA_POWER.title": "本我，自我，超我",
+	"KAKANIA_POWER.description": "增加受到伤害25%，记录受到所有伤害。右键消耗5支援点数释放记录伤害，回合结束时造成百分比伤害。",
+	"KAKANIA_POWER.smartDescription": "受到伤害[red]+25%[/red]，已记录[blue]{RecordedDamage:diff()}[/blue]点受伤。\\n右键触发：消耗[blue]5[/blue]支援点数，对所有敌人造成记录受伤数值的伤害；回合结束对所有敌人造成[blue]{OutgoingDamage:diff()}[/blue]点伤害（回合结束以[blue]{BurstRatio:diff()}%[/blue]释放）。"
 }

@@ -272,7 +272,8 @@
 	"MIYABISTS2_CARD_JINLONG_SZB.title": "金色威信·璐米欧儿",
     "MIYABISTS2_CARD_JINLONG_SZB.description": "每回合开始时舍弃最多2张卡牌，然后抽取舍弃数量的卡。\\n每次舍弃或消耗卡牌时对所有敌人造成2点伤害。",
 
-
+	"MIYABISTS2_CARD_KAKANIA.title": "本我，自我，超我",
+    "MIYABISTS2_CARD_KAKANIA.description": "增加受到伤害25%，记录受到的所有伤害。右键触发：消耗5支援点数对所有敌人造成记录数值的伤害，回合结束时造成本回合造成伤害数值的{BurstRatio:diff()}%的伤害。",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "失衡测试卡",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]失衡值[/gold][blue]50[/blue]",
@@ -417,6 +418,9 @@
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "醉花月云转",
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]",
+
+	"MIYABISTS2_CARD_KAKANIA_YIXUAN.title": "本我，自我，超我",
+    "MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "增加受到伤害25%，记录受到的所有伤害。右键触发：消耗5支援点数对所有敌人造成记录数值的伤害，回合结束时造成本回合造成伤害数值的{BurstRatio:diff()}%的伤害。",
 
 
 	// ====== 仪玄新专属卡牌 ======
