@@ -177,7 +177,7 @@ namespace Miyabists2.Scripts.Enemies
 
                 if (creature.HasPower<VulnerablePower>())
                 {
-                    int re = MiyabiFuncBase.RadomInt(0, 3, CombatState.Players.OrderBy(p => p.NetId).FirstOrDefault());
+                    int re = MiyabiFuncBase.RandomInt(0, 3, CombatState.Players.OrderBy(p => p.NetId).FirstOrDefault());
                     if(re != 0)
                         await PowerUpF(targets);
                     else

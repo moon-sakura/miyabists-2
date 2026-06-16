@@ -347,7 +347,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                         _hasDone = true;
                     }
 
-                    int result = MiyabiFuncBase.RadomInt(0, 100, Owner);
+                    int result = MiyabiFuncBase.RandomInt(0, 100, Owner);
                     if (CinimaCounter < 6 && !_hasDone)
                     {
                         if (result <= 1)
@@ -394,12 +394,12 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
         private async Task AncientRewards()
         {
-            int result = MiyabiFuncBase.RadomInt(0, 9, Owner);
+            int result = MiyabiFuncBase.RandomInt(0, 9, Owner);
             bool rewardGiven = false;
 
             if (result == 0)
             {
-                int enchantResult = MiyabiFuncBase.RadomInt(0, 3, Owner);
+                int enchantResult = MiyabiFuncBase.RandomInt(0, 3, Owner);
                 if (enchantResult == 0)
                 {
                     if (await TryEnchantCard<Instinct>())
@@ -502,12 +502,12 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
         private async Task RareRewards()
         {
-            int result = MiyabiFuncBase.RadomInt(0, 9, Owner);
+            int result = MiyabiFuncBase.RandomInt(0, 9, Owner);
             bool rewardGiven = false;
 
             if (result == 0)
             {
-                int enchantResult = MiyabiFuncBase.RadomInt(0, 5, Owner);
+                int enchantResult = MiyabiFuncBase.RandomInt(0, 5, Owner);
                 if (enchantResult == 0)
                 {
                     if (await TryEnchantCard<Corrupted>())
@@ -621,12 +621,12 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
         private async Task UncommonRewards()
         {
-            int result = MiyabiFuncBase.RadomInt(0, 9, Owner);
+            int result = MiyabiFuncBase.RandomInt(0, 9, Owner);
             bool rewardGiven = false;
 
             if (result == 0)
             {
-                int enchantResult = MiyabiFuncBase.RadomInt(0, 10, Owner);
+                int enchantResult = MiyabiFuncBase.RandomInt(0, 10, Owner);
                 if (enchantResult == 0)
                 {
                     if (await TryEnchantCard<SoulsPower>())
@@ -779,7 +779,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
         private async Task CommonRewards()
         {
-            int result = MiyabiFuncBase.RadomInt(0, 7, Owner);
+            int result = MiyabiFuncBase.RandomInt(0, 7, Owner);
             bool rewardGiven = false;
 
             if (result == 5)
@@ -788,7 +788,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if(result == 0)
             {
-                int enchantResult = MiyabiFuncBase.RadomInt(0, 5, Owner);
+                int enchantResult = MiyabiFuncBase.RandomInt(0, 5, Owner);
                 if (enchantResult == 0)
                 {
                     if (await TryEnchantCard<Nimble>(2m))

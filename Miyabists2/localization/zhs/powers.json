@@ -229,7 +229,9 @@
     "ONE_DENNYBOO_ACT.description": "敌人行动前，有一定概率使其行动变为让玩家获得[gold]1[/gold]金币。",
     "ONE_DENNYBOO_ACT.smartDescription": "敌人行动前，有[blue]{MAXUSE}0%[/blue]的概率使其行动变为让玩家获得[gold]1[/gold]金币。",
 
-
+    "XIXIFU_ACT.title": "希希芙",
+    "XIXIFU_ACT.description": "可以吃掉一张卡，然后触发额外效果。",
+    "XIXIFU_ACT.smartDescription": "每回合[blue]{MAXUSE:diff()}[/blue]次，可以从手牌中选择一张牌吃掉，然后触发随机效果。\\n已使用[blue]{Used:diff()}[/blue]次。",
 
 
 

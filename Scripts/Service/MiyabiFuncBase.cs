@@ -44,7 +44,7 @@ namespace Miyabists2.Scripts.Service
             await PowerCmd.ModifyAmount(context, power, powerAmount - currentAmount, applier, cardSource);
         }
 
-        public static int RadomInt(int Min , int exMax, Player player)
+        public static int RandomInt(int Min , int exMax, Player player)
         {
             int result = player.RunState.Rng.Shuffle.NextInt(Min, exMax);
             return result;
@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts.Service
 
         public static bool GetIsTrue100(int trueRate, Player player)
         {
-            int randomValue = RadomInt(1, 101, player);
+            int randomValue = RandomInt(1, 101, player);
             if (randomValue <= trueRate)
                 return true;
             else

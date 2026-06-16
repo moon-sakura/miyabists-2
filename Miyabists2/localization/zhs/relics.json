@@ -80,6 +80,10 @@
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "回合开始时召唤[gold]磁力布[/gold]。",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "磁力全开！",
 
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.title": "希希芙",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.description": "回合开始时召唤[gold]希希芙[/gold]。",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.flavor": "这是什么邦布？",
+
 
 
 	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.title": "加班布",
@@ -121,6 +125,10 @@
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.title": "磁力布",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.description": "回合开始时召唤[gold]磁力布[/gold]。",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.flavor": "磁力全开！",
+
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.title": "希希芙",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.description": "回合开始时召唤[gold]希希芙[/gold]。",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.flavor": "这是什么邦布？",
 
 
 
