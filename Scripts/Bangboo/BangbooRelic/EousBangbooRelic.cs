@@ -73,7 +73,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
 
-            await MiyabiBangbooService.SummonBangboo<EousBangboo>(Owner, 6m, MinionPosition.Back,null,1m);
+            await MiyabiBangbooService.SummonBangboo<EousBangboo>(choiceContext, Owner, 6m, MinionPosition.Back,null,1m);
 
             //var bangboo = await PlayerCmd.AddPet<EousBangboo>(Owner);
 

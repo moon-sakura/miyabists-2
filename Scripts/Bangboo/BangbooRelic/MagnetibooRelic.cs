@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             Flash();
 
             await base.AfterPlayerTurnStart(choiceContext, player);
-            await MiyabiBangbooService.SummonBangboo<MagnetibooBangboo>(Owner, 8m, MinionPosition.FrontUpper,null,1m);
+            await MiyabiBangbooService.SummonBangboo<MagnetibooBangboo>(choiceContext, Owner, 8m, MinionPosition.FrontUpper,null,1m);
         }
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>

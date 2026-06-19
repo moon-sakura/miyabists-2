@@ -38,51 +38,51 @@ namespace Miyabists2.Scripts.Cards
 
             if (result == 0)
             {
-                await MiyabiBangbooService.SummonBangboo<EousBangboo>(Owner, 6m, MinionPosition.Back, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<EousBangboo>(choiceContext, Owner, 6m, MinionPosition.Back, null, 1m);
             }
             else if (result == 1)
             {
-                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(choiceContext, Owner, 4m, MinionPosition.FrontUpper, null, 1m);
             }
             else if (result == 2)
             {
-                await MiyabiBangbooService.SummonBangboo<ExplorebooBangboo>(Owner, 4m, MinionPosition.Back);
+                await MiyabiBangbooService.SummonBangboo<ExplorebooBangboo>(choiceContext, Owner, 4m, MinionPosition.Back);
             }
             else if (result == 3)
             {
-                await MiyabiBangbooService.SummonBangboo<SumobooBangboo>(Owner, 4m, MinionPosition.Front, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<SumobooBangboo>(choiceContext, Owner, 4m, MinionPosition.Front, null, 1m);
             }
             else if (result == 4)
             {
-                await MiyabiBangbooService.SummonBangboo<PaperbooBangboo>(Owner, 15m, MinionPosition.Front, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<PaperbooBangboo>(choiceContext, Owner, 15m, MinionPosition.Front, null, 1m);
             }
             else if (result == 5)
             {
-                await MiyabiBangbooService.SummonBangboo<OvertimebooBangboo>(Owner, 3m, MinionPosition.Back, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<OvertimebooBangboo>(choiceContext, Owner, 3m, MinionPosition.Back, null, 1m);
             }
             else if(result == 6)
             {
-                await MiyabiBangbooService.SummonBangboo<SharkbooBangboo>(Owner, 8m, MinionPosition.FrontUpper, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<SharkbooBangboo>(choiceContext, Owner, 8m, MinionPosition.FrontUpper, null, 1m);
             }
             else if(result == 7)
             {
-                await MiyabiBangbooService.SummonBangboo<ExcalibooBangboo>(Owner, 8m, MinionPosition.BackUpper);
+                await MiyabiBangbooService.SummonBangboo<ExcalibooBangboo>(choiceContext, Owner, 8m, MinionPosition.BackUpper);
             }
             else if(result == 8)
             {
-                await MiyabiBangbooService.SummonBangboo<AgentBangboo>(Owner, 10m, MinionPosition.FrontUpper);
+                await MiyabiBangbooService.SummonBangboo<AgentBangboo>(choiceContext, Owner, 10m, MinionPosition.FrontUpper);
             }
             else if(result == 9)
             {
-                await MiyabiBangbooService.SummonBangboo<MagnetibooBangboo>(Owner, 8m, MinionPosition.FrontUpper, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<MagnetibooBangboo>(choiceContext, Owner, 8m, MinionPosition.FrontUpper, null, 1m);
             }
             else if(result == 10)
             {
-                await MiyabiBangbooService.SummonBangboo<OneDennybooBangboo>(Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<OneDennybooBangboo>(choiceContext, Owner, 4m, MinionPosition.FrontUpper, null, 1m);
             }
             else if(result == 11)
             {
-                await MiyabiBangbooService.SummonBangboo<XixifuBangboo>(Owner, 8m, MinionPosition.Back, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<XixifuBangboo>(choiceContext, Owner, 8m, MinionPosition.Back, null, 1m);
             }
 
         }

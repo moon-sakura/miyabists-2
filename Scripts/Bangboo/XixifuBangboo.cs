@@ -22,11 +22,11 @@ namespace Miyabists2.Scripts.Bangboo
     {
         protected override string VisualsPath => "res://scenes/bangboo/xixifu.tscn";
 
-        public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options)
+        public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, MinionSummonOptions options)
         {
-            await base.OnSummon(owner, self, options);
+            await base.OnSummon(choiceContext, owner, options);
 
-            await PowerCmd.Apply<XixifuAct>(new ThrowingPlayerChoiceContext(), self, 1m, owner.Creature, options.Source);
+            await PowerCmd.Apply<XixifuAct>(new ThrowingPlayerChoiceContext(), this.Creature, 1m, owner.Creature, options.Source);
         }
     }
 

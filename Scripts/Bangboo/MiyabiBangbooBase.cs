@@ -14,7 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Action;
 using MinionLib.Commands;
 using MinionLib.Minion;
-using MinionLib.RitsuAdapters;
+using Miyabists2.RitsuAdapters;
 using Miyabists2.Scripts.Bangboo.BangbooRelic;
 using Miyabists2.Scripts.Service;
 using System;
@@ -39,11 +39,11 @@ namespace Miyabists2.Scripts.Bangboo
         }
 
         // 召唤时执行的代码，通常用来设置血量、应用初始能力等，options 是在召唤随从时传入的参数
-        public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options)
+        public override async Task OnSummon(PlayerChoiceContext choiceContext ,Player owner, MinionSummonOptions options)
         {
             if (options.MaxHp is decimal maxHp)
             {
-                await CreatureCmd.SetMaxAndCurrentHp(self, maxHp); // 设置血量
+                await CreatureCmd.SetMaxAndCurrentHp(this.Creature, maxHp); // 设置血量
             }
         }
     }

@@ -21,12 +21,12 @@ namespace Miyabists2.Scripts.Bangboo
     {
         protected override string VisualsPath => "res://scenes/bangboo/overtimeboo.tscn";
 
-        public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options) // 注意使用 self 而非 this
+        public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, MinionSummonOptions options) // 注意使用 self 而非 this
         {
-            await base.OnSummon(owner, self, options);
+            await base.OnSummon(choiceContext, owner, options);
 
             if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)
-                await PowerCmd.Apply<OvertimebooAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
+                await PowerCmd.Apply<OvertimebooAct>(new ThrowingPlayerChoiceContext(), this.Creature, buffer, owner.Creature, options.Source);
         }
     }
 

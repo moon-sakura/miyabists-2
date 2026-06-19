@@ -48,7 +48,9 @@
 			<Private>false</Private>
 		</Reference>
 
-		<Reference Include="MinionLib">
+		<PackageReference Include="FuYnAloft.Sts2.MinionLib" Version="0.5.2"/>
+
+		<!--<Reference Include="MinionLib">
 			<HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
@@ -56,7 +58,7 @@
 		<Reference Include="MinionLibSTS2RitsuLibAdapter">
 			<HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.RitsuAdapters.dll</HintPath>
 			<Private>false</Private>
-		</Reference>
+		</Reference>-->
 
 		<Reference Include="Steamworks.NET">
 			<HintPath>$(Sts2DataDir)\Steamworks.NET.dll</HintPath>

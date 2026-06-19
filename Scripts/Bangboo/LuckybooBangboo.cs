@@ -20,13 +20,13 @@ namespace Miyabists2.Scripts.Bangboo
     {
         protected override string VisualsPath => "res://scenes/bangboo/luckyboo.tscn";
 
-        public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options) // 注意使用 self 而非 this
+        public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, MinionSummonOptions options) // 注意使用 self 而非 this
         {
-            await base.OnSummon(owner, self, options); // 先调用基类的 OnSummon 来设置血量等基础属性
+            await base.OnSummon(choiceContext, owner, options); // 先调用基类的 OnSummon 来设置血量等基础属性
 
             //base.IsHealthBarVisible = true;
             if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)
-                await PowerCmd.Apply<LuckybooAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
+                await PowerCmd.Apply<LuckybooAct>(new ThrowingPlayerChoiceContext(), this.Creature, buffer, owner.Creature, options.Source);
         }
 
     }

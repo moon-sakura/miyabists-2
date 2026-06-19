@@ -33,9 +33,9 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             await base.AfterPlayerTurnStart(choiceContext, player);
 
             if (MiyabiFuncBase.GetIsTrue100(10, Owner))
-                await MiyabiBangbooService.SummonBangboo<OneDennybooBangboo>(Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<OneDennybooBangboo>(choiceContext, Owner, 4m, MinionPosition.FrontUpper, null, 1m);
             else
-                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(choiceContext, Owner, 4m, MinionPosition.FrontUpper, null, 1m);
         }
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>

@@ -22,12 +22,12 @@ namespace Miyabists2.Scripts.Bangboo
     {
         protected override string VisualsPath => "res://scenes/bangboo/luckyboo.tscn";
 
-        public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options)
+        public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, MinionSummonOptions options)
         {
-            await base.OnSummon(owner, self, options);
+            await base.OnSummon(choiceContext, owner, options);
 
             if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)
-                await PowerCmd.Apply<OneDennybooAct>(new ThrowingPlayerChoiceContext(), self, buffer, owner.Creature, options.Source);
+                await PowerCmd.Apply<OneDennybooAct>(new ThrowingPlayerChoiceContext(), this.Creature, buffer, owner.Creature, options.Source);
         }
     }
 

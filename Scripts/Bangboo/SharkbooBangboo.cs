@@ -22,10 +22,10 @@ namespace Miyabists2.Scripts.Bangboo
     {
         protected override string VisualsPath => "res://scenes/bangboo/sharkboo.tscn";
 
-        public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options) // 注意使用 self 而非 this
+        public override async Task OnSummon(PlayerChoiceContext choiceContext, Player owner, MinionSummonOptions options) // 注意使用 self 而非 this
         {
-            await base.OnSummon(owner, self, options);
-            await PowerCmd.Apply<SharkbooAct>(new ThrowingPlayerChoiceContext(), self, 1m, owner.Creature, options.Source);
+            await base.OnSummon(choiceContext, owner, options);
+            await PowerCmd.Apply<SharkbooAct>(new ThrowingPlayerChoiceContext(), this.Creature, 1m, owner.Creature, options.Source);
         }
     }
 
