@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Yixuan.Relics.Shared
 {
+    [RegisterRelic(typeof(YixuanRelicPool))]
     internal class YangqiXiangnangRelicYixuan : YangqiXiangnangRelic, ISharedType
     {
     }

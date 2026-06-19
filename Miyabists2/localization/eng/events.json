@@ -1,26 +1,26 @@
 {
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.title" : "Trial of the Cursed Blade (WIP)",
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]You seem to have entered a dream. [/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.title" : "Trial of the Demon Blade (Unfinished)",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]You seem to have entered a dreamscape.[/outline_color][/outline_size]",
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.DEEP_IN_HEART.title": "Accept the Trial",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.DEEP_IN_HEART.description": "Take [red]{Damage}[/red] damage.",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.LEAVE.title": "Leave",
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.LEAVE.description": "The cursed blade has no right to honor me.",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.LEAVE.description": "The demon blade has no right to knight me.",
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.description" : "[outline_size=10][outline_color=black]Will you persist further?[/outline_color][/outline_size]",
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CONTINUE_DEEP.title": "Continue",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CONTINUE_DEEP.description": "Take [red]{Damage}[/red] damage.",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CANNOT_BARE.title": "Unbearable",
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CANNOT_BARE.description": "Giving up in time is also a choice. Obtain 1 card from 5 random cards.",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CANNOT_BARE.description": "Knowing when to quit is also a choice. Obtain 1 of 5 random cards.",
 
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.description" : "[outline_size=10][outline_color=black]You have reached the final stage of the trial.[/outline_color][/outline_size]",
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.title": "Complete the Trial",
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.description": "Take [red]{Damage}[/red] damage, obtain {Relic}.",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.description": "Take [red]{Damage}[/red] damage and obtain {Relic}.",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.title": "Give Up",
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.description": "Perhaps it's best to stop. Obtain 1 card from 3 random rare cards.",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.description": "Perhaps it's best not to continue. Obtain 1 of 3 random rare cards.",
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.LEAVE.description" : "[outline_size=10][outline_color=black]That was a wise choice.[/outline_color][/outline_size]",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CANNOT_BARE_LEAVE.description" : "[outline_size=10][outline_color=black]That was a wise choice.[/outline_color][/outline_size]",
@@ -30,14 +30,14 @@
 
 
     "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.title" : "Who is the Strongest Breaker?",
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]Several breakers are discussing who is the strongest.\\n\"Hmm? Nangong Yu?\"\\n\"Depends on the situation, but probably Nangong Yu.\"\\n\"Should be Nangong Yu. If we include Liuyin, the answer might be different.\"\\n\"Besides me and Liuyin...\"\\n\"It's me!\", Jufufu suddenly joined the discussion and declared.\\n\"Little junior, what do you think?\"[/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]Several breakers are discussing who is the strongest.\\n\"Hmm? Nangong Yu?\"\\n\"It depends on the situation, but probably Nangong Yu.\"\\n\"Probably Nangong Yu. But if you count Liuyin, the result might be different.\"\\n\"Besides me and Liuyin……\"\\n\"It's me!\", Jufufu suddenly joins the discussion and declares.\\n\"Junior sister, what do you think?\"[/outline_color][/outline_size]",
 
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.title": "Jufufu, of course!",
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.description": "Big sister will reward you.",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.title": "Of course it's Jufufu!",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.description": "Senior sister will reward you.",
     "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.title": "Maybe someone else",
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.description": "Are you sure it's not big sister?",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.description": "Is it really not senior sister?",
 
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.JUFUFU.description" : "[outline_size=10][outline_color=black]Little junior thinks so highly of me, I must show you what I can do![/outline_color][/outline_size]",
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]You've made big sister sad![/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.JUFUFU.description" : "[outline_size=10][outline_color=black]Junior sister thinks so highly of me, I must show you what I can do![/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]You've made senior sister sad![/outline_color][/outline_size]"
 
 }

@@ -1,21 +1,21 @@
 {
-  // Inner monologue during the Aroma event
-  "MIYABISTS2_CHARACTER_MIYABI.aromaPrinciple": "[sine][blue]...Training...[/blue][/sine]",
-  // Multiplayer: end-of-turn banter while alive
-  "MIYABISTS2_CHARACTER_MIYABI.banter.alive.endTurnPing": "Requesting rally",
-  // Multiplayer: end-of-turn banter while dead
-  "MIYABISTS2_CHARACTER_MIYABI.banter.dead.endTurnPing": "Can't fall yet...",
+  // Inner monologue during the Chaotic Aroma event
+  "MIYABISTS2_CHARACTER_MIYABI.aromaPrinciple": "[sine][blue]……Training……[/blue][/sine]",
+  // Multiplayer: alive turn end banter
+  "MIYABISTS2_CHARACTER_MIYABI.banter.alive.endTurnPing": "Rally up",
+  // Multiplayer: dead turn end banter
+  "MIYABISTS2_CHARACTER_MIYABI.banter.dead.endTurnPing": "Can't fall yet……",
   // Custom mode text
-  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierDescription": "Cards of Hoshimi Miyabi and her companions now appear in rewards and shops.",
+  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierDescription": "Hoshimi Miyabi and her companions' cards will now appear in rewards and shops.",
   // Card pool name
-  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierTitle": "Hoshimi Miyabi & Friends",
+  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierTitle": "Hoshimi Miyabi & Companions",
   // Character select screen description
-  "MIYABISTS2_CHARACTER_MIYABI.description": "H.A.N.D. Section 6, Hoshimi Miyabi, ready for duty.",
-  // Death prevention event dialogue
-  "MIYABISTS2_CHARACTER_MIYABI.eventDeathPrevention": "Is this... where it ends?",
-  // Gold monologue during the Sunken Vault event
-  "MIYABISTS2_CHARACTER_MIYABI.goldMonologue": "[sine]These coins... can they sharpen my blade?[/sine]",
-  // Possessive adjective, used in dynamic text
+  "MIYABISTS2_CHARACTER_MIYABI.description": "Section 6, Hoshimi Miyabi, ready for duty.",
+  // Death event dialogue
+  "MIYABISTS2_CHARACTER_MIYABI.eventDeathPrevention": "Could this…… be the end?",
+  // Gold monologue at Sunken Vault event
+  "MIYABISTS2_CHARACTER_MIYABI.goldMonologue": "[sine]Can I use these coins to sharpen my blade?[/sine]",
+  // Possessive adjective for dynamic text
   "MIYABISTS2_CHARACTER_MIYABI.possessiveAdjective": "Miyabi's",
   // Object pronoun
   "MIYABISTS2_CHARACTER_MIYABI.pronounObject": "Miyabi",
@@ -25,8 +25,39 @@
   "MIYABISTS2_CHARACTER_MIYABI.pronounSubject": "Miyabi",
   // Character name (title)
   "MIYABISTS2_CHARACTER_MIYABI.title": "Hoshimi Miyabi",
-  // Character name (object form)
+  // Character name (object)
   "MIYABISTS2_CHARACTER_MIYABI.titleObject": "Miyabi",
-  // Unlock condition text, {Prerequisite} will be replaced
-  "MIYABISTS2_CHARACTER_MIYABI.unlockText": "Play a game with the [pink]{Prerequisite}[/pink] to unlock this character."
+  // Unlock condition text, {Prerequisite} is replaced
+  "MIYABISTS2_CHARACTER_MIYABI.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character.",
+
+  // ====== Yixuan ======
+  // Character name (title)
+  "MIYABISTS2_CHARACTER_YIXUAN.title": "Yixuan",
+  // Character name (object)
+  "MIYABISTS2_CHARACTER_YIXUAN.titleObject": "Yixuan",
+  // Character select screen description
+  "MIYABISTS2_CHARACTER_YIXUAN.description": "Ink dark as gold, brush falls and startles the wind.",
+  // Subject pronoun
+  "MIYABISTS2_CHARACTER_YIXUAN.pronounSubject": "Yixuan",
+  // Object pronoun
+  "MIYABISTS2_CHARACTER_YIXUAN.pronounObject": "Yixuan",
+  // Possessive pronoun
+  "MIYABISTS2_CHARACTER_YIXUAN.pronounPossessive": "Yixuan's",
+  // Possessive adjective
+  "MIYABISTS2_CHARACTER_YIXUAN.possessiveAdjective": "Yixuan's",
+  // Death event dialogue
+  "MIYABISTS2_CHARACTER_YIXUAN.eventDeathPrevention": "The ink is not yet dry…… how can it end here……",
+  // Custom mode text
+  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierTitle": "Yixuan's Ink Treasures",
+  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierDescription": "Yixuan's cards will now appear in rewards and shops.",
+  // Multiplayer: alive turn end banter
+  "MIYABISTS2_CHARACTER_YIXUAN.banter.alive.endTurnPing": "Ready for battle",
+  // Multiplayer: dead turn end banter
+  "MIYABISTS2_CHARACTER_YIXUAN.banter.dead.endTurnPing": "The ink remains……",
+  // Gold monologue at Sunken Vault event
+  "MIYABISTS2_CHARACTER_YIXUAN.goldMonologue": "[sine]This gold leaf, can it be ground into ink?[/sine]",
+  // Inner monologue during the Chaotic Aroma event
+  "MIYABISTS2_CHARACTER_YIXUAN.aromaPrinciple": "[sine][orange]……Calm the mind……[/orange][/sine]",
+  // Unlock condition text
+  "MIYABISTS2_CHARACTER_YIXUAN.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character."
 }

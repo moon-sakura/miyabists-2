@@ -43,9 +43,9 @@ namespace Miyabists2.Scripts.Service
             skinDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "观云同岿";
 
             // ---- Yixuan 默认皮肤预览图 ----
-            previewDatas["MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_select.png";
-            previewDatas["MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_select.png";
-            previewDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_select.png";
+            previewDatas["MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot0"] = "res://images/charui/yiXuan.png";
+            previewDatas["MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_rest.png";
+            previewDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "res://images/charui/yiXuan.png";
         }
 
         public static void RegisterCombatSkin(string name, string tscnPath, string previewPath = null)

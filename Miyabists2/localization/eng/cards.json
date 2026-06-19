@@ -1,264 +1,279 @@
 {
 	"MIYABISTS2_CARD_FENG_HUA.title": "Windflower",
-    "MIYABISTS2_CARD_FENG_HUA.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}",
+    "MIYABISTS2_CARD_FENG_HUA.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2_CARD_SHEN_XUE.title": "Deep Snow",
-    "MIYABISTS2_CARD_SHEN_XUE.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]1[/blue] [gold]Frostfall[/gold]",
+    "MIYABISTS2_CARD_SHEN_XUE.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]1[/blue] [gold]Frostfall[/gold]",
 
-	"MIYABISTS2_CARD_FEI_XUE.title": "Drifting Snow",
-    "MIYABISTS2_CARD_FEI_XUE.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]2[/blue] [gold]Frostfall[/gold]",
+	"MIYABISTS2_CARD_FEI_XUE.title": "Flying Snow",
+    "MIYABISTS2_CARD_FEI_XUE.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]2[/blue] [gold]Frostfall[/gold]",
 
-	"MIYABISTS2_CARD_FEI_XUE_TWO.title": "Drifting Snow: Second Stage",
-    "MIYABISTS2_CARD_FEI_XUE_TWO.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]2[/blue] [gold]Frostfall[/gold]",
+	"MIYABISTS2_CARD_FEI_XUE_TWO.title": "Flying Snow: Second Form",
+    "MIYABISTS2_CARD_FEI_XUE_TWO.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]2[/blue] [gold]Frostfall[/gold]",
 
-	"MIYABISTS2_CARD_SHUI_NIAO.title": "Waterbird",
+	"MIYABISTS2_CARD_SHUI_NIAO.title": "Waterfowl",
     "MIYABISTS2_CARD_SHUI_NIAO.description": "[gold]Slippery[/gold][blue]1[/blue]\\n[gold]Exhaust {ExhaustCount:diff()}[/gold]",
 
 	"MIYABISTS2_CARD_DONG_FENG.title": "Winter Bee",
-    "MIYABISTS2_CARD_DONG_FENG.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nDraw {Cards:diff()} cards. If you have [gold]Slippery[/gold], this costs [blue]0[/blue].",
+    "MIYABISTS2_CARD_DONG_FENG.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nDraw {Cards:diff()} card(s). If you have [gold]Slippery[/gold], this costs [blue]0[/blue].",
 
-	"MIYABISTS2_CARD_DONG_FENG_SP.title": "Winter Bee: Zenith",
-    "MIYABISTS2_CARD_DONG_FENG_SP.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nYour next attack deals +[blue]25%[/blue] damage. If you have [gold]Slippery[/gold], this costs [blue]0[/blue].",
+	"MIYABISTS2_CARD_DONG_FENG_SP.title": "Winter Bee: Ultimate",
+    "MIYABISTS2_CARD_DONG_FENG_SP.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nYour next attack card deals +[blue]25%[/blue] damage. If you have [gold]Slippery[/gold], this costs [blue]0[/blue].",
 
 	"MIYABISTS2_CARD_HAN_QUE.title": "Winter Sparrow",
-    "MIYABISTS2_CARD_HAN_QUE.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf you have [gold]Slippery[/gold], deal +[blue]4[/blue] damage.",
+    "MIYABISTS2_CARD_HAN_QUE.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf you have [gold]Slippery[/gold], deal +[blue]4[/blue] damage.",
 
 	"MIYABISTS2_CARD_MIYABI_BLOCK.title": "Defend",
     "MIYABISTS2_CARD_MIYABI_BLOCK.description": "Gain {Block:diff()} Block\\n[gold]Parry[/gold]{PARRY_POWER:diff()}",
 
 	"MIYABISTS2_CARD_JIXIAN_SHIYU.title": "Limit Vision",
-    "MIYABISTS2_CARD_JIXIAN_SHIYU.description": "[gold]Slippery[/gold]{SLIPPERY_POWER:diff()}\\nAdd {Cards:diff()} [gold]Winter Sparrow[/gold] with [gold]Exhaust[/gold] to your hand. They cost 0 this combat.\\nYou cannot draw any more cards this turn.",
+    "MIYABISTS2_CARD_JIXIAN_SHIYU.description": "[gold]Slippery[/gold]{SLIPPERY_POWER:diff()}\\nAdd {Cards:diff()} [gold]Winter Sparrow(s)[/gold] with [gold]Exhaust[/gold] to your hand. They cost 0 this combat.\\nYou cannot draw any more cards this turn.",
 
-	"MIYABISTS2_CARD_HUA_CI.title": "Flower Verse",
-    "MIYABISTS2_CARD_HUA_CI.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf this overflows when added to your hand, it is played automatically.",
+	"MIYABISTS2_CARD_HUA_CI.title": "Farewell Blossom",
+    "MIYABISTS2_CARD_HUA_CI.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf this card would exceed your hand size when added, it is automatically played instead.",
 
-	"MIYABISTS2_CARD_HUA_FA.title": "Flower Raft",
+	"MIYABISTS2_CARD_HUA_FA.title": "Blossom Raft",
     "MIYABISTS2_CARD_HUA_FA.description": "Gain {Block:diff()} Block\\n[gold]Parry[/gold]{PARRY_POWER:diff()}\\nIf you played a [gold]Companion[/gold] card this turn, gain an additional [blue]6[/blue] Block and [blue]1[/blue] [gold]Parry[/gold].",
 
 	"MIYABISTS2_CARD_QUICK_PARRY.title": "Quick Parry",
     "MIYABISTS2_CARD_QUICK_PARRY.description": "Gain {Block:diff()} Block\\n[gold]Parry[/gold]{PARRY_POWER:diff()}\\nGain [blue]1[/blue] [gold]Support Point[/gold]. Add a random [gold]Companion[/gold] card from your draw pile to your hand.",
 
 	"MIYABISTS2_CARD_QUICK_SUPPORT.title": "Quick Support",
-    "MIYABISTS2_CARD_QUICK_SUPPORT.description": "Deal {Damage:diff()} damage to yourself. Play a random Companion card from your draw pile.",
+    "MIYABISTS2_CARD_QUICK_SUPPORT.description": "Deal {Damage:diff()} damage to yourself. Randomly play a Companion card from your draw pile.",
 
-	"MIYABISTS2_CARD_ZHAOJIA_ZHUNBEI.title": "Parry Stance",
+	"MIYABISTS2_CARD_ZHAOJIA_ZHUNBEI.title": "Parry Preparation",
     "MIYABISTS2_CARD_ZHAOJIA_ZHUNBEI.description": "Gain {Block:diff()} Block\\n[gold]Parry[/gold]{PARRY_POWER:diff()}\\nEnd your turn.",
 
 	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG.title": "Tactical Rally",
-    "MIYABISTS2_CARD_ZHANSHU_CHONGZHENG.description": "Draw {Cards:diff()} cards.\\nFor each [gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
+    "MIYABISTS2_CARD_ZHANSHU_CHONGZHENG.description": "Draw {Cards:diff()} card(s)\\nFor each [gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
 
-	"MIYABISTS2_CARD_RANYOUYIN_SHARE.title": "Fuel Drink Share Pack",
-    "MIYABISTS2_CARD_RANYOUYIN_SHARE.description": "Gain [blue]1[/blue] [gold]Vulnerable[/gold]. Gain [blue]{Decible:diff()}[/blue] [gold]Decibel[/gold]. Gain [blue]1[/blue] [gold]Support Point[/gold].\\nIf you played a [gold]Companion[/gold] card this turn, [gold]Replay[/gold] [blue]1[/blue].",
+	"MIYABISTS2_CARD_RANYOUYIN_SHARE.title": "Fuel Drink Sharing Pack",
+    "MIYABISTS2_CARD_RANYOUYIN_SHARE.description": "Apply [blue]1[/blue] [gold]Vulnerable[/gold] to yourself. Gain [blue]{Decible:diff()}[/blue] [gold]Decibel[/gold]. Gain [blue]1[/blue] [gold]Support Point[/gold].\\nIf you played a [gold]Companion[/gold] card this turn, [gold]Replay[/gold][blue]1[/blue].",
 
 	"MIYABISTS2_CARD_CHUN_LIN.title": "Spring's Arrival",
-    "MIYABISTS2_CARD_CHUN_LIN.description": "Deal [aqua]Frostburn[/aqua]{Damage:diff()} to ALL enemies. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nSelect a [gold]Companion[/gold] card from your draw pile to add to your hand with [gold]Retain[/gold].\\nIf any enemy was [gold]Broken[/gold] this turn, this card costs [blue]0[/blue].",
-	"MIYABISTS2_CARD_CHUN_LIN.selectionScreenPrompt": "Select a [gold]Companion[/gold] card",
+    "MIYABISTS2_CARD_CHUN_LIN.description": "Deal [aqua]Frostbite[/aqua]{Damage:diff()} to ALL enemies. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nChoose a [gold]Companion[/gold] card from your draw pile to add to your hand with [gold]Retain[/gold].\\nIf any enemy was [gold]Broken[/gold] this turn, this card costs [blue]0[/blue].",
+	"MIYABISTS2_CARD_CHUN_LIN.selectionScreenPrompt": "Choose a [gold]Companion[/gold] card",
 
 	"MIYABISTS2_CARD_E_JI_ZHAN.title": "Evil, Be Slain",
-    "MIYABISTS2_CARD_E_JI_ZHAN.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]3[/blue] [gold]Frostfall[/gold]",
+    "MIYABISTS2_CARD_E_JI_ZHAN.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]3[/blue] [gold]Frostfall[/gold]",
 
 	"MIYABISTS2_CARD_SHUANG_YUE.title": "Frost Moon",
-    "MIYABISTS2_CARD_SHUANG_YUE.description": "Deal [blue]{HitCount:diff()}[/blue] hits of [aqua]Frostburn[/aqua]{Damage:diff()} and [gold]Daze[/gold]{DAZE_POWER:diff()} to ALL enemies.\\nIf [gold]Frostfall[/gold] is at least [blue]2[/blue], consume [blue]2[/blue] [gold]Frostfall[/gold] and add an upgraded [gold]Frost Moon[/gold] to your hand.\\n(At level 3+, cost becomes 1! Downgrades at end of turn!)",
+    "MIYABISTS2_CARD_SHUANG_YUE.description": "Deal [aqua]Frostbite[/aqua]{Damage:diff()} to ALL enemies [blue]{HitCount:diff()}[/blue] time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf you have at least [blue]2[/blue] [gold]Frostfall[/gold], consume [blue]2[/blue] [gold]Frostfall[/gold] to add an upgraded [gold]Frost Moon[/gold] to your hand.\\n(At level >2, cost becomes 1! Downgrades at end of turn!)",
 
 	"MIYABISTS2_CARD_SHUANG_YUE_SP.title": "Frost Moon: Mastery",
-    "MIYABISTS2_CARD_SHUANG_YUE_SP.description": "Deal [blue]{HitCount:diff()}[/blue] hits of [aqua]Frostburn[/aqua]{Damage:diff()} and [gold]Daze[/gold]{DAZE_POWER:diff()} to ALL enemies.",
+    "MIYABISTS2_CARD_SHUANG_YUE_SP.description": "Deal [aqua]Frostbite[/aqua]{Damage:diff()} to ALL enemies [blue]{HitCount:diff()}[/blue] time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}",
 
-	"MIYABISTS2_CARD_TONGMU_SHUANGXUE.title": "Shared Frost and Snow",
-    "MIYABISTS2_CARD_TONGMU_SHUANGXUE.description": "Whenever you play a non-[gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
+	"MIYABISTS2_CARD_TONGMU_SHUANGXUE.title": "Sharing Frost and Snow",
+    "MIYABISTS2_CARD_TONGMU_SHUANGXUE.description": "Each time you play a non-[gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
 
 	"MIYABISTS2_CARD_XUESHANG_JIASHUANG.title": "Adding Frost to Snow",
-    "MIYABISTS2_CARD_XUESHANG_JIASHUANG.description": "Whenever you play [gold]Frost Moon[/gold], gain [blue]1[/blue] [gold]Strength[/gold] this turn.",
+    "MIYABISTS2_CARD_XUESHANG_JIASHUANG.description": "Each time you play [gold]Frost Moon[/gold], gain [blue]1[/blue] [gold]Strength[/gold] this turn.",
 
 	"MIYABISTS2_CARD_TIANZI_ZHUOYUE.title": "Natural Genius",
-    "MIYABISTS2_CARD_TIANZI_ZHUOYUE.description": "Whenever you play [gold]Frost Moon[/gold], automatically play [gold]Frost Moon: Mastery[/gold] once.",
+    "MIYABISTS2_CARD_TIANZI_ZHUOYUE.description": "Each time you play [gold]Frost Moon[/gold], automatically play [gold]Frost Moon: Mastery[/gold] once.",
 
-	"MIYABISTS2_CARD_ZHANJIN_ZUIE.title": "Slay All Evil",
-    "MIYABISTS2_CARD_ZHANJIN_ZUIE.description": "This turn, your damage is doubled.",
+	"MIYABISTS2_CARD_ZHANJIN_ZUIE.title": "Exterminate All Evil",
+    "MIYABISTS2_CARD_ZHANJIN_ZUIE.description": "Damage dealt this turn is doubled.",
 
 	"MIYABISTS2_CARD_WUZHI_JIZHI.title": "Pinnacle of Martial Arts",
-    "MIYABISTS2_CARD_WUZHI_JIZHI.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]2[/blue] [gold]Frostfall[/gold]",
+    "MIYABISTS2_CARD_WUZHI_JIZHI.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]2[/blue] [gold]Frostfall[/gold]",
 
-	"MIYABISTS2_CARD_BAMIAN_WEIFENG.title": "Awe-Inspiring Presence",
-    "MIYABISTS2_CARD_BAMIAN_WEIFENG.description": "After using an [gold]Ultimate[/gold], gain [blue]5[/blue] [gold]Decibel[/gold]. After playing a [gold]Companion[/gold] card, gain [blue]2[/blue] [gold]Decibel[/gold].",
+	"MIYABISTS2_CARD_BAMIAN_WEIFENG.title": "Overbearing Might",
+    "MIYABISTS2_CARD_BAMIAN_WEIFENG.description": "After playing an [gold]Ultimate[/gold], gain [blue]5[/blue] [gold]Decibel[/gold]. After playing a [gold]Companion[/gold] card, gain [blue]2[/blue] [gold]Decibel[/gold].",
 
 	"MIYABISTS2_CARD_SP_XIAOYE.title": "SP: Little Night Knight",
-    "MIYABISTS2_CARD_SP_XIAOYE.description": "You and the enemy each gain [blue]1[/blue] [gold]Intangible[/gold]. Select {Cards:diff()} cards from ALL cards to [gold]Exhaust[/gold].",
-	"MIYABISTS2_CARD_SP_XIAOYE.selectionScreenPrompt": "Select {Cards:diff()} cards to [gold]Exhaust[/gold]",
+    "MIYABISTS2_CARD_SP_XIAOYE.description": "Both you and the enemy gain [blue]1[/blue] [gold]Intangible[/gold]. Choose {Cards:diff()} card(s) from all cards to [gold]Exhaust[/gold].",
+	"MIYABISTS2_CARD_SP_XIAOYE.selectionScreenPrompt": "Choose {Cards:diff()} card(s) to [gold]Exhaust[/gold]",
 
 	"MIYABISTS2_CARD_BLESSING_OFMOON.title": "Blessing of the New Moon",
-    "MIYABISTS2_CARD_BLESSING_OFMOON.description": "When you would take lethal damage, prevent death and recover [blue]{Bless:diff()}%[/blue] HP.\\nWhen triggering [gold]Anomaly[/gold] or [gold]Disorder[/gold], deal additional damage equal to [blue]5%[/blue] of the enemy's max HP.",
+    "MIYABISTS2_CARD_BLESSING_OFMOON.description": "When you would take fatal damage, prevent death and recover [blue]{Bless:diff()}%[/blue] HP.\\nWhen triggering [gold]Attribute Anomaly[/gold] or [gold]Disorder[/gold], deal additional damage equal to [blue]5%[/blue] of the enemy's Max HP.",
 
 	"MIYABISTS2_CARD_TIANMI_JINGXIA.title": "Sweet Surprise",
-    "MIYABISTS2_CARD_TIANMI_JINGXIA.description": "At the end of your turn, apply {Jingxia:diff()} [gold]Anomaly[/gold] to ALL enemies.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply [blue]2[/blue] stacks instead.",
+    "MIYABISTS2_CARD_TIANMI_JINGXIA.description": "At the end of your turn, apply {Jingxia:diff()} layer(s) of [gold]Attribute Anomaly[/gold] to all enemies.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply [blue]2[/blue] layers instead.",
 
 	"MIYABISTS2_CARD_XIEZUO_SHIGONG.title": "Collaborative Construction",
-    "MIYABISTS2_CARD_XIEZUO_SHIGONG.description": "Deal {RepeatCount:diff()} hits of {Damage:diff()} damage and [gold]Daze[/gold]{DAZE_POWER:diff()} to a random enemy. Apply {ANOBUILD_POWER:diff()} [gold]Anomaly Buildup[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Next use this combat hits +[blue]1[/blue] additional time.",
+    "MIYABISTS2_CARD_XIEZUO_SHIGONG.description": "Deal {Damage:diff()} damage to a random enemy {RepeatCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply {ANOBUILD_POWER:diff()} layer(s) of [gold]Attribute Anomaly[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Next activation this combat gains +[blue]1[/blue] hit count.",
 
-	"MIYABISTS2_CARD_CUTE_FEITIANZHUANG.title": "Cute Flying Mine Crash",
-    "MIYABISTS2_CARD_CUTE_FEITIANZHUANG.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\nFor each [gold]Anomaly Buildup[/gold] on the enemy, deal additional [gold]Daze[/gold][blue]5[/blue] (each [gold]Anomaly[/gold] counts as [blue]3[/blue], each [gold]Disorder[/gold] counts as [blue]5[/blue]).\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]Daze[/gold] +[blue]20%[/blue].",
+	"MIYABISTS2_CARD_CUTE_FEITIANZHUANG.title": "Cute Mine Sky Crash",
+    "MIYABISTS2_CARD_CUTE_FEITIANZHUANG.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\nFor each [blue]1[/blue] stack of [gold]Anomaly Buildup[/gold] on the enemy, deal an additional [gold]Daze[/gold][blue]5[/blue] ([gold]Attribute Anomaly[/gold] counts as [blue]3[/blue] stacks, [gold]Disorder[/gold] counts as [blue]5[/blue] stacks).\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Deal +[blue]20%[/blue] [gold]Daze[/gold].",
 
-	"MIYABISTS2_CARD_SONG_KE.title": "See the Guest Out!",
+	"MIYABISTS2_CARD_SONG_KE.title": "Show Them Out!",
     "MIYABISTS2_CARD_SONG_KE.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Ethereal[/gold] [gold]Ultimate[/gold] ([gold]Lingering Snow[/gold]) that costs [blue]0[/blue] to your hand.",
 
 	"MIYABISTS2_CARD_LUOYU_SHENGHUA.title": "Falling Feathers, Blooming Flowers",
-    "MIYABISTS2_CARD_LUOYU_SHENGHUA.description": "Each turn, after dealing damage to an enemy, apply [blue]1[/blue] [gold]Anomaly Buildup[/gold] to them. Can trigger up to [blue]{LuoYu:diff()}[/blue] times per turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply [blue]1[/blue] [gold]Anomaly Buildup[/gold] to ALL enemies.",
+    "MIYABISTS2_CARD_LUOYU_SHENGHUA.description": "After dealing damage to an enemy each turn, apply [gold]Anomaly Buildup[/gold][blue]1[/blue] to them. Can trigger up to [blue]{LuoYu:diff()}[/blue] time(s).\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply [gold]Anomaly Buildup[/gold][blue]1[/blue] to ALL enemies.",
 
 	"MIYABISTS2_CARD_MINGFU_WANGE.title": "Underworld Elegy",
-    "MIYABISTS2_CARD_MINGFU_WANGE.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]1[/blue] turn of [blue]35%[/blue] [gold]Daze Vulnerability[/gold].\\nFor [blue]{WanGe:diff()}[/blue] turns, at the start of each turn, add [gold]Concerto Snipe[/gold] to your hand.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add [gold]Concerto Snipe[/gold] to your hand.",
+    "MIYABISTS2_CARD_MINGFU_WANGE.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]35%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn.\\nFor [blue]{WanGe:diff()}[/blue] turn(s), add a [gold]Concerto Snipeshot[/gold] to your hand at the start of each turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Concerto Snipeshot[/gold] to your hand.",
 
-	"MIYABISTS2_CARD_XIEZOU_JUSHA.title": "Concerto Snipe",
-    "MIYABISTS2_CARD_XIEZOU_JUSHA.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]1[/blue] turn of [blue]15%[/blue] [gold]Daze Vulnerability[/gold].",
+	"MIYABISTS2_CARD_XIEZOU_JUSHA.title": "Concerto Snipeshot",
+    "MIYABISTS2_CARD_XIEZOU_JUSHA.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]15%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn.",
 
 	"MIYABISTS2_CARD_BYE_QUANLEIDA.title": "Goodbye Home Run!",
-    "MIYABISTS2_CARD_BYE_QUANLEIDA.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Select {Cards:diff()} attack cards from your discard pile to add to your hand. +[blue]3[/blue] damage this combat.\\nIf the enemy is already [gold]Broken[/gold], [gold]Support Points[/gold] are not consumed.",
-	"MIYABISTS2_CARD_BYE_QUANLEIDA.selectionScreenPrompt": "Select a [gold]Companion[/gold] card",
+    "MIYABISTS2_CARD_BYE_QUANLEIDA.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Choose {Cards:diff()} attack card(s) from your discard pile to add to your hand. Their damage is increased by [blue]3[/blue] this combat.\\nIf the enemy is already [gold]Broken[/gold], [gold]Support Points[/gold] are not consumed.",
+	"MIYABISTS2_CARD_BYE_QUANLEIDA.selectionScreenPrompt": "Choose [gold]Attack Card(s)[/gold]",
 
 	"MIYABISTS2_CARD_SHE_WEN.title": "Serpent's Kiss",
-    "MIYABISTS2_CARD_SHE_WEN.description": "Deal {Damage:diff()} damage to an enemy. [gold]Daze[/gold]{DAZE_POWER:diff()}.\\nSelect up to {Cards:diff()} cards from your hand or draw pile to [gold]Exhaust[/gold]. If [gold]Exhausted[/gold] [blue]5[/blue] or more, instead deal 15 damage to ALL enemies and apply 2 [gold]Vulnerable[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: This time it definitely won't sneak a bite!\\n(Already eaten {Eat:diff()} cards)",
-	"MIYABISTS2_CARD_SHE_WEN.selectionScreenPrompt": "Food for Sissif (select up to {Cards:diff()} to exhaust)",
+    "MIYABISTS2_CARD_SHE_WEN.description": "Deal {Damage:diff()} damage to an enemy. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nChoose up to {Cards:diff()} card(s) from your hand and draw pile to [gold]Exhaust[/gold]. If you have [gold]Exhausted[/gold] [blue]5[/blue] or more cards, deal 15 damage to ALL enemies and apply 2 layers of [gold]Vulnerable[/gold] instead.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Guaranteed not to sneak a bite this time!\\n(Has eaten {Eat:diff()} card(s) already)",
+	"MIYABISTS2_CARD_SHE_WEN.selectionScreenPrompt": "Food for Xixifu (Choose up to {Cards:diff()} card(s) to Exhaust)",
 
-	"MIYABISTS2_CARD_HUA_XIN_FENG.title": "Flower-Bearing Wind",
-    "MIYABISTS2_CARD_HUA_XIN_FENG.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf you played a [gold]Companion[/gold] card this turn, this costs [blue]0[/blue].",
+	"MIYABISTS2_CARD_HUA_XIN_FENG.title": "Flower-Scented Wind",
+    "MIYABISTS2_CARD_HUA_XIN_FENG.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf you played a [gold]Companion[/gold] card this turn, this costs [blue]0[/blue].",
 
 	"MIYABISTS2_CARD_SHUANG_SUI_XUE.title": "Frost-Shattered Snow",
-    "MIYABISTS2_CARD_SHUANG_SUI_XUE.description": "Deal [aqua]Frostburn[/aqua]{Damage:diff()} to ALL enemies.\\n[gold]Daze[/gold]{DAZE_POWER:diff()}",
+    "MIYABISTS2_CARD_SHUANG_SUI_XUE.description": "Deal [aqua]Frostbite[/aqua]{Damage:diff()} to ALL enemies\\n[gold]Daze[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2_CARD_MING_CAN_XUE.title": "Lingering Snow",
-    "MIYABISTS2_CARD_MING_CAN_XUE.description": "Deal [blue]5[/blue] hits of [aqua]Frostburn[/aqua]{Damage:diff()} and [gold]Daze[/gold]{DAZE_POWER:diff()} to ALL enemies.\\nEach attack card played this turn grants +[blue]1[/blue] hit. Every [blue]2[/blue] hits, gain [blue]1[/blue] [gold]Frostfall[/gold].",
+    "MIYABISTS2_CARD_MING_CAN_XUE.description": "Deal [aqua]Frostbite[/aqua]{Damage:diff()} to ALL enemies [blue]5[/blue] times. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nEach attack card played this turn increases the hit count by [blue]1[/blue]. Every [blue]2[/blue] attacks, gain [blue]1[/blue] [gold]Frostfall[/gold].",
 
 	"MIYABISTS2_CARD_BAOJUN_MENGJI.title": "Tyrant's Fierce Strike",
-    "MIYABISTS2_CARD_BAOJUN_MENGJI.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Gain {Block:diff()} Block. [gold]Parry[/gold]{PARRY_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]4[/blue] [gold]Plated Armor[/gold].",
+    "MIYABISTS2_CARD_BAOJUN_MENGJI.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Gain {Block:diff()} Block. [gold]Parry[/gold]{PARRY_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]6[/blue] [gold]Plated Armor[/gold].",
 
-	"MIYABISTS2_CARD_BINGYUAN_QIANXI.title": "Glacial Deep Strike",
-    "MIYABISTS2_CARD_BINGYUAN_QIANXI.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: For every {Buffer:diff()} damage dealt, gain [blue]1[/blue] [gold]Parry[/gold] and [gold]Slippery[/gold].",
+	"MIYABISTS2_CARD_BINGYUAN_QIANXI.title": "Glacial Abyss Infiltration",
+    "MIYABISTS2_CARD_BINGYUAN_QIANXI.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: For every {Buffer:diff()} damage dealt, gain [blue]1[/blue] layer of [gold]Parry[/gold] and [gold]Slippery[/gold].",
 
-	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI.title": "Super Heavy Shield Bash",
-    "MIYABISTS2_CARD_CHAOQIANGLI_DUNJI.description": "Gain {Block:diff()} Block. [gold]Parry[/gold]{PARRY_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [gold]Flower Verse[/gold] equal to your [gold]Parry[/gold].",
+	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI.title": "Super Powered Shield Bash",
+    "MIYABISTS2_CARD_CHAOQIANGLI_DUNJI.description": "Gain {Block:diff()} Block. [gold]Parry[/gold]{PARRY_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [gold]Farewell Blossom[/gold] equal to your [gold]Parry[/gold] stacks.\\n[gold]Exhaust {ExhaustCount:diff()}[/gold]",
 
 	"MIYABISTS2_CARD_QUANMIAN_QINGCHANG.title": "Fist Debt, Fully Settled",
     "MIYABISTS2_CARD_QUANMIAN_QINGCHANG.description": "Gain {Block:diff()} Block. Gain {SUPPORT_POINT_POWER:diff()} [gold]Support Point(s)[/gold].",
 
 	"MIYABISTS2_CARD_MANHAN_QUANXI.title": "Imperial Feast!",
-    "MIYABISTS2_CARD_MANHAN_QUANXI.description": "Gain {Block:diff()} Block.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]2[/blue] [gold]Regeneration[/gold].",
+    "MIYABISTS2_CARD_MANHAN_QUANXI.description": "Gain {Block:diff()} Block\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]2[/blue] [gold]Regeneration[/gold].",
 
-	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.title": "Fierce Tiger's Seventh Form: Blooming Blast",
+	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.title": "Fierce Tiger Seven Styles: Tiger Bloom Blast",
     "MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]{Decible:diff()}[/blue] [gold]Decibel[/gold].",
 
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG.title": "All for the Tiger Break King",
-    "MIYABISTS2_CARD_ALL_FOR_HUPOWANG.description": "Exhaust all cards in your deck with [gold]Daze[/gold] greater than [blue]15[/blue].\\nIf [blue]3[/blue] or more were exhausted, [gold]Break[/gold] the enemy.\\nIf fewer than [blue]3[/blue], add [blue]3[/blue] [gold]Fierce Tiger's Seventh Form: Blooming Blast[/gold] to your draw pile.",
+    "MIYABISTS2_CARD_ALL_FOR_HUPOWANG.description": "Exhaust all cards in your deck with [gold]Daze[/gold] greater than [blue]15[/blue].\\nIf [blue]3[/blue] or more cards are exhausted, [gold]Break[/gold] the enemy.\\nIf fewer than [blue]3[/blue], add [blue]3[/blue] [gold]Fierce Tiger Seven Styles: Tiger Bloom Blast[/gold] to your draw pile.",
 
 	"MIYABISTS2_CARD_YONGTAN_HUACAI.title": "Aria of Splendor",
-    "MIYABISTS2_CARD_YONGTAN_HUACAI.description": "Whenever you play a [gold]Companion[/gold] card, gain {Energy:energyIcons()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Select a [gold]Companion[/gold] card from your draw pile to add to your hand.",
-	"MIYABISTS2_CARD_YONGTAN_HUACAI.selectionScreenPrompt": "Select a Companion card",
+    "MIYABISTS2_CARD_YONGTAN_HUACAI.description": "Each time you play a [gold]Companion[/gold] card, gain {Energy:energyIcons()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Choose a [gold]Companion[/gold] card from your draw pile to add to your hand.",
+	"MIYABISTS2_CARD_YONGTAN_HUACAI.selectionScreenPrompt": "Choose a Companion card",
 
 	"MIYABISTS2_CARD_SHUANGYUE_JIASHI.title": "Frost Moon Stance",
     "MIYABISTS2_CARD_SHUANGYUE_JIASHI.description": "At the start of each turn, gain {FrostFall:diff()} [gold]Frostfall[/gold].",
 
-	"MIYABISTS2_CARD_NO_TAIL_FULL.title": "Cursed Blade Unleashed",
-    "MIYABISTS2_CARD_NO_TAIL_FULL.description": "Can you [jitter][gold]tame[/gold][/jitter][red] it[/red]?",
+	"MIYABISTS2_CARD_NO_TAIL_FULL.title": "Demon Blade Unleashed",
+    "MIYABISTS2_CARD_NO_TAIL_FULL.description": "Can you [jitter][gold]control[/gold][/jitter] [red]it[/red]?",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL.title": "Phaethon's Call to Arms",
-    "MIYABISTS2_CARD_PHAETHON_CALL.description": "Select 1 of [blue]3[/blue] [gold]Companion[/gold] cards to add to your hand.\\n(Includes [gold]Otherworld Companions[/gold]!)",
+    "MIYABISTS2_CARD_PHAETHON_CALL.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Companion[/gold] cards to add to your hand.\\n(Includes [gold]Otherworld Companions[/gold]!)",
 
-	"MIYABISTS2_CARD_BIG_EJIZHAN.title": "Super-Sized Goose Chicken Slash",
+	"MIYABISTS2_CARD_BIG_EJIZHAN.title": "Extra Large Goose Chicken Slash",
     "MIYABISTS2_CARD_BIG_EJIZHAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}. Gain [blue]{Strength:diff()}[/blue] [gold]Strength[/gold] this turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain an additional [blue]1[/blue] [gold]Strength[/gold].",
 
-	"MIYABISTS2_CARD_XINGYUE_XIANGSUI.title": "Starlit Moon's Company",
-    "MIYABISTS2_CARD_XINGYUE_XIANGSUI.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: If the enemy is already affected by [gold]Anomaly[/gold], trigger its damage immediately.",
+	"MIYABISTS2_CARD_XINGYUE_XIANGSUI.title": "Star and Moon Together",
+    "MIYABISTS2_CARD_XINGYUE_XIANGSUI.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: If the enemy is already in [gold]Attribute Anomaly[/gold] state, immediately trigger one resolution effect.",
 
-	"MIYABISTS2_CARD_YUANQI100.title": "100% Vitality",
-    "MIYABISTS2_CARD_YUANQI100.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}.\\nIf the enemy is affected by [gold]Anomaly[/gold], trigger its damage at [blue]50%[/blue] potency. If the enemy is also [gold]Broken[/gold], trigger at [blue]100%[/blue] instead.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a copy of this with [gold]Exhaust[/gold] to your hand, which costs [blue]0[/blue] this turn.",
+	"MIYABISTS2_CARD_YUANQI100.title": "100% Energy",
+    "MIYABISTS2_CARD_YUANQI100.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}\\nIf the enemy is already in [gold]Attribute Anomaly[/gold] state, additionally trigger a resolution effect at [blue]50%[/blue] damage. If the enemy is also [gold]Broken[/gold], trigger at [blue]100%[/blue] instead.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a copy of this card with [gold]Exhaust[/gold] to your hand. It costs 0 this turn.",
 
 	"MIYABISTS2_CARD_XINGMANG_ZHONGZHANG.title": "Starlight Finale",
-    "MIYABISTS2_CARD_XINGMANG_ZHONGZHANG.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add [gold]Starlight Waltz[/gold] to your hand. It costs [blue]0[/blue] this turn.",
+    "MIYABISTS2_CARD_XINGMANG_ZHONGZHANG.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Starlight Waltz[/gold] to your hand. It costs [blue]0[/blue] this turn.",
 
 	"MIYABISTS2_CARD_XINGMANG_YUANWUQU.title": "Starlight Waltz",
-    "MIYABISTS2_CARD_XINGMANG_YUANWUQU.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}.",
+    "MIYABISTS2_CARD_XINGMANG_YUANWUQU.description": "Deal {Damage:diff()} damage\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}",
 
-	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.title": "Fantasy Sonata",
-    "MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.description": "Select a non-Power card from your draw pile to add to your hand. It costs [blue]0[/blue] this turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Additionally select one from your discard pile.",
-	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "Select a Companion card",
+	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.title": "Fantasia Sonata",
+    "MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.description": "Choose a non-Power card from your draw pile to add to your hand. It costs [blue]0[/blue] this turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Also choose one from your discard pile to add to your hand.",
+	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "Choose a Companion card",
 
 	"MIYABISTS2_CARD_TU_NA_FA.title": "Breathing Technique",
-    "MIYABISTS2_CARD_TU_NA_FA.description": "The first [blue]1[/blue] [gold]Windflower[/gold] each turn costs 0. For every [blue]5[/blue] [gold]Windflowers[/gold] played, gain [blue]1[/blue] [gold]Frostfall[/gold].",
+    "MIYABISTS2_CARD_TU_NA_FA.description": "Each turn, your first [blue]1[/blue] [gold]Windflower[/gold] costs 0. Every [blue]5[/blue] [gold]Windflower(s)[/gold] played, gain [blue]1[/blue] [gold]Frostfall[/gold].",
 
 	"MIYABISTS2_CARD_MIYABI_DUEL.title": "Duel",
-    "MIYABISTS2_CARD_MIYABI_DUEL.description": "Change the enemy's intent to: Deal 10 damage.\\n[gold]Parry[/gold] 1.",
+    "MIYABISTS2_CARD_MIYABI_DUEL.description": "Change the enemy's intent to: Deal 10 damage.\\n[gold]Parry[/gold]1",
 
-	"MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.title": "Special Photography Technique",
-    "MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.description": "When an enemy is [gold]Broken[/gold], they gain an additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with an [gold]attacking intent[/gold] have a small chance to deal no damage.",
+	"MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.title": "Special Photo Technique",
+    "MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.description": "When an enemy is [gold]Broken[/gold], they gain an additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a small chance of dealing no damage.",
 
-	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.title": "Drunken Blossom Mooncloud Waltz",
-    "MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "Deal {HitCount:diff()} hits of {Damage:diff()} damage.\\n[gold]Daze[/gold]{DAZE_POWER:diff()}.\\nIf the enemy is not Broken, apply 5 [gold]Subjugation[/gold]. If you have [gold]Slippery[/gold], apply 2 additional [gold]Subjugation[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply 3 additional [gold]Subjugation[/gold].",
+	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.title": "Drunken Blossom Moon Cloud Spin",
+    "MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "Deal {Damage:diff()} damage {HitCount:diff()} time(s)\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] layers of [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] layers. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] layers of [gold]Submission[/gold].",
 
-	"MIYABISTS2_CARD_CIQUAN_LIANJI.title": "L-Type Roaring Fist: Jab Combo",
-    "MIYABISTS2_CARD_CIQUAN_LIANJI.description": "Deal {HitCount:diff()} hits of {Damage:diff()} damage.\\n[gold]Daze[/gold]{DAZE_POWER:diff()}.\\nFor 2 turns, the enemy takes +[blue]50%[/blue] [aqua]Frostburn[/aqua] damage.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: +[blue]75%[/blue] instead.",
+	"MIYABISTS2_CARD_CIQUAN_LIANJI.title": "L-Style Roaring Fist - Jab Combo",
+    "MIYABISTS2_CARD_CIQUAN_LIANJI.description": "Deal {Damage:diff()} damage {HitCount:diff()} time(s)\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nFor [blue]2[/blue] turns, enemies take +[blue]50%[/blue] [aqua]Frostbite[/aqua] damage. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Increase to +[blue]75%[/blue].",
 
-	"MIYABISTS2_CARD_ZHONGMU_YANCHU.title": "Final Curtain Call",
-    "MIYABISTS2_CARD_ZHONGMU_YANCHU.description": "Deal 3 hits of {Damage:diff()} damage.\\n[gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Enemy takes [blue]1.5x[/blue] damage from [purple]Anomaly[/purple] and [purple]Disorder[/purple].",
+	"MIYABISTS2_CARD_ZHONGMU_YANCHU.title": "Finale Performance",
+    "MIYABISTS2_CARD_ZHONGMU_YANCHU.description": "Deal {Damage:diff()} damage 3 times\\n[gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [purple]Attribute Anomaly[/purple] and [purple]Disorder[/purple] damage taken by enemies becomes [blue]1.5[/blue]x.",
 
-	"MIYABISTS2_CARD_JUN_LIE.title": "Frost Crack",
-    "MIYABISTS2_CARD_JUN_LIE.description": "Whenever you play an [aqua]Frostburn[/aqua] card, gain [blue]1[/blue] [gold]Decibel[/gold].",
+	"MIYABISTS2_CARD_JUN_LIE.title": "Frostbite Cracks",
+    "MIYABISTS2_CARD_JUN_LIE.description": "Each time you play an [aqua]Frostbite[/aqua] card, gain [blue]1[/blue] [gold]Decibel[/gold].",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.title": "Final Judgment",
-    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], deal [blue]3x[/blue] damage and remove their [gold]Break[/gold] and [gold]Daze Vulnerability[/gold]. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue].",
+    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], damage becomes [blue]3[/blue]x. Remove [gold]Break[/gold] and [gold]Daze Vulnerability[/gold] from the enemy. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue].",
 
-	"MIYABISTS2_CARD_PRINCESS.title": "Super-Temporal Princess Kaguya",
-    "MIYABISTS2_CARD_PRINCESS.description": "Blessings from Super-Temporal Princess Kaguya.",
+	"MIYABISTS2_CARD_PRINCESS.title": "Super Dimensional Princess Kaguya",
+    "MIYABISTS2_CARD_PRINCESS.description": "Blessing from the Super Dimensional Princess Kaguya",
 	"MIYABISTS2_CARD_PRINCESS.selectionScreenPrompt": "Choose a blessing",
 
-	"MIYABISTS2_CARD_PRINCESS_KAGUYA.title": "Kaguya-hime",
-    "MIYABISTS2_CARD_PRINCESS_KAGUYA.description": "Exhaust all [gold]Super Colorful Leaf[/gold] in your deck. Trigger a powerful effect for each one exhausted.\\nAt the start of each turn, randomly trigger {Kaguya:diff()} effect(s).",
+	"MIYABISTS2_CARD_PRINCESS_KAGUYA.title": "Princess Kaguya",
+    "MIYABISTS2_CARD_PRINCESS_KAGUYA.description": "Exhaust 1 [gold]Superhuman Iroha[/gold] in your deck to trigger a powerful effect.\\nAt the start of each turn, randomly trigger {Kaguya:diff()} effect(s).",
 
-	"MIYABISTS2_CARD_PRINCESS_INOP.title": "Inop's Blessing",
-    "MIYABISTS2_CARD_PRINCESS_INOP.description": "Gain 1 [gold]Artifact[/gold], 1 [gold]Slippery[/gold].",
+	"MIYABISTS2_CARD_PRINCESS_INOP.title": "Iroha's Blessing",
+    "MIYABISTS2_CARD_PRINCESS_INOP.description": "Gain 1 [gold]Artifact[/gold], 1 [gold]Slippery[/gold]\\nGain 2 [gold]Vigor[/gold], 1 [gold]Thorns[/gold]\\nGain 2 [gold]Plated Armor[/gold]",
 
-	"MIYABISTS2_CARD_PRINCESS_YACHIYO.title": "Yachiyo's Vigil",
-    "MIYABISTS2_CARD_PRINCESS_YACHIYO.description": "Select a card in your hand to [gold]Exhaust[/gold]. Next turn, add it to your hand and it costs 0.",
-	"MIYABISTS2_CARD_PRINCESS_YACHIYO.selectionScreenPrompt": "Select a card to send to the future",
+	"MIYABISTS2_CARD_PRINCESS_YACHIYO.title": "Yachiyo's Watch",
+    "MIYABISTS2_CARD_PRINCESS_YACHIYO.description": "Choose a card in your hand to [gold]Exhaust[/gold]. It can later be added to your target hand and cost 0.",
+	"MIYABISTS2_CARD_PRINCESS_YACHIYO.selectionScreenPrompt": "Choose a card to send to the future",
 
 	"MIYABISTS2_CARD_PRINCESS_YEARS.title": "Eight Thousand Years of Waiting",
-    "MIYABISTS2_CARD_PRINCESS_YEARS.description": "Add [gold]Super Colorful Leaf[/gold] to your discard pile.",
+    "MIYABISTS2_CARD_PRINCESS_YEARS.description": "Add a [gold]Superhuman Iroha[/gold] to your discard pile.",
 
-	"MIYABISTS2_CARD_PRINCESS_INOHA.title": "Super Colorful Leaf",
-    "MIYABISTS2_CARD_PRINCESS_INOHA.description": "When in hand together with [gold]Eight Thousand Years of Waiting[/gold], upgrade all cards and transform [gold]Eight Thousand Years of Waiting[/gold] into [gold]Kaguya-hime[/gold].",
+	"MIYABISTS2_CARD_PRINCESS_INOHA.title": "Superhuman Iroha",
+    "MIYABISTS2_CARD_PRINCESS_INOHA.description": "When in hand together with [gold]Eight Thousand Years of Waiting[/gold]: all cards are [gold]Upgraded[/gold] and gain [gold]Replay 1[/gold]. Transform [gold]Eight Thousand Years of Waiting[/gold] into [gold]Princess Kaguya[/gold].",
 
-	"MIYABISTS2_CARD_WEIMING_DOUDAOSHU.title": "Ashinan Tremor Blade Art",
-    "MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "While not [gold]Broken[/gold], damage taken is reduced by [blue]25%[/blue]. Each time you take a hit, add 1 [gold]Flower Verse[/gold] to your hand.\\nWhen taking unblocked damage, apply {Daze:diff()} Daze to yourself. At [blue]100[/blue] Daze, trigger [gold]Break[/gold].",
+	"MIYABISTS2_CARD_WEIMING_DOUDAOSHU.title": "Ashinagiri Blade Technique",
+    "MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "While not [gold]Broken[/gold], reduce damage taken by [blue]25%[/blue]. Each time you are hit, add 1 [gold]Farewell Blossom[/gold] to your hand.\\nWhen taking unblocked damage, apply {Daze:diff()} Daze to yourself. When Daze reaches [blue]100[/blue], trigger [gold]Break[/gold] on yourself.",
 
-	"MIYABISTS2_CARD_BEE_GROUP.title": "Swarm Assembly",
-    "MIYABISTS2_CARD_BEE_GROUP.description": "Attach [gold]Swarm[/gold] to {Cards:diff()} random cards in your hand and draw pile.",
+	"MIYABISTS2_CARD_BEE_GROUP.title": "Bee Swarm",
+    "MIYABISTS2_CARD_BEE_GROUP.description": "Attach [gold]Bee Swarm[/gold] to any {Cards:diff()} card(s) in your hand and draw pile.",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.title": "Bangboo Incoming!",
     "MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "Summon a random Bangboo.",
 
-	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.title": "Bangboo, Strike!",
-    "MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.description": "Designate a Bangboo and use 1 of its abilities for free.",
+	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.title": "Bangboo Strike!",
+    "MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.description": "Select a Bangboo to use one of its abilities for free.",
 
 	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.title": "Bangboo Burst!",
-    "MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.description": "Designate a Bangboo. It can use its ability 1 additional time each turn.",
+    "MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.description": "Select a Bangboo to gain an additional use of its ability each turn.",
 
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.title": "Bangboo Recharge!",
-    "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "All Bangboos recover 1 ability use.",
+    "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "All Bangboos regain 1 ability use.",
 
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "Bangboo, Save Me!",
-    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Designate a Bangboo to gain [gold]Guardian[/gold].",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "Bangboo Save Me!",
+    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Select a Bangboo to gain [gold]Guardian[/gold].",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "Today's Training",
-    "MIYABISTS2_CARD_TRAINING_TODAY.description": "Choose today's training.",
-	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "Choose training",
+    "MIYABISTS2_CARD_TRAINING_TODAY.description": "Choose today's training regimen.",
+	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "Choose a training",
 
 	"MIYABISTS2_CARD_TRAIN_SPEAK.title": "Speak No More Than 5 Words",
-    "MIYABISTS2_CARD_TRAIN_SPEAK.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, you may play no more than [blue]5[/blue] cards per turn.\\nAfter [gold]training[/gold] ends: the first [blue]5[/blue] cards each turn cost -[blue]1[/blue].",
+    "MIYABISTS2_CARD_TRAIN_SPEAK.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, you may not play more than [blue]5[/blue] cards per turn.\\nAfter [gold]training[/gold] is complete: the first [blue]5[/blue] cards each turn cost [blue]1[/blue] less.",
 
-	"MIYABISTS2_CARD_TRAIN_STEP.title": "Enter Right Foot First",
-    "MIYABISTS2_CARD_TRAIN_STEP.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, before playing an attack card you must [gold]Discard[/gold] a card.\\nAfter [gold]training[/gold] ends: draw [blue]1[/blue] card after playing an attack card.",
+	"MIYABISTS2_CARD_TRAIN_STEP.title": "Enter With Right Foot First",
+    "MIYABISTS2_CARD_TRAIN_STEP.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, before playing an attack card each turn, you must first [gold]Discard[/gold] a card.\\nAfter [gold]training[/gold] is complete: after playing an attack card, draw [blue]1[/blue] card.",
 
-	"MIYABISTS2_CARD_TRAIN_EAT.title": "Only Eat Melon-Flavored Food",
-    "MIYABISTS2_CARD_TRAIN_EAT.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, you cannot play attack cards.\\nAfter [gold]training[/gold] ends: all attack cards cost -[blue]1[/blue].",
+	"MIYABISTS2_CARD_TRAIN_EAT.title": "Only Eat Melon Flavor",
+    "MIYABISTS2_CARD_TRAIN_EAT.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, you cannot play attack cards.\\nAfter [gold]training[/gold] is complete: all attack cards cost [blue]1[/blue] less.",
 
 	"MIYABISTS2_CARD_TRAIN_ATTACK.title": "Only Three Moves",
-    "MIYABISTS2_CARD_TRAIN_ATTACK.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, you may only play [blue]3[/blue] cards per turn. All cards cost 0.\\nAfter [gold]training[/gold] ends: at the start of each turn, gain {Energy:energyIcons()}.",
+    "MIYABISTS2_CARD_TRAIN_ATTACK.description": "[gold]Training[/gold]\\nFor [blue]3[/blue] turns, you may only use [blue]3[/blue] cards per turn. All cards cost 0.\\nAfter [gold]training[/gold] is complete: at the start of each turn, gain {Energy:energyIcons()}.",
+
+	"MIYABISTS2_CARD_EARS_ALL.title": "All Ears",
+    "MIYABISTS2_CARD_EARS_ALL.description": "Transform all [gold]Attack Cards[/gold] in your hand into [gold]Left Ear High Damage[/gold], and all [gold]Skill Cards[/gold] into [gold]Right Ear Damage Up[/gold].",
+
+	"MIYABISTS2_CARD_EARS_LEFT.title": "Left Ear High Damage",
+    "MIYABISTS2_CARD_EARS_LEFT.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nDraw {Cards:diff()} card(s)",
+
+	"MIYABISTS2_CARD_EARS_RIGHT.title": "Right Ear Damage Up",
+    "MIYABISTS2_CARD_EARS_RIGHT.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\nGain {Block:diff()} Block\\n[gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}",
+
+	"MIYABISTS2_CARD_JINLONG_SZB.title": "Golden Prestige: Lumior",
+    "MIYABISTS2_CARD_JINLONG_SZB.description": "At the start of each turn, discard up to 2 cards, then draw that many cards.\\nEach time you discard or exhaust a card, deal 2 damage to all enemies.",
+
+	"MIYABISTS2_CARD_KAKANIA.title": "Id, Ego, Superego",
+    "MIYABISTS2_CARD_KAKANIA.description": "Increase damage taken by 25%. Record all damage taken. Right-click: spend 5 Support Points to deal recorded damage to all enemies. At the end of each turn, deal {BurstRatio:diff()}% of the damage dealt this turn.",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "Daze Test Card",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]Daze[/gold][blue]50[/blue]",
@@ -266,15 +281,216 @@
 	"MIYABISTS2_CARD_TEST_CARD_ANO.title": "Anomaly Test Card",
     "MIYABISTS2_CARD_TEST_CARD_ANO.description": "[gold]Anomaly Buildup[/gold][blue]3[/blue]",
 
-	"MIYABISTS2_CARD_TEST_CARD_FROST.title": "Frostburn Test Card",
-    "MIYABISTS2_CARD_TEST_CARD_FROST.description": "[aqua]Frostburn Buildup[/aqua][blue]50[/blue]",
+	"MIYABISTS2_CARD_TEST_CARD_FROST.title": "Frostbite Test Card",
+    "MIYABISTS2_CARD_TEST_CARD_FROST.description": "[aqua]Frostbite Charge[/aqua][blue]50[/blue]",
 
-	"MIYABISTS2_CARD_EARS_ALL.title": "All Ears",
-    "MIYABISTS2_CARD_EARS_ALL.description": "Transform all [gold]Attack[/gold] cards in your hand into [gold]Left Ear High Damage[/gold], and all [gold]Skill[/gold] cards into [gold]Right Ear Damage High[/gold].",
 
-	"MIYABISTS2_CARD_EARS_LEFT.title": "Left Ear High Damage",
-    "MIYABISTS2_CARD_EARS_LEFT.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nDraw {Cards:diff()} cards.",
+	"MIYABISTS2_CARD_TEST_CARD_SHUFA.title": "Spellcraft Test Card",
+    "MIYABISTS2_CARD_TEST_CARD_SHUFA.description": "Spellcraft[blue]60[/blue]",
 
-	"MIYABISTS2_CARD_EARS_RIGHT.title": "Right Ear Damage High",
-    "MIYABISTS2_CARD_EARS_RIGHT.description": "[aqua]Frostburn[/aqua]{Damage:diff()}\\nGain {Block:diff()} Block.\\n[gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}"
+
+	// ====== Yixuan Exclusive Cards ======
+	"MIYABISTS2_CARD_XUANMO_JIZHEN.title": "Dark Ink Ultimate Array",
+	"MIYABISTS2_CARD_XUANMO_JIZHEN.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL enemies {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]15[/blue] layers of [gold]Spellcraft[/gold] to all enemies.\\nGain [blue]1[/blue] [gold]Intangible[/gold] and restore [blue]20[/blue] [gold]Flash Energy[/gold].",
+
+	"MIYABISTS2_CARD_FUFA_QIANCHONG.title": "Thousandfold Talisman",
+	"MIYABISTS2_CARD_FUFA_QIANCHONG.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL enemies {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]15[/blue] layers of [gold]Spellcraft[/gold] to all enemies.\\nAdd a [gold]Dark Ink Ultimate Array[/gold] with [gold]Exhaust[/gold] to your hand. It costs 0 this turn.",
+
+	"MIYABISTS2_CARD_FUFA_QIANCHONG_PO.title": "Thousandfold Talisman: Rupture",
+	"MIYABISTS2_CARD_FUFA_QIANCHONG_PO.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL enemies {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]20[/blue] layers of [gold]Spellcraft[/gold] to all enemies.",
+
+	"MIYABISTS2_CARD_XIAOYUN_JIN.title": "Sky Cloud Force",
+    "MIYABISTS2_CARD_XIAOYUN_JIN.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}",
+
+	"MIYABISTS2_CARD_YIXUAN_BLOCK.title": "Defend",
+    "MIYABISTS2_CARD_YIXUAN_BLOCK.description": "Gain {Block:diff()} Block\\nGain {THORNS_POWER:diff()} [gold]Thorns[/gold]",
+
+	"MIYABISTS2_CARD_JINYING_JUE.title": "Ember Shadow Art",
+    "MIYABISTS2_CARD_JINYING_JUE.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy has an attack intent, gain {Block:diff()} Block and 2 [gold]Thorns[/gold].",
+
+	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "Azure Cloud Shadow",
+	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]25[/blue] layers of [gold]Spellcraft[/gold] to all enemies.",
+
+    "MIYABISTS2_CARD_MOYING_NINGYUN.title": "Ink Shadow Cloud Gather",
+    "MIYABISTS2_CARD_MOYING_NINGYUN.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL enemies {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain {Block:diff()} Block\\nApply [blue]10[/blue] layers of [gold]Spellcraft[/gold] to all enemies.",
+
+    "MIYABISTS2_CARD_YINYUN_SHENFA.title": "Hidden Cloud Stance",
+    "MIYABISTS2_CARD_YINYUN_SHENFA.description": "Gain {Block:diff()} Block\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain {VIGOR_POWER:diff()} [gold]Vigor[/gold].",
+
+    "MIYABISTS2_CARD_LINGYUN_PO.title": "Soaring Cloud Break",
+    "MIYABISTS2_CARD_LINGYUN_PO.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain {VIGOR_POWER:diff()} [gold]Vigor[/gold].",
+
+    "MIYABISTS2_CARD_QING_XIAO_JIN.title": "Clear Sky Force",
+    "MIYABISTS2_CARD_QING_XIAO_JIN.description": "Gain {Block:diff()} Block\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain {THORNS_POWER:diff()} [gold]Thorns[/gold] and {VIGOR_POWER:diff()} [gold]Vigor[/gold].",
+
+	"MIYABISTS2_CARD_SHUFA_ZONGSHI.title": "Spellcraft Mastery",
+	"MIYABISTS2_CARD_SHUFA_ZONGSHI.description": "Each time you deal Dark Ink damage, apply {SHUFA_ZONGSHI_AMOUNT:diff()} layer(s) of [gold]Spellcraft[/gold] to the enemy.",
+
+
+	// ====== Yixuan Shared Cards ======
+	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.title": "Overbearing Might",
+	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.description": "After playing an [gold]Ultimate[/gold], gain [blue]5[/blue] [gold]Decibel[/gold]. After playing a [gold]Companion[/gold] card, gain [blue]2[/blue] [gold]Decibel[/gold].",
+
+	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE_YIXUAN.title": "Bangboo Strike!",
+	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE_YIXUAN.description": "Select a Bangboo to use one of its abilities for free.",
+
+	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.title": "Bangboo Recharge!",
+	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "All Bangboos regain 1 ability use.",
+
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.title": "Bangboo Save Me!",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "Select a Bangboo to gain [gold]Guardian[/gold].",
+
+	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.title": "Bangboo Incoming!",
+	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "Summon a random Bangboo.",
+
+	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE_YIXUAN.title": "Bangboo Burst!",
+	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE_YIXUAN.description": "Select a Bangboo to gain an additional use of its ability each turn.",
+
+	"MIYABISTS2_CARD_BEE_GROUP_YIXUAN.title": "Bee Swarm",
+	"MIYABISTS2_CARD_BEE_GROUP_YIXUAN.description": "Attach [gold]Bee Swarm[/gold] to any {Cards:diff()} card(s) in your hand and draw pile.",
+
+	"MIYABISTS2_CARD_BYE_QUANLEIDA_YIXUAN.title": "Goodbye Home Run!",
+	"MIYABISTS2_CARD_BYE_QUANLEIDA_YIXUAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Choose {Cards:diff()} attack card(s) from your discard pile to add to your hand. Their damage is increased by [blue]3[/blue] this combat.\\nIf the enemy is already [gold]Broken[/gold], [gold]Support Points[/gold] are not consumed.",
+	"MIYABISTS2_CARD_BYE_QUANLEIDA_YIXUAN.selectionScreenPrompt": "Choose a [gold]Companion[/gold] card",
+
+	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING_YIXUAN.title": "Fantasia Sonata",
+	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING_YIXUAN.description": "Choose a non-Power card from your draw pile to add to your hand. It costs [blue]0[/blue] this turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Also choose one from your discard pile to add to your hand.",
+	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING_YIXUAN.selectionScreenPrompt": "Choose a Companion card",
+
+	"MIYABISTS2_CARD_MANHAN_QUANXI_YIXUAN.title": "Imperial Feast!",
+	"MIYABISTS2_CARD_MANHAN_QUANXI_YIXUAN.description": "Gain {Block:diff()} Block\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]2[/blue] [gold]Regeneration[/gold].",
+
+	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.title": "Fierce Tiger Seven Styles: Tiger Bloom Blast",
+	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]{Decible:diff()}[/blue] [gold]Decibel[/gold].",
+
+	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.title": "Underworld Elegy",
+	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]35%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn.\\nFor [blue]{WanGe:diff()}[/blue] turn(s), add a [gold]Concerto Snipeshot[/gold] to your hand at the start of each turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Concerto Snipeshot[/gold] to your hand.",
+
+	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.title": "Phaethon's Call to Arms",
+	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Companion[/gold] cards to add to your hand.\\n(Includes [gold]Otherworld Companions[/gold]!)",
+
+	"MIYABISTS2_CARD_PRINCESS_YIXUAN.title": "Super Dimensional Princess Kaguya",
+	"MIYABISTS2_CARD_PRINCESS_YIXUAN.description": "Blessing from the Super Dimensional Princess Kaguya",
+	"MIYABISTS2_CARD_PRINCESS_YIXUAN.selectionScreenPrompt": "Choose a blessing",
+
+	"MIYABISTS2_CARD_PRINCESS_INOP_YIXUAN.title": "Iroha's Blessing",
+	"MIYABISTS2_CARD_PRINCESS_INOP_YIXUAN.description": "Gain 1 [gold]Artifact[/gold], 1 [gold]Slippery[/gold]\\nGain 2 [gold]Plated Armor[/gold]",
+
+	"MIYABISTS2_CARD_PRINCESS_YACHIYO_YIXUAN.title": "Yachiyo's Watch",
+	"MIYABISTS2_CARD_PRINCESS_YACHIYO_YIXUAN.description": "Choose a card in your hand to [gold]Exhaust[/gold]. Next turn, add it to your target hand and it costs 0.",
+	"MIYABISTS2_CARD_PRINCESS_YACHIYO_YIXUAN.selectionScreenPrompt": "Choose a card to send to the future",
+
+	"MIYABISTS2_CARD_QUANMIAN_QINGCHANG_YIXUAN.title": "Fist Debt, Fully Settled",
+	"MIYABISTS2_CARD_QUANMIAN_QINGCHANG_YIXUAN.description": "Gain {Block:diff()} Block. Gain {SUPPORT_POINT_POWER:diff()} [gold]Support Point(s)[/gold].",
+
+	"MIYABISTS2_CARD_QUICK_PARRY_YIXUAN.title": "Quick Parry",
+	"MIYABISTS2_CARD_QUICK_PARRY_YIXUAN.description": "Gain {Block:diff()} Block\\nGain 2 [gold]Vigor[/gold]\\nGain [blue]1[/blue] [gold]Support Point[/gold]. Add a random [gold]Companion[/gold] card from your draw pile to your hand.",
+
+	"MIYABISTS2_CARD_QUICK_SUPPORT_YIXUAN.title": "Quick Support",
+	"MIYABISTS2_CARD_QUICK_SUPPORT_YIXUAN.description": "Deal {Damage:diff()} damage to yourself. Randomly play a Companion card from your draw pile.",
+
+	"MIYABISTS2_CARD_RANYOUYIN_SHARE_YIXUAN.title": "Fuel Drink Sharing Pack",
+	"MIYABISTS2_CARD_RANYOUYIN_SHARE_YIXUAN.description": "Apply [blue]1[/blue] [gold]Vulnerable[/gold] to yourself. Gain [blue]{Decible:diff()}[/blue] [gold]Decibel[/gold]. Gain [blue]1[/blue] [gold]Support Point[/gold].\\nIf you played a [gold]Companion[/gold] card this turn, [gold]Replay[/gold][blue]1[/blue].",
+
+	"MIYABISTS2_CARD_SHE_WEN_YIXUAN.title": "Serpent's Kiss",
+	"MIYABISTS2_CARD_SHE_WEN_YIXUAN.description": "Deal {Damage:diff()} damage to an enemy. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nChoose up to {Cards:diff()} card(s) from your hand and draw pile to [gold]Exhaust[/gold]. If you have [gold]Exhausted[/gold] [blue]5[/blue] or more cards, deal 15 damage to ALL enemies and apply 2 layers of [gold]Vulnerable[/gold] instead.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Guaranteed not to sneak a bite this time!\\n(Has eaten {Eat:diff()} card(s) already)",
+	"MIYABISTS2_CARD_SHE_WEN_YIXUAN.selectionScreenPrompt": "Food for Xixifu (Choose up to {Cards:diff()} card(s) to Exhaust)",
+
+	"MIYABISTS2_CARD_SONG_KE_YIXUAN.title": "Show Them Out!",
+	"MIYABISTS2_CARD_SONG_KE_YIXUAN.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Ethereal[/gold] [gold]Ultimate[/gold] ([gold]Azure Cloud Shadow[/gold]) that costs [blue]0[/blue] to your hand.",
+
+	"MIYABISTS2_CARD_SP_XIAOYE_YIXUAN.title": "SP: Little Night Knight",
+	"MIYABISTS2_CARD_SP_XIAOYE_YIXUAN.description": "Both you and the enemy gain [blue]1[/blue] [gold]Intangible[/gold]. Choose {Cards:diff()} card(s) from all cards to [gold]Exhaust[/gold].",
+	"MIYABISTS2_CARD_SP_XIAOYE_YIXUAN.selectionScreenPrompt": "Choose {Cards:diff()} card(s) to [gold]Exhaust[/gold]",
+
+	"MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO_YIXUAN.title": "Special Photo Technique",
+	"MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO_YIXUAN.description": "When an enemy is [gold]Broken[/gold], they gain an additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a small chance of dealing no damage.",
+
+	"MIYABISTS2_CARD_YONGTAN_HUACAI_YIXUAN.title": "Aria of Splendor",
+	"MIYABISTS2_CARD_YONGTAN_HUACAI_YIXUAN.description": "Each time you play a [gold]Companion[/gold] card, gain {Energy:energyIcons()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Choose a [gold]Companion[/gold] card from your draw pile to add to your hand.",
+	"MIYABISTS2_CARD_YONGTAN_HUACAI_YIXUAN.selectionScreenPrompt": "Choose a Companion card",
+
+	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG_YIXUAN.title": "Tactical Rally",
+	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG_YIXUAN.description": "Draw {Cards:diff()} card(s)\\nFor each [gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
+
+	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.title": "Final Judgment",
+	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], damage becomes [blue]3[/blue]x. Remove [gold]Break[/gold] and [gold]Daze Vulnerability[/gold] from the enemy. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue].",
+
+	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "Drunken Blossom Moon Cloud Spin",
+	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "Deal {Damage:diff()} damage {HitCount:diff()} time(s)\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] layers of [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] layers. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] layers of [gold]Submission[/gold].",
+
+	"MIYABISTS2_CARD_KAKANIA_YIXUAN.title": "Id, Ego, Superego",
+    "MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "Increase damage taken by 25%. Record all damage taken. Right-click: spend 5 Support Points to deal recorded damage to all enemies. At the end of each turn, deal {BurstRatio:diff()}% of the damage dealt this turn.",
+
+
+	// ====== Yixuan New Exclusive Cards ======
+	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.title": "Azure Sky Journey Together",
+	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.description": "At the start of each turn, gain {VIGOR_POWER:diff()} [gold]Vigor[/gold], {THORNS_POWER:diff()} [gold]Thorns[/gold], and restore [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold].",
+
+	"MIYABISTS2_CARD_LIUYUN_YINGSHEN.title": "Flowing Cloud Shadow",
+	"MIYABISTS2_CARD_LIUYUN_YINGSHEN.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]{THORNS_POWER:diff()}[/blue] [gold]Thorns[/gold].",
+
+	"MIYABISTS2_CARD_NINGYUN_SHU.title": "Cloud Condensing Art",
+	"MIYABISTS2_CARD_NINGYUN_SHU.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]{SHUFA_POWER:diff()}[/blue] layers of [gold]Spellcraft[/gold].\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Add an [gold]Exhaust[/gold] [gold]Ethereal[/gold] copy to your hand. It costs 0 this turn.",
+
+	"MIYABISTS2_CARD_CHUSUI_YIJI.title": "Exorcism Strike",
+	"MIYABISTS2_CARD_CHUSUI_YIJI.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nRestore [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold].\\nEach time you spend [gold]Flash Energy[/gold], automatically play this card (wherever it is).",
+
+	"MIYABISTS2_CARD_QINGMING_ZHENJI.title": "Azure Tremor Strike",
+	"MIYABISTS2_CARD_QINGMING_ZHENJI.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]{SHUFA_POWER:diff()}[/blue] layers of [gold]Spellcraft[/gold].\\nWhile in hand, for every [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold] spent, cost [blue]-1[/blue].",
+
+	"MIYABISTS2_CARD_MOHEN_HUAXING.title": "Ink Trail Manifestation",
+	"MIYABISTS2_CARD_MOHEN_HUAXING.description": "[gold]Plated Armor[/gold]{Block:diff()}\\nGrants [blue]{THORNS_POWER:diff()}[/blue] [gold]Thorns[/gold] and [blue]{VIGOR_POWER:diff()}[/blue] [gold]Vigor[/gold].\\nRestore [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold].\\nIf the enemy has an attack intent: gain an additional [blue]{ExtraVigor:diff()}[/blue] [gold]Vigor[/gold]. Your next [orange]Dark Ink[/orange] damage card costs [blue]0[/blue].",
+
+	"MIYABISTS2_CARD_MOJIN_YINGXIAO.title": "Ink Ember Shadow Fade",
+	"MIYABISTS2_CARD_MOJIN_YINGXIAO.description": "Gain {Block:diff()} Block\\nDraw [blue]1[/blue] card\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain [blue]{THORNS_POWER:diff()}[/blue] [gold]Thorns[/gold].",
+
+	"MIYABISTS2_CARD_XIAOYUN_XUNJI.title": "Sky Cloud Swift Strike",
+	"MIYABISTS2_CARD_XIAOYUN_XUNJI.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain [blue]{VIGOR_POWER:diff()}[/blue] [gold]Vigor[/gold].",
+
+	"MIYABISTS2_CARD_XIAOYUN_XUNJI_PO.title": "Sky Cloud Swift Strike: Rupture",
+	"MIYABISTS2_CARD_XIAOYUN_XUNJI_PO.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain [blue]{VIGOR_POWER:diff()}[/blue] [gold]Vigor[/gold].",
+
+	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.title": "Azure Tremor Strike: Rupture",
+	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]{SHUFA_POWER:diff()}[/blue] layers of [gold]Spellcraft[/gold].\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Apply 10 layers of [gold]Spellcraft[/gold].",
+
+	"MIYABISTS2_CARD_XUANMO_XUNJI.title": "Dark Ink Swift Strike",
+	"MIYABISTS2_CARD_XUANMO_XUNJI.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]{VIGOR_POWER:diff()}[/blue] [gold]Vigor[/gold].\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain an additional [blue]{ExtraVigor:diff()}[/blue] [gold]Vigor[/gold].",
+
+	// ====== Yixuan New Shared Cards ======
+	"MIYABISTS2_CARD_JINLONG_SZB_YIXUAN.title": "Golden Prestige: Lumior",
+    "MIYABISTS2_CARD_JINLONG_SZB_YIXUAN.description": "At the start of each turn, discard up to 2 cards, then draw that many cards.\\nEach time you discard or exhaust a card, deal 2 damage to all enemies.",
+
+	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG_YIXUAN.title": "All for the Tiger Break King",
+	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG_YIXUAN.description": "Exhaust all cards in your deck with [gold]Daze[/gold] greater than [blue]15[/blue].\\nIf [blue]3[/blue] or more cards are exhausted, [gold]Break[/gold] the enemy.\\nIf fewer than [blue]3[/blue], add [blue]3[/blue] [gold]Fierce Tiger Seven Styles: Tiger Bloom Blast[/gold] to your draw pile.",
+
+	"MIYABISTS2_CARD_BAOJUN_MENGJI_YIXUAN.title": "Tyrant's Fierce Strike",
+	"MIYABISTS2_CARD_BAOJUN_MENGJI_YIXUAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Gain {Block:diff()} Block, {THORNS_POWER:diff()} [gold]Thorns[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]6[/blue] [gold]Plated Armor[/gold].",
+
+	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI_YIXUAN.title": "Super Powered Shield Bash",
+	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI_YIXUAN.description": "Gain {Block:diff()} Block, {THORNS_POWER:diff()} [gold]Thorns[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Deal damage equal to your [gold]Thorns[/gold] to all enemies.\\n[gold]Exhaust {ExhaustCount:diff()}[/gold]",
+
+	"MIYABISTS2_CARD_MIYABI_DUEL_YIXUAN.title": "Duel",
+	"MIYABISTS2_CARD_MIYABI_DUEL_YIXUAN.description": "Change the enemy's intent to: Deal 1 damage 4 times.\\nGain {THORNS_POWER:diff()} [gold]Thorns[/gold].",
+
+	"MIYABISTS2_CARD_MITU_YESONG.title": "Lost Night Hymn",
+	"MIYABISTS2_CARD_MITU_YESONG.description": "For {Turns:diff()} turn(s), after playing a non-attack card, gain [blue]2[/blue] [gold]Vigor[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore [blue]6[/blue] HP to all characters.",
+
+	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.title": "Mountain-Shaking Pulse Strike",
+	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.description": "Your next [blue]{MingpoCount:diff()}[/blue] [gold]Soulbreak Damage[/gold] card(s) deal +[blue]{MingpoBonus:diff()}%[/blue] damage.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Draw [blue]1[/blue] card. Your next attack card costs [blue]1[/blue] less.",
+
+	"MIYABISTS2_CARD_HANTIAN_DONGDI.title": "Heaven-Shaking, Earth-Shattering",
+	"MIYABISTS2_CARD_HANTIAN_DONGDI.description": "Deal [gold]Soulbreak Damage[/gold]{Damage:diff()} {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [gold]Vigor[/gold] equal to your current stacks.",
+
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN.title": "Hammer to the Earth's Core",
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]{RongluCount:diff()}[/blue] [gold]Forge Inferno[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain an additional [blue]2[/blue] [gold]Forge Inferno[/gold].",
+
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN_YIXUAN.title": "Hammer to the Earth's Core",
+	"MIYABISTS2_CARD_CHUIJIN_DIXIN_YIXUAN.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]{RongluCount:diff()}[/blue] [gold]Forge Inferno[/gold].\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain an additional [blue]2[/blue] [gold]Forge Inferno[/gold].",
+
+	"MIYABISTS2_CARD_HUALIAN_XIEYI.title": "Flower Chain Protocol",
+	"MIYABISTS2_CARD_HUALIAN_XIEYI.description": "Gain {Strength:diff()} [gold]Strength[/gold].\\nRight-click: [gold]Support Points[/gold][blue]2[/blue]: Gain 1 Energy and deal {Damage:diff()} damage to all enemies.",
+
+	"MIYABISTS2_CARD_HUALIAN_XIEYI_YIXUAN.title": "Flower Chain Protocol",
+	"MIYABISTS2_CARD_HUALIAN_XIEYI_YIXUAN.description": "Gain {Strength:diff()} [gold]Strength[/gold].\\nRight-click: [gold]Support Points[/gold][blue]2[/blue]: Gain 1 Energy and deal {Damage:diff()} damage to all enemies."
 }

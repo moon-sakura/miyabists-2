@@ -322,8 +322,8 @@ public static class MiyabiCharSelectSkinPatch
                 options = new (string, string)[]
                 {
                     ("默认", "无变化"),
-                    ("邦布当家", "初始卡组变为仪玄邦布相关卡组"),
-                    ("蜂群集结", "初始卡组中添加1张升级后的[color=#FFD700]蜂群集结(仪玄)[/color]"),
+                    ("邦布当家", "初始卡组变为邦布相关卡组"),
+                    ("蜂群集结", "初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]"),
                 };
                 currentIndex = (int)MiyabiModConfig.YixuanFunPileSelected;
                 break;

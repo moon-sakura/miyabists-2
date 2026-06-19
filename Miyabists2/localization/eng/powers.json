@@ -1,14 +1,14 @@
 {
-	"FROST_BUILD_POWER.smartDescription": "Accumulate stacks to trigger [aqua]Frostburn[/aqua] and apply 1 [purple]Anomaly[/purple] (trigger at [blue]50[/blue] stacks solo, +[blue]15[/blue] per additional player)",
-	"FROST_BUILD_POWER.description": "Accumulate stacks to trigger [aqua]Frostburn[/aqua] and apply 1 [purple]Anomaly[/purple]",
-	"FROST_BUILD_POWER.title": "Frostburn",
+	"FROST_BUILD_POWER.smartDescription": "When accumulated to a certain amount, triggers [aqua]Frostburn[/aqua] and adds 1 layer of [purple]Attribute Anomaly[/purple] (Solo: [blue]50[/blue] stacks to trigger. +[blue]15[/blue] stacks required per additional player)",
+	"FROST_BUILD_POWER.description": "When accumulated to a certain amount, triggers [aqua]Frostburn[/aqua] and adds 1 layer of [purple]Attribute Anomaly[/purple]",
+	"FROST_BUILD_POWER.title": "Frostbite Charge",
 
-	"DAZE_POWER.smartDescription": "Accumulate stacks to trigger [gold]Break[/gold] (trigger at [blue]100[/blue] stacks solo, +[blue]20[/blue] per additional player)",
-	"DAZE_POWER.description": "Accumulate stacks to trigger [gold]Break[/gold]",
+	"DAZE_POWER.smartDescription": "When accumulated to a certain amount, triggers [gold]Break[/gold] (Solo: [blue]100[/blue] stacks to trigger. +[blue]20[/blue] stacks required per additional player)",
+	"DAZE_POWER.description": "When accumulated to a certain amount, triggers [gold]Break[/gold]",
 	"DAZE_POWER.title": "Daze",
 
-	"BREAK_POWER.smartDescription": "[gold]Stunned[/gold]. Gain 1 turn of [gold]Daze Vulnerability[/gold] [blue]50%[/blue]. Cannot accumulate [gold]Daze[/gold] while in this state.",
-	"BREAK_POWER.description": "On Break: [gold]Stun[/gold] the enemy and apply 1 turn of [gold]Daze Vulnerability[/gold] [blue]50%[/blue]. Cannot accumulate [gold]Daze[/gold] while in this state.",
+	"BREAK_POWER.smartDescription": "[gold]Stun[/gold] the enemy and apply [gold]Daze Vulnerability[/gold] [blue]50%[/blue] for 1 turn. Daze cannot be stacked while broken.",
+	"BREAK_POWER.description": "On Break: [gold]Stuns[/gold] the enemy and applies [gold]Daze Vulnerability[/gold] [blue]50%[/blue] for 1 turn. Daze cannot be stacked while broken.",
 	"BREAK_POWER.title": "Break",
 
 	"BREAK_PLAYER_POWER.smartDescription": "Cannot play cards for 1 turn",
@@ -16,218 +16,228 @@
 	"BREAK_PLAYER_POWER.title": "Break",
 
 	"FROST_FIRE_POWER.title": "Iceflame",
-    "FROST_FIRE_POWER.description": "Each stack increases [aqua]Frostburn[/aqua] damage by [blue]5%[/blue] (up to a cap).",
-    "FROST_FIRE_POWER.smartDescription": "Each stack increases [aqua]Frostburn[/aqua] damage by [blue]5%[/blue] (cap: [blue]{Limit:diff()}%[/blue]).",
+    "FROST_FIRE_POWER.description": "Each stack increases [aqua]Frostbite[/aqua] damage by [blue]5%[/blue] (capped).",
+    "FROST_FIRE_POWER.smartDescription": "Each stack increases [aqua]Frostbite[/aqua] damage by [blue]5%[/blue] (cap: [blue]{Limit:diff()}%[/blue]).",
 
-	"FROST_POWER.title": "Frost Scorch",
-    "FROST_POWER.description": "Damage taken is increased. Cannot accumulate [aqua]Frostburn Buildup[/aqua].",
-    "FROST_POWER.smartDescription": "Damage taken +[blue]{DamageVuln:diff()}%[/blue]. Cannot accumulate [aqua]Frostburn Buildup[/aqua].",
+	"FROST_POWER.title": "Frostburn",
+    "FROST_POWER.description": "Increases damage taken. Cannot stack [aqua]Frostbite Charge[/aqua].",
+    "FROST_POWER.smartDescription": "Damage taken +[blue]{DamageVuln:diff()}%[/blue]. Cannot stack [aqua]Frostbite Charge[/aqua].",
 
 	"DAZE_VULN_POWER.smartDescription": "For 1 turn, damage taken +[blue]{Amount}%[/blue]",
 	"DAZE_VULN_POWER.description": "Increases damage taken by the enemy",
 	"DAZE_VULN_POWER.title": "Daze Vulnerability",
 
 	"FROST_FALL_POWER.title": "Frostfall",
-    "FROST_FALL_POWER.description": "Used to unleash [gold]Frost Moon[/gold]. At 2 stacks without [gold]Frost Moon[/gold] in hand, add [gold]Frost Moon[/gold] to your hand.",
-    "FROST_FALL_POWER.smartDescription": "Six stacks connect to the brain, stored power replaces thought.",
+    "FROST_FALL_POWER.description": "Used to play [gold]Frost Moon[/gold]. When you have 2 points and no [gold]Frost Moon[/gold] in hand, add a [gold]Frost Moon[/gold] to your hand.",
+    "FROST_FALL_POWER.smartDescription": "Six points connect to the brain; charging replaces thinking",
 
-	"ATTRIBUTE_ANOMALY_POWER.title": "Anomaly",
-    "ATTRIBUTE_ANOMALY_POWER.description": "At the end of each turn, take damage equal to [blue]5%[/blue] of max HP. If this effect already exists when applied, trigger [purple]Disorder[/purple].",
-    "ATTRIBUTE_ANOMALY_POWER.smartDescription": "At the end of each turn, take damage equal to [blue]5%[/blue] of max HP. If this effect already exists when applied, trigger [purple]Disorder[/purple].",
+	"ATTRIBUTE_ANOMALY_POWER.title": "Attribute Anomaly",
+    "ATTRIBUTE_ANOMALY_POWER.description": "At the end of each turn, take damage equal to [blue]5%[/blue] of Max HP. If already present when applied, triggers [purple]Disorder[/purple].",
+    "ATTRIBUTE_ANOMALY_POWER.smartDescription": "At the end of each turn, take damage equal to [blue]5%[/blue] of Max HP. If already present when applied, triggers [purple]Disorder[/purple].",
 
 	"ANOMALY_BUILDUP_POWER.title": "Anomaly Buildup",
-    "ANOMALY_BUILDUP_POWER.description": "Accumulate stacks to apply [purple]Anomaly[/purple] to the enemy (trigger at [blue]5[/blue] stacks solo, +[blue]2[/blue] per additional player)",
-    "ANOMALY_BUILDUP_POWER.smartDescription": "Accumulate stacks to apply [purple]Anomaly[/purple] to the enemy (trigger at [blue]5[/blue] stacks solo, +[blue]2[/blue] per additional player)",
+    "ANOMALY_BUILDUP_POWER.description": "When accumulated to a certain amount, applies [purple]Attribute Anomaly[/purple] to the enemy (Solo: [blue]5[/blue] stacks to trigger. +[blue]2[/blue] stacks required per additional player)",
+    "ANOMALY_BUILDUP_POWER.smartDescription": "When accumulated to a certain amount, applies [purple]Attribute Anomaly[/purple] to the enemy (Solo: [blue]5[/blue] stacks to trigger. +[blue]2[/blue] stacks required per additional player)",
 
 	"DISORDER_POWER.title": "Disorder",
-    "DISORDER_POWER.description": "Immediately deal damage equal to [blue]10%[/blue] of max HP. The next hit deals [blue]2x[/blue] damage.",
-    "DISORDER_POWER.smartDescription": "Immediately deal damage equal to [blue]10%[/blue] of max HP. The next hit deals [blue]2x[/blue] damage.",
+    "DISORDER_POWER.description": "Immediately deal damage equal to [blue]10%[/blue] of Max HP. The next hit deals [blue]2[/blue]x damage.",
+    "DISORDER_POWER.smartDescription": "Immediately deal damage equal to [blue]10%[/blue] of Max HP. The next hit deals [blue]2[/blue]x damage.",
 
 	"SUPPORT_POINT_POWER.title": "Support Points",
-    "SUPPORT_POINT_POWER.description": "Max [blue]6[/blue]. Used to trigger the bonus abilities of Companion cards.",
-    "SUPPORT_POINT_POWER.smartDescription": "It's all about bonds. Max [blue]6[/blue].",
+    "SUPPORT_POINT_POWER.description": "Capped at [blue]6[/blue]. Used to trigger Companion cards' bonus abilities.",
+    "SUPPORT_POINT_POWER.smartDescription": "It's all about bonds. Capped at [blue]6[/blue].",
 
-	"JIFU_POWER.title": "Subjugation",
+	"JIFU_POWER.title": "Submission",
     "JIFU_POWER.description": "On Break, provides additional [gold]Daze Vulnerability[/gold].",
     "JIFU_POWER.smartDescription": "On Break, provides additional [blue]{Amount}*2%[/blue] [gold]Daze Vulnerability[/gold].",
 
-	"TEBIE_PZJQ_POWER.title": "Special Photography Technique",
-    "TEBIE_PZJQ_POWER.description": "When an enemy is [gold]Broken[/gold], they gain additional [gold]Daze Vulnerability[/gold]. Enemies with an [gold]attacking intent[/gold] have a small chance to deal no damage.",
-    "TEBIE_PZJQ_POWER.smartDescription": "When an enemy is [gold]Broken[/gold], they gain an additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with an [gold]attacking intent[/gold] have a small chance to deal no damage.",
+	"TEBIE_PZJQ_POWER.title": "Special Photo Technique",
+    "TEBIE_PZJQ_POWER.description": "When an enemy is [gold]Broken[/gold], they gain additional [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a small chance of dealing no damage.",
+    "TEBIE_PZJQ_POWER.smartDescription": "When an enemy is [gold]Broken[/gold], they gain additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a small chance of dealing no damage.",
 
 	"TUNAFA_POWER.title": "Breathing Technique",
     "TUNAFA_POWER.description": "",
-    "TUNAFA_POWER.smartDescription": "The first [blue]{Amount}[/blue] [gold]Windflower(s)[/gold] each turn cost 0. For every [blue]5[/blue] [gold]Windflowers[/gold] played, gain [blue]{Amount}[/blue] [gold]Frostfall[/gold]. Played {CardCount:diff()} so far.",
+    "TUNAFA_POWER.smartDescription": "Each turn, the first [blue]{Amount}[/blue] [gold]Windflower[/gold] cards cost 0. Every [blue]5[/blue] [gold]Windflower[/gold] cards played grants [blue]{Amount}[/blue] [gold]Frostfall[/gold]. Played {CardCount:diff()} so far.",
 
-	"JUN_LIE_POWER.title": "Frost Crack",
+	"JUN_LIE_POWER.title": "Frostbite Cracks",
     "JUN_LIE_POWER.description": "",
-    "JUN_LIE_POWER.smartDescription": "Whenever you play an [aqua]Frostburn[/aqua] card, gain [blue]1[/blue] [gold]Decibel[/gold].",
+    "JUN_LIE_POWER.smartDescription": "Each time you play an [aqua]Frostbite[/aqua] card, gain [blue]1[/blue] [gold]Decibel[/gold].",
 
 	"TIANZIZY_POWER.title": "Natural Genius",
-    "TIANZIZY_POWER.smartDescription": "Whenever you play [gold]Frost Moon[/gold], automatically play {Amount} hit(s) of [gold]Frost Moon: Mastery[/gold].",
+    "TIANZIZY_POWER.smartDescription": "Each time you play [gold]Frost Moon[/gold], automatically play [gold]Frost Moon: Mastery[/gold] {Amount} time(s).",
 
-	"WEIMINGDDS_POWER.title": "Ashinan Tremor Blade Art",
+	"WEIMINGDDS_POWER.title": "Ashinagiri Blade Technique",
     "WEIMINGDDS_POWER.description": "",
-    "WEIMINGDDS_POWER.smartDescription": "While not [gold]Broken[/gold], damage taken is reduced by [blue]25%[/blue]. Each time you take a hit, add [blue]{Amount}[/blue] [gold]Flower Verse[/gold] to your hand.\\nWhen taking unblocked damage, apply [blue]{Daze:diff()}[/blue] Daze to yourself. At [blue]100[/blue] Daze, trigger [gold]Break[/gold].",
+    "WEIMINGDDS_POWER.smartDescription": "While not [gold]Broken[/gold], reduce damage taken by [blue]25%[/blue]. Each time you are hit, add [blue]{Amount}[/blue] [gold]Farewell Blossom[/gold] to your hand.\\nWhen taking unblocked damage, apply [blue]{Daze:diff()}[/blue] Daze to yourself. When Daze reaches [blue]100[/blue], trigger [gold]Break[/gold] on yourself.",
 
 	"YONGTAN_HUACAI_POWER.title": "Aria of Splendor",
-    "YONGTAN_HUACAI_POWER.description": "Whenever you play a [gold]Companion[/gold] card, gain {Energy:energyIcons()}.",
-	"YONGTAN_HUACAI_POWER.smartDescription": "Whenever you play a [gold]Companion[/gold] card, gain [blue]{Amount}[/blue] energy.",
+    "YONGTAN_HUACAI_POWER.description": "Each time you play a [gold]Companion[/gold] card, gain {Energy:energyIcons()}.",
+	"YONGTAN_HUACAI_POWER.smartDescription": "Each time you play a [gold]Companion[/gold] card, gain [blue]{Amount}[/blue] Energy.",
 
 	"BLESSING_MOON_POWER.title": "Blessing of the New Moon",
-    "BLESSING_MOON_POWER.description": "When you would take lethal damage, prevent death and recover [blue]{Amount}%[/blue] HP.\\nWhen triggering [gold]Anomaly[/gold] or [gold]Disorder[/gold], deal additional damage equal to [blue]5%[/blue] max HP.",
-	"BLESSING_MOON_POWER.smartDescription": "When you would take lethal damage, prevent death and recover [blue]{Amount}%[/blue] HP.\\nWhen triggering [gold]Anomaly[/gold] or [gold]Disorder[/gold], deal additional damage equal to [blue]5%[/blue] max HP.",
+    "BLESSING_MOON_POWER.description": "When you would take fatal damage, prevent death and recover [blue]{Amount}%[/blue] HP.\\nWhen triggering [gold]Attribute Anomaly[/gold] or [gold]Disorder[/gold], deal additional damage equal to [blue]5%[/blue] of the enemy's Max HP.",
+	"BLESSING_MOON_POWER.smartDescription": "When you would take fatal damage, prevent death and recover [blue]{Amount}%[/blue] HP.\\nWhen triggering [gold]Attribute Anomaly[/gold] or [gold]Disorder[/gold], deal additional damage equal to [blue]5%[/blue] of the enemy's Max HP.",
 
 	"SHUANGYUEJS_POWER.title": "Frost Moon Stance",
     "SHUANGYUEJS_POWER.smartDescription": "At the start of each turn, gain [blue]{Amount}[/blue] [gold]Frostfall[/gold].",
 	"SHUANGYUEJS_POWER.description": "At the start of each turn, gain [blue]2[/blue] [gold]Frostfall[/gold].",
 
 	"TIANMIJX_POWER.title": "Sweet Surprise",
-    "TIANMIJX_POWER.description": "At the end of your turn, apply [blue]{Amount}[/blue] [gold]Anomaly[/gold] to ALL enemies.",
-	"TIANMIJX_POWER.smartDescription": "At the end of your turn, apply [blue]{Amount}[/blue] [gold]Anomaly[/gold] to ALL enemies.",
+    "TIANMIJX_POWER.description": "At the end of each turn, apply [blue]{Amount}[/blue] layer(s) of [gold]Attribute Anomaly[/gold] to all enemies.",
+	"TIANMIJX_POWER.smartDescription": "At the end of each turn, apply [blue]{Amount}[/blue] layer(s) of [gold]Attribute Anomaly[/gold] to all enemies.",
 
-	"YACHIYO_POWER.title": "Yachiyo's Vigil",
+	"YACHIYO_POWER.title": "Yachiyo's Watch",
     "YACHIYO_POWER.description": "",
-	"YACHIYO_POWER.smartDescription": "Next turn, add [blue]{Amount}[/blue] [gold]{Card}[/gold] to your hand. It costs 0 that turn.",
+	"YACHIYO_POWER.smartDescription": "Right-click to trigger: add [blue]{Amount}[/blue] [gold]{Card}[/gold] to your hand. Costs 0 this turn.",
 
-	"KAGUYA_POWER.title": "Kaguya-hime",
+	"KAGUYA_POWER.title": "Kaguya",
     "KAGUYA_POWER.description": "",
-	"KAGUYA_POWER.smartDescription": "At the start of your turn, randomly trigger [blue]{Amount}[/blue] effect(s).",
+	"KAGUYA_POWER.smartDescription": "At the start of each turn, randomly trigger [blue]{Amount}[/blue] effect(s).",
 
-	"EJIZHAN_POWER.title": "Super-Sized Goose Chicken Slash",
+	"EJIZHAN_POWER.title": "Mega Goose Chicken Slash",
     "EJIZHAN_POWER.description": "",
 	"EJIZHAN_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Strength[/gold] this turn.",
 
-	"CIQUANLJ_POWER.title": "L-Type Roaring Fist: Jab Combo",
+	"CIQUANLJ_POWER.title": "L-Style Roaring Fist - Jab Combo",
     "CIQUANLJ_POWER.description": "",
-	"CIQUANLJ_POWER.smartDescription": "For {TurnCount:diff()} turns, the enemy takes +[blue]{Amount}%[/blue] [aqua]Frostburn[/aqua] damage.",
+	"CIQUANLJ_POWER.smartDescription": "For {TurnCount:diff()} turn(s), enemies take +[blue]{Amount}%[/blue] [aqua]Frostbite[/aqua] damage.",
 
-	"ZHONGMUYC_POWER.title": "Final Curtain Call",
+	"ZHONGMUYC_POWER.title": "Finale Performance",
     "ZHONGMUYC_POWER.description": "",
-	"ZHONGMUYC_POWER.smartDescription": "Damage taken from [purple]Anomaly[/purple] and [purple]Disorder[/purple] is multiplied by [blue]1.5[/blue].",
+	"ZHONGMUYC_POWER.smartDescription": "[purple]Attribute Anomaly[/purple] and [purple]Disorder[/purple] damage taken by enemies becomes [blue]1.5[/blue]x.",
 
-	"NO_TAIL_FULL_POWER.title": "Cursed Blade Unleashed",
+	"NO_TAIL_FULL_POWER.title": "Demon Blade Unleashed",
     "NO_TAIL_FULL_POWER.description": "",
-	"NO_TAIL_FULL_POWER.smartDescription": "All non-[gold]Companion[/gold] attack cards are [gold]Upgraded[/gold], their cost becomes [blue]0[/blue], and they gain [gold]Exhaust[/gold] and [gold]Ethereal[/gold]. Each time you play a non-[gold]Companion[/gold] attack card, lose [red]1[/red] HP and gain [blue]1[/blue] [gold]Strength[/gold].",
+    "NO_TAIL_FULL_POWER.smartDescription": "All non-[gold]Companion[/gold] attack cards are [gold]Upgraded[/gold], cost [blue]0[/blue], and gain [gold]Exhaust[/gold] and [gold]Ethereal[/gold]. Each time you play a non-[gold]Companion[/gold] attack card, lose [red]1[/red] HP and gain [blue]1[/blue] [gold]Strength[/gold].",
 
-	"MIYABI_FULL_POWER.title": "Cursed Blade Unleashed",
+	"MIYABI_FULL_POWER.title": "Demon Blade Unleashed",
     "MIYABI_FULL_POWER.description": "",
-	"MIYABI_FULL_POWER.smartDescription": "All non-[gold]Companion[/gold] attack cards are [gold]Upgraded[/gold] and their cost becomes [blue]0[/blue]. Each time you play a non-[gold]Companion[/gold] attack card, draw [blue]1[/blue] card. Each time you play a non-[gold]Companion[/gold] attack card, lose [red]1[/red] HP and gain [blue]1[/blue] [gold]Strength[/gold].",
+	"MIYABI_FULL_POWER.smartDescription": "All non-[gold]Companion[/gold] attack cards are [gold]Upgraded[/gold] and cost [blue]0[/blue]. Play a non-[gold]Companion[/gold] attack card: draw [blue]1[/blue] card. Each time you play a non-[gold]Companion[/gold] attack card, lose [red]1[/red] HP and gain [blue]1[/blue] [gold]Strength[/gold].",
 
-	"TRAIN_SPEAK_POWER.title": "Speak No More Than 5 Words Training",
+	"TRAIN_SPEAK_POWER.title": "Training: Speak No More Than 5 Words",
     "TRAIN_SPEAK_POWER.description": "",
-    "TRAIN_SPEAK_POWER.smartDescription": "You may only play [blue]5[/blue] cards per turn. [blue]{Amount}[/blue] turns remaining.",
+    "TRAIN_SPEAK_POWER.smartDescription": "You may only play [blue]5[/blue] cards per turn. [blue]{Amount}[/blue] turn(s) remaining.",
 
 	"TRAIN_SPEAK_OVER_POWER.title": "Training Complete",
     "TRAIN_SPEAK_OVER_POWER.description": "",
-    "TRAIN_SPEAK_OVER_POWER.smartDescription": "The first [blue]5[/blue] cards each turn cost -[blue]1[/blue].",
+    "TRAIN_SPEAK_OVER_POWER.smartDescription": "The first [blue]5[/blue] cards each turn cost [blue]1[/blue] less.",
 
-	"TRAIN_ATTACK_POWER.title": "Only Three Moves Training",
+	"TRAIN_ATTACK_POWER.title": "Training: Only Three Moves",
     "TRAIN_ATTACK_POWER.description": "",
-    "TRAIN_ATTACK_POWER.smartDescription": "You may only play [blue]3[/blue] cards per turn. All cards cost 0. [blue]{Amount}[/blue] turns remaining.",
+    "TRAIN_ATTACK_POWER.smartDescription": "You may only play [blue]3[/blue] cards per turn. All cards cost 0. [blue]{Amount}[/blue] turn(s) remaining.",
 
 	"TRAIN_ATTACK_OVER_POWER.title": "Training Complete",
     "TRAIN_ATTACK_OVER_POWER.description": "",
     "TRAIN_ATTACK_OVER_POWER.smartDescription": "At the start of each turn, gain {Energy:energyIcons()}.",
 
-	"TRAIN_STEP_POWER.title": "Enter Right Foot First Training",
+	"TRAIN_STEP_POWER.title": "Training: Enter With Right Foot First",
     "TRAIN_STEP_POWER.description": "",
-    "TRAIN_STEP_POWER.smartDescription": "After playing an attack card, you must [gold]Discard[/gold] a card from hand. [blue]{Amount}[/blue] turns remaining.",
+    "TRAIN_STEP_POWER.smartDescription": "After playing an attack card each turn, you must [gold]Discard[/gold] a card. [blue]{Amount}[/blue] turn(s) remaining.",
 
 	"TRAIN_STEP_OVER_POWER.title": "Training Complete",
     "TRAIN_STEP_OVER_POWER.description": "",
-    "TRAIN_STEP_OVER_POWER.smartDescription": "After playing an attack card, draw [blue]1[/blue] card.",
+    "TRAIN_STEP_OVER_POWER.smartDescription": "After playing an attack card each turn, draw [blue]1[/blue] card.",
 
-	"TRAIN_EAT_POWER.title": "Only Eat Melon Training",
+	"TRAIN_EAT_POWER.title": "Training: Only Eat Melon Flavor",
     "TRAIN_EAT_POWER.description": "",
-    "TRAIN_EAT_POWER.smartDescription": "Cannot play attack cards. [blue]{Amount}[/blue] turns remaining.",
+    "TRAIN_EAT_POWER.smartDescription": "You cannot play attack cards. [blue]{Amount}[/blue] turn(s) remaining.",
 
 	"TRAIN_EAT_OVER_POWER.title": "Training Complete",
     "TRAIN_EAT_OVER_POWER.description": "",
-    "TRAIN_EAT_OVER_POWER.smartDescription": "All attack cards cost -[blue]1[/blue].",
+    "TRAIN_EAT_OVER_POWER.smartDescription": "All attack cards cost [blue]1[/blue] less.",
 
-	"ZHANJINZE_POWER.title": "Slay All Evil",
+	"ZHANJINZE_POWER.title": "Exterminate All Evil",
     "ZHANJINZE_POWER.description": "",
-    "ZHANJINZE_POWER.smartDescription": "This turn, all damage dealt is doubled.",
+    "ZHANJINZE_POWER.smartDescription": "Damage dealt this turn is doubled.",
 
 	"XSJS_POWER.title": "Adding Frost to Snow",
     "XSJS_POWER.description": "",
-    "XSJS_POWER.smartDescription": "Whenever you play [gold]Frost Moon[/gold], gain [blue]{Amount}[/blue] [gold]Strength[/gold] this turn.",
+    "XSJS_POWER.smartDescription": "Each time you play [gold]Frost Moon[/gold], gain [blue]{Amount}[/blue] [gold]Strength[/gold] this turn.",
 
 	"MINGFUWG_POWER.title": "Underworld Elegy",
     "MINGFUWG_POWER.description": "",
-    "MINGFUWG_POWER.smartDescription": "For [blue]{Amount}[/blue] turns, at the start of each turn, add [gold]Concerto Snipe[/gold] to your hand.",
+    "MINGFUWG_POWER.smartDescription": "For [blue]{Amount}[/blue] turn(s), add a [gold]Concerto Snipeshot[/gold] to your hand at the start of each turn.",
 
-	"BAMIANWF_POWER.title": "Awe-Inspiring Presence",
-	"BAMIANWF_POWER.description": "After using an [gold]Ultimate[/gold], gain [blue]5[/blue] [gold]Decibel[/gold]. After playing a [gold]Companion[/gold] card, gain [blue]2[/blue] [gold]Decibel[/gold].",
-    "BAMIANWF_POWER.smartDescription": "After using an [gold]Ultimate[/gold], gain [blue]5[/blue] [gold]Decibel[/gold]. After playing a [gold]Companion[/gold] card, gain [blue]2[/blue] [gold]Decibel[/gold].",
+	"BAMIANWF_POWER.title": "Overbearing Might",
+	"BAMIANWF_POWER.description": "After playing an [gold]Ultimate[/gold], gain [blue]5[/blue] [gold]Decibel[/gold]. After playing a [gold]Companion[/gold] card, gain [blue]2[/blue] [gold]Decibel[/gold].",
+    "BAMIANWF_POWER.smartDescription": "After playing an [gold]Ultimate[/gold], gain [blue]5[/blue] [gold]Decibel[/gold]. After playing a [gold]Companion[/gold] card, gain [blue]2[/blue] [gold]Decibel[/gold].",
 
 	"LUOYUSH_POWER.title": "Falling Feathers, Blooming Flowers",
-	"LUOYUSH_POWER.description": "Each turn, after dealing damage to an enemy, apply [blue]1[/blue] [gold]Anomaly Buildup[/gold] to them. Can trigger up to [blue]{Amount}[/blue] times per turn.",
-    "LUOYUSH_POWER.smartDescription": "Each turn, after dealing damage to an enemy, apply [blue]1[/blue] [gold]Anomaly Buildup[/gold] to them. Can trigger up to [blue]{Amount}[/blue] times per turn.",
+	"LUOYUSH_POWER.description": "After dealing damage to an enemy each turn, apply [blue]1[/blue] layer of [gold]Anomaly Buildup[/gold] to them. Can trigger up to [blue]{Amount}[/blue] time(s).",
+    "LUOYUSH_POWER.smartDescription": "After dealing damage to an enemy each turn, apply [blue]1[/blue] layer of [gold]Anomaly Buildup[/gold] to them. Can trigger up to [blue]{Amount}[/blue] time(s).",
 
 	"MIYABI_PARRY_POWER.title": "Parry",
-    "MIYABI_PARRY_POWER.description": "Each time you take damage that was blocked, add [gold]Flower Verse[/gold] to your hand, then reduce stacks by [red]1[/red].",
-    "MIYABI_PARRY_POWER.smartDescription": "Each time you take damage that was blocked, add [gold]Flower Verse[/gold] to your hand, then reduce stacks by [red]1[/red].",
+    "MIYABI_PARRY_POWER.description": "Each time you take blocked damage, add a [gold]Farewell Blossom[/gold] to your hand, then reduce stacks by [red]1[/red].",
+    "MIYABI_PARRY_POWER.smartDescription": "Each time you take blocked damage, add a [gold]Farewell Blossom[/gold] to your hand, then reduce stacks by [red]1[/red].",
 
-	"TONGMU_SHUANGXUE_POWER.title": "Shared Frost and Snow",
-    "TONGMU_SHUANGXUE_POWER.description": "Whenever you play a non-[gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
-	"TONGMU_SHUANGXUE_POWER.smartDescription": "Whenever you play a non-[gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
+	"TONGMU_SHUANGXUE_POWER.title": "Sharing Frost and Snow",
+    "TONGMU_SHUANGXUE_POWER.description": "Each time you play a non-[gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
+	"TONGMU_SHUANGXUE_POWER.smartDescription": "Each time you play a non-[gold]Companion[/gold] card, gain [blue]1[/blue] [gold]Support Point[/gold].",
 
-	"DONG_FENG_SP_POWER.title": "Winter Bee: Zenith",
-    "DONG_FENG_SP_POWER.description": "The art of parrying.",
-    "DONG_FENG_SP_POWER.smartDescription": "Your next attack deals +[blue]25%[/blue] damage.",
+	"DONG_FENG_SP_POWER.title": "Winter Bee: Ultimate",
+    "DONG_FENG_SP_POWER.description": "It's all about parrying",
+    "DONG_FENG_SP_POWER.smartDescription": "Your next attack card deals +[blue]25%[/blue] damage.",
+
+    "JINLONG_SZB_POWER.title": "Golden Prestige: Lumior",
+    "JINLONG_SZB_POWER.description": "",
+    "JINLONG_SZB_POWER.smartDescription": "At the start of each turn, discard up to {Amount} card(s), then draw that many cards.\\nEach time you discard or exhaust a card, deal {Amount} damage to all enemies.",
+
+
 
 
 
 
     "MIYABI_GUARDIAN_POWER.title": "Guardian",
-    "MIYABI_GUARDIAN_POWER.description": "Will die for you.",
+    "MIYABI_GUARDIAN_POWER.description": "Dies for you",
     "MIYABI_GUARDIAN_POWER.smartDescription": "Blocks damage dealt by enemies.",
 
 	"LUCKYBOO_ACT.title": "Luckyboo",
     "LUCKYBOO_ACT.description": "Can spend Gold to deal damage to an enemy.",
-    "LUCKYBOO_ACT.smartDescription": "[blue]{MAXUSE:diff()}[/blue] time(s) per turn. Spend [red]10[/red] [gold]Gold[/gold] to deal [blue]20[/blue] damage to an enemy.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
+    "LUCKYBOO_ACT.smartDescription": "Up to [blue]{MAXUSE:diff()}[/blue] time(s) per turn. Spend [red]10[/red] [gold]Gold[/gold] to deal [blue]20[/blue] damage to an enemy.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
 	"EOUS_ACT.title": "Eous",
     "EOUS_ACT.description": "Can use Energy to gain Block.",
-    "EOUS_ACT.smartDescription": "[blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to gain [blue]6[/blue] Block.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
+    "EOUS_ACT.smartDescription": "Up to [blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to gain [blue]6[/blue] Block.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
 	"EXPLOREBOO_ACT.title": "Exploreboo",
-    "EXPLOREBOO_ACT.description": "At the end of each turn, accumulate [gold]Gold[/gold]. When combat ends, gain all accumulated [gold]Gold[/gold].",
-    "EXPLOREBOO_ACT.smartDescription": "Triggers [blue]{MAXUSE:diff()}[/blue] time(s) at end of turn. Gain [gold]Gold[/gold] equal to current turn number * [blue]5[/blue]. Max per turn: [blue]{MaxGold:diff()}[/blue]. Currently accumulated: [blue]{Gold:diff()}[/blue] [gold]Gold[/gold].",
+    "EXPLOREBOO_ACT.description": "At the end of each turn, accumulates [gold]Gold[/gold]. Gain this [gold]Gold[/gold] upon winning the battle.",
+    "EXPLOREBOO_ACT.smartDescription": "Triggers [blue]{MAXUSE:diff()}[/blue] time(s) at the end of each turn. Gain current turn number * [blue]5[/blue] [gold]Gold[/gold]. Max per turn: [blue]{MaxGold:diff()}[/blue]. Currently accumulated: [blue]{Gold:diff()}[/blue] [gold]Gold[/gold].",
 
     "SHARKBOO_ACT.title": "Sharkboo",
-    "SHARKBOO_ACT.description": "At the end of each turn, accumulate damage. Deal accumulated damage to the enemy before they attack.",
-    "SHARKBOO_ACT.smartDescription": "At the end of each turn, accumulate {Damage:diff()} * {MAXUSE:diff()} damage. Deals [blue]{AllDamage:diff()}[/blue] damage to the enemy before they attack.",
+    "SHARKBOO_ACT.description": "At the end of each turn, accumulates damage. Deals this damage to enemies before they attack.",
+    "SHARKBOO_ACT.smartDescription": "At the end of each turn, accumulate {Damage:diff()} * {MAXUSE:diff()} damage. Before enemies attack the owner, deal [blue]{AllDamage:diff()}[/blue] damage.",
 
     "EXCALIBOO_ACT.title": "Excaliboo",
-    "EXCALIBOO_ACT.description": "At the end of each turn, gain a charge. At 3+ charges, deal damage to ALL enemies.",
-    "EXCALIBOO_ACT.smartDescription": "Gain [blue]{MAXUSE:diff()}[/blue] charge(s) at end of turn. At 3+ charges, deal [blue]{Damage:diff()}[/blue] damage to ALL enemies.\\nCurrent charges: [blue]{Charged:diff()}[/blue].",
+    "EXCALIBOO_ACT.description": "At the end of each turn, charges energy. If charged 3+ times, deal damage to all enemies.",
+    "EXCALIBOO_ACT.smartDescription": "Charges [blue]{MAXUSE:diff()}[/blue] time(s) at the end of each turn. If charged 3+ times, deal [blue]{Damage:diff()}[/blue] damage to all enemies.\\nCharged [blue]{Charged:diff()}[/blue] time(s).",
 
     "AGENT_ACT.title": "Agent Gulliver",
-    "AGENT_ACT.description": "Can use [red]1[/red] Energy to deal damage to an enemy and increase damage they take from Companion cards.",
-    "AGENT_ACT.smartDescription": "[blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to deal [blue]{Damage:diff()}[/blue] damage to an enemy and increase damage they take from Companion cards by [blue]{DamageUp:diff()}%[/blue].\\nUsed [blue]{Used:diff()}[/blue] time(s).",
+    "AGENT_ACT.description": "Can use [red]1[/red] Energy to deal damage to an enemy and increase the damage they take from Companion cards.",
+    "AGENT_ACT.smartDescription": "Up to [blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to deal [blue]{Damage:diff()}[/blue] damage to an enemy and increase the damage they take from Companion cards by [blue]{DamageUp:diff()}%[/blue].\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
 	"SUMOBOO_ACT.title": "Sumoboo",
     "SUMOBOO_ACT.description": "Can use [red]1[/red] Energy to apply Daze to an enemy.",
-    "SUMOBOO_ACT.smartDescription": "[blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to apply [blue]{Daze:diff()}[/blue] Daze to an enemy.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
+    "SUMOBOO_ACT.smartDescription": "Up to [blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to apply [blue]{Daze:diff()}[/blue] Daze to an enemy.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
 	"OVERTIMEBOO_ACT.title": "Overtimeboo",
-    "OVERTIMEBOO_ACT.description": "Can spend [red]1[/red] [gold]HP[/gold] to give a player Energy.",
-    "OVERTIMEBOO_ACT.smartDescription": "Can spend [red]1[/red] [gold]HP[/gold] to give a player {Energy:energyIcons()}. If Overtimeboo loses all HP, it will [red]lose the relic[/red]!",
+    "OVERTIMEBOO_ACT.description": "Can consume [red]1[/red] [gold]HP[/gold] to grant a player Energy.",
+    "OVERTIMEBOO_ACT.smartDescription": "Consume [red]1[/red] [gold]HP[/gold] to grant a player {Energy:energyIcons()}. If Overtimeboo loses all HP from overtime, you will [red]lose this relic[/red]!",
 
     "PAPERBOO_ACT.title": "Paperboo",
     "PAPERBOO_ACT.description": "Can use [red]1[/red] Energy to gain Block.",
-    "PAPERBOO_ACT.smartDescription": "[blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to gain [blue]10[/blue] Block.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
+    "PAPERBOO_ACT.smartDescription": "Up to [blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to gain [blue]10[/blue] Block.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
     "MAGNETIBOO_ACT.title": "Magnetiboo",
-    "MAGNETIBOO_ACT.description": "Can use [red]1[/red] Energy to apply [purple]Anomaly Buildup[/purple] to ALL enemies. At end of turn, apply [purple]Anomaly Buildup[/purple] to ALL enemies.",
-    "MAGNETIBOO_ACT.smartDescription": "[blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to apply [blue]{AnoAmount:diff()}[/blue] [purple]Anomaly Buildup[/purple] to ALL enemies. At end of turn, apply [blue]{AnoAmount:diff()}[/blue] [purple]Anomaly Buildup[/purple] to ALL enemies.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
+    "MAGNETIBOO_ACT.description": "Can use [red]1[/red] Energy to apply [purple]Anomaly Buildup[/purple] to all enemies. At the end of the turn, apply [purple]Anomaly Buildup[/purple] to all enemies.",
+    "MAGNETIBOO_ACT.smartDescription": "Up to [blue]{MAXUSE:diff()}[/blue] time(s) per turn. Use [red]1[/red] Energy to apply [blue]{AnoAmount:diff()}[/blue] layer(s) of [purple]Anomaly Buildup[/purple] to all enemies. At the end of the turn, apply [blue]{AnoAmount:diff()}[/blue] layer(s) of [purple]Anomaly Buildup[/purple] to all enemies.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
-    "ONE_DENNYBOO_ACT.title": "One-Dennyboo",
-    "ONE_DENNYBOO_ACT.description": "Before the enemy acts, there is a chance their action becomes: give the player [gold]1[/gold] Gold.",
-    "ONE_DENNYBOO_ACT.smartDescription": "Before the enemy acts, there is a [blue]{MAXUSE}0%[/blue] chance their action becomes: give the player [gold]1[/gold] Gold.",
+    "ONE_DENNYBOO_ACT.title": "One Dennyboo",
+    "ONE_DENNYBOO_ACT.description": "Before enemies act, there is a chance their action becomes granting the player [gold]1[/gold] Gold.",
+    "ONE_DENNYBOO_ACT.smartDescription": "Before enemies act, there is a [blue]{MAXUSE}0%[/blue] chance their action becomes granting the player [gold]1[/gold] Gold.",
+
+    "XIXIFU_ACT.title": "Xixifu",
+    "XIXIFU_ACT.description": "Can eat a card and trigger additional effects.",
+    "XIXIFU_ACT.smartDescription": "Up to [blue]{MAXUSE:diff()}[/blue] time(s) per turn. Choose a card from your hand to eat, then trigger a random effect.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
 
 
@@ -235,11 +245,59 @@
 
 
 
-	"MIYABI_BOSS_POWER.title": "Frost Flame",
+
+	"MIYABI_BOSS_POWER.title": "Frozen Flame",
     "MIYABI_BOSS_POWER.description": "",
-    "MIYABI_BOSS_POWER.smartDescription": "Attacks accumulate [gold]Frostburn Buildup[/gold] and [gold]Daze[/gold]. When inflicting [gold]Break[/gold], remove all [gold]Debuffs[/gold] from self. When inflicting [gold]Disorder[/gold], gain [blue]2[/blue] [gold]Strength[/gold]. Can block [blue]{DeathPrevent:diff()}[/blue] lethal hit(s), removing all [gold]Debuffs[/gold], gaining [blue]1[/blue] Intangible, and recovering to full HP.",
+    "MIYABI_BOSS_POWER.smartDescription": "Attacks apply [gold]Frostbite Charge[/gold] and [gold]Daze[/gold]. Upon inflicting [gold]Break[/gold], cleanse all [gold]debuffs[/gold] from self. Upon triggering [gold]Disorder[/gold], gain [blue]2[/blue] [gold]Strength[/gold]. Can block fatal damage [blue]{DeathPrevent:diff()}[/blue] time(s), cleansing all [gold]debuffs[/gold] from self, gaining 1 [gold]Intangible[/gold], and restoring HP to full.",
 
-	"YIXUAN_ENEMY_POWER.title": "Azure Guardian",
+	"YIXUAN_ENEMY_POWER.title": "Azure Protection",
     "YIXUAN_ENEMY_POWER.description": "",
-    "YIXUAN_ENEMY_POWER.smartDescription": "All [gold]Debuff[/gold] potency reduced by [blue]{DebuffReduce:diff()}%[/blue]. After being hit [blue]{HittedTrigger:diff()}[/blue] times per turn, gain [blue]{DamageReduce:diff()}%[/blue] damage reduction. Upon losing [blue]33%[/blue] max HP or gaining equivalent [gold]Poison[/gold]/[gold]Blight[/gold] (halved), gain 1 [blue]Intangible[/blue], strengthen debuff resistance, and end ALL player turns."
+    "YIXUAN_ENEMY_POWER.smartDescription": "All [gold]debuffs[/gold] received are reduced by [blue]{DebuffReduce:diff()}%[/blue]. After being hit [blue]{HittedTrigger:diff()}[/blue] time(s) in a turn, gain [blue]{DamageReduce:diff()}%[/blue] damage reduction. Upon losing [blue]33%[/blue] of Max HP or receiving equivalent [gold]Poison[/gold] or [gold]Calamity[/gold] ([gold]Poison[/gold] or [gold]Calamity[/gold] stacks halved), gain 1 layer of [blue]Intangible[/blue], strengthen debuff resistance, and end all player turns.",
+
+
+
+	// ====== Yixuan Powers ======
+	"SHUFA_ZHI.title": "Spellcraft",
+	"SHUFA_ZHI.description": "When enemy HP is below a threshold, they take bonus damage and deal reduced damage.",
+	"SHUFA_ZHI.smartDescription": "When enemy HP is below [blue]{Amount}%[/blue], they take 2x damage and deal 20% less damage. When Spellcraft exceeds 100, consume 100 stacks to add 1 layer of [gold]Demon Subjugation[/gold].",
+
+    "FUMO_POWER.title" : "Demon Subjugation",
+    "FUMO_POWER.description" : "Takes bonus damage and deals reduced damage.",
+    "FUMO_POWER.smartDescription" : "Takes {Amount}x bonus damage and deals {Amount}*20% less damage. Stacks additively with Spellcraft.",
+
+    "SHUFA_ZONGSHI_POWER.title": "Spellcraft Mastery",
+    "SHUFA_ZONGSHI_POWER.description": "Each time you deal Dark Ink damage, apply Spellcraft to enemies.",
+    "SHUFA_ZONGSHI_POWER.smartDescription": "Each time you deal Dark Ink damage, apply {Amount} layer(s) of Spellcraft to enemies.",
+
+    "MOHENHX_POWER.title": "Ink Trail Manifestation",
+    "MOHENHX_POWER.description": "",
+    "MOHENHX_POWER.smartDescription": "Your next {Amount} [gold]Dark Ink[/gold] card(s) cost 0.",
+
+	"SHANNENG_POWER.title": "Flash Energy",
+	"SHANNENG_POWER.description": "Can be spent to activate additional effects. Capped at [blue]150[/blue].",
+	"SHANNENG_POWER.smartDescription": "Can be spent to activate additional effects. Capped at [blue]150[/blue]. Used [blue]{Used:diff()}[/blue] points. After using [blue]150[/blue] points, gain a [gold]Thousandfold Talisman[/gold].",
+
+	"QINGXIAO_TONGYOU_POWER.title": "Azure Sky Journey",
+	"QINGXIAO_TONGYOU_POWER.description": "At the start of each turn, gain Vigor, Thorns, and Flash Energy.",
+	"QINGXIAO_TONGYOU_POWER.smartDescription": "At the start of each turn, gain [blue]{Vigor}[/blue] [gold]Vigor[/gold], [blue]{Thorns}[/blue] [gold]Thorns[/gold], and restore [blue]{Shanneng}[/blue] [gold]Flash Energy[/gold].",
+
+	"MITU_YESONG_POWER.title": "Lost Night Hymn",
+	"MITU_YESONG_POWER.description": "After playing a non-attack card, gain 2 Vigor.",
+	"MITU_YESONG_POWER.smartDescription": "[blue]{Amount}[/blue] turn(s) remaining. After playing a non-attack card, gain [blue]{Vigor:diff()}[/blue] [gold]Vigor[/gold].",
+
+	"TIESHAN_ZHENMAIKAO_POWER.title": "Mountain-Shaking Pulse Strike",
+	"TIESHAN_ZHENMAIKAO_POWER.description": "Upcoming Soulbreak damage cards deal increased damage.",
+	"TIESHAN_ZHENMAIKAO_POWER.smartDescription": "Next {FreeCount:diff()} attack card(s) cost [blue]-1[/blue]. Next [blue]{Amount}[/blue] [purple]Soulbreak[/purple] damage cards deal +[blue]20%[/blue] damage.",
+
+	"RONGLU_SHENGWEN_POWER.title": "Forge Inferno",
+	"RONGLU_SHENGWEN_POWER.description": "Each time you apply Daze, apply an additional 5 Daze, then reduce stacks by 1.",
+	"RONGLU_SHENGWEN_POWER.smartDescription": "Each time you apply [gold]Daze[/gold], apply an additional [blue]5[/blue]. [blue]{Display:diff()}[/blue] stack(s) remaining.",
+
+	"HUALIAN_XIEYI_POWER.title": "Flower Chain Protocol",
+	"HUALIAN_XIEYI_POWER.description": "Right-click to spend Support Points and trigger an effect.",
+	"HUALIAN_XIEYI_POWER.smartDescription": "Right-click ability: [gold]Support Points[/gold] [blue]2[/blue]: gain [blue]{Amount}[/blue] Energy, deal [blue]{Damage:diff()}[/blue] damage to all enemies.",
+
+	"KAKANIA_POWER.title": "Id, Ego, Superego",
+	"KAKANIA_POWER.description": "Increase damage taken by 25%. Record all damage taken. Right-click: spend 5 Support Points to release recorded damage. Deal percentage damage at end of turn.",
+	"KAKANIA_POWER.smartDescription": "Damage taken [red]+25%[/red]. Recorded [blue]{RecordedDamage:diff()}[/blue] damage taken.\\nRight-click: spend [blue]5[/blue] Support Points, deal recorded damage to all enemies. At end of turn, deal [blue]{OutgoingDamage:diff()}[/blue] damage to all enemies (released at [blue]{BurstRatio:diff()}%[/blue])."
 }
