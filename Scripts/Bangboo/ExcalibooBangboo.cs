@@ -53,6 +53,11 @@ namespace Miyabists2.Scripts.Bangboo
             await ActEffect(choiceContext, null);
         }
 
+        public override bool CanAct(ICombatState combatState)
+        {
+            return false;
+        }
+
         public override async Task ActEffect(PlayerChoiceContext choiceContext, Creature? target)
         {
             DynamicVars["Charged"].BaseValue += MAXUSE;

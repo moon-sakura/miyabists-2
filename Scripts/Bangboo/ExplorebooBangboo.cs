@@ -40,6 +40,11 @@ namespace Miyabists2.Scripts.Bangboo
             new DynamicVar("Used",0),
         ];
 
+        public override bool CanAct(ICombatState combatState)
+        {
+            return false;
+        }
+
         public override async Task BeforeSideTurnEndVeryEarly(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             DynamicVars["MAXUSE"].BaseValue = MAXUSE;
