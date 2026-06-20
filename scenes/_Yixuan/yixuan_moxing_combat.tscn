@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcsxa0y5xc2u4"]
+
+[ext_resource type="Texture2D" uid="uid://cur1mfnhpnmxd" path="res://images/_YiXuan/char/yixua_moxing.png" id="1_rjbns"]
+
+[node name="YixuanEnemy" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-2.9999995, -216)
+scale = Vector2(0.42045456, 0.42045465)
+texture = ExtResource("1_rjbns")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -106.0
+offset_top = -434.0
+offset_right = 134.0
+offset_bottom = 53.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, -462)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, -325)

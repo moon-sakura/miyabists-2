@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgeohlrk6h4wf"]
+
+[ext_resource type="Texture2D" uid="uid://cur1mfnhpnmxd" path="res://images/_YiXuan/char/yixua_moxing.png" id="1_48uta"]
+
+[node name="MiyabiRest" type="Node2D"]
+
+[node name="MiyabiChar33" type="Sprite2D" parent="."]
+position = Vector2(-12.999999, -273)
+scale = Vector2(0.53409094, 0.53409094)
+texture = ExtResource("1_48uta")

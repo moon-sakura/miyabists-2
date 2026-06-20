@@ -49,10 +49,10 @@ public class Entry
 
 
         MiyabiSkinManager.RegisterCombatSkin("银庭花信", "res://scenes/miyabi_yinxing_char.tscn", "res://images/charui/miyabi_yinxing_char75.png");
-        //MiyabiSkinManager.RegisterRestSkin("","res://scenes/miyabi_yinxing_rest.tscn");
         MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn", "res://images/charui/miyabi_yinxing_char75.png");
-        //MiyabiSkinManager.RegisterCombatSkin("仪玄", "res://scenes/monsters/yixuan_enemy.tscn");
 
+        MiyabiSkinManager.RegisterCombatSkinYixuan("墨形影踪", "res://scenes/_Yixuan/yixuan_moxing_combat.tscn", "res://images/_YiXuan/char/yixua_moxing.png");
+        MiyabiSkinManager.RegisterShopSkinYixuan("墨形影踪", "res://scenes/_Yixuan/yixuan_moxing_shop.tscn", "res://images/_YiXuan/char/yixua_moxing.png");
         //Log.Debug("星见雅MOD加载完成");
     }
 
