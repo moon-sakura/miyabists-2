@@ -102,9 +102,10 @@ namespace Miyabists2.Scripts.Relics
             // 如果是特定卡，可以检查 cardPlay.Card.Id == "你的卡ID"
             if (hasEnd) counter += Threshold;
 
-            if (cardPlay.Card.Owner == base.Owner && counter < Max)
+            if (cardPlay.Card.Owner == base.Owner)
             {
-                Counter++;
+                if (counter < Max)
+                    Counter++;
 
                 // 2. 检查是否达到 30 次
                 if (Counter >= Threshold && !hasEnd)
