@@ -181,43 +181,6 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 }
             }
 
-            if (base.Owner.Creature.CombatState.RoundNumber == 1 && Owner.Character is Yixuan)
-            {
-                Flash();
-                if (CinimaCounter >= 1)
-                {
-                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<FufaQianchong>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
-                }
-
-                if (CinimaCounter >= 2)
-                {
-                    await PowerCmd.Apply<YixuanCinimatwoPower>(choiceContext, base.Owner.Creature, 1m, null, null);
-                }
-
-                if (CinimaCounter >= 3)
-                {
-                    await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 4m, null, null);
-                }
-
-                if (CinimaCounter >= 4)
-                {
-                    foreach(var enemy in Owner.Creature.CombatState.HittableEnemies)
-                    {
-                        await PowerCmd.Apply<FumoPower>(choiceContext, enemy,1m, null, null);
-                    }
-                }
-
-                if (CinimaCounter >= 5)
-                {
-                    await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, 6m, null, null);
-                }
-
-                if (CinimaCounter >= 6)
-                {
-                    await PowerCmd.Apply<YixuanCinimasixPower>(choiceContext, base.Owner.Creature, 2m, null, null);
-                }
-            }
         }
 
         public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)

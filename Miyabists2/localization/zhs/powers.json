@@ -1,10 +1,10 @@
 ﻿{
-	"FROST_BUILD_POWER.smartDescription": "积累到一定层数层后触发[aqua]霜灼[/aqua]，并添加一层[purple]属性异常[/purple](单人[blue]50[/blue]层触发，每多一个玩家触发层数+[blue]15[/blue])",
-	"FROST_BUILD_POWER.description": "积累到一定层数后触发[aqua]霜灼[/aqua]，并添加一层[purple]属性异常[/purple]",
+	"FROST_BUILD_POWER.smartDescription": "积累到{PlayerCount:choose(1|2|3|4):50|65|80|95|50}层后触发[aqua]霜灼[/aqua]，并添加1层[purple]属性异常[/purple]{PlayerCount:cond:>4?(每多一个玩家触发层数+[blue]15[/blue])|}",
+	"FROST_BUILD_POWER.description": "积累到50层后触发[aqua]霜灼[/aqua]，并施加1层[purple]属性异常[/purple](每多一个玩家触发层数+[blue]15[/blue])",
 	"FROST_BUILD_POWER.title": "烈霜",
 
-	"DAZE_POWER.smartDescription": "积累到一定层数层后触发[gold]击破[/gold](单人[blue]100[/blue]层触发，每多一个玩家触发层数+[blue]20[/blue])",
-	"DAZE_POWER.description": "积累到一定层数后触发[gold]击破[/gold]",
+	"DAZE_POWER.smartDescription": "积累到{PlayerCount:choose(1|2|3|4):100|120|140|160|100}层后触发[gold]击破[/gold]{PlayerCount:cond:>4?(每多一个玩家触发层数+[blue]20[/blue])|}",
+	"DAZE_POWER.description": "积累到100层后触发[gold]击破[/gold](每多一个玩家触发层数+[blue]20[/blue])",
 	"DAZE_POWER.title": "失衡值",
 
 	"BREAK_POWER.smartDescription": "[gold]眩晕[/gold]，获得一回合[gold]失衡易伤[/gold][blue]50%[/blue]。在此状态下不能叠加[gold]失衡值[/gold]。",
@@ -21,7 +21,7 @@
 
 	"FROST_POWER.title": "霜灼",
     "FROST_POWER.description": "受到伤害增加，不可叠加[aqua]烈霜积蓄值[/aqua]",
-    "FROST_POWER.smartDescription": "受到伤害+[blue]{DamageVuln:diff()}%[/blue]，不可叠加[aqua]烈霜积蓄值[/aqua]",
+    "FROST_POWER.smartDescription": "受到伤害+[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|，不可叠加[aqua]烈霜积蓄值[/aqua]}",
 
 	"DAZE_VULN_POWER.smartDescription": "一回合内，受伤+[blue]{Amount}%[/blue]",
 	"DAZE_VULN_POWER.description": "使敌人受到伤害增加",
@@ -36,8 +36,8 @@
     "ATTRIBUTE_ANOMALY_POWER.smartDescription": "每回合结束时受到最大生命值[blue]5%[/blue]的伤害。给予时如果已存在该效果则触发[purple]紊乱[/purple]",
 
 	"ANOMALY_BUILDUP_POWER.title": "属性积蓄",
-    "ANOMALY_BUILDUP_POWER.description": "累积到一定层数后使敌人获得[purple]属性异常[/purple](单人[blue]5[/blue]层触发，每多一个玩家触发层数+[blue]2[/blue])",
-    "ANOMALY_BUILDUP_POWER.smartDescription": "累积到一定层数后使敌人获得[purple]属性异常[/purple](单人[blue]5[/blue]层触发，每多一个玩家触发层数+[blue]2[/blue])",
+    "ANOMALY_BUILDUP_POWER.description": "累积到5层后使敌人获得[purple]属性异常[/purple](每多一个玩家触发层数+[blue]2[/blue])",
+    "ANOMALY_BUILDUP_POWER.smartDescription": "累积到{PlayerCount:choose(1|2|3|4):5|7|9|11|5}层后使敌人获得[purple]属性异常[/purple]{PlayerCount:cond:>4?(每多一个玩家触发层数+[blue]2[/blue])|}",
 
 	"DISORDER_POWER.title": "紊乱",
     "DISORDER_POWER.description": "立即造成最大生命值[blue]10%[/blue]的伤害，下一击伤害变为[blue]2[/blue]倍",
@@ -49,11 +49,11 @@
 
 	"JIFU_POWER.title": "羁服",
     "JIFU_POWER.description": "击破时额外提供额外的[gold]失衡易伤[/gold]",
-    "JIFU_POWER.smartDescription": "击破时额外提供[blue]{Amount}*2%[/blue]的[gold]失衡易伤[/gold]",
+    "JIFU_POWER.smartDescription": "击破时额外提供[blue]2*{Amount}%[/blue]的[gold]失衡易伤[/gold]",
 
 	"TEBIE_PZJQ_POWER.title": "特别拍照技巧",
-    "TEBIE_PZJQ_POWER.description": "敌人被[gold]击破[/gold]时额外获得[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有小概率不造成伤害",
-    "TEBIE_PZJQ_POWER.smartDescription": "敌人被[gold]击破[/gold]时额外获得{DazeVuln:diff()}%[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有小概率不造成伤害",
+    "TEBIE_PZJQ_POWER.description": "敌人被[gold]击破[/gold]时额外获得[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有概率不造成伤害",
+    "TEBIE_PZJQ_POWER.smartDescription": "敌人被[gold]击破[/gold]时额外获得{DazeVuln:diff()}%[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有{Amount:cond:<3?小|}{Amount:cond:>7?大|}概率不造成伤害",
 
 	"TUNAFA_POWER.title": "吐纳法",
     "TUNAFA_POWER.description": "",
@@ -261,7 +261,7 @@
 
     "FUMO_POWER.title" : "伏魔",
     "FUMO_POWER.description" : "受到额外伤害，造成伤害降低",
-    "FUMO_POWER.smartDescription" : "额外受到{Amount}倍伤害，造成伤害额外降低{Amount}*20%。与术法值效果为加算。",
+    "FUMO_POWER.smartDescription" : "额外受到{Amount}倍伤害，造成伤害额外降低{Amount:choose(1|2|3|4):20|40|60|80|100}%。与术法值效果为加算。",
 
     "SHUFA_ZONGSHI_POWER.title": "术法宗师",
     "SHUFA_ZONGSHI_POWER.description": "每次造成玄墨伤害时，为敌人附加术法值",

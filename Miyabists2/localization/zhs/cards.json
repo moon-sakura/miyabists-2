@@ -155,7 +155,7 @@
     "MIYABISTS2_CARD_SHUANGYUE_JIASHI.description": "每回合开始时获得{FrostFall:diff()}点[gold]落霜[/gold]",
 
 	"MIYABISTS2_CARD_NO_TAIL_FULL.title": "妖刀解放",
-    "MIYABISTS2_CARD_NO_TAIL_FULL.description": "你能[jitter][gold]驾驭[/gold][/jitter][red]它[/red]吗？",
+    "MIYABISTS2_CARD_NO_TAIL_FULL.description": "你能[jitter][gold]驾驭[/gold][/jitter]{IfUpgraded:show:[aqua]它[/aqua]|[red]它[/red]}吗？",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL.title": "法厄同的呼朋引伴",
     "MIYABISTS2_CARD_PHAETHON_CALL.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡\\n(包括[gold]异界伙伴[/gold]！)",
