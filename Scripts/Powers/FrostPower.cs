@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Powers
@@ -33,6 +34,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar ("DamageVuln", 20),
+            new DynamicVar ("CanAdd",0),
         ];
 
         public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
@@ -41,6 +43,15 @@ namespace Miyabists2.Scripts.Powers
             {
                 DynamicVars["DamageVuln"].BaseValue = amount * 20;
             }
+        }
+
+        public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+        {
+            if(MiyabiFuncBase.GetRelic<ShuangyanLiezhuoRelic>(Owner.Player) != null)
+            {
+                DynamicVars["CanAdd"].BaseValue += 1;
+            }
+            return base.AfterApplied(applier, cardSource);
         }
 
 
