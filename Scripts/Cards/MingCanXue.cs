@@ -62,7 +62,7 @@ namespace Miyabists2.Scripts.Cards
         {
             //ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 
-            MiyabiAudioService.Play("yicidaoWeishi");
+            MiyabiAudioPlay.Play("yicidaoWeishi");
 
             int amount = CombatManager.Instance.History.CardPlaysFinished
                 .Count((CardPlayFinishedEntry e)

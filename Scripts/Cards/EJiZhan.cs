@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            MiyabiAudioService.Play("Ejizhan");
+            MiyabiAudioPlay.Play("Ejizhan");
             await base.OnPlay(choiceContext, cardPlay);
             await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 3, base.Owner.Creature, this);
         }

@@ -56,13 +56,8 @@ namespace Miyabists2.Scripts.Relics
         {
             if(target != base.Owner.Creature || result.WasFullyBlocked || result.UnblockedDamage <= 1) { return; }
 
-            // 随机选一句
-            int idx = (int)(GD.Randi() % MiyabiHurtedVoices.Length);
-
-            // 它会自动处理加载、播放、音量转换和自动销毁
-            MiyabiAudioService.Play(MiyabiHurtedVoices[idx]);
-
-            GD.Print("[MiyabiMod] 播放受伤语音: " + MiyabiHurtedVoices[idx]);
+            // 从受伤语音池随机播放
+            MiyabiAudioPlay.Random(MiyabiHurtedVoices);
         }
 
 

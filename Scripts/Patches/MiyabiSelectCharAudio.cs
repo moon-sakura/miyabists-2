@@ -19,13 +19,8 @@ public static class MiyabiCharSelectPatch
         // 假设你的角色类名是 MiyabiCharacter
         if (characterModel is Miyabi)
         {
-            // 随机选一句
-            int idx = (int)(GD.Randi() % MiyabiSelectVoices.Length);
-
-            // 它会自动处理加载、播放、音量转换和自动销毁
-            MiyabiAudioService.Play(MiyabiSelectVoices[idx],1.2f);
-
-            GD.Print("[MiyabiMod] 播放选人语音: " + MiyabiSelectVoices[idx]);
+            // 从语音池随机播放
+            MiyabiAudioPlay.Random(MiyabiSelectVoices, 1.2f);
         }
     }
 }

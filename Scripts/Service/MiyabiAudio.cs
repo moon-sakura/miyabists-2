@@ -191,50 +191,64 @@ namespace Miyabists2.Scripts.Service
             }
             GD.Print("[MiyabiAudio] 所有正在播放的语音已停止并清理。");
         }
-
-        //private static void IndexDirectory(string path)
-        //{
-        //    // ✨ 修正：Godot 4 的 DirAccess
-        //    using var dir = DirAccess.Open(path);
-        //    if (dir == null)
-        //    {
-        //        GD.PrintErr($"[MiyabiAudio] 找不到音频目录: {path}");
-        //        return;
-        //    }
-
-        //    dir.ListDirBegin();
-        //    string fileName = dir.GetNext();
-        //    while (fileName != "")
-        //    {
-        //        GD.PrintErr($"[MiyabiAudio] 当前文件: {fileName}");
-        //        if (dir.CurrentIsDir())
-        //        {
-        //            if (fileName != "." && fileName != "..")
-        //            {
-        //                IndexDirectory($"{path}/{fileName}"); // 递归搜索子文件夹
-        //            }
-        //        }
-        //        else
-        //        {
-        //            // 判断后缀，目前 Godot 处理短音效建议用 .wav，长音效可以用 .ogg
-        //            string ext = Path.GetExtension(fileName).ToLowerInvariant();
-        //            if (ext == ".wav" || ext == ".ogg" || ext == ".mp3")
-        //            {
-        //                string key = NormalizeKey(fileName);
-        //                string fullPath = $"{path}/{fileName}";
-        //                if (!AudioPathToIndex.ContainsKey(key))
-        //                {
-        //                    AudioPathToIndex[key] = fullPath;
-        //                }
-        //            }
-        //        }
-        //        fileName = dir.GetNext();
-        //    }
-        //}
-
         private static float LinearToDb(float linearVolume)
         {
             return linearVolume <= 0f ? -80f : Mathf.LinearToDb(Mathf.Max(linearVolume, 0.0001f));
+        }
+    }
+
+    /// <summary>
+    /// 语音播放的高层 API——只需传参数即可播放。
+    /// 未来添加新角色时，只需提供角色的语音 key 数组即可复用。
+    ///
+    /// 用法示例：
+    /// <code>
+    /// // 播放单个语音
+    /// MiyabiAudioPlay.Play("yicidaoWeishi");
+    ///
+    /// // 从数组中随机播放（带音量）
+    /// MiyabiAudioPlay.Random(new[] { "hurted_1", "hurted_2" }, 1.2f);
+    ///
+    /// // 直接传入多个 key，无需创建数组
+    /// MiyabiAudioPlay.Random("select_1", "select_2", "select_3");
+    /// </code>
+    /// </summary>
+    public static class MiyabiAudioPlay
+    {
+        /// <summary>
+        /// 播放单个语音
+        /// </summary>
+        /// <param name="key">音频文件名（不带后缀），如 "select_ChueWujin"</param>
+        /// <param name="volume">线性音量 (0~1)，默认 1.0</param>
+        public static void Play(string key, float volume = 1f)
+        {
+            MiyabiAudioService.Play(key, volume);
+        }
+
+        /// <summary>
+        /// 从语音池中随机选一条播放
+        /// </summary>
+        /// <param name="keys">语音 key 数组</param>
+        /// <param name="volume">线性音量 (0~1)，默认 1.0</param>
+        public static void Random(string[] keys, float volume = 1f)
+        {
+            if (keys == null || keys.Length == 0)
+            {
+                GD.PrintErr("[MiyabiAudio] PlayRandom: keys 数组为空");
+                return;
+            }
+
+            int idx = (int)(GD.Randi() % keys.Length);
+            MiyabiAudioService.Play(keys[idx], volume);
+        }
+
+        /// <summary>
+        /// 从语音池中随机选一条播放（params 重载，无需手动创建数组）
+        /// 用法：MiyabiAudioPlay.Random("voice_1", "voice_2", "voice_3")
+        /// </summary>
+        public static void Random(params string[] keys)
+        {
+            Random(keys, 1f);
         }
     }
 }

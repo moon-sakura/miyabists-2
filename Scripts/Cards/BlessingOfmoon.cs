@@ -48,9 +48,8 @@ namespace Miyabists2.Scripts.Cards
             if (base.DynamicVars.TryGetValue("Bless", out DynamicVar b))
                 await PowerCmd.Apply<BlessingMoonPower>(choiceContext, base.Owner.Creature, b.BaseValue, Owner.Creature, this);
 
-            // 随机选一�?            int idx = (int)(GD.Randi() % MiyabiBlessingMoonVoices.Length);
-
-            // 它会自动处理加载、播放、音量转换和自动销�?            MiyabiAudioService.Play(MiyabiBlessingMoonVoices[idx],1.2f);
+            // 从语音池随机播放
+            MiyabiAudioPlay.Random(MiyabiBlessingMoonVoices, 1.2f);
         }
 
         protected override void OnUpgrade()
