@@ -5,6 +5,9 @@
 	"MIYABISTS2_CARD_SHEN_XUE.title": "Deep Snow",
     "MIYABISTS2_CARD_SHEN_XUE.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]1[/blue] [gold]Frostfall[/gold]",
 
+	"MIYABISTS2_CARD_SHENXUE_HANYAN.title": "Deep Snow: Frozen Flame",
+    "MIYABISTS2_CARD_SHENXUE_HANYAN.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]1[/blue] [gold]Frostfall[/gold]\\nWhile this card is in your hand, applying [gold]Frostburn[/gold] applies [gold]Frostburn: Rupture[/gold] instead.",
+
 	"MIYABISTS2_CARD_FEI_XUE.title": "Flying Snow",
     "MIYABISTS2_CARD_FEI_XUE.description": "[aqua]Frostbite[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]2[/blue] [gold]Frostfall[/gold]",
 
@@ -155,7 +158,7 @@
     "MIYABISTS2_CARD_SHUANGYUE_JIASHI.description": "At the start of each turn, gain {FrostFall:diff()} [gold]Frostfall[/gold].",
 
 	"MIYABISTS2_CARD_NO_TAIL_FULL.title": "Demon Blade Unleashed",
-    "MIYABISTS2_CARD_NO_TAIL_FULL.description": "Can you [jitter][gold]control[/gold][/jitter] [red]it[/red]?",
+    "MIYABISTS2_CARD_NO_TAIL_FULL.description": "Can you [jitter][gold]control[/gold][/jitter] {IfUpgraded:show:[aqua]it[/aqua]|[red]it[/red]}?",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL.title": "Phaethon's Call to Arms",
     "MIYABISTS2_CARD_PHAETHON_CALL.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Companion[/gold] cards to add to your hand.\\n(Includes [gold]Otherworld Companions[/gold]!)",
@@ -273,7 +276,7 @@
     "MIYABISTS2_CARD_JINLONG_SZB.description": "At the start of each turn, discard up to 2 cards, then draw that many cards.\\nEach time you discard or exhaust a card, deal 2 damage to all enemies.",
 
 	"MIYABISTS2_CARD_KAKANIA.title": "Id, Ego, Superego",
-    "MIYABISTS2_CARD_KAKANIA.description": "Increase damage taken by 25%. Record all damage taken. Right-click: spend 5 Support Points to deal recorded damage to all enemies. At the end of each turn, deal {BurstRatio:diff()}% of the damage dealt this turn.",
+    "MIYABISTS2_CARD_KAKANIA.description": "Increase damage taken by [red]25%[/red]. Record all damage taken.\\nRight-click: spend 5 [gold]Support Points[/gold] to deal recorded damage to all enemies. At the end of each turn, deal {BurstRatio:diff()}% of the damage dealt this turn.",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "Daze Test Card",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]Daze[/gold][blue]50[/blue]",
@@ -307,6 +310,9 @@
 
 	"MIYABISTS2_CARD_JINYING_JUE.title": "Ember Shadow Art",
     "MIYABISTS2_CARD_JINYING_JUE.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy has an attack intent, gain {Block:diff()} Block and 2 [gold]Thorns[/gold].",
+
+	"MIYABISTS2_CARD_XUANMO_ANYONG.title": "Dark Ink Surge",
+    "MIYABISTS2_CARD_XUANMO_ANYONG.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy has an attack intent, gain {Block:diff()} Block and 4 [gold]Thorns[/gold].\\nGain 1 [gold]Dark Ink Surge[/gold].",
 
 	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "Azure Cloud Shadow",
 	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL {HitCount:diff()} time(s). [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]25[/blue] layers of [gold]Spellcraft[/gold] to all enemies.",
@@ -420,7 +426,7 @@
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "Deal {Damage:diff()} damage {HitCount:diff()} time(s)\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] layers of [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] layers. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] layers of [gold]Submission[/gold].",
 
 	"MIYABISTS2_CARD_KAKANIA_YIXUAN.title": "Id, Ego, Superego",
-    "MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "Increase damage taken by 25%. Record all damage taken. Right-click: spend 5 Support Points to deal recorded damage to all enemies. At the end of each turn, deal {BurstRatio:diff()}% of the damage dealt this turn.",
+    "MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "Increase damage taken by [red]25%[/red]. Record all damage taken.\\nRight-click: spend 5 [gold]Support Points[/gold] to deal recorded damage to all enemies. At the end of each turn, deal {BurstRatio:diff()}% of the damage dealt this turn.",
 
 
 	// ====== Yixuan New Exclusive Cards ======

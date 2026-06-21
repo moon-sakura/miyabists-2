@@ -1,10 +1,10 @@
 {
-	"FROST_BUILD_POWER.smartDescription": "When accumulated to a certain amount, triggers [aqua]Frostburn[/aqua] and adds 1 layer of [purple]Attribute Anomaly[/purple] (Solo: [blue]50[/blue] stacks to trigger. +[blue]15[/blue] stacks required per additional player)",
-	"FROST_BUILD_POWER.description": "When accumulated to a certain amount, triggers [aqua]Frostburn[/aqua] and adds 1 layer of [purple]Attribute Anomaly[/purple]",
+	"FROST_BUILD_POWER.smartDescription": "When accumulated to {PlayerCount:choose(1|2|3|4):50|65|80|95|50} stacks, triggers [aqua]Frostburn[/aqua] and applies 1 layer of [purple]Attribute Anomaly[/purple]{PlayerCount:cond:>4?(+[blue]15[/blue] stacks required per additional player)|}",
+	"FROST_BUILD_POWER.description": "When accumulated to 50 stacks, triggers [aqua]Frostburn[/aqua] and applies 1 layer of [purple]Attribute Anomaly[/purple] (+[blue]15[/blue] stacks required per additional player)",
 	"FROST_BUILD_POWER.title": "Frostbite Charge",
 
-	"DAZE_POWER.smartDescription": "When accumulated to a certain amount, triggers [gold]Break[/gold] (Solo: [blue]100[/blue] stacks to trigger. +[blue]20[/blue] stacks required per additional player)",
-	"DAZE_POWER.description": "When accumulated to a certain amount, triggers [gold]Break[/gold]",
+	"DAZE_POWER.smartDescription": "When accumulated to {PlayerCount:choose(1|2|3|4):100|120|140|160|100} stacks, triggers [gold]Break[/gold]{PlayerCount:cond:>4?(+[blue]20[/blue] stacks required per additional player)|}",
+	"DAZE_POWER.description": "When accumulated to 100 stacks, triggers [gold]Break[/gold] (+[blue]20[/blue] stacks required per additional player)",
 	"DAZE_POWER.title": "Daze",
 
 	"BREAK_POWER.smartDescription": "[gold]Stun[/gold] the enemy and apply [gold]Daze Vulnerability[/gold] [blue]50%[/blue] for 1 turn. Daze cannot be stacked while broken.",
@@ -21,7 +21,11 @@
 
 	"FROST_POWER.title": "Frostburn",
     "FROST_POWER.description": "Increases damage taken. Cannot stack [aqua]Frostbite Charge[/aqua].",
-    "FROST_POWER.smartDescription": "Damage taken +[blue]{DamageVuln:diff()}%[/blue]. Cannot stack [aqua]Frostbite Charge[/aqua].",
+    "FROST_POWER.smartDescription": "Damage taken +[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|. Cannot stack [aqua]Frostbite Charge[/aqua].}",
+
+    "FROSTPO_POWER.title": "Frostburn: Rupture",
+    "FROSTPO_POWER.description": "Removes all Iceflame. Deals damage and gains Strength based on Iceflame stacks. Enemy takes increased damage and cannot stack Frostbite Charge.",
+    "FROSTPO_POWER.smartDescription": "Deals [gold]Iceflame[/gold] stacks × [blue]5[/blue] damage. Every 5 stacks of [gold]Iceflame[/gold]: gain 1 [gold]Strength[/gold]. Removes all [gold]Iceflame[/gold]. Damage taken +[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|. Cannot stack [aqua]Frostbite Charge[/aqua].}",
 
 	"DAZE_VULN_POWER.smartDescription": "For 1 turn, damage taken +[blue]{Amount}%[/blue]",
 	"DAZE_VULN_POWER.description": "Increases damage taken by the enemy",
@@ -29,15 +33,15 @@
 
 	"FROST_FALL_POWER.title": "Frostfall",
     "FROST_FALL_POWER.description": "Used to play [gold]Frost Moon[/gold]. When you have 2 points and no [gold]Frost Moon[/gold] in hand, add a [gold]Frost Moon[/gold] to your hand.",
-    "FROST_FALL_POWER.smartDescription": "Six points connect to the brain; charging replaces thinking",
+    "FROST_FALL_POWER.smartDescription": "Six points connect to the brain; charging replaces thinking.",
 
 	"ATTRIBUTE_ANOMALY_POWER.title": "Attribute Anomaly",
     "ATTRIBUTE_ANOMALY_POWER.description": "At the end of each turn, take damage equal to [blue]5%[/blue] of Max HP. If already present when applied, triggers [purple]Disorder[/purple].",
     "ATTRIBUTE_ANOMALY_POWER.smartDescription": "At the end of each turn, take damage equal to [blue]5%[/blue] of Max HP. If already present when applied, triggers [purple]Disorder[/purple].",
 
 	"ANOMALY_BUILDUP_POWER.title": "Anomaly Buildup",
-    "ANOMALY_BUILDUP_POWER.description": "When accumulated to a certain amount, applies [purple]Attribute Anomaly[/purple] to the enemy (Solo: [blue]5[/blue] stacks to trigger. +[blue]2[/blue] stacks required per additional player)",
-    "ANOMALY_BUILDUP_POWER.smartDescription": "When accumulated to a certain amount, applies [purple]Attribute Anomaly[/purple] to the enemy (Solo: [blue]5[/blue] stacks to trigger. +[blue]2[/blue] stacks required per additional player)",
+    "ANOMALY_BUILDUP_POWER.description": "When accumulated to 5 stacks, applies [purple]Attribute Anomaly[/purple] to the enemy (+[blue]2[/blue] stacks required per additional player).",
+    "ANOMALY_BUILDUP_POWER.smartDescription": "When accumulated to {PlayerCount:choose(1|2|3|4):5|7|9|11|5} stacks, applies [purple]Attribute Anomaly[/purple]{PlayerCount:cond:>4?(+[blue]2[/blue] stacks required per additional player)|}.",
 
 	"DISORDER_POWER.title": "Disorder",
     "DISORDER_POWER.description": "Immediately deal damage equal to [blue]10%[/blue] of Max HP. The next hit deals [blue]2[/blue]x damage.",
@@ -49,11 +53,11 @@
 
 	"JIFU_POWER.title": "Submission",
     "JIFU_POWER.description": "On Break, provides additional [gold]Daze Vulnerability[/gold].",
-    "JIFU_POWER.smartDescription": "On Break, provides additional [blue]{Amount}*2%[/blue] [gold]Daze Vulnerability[/gold].",
+    "JIFU_POWER.smartDescription": "On Break, provides additional [blue]2*{Amount}%[/blue] [gold]Daze Vulnerability[/gold].",
 
 	"TEBIE_PZJQ_POWER.title": "Special Photo Technique",
-    "TEBIE_PZJQ_POWER.description": "When an enemy is [gold]Broken[/gold], they gain additional [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a small chance of dealing no damage.",
-    "TEBIE_PZJQ_POWER.smartDescription": "When an enemy is [gold]Broken[/gold], they gain additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a small chance of dealing no damage.",
+    "TEBIE_PZJQ_POWER.description": "When an enemy is [gold]Broken[/gold], they gain additional [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a chance to deal no damage.",
+    "TEBIE_PZJQ_POWER.smartDescription": "When an enemy is [gold]Broken[/gold], they gain additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with [gold]attack intent[/gold] have a {Amount:cond:<3?small|}{Amount:cond:>7?high|} chance to deal no damage.",
 
 	"TUNAFA_POWER.title": "Breathing Technique",
     "TUNAFA_POWER.description": "",
@@ -221,7 +225,7 @@
 
 	"OVERTIMEBOO_ACT.title": "Overtimeboo",
     "OVERTIMEBOO_ACT.description": "Can consume [red]1[/red] [gold]HP[/gold] to grant a player Energy.",
-    "OVERTIMEBOO_ACT.smartDescription": "Consume [red]1[/red] [gold]HP[/gold] to grant a player {Energy:energyIcons()}. If Overtimeboo loses all HP from overtime, you will [red]lose this relic[/red]!",
+    "OVERTIMEBOO_ACT.smartDescription": "Can consume [red]1[/red] [gold]HP[/gold] to grant a player {Energy:energyIcons()}. If Overtimeboo loses all HP from overtime, you will [red]lose this relic[/red]!",
 
     "PAPERBOO_ACT.title": "Paperboo",
     "PAPERBOO_ACT.description": "Can use [red]1[/red] Energy to gain Block.",
@@ -263,7 +267,7 @@
 
     "FUMO_POWER.title" : "Demon Subjugation",
     "FUMO_POWER.description" : "Takes bonus damage and deals reduced damage.",
-    "FUMO_POWER.smartDescription" : "Takes {Amount}x bonus damage and deals {Amount}*20% less damage. Stacks additively with Spellcraft.",
+    "FUMO_POWER.smartDescription" : "Takes {Amount}x bonus damage and deals {Amount:choose(1|2|3|4):20|40|60|80|100}% less damage. Stacks additively with Spellcraft.",
 
     "SHUFA_ZONGSHI_POWER.title": "Spellcraft Mastery",
     "SHUFA_ZONGSHI_POWER.description": "Each time you deal Dark Ink damage, apply Spellcraft to enemies.",
@@ -273,11 +277,16 @@
     "MOHENHX_POWER.description": "",
     "MOHENHX_POWER.smartDescription": "Your next {Amount} [gold]Dark Ink[/gold] card(s) cost 0.",
 
+    "XUANMO_ANYONG_POWER.title": "Dark Ink Surge",
+    "XUANMO_ANYONG_POWER.description": "",
+    "XUANMO_ANYONG_POWER.smartDescription": "Each time you play a [gold]Companion[/gold] card, restore 2*{Amount} [gold]Flash Energy[/gold] and deal 3*{Amount} [gold]Dark Ink[/gold] damage to enemies.",
+
+
 	"SHANNENG_POWER.title": "Flash Energy",
 	"SHANNENG_POWER.description": "Can be spent to activate additional effects. Capped at [blue]150[/blue].",
 	"SHANNENG_POWER.smartDescription": "Can be spent to activate additional effects. Capped at [blue]150[/blue]. Used [blue]{Used:diff()}[/blue] points. After using [blue]150[/blue] points, gain a [gold]Thousandfold Talisman[/gold].",
 
-	"QINGXIAO_TONGYOU_POWER.title": "Azure Sky Journey",
+	"QINGXIAO_TONGYOU_POWER.title": "Azure Sky Journey Together",
 	"QINGXIAO_TONGYOU_POWER.description": "At the start of each turn, gain Vigor, Thorns, and Flash Energy.",
 	"QINGXIAO_TONGYOU_POWER.smartDescription": "At the start of each turn, gain [blue]{Vigor}[/blue] [gold]Vigor[/gold], [blue]{Thorns}[/blue] [gold]Thorns[/gold], and restore [blue]{Shanneng}[/blue] [gold]Flash Energy[/gold].",
 
@@ -291,7 +300,7 @@
 
 	"RONGLU_SHENGWEN_POWER.title": "Forge Inferno",
 	"RONGLU_SHENGWEN_POWER.description": "Each time you apply Daze, apply an additional 5 Daze, then reduce stacks by 1.",
-	"RONGLU_SHENGWEN_POWER.smartDescription": "Each time you apply [gold]Daze[/gold], apply an additional [blue]5[/blue]. [blue]{Display:diff()}[/blue] stack(s) remaining.",
+	"RONGLU_SHENGWEN_POWER.smartDescription": "Each time you apply [gold]Daze[/gold], apply an additional [blue]5[/blue].",
 
 	"HUALIAN_XIEYI_POWER.title": "Flower Chain Protocol",
 	"HUALIAN_XIEYI_POWER.description": "Right-click to spend Support Points and trigger an effect.",

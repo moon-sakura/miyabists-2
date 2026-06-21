@@ -36,7 +36,7 @@
   // Character name (object)
   "MIYABISTS2_CHARACTER_YIXUAN.titleObject": "Yixuan",
   // Character select screen description
-  "MIYABISTS2_CHARACTER_YIXUAN.description": "Ink dark as gold, brush falls and startles the wind.",
+  "MIYABISTS2_CHARACTER_YIXUAN.description": "Overcome motion with stillness; stillness and motion in harmony. Within motion there is stillness, and within stillness, motion.",
   // Subject pronoun
   "MIYABISTS2_CHARACTER_YIXUAN.pronounSubject": "Yixuan",
   // Object pronoun
@@ -46,16 +46,16 @@
   // Possessive adjective
   "MIYABISTS2_CHARACTER_YIXUAN.possessiveAdjective": "Yixuan's",
   // Death event dialogue
-  "MIYABISTS2_CHARACTER_YIXUAN.eventDeathPrevention": "The ink is not yet dry…… how can it end here……",
+  "MIYABISTS2_CHARACTER_YIXUAN.eventDeathPrevention": "How could this be……",
   // Custom mode text
-  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierTitle": "Yixuan's Ink Treasures",
+  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierTitle": "Yixuan & Companions",
   "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierDescription": "Yixuan's cards will now appear in rewards and shops.",
   // Multiplayer: alive turn end banter
   "MIYABISTS2_CHARACTER_YIXUAN.banter.alive.endTurnPing": "Ready for battle",
   // Multiplayer: dead turn end banter
-  "MIYABISTS2_CHARACTER_YIXUAN.banter.dead.endTurnPing": "The ink remains……",
+  "MIYABISTS2_CHARACTER_YIXUAN.banter.dead.endTurnPing": "Sorry……",
   // Gold monologue at Sunken Vault event
-  "MIYABISTS2_CHARACTER_YIXUAN.goldMonologue": "[sine]This gold leaf, can it be ground into ink?[/sine]",
+  "MIYABISTS2_CHARACTER_YIXUAN.goldMonologue": "[sine]The more, the better[/sine]",
   // Inner monologue during the Chaotic Aroma event
   "MIYABISTS2_CHARACTER_YIXUAN.aromaPrinciple": "[sine][orange]……Calm the mind……[/orange][/sine]",
   // Unlock condition text

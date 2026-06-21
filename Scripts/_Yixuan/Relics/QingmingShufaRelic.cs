@@ -138,7 +138,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
     internal class QingmingNiaoRelic : ModRelicTemplate, IDecibleCounter
     {
         public override RelicRarity Rarity => RelicRarity.Starter;
-        public override string PackedIconPath => "res://images/_YiXuan/char/common.png";
+        public override string PackedIconPath => "res://images/_YiXuan/relics/qingmingNiao.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
