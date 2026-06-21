@@ -46,12 +46,20 @@ namespace Miyabists2.Scripts.Enemies
         private int MultiHitDamage => 4;
         private int MultiHitCount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 4);
 
+        // 统一意图与实际伤害的有效数值
+        private int EffectiveBasicDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 14 : BasicDamage;
+        private int EffectiveHeavyDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 36 : HeavyDamage;
+        private int EffectiveMultiHitDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 5 : MultiHitDamage;
+
         // 怪物场景，如果你的场景没有挂载脚本，参考这个
         //public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene("res://test/scenes/test_monster.tscn");
 
         // 如果你挂载了自己的自定义脚本，使用这个
         public override string? CustomVisualsPath => "res://scenes/miyabi_char.tscn";
 
+
+        // 低血量时触发一次额外荆棘
+        private bool _hasEnraged = false;
 
         // 战斗开始时，在这里给自己上buff之类
         public override async Task AfterAddedToRoom()
@@ -70,7 +78,7 @@ namespace Miyabists2.Scripts.Enemies
                 "BASIC_ATTACK", // 状态ID
                 BasicAttackMove, // 执行函数，或者直接用lambda也可
                                  // 以下是可变参数，可以填写任意数量的意图，全部展示
-                new SingleAttackIntent(BasicDamage),
+                new SingleAttackIntent(EffectiveBasicDamage),
                 new DefendIntent()
             );
 
@@ -78,24 +86,24 @@ namespace Miyabists2.Scripts.Enemies
             var heavyAttack = new MoveState(
                 "HEAVY_ATTACK",
                 async targets => await DamageCmd // 意图2实际执行效果，这里直接用lambda
-                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 36m : HeavyDamage)
+                    .Attack(EffectiveHeavyDamage)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
                     .WithHitFx("vfx/vfx_giant_horizontal_slash")
                     .Execute(null),
-                new SingleAttackIntent(HeavyDamage)
+                new SingleAttackIntent(EffectiveHeavyDamage)
             );
 
             var multiHitAttack = new MoveState(
                 "MULTIHIT_ATTACK",
                 async targets => await DamageCmd
-                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 5m : MultiHitDamage)
+                    .Attack(EffectiveMultiHitDamage)
                     .WithHitCount(MultiHitCount)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
                     .WithHitFx("vfx/vfx_giant_horizontal_slash")
                     .Execute(null),
-                new MultiAttackIntent(MultiHitDamage, MultiHitCount)
+                new MultiAttackIntent(EffectiveMultiHitDamage, MultiHitCount)
             );
 
             var powerUp = new MoveState(
@@ -108,19 +116,25 @@ namespace Miyabists2.Scripts.Enemies
             randomBranchState.AddBranch(multiHitAttack, MoveRepeatType.CannotRepeat);
             randomBranchState.AddBranch(heavyAttack, MoveRepeatType.CannotRepeat);
 
-            // 或者你也可以创建RandomBranchState（随机意图分支）和ConditionalBranchState（条件意图分支）来实现更复杂的状态转换逻辑
+            // 低血量时更激进：PowerUp 后继续攻击而非回防
+            ConditionalBranchState postPowerUpBranch = new ConditionalBranchState("POST_PWR");
+            postPowerUpBranch.AddState(randomBranchState,
+                () => Creature.CurrentHp <= Creature.MaxHp / 2);
+            postPowerUpBranch.AddState(basicAttack,
+                () => true);
 
-            // 设置状态转换，意图1后接意图2，意图2后接意图1
+            // 设置状态转换
             basicAttack.FollowUpState = randomBranchState;
             multiHitAttack.FollowUpState = powerUp;
             heavyAttack.FollowUpState = powerUp;
-            powerUp.FollowUpState = basicAttack;
+            powerUp.FollowUpState = postPowerUpBranch;
 
             list.Add(basicAttack);
             list.Add(multiHitAttack);
             list.Add(heavyAttack);
             list.Add(powerUp);
             list.Add(randomBranchState);
+            list.Add(postPowerUpBranch);
 
             // 添加2个意图，并且初始意图设成 basicAttack
             return new MonsterMoveStateMachine(list, basicAttack);
@@ -132,7 +146,7 @@ namespace Miyabists2.Scripts.Enemies
             // 说话
             //TalkCmd.Play(L10NMonsterLookup("TEST-TEST_MONSTER.moves.BASIC_ATTACK.banter"), Creature, VfxColor.Blue);
             await DamageCmd
-                .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 14m : BasicDamage)
+                .Attack(EffectiveBasicDamage)
                 .FromMonster(this)
                 // .WithAttackerAnim("Attack", 0.5f) // 如果有攻击动画，可以取消注释并替换成实际动画名称和延迟
                 .WithAttackerFx(null, AttackSfx) // 攻击音效
@@ -145,6 +159,13 @@ namespace Miyabists2.Scripts.Enemies
         {
             TalkCmd.Play(L10NMonsterLookup("MIYABISTS2-MIYABI_GHOST_ENEMY.moves.POWER_UP.banter"), Creature, VfxColor.Blue);
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
+
+            // 首次低于半血时额外获得荆棘（一次性触发）
+            if (!_hasEnraged && Creature.CurrentHp <= Creature.MaxHp / 2)
+            {
+                _hasEnraged = true;
+                await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, 3m, base.Creature, null);
+            }
 
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 4m : 2m;
             await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Players.Count, base.Creature, null);

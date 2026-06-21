@@ -50,6 +50,11 @@ namespace Miyabists2.Scripts.Enemies
         private int MultiHitDamage => 5;
         private int MultiHitCount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 4);
 
+        // 统一意图与实际伤害的有效数值
+        private int EffectiveBasicDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 18 : BasicDamage;
+        private int EffectiveHeavyDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 42 : HeavyDamage;
+        private int EffectiveMultiHitDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 6 : MultiHitDamage;
+
         // 怪物场景，如果你的场景没有挂载脚本，参考这个
         //public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene("res://test/scenes/test_monster.tscn");
 
@@ -67,6 +72,23 @@ namespace Miyabists2.Scripts.Enemies
         private bool HeavyAttackUsed = false;
         private bool MultiHitUsed = false;
 
+        /// <summary>
+        /// 检查是否有任何玩家处于"易伤"状态：
+        /// 拥有 BreakPlayerPower，或抽牌堆中攻击牌不足且无减伤能力
+        /// </summary>
+        private bool IsAnyPlayerVulnerable()
+        {
+            foreach (Player player in base.Creature.CombatState.Players)
+            {
+                if (player.Creature.HasPower<BreakPlayerPower>())
+                    return true;
+                if (player.PlayerCombatState.DrawPile.Cards.CountBy(c => !c.GainsBlock).Count() < 3
+                    && !player.Creature.HasPower<IntangiblePower>())
+                    return true;
+            }
+            return false;
+        }
+
         protected override MonsterMoveStateMachine GenerateMoveStateMachine()
         {
             List<MonsterState> list = new List<MonsterState>();
@@ -76,7 +98,7 @@ namespace Miyabists2.Scripts.Enemies
                 "BASIC_MOVE", // 状态ID
                 BasicMove, // 执行函数，或者直接用lambda也可
                            // 以下是可变参数，可以填写任意数量的意图，全部展示
-                new SingleAttackIntent(BasicDamage),
+                new SingleAttackIntent(EffectiveBasicDamage),
                 new DefendIntent()
             );
 
@@ -84,13 +106,13 @@ namespace Miyabists2.Scripts.Enemies
             var heavyAttack = new MoveState(
                 "EJIZHAN",
                 EJiZhan,
-                new SingleAttackIntent(HeavyDamage)
+                new SingleAttackIntent(EffectiveHeavyDamage)
             );
 
             var multiHitAttack = new MoveState(
                 "MINGCANXUE",
                 MingCanXue,
-                new MultiAttackIntent(MultiHitDamage, MultiHitCount)
+                new MultiAttackIntent(EffectiveMultiHitDamage, MultiHitCount)
             );
 
             var powerUp = new MoveState(
@@ -103,7 +125,7 @@ namespace Miyabists2.Scripts.Enemies
             var dashAttack = new MoveState(
                 "DASH_ATTACK",
                 DashAttackF,
-                new SingleAttackIntent(BasicDamage),
+                new SingleAttackIntent(EffectiveBasicDamage),
                 new BuffIntent()
             );
 
@@ -119,23 +141,28 @@ namespace Miyabists2.Scripts.Enemies
 
             ConditionalBranchState conditionalBranchState = new ConditionalBranchState("COND");
 
+            // 优先级1：Boss 失去 Slippery 时，立即补回（生存优先）
+            conditionalBranchState.AddState(randomBranchState2,
+                () =>
+                {
+                    if (!Creature.HasPower<SlipperyPower>())
+                    {
+                        HeavyAttackUsed = false;
+                        MultiHitUsed = false;
+                        return true;
+                    }
+                    return false;
+                });
+
+            // 优先级2：有易伤玩家时，交替使用重击/多段惩罚
             conditionalBranchState.AddState(heavyAttack,
                 () =>
                 {
-                    foreach(Player player in base.Creature.CombatState.Players)
+                    if (!HeavyAttackUsed && IsAnyPlayerVulnerable())
                     {
-                        if ((player.Creature.HasPower<BreakPlayerPower>() && player.Creature.HasPower<SlipperyPower>())
-                        || (player.PlayerCombatState.DrawPile.Cards.CountBy(c => !c.GainsBlock).Count() < 3
-                        && !(player.Creature.HasPower<SlipperyPower>() || player.Creature.HasPower<IntangiblePower>()))
-                        )
-                        {
-                            if (!HeavyAttackUsed)
-                            {
-                                HeavyAttackUsed = true;
-                                MultiHitUsed = false;
-                                return true;
-                            }
-                        }
+                        HeavyAttackUsed = true;
+                        MultiHitUsed = false;
+                        return true;
                     }
                     return false;
                 });
@@ -143,43 +170,20 @@ namespace Miyabists2.Scripts.Enemies
             conditionalBranchState.AddState(multiHitAttack,
                 () =>
                 {
-                    foreach (Player player in Creature.CombatState.Players)
+                    if (!MultiHitUsed && IsAnyPlayerVulnerable())
                     {
-                        if (player.Creature.HasPower<BreakPlayerPower>()
-                        || (player.PlayerCombatState.DrawPile.Cards.CountBy(c => !c.GainsBlock).Count() < 3
-                        && !(player.Creature.HasPower<IntangiblePower>()))
-                        )
-                        {
-                            if (!MultiHitUsed)
-                            {
-                                MultiHitUsed = true;
-                                HeavyAttackUsed = false;
-                                return true;
-                            }
-                        }
+                        MultiHitUsed = true;
+                        HeavyAttackUsed = false;
+                        return true;
                     }
                     return false;
                 });
 
-            conditionalBranchState.AddState(randomBranchState2,
-                () =>
-                {
-                    foreach (Player player in Creature.CombatState.Players)
-                    {
-                        if (!player.Creature.CombatState.Enemies.FirstOrDefault().HasPower<SlipperyPower>())
-                        {
-                            MultiHitUsed = false;
-                            HeavyAttackUsed = false;
-                            return true;
-                        }
-                    }
-                    return false;
-                });
-
-            conditionalBranchState.AddState(powerUp, () => 
+            // 优先级3：兜底 — 强化自身
+            conditionalBranchState.AddState(powerUp, () =>
             {
-                MultiHitUsed = false;
                 HeavyAttackUsed = false;
+                MultiHitUsed = false;
                 return true;
             });
 
@@ -210,7 +214,7 @@ namespace Miyabists2.Scripts.Enemies
             // 说话
             //TalkCmd.Play(L10NMonsterLookup("TEST-TEST_MONSTER.moves.BASIC_ATTACK.banter"), Creature, VfxColor.Blue);
             await DamageCmd
-                .Attack(MiyabiModConfig.MiyabiEnemiesStronger? 18: BasicDamage)
+                .Attack(EffectiveBasicDamage)
                 .FromMonster(this)
                 // .WithAttackerAnim("Attack", 0.5f) // 如果有攻击动画，可以取消注释并替换成实际动画名称和延迟
                 .WithAttackerFx(null, AttackSfx) // 攻击音效
@@ -225,16 +229,16 @@ namespace Miyabists2.Scripts.Enemies
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
 
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 6m : 4m;
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * targets.Count, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Players.Count, base.Creature, null);
 
             decimal thornsAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 3m : 2m;
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, thornsAmount, base.Creature, null);
 
             decimal debuffAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 3m : 2m;
-            foreach (var target in targets) 
-            { 
-                await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), target, debuffAmount, base.Creature, null);
-                await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), target, debuffAmount, base.Creature, null);
+            foreach (var player in CombatState.Players)
+            {
+                await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), player.Creature, debuffAmount, base.Creature, null);
+                await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), player.Creature, debuffAmount, base.Creature, null);
             }
 
         }
@@ -242,7 +246,7 @@ namespace Miyabists2.Scripts.Enemies
         private async Task EJiZhan(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 42 : HeavyDamage)
+                    .Attack(EffectiveHeavyDamage)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
                     .WithHitFx("vfx/vfx_giant_horizontal_slash")
@@ -252,7 +256,7 @@ namespace Miyabists2.Scripts.Enemies
         private async Task MingCanXue(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 6 : MultiHitDamage)
+                    .Attack(EffectiveMultiHitDamage)
                     .WithHitCount(MultiHitCount)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
@@ -270,7 +274,7 @@ namespace Miyabists2.Scripts.Enemies
                     .Execute(null);
 
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 6m : 4m;
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * targets.Count, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Players.Count, base.Creature, null);
         }
     }
 }

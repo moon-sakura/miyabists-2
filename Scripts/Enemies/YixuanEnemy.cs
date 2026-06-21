@@ -47,6 +47,10 @@ namespace Miyabists2.Scripts.Enemies
 
         private int MultiHitDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 2);
 
+        // 统一意图与实际伤害的有效数值
+        private int EffectiveAADDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 15 : AAD_Damage;
+        private int EffectiveMultiHitDamage => MiyabiModConfig.MiyabiEnemiesStronger ? 5 : MultiHitDamage;
+
         private bool isjustMultihit = false;
 
         protected override MonsterMoveStateMachine GenerateMoveStateMachine()
@@ -64,14 +68,14 @@ namespace Miyabists2.Scripts.Enemies
                 "ATTACK_AND_DEFENCE", // 状态ID
                 AttackAndDefenceF, // 执行函数，或者直接用lambda也可
                             // 以下是可变参数，可以填写任意数量的意图，全部展示
-                new SingleAttackIntent(AAD_Damage),
+                new SingleAttackIntent(EffectiveAADDamage),
                 new DefendIntent()
             );
 
             var HeavyAttack = new MoveState(
                 "HEAVY_ATTACK", // 状态ID
                 HeavyAttackF,
-                new MultiAttackIntent(MultiHitDamage, 8)
+                new MultiAttackIntent(EffectiveMultiHitDamage, 8)
             );
 
             var PowerUp = new MoveState(
@@ -120,7 +124,7 @@ namespace Miyabists2.Scripts.Enemies
         private async Task AttackAndDefenceF(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 15 : AAD_Damage)
+                .Attack(EffectiveAADDamage)
                 .FromMonster(this)
                 // .WithAttackerAnim("Attack", 0.5f) // 如果有攻击动画，可以取消注释并替换成实际动画名称和延迟
                 .WithAttackerFx(null, AttackSfx) // 攻击音效
@@ -134,7 +138,7 @@ namespace Miyabists2.Scripts.Enemies
         private async Task HeavyAttackF(IReadOnlyList<Creature> targets)
         {
             await DamageCmd
-                    .Attack(MiyabiModConfig.MiyabiEnemiesStronger ? 5 : MultiHitDamage)
+                    .Attack(EffectiveMultiHitDamage)
                     .WithHitCount(8)
                     .FromMonster(this)
                     .WithAttackerFx(null, AttackSfx)
@@ -163,40 +167,45 @@ namespace Miyabists2.Scripts.Enemies
             await CreatureCmd.GainBlock(Creature, MiyabiModConfig.MiyabiEnemiesStronger ? 30m : 20m, ValueProp.Move, null);
         }
 
+        /// <summary>
+        /// 仪玄的AI核心：根据最低血量目标的状态选择行动
+        /// 1. 刚用完多段攻击时不再连用
+        /// 2. 目标低护甲时用多段攻击惩罚
+        /// 3. 目标有易伤时 2/3 概率强化 / 1/3 概率攻击
+        /// 4. 否则给目标上减益
+        /// </summary>
         private async Task UnclearMoveF(IReadOnlyList<Creature> targets)
         {
             Creature creature = targets.OrderBy(t => t.CurrentHp).FirstOrDefault();
-            //{ 
-                if(!isjustMultihit 
-                    && (creature.Block <= 8 * MultiHitDamage - 8 
-                    || (creature.HasPower<VulnerablePower>() 
-                    && creature.Block <= 8 * MultiHitDamage * 1.5 - 8)))
-                {
-                    await HeavyAttackF(targets);
-                    return;
-                }
 
-                if (creature.HasPower<VulnerablePower>())
-                {
-                    int re = MiyabiFuncBase.RandomInt(0, 3, CombatState.Players.OrderBy(p => p.NetId).FirstOrDefault());
-                    if(re != 0)
-                        await PowerUpF(targets);
-                    else
-                        await AttackAndDefenceF(targets);
+            // 计算低护甲阈值（使用统一的有效伤害值）
+            bool isLowBlock = creature.Block <= 8 * EffectiveMultiHitDamage - 8;
+            bool isVulnLowBlock = creature.HasPower<VulnerablePower>()
+                && creature.Block <= (int)(8 * EffectiveMultiHitDamage * 1.5) - 8;
 
-                    isjustMultihit = false;
-                    return;
-                }
+            // 分支1：目标护甲低 → 多段攻击惩罚（不连用两次）
+            if (!isjustMultihit && (isLowBlock || isVulnLowBlock))
+            {
+                await HeavyAttackF(targets);
+                return;
+            }
+
+            // 分支2：目标有易伤 → 2/3 概率强化，1/3 概率攻防
+            if (creature.HasPower<VulnerablePower>())
+            {
+                int re = MiyabiFuncBase.RandomInt(0, 3, CombatState.Players.OrderBy(p => p.NetId).FirstOrDefault());
+                if (re != 0)
+                    await PowerUpF(targets);
                 else
-                {
-                    await DebuffAddF(targets);
-                    isjustMultihit = false;
-                    return;
-                }
-            //}
+                    await AttackAndDefenceF(targets);
+            }
+            // 分支3：无易伤 → 上减益做铺垫
+            else
+            {
+                await DebuffAddF(targets);
+            }
 
             isjustMultihit = false;
-            await CreatureCmd.GainBlock(Creature, 60m, ValueProp.Move, null);
         }
     }
 }

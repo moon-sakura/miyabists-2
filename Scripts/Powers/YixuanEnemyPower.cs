@@ -68,12 +68,6 @@ namespace Miyabists2.Scripts.Powers
             HittedThisTurn++;
         }
 
-        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-        {
-            await CheckPhase(choiceContext);
-        }
-
-
         public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if(side == base.Owner.Side)
