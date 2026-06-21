@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Relics
         protected override string BigIconPath => PackedIconPath;
 
         // --- 计数器逻辑 (如不需要可删除) ---
-        private int _counter;
+        protected int _counter;
         public override bool ShowCounter => true;
         public override int DisplayAmount => Counter;
 
@@ -37,7 +37,7 @@ namespace Miyabists2.Scripts.Relics
         public int Counter
         {
             get => _counter;
-            private set
+            protected set
             {
                 AssertMutable();
                 _counter = value;

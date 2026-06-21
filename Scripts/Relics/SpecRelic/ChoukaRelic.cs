@@ -63,7 +63,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        private int _counter = 0;
+        protected int _counter = 0;
 
         // 显示在遗物图标上的数字
         public override bool ShowCounter => true;
@@ -86,7 +86,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         public int Counter
         {
             get => _counter;
-            private set
+            protected set
             {
                 AssertMutable(); // 确保在合法的修改状态
                 _counter = value;
@@ -100,13 +100,13 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             //this.Flash(); // 让遗物闪烁一下，视觉效果更好
         }
 
-        private int _freeCounter = 0;
+        protected int _freeCounter = 0;
 
         [SavedProperty]
         public int FreeCounter
         {
             get => _freeCounter;
-            private set
+            protected set
             {
                 AssertMutable();
                 _freeCounter = value;
@@ -114,13 +114,13 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
-        private int _cinimaCounter = 0;
+        protected int _cinimaCounter = 0;
 
         [SavedProperty]
         public int CinimaCounter
         {
             get => _cinimaCounter;
-            private set
+            protected set
             {
                 AssertMutable();
                 _cinimaCounter = value;
@@ -231,15 +231,15 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             return true;
         }
 
-        private bool _isBusy = false;
-        private int _lastCinima = 0;
-        private int _lastRare = 0;
+        protected bool _isBusy = false;
+        protected int _lastCinima = 0;
+        protected int _lastRare = 0;
 
         [SavedProperty]
         public int LastCinima
         {
             get => _lastCinima;
-            private set
+            protected set
             {
                 AssertMutable();
                 _lastCinima = value;
@@ -250,7 +250,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         public int LastRare
         {
             get => _lastRare;
-            private set
+            protected set
             {
                 AssertMutable();
                 _lastRare = value;
@@ -355,7 +355,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             
         }
 
-        private async Task AncientRewards()
+        protected async Task AncientRewards()
         {
             int result = MiyabiFuncBase.RandomInt(0, 9, Owner);
             bool rewardGiven = false;
@@ -463,7 +463,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
-        private async Task RareRewards()
+        protected async Task RareRewards()
         {
             int result = MiyabiFuncBase.RandomInt(0, 9, Owner);
             bool rewardGiven = false;
@@ -582,7 +582,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
-        private async Task UncommonRewards()
+        protected async Task UncommonRewards()
         {
             int result = MiyabiFuncBase.RandomInt(0, 9, Owner);
             bool rewardGiven = false;
@@ -740,7 +740,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
-        private async Task CommonRewards()
+        protected async Task CommonRewards()
         {
             int result = MiyabiFuncBase.RandomInt(0, 7, Owner);
             bool rewardGiven = false;
@@ -844,24 +844,24 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
         }
 
 
-        private bool FilterRareCards(CardModel card)
+        protected bool FilterRareCards(CardModel card)
         {
             return card.Rarity == CardRarity.Rare;
         }
-        private bool FilterUncommonCards(CardModel card)
+        protected bool FilterUncommonCards(CardModel card)
         {
             return card.Rarity == CardRarity.Uncommon;
         }
-        private bool FilterCommonCards(CardModel card)
+        protected bool FilterCommonCards(CardModel card)
         {
             return card.Rarity == CardRarity.Common;
         }
-        private bool FilterUnandCCards(CardModel card)
+        protected bool FilterUnandCCards(CardModel card)
         {
             return card.Rarity == CardRarity.Common || card.Rarity == CardRarity.Uncommon;
         }
 
-        private async Task<bool> TryEnchantCard<T>(decimal amount = 1m) where T : EnchantmentModel
+        protected async Task<bool> TryEnchantCard<T>(decimal amount = 1m) where T : EnchantmentModel
         {
             CardModel cardModel = (await CardSelectCmd.FromDeckForEnchantment(base.Owner, ModelDb.Enchantment<T>(), (int)amount, new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt,1))).FirstOrDefault();
             if (cardModel != null)

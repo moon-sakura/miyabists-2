@@ -37,8 +37,8 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
     {
         public override RelicRarity Rarity => RelicRarity.Uncommon;
         public override string PackedIconPath => "res://images/bangboo/relicMode/eousRelic.png";
-        private const int _roomCount = 2;
-        private int _timesUsed;
+        protected const int _roomCount = 2;
+        protected int _timesUsed;
 
         public override bool IsUsedUp => TimesUsed >= 2;
         public override bool ShowCounter => !IsUsedUp;
@@ -140,7 +140,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
             return Task.CompletedTask;
         }
 
-        private void CheckIfUsedUp()
+        protected void CheckIfUsedUp()
         {
             if (IsUsedUp)
             {
