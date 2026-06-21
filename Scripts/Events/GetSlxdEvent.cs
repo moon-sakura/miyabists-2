@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Rewards;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Char;
@@ -16,20 +17,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Miyabists2.Scripts.Events
 {
+    [RegisterSharedEvent]
     internal class GetSlxdEvent : ModEventTemplate
     {
         // 背景图位置
-        public override string? CustomInitialPortraitPath => "res://images/events/commonEvents.png";
+        public override EventAssetProfile AssetProfile => new(
+            InitialPortraitPath: "res://images/events/GetSlxd.png"
+        );
 
         // 设置一些数值
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
-            new DamageVar(5m, ValueProp.Unblockable&ValueProp.Unpowered),
+            new DamageVar(5m, ValueProp.Unblockable|ValueProp.Unpowered),
             new StringVar("Relic", ModelDb.Relic<SanluoXingdianRelic>().Title.GetFormattedText()),
         ];
+
+        public override bool IsShared => true;
 
         // 什么时候会遇到。
         public override bool IsAllowed(IRunState runState)
@@ -52,8 +57,8 @@ namespace Miyabists2.Scripts.Events
         // 生成事件初始选项。
         protected override IReadOnlyList<EventOption> GenerateInitialOptions() =>
         [
-            new EventOption(this,DeepInHeart,"DEEP_IN_HEART"),
-            new EventOption(this,Leave,"LEAVE"),
+            new EventOption(this, DeepInHeart, InitialOptionKey("DEEP_IN_HEART")),
+            new EventOption(this, Leave, InitialOptionKey("LEAVE")),
         ];
 
         // 深入
@@ -67,15 +72,15 @@ namespace Miyabists2.Scripts.Events
         private async Task Leave()
         {
             //await PlayerCmd.LoseGold(DynamicVars.Gold.BaseValue, Owner!, GoldLossType.Stolen);
-            SetEventFinished(PageDescription("LEAVE"));
+            SetEventFinished(L10NLookup($"{Id.Entry}.pages.LEAVE.description"));
         }
 
         // 进入事件第二阶段
         private void CountinueDeepPage()
         {
-            SetEventState(PageDescription("DEEP_PAGE"), [
-                new EventOption(this,ContinueDeep,"CONTINUE_DEEP"),
-                new EventOption(this,CannotBare,"CANNOT_BARE"),
+            SetEventState(L10NLookup($"{Id.Entry}.pages.DEEP_PAGE.description"), [
+                new EventOption(this, ContinueDeep, ModOptionKey("DEEP_PAGE", "CONTINUE_DEEP")),
+                new EventOption(this, CannotBare, ModOptionKey("DEEP_PAGE", "CANNOT_BARE")),
                 ]);
         }
 
@@ -91,30 +96,35 @@ namespace Miyabists2.Scripts.Events
         private async Task CannotBare()
         {
             await RewardsCmd.OfferCustom(Owner!, [new CardReward(CardCreationOptions.ForNonCombatWithDefaultOdds([Owner!.Character.CardPool]), 5, Owner)]);
-            SetEventFinished(PageDescription("CANNOT_BARE_LEAVE"));
+            SetEventFinished(L10NLookup($"{Id.Entry}.pages.CANNOT_BARE_LEAVE.description"));
         }
 
-        private void ReachCorePage() 
+        private void ReachCorePage()
         {
-            SetEventState(PageDescription("CORE_PAGE"), [
-                new EventOption(this,GetSlxd,"GET_SLXD"),
-                new EventOption(this,GiveUp,"GIVE_UP")
+            SetEventState(L10NLookup($"{Id.Entry}.pages.CORE_PAGE.description"), [
+                new EventOption(this, GetSlxd, ModOptionKey("CORE_PAGE", "GET_SLXD")),
+                new EventOption(this, GiveUp, ModOptionKey("CORE_PAGE", "GIVE_UP"))
                 ]);
         }
 
-        //进入战斗（暂定），获得散落星殿
-        private async Task GetSlxd()
+        //进入战斗，获得散落星殿
+        private Task GetSlxd()
         {
-            await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner!.Creature, DynamicVars.Damage, null, null);
+            EnterCombatWithoutExitingEvent<MiyabiTestEncounter>([], shouldResumeAfterCombat: true);
+            return Task.CompletedTask;
+        }
+
+        public override async Task Resume(AbstractRoom exitedRoom)
+        {
             await RelicCmd.Obtain<SanluoXingdianRelic>(base.Owner);
-            SetEventFinished(PageDescription("GET_SLXD"));
+            SetEventFinished(L10NLookup($"{Id.Entry}.pages.GET_SLXD.description"));
         }
 
         //放弃，从三张Rare卡中选一张，结束
         private async Task GiveUp()
         {
             await RewardsCmd.OfferCustom(Owner!, [new CardReward(CardCreationOptions.ForNonCombatWithDefaultOdds([Owner!.Character.CardPool],FilterRareCards), 3, Owner)]);
-            SetEventFinished(PageDescription("GIVE_UP_LEAVE"));
+            SetEventFinished(L10NLookup($"{Id.Entry}.pages.GIVE_UP_LEAVE.description"));
         }
 
         private bool FilterRareCards(CardModel card)

@@ -1,4 +1,5 @@
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Acts;
 using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts.Enemies;
 using Miyabists2.Scripts.Service;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Events
 {
+    [RegisterActEncounter(typeof(Glory))]
     internal class MiyabiBossEncounter : ModEncounterTemplate
     {
         // 所有可能出现的怪物

@@ -1,28 +1,30 @@
-using STS2RitsuLib.Interop.AutoRegistration;
-using Miyabists2.Scripts.Service;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Acts;
+using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts.Enemies;
+using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MegaCrit.Sts2.Core.Rooms;
 
 namespace Miyabists2.Scripts.Events
 {
+    [RegisterGlobalEncounter]
     internal class MiyabiTestEncounter : ModEncounterTemplate
     {
         // 所有可能出现的怪物
         public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<MiyabiGhostEnemy>()];
 
         // 这个遭遇在那些层级出现
-        public override bool IsValidForAct(ActModel act) => act.ActNumber() == 2; // 只在第二幕出现
+        public override bool IsValidForAct(ActModel act) => false; // 事件可在任意幕触发
 
         // 这个遭遇是否是弱怪池
         //public override bool IsWeak => false;
 
-        public override RoomType RoomType => RoomType.Elite;
+        public override RoomType RoomType => RoomType.Monster;
 
         public MiyabiTestEncounter() : base() // 这个遭遇的房间类型，这里是普通怪物
         {

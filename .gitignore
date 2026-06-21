@@ -2,6 +2,7 @@
 .godot/
 /android/
 .vs/
+_sts2/
 bin/
 obj/
 *.user

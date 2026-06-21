@@ -20,22 +20,22 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Events
 {
+    [RegisterSharedEvent]
     internal class AllForHupowangEvent : ModEventTemplate
     {
         // 背景图位置
-        public override string? CustomInitialPortraitPath => "res://images/events/juFufu.png";
+        public override EventAssetProfile AssetProfile => new(
+            InitialPortraitPath: "res://images/events/juFufu.png"
+        );
+
 
         // 设置一些数值
-        protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [
-            //new DamageVar(5m, ValueProp.Unblockable&ValueProp.Unpowered),
-            //new StringVar("Relic", ModelDb.Relic<SanluoXingdianRelic>().Title.GetFormattedText()),
-        ];
+        protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
         // 什么时候会遇到。
         public override bool IsAllowed(IRunState runState)
         {
-            return runState.Players.All(p => p.Character is Miyabi);
+            return runState.Players.All(p => p.Character is Miyabi || p.Character is Yixuan);
         }
 
         // 事件开始前的逻辑。
@@ -53,21 +53,21 @@ namespace Miyabists2.Scripts.Events
         // 生成事件初始选项。
         protected override IReadOnlyList<EventOption> GenerateInitialOptions() =>
         [
-            new EventOption(this,AllForHupowangChoice,"ALL_FOR_HUPOWANG_CHOICE"),
-            new EventOption(this,Others,"OTHERS"),
+            new EventOption(this, AllForHupowangChoice, InitialOptionKey("ALL_FOR_HUPOWANG_CHOICE")),
+            new EventOption(this, Others, InitialOptionKey("OTHERS")),
         ];
 
         private async Task AllForHupowangChoice()
         {
             CardModel card = base.Owner.RunState.CreateCard<AllForHupowang>(base.Owner);
             CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck), 2f);
-            SetEventFinished(PageDescription("JUFUFU"));
+            SetEventFinished(L10NLookup($"{Id.Entry}.pages.JUFUFU.description"));
         }
 
         private async Task Others()
         {
             await RewardsCmd.OfferCustom(Owner!, [new CardReward(CardCreationOptions.ForNonCombatWithDefaultOdds([Owner!.Character.CardPool], GetBreakCards), 3, Owner)]);
-            SetEventFinished(PageDescription("OTHER_BREAKER"));
+            SetEventFinished(L10NLookup($"{Id.Entry}.pages.OTHER_BREAKER.description"));
         }
 
         private bool GetBreakCards(CardModel card) 

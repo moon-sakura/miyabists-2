@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Enemies
 {
+    [RegisterMonster]
     internal class MiyabiGhostEnemy : ModMonsterTemplate
     {
         public MiyabiGhostEnemy()

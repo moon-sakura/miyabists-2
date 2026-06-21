@@ -1,5 +1,5 @@
 {
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.title" : "妖刀的试炼(未完成)",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.title" : "妖刀的试炼",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]你似乎来到了一场梦境。[/outline_color][/outline_size]",
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.DEEP_IN_HEART.title": "接受试炼",
@@ -18,7 +18,7 @@
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.description" : "[outline_size=10][outline_color=black]你已经来到试炼的最后阶段了。[/outline_color][/outline_size]",
 
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.title": "完成试炼",
-    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.description": "受到[red]{Damage}[/red]点伤害，获取{Relic}。",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.description": "[red]进入一场特殊的战斗[/red]，获取[gold]{Relic}[/gold]。",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.title": "放弃",
     "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.description": "也许不应该继续，从3张随机稀有卡牌中获取一张。",
 
