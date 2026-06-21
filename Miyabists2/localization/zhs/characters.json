@@ -36,7 +36,7 @@
   // 角色名（作宾语用）
   "MIYABISTS2_CHARACTER_YIXUAN.titleObject": "仪玄",
   // 角色选择界面描述
-  "MIYABISTS2_CHARACTER_YIXUAN.description": "墨色如金，笔落惊风。",
+  "MIYABISTS2_CHARACTER_YIXUAN.description": "以静制动，动静相宜。而动中有静，静中亦有动。",
   // 主语代词
   "MIYABISTS2_CHARACTER_YIXUAN.pronounSubject": "仪玄",
   // 宾语代词
@@ -46,16 +46,16 @@
   // 物主形容词
   "MIYABISTS2_CHARACTER_YIXUAN.possessiveAdjective": "仪玄的",
   // 死亡时事件对话
-  "MIYABISTS2_CHARACTER_YIXUAN.eventDeathPrevention": "笔墨未干……岂能至此……",
+  "MIYABISTS2_CHARACTER_YIXUAN.eventDeathPrevention": "怎会如此……",
   // 自定义模式文本
-  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierTitle": "仪玄的墨宝",
+  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierTitle": "仪玄与伙伴们",
   "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierDescription": "仪玄的卡牌现在会出现在奖励和商店中。",
   // 多人模式：存活时回合结束对白
   "MIYABISTS2_CHARACTER_YIXUAN.banter.alive.endTurnPing": "准备迎战",
   // 多人模式：死亡后回合结束对白
-  "MIYABISTS2_CHARACTER_YIXUAN.banter.dead.endTurnPing": "墨未尽……",
+  "MIYABISTS2_CHARACTER_YIXUAN.banter.dead.endTurnPing": "抱歉……",
   // 沉没宝库事件中对金币的独白
-  "MIYABISTS2_CHARACTER_YIXUAN.goldMonologue": "[sine]这金箔，可入墨否？[/sine]",
+  "MIYABISTS2_CHARACTER_YIXUAN.goldMonologue": "[sine]多多益善[/sine]",
   // 混沌香气事件中的内心独白
   "MIYABISTS2_CHARACTER_YIXUAN.aromaPrinciple": "[sine][orange]……静心……[/orange][/sine]",
   // 解锁条件文案

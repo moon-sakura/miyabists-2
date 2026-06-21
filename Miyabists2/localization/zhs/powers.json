@@ -275,6 +275,11 @@
     "MOHENHX_POWER.description": "",
     "MOHENHX_POWER.smartDescription": "接下来{Amount}张[gold]玄墨[/gold]卡牌变为0费",
 
+    "XUANMO_ANYONG_POWER.title": "玄墨暗涌",
+    "XUANMO_ANYONG_POWER.description": "",
+    "XUANMO_ANYONG_POWER.smartDescription": "每次使用[gold]伙伴[/gold]卡时，恢复2*{Amount}点[gold]闪能[/gold]，对敌人造成3*{Amount}点[gold]玄墨[/gold]伤害",
+
+
 	"SHANNENG_POWER.title": "闪能",
 	"SHANNENG_POWER.description": "可用于发动额外效果。上限为[blue]150[/blue]点。",
 	"SHANNENG_POWER.smartDescription": "可用于发动额外效果。上限为[blue]150[/blue]点。已使用[blue]{Used:diff()}[/blue]点，使用[blue]150[/blue]点后获得一张[gold]符法千重[/gold]。",
@@ -293,7 +298,7 @@
 
 	"RONGLU_SHENGWEN_POWER.title": "熔炉升温",
 	"RONGLU_SHENGWEN_POWER.description": "每次施加失衡时额外施加5失衡，然后层数-1。",
-	"RONGLU_SHENGWEN_POWER.smartDescription": "每次施加[gold]失衡值[/gold]时额外施加[blue]5[/blue]点，剩余[blue]{Display:diff()}[/blue]层。",
+	"RONGLU_SHENGWEN_POWER.smartDescription": "每次施加[gold]失衡值[/gold]时额外施加[blue]5[/blue]点",
 
 	"HUALIAN_XIEYI_POWER.title": "花链协议",
 	"HUALIAN_XIEYI_POWER.description": "右击消耗支援点数使用效果",

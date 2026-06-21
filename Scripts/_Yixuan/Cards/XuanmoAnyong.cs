@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
-using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts._Yixuan.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,30 +14,31 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Yixuan.Cards
 {
     [RegisterCard(typeof(YixuanCardPool))]
-    [RegisterArchaicToothTranscendence(typeof(XuanmoAnyong))]
-    internal class JinyingJue : YixuanAtkCardBase
+    internal class XuanmoAnyong : YixuanAtkCardBase
     {
-        public JinyingJue() : base(1, CardRarity.Basic, TargetType.AnyEnemy)
+        public XuanmoAnyong() : base(1, CardRarity.Ancient, TargetType.AnyEnemy)
         {
         }
 
-        //public override string PortraitPath => $"res://images/cards/fengHua.png";
+        protected override string ArtPath => $"res://images/_YiXuan/cards/xuanmoAnyong.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(5, ValueProp.Unblockable | ValueProp.Move),
-            new DynamicVar(DazeVarName, 2),
-            new BlockVar(5, ValueProp.Move),
+            new DamageVar(6, ValueProp.Unblockable | ValueProp.Move),
+            new DynamicVar(DazeVarName, 4),
+            new BlockVar(8, ValueProp.Move),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            if(cardPlay.Target.IsEnemy && cardPlay.Target.Monster.IntendsToAttack)
+            if (cardPlay.Target.IsEnemy && cardPlay.Target.Monster.IntendsToAttack)
             {
                 await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-                await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
+                await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, 4m, Owner.Creature, this);
             }
+
+            await PowerCmd.Apply<XuanmoAnyongPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
