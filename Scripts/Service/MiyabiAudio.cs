@@ -36,13 +36,14 @@ namespace Miyabists2.Scripts.Service
         }
 
         // 核心播放接口：传入文件名（不带后缀）即可
-        public static void Play(string key, float linearVolume = 1f)
+        public static void Play(string key, float linearVolume = 1f, bool stopOthers = true)
         {
             if (string.IsNullOrWhiteSpace(key)) return;
 
             Initialize(); // 确保已初始化
 
-            StopAll();
+            if (stopOthers)
+                StopAll();
 
             string normalizedKey = NormalizeKey(key);
 
@@ -74,8 +75,21 @@ namespace Miyabists2.Scripts.Service
 
             host.AddChild(player);
 
+            // 追踪活跃播放器，以便 StopAll() 能正确停止
+            lock (ActivePlayers)
+            {
+                ActivePlayers.Add(player);
+            }
+
             // 💖 核心白嫖：播放完自动删除自己，清理内存
-            player.Finished += () => player.QueueFree();
+            player.Finished += () =>
+            {
+                lock (ActivePlayers)
+                {
+                    ActivePlayers.Remove(player);
+                }
+                player.QueueFree();
+            };
 
             // 5. 播放
             player.Play();
@@ -203,8 +217,11 @@ namespace Miyabists2.Scripts.Service
     ///
     /// 用法示例：
     /// <code>
-    /// // 播放单个语音
+    /// // 播放单个语音（默认打断其他语音）
     /// MiyabiAudioPlay.Play("yicidaoWeishi");
+    ///
+    /// // 播放单个语音，不打断其他正在播放的语音
+    /// MiyabiAudioPlay.Play("yicidaoWeishi", stopOthers: false);
     ///
     /// // 从数组中随机播放（带音量）
     /// MiyabiAudioPlay.Random(new[] { "hurted_1", "hurted_2" }, 1.2f);
@@ -220,9 +237,10 @@ namespace Miyabists2.Scripts.Service
         /// </summary>
         /// <param name="key">音频文件名（不带后缀），如 "select_ChueWujin"</param>
         /// <param name="volume">线性音量 (0~1)，默认 1.0</param>
-        public static void Play(string key, float volume = 1f)
+        /// <param name="stopOthers">是否打断其他正在播放的语音，默认 true</param>
+        public static void Play(string key, float volume = 1f, bool stopOthers = true)
         {
-            MiyabiAudioService.Play(key, volume);
+            MiyabiAudioService.Play(key, volume, stopOthers);
         }
 
         /// <summary>
@@ -230,7 +248,8 @@ namespace Miyabists2.Scripts.Service
         /// </summary>
         /// <param name="keys">语音 key 数组</param>
         /// <param name="volume">线性音量 (0~1)，默认 1.0</param>
-        public static void Random(string[] keys, float volume = 1f)
+        /// <param name="stopOthers">是否打断其他正在播放的语音，默认 true</param>
+        public static void Random(string[] keys, float volume = 1f, bool stopOthers = true)
         {
             if (keys == null || keys.Length == 0)
             {
@@ -239,7 +258,7 @@ namespace Miyabists2.Scripts.Service
             }
 
             int idx = (int)(GD.Randi() % keys.Length);
-            MiyabiAudioService.Play(keys[idx], volume);
+            MiyabiAudioService.Play(keys[idx], volume, stopOthers);
         }
 
         /// <summary>
