@@ -1,6 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
-
-using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -8,15 +5,20 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-        internal class ShenXue : MiyabiAttackCardBase
+    [RegisterArchaicToothTranscendence(typeof(ShenxueHanyan))]
+    internal class ShenXue : MiyabiAttackCardBase
     {
         protected override string ArtPath => $"res://images/cards/shenXue.png";
 

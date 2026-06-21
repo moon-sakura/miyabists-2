@@ -1,0 +1,46 @@
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Miyabists2.Scripts.Cards
+{
+    [RegisterCard(typeof(MiyabiCardPool))]
+    internal class ShenxueHanyan : MiyabiAttackCardBase
+    {
+        protected override string ArtPath => $"res://images/cards/shenxue_hanyan.png";
+
+        public ShenxueHanyan() : base(1, CardRarity.Ancient, TargetType.AnyEnemy, true) { }
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DamageVar(6, ValueProp.Move),
+            new DynamicVar(DazeVarName, 3)
+        ];
+
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<FrostFallPower>(),
+            HoverTipFactory.FromPower<FrostpoPower>(),
+        ];
+
+        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await base.OnPlay(choiceContext, cardPlay);
+            await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
+        }
+
+        protected override void OnUpgrade()
+        {
+            DynamicVars.Damage.UpgradeValueBy(2);
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
+        }
+    }
+}

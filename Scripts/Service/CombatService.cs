@@ -21,6 +21,7 @@ using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 using System.Drawing;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -244,28 +245,29 @@ namespace Miyabists2.Scripts.Service
         {
             if (target == null || target.IsDead) return;
 
+            bool hasHanyan = dealer.Player.PlayerCombatState.AllCards.Any(c => c is ShenxueHanyan);
+
             SetFrostTriggerMultiply(target);
-            //await CreatureCmd.Damage(choiceContext, target, 20, ValueProp.Unpowered, dealer);
 
-            //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, dealer, null);
             await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
-            await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, dealer, null);
+            
+            if(hasHanyan)
+            {
+                await PowerCmd.Apply<FrostpoPower>(choiceContext, target, 1, dealer, null);
+                int fireAmount = target.GetPowerAmount<FrostFirePower>();
+
+                await CreatureCmd.Damage(choiceContext, target, fireAmount * 5m, ValueProp.Unpowered, dealer);
+                if(fireAmount / 5m >= 1)
+                    await PowerCmd.Apply<StrengthPower>(choiceContext, dealer, fireAmount / 5m, dealer, null);
+
+                await PowerCmd.Remove(target.GetPower<FrostFirePower>());
+            }
+            else
+            {
+                await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, dealer, null);
+            }
 
 
-            int fireAmount = target.GetPowerAmount<Miyabists2.Scripts.Powers.FrostFirePower>();
-            //Log.Info(">>> [MiyabiMod] 补丁:冰焰数值为： " + fireAmount ); // 建议加一行日志
-            //if (fireAmount > 0)//target.HasPower<Miyabists2.Scripts.Powers.FrostFirePower>())
-            //{
-                //造成冰焰层数*1.5点伤害，清除冰焰
-                //int fireAmount = target.GetPowerAmount<Miyabists2.Scripts.Powers.FrostFirePower>();
-
-                //await CreatureCmd.Damage(null, base.Owner, fireAmount * 1.5m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, base.Owner);
-
-            await CreatureCmd.Damage(choiceContext, target, 10m, ValueProp.Unpowered, dealer);
-
-            //if (!ShouldKeepFrostFire())
-                //await PowerCmd.Remove<FrostFirePower>(target);
-            //}
 
             if (target.HasPower<AttributeAnomalyPower>())
             {

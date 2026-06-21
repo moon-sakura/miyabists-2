@@ -80,23 +80,7 @@ namespace Miyabists2.Scripts.Cards
             //烈霜积蓄值积攒逻辑
             if (chkFB >= trigger + 1 && (!target.HasPower<FrostPower>()||MiyabiCombatService.GetCanAddWhenFire()))
             {
-                //await MiyabiCombatService.FrostApply(target,base.Owner.Creature,choiceContext);
-                //await PowerCmd.SetAmount<FrostBuildPower>(target, 1, base.Owner.Creature, this);
-                await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<FrostBuildPower>(), 1, dealer, null);
-                await PowerCmd.Apply<FrostPower>(choiceContext, target, 1, base.Owner.Creature, this);
-
-                //int fireAmount = target.GetPowerAmount<FrostFirePower>();
-                //await CreatureCmd.Damage(null, target, 10m, ValueProp.Unpowered, dealer);
-
-
-                if (target.HasPower<AttributeAnomalyPower>())
-                {
-                    await MiyabiCombatService.DisorderApply(target, base.Owner.Creature, choiceContext);
-                }
-                else
-                {
-                    await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, base.Owner.Creature, this);
-                }
+                await MiyabiCombatService.FrostApply(target, Owner.Creature, choiceContext);
             }
 
             // 2. 施加 1 层冰焰 (FrostFirePower)

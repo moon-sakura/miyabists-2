@@ -23,6 +23,10 @@
     "FROST_POWER.description": "受到伤害增加，不可叠加[aqua]烈霜积蓄值[/aqua]",
     "FROST_POWER.smartDescription": "受到伤害+[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|，不可叠加[aqua]烈霜积蓄值[/aqua]}",
 
+    "FROSTPO_POWER.title": "霜灼·破",
+    "FROSTPO_POWER.description": "消除所有冰焰，并根据冰焰层数造成伤害、获得力量，敌人受到伤害增加，不可叠加[aqua]烈霜积蓄值[/aqua]",
+    "FROSTPO_POWER.smartDescription": "造成[gold]冰焰[/gold]层数[blue]5[/blue]倍的伤害，每有5层[gold]冰焰[/gold]获得1点[gold]力量[/gold]，消除所有[gold]冰焰[/gold]，受到伤害+[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|，不可叠加[aqua]烈霜积蓄值[/aqua]}",
+
 	"DAZE_VULN_POWER.smartDescription": "一回合内，受伤+[blue]{Amount}%[/blue]",
 	"DAZE_VULN_POWER.description": "使敌人受到伤害增加",
 	"DAZE_VULN_POWER.title": "失衡易伤",
