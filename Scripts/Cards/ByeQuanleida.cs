@@ -28,6 +28,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(DazeVarName, 12),
             new CardsVar(1),
             new DynamicVar(SupportVarName,2),
+            new DynamicVar("Quanleida",2),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
@@ -50,14 +51,6 @@ namespace Miyabists2.Scripts.Cards
                     .Execute(choiceContext);
             }
 
-
-            bool isBreak = cardPlay.Target.HasPower<BreakPower>();
-
-            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext), isBreak, isBreak);
-        }
-
-        async Task FriendFunc(PlayerChoiceContext choiceContext)
-        {
             //选择一张攻击卡加入手卡
             CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, DynamicVars.Cards.IntValue);
             List<CardModel> cardsIn = (from c in PileType.Discard.GetPile(base.Owner).Cards
@@ -71,18 +64,28 @@ namespace Miyabists2.Scripts.Cards
                 {
                     foreach (CardModel card in cardModel)
                     {
-                        card.DynamicVars.Damage.BaseValue += 3;
                         await CardPileCmd.Add(cardModel, PileType.Hand);
                     }
                 }
             }
+
+            bool isBreak = cardPlay.Target.HasPower<BreakPower>();
+
+            await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext), isBreak, isBreak);
+        }
+
+        async Task FriendFunc(PlayerChoiceContext choiceContext)
+        {
+            
+            await PowerCmd.Apply<ByeQuanleidaPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(3);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
-            DynamicVars.Cards.UpgradeValueBy(1);
+            //DynamicVars.Cards.UpgradeValueBy(1);
+            DynamicVars["Quanleida"].UpgradeValueBy(1);
         }
     }
 }

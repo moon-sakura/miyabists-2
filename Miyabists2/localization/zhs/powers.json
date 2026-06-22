@@ -186,7 +186,9 @@
     "JINLONG_SZB_POWER.description": "",
     "JINLONG_SZB_POWER.smartDescription": "每回合开始时舍弃最多{Amount}张卡牌，然后抽取舍弃数量的卡。\\n每次舍弃或消耗卡牌时对所有敌人造成{Amount}点伤害。",
 
-
+    "BYE_QUANLEIDA_POWER.title": "再见全垒打！",
+    "BYE_QUANLEIDA_POWER.description": "猪猪冲击！",
+    "BYE_QUANLEIDA_POWER.smartDescription": "本回合所有造成伤害+{Amount}。",
 
 
 
