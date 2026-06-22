@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -31,6 +32,12 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            if (!MiyabiCombatService.IsBangbooOnField(Owner))
+            {
+                await MiyabiCombatService.SummonBangbooRandom(choiceContext, Owner);
+                return;
+            }
+
             foreach(var bangboo in Owner.Creature.Pets)
             {
                 if(bangboo.Monster is MiyabiBangbooBase)

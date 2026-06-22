@@ -1,4 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -10,6 +9,9 @@ using MinionLib.Powers;
 using MinionLib.Targeting;
 using Miyabists2.Scripts.Bangboo;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interactions.RightClick;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +21,14 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-    internal class BangbooHelpmeOne : MiyabiCardBase
+    internal class BangbooHelpmeOne : MiyabiCardBase, IModRightClickableCard
     {
         //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
 
         public BangbooHelpmeOne() : base(1, CardType.Skill, CardRarity.Common, MinionTargetTypes.AnyMinion) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            
+            new EnergyVar(1),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -38,8 +40,27 @@ namespace Miyabists2.Scripts.Cards
             //CardKeyword.Exhaust
         ];
 
+        public bool CanHandleRightClickLocal(ModRightClickContext context)
+        {
+            return !MiyabiCombatService.IsBangbooOnField(Owner) && Owner.PlayerCombatState.Energy >= 1;
+        }
+
+        // 右键执行（多人下会在所有客户端同步执行）
+        public async Task OnRightClick(ModRightClickExecutionContext context)
+        {
+            await CardCmd.Discard(new ThrowingPlayerChoiceContext(), this);
+            await PlayerCmd.GainEnergy(-1, Owner);
+            await MiyabiCombatService.SummonBangbooRandom(new ThrowingPlayerChoiceContext(), Owner);
+        }
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            if (cardPlay.Target == Owner.Creature || cardPlay.Target == null)
+            {
+                await MiyabiCombatService.SummonBangbooRandom(choiceContext, Owner);
+                return;
+            }
+
             if (cardPlay.Target is not { Monster: MiyabiBangbooBase } target) return;
 
             

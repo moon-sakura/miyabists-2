@@ -54,7 +54,7 @@
     "MIYABISTS2_CARD_ZHANSHU_CHONGZHENG.description": "抽{Cards:diff()}张卡\\n每有一张[gold]伙伴[/gold]卡，获得[blue]1[/blue]点[gold]支援点数[/gold]",
 
 	"MIYABISTS2_CARD_RANYOUYIN_SHARE.title": "燃油饮分享装",
-    "MIYABISTS2_CARD_RANYOUYIN_SHARE.description": "自己获得[blue]1[/blue]层[gold]易伤[/gold]，获得[blue]{Decible:diff()}[/blue]点[gold]喧响值[/gold]，获得[blue]1[/blue]点[gold]支援点数[/gold]\\n如果本回合使用过[gold]伙伴[/gold]卡，则[gold]重放[/gold][blue]1[/blue]",
+    "MIYABISTS2_CARD_RANYOUYIN_SHARE.description": "自己获得[blue]1[/blue]层[gold]易伤[/gold]，获得[blue]{Decible:diff()}[/blue]点[gold]喧响值[/gold]，获得[blue]1[/blue]点[gold]支援点数[/gold]\\n如果本回合使用过[gold]伙伴[/gold]卡，则再获得[blue]{Decible:diff()}[/blue]点[gold]喧响值[/gold]，获得[blue]1[/blue]点[gold]支援点数[/gold]",
 
 	"MIYABISTS2_CARD_CHUN_LIN.title": "春临",
     "MIYABISTS2_CARD_CHUN_LIN.description": "全体[aqua]烈霜[/aqua]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n从抽卡堆选择一张[gold]伙伴[/gold]卡加入手卡，并添加[gold]保留[/gold]\\n若本回合有敌人被[gold]击破[/gold]，则这张卡费用变为[blue]0[/blue]",
@@ -236,19 +236,19 @@
     "MIYABISTS2_CARD_BEE_GROUP.description": "为手卡与抽牌堆中任意{Cards:diff()}张卡附上可以触发{Chance}次的[gold]蜂群[/gold]",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.title": "邦布来袭！",
-    "MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "随机召唤一个邦布",
+    "MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "随机召唤{summon:diff()}个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.title": "邦布出击！",
-    "MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.description": "指定一个邦布，可以免费使用其1次能力",
+    "MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.description": "指定一个邦布，可以免费使用其1次能力\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.title": "邦布爆发！",
-    "MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.description": "指定一个邦布，每回合可额外使用其1次能力",
+    "MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.description": "指定一个邦布，每回合可额外使用其1次能力\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.title": "邦布充能！",
-    "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "所有邦布回复1次能力使用次数",
+    "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "所有邦布回复1次能力使用次数\\n场上不存在邦布时，随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "邦布救我！",
-    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "指定一个邦布获得[gold]守护者[/gold]",
+    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "今日修行",
     "MIYABISTS2_CARD_TRAINING_TODAY.description": "选择今天的修行",
@@ -341,19 +341,19 @@
 	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.description": "每次使用[gold]终结技[/gold]后获得[blue]5[/blue]点[gold]喧响值[/gold]，使用[gold]伙伴[/gold]卡后获得[blue]2[/blue]点[gold]喧响值[/gold]",
 
 	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE_YIXUAN.title": "邦布出击！",
-	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE_YIXUAN.description": "指定一个邦布，可以免费使用其1次能力",
+	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE_YIXUAN.description": "指定一个邦布，可以免费使用其1次能力\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.title": "邦布充能！",
-	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "所有邦布回复1次能力使用次数",
+	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "所有邦布回复1次能力使用次数\\n场上不存在邦布时，随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.title": "邦布救我！",
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "指定一个邦布获得[gold]守护者[/gold]",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.title": "邦布来袭！",
-	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "随机召唤一个邦布",
+	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "随机召唤{summon:diff()}个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE_YIXUAN.title": "邦布爆发！",
-	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE_YIXUAN.description": "指定一个邦布，每回合可额外使用其1次能力",
+	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE_YIXUAN.description": "指定一个邦布，每回合可额外使用其1次能力\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BEE_GROUP_YIXUAN.title": "蜂群集结",
 	"MIYABISTS2_CARD_BEE_GROUP_YIXUAN.description": "为手卡与抽牌堆中任意{Cards:diff()}张卡附上[gold]蜂群[/gold]",

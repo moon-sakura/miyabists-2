@@ -1,4 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -13,15 +12,19 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Badges;
+using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
+using MinionLib.Minion;
+using Miyabists2.Scripts.Bangboo;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System.Drawing;
-using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -42,6 +45,78 @@ namespace Miyabists2.Scripts.Service
             if (owner.Character is Yixuan)
             {
 
+            }
+        }
+
+        //bangboo相关
+        public static bool IsBangbooOnField(Player player)
+        {
+            if (player == null) return false;
+
+            bool b = player.Creature.Pets.Any(
+                pet => pet.IsMonster &&
+                pet.Monster is MiyabiBangbooBase);
+
+            // 假设你的邦布随从类叫 BangbooMinion，或者可以通过 ID/Tag 判断
+            // 这里根据你 Mod 的具体实现来改
+            GD.Print($"[MiyabiBangboo] : {player.Character.Title.ToString()} has any Bangboo? : {b.ToString()}");
+            return b;
+        }
+
+        /// <summary>
+        /// 邦布随机召唤
+        /// </summary>
+        public static async Task SummonBangbooRandom(PlayerChoiceContext choiceContext, Player Owner)
+        {
+            int result = MiyabiFuncBase.RandomInt(0, 12, Owner);
+
+            if (result == 0)
+            {
+                await MiyabiBangbooService.SummonBangboo<EousBangboo>(choiceContext, Owner, 6m, MinionPosition.Back, null, 1m);
+            }
+            else if (result == 1)
+            {
+                await MiyabiBangbooService.SummonBangboo<LuckybooBangboo>(choiceContext, Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+            }
+            else if (result == 2)
+            {
+                await MiyabiBangbooService.SummonBangboo<ExplorebooBangboo>(choiceContext, Owner, 4m, MinionPosition.Back);
+            }
+            else if (result == 3)
+            {
+                await MiyabiBangbooService.SummonBangboo<SumobooBangboo>(choiceContext, Owner, 4m, MinionPosition.Front, null, 1m);
+            }
+            else if (result == 4)
+            {
+                await MiyabiBangbooService.SummonBangboo<PaperbooBangboo>(choiceContext, Owner, 15m, MinionPosition.Front, null, 1m);
+            }
+            else if (result == 5)
+            {
+                await MiyabiBangbooService.SummonBangboo<OvertimebooBangboo>(choiceContext, Owner, 3m, MinionPosition.Back, null, 1m);
+            }
+            else if (result == 6)
+            {
+                await MiyabiBangbooService.SummonBangboo<SharkbooBangboo>(choiceContext, Owner, 8m, MinionPosition.FrontUpper, null, 1m);
+            }
+            else if (result == 7)
+            {
+                await MiyabiBangbooService.SummonBangboo<ExcalibooBangboo>(choiceContext, Owner, 8m, MinionPosition.BackUpper);
+            }
+            else if (result == 8)
+            {
+                await MiyabiBangbooService.SummonBangboo<AgentBangboo>(choiceContext, Owner, 10m, MinionPosition.FrontUpper);
+            }
+            else if (result == 9)
+            {
+                await MiyabiBangbooService.SummonBangboo<MagnetibooBangboo>(choiceContext, Owner, 8m, MinionPosition.FrontUpper, null, 1m);
+            }
+            else if (result == 10)
+            {
+                await MiyabiBangbooService.SummonBangboo<OneDennybooBangboo>(choiceContext, Owner, 4m, MinionPosition.FrontUpper, null, 1m);
+            }
+            else if (result == 11)
+            {
+                await MiyabiBangbooService.SummonBangboo<XixifuBangboo>(choiceContext, Owner, 8m, MinionPosition.Back, null, 1m);
             }
         }
 
