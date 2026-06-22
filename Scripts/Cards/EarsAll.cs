@@ -52,5 +52,11 @@ namespace Miyabists2.Scripts.Cards
                 }
             }
         }
+
+        protected override void OnUpgrade()
+        {
+            RemoveKeyword(CardKeyword.Exhaust);
+            base.OnUpgrade();
+        }
     }
 }
