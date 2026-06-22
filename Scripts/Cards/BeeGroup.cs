@@ -31,7 +31,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new CardsVar(1),
-            new DynamicVar("Chance",2),
+            new DynamicVar("Chance",1),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
