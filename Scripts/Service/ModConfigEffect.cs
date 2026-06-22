@@ -71,6 +71,9 @@ namespace Miyabists2.Scripts.Service
 
             if (card.Owner.Creature != base.Owner) return false;
 
+            if (!MiyabiFuncBase.IsMiyabiModChar(Owner.Player) && !MiyabiModConfig.ChangeToAllPlayers)
+                return false;
+
             if((int)MiyabiModConfig.CombatHardSelected < 3)
                 return false;
 
@@ -131,7 +134,7 @@ namespace Miyabists2.Scripts.Service
         {
             if (target != base.Owner || amount < target.CurrentHp) return;
 
-            if (!isRevealed && (int)MiyabiModConfig.CombatHardSelected >= 10)
+            if (!isRevealed && (int)MiyabiModConfig.CombatHardSelected >= 10 && (base.Owner.CombatState.Players.Any(c => c.Character is Miyabi) || MiyabiModConfig.ChangeToAllPlayers))
             {
                 decimal heal = Math.Max(1m, base.Owner.MaxHp*0.3m);
                 await CreatureCmd.Heal(base.Owner, heal);
