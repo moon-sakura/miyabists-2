@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Cards
         protected override string ArtPath => $"res://images/cards/ranyouyinShare.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("Decible", 5)
+            new DynamicVar("Decible", 4)
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
@@ -44,8 +44,6 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Exhaust
         ];
 
-        private int count = 0;
-
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
@@ -58,35 +56,17 @@ namespace Miyabists2.Scripts.Cards
 
             await MiyabiCombatService.AddDecible(Owner, n);
 
-            if (count != 0)
-            {
-                count = 0;
-                BaseReplayCount -= 1;
-            }
-        }
-
-        public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
-        {
             int amount = CombatManager.Instance.History.CardPlaysFinished
                 .Count((CardPlayFinishedEntry e)
                 => e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
                 && e.CardPlay.Card.Owner == base.Owner
                 && e.HappenedThisTurn(base.CombatState));
-            if (amount > 0 && count == 0)
-            {
-                BaseReplayCount += 1;
-                count++;
-            }
-            else
-            {
-                BaseReplayCount = 0;
-            }
-        }
 
-        public override Task AfterCombatVictory(CombatRoom room)
-        {
-            BaseReplayCount = 0;
-            return base.AfterCombatVictory(room);
+            if (amount > 0)
+            {
+                await PowerCmd.Apply<SupportPointPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+                await MiyabiCombatService.AddDecible(Owner, n);
+            }
         }
 
         //public override async Task BeforeCardPlayed(CardPlay cardPlay)

@@ -36,7 +36,8 @@ namespace Miyabists2.Scripts.Powers
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             //Amount++;
-            SetAmount(Amount + 1);
+            //SetAmount(Amount + 1);
+            await MiyabiCombatService.AddAnoBuildup(Owner, 1, null, null, new ThrowingPlayerChoiceContext());
             //await CheckAno();
         }
 

@@ -22,7 +22,7 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(11,ValueProp.Move),
             new DynamicVar(ParryVarName, 2),
-            new DynamicVar(SupportVarName,3),
+            new DynamicVar(SupportVarName,2),
             new DynamicVar(ExhaustCountVarName, GetExhaustUses()),
         ];
 
@@ -61,7 +61,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Block.UpgradeValueBy(3);
+            DynamicVars.Block.UpgradeValueBy(4);
             //if (base.DynamicVars.TryGetValue(ParryVarName, out DynamicVar p)) p.UpgradeValueBy(1);
 
         }

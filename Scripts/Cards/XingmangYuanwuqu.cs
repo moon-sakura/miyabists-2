@@ -18,12 +18,12 @@ namespace Miyabists2.Scripts.Cards
     [RegisterCard(typeof(MiyabiCardPool))]
         internal class XingmangYuanwuqu : MiyabiPartnerCardBase
     {
-        public XingmangYuanwuqu() : base(3, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
+        public XingmangYuanwuqu() : base(2, CardRarity.Common, TargetType.AnyEnemy, CardType.Attack) { }
 
         protected override string ArtPath => $"res://images/cards/xingmangZhongzhang.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(8, ValueProp.Move),
+            new DamageVar(2, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar(AnomalyBuildupVarName,5)
         ];
@@ -50,10 +50,10 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            EnergyCost.UpgradeBy(-1);
-            //DynamicVars.Damage.UpgradeValueBy(2);
+            //EnergyCost.UpgradeBy(-1);
+            DynamicVars.Damage.UpgradeValueBy(2);
 
-            //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
+            if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
             //if (base.DynamicVars.TryGetValue(AnomalyBuildupVarName, out DynamicVar a)) a.UpgradeValueBy(1);
         }
     }

@@ -19,6 +19,10 @@
     "FROST_FIRE_POWER.description": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（存在上限）。",
     "FROST_FIRE_POWER.smartDescription": "每层使[aqua]烈霜[/aqua]伤害增加[blue]5%[/blue]（上限[blue]{Limit:diff()}%[/blue]）。",
 
+    "XINNIAN_WUWO_POWER.smartDescription": "本回合若触发过[gold]击破[/gold]，本回合所有[gold]霜月[/gold]费用为0",
+	"XINNIAN_WUWO_POWER.description": "",
+	"XINNIAN_WUWO_POWER.title": "心念无我",
+
 	"FROST_POWER.title": "霜灼",
     "FROST_POWER.description": "受到伤害增加，不可叠加[aqua]烈霜积蓄值[/aqua]",
     "FROST_POWER.smartDescription": "受到伤害+[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|，不可叠加[aqua]烈霜积蓄值[/aqua]}",

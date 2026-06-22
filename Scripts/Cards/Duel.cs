@@ -47,14 +47,14 @@ namespace Miyabists2.Scripts.Cards
             var duelAttack = new MoveState(
                 "MIYABI_DUEL_ATTACK",
                 async targets => await DamageCmd
-                    .Attack(10)
+                    .Attack(6)
                     .Unpowered()
                     //.Targeting(base.Owner.Creature)
                     .FromMonster(cardPlay.Target.Monster)
                     //.WithAttackerFx()
                     .WithHitFx("vfx/vfx_attack_blunt")
                     .Execute(null),
-                new SingleAttackIntent(10)
+                new SingleAttackIntent(6)
             )
             {
                 FollowUpStateId = cardPlay.Target.Monster.NextMove.StateId,

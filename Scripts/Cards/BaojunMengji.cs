@@ -69,7 +69,6 @@ namespace Miyabists2.Scripts.Cards
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
             DynamicVars.Block.UpgradeValueBy(4);
             if (base.DynamicVars.TryGetValue(ParryVarName, out DynamicVar p)) p.UpgradeValueBy(1);
-
         }
     }
 }

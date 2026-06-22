@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts.Cards
         public HuaFa() : base(2, CardRarity.Uncommon,true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(14, ValueProp.Move),
+            new BlockVar(16, ValueProp.Move),
             new DynamicVar(ParryVarName, 2),
             new DynamicVar(SlipperyVarName, 0)
         ];
@@ -56,7 +56,6 @@ namespace Miyabists2.Scripts.Cards
         {
             DynamicVars.Block.UpgradeValueBy(4);
 
-            // 濡傛灉闇€瑕佸崌绾?Parry 鎴?Slippery锛屽彲浠ュ湪姝ゆ坊鍔犻€昏緫
             if (base.DynamicVars.TryGetValue(ParryVarName, out var v)) v.UpgradeValueBy(1);
         }
     }
