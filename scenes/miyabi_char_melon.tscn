@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://copodugibblvq"]
+
+[ext_resource type="Texture2D" uid="uid://lgralwld7t3q" path="res://images/charui/migua.png" id="1_d8j3b"]
+
+[node name="miyabi_char" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-10, -189)
+scale = Vector2(0.32747257, 0.32747263)
+texture = ExtResource("1_d8j3b")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -127.0
+offset_top = -380.0
+offset_right = 113.0
+offset_bottom = 61.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -408)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, -338)

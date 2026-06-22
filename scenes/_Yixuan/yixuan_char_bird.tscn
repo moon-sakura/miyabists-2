@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpegocr20axnx"]
+
+[ext_resource type="Texture2D" uid="uid://dfhlqrbgdp1ww" path="res://images/_YiXuan/char/yixuan_rest.png" id="1_tsagj"]
+
+[node name="YixuanEnemy" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0.99999976, -204.00002)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("1_tsagj")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -106.0
+offset_top = -434.0
+offset_right = 134.0
+offset_bottom = 53.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3, -408)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(47, -288)

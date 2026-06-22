@@ -51,8 +51,16 @@ public class Entry
         MiyabiSkinManager.RegisterCombatSkin("银庭花信", "res://scenes/miyabi_yinxing_char.tscn", "res://images/charui/miyabi_yinxing_char75.png");
         MiyabiSkinManager.RegisterShopSkin("银庭花信", "res://scenes/miyabi_yinxing_shop.tscn", "res://images/charui/miyabi_yinxing_char75.png");
 
+        MiyabiSkinManager.RegisterCombatSkin("蜜瓜雅", "res://scenes/miyabi_char_melon.tscn", "res://images/charui/migua.png");
+        MiyabiSkinManager.RegisterShopSkin("蜜瓜雅", "res://scenes/Miyabi_Shop_melon.tscn", "res://images/charui/migua.png");
+        MiyabiSkinManager.RegisterRestSkin("蜜瓜雅", "res://scenes/Miyabi_Rest_melon.tscn", "res://images/charui/migua.png");
+
         MiyabiSkinManager.RegisterCombatSkinYixuan("墨形影踪", "res://scenes/_Yixuan/yixuan_moxing_combat.tscn", "res://images/_YiXuan/char/yixua_moxing.png");
         MiyabiSkinManager.RegisterShopSkinYixuan("墨形影踪", "res://scenes/_Yixuan/yixuan_moxing_shop.tscn", "res://images/_YiXuan/char/yixua_moxing.png");
+
+        MiyabiSkinManager.RegisterCombatSkinYixuan("青溟鸟", "res://scenes/_Yixuan/yixuan_char_bird.tscn", "res://images/_YiXuan/char/yixuan_rest.png");
+        MiyabiSkinManager.RegisterShopSkinYixuan("青溟鸟", "res://scenes/_Yixuan/yixuan_Shop_bird.tscn", "res://images/_YiXuan/char/yixuan_rest.png");
+        //MiyabiSkinManager.RegisterRestSkinYixuan("蜜瓜雅", "res://scenes/Miyabi_Rest_melon.tscn", "res://images/_YiXuan/char/yixuan_rest.png");
         //Log.Debug("星见雅MOD加载完成");
     }
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3uaw4cly2v43"]
+
+[ext_resource type="Texture2D" uid="uid://lgralwld7t3q" path="res://images/charui/migua.png" id="1_jy3ym"]
+
+[node name="MiyabiRest" type="Node2D"]
+
+[node name="MiyabiChar33" type="Sprite2D" parent="."]
+position = Vector2(-0.9999962, -298.00003)
+scale = Vector2(0.52159333, 0.5215933)
+texture = ExtResource("1_jy3ym")
