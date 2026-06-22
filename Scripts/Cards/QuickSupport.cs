@@ -67,6 +67,7 @@ namespace Miyabists2.Scripts.Cards
                         target = base.Owner.Creature.CombatState.HittableEnemies.ToList().MaxBy(e => e.CurrentHp);
                     }
 
+
                     await CardCmd.AutoPlay(choiceContext, item, target);
                 }
             }

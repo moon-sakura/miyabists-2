@@ -32,6 +32,18 @@ namespace Miyabists2.Scripts.Service
         //public static bool GetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard;
         //public static void ResetThisTurnUsedPartnerCard() => ThisTurnUsedPartnerCard = false;
         //public static void UsedPartnerCard() => ThisTurnUsedPartnerCard = true;
+        public static void SetSupportCostToZero(PlayerChoiceContext choiceContext, CardModel card, Player owner)
+        {
+            if(owner.Character is Miyabi)
+            {
+                
+            }
+
+            if (owner.Character is Yixuan)
+            {
+
+            }
+        }
 
 
         public static bool AnoNeedCheck { get; set; } = true;
