@@ -2,6 +2,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts._Yixuan.Powers;
 using System;
@@ -25,6 +26,11 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("SHUFA_ZONGSHI_AMOUNT",1),
+        ];
+
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<ShufaZongshiPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

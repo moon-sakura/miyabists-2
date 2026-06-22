@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts._Yixuan.Powers;
 using Miyabists2.Scripts.Patches;
@@ -34,6 +35,11 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             MiyabiKeywords.Xuanmo,
             CardKeyword.Exhaust,
             CardKeyword.Retain
+        ];
+
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<ShufaZhi>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
