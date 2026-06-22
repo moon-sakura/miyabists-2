@@ -29,8 +29,24 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(3, ValueProp.Move),
-            new DynamicVar(DazeVarName, 12)
+            new DynamicVar(DazeVarName, 12),
+            new BlockVar(3, ValueProp.Move),
         ];
+
+        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+
+            if (!isAOE)
+                // 1. 执行基础攻击
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+
+            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
+
+        }
 
         //public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
         //{
@@ -49,6 +65,7 @@ namespace Miyabists2.Scripts.Cards
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(1);
+            DynamicVars.Block.UpgradeValueBy(1);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(3);
         }
     }

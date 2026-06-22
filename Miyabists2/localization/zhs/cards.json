@@ -33,7 +33,7 @@
     "MIYABISTS2_CARD_JIXIAN_SHIYU.description": "[gold]滑溜[/gold]{SLIPPERY_POWER:diff()}\\n手卡中加入{Cards:diff()}张带有[gold]消耗[/gold]的[gold]寒雀[/gold]，本场战斗费用变为0\\n本回合不能再抽卡",
 
 	"MIYABISTS2_CARD_HUA_CI.title": "花辞",
-    "MIYABISTS2_CARD_HUA_CI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n添加到手牌时溢出则会自动使用",
+    "MIYABISTS2_CARD_HUA_CI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n获得{Block:diff()}点格挡\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n添加到手牌时溢出则会自动使用",
 
 	"MIYABISTS2_CARD_HUA_FA.title": "花筏",
     "MIYABISTS2_CARD_HUA_FA.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n若本回合使用过[gold]伙伴[/gold]牌，则额外获得[blue]6[/blue]点格挡，获得[blue]1[/blue]点[gold]招架[/gold]",

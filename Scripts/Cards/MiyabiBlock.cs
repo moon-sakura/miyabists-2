@@ -36,7 +36,7 @@ namespace Miyabists2.Scripts.Cards
             base.AfterCreated();
         }
 
-        decimal Block() => (int)MiyabiModConfig.CombatHardSelected >= 4 ? 6m : 4m;
+        decimal Block() => (int)MiyabiModConfig.CombatHardSelected >= 4 ? 7m : 5m;
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
