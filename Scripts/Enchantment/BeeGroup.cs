@@ -42,7 +42,23 @@ namespace Miyabists2.Scripts.Enchantment
         }
 
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
+
+        [SavedProperty]
+        public int TriggerChance { get; private set; } = 1;
+
+        public void SetChance(int chance)
+        {
+            TriggerChance = chance;
+            DynamicVars["Chance"].BaseValue = TriggerChance;
+            DynamicVars["OriChance"].BaseValue = TriggerChance;
+        }
+
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => 
+        [
+            new DynamicVar("Chance",1),
+            new DynamicVar("OriChance",1),
+        ];
         //protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromKeyword(CardKeyword.Retain)];
 
         // 图标位置。大小1:1就行，原版是64x64
@@ -73,7 +89,11 @@ namespace Miyabists2.Scripts.Enchantment
             var targetCard = validCards.TakeRandom(1, base.Card.Owner.RunState.Rng.Shuffle).FirstOrDefault();
 
             if (targetCard != null)
-                CardCmd.Enchant<BeeGroupEnchantment>(targetCard, 1m).SetTemporary(true);
+            {
+                var e = CardCmd.Enchant<BeeGroupEnchantment>(targetCard, 1m);
+                e.SetTemporary(true);
+                e.SetChance(DynamicVars["OriChance"].IntValue);
+            }
         }
 
 
@@ -93,6 +113,12 @@ namespace Miyabists2.Scripts.Enchantment
             if (MiyabiFuncBase.GetIsTrue100(20, base.Card.Owner)||(cardPlay.Card.Enchantment is BeeGroupEnchantment && MiyabiFuncBase.GetIsTrue100(35, base.Card.Owner)))
             {
                 await CardCmd.AutoPlay(choiceContext, base.Card, null);
+                TriggerChance--;
+                DynamicVars["Chance"].BaseValue = TriggerChance;
+                if (TriggerChance <= 0)
+                {
+                    CardCmd.ClearEnchantment(base.Card);
+                }
             }
         }
 

@@ -31,6 +31,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new CardsVar(1),
+            new DynamicVar("Chance",2),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
@@ -51,7 +52,11 @@ namespace Miyabists2.Scripts.Cards
             if (targetCard != null)
             {
                 foreach (var card in targetCard)
-                {CardCmd.Enchant<BeeGroupEnchantment>(card, 1m)?.SetTemporary(true); }
+                {
+                    var e = CardCmd.Enchant<BeeGroupEnchantment>(card, 1m);
+                    e?.SetTemporary(true);
+                    e.SetChance(DynamicVars["Chance"].IntValue);
+                }
                
             }
         }
@@ -60,6 +65,7 @@ namespace Miyabists2.Scripts.Cards
         {
             AddKeyword(CardKeyword.Innate);
             //DynamicVars.Cards.UpgradeValueBy(1);
+            DynamicVars["Chance"].UpgradeValueBy(1);
         }
     }
 }
