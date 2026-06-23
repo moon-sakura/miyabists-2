@@ -252,48 +252,40 @@ namespace Miyabists2.Scripts.Service
                 chkAno += target.GetPowerAmount<AnomalyBuildupPower>();
 
 
-            // 情况 A：已经有异常状态了
-            if (hasAnomaly)
+            // 统一用循环处理，支持任意大小的积蓄值一次性正确结算
+            // 奇数轮施加异常，偶数轮触发紊乱（交替进行）
+            if (chkAno >= trigger)
             {
-                if (chkAno >= trigger && chkAno < 2 * trigger) // 满溢则紊乱
+                while (chkAno >= trigger)
                 {
-                    await DisorderApply(target, dealer, choiceContext);
-                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - trigger + 1, dealer, card);
-                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - trigger + 1, dealer, null);
+                    if (hasAnomaly)
+                    {
+                        await DisorderApply(target, dealer, choiceContext);
+                        hasAnomaly = false;
+                    }
+                    else
+                    {
+                        await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, dealer, card);
+                        hasAnomaly = true;
+                    }
+                    chkAno -= trigger;
                 }
-                else if(chkAno >= 2 * trigger)
+
+                // 设置剩余积蓄
+                var buildupPower = target.GetPower<AnomalyBuildupPower>();
+                int remainder = chkAno + 1;
+                if (buildupPower != null)
                 {
-                    await DisorderApply(target, dealer, choiceContext);
-                    await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, dealer, card);
-                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
-                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - 2 * trigger + 1, dealer, null);
+                    await MiyabiFuncBase.SetPowerAmount(choiceContext, buildupPower, remainder, dealer, null);
                 }
-                else // 未满则继续堆积蓄
+                else if (remainder > 0)
                 {
-                    await PowerCmd.Apply<AnomalyBuildupPower>(choiceContext, target, anoVar, dealer, card);
+                    await PowerCmd.Apply<AnomalyBuildupPower>(choiceContext, target, remainder, dealer, card);
                 }
             }
-            // 情况 B：还没有异常状态
-            else
+            else // 未满则继续堆积蓄
             {
-                if (chkAno >= trigger && chkAno < 2 * trigger) // 满溢则触发异常
-                {
-                    await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, dealer, card);
-                    //await PowerCmd.Apply<AnomalyBuildupPower>(target, 1-trigger, dealer, card);
-                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(choiceContext, target, chkAno - trigger + 1, dealer, card);
-                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - trigger + 1, dealer, null);
-
-                }
-                else if(chkAno >= 2 * trigger)
-                {
-                    await DisorderApply(target, dealer, choiceContext);
-                    //await PowerCmd.SetAmount<AnomalyBuildupPower>(target, chkAno - 2*trigger + 1, dealer, card);
-                    await MiyabiFuncBase.SetPowerAmount(choiceContext, target.GetPower<AnomalyBuildupPower>(), chkAno - 2 * trigger + 1, dealer, null);
-                }
-                else // 未满则仅仅添加积蓄
-                {
-                    await PowerCmd.Apply<AnomalyBuildupPower>(choiceContext, target, anoVar, dealer, card);
-                }
+                await PowerCmd.Apply<AnomalyBuildupPower>(choiceContext, target, anoVar, dealer, card);
             }
         }
 
