@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts.Cards
     [RegisterCard(typeof(MiyabiCardPool))]
     internal class XinnianWuwo : MiyabiCardBase
     {
-        protected override string ArtPath => $"res://images/cards/zhanshuChongzheng.png";
+        protected override string ArtPath => $"res://images/cards/xinnianWuwo.png";
 
         public XinnianWuwo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self, true) { }
 
