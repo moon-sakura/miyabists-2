@@ -1,12 +1,10 @@
-using STS2RitsuLib.Interop.AutoRegistration;
-using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Service;
 using System;
@@ -17,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Powers
 {
-    internal class BamianwfPower : ModPowerTemplate
+    internal class BestPartnerPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -27,20 +25,30 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
-        [
-            HoverTipFactory.FromKeyword(MiyabiKeywords.Friends),
-            HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill),
-        ];
+        private int count = 0;
+
+        private int max = 6;
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {
             if (cardPlay.Card.Owner != base.Owner.Player) return;
 
-            if (cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.EndSkill))
-                await MiyabiCombatService.AddDecible(base.Owner.Player, 5 * Amount);
-            else if (cardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends))
-                await MiyabiCombatService.AddDecible(base.Owner.Player, 2 * Amount);
+            count++;
+
+            if(count % 2 == 0 && count <= max)
+            {
+                await CreatureCmd.Heal(Owner, Amount);
+            }
+        }
+
+        public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+        {
+            if(side == Owner.Side)
+            {
+                count = 0;
+            }
+
+            return base.AfterSideTurnEnd(choiceContext, side, participants);
         }
     }
 }

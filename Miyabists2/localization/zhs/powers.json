@@ -306,6 +306,10 @@
 	"RONGLU_SHENGWEN_POWER.description": "每次施加失衡时额外施加5失衡，然后层数-1。",
 	"RONGLU_SHENGWEN_POWER.smartDescription": "每次施加[gold]失衡值[/gold]时额外施加[blue]5[/blue]点",
 
+    "BEST_PARTNER_POWER.title": "最佳同事",
+	"BEST_PARTNER_POWER.description": "每使用2张卡恢复1点生命，每回合最多触发3次。",
+	"BEST_PARTNER_POWER.smartDescription": "每使用2张卡恢复{Amount}点生命，每回合最多触发3次。",
+
 	"HUALIAN_XIEYI_POWER.title": "花链协议",
 	"HUALIAN_XIEYI_POWER.description": "右击消耗支援点数使用效果",
 	"HUALIAN_XIEYI_POWER.smartDescription": "右键点击能力：[gold]支援点数[/gold][blue]2[/blue]：获得{Energy:energyIcons()}，对所有敌人造成[blue]{Damage:diff()}[/blue]点伤害",
