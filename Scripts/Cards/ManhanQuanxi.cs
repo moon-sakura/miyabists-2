@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts.Cards
         protected override void OnUpgrade()
         {
             DynamicVars.Block.UpgradeValueBy(2);
-            if (base.DynamicVars.TryGetValue(SupportVarName, out DynamicVar s)) s.UpgradeValueBy(1);
+            //if (base.DynamicVars.TryGetValue(SupportVarName, out DynamicVar s)) s.UpgradeValueBy(1);
 
         }
     }

@@ -28,6 +28,7 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar("Strength", 2),
             new DamageVar(10,ValueProp.Unpowered),
             new DynamicVar(SupportVarName, 2),
+            new EnergyVar(1)
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>

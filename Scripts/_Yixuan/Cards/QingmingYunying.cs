@@ -54,6 +54,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             {
                 await PowerCmd.Apply<ShufaZhi>(choiceContext, enemy, 25, Owner.Creature, this);
             }
+
+            await CreatureCmd.Heal(Owner.Creature, Owner.Creature.MaxHp * 0.3m);
         }
 
         protected override void OnUpgrade()

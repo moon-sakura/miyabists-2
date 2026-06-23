@@ -36,6 +36,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 async targets => await DamageCmd
                     .Attack(1)
                     .WithHitCount(4)
+                    .Unpowered()
                     //.Targeting(base.Owner.Creature)
                     .FromMonster(cardPlay.Target.Monster)
                     //.WithAttackerFx()

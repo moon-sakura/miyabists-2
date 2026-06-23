@@ -36,6 +36,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(0,ValueProp.Unpowered),
+            new EnergyVar(1)
         ];
 
         public void SetDamage(int damage)

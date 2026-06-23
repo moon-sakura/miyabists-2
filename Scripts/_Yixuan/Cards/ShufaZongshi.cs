@@ -16,7 +16,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
     [RegisterCard(typeof(YixuanCardPool))]
     internal class ShufaZongshi : YixuanCardBase
     {
-        public ShufaZongshi() : base(2, CardType.Power,CardRarity.Rare, TargetType.Self)
+        public ShufaZongshi() : base(1, CardType.Power,CardRarity.Rare, TargetType.Self)
         {
         }
 
@@ -25,12 +25,12 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("SHUFA_ZONGSHI_AMOUNT",1),
+            new DynamicVar("SHUFA_ZONGSHI_AMOUNT",2),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
-            HoverTipFactory.FromPower<ShufaZongshiPower>(),
+            //HoverTipFactory.FromPower<ShufaZongshiPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
