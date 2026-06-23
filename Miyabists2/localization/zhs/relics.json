@@ -154,6 +154,6 @@
 	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "青溟鸟",
-	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "战斗开始时回复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "战斗开始时回复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]\\n每次失去生命时，从获得{Vigor}点活力、获得{Thorns}层荆棘、对所有敌人施加{Shufa}层术法值中随机触发一个效果\\n右键点击：失去最大生命值5%的生命，可以选择一个效果触发。",
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": ""
 }

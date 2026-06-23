@@ -48,7 +48,7 @@
 			<Private>false</Private>
 		</Reference>
 
-		<PackageReference Include="FuYnAloft.Sts2.MinionLib" Version="0.5.2"/>
+		<PackageReference Include="FuYnAloft.Sts2.MinionLib" Version="0.5.2" />
 
 		<!--<Reference Include="MinionLib">
 			<HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.dll</HintPath>
