@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
     [RegisterCard(typeof(MiyabiCardPool))]
     internal class BestPartner : MiyabiPartnerCardBase
     {
-        protected override string ArtPath => $"res://images/cards/manhanQuanxi.png";
+        protected override string ArtPath => $"res://images/cards/zuijiaTongshi.png";
 
         public BestPartner() : base(1, CardRarity.Uncommon, TargetType.Self) { }
 
