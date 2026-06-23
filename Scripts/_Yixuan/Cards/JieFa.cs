@@ -27,6 +27,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            GD.Print(choiceContext.GetType().FullName);
+
             Vigor2thorns vigor = base.Owner.Creature.CombatState?.CreateCard<Vigor2thorns>(base.Owner);
             Thorns2vigor thorns = base.Owner.Creature.CombatState?.CreateCard<Thorns2vigor>(base.Owner);
 

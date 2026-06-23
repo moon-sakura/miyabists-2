@@ -1,15 +1,20 @@
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.DevConsole.ConsoleCommands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Multiplayer;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Relics;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts._Yixuan.Cards.NoneShow;
@@ -20,7 +25,6 @@ using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Interactions.RightClick;
-using MegaCrit.Sts2.Core.Entities.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Ui.Toast;
 
@@ -260,7 +264,8 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         // 右键执行（多人下会在所有客户端同步执行）
         public async Task OnRightClick(ModRightClickExecutionContext context)
         {
-            await CreatureCmd.Damage(new HookPlayerChoiceContext(Owner,Owner.NetId,GameActionType.CombatPlayPhaseOnly), Owner.Creature, Owner.Creature.MaxHp * 0.05m, ValueProp.Unpowered | ValueProp.Unblockable, Owner.Creature);
+            await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner.Creature, Owner.Creature.MaxHp * 0.05m, ValueProp.Unpowered | ValueProp.Unblockable, Owner.Creature);
+            await GetChoice(context.PlayerChoiceContext);
         }
 
 
@@ -271,37 +276,43 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                 return;
             }
 
-            if(dealer != Owner.Creature && result.UnblockedDamage > 0)
+            GD.Print($"[MiyabiRelic] : Yixuan got hurted form {dealer.LogName}!\\nHook : {choiceContext.GetType().FullName}");
+
+            if (dealer != Owner.Creature && result.UnblockedDamage > 0)
             {
                 await ChoosePower(choiceContext, 0, true);
             }
 
+
             if (dealer == Owner.Creature && result.UnblockedDamage > 0)
             {
-                ShufaChoice shufa = base.Owner.Creature.CombatState?.CreateCard<ShufaChoice>(base.Owner);
-                VigorChoice vigor = base.Owner.Creature.CombatState?.CreateCard<VigorChoice>(base.Owner);
-                ThornsChoice thorns = base.Owner.Creature.CombatState?.CreateCard<ThornsChoice>(base.Owner);
+                //await GetChoice(choiceContext);
+            }
+        }
+
+        public async Task GetChoice(PlayerChoiceContext choiceContext)
+        {
+            ShufaChoice shufa = base.Owner.Creature.CombatState?.CreateCard<ShufaChoice>(base.Owner);
+            VigorChoice vigor = base.Owner.Creature.CombatState?.CreateCard<VigorChoice>(base.Owner);
+            ThornsChoice thorns = base.Owner.Creature.CombatState?.CreateCard<ThornsChoice>(base.Owner);
 
 
-                if (shufa != null && vigor != null && thorns != null)
+            if (shufa != null && vigor != null && thorns != null)
+            {
+                List<CardModel> options = new List<CardModel> { shufa, vigor, thorns };
+                CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, base.Owner);
+                if (chosen is ShufaChoice)
                 {
-                    List<CardModel> options = new List<CardModel> { shufa, vigor, thorns };
-
-                    CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, base.Owner);
-                    if (chosen is ShufaChoice)
-                    {
-                        await ChoosePower(choiceContext, 3);
-                    }
-                    else if (chosen is VigorChoice)
-                    {
-                        await ChoosePower(choiceContext, 1);
-                    }
-                    else if (chosen is ThornsChoice)
-                    {
-                        await ChoosePower(choiceContext, 2);
-                    }
+                    await ChoosePower(choiceContext, 3);
                 }
-
+                else if (chosen is VigorChoice)
+                {
+                    await ChoosePower(choiceContext, 1);
+                }
+                else if (chosen is ThornsChoice)
+                {
+                    await ChoosePower(choiceContext, 2);
+                }
             }
         }
 
