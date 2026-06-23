@@ -182,7 +182,7 @@
     "MIYABISTS2_CARD_XINGMANG_YUANWUQU.description": "造成{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}",
 
 	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.title": "幻想式奏鸣",
-    "MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为[blue]0[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外从弃牌堆中选一张加入手卡",
+    "MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为[blue]0[/blue]，若是[gold]伙伴[/gold]卡，则下1次使用可以不消耗[gold]支援点数[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外从弃牌堆中选一张加入手卡",
 	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2_CARD_TU_NA_FA.title": "吐纳法",
@@ -363,7 +363,7 @@
 	"MIYABISTS2_CARD_BYE_QUANLEIDA_YIXUAN.selectionScreenPrompt": "选择{Cards:diff()}张[gold]攻击卡[/gold]",
 
 	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING_YIXUAN.title": "幻想式奏鸣",
-	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING_YIXUAN.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为[blue]0[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外从弃牌堆中选一张加入手卡",
+	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING_YIXUAN.description": "选择抽牌堆中一张非能力卡加入手卡，本回合费用变为[blue]0[/blue]，若是[gold]伙伴[/gold]卡，则下1次使用可以不消耗[gold]支援点数[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外从弃牌堆中选一张加入手卡",
 	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING_YIXUAN.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2_CARD_MANHAN_QUANXI_YIXUAN.title": "满汉全席！",

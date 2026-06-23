@@ -50,5 +50,10 @@ namespace Miyabists2.Scripts.Cards
                 exhaustVar.BaseValue = GetExhaustUses();
             }
         }
+
+        //
+        public virtual int SupportFree { get; set; } = 0;
+
+        public virtual void AddSupportFree(int amount) => SupportFree += amount;
     }
 }

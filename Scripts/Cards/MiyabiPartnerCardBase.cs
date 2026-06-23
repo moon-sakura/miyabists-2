@@ -30,6 +30,10 @@ namespace Miyabists2.Scripts.Cards
         {
             get
             {
+                if(SupportFree > 0)
+                {
+                    return true;
+                }
                 if(DynamicVars.TryGetValue(SupportVarName, out DynamicVar s))
                 {
                     return Owner.Creature.GetPowerAmount<SupportPointPower>() >= s.IntValue;
@@ -115,8 +119,16 @@ namespace Miyabists2.Scripts.Cards
             {
                 await FriendFunc();
 
+                if(SupportFree >= 1)
+                {
+                    SupportFree -= 1;
+                    return;
+                }
+
                 if (!isFreeThis)
+                {
                     await CostSupporPoint(supportT, choiceContext);
+                }
             }
         }
 
@@ -124,6 +136,7 @@ namespace Miyabists2.Scripts.Cards
         public virtual int CheckSupportCost(int a)
         {
             if (!base.Owner.Creature.HasPower<SupportPointPower>()) return 0;
+            if (SupportFree >= 1) return 3;
             return base.Owner.Creature.GetPower<SupportPointPower>().CanUsePoint(a);
             //{
             //    return false;

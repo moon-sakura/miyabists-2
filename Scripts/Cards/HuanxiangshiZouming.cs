@@ -1,4 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -10,11 +9,13 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BaseLib.Utils.BetaMainCompatibility;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -53,6 +54,10 @@ namespace Miyabists2.Scripts.Cards
                 if (cardModel != null)
                 {
                     cardModel.SetToFreeThisTurn();
+                    if (cardModel is MiyabiCardBase card && card.CanonicalKeywords.Contains(MiyabiKeywords.Friends))
+                    {
+                        card.AddSupportFree(1);
+                    }
                     await CardPileCmd.Add(cardModel, PileType.Hand);
                 }
             }
@@ -72,10 +77,14 @@ namespace Miyabists2.Scripts.Cards
                                         select c).ToList();
             if (cardsIn2.Count != 0)
             {
-                CardModel cardModel2 = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn2, base.Owner, prefs2)).FirstOrDefault();
+                MiyabiCardBase cardModel2 = (MiyabiCardBase)(await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn2, base.Owner, prefs2)).FirstOrDefault();
                 if (cardModel2 != null)
                 {
                     cardModel2.SetToFreeThisTurn();
+                    if (cardModel2 is MiyabiCardBase card && card.CanonicalKeywords.Contains(MiyabiKeywords.Friends))
+                    {
+                        card.AddSupportFree(1);
+                    }
                     await CardPileCmd.Add(cardModel2, PileType.Hand);
                 }
             }
@@ -83,7 +92,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            //if (base.DynamicVars.TryGetValue("SupportPoint", out DynamicVar s)) s.UpgradeValueBy(2);
+            //if (base.DynamicVars.TryGetValue(SupportVarName, out DynamicVar s)) s.UpgradeValueBy(-1);
             EnergyCost.UpgradeBy(-1);
         }
     }
