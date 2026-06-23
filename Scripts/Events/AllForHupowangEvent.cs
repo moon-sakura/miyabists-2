@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Events
 {
@@ -35,7 +36,7 @@ namespace Miyabists2.Scripts.Events
         // 什么时候会遇到。
         public override bool IsAllowed(IRunState runState)
         {
-            return runState.Players.All(p => p.Character is Miyabi || p.Character is Yixuan);
+            return runState.Players.All(p => MiyabiFuncBase.IsMiyabiModChar(p));
         }
 
         // 事件开始前的逻辑。
@@ -77,6 +78,7 @@ namespace Miyabists2.Scripts.Events
             if(card is CuteFeitianzhuang) { return true; }
             if(card is CiquanLianji) { return true; }
             if(card is MingfuWange) { return true; }
+            if(card is ChuijinDixin) { return true; }
             return false;
         }
 

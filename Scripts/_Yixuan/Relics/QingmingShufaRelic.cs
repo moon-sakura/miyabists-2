@@ -20,6 +20,7 @@ using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Interactions.RightClick;
+using MegaCrit.Sts2.Core.Entities.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Ui.Toast;
 
@@ -253,17 +254,17 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         // 可选：本地预检，返回 false 则本次右键不会触发
         public bool CanHandleRightClickLocal(ModRightClickContext context)
         {
-            return Owner.Creature.CurrentHp > Owner.Creature.MaxHp * 0.05m;
+            return Owner.Creature.CurrentHp > Owner.Creature.MaxHp * 0.05m && CombatManager.Instance.IsInProgress;
         }
 
         // 右键执行（多人下会在所有客户端同步执行）
         public async Task OnRightClick(ModRightClickExecutionContext context)
         {
-            await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner.Creature, Owner.Creature.MaxHp * 0.05m, ValueProp.Unpowered | ValueProp.Unblockable, Owner.Creature);
+            await CreatureCmd.Damage(new HookPlayerChoiceContext(Owner,Owner.NetId,GameActionType.CombatPlayPhaseOnly), Owner.Creature, Owner.Creature.MaxHp * 0.05m, ValueProp.Unpowered | ValueProp.Unblockable, Owner.Creature);
         }
 
 
-        public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override async Task AfterDamageReceivedLate(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
             if(target != Owner.Creature || !CombatManager.Instance.IsInProgress)
             {
@@ -309,7 +310,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             int c = choose;
             if (random)
             {
-                MiyabiFuncBase.RandomInt(1, 4, Owner);
+                c = MiyabiFuncBase.RandomInt(1, 4, Owner);
             }
 
             switch (c)

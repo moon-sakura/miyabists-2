@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Yixuan.Cards.NoneShow
 {
     [RegisterCard(typeof(StatusCardPool))]
-    internal class ThornsChoice : ModCardTemplate
+    internal class ThornsChoice : YixuanCardBase
     {
         public ThornsChoice() : base(-1, CardType.Status, CardRarity.Token, TargetType.None, false)
         {
