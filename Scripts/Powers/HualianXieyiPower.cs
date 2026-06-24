@@ -79,11 +79,11 @@ namespace Miyabists2.Scripts.Powers
                     }
                 }
 
-                await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), enemies, DynamicVars.Damage, Owner);
+                await CreatureCmd.Damage(context.PlayerChoiceContext, enemies, DynamicVars.Damage, Owner);
 
                 await PlayerCmd.GainEnergy(Amount, Owner.Player);
 
-                await PowerCmd.Apply<SupportPointPower>(new ThrowingPlayerChoiceContext(), base.Owner, -2, null, null);
+                await PowerCmd.Apply<SupportPointPower>(context.PlayerChoiceContext, base.Owner, -2, null, null);
             }
         }
     }

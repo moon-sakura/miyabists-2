@@ -264,7 +264,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         // 右键执行（多人下会在所有客户端同步执行）
         public async Task OnRightClick(ModRightClickExecutionContext context)
         {
-            await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner.Creature, Owner.Creature.MaxHp * 0.05m, ValueProp.Unpowered | ValueProp.Unblockable, Owner.Creature);
+            await CreatureCmd.Damage(context.PlayerChoiceContext, Owner.Creature, Owner.Creature.MaxHp * 0.05m, ValueProp.Unpowered | ValueProp.Unblockable, Owner.Creature);
             await GetChoice(context.PlayerChoiceContext);
         }
 

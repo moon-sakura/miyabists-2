@@ -48,9 +48,9 @@ namespace Miyabists2.Scripts.Cards
         // 右键执行（多人下会在所有客户端同步执行）
         public async Task OnRightClick(ModRightClickExecutionContext context)
         {
-            await CardCmd.Discard(new ThrowingPlayerChoiceContext(), this);
+            await CardCmd.Discard(context.PlayerChoiceContext, this);
             await PlayerCmd.GainEnergy(-1, Owner);
-            await MiyabiCombatService.SummonBangbooRandom(new ThrowingPlayerChoiceContext(), Owner);
+            await MiyabiCombatService.SummonBangbooRandom(context.PlayerChoiceContext, Owner);
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -113,10 +113,10 @@ namespace Miyabists2.Scripts.Powers
             }
 
             // 造成记录伤害
-            await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), enemies, recorded, ValueProp.Unpowered, Owner);
+            await CreatureCmd.Damage(context.PlayerChoiceContext, enemies, recorded, ValueProp.Unpowered, Owner);
 
             // 消耗5点支援点数
-            await PowerCmd.Apply<SupportPointPower>(new ThrowingPlayerChoiceContext(), Owner, -5, null, null);
+            await PowerCmd.Apply<SupportPointPower>(context.PlayerChoiceContext, Owner, -5, null, null);
 
             // 重置记录伤害，进入追踪造成伤害阶段
             DynamicVars["RecordedDamage"].BaseValue = 0;
