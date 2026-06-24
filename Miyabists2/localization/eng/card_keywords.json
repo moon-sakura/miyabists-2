@@ -1,21 +1,21 @@
 {
-	"MIYABISTS2_KEYWORD_LIE_SHUANG.description": "Deals [gold]Frostbite Charge[/gold] equal to damage dealt to enemies",
-    "MIYABISTS2_KEYWORD_LIE_SHUANG.title": "Frostbite",
+	"MIYABISTS2_KEYWORD_LIE_SHUANG.description": "Grants the enemy [gold]Rending Frost Buildup[/gold] equal to damage dealt.",
+    "MIYABISTS2_KEYWORD_LIE_SHUANG.title": "Rending Frost",
 
-	"MIYABISTS2_KEYWORD_XUANMO.description": "Piercing damage type, deals [gold]unblockable[/gold] damage. Restores Flash Energy after use.",
+	"MIYABISTS2_KEYWORD_XUANMO.description": "Piercing damage type. Deals [gold]unblockable[/gold] damage. Restores Flash Energy after use.",
     "MIYABISTS2_KEYWORD_XUANMO.title": "Dark Ink",
 
-	"MIYABISTS2_KEYWORD_MINGPO.description": "Piercing damage type, deals [gold]unblockable[/gold] damage.",
-    "MIYABISTS2_KEYWORD_MINGPO.title": "Soulbreak",
+	"MIYABISTS2_KEYWORD_MINGPO.description": "Piercing damage type. Deals [gold]unblockable[/gold] damage.",
+    "MIYABISTS2_KEYWORD_MINGPO.title": "Fate Break",
 
-	"MIYABISTS2_KEYWORD_EXHAUST_X.description": "Expires after X uses.",
+	"MIYABISTS2_KEYWORD_EXHAUST_X.description": "Exhausts after X uses.",
     "MIYABISTS2_KEYWORD_EXHAUST_X.title": "Exhaust X",
 
-	"MIYABISTS2_KEYWORD_FRIENDS.description": "Don't underestimate our bond!",
-    "MIYABISTS2_KEYWORD_FRIENDS.title": "Companion",
+	"MIYABISTS2_KEYWORD_FRIENDS.description": "Don't underestimate our bonds, kora!",
+    "MIYABISTS2_KEYWORD_FRIENDS.title": "Partner",
 
 	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.description": "Blessings from another world",
-	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.title": "Otherworld Companion",
+	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.title": "Otherworld Partner",
 
 	"MIYABISTS2_KEYWORD_END_SKILL.description": "A very, very powerful skill",
     "MIYABISTS2_KEYWORD_END_SKILL.title": "Ultimate"

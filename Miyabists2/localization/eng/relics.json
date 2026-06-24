@@ -1,159 +1,159 @@
 {
-	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.title": "Demon Blade: Tailless",
-  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "At the start of combat, gain [blue]3[/blue] [gold]Frostfall[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].",
-  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.flavor": "A very, very hard blade",
+	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.title": "Notail",
+	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "At combat start, gain [blue]3[/blue] [gold]Frostfall[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].",
+	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.flavor": "A very, very hard blade.",
 
-	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.title": "Demon Blade Unleashed",
-  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "At the start of combat, gain [blue]3[/blue] [gold]Frostfall[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold]. At the start of combat, add a [red]Demon Blade Unleashed[/red] card to your hand.",
-  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.flavor": "",
+	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.title": "Notail Unleashed",
+	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "At combat start, gain [blue]3[/blue] [gold]Frostfall[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold]. At combat start, add a [red]Notail Unleashed[/red] to your hand.",
+	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.flavor": "",
 
-	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.title": "Mirrored Blossom, Hidden Shadow",
-  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.description": "The first time you would be attacked each combat, automatically play a [gold]Limit Vision[/gold].",
-  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.flavor": "Flash!",
+	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.title": "Mirrored Flower, Hidden Shadow",
+	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.description": "Before taking damage for the first time each combat, automatically play a [gold]Liminal Sight[/gold].",
+	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.flavor": "Dodge.",
 
-	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.title": "Frostflame Scorch",
-  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.description": "After triggering [gold]Frostburn[/gold], you can still stack [gold]Frostbite Charge[/gold]. The damage bonus cap from [gold]Iceflame[/gold] becomes [blue]100%[/blue].",
-  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.flavor": "",
+	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.title": "Frost Flame Scorch",
+	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.description": "After triggering [gold]Frost Burn[/gold], you can still stack [gold]Rending Frost Buildup[/gold]. The damage bonus cap from [gold]Frost Flame[/gold] becomes [blue]100%[/blue].",
+	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.flavor": "",
 
-	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.title": "Scattered Star Hall",
-  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.description": "Each combat victory grants a tally: normal enemy, tally +[blue]1[/blue]; elite, +[blue]2[/blue]; boss, +[blue]3[/blue]. After accumulating [blue]7[/blue] points, at combat start add a [gold]Pinnacle of Martial Arts[/gold] to your hand. After [blue]15[/blue] points, add [gold]Exterminate All Evil[/gold] instead.",
-  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.flavor": "\"I think it would be well-suited for training… provided I could shrink down to its size.\"",
+	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.title": "Starfall Shrine",
+	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.description": "Gain a counter upon each combat victory: Normal enemy, counter +[blue]1[/blue]; Elite, counter +[blue]2[/blue]; Boss, counter +[blue]3[/blue]. After accumulating [blue]7[/blue] points, add a [gold]Pinnacle of Martial Arts[/gold] to your hand at combat start. After [blue]15[/blue] points, add a [gold]Sever All Sins[/gold] instead.",
+	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.flavor": "\"I think it would be perfect for training... if only I could match its size.\"",
 
 	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.title": "Section 6 Badge",
-  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.description": "At the start of combat, gain [blue]6[/blue] [gold]Support Points[/gold].",
-  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.flavor": "A very, very good section",
+	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.description": "At combat start, gain [blue]6[/blue] [gold]Support Points[/gold].",
+	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.flavor": "A very, very good section.",
 
-	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "Will to Surpass Despair",
-  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "When HP is above [blue]80%[/blue], damage dealt is reduced by [red]50%[/red]; when HP is below [blue]50%[/blue], damage dealt is increased by [blue]20%[/blue]; when HP is below [blue]20%[/blue], damage dealt is increased by [blue]50%[/blue].",
-  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "A will that blossoms in the face of despair",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "Will to Surpass Desperation",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "When HP is above [blue]80%[/blue], damage dealt is reduced by [red]50%[/red]; When HP is below [blue]50%[/blue], damage dealt is increased by [blue]20%[/blue]; When HP is below [blue]20%[/blue], damage dealt is increased by [blue]50%[/blue].",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "A will that blooms in the face of despair.",
 
-	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.title": "Vitality Sachet",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "Every [blue]3[/blue] turns, gain [blue]{ADD:diff()}[/blue] [gold]Decibel[/gold]. Maximum Decibel cap becomes [blue]{MAX:diff()}[/blue].",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.flavor": "A sachet filled with mysterious energy, steadily accumulating power.",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.title": "Qi-Nurturing Sachet",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "Every [blue]3[/blue] turns, gain [blue]{ADD:diff()}[/blue] [gold]Decibel[/gold]. Max Decibel cap becomes [blue]{MAX:diff()}[/blue].",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.flavor": "A sachet infused with mysterious energy, steadily accumulating power.",
+
 
 
 
 
 	"MIYABISTS2_RELIC_CHOUKA_RELIC.title": "Encrypted Master Tape",
-  	"MIYABISTS2_RELIC_CHOUKA_RELIC.description": "You can now draw cards at rest sites! At the end of each combat, gain [blue]1[/blue] free draw.\\nCurrent Cinema: [gold]{CINIMA:diff()}[/gold]\\nCurrent free draws: [blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]At combat start, gain 2 Frost Moon Stance[/color][/s]\\n[s][color=gray]At combat start, gain 3 Breathing Technique[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Frostbite Cracks[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color]\\n[s][color=gray]At combat start, gain 3 Breathing Technique[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Frostbite Cracks[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color]\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color]\\n[s][color=gray]At combat start, gain 4 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Frostbite Cracks[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color]\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color]\\nAt combat start, gain 4 [color=gold]Strength[/color]\\n[s][color=gray]At combat start, gain 2 Frostbite Cracks[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color]\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color]\\nAt combat start, gain 4 [color=gold]Strength[/color]\\nAt combat start, gain 2 [color=gold]Frostbite Cracks[/color]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color]\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color]\\nAt combat start, gain 4 [color=gold]Strength[/color]\\nAt combat start, gain 2 [color=gold]Frostbite Cracks[/color]\\nAt combat start, gain 6 [color=gold]Strength[/color]\\n[s][color=gray]At combat start, gain 2 Natural Genius[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color]\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color]\\nAt combat start, gain 4 [color=gold]Strength[/color]\\nAt combat start, gain 2 [color=gold]Frostbite Cracks[/color]\\nAt combat start, gain 6 [color=gold]Strength[/color]\\nAt combat start, gain 2 [color=gold]Natural Genius[/color]|Something went wrong X(}",
-  	"MIYABISTS2_RELIC_CHOUKA_RELIC.flavor": "Take a chance — turn your clunker into a sports car!",
+	"MIYABISTS2_RELIC_CHOUKA_RELIC.description": "You can now perform gacha pulls at Rest Sites! At the end of each combat, gain [blue]1[/blue] free pull.\\nCurrent Cinema: [gold]{CINIMA:diff()}[/gold]\\nCurrent Free Pulls: [blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]At combat start, gain 2 Frost Moon Stance.[/color][/s]\\n[s][color=gray]At combat start, gain 3 Breathing Technique.[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Cracking Frost.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius.[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color].\\n[s][color=gray]At combat start, gain 3 Breathing Technique.[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Cracking Frost.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius.[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color].\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color].\\n[s][color=gray]At combat start, gain 4 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Cracking Frost.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius.[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color].\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color].\\nAt combat start, gain 4 [color=gold]Strength[/color].\\n[s][color=gray]At combat start, gain 2 Cracking Frost.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius.[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color].\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color].\\nAt combat start, gain 4 [color=gold]Strength[/color].\\nAt combat start, gain 2 [color=gold]Cracking Frost[/color].\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]At combat start, gain 2 Natural Genius.[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color].\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color].\\nAt combat start, gain 4 [color=gold]Strength[/color].\\nAt combat start, gain 2 [color=gold]Cracking Frost[/color].\\nAt combat start, gain 6 [color=gold]Strength[/color].\\n[s][color=gray]At combat start, gain 2 Natural Genius.[/color][/s]|At combat start, gain 2 [color=gold]Frost Moon Stance[/color].\\nAt combat start, gain 3 [color=gold]Breathing Technique[/color].\\nAt combat start, gain 4 [color=gold]Strength[/color].\\nAt combat start, gain 2 [color=gold]Cracking Frost[/color].\\nAt combat start, gain 6 [color=gold]Strength[/color].\\nAt combat start, gain 2 [color=gold]Natural Genius[/color]|Something went wrong X(}",
+	"MIYABISTS2_RELIC_CHOUKA_RELIC.flavor": "Go for it -- turn your bicycle into a motorcycle!",
 
 
 
-	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.title": "Overtimeboo",
-  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.description": "At the start of each turn, summon [gold]Overtimeboo[/gold].",
-  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.flavor": "Workhorse Boo",
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.title": "Overtime Boo",
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.description": "At combat start, summon [gold]Overtime Boo[/gold].",
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.flavor": "Workhorse Boo.",
 
-	"MIYABISTS2_RELIC_PAPERBOO_RELIC.title": "Paperboo",
-  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.description": "At the start of each turn, summon [gold]Paperboo[/gold].",
-  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.flavor": "I'll protect you!",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC.title": "Paper Shell Boo",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC.description": "At combat start, summon [gold]Paper Shell Boo[/gold].",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC.flavor": "I'll protect you!",
 
-	"MIYABISTS2_RELIC_SHARKBOO_RELIC.title": "Sharkboo",
-  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.description": "At the start of each turn, summon [gold]Sharkboo[/gold].",
-  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.flavor": "I'm powering up!",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC.title": "Shark Teeth Boo",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC.description": "At combat start, summon [gold]Shark Teeth Boo[/gold].",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC.flavor": "Starting up!",
 
-	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.title": "Excaliboo",
-  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.description": "At the start of each turn, summon [gold]Excaliboo[/gold].",
-  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.flavor": "Almost ready!",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.title": "Excali-Boo",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.description": "At combat start, summon [gold]Excali-Boo[/gold].",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.flavor": "Almost ready!",
 
 	"MIYABISTS2_RELIC_AGENT_RELIC.title": "Agent Gulliver",
-  	"MIYABISTS2_RELIC_AGENT_RELIC.description": "At the start of each turn, summon [gold]Agent Gulliver[/gold].",
-  	"MIYABISTS2_RELIC_AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
+	"MIYABISTS2_RELIC_AGENT_RELIC.description": "At combat start, summon [gold]Agent Gulliver[/gold].",
+	"MIYABISTS2_RELIC_AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
 
-	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.title": "Luckyboo",
-  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.description": "At the start of each turn, summon [gold]Luckyboo[/gold]. There is a small chance to summon [gold]One Dennyboo[/gold] instead.",
-  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.flavor": "Does it really bring fortune?",
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.title": "Fortune Boo",
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.description": "At combat start, summon [gold]Fortune Boo[/gold]. Has a small chance to summon [gold]Denny Boo[/gold] instead.",
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.flavor": "Does it really bring fortune?",
 
-	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.title": "Exploreboo",
-  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.description": "At the start of each turn, summon [gold]Exploreboo[/gold].",
-  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.flavor": "We're gonna be rich!",
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.title": "Treasure Boo",
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.description": "At combat start, summon [gold]Treasure Boo[/gold].",
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.flavor": "We're gonna be rich!",
 
-	"MIYABISTS2_RELIC_SUMOBOO_RELIC.title": "Sumoboo",
-  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.description": "At the start of each turn, summon [gold]Sumoboo[/gold].",
-  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.flavor": "Takeoff.",
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC.title": "Pounce Boo",
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC.description": "At combat start, summon [gold]Pounce Boo[/gold].",
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC.flavor": "Takeoff.",
 
 	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.title": "Eous",
-  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.description": "At the start of each turn, summon [gold]Eous[/gold]. When choosing the next floor's room, you have [blue]{Rooms:diff()}[/blue] chance(s) to ignore the current route.",
-  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.flavor": "The very best Eous",
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.description": "At combat start, summon [gold]Eous[/gold]. When choosing the next floor's room, you may ignore the current path [blue]{Rooms:diff()}[/blue] time(s).",
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.flavor": "The very best Eous.",
 
-	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.title": "Magnetiboo",
-	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "At the start of each turn, summon [gold]Magnetiboo[/gold].",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.title": "Magneti-Boo",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "At combat start, summon [gold]Magneti-Boo[/gold].",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "Full magnetic power!",
 
 	"MIYABISTS2_RELIC_XIXIFU_RELIC.title": "Xixifu",
-	"MIYABISTS2_RELIC_XIXIFU_RELIC.description": "At the start of each turn, summon [gold]Xixifu[/gold].",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.description": "At combat start, summon [gold]Xixifu[/gold].",
 	"MIYABISTS2_RELIC_XIXIFU_RELIC.flavor": "What kind of Bangboo is this?",
 
 
 
-	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.title": "Overtimeboo",
-  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Overtimeboo[/gold].",
-  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.flavor": "Workhorse Boo",
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.title": "Overtime Boo",
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Overtime Boo[/gold].",
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.flavor": "Workhorse Boo.",
 
-	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.title": "Paperboo",
-  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Paperboo[/gold].",
-  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.flavor": "I'll protect you!",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.title": "Paper Shell Boo",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Paper Shell Boo[/gold].",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.flavor": "I'll protect you!",
 
-	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.title": "Sharkboo",
-  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Sharkboo[/gold].",
-  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.flavor": "I'm powering up!",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.title": "Shark Teeth Boo",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Shark Teeth Boo[/gold].",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.flavor": "Starting up!",
 
-	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.title": "Excaliboo",
-  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Excaliboo[/gold].",
-  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.flavor": "Almost ready!",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.title": "Excali-Boo",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Excali-Boo[/gold].",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.flavor": "Almost ready!",
 
 	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.title": "Agent Gulliver",
-  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Agent Gulliver[/gold].",
-  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.flavor": "FBI, OPEN THE DOOR!",
+	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.description": "At combat start, summon [gold]Agent Gulliver[/gold].",
+	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.flavor": "FBI, OPEN THE DOOR!",
 
-	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.title": "Luckyboo",
-  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Luckyboo[/gold]. There is a small chance to summon [gold]One Dennyboo[/gold] instead.",
-  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.flavor": "Does it really bring fortune?",
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.title": "Fortune Boo",
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Fortune Boo[/gold]. Has a small chance to summon [gold]Denny Boo[/gold] instead.",
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.flavor": "Does it really bring fortune?",
 
-	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.title": "Exploreboo",
-  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Exploreboo[/gold].",
-  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.flavor": "We're gonna be rich!",
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.title": "Treasure Boo",
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Treasure Boo[/gold].",
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.flavor": "We're gonna be rich!",
 
-	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.title": "Sumoboo",
-  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Sumoboo[/gold].",
-  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.flavor": "Takeoff.",
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.title": "Pounce Boo",
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Pounce Boo[/gold].",
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.flavor": "Takeoff.",
 
 	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.title": "Eous",
-  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Eous[/gold]. When choosing the next floor's room, you have [blue]{Rooms:diff()}[/blue] chance(s) to ignore the current route.",
-  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.flavor": "The very best Eous",
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Eous[/gold]. When choosing the next floor's room, you may ignore the current path [blue]{Rooms:diff()}[/blue] time(s).",
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.flavor": "The very best Eous.",
 
-	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.title": "Magnetiboo",
-	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Magnetiboo[/gold].",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.title": "Magneti-Boo",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.description": "At combat start, summon [gold]Magneti-Boo[/gold].",
 	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.flavor": "Full magnetic power!",
 
 	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.title": "Xixifu",
-	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.description": "At the start of each turn, summon [gold]Xixifu[/gold].",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.description": "At combat start, summon [gold]Xixifu[/gold].",
 	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.flavor": "What kind of Bangboo is this?",
 
 
 
-	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.title": "Will to Surpass Despair",
-  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.description": "When HP is above [blue]80%[/blue], damage dealt is reduced by [red]50%[/red]; when HP is below [blue]50%[/blue], damage dealt is increased by [blue]20%[/blue]; when HP is below [blue]20%[/blue], damage dealt is increased by [blue]50%[/blue].",
-  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.flavor": "A will that blossoms in the face of despair",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.title": "Will to Surpass Desperation",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.description": "When HP is above [blue]80%[/blue], damage dealt is reduced by [red]50%[/red]; When HP is below [blue]50%[/blue], damage dealt is increased by [blue]20%[/blue]; When HP is below [blue]20%[/blue], damage dealt is increased by [blue]50%[/blue].",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.flavor": "A will that blooms in the face of despair.",
 
-	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.title": "Vitality Sachet",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "Every [blue]3[/blue] turns, gain [blue]{ADD:diff()}[/blue] [gold]Decibel[/gold]. Maximum Decibel cap becomes [blue]{MAX:diff()}[/blue].",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.flavor": "A sachet filled with mysterious energy, steadily accumulating power.",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.title": "Qi-Nurturing Sachet",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "Every [blue]3[/blue] turns, gain [blue]{ADD:diff()}[/blue] [gold]Decibel[/gold]. Max Decibel cap becomes [blue]{MAX:diff()}[/blue].",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.flavor": "A sachet infused with mysterious energy, steadily accumulating power.",
 
 	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.title": "Encrypted Master Tape",
-  	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.description": "You can now draw cards at rest sites! At the end of each combat, gain [blue]1[/blue] free draw.\\nCurrent Cinema: [gold]{CINIMA:diff()}[/gold]\\nCurrent free draws: [blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]At combat start, add a Thousandfold Talisman to your hand[/color][/s]\\n[s][color=gray]After playing Thousandfold Talisman, add a Thousandfold Talisman: Rupture to your hand[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength[/color][/s]\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousandfold Talisman to your hand[/color][/s]|At combat start, add a [color=gold]Thousandfold Talisman[/color] to your hand\\n[s][color=gray]After playing Thousandfold Talisman, add a Thousandfold Talisman: Rupture to your hand[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength[/color][/s]\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousandfold Talisman to your hand[/color][/s]|At combat start, add a [color=gold]Thousandfold Talisman[/color] to your hand\\nAfter playing [color=gold]Thousandfold Talisman[/color], add a [color=gold]Thousandfold Talisman: Rupture[/color] to your hand\\n[s][color=gray]At combat start, gain 4 Strength[/color][/s]\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousandfold Talisman to your hand[/color][/s]|At combat start, add a [color=gold]Thousandfold Talisman[/color] to your hand\\nAfter playing [color=gold]Thousandfold Talisman[/color], add a [color=gold]Thousandfold Talisman: Rupture[/color] to your hand\\nAt combat start, gain 4 [color=gold]Strength[/color]\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousandfold Talisman to your hand[/color][/s]|At combat start, add a [color=gold]Thousandfold Talisman[/color] to your hand\\nAfter playing [color=gold]Thousandfold Talisman[/color], add a [color=gold]Thousandfold Talisman: Rupture[/color] to your hand\\nAt combat start, gain 4 [color=gold]Strength[/color]\\nAt combat start, apply 1 [color=gold]Demon Subjugation[/color] to all enemies\\n[s][color=gray]At combat start, gain 6 Strength[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousandfold Talisman to your hand[/color][/s]|At combat start, add a [color=gold]Thousandfold Talisman[/color] to your hand\\nAfter playing [color=gold]Thousandfold Talisman[/color], add a [color=gold]Thousandfold Talisman: Rupture[/color] to your hand\\nAt combat start, gain 4 [color=gold]Strength[/color]\\nAt combat start, apply 1 [color=gold]Demon Subjugation[/color] to all enemies\\nAt combat start, gain 6 [color=gold]Strength[/color]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousandfold Talisman to your hand[/color][/s]|At combat start, add a [color=gold]Thousandfold Talisman[/color] to your hand\\nAfter playing [color=gold]Thousandfold Talisman[/color], add a [color=gold]Thousandfold Talisman: Rupture[/color] to your hand\\nAt combat start, gain 4 [color=gold]Strength[/color]\\nAt combat start, apply 1 [color=gold]Demon Subjugation[/color] to all enemies\\nAt combat start, gain 6 [color=gold]Strength[/color]\\nAfter playing [color=gold]Azure Cloud Shadow[/color], add a [color=gold]Thousandfold Talisman[/color] to your hand|Something went wrong X(}",
-  	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.flavor": "Take a chance — turn your clunker into a sports car!",
+	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.description": "You can now perform gacha pulls at Rest Sites! At the end of each combat, gain [blue]1[/blue] free pull.\\nCurrent Cinema: [gold]{CINIMA:diff()}[/gold]\\nCurrent Free Pulls: [blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]At combat start, add a Thousand Talismans to your hand.[/color][/s]\\n[s][color=gray]After playing Thousand Talismans, add a Thousand Talismans: Break to your hand.[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength.[/color][/s]\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousand Talismans to your hand.[/color][/s]|At combat start, add a [color=gold]Thousand Talismans[/color] to your hand.\\n[s][color=gray]After playing Thousand Talismans, add a Thousand Talismans: Break to your hand.[/color][/s]\\n[s][color=gray]At combat start, gain 4 Strength.[/color][/s]\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousand Talismans to your hand.[/color][/s]|At combat start, add a [color=gold]Thousand Talismans[/color] to your hand.\\nAfter playing [color=gold]Thousand Talismans[/color], add a [color=gold]Thousand Talismans: Break[/color] to your hand.\\n[s][color=gray]At combat start, gain 4 Strength.[/color][/s]\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousand Talismans to your hand.[/color][/s]|At combat start, add a [color=gold]Thousand Talismans[/color] to your hand.\\nAfter playing [color=gold]Thousand Talismans[/color], add a [color=gold]Thousand Talismans: Break[/color] to your hand.\\nAt combat start, gain 4 [color=gold]Strength[/color].\\n[s][color=gray]At combat start, apply 1 Demon Subjugation to all enemies.[/color][/s]\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousand Talismans to your hand.[/color][/s]|At combat start, add a [color=gold]Thousand Talismans[/color] to your hand.\\nAfter playing [color=gold]Thousand Talismans[/color], add a [color=gold]Thousand Talismans: Break[/color] to your hand.\\nAt combat start, gain 4 [color=gold]Strength[/color].\\nAt combat start, apply 1 [color=gold]Demon Subjugation[/color] to all enemies.\\n[s][color=gray]At combat start, gain 6 Strength.[/color][/s]\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousand Talismans to your hand.[/color][/s]|At combat start, add a [color=gold]Thousand Talismans[/color] to your hand.\\nAfter playing [color=gold]Thousand Talismans[/color], add a [color=gold]Thousand Talismans: Break[/color] to your hand.\\nAt combat start, gain 4 [color=gold]Strength[/color].\\nAt combat start, apply 1 [color=gold]Demon Subjugation[/color] to all enemies.\\nAt combat start, gain 6 [color=gold]Strength[/color].\\n[s][color=gray]After playing Azure Cloud Shadow, add a Thousand Talismans to your hand.[/color][/s]|At combat start, add a [color=gold]Thousand Talismans[/color] to your hand.\\nAfter playing [color=gold]Thousand Talismans[/color], add a [color=gold]Thousand Talismans: Break[/color] to your hand.\\nAt combat start, gain 4 [color=gold]Strength[/color].\\nAt combat start, apply 1 [color=gold]Demon Subjugation[/color] to all enemies.\\nAt combat start, gain 6 [color=gold]Strength[/color].\\nAfter playing [color=gold]Azure Cloud Shadow[/color], add a [color=gold]Thousand Talismans[/color] to your hand.|Something went wrong X(}",
+	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.flavor": "Go for it -- turn your bicycle into a motorcycle!",
 
-	// ====== Yixuan Relics ======
-	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.title": "Cloudpeak Mountain",
-	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.description": "At the start of combat, gain 6 Support Points.",
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.title": "Mt. Yunkui",
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.description": "At combat start, gain 6 Support Points.",
 	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.flavor": "",
 
-	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.title": "Azure Abyss Ink Arts",
-	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "At the start of combat, restore all [gold]Flash Energy[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.title": "Azure Techniques",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "At combat start, restore all [gold]Flash Energy[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].",
 	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.flavor": "",
 
-	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "Azure Abyss Bird",
-	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "At the start of combat, restore all [gold]Flash Energy[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "Azure Bird",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "At combat start, restore all [gold]Flash Energy[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].\\nEach time you lose HP, randomly trigger one of the following effects: Gain {Vigor} [gold]Vigor[/gold], Gain {Thorns} [gold]Thorns[/gold], Apply {Shufa} [gold]Technique Value[/gold] to all enemies.\\nRight-click: Lose 5% of max HP to choose and trigger one effect.",
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": ""
 }

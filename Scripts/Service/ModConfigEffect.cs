@@ -121,7 +121,7 @@ namespace Miyabists2.Scripts.Service
         //{
         //    if(creature != base.Owner) return;
 
-        //    if((int)MiyabiModConfig.CombatHardSelected >= 6 && (creature.CombatState.Players.Any(c => c.Character is Miyabi) || MiyabiModConfig.ChangeToAllPlayers))
+        //    if((int)MiyabiModConfig.CombatHardSelected >= 6 && (creature.CombatState.Players.Any(c => c.MiyabiFuncBase.IsMiyabiModChar(c)) || MiyabiModConfig.ChangeToAllPlayers))
         //    {
         //        foreach(var player in creature.CombatState.Players)
         //        {
@@ -134,7 +134,7 @@ namespace Miyabists2.Scripts.Service
         {
             if (target != base.Owner || amount < target.CurrentHp) return;
 
-            if (!isRevealed && (int)MiyabiModConfig.CombatHardSelected >= 10 && (base.Owner.CombatState.Players.Any(c => c.Character is Miyabi) || MiyabiModConfig.ChangeToAllPlayers))
+            if (!isRevealed && (int)MiyabiModConfig.CombatHardSelected >= 10 && (base.Owner.CombatState.Players.Any(c => MiyabiFuncBase.IsMiyabiModChar(c)) || MiyabiModConfig.ChangeToAllPlayers))
             {
                 decimal heal = Math.Max(1m, base.Owner.MaxHp*0.3m);
                 await CreatureCmd.Heal(base.Owner, heal);
@@ -181,7 +181,7 @@ namespace Miyabists2.Scripts.Service
 
             foreach (var player in runState.Players)
             {
-                if ((int)MiyabiModConfig.CombatHardSelected >= 9 && (player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+                if ((int)MiyabiModConfig.CombatHardSelected >= 9 && (MiyabiFuncBase.IsMiyabiModChar(player) || MiyabiModConfig.ChangeToAllPlayers))
                 {
                     CardCreationOptions options = new CardCreationOptions([ModelDb.CardPool<CurseCardPool>()], CardCreationSource.Other, CardRarityOddsType.Uniform, (CardModel c) => c.Rarity == CardRarity.Curse);
                     List<CardModel> list = (from r in CardFactory.CreateForReward(player, 1, options)
@@ -195,7 +195,7 @@ namespace Miyabists2.Scripts.Service
 
                 if (runState.Act.ActNumber() == 1)
                     continue;
-                if ((int)MiyabiModConfig.CombatHardSelected >= 2 && (player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+                if ((int)MiyabiModConfig.CombatHardSelected >= 2 && (MiyabiFuncBase.IsMiyabiModChar(player) || MiyabiModConfig.ChangeToAllPlayers))
                 {
                     CardModel card = player.Deck.Cards.Where(c => c.IsUpgraded).TakeRandom(1,player.RunState.Rng.Shuffle).FirstOrDefault();
                     if(card != null)
@@ -208,12 +208,12 @@ namespace Miyabists2.Scripts.Service
 
             foreach (var player in runState.Players)
             {
-                //if ((int)MiyabiModConfig.CombatHardSelected >= 2 && (player.Character is Miyabi || MiyabiModConfig.ChangeToAllPlayers))
+                //if ((int)MiyabiModConfig.CombatHardSelected >= 2 && (player.MiyabiFuncBase.IsMiyabiModChar(c) || MiyabiModConfig.ChangeToAllPlayers))
                 //{
                 //    player.Gold /= 2;
                 //}
 
-                if(player.Character is Miyabi && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.BeeGroup)
+                if(MiyabiFuncBase.IsMiyabiModChar(player) && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.BeeGroup)
                 {
                     if(player.Character is Miyabi)
                     {
@@ -248,7 +248,7 @@ namespace Miyabists2.Scripts.Service
     {
         private static void Postfix(Creature __result, CombatSide side)
         {
-            if (side == CombatSide.Enemy && (__result.CombatState.Players.Any(c => c.Character is Miyabi) || MiyabiModConfig.ChangeToAllPlayers))
+            if (side == CombatSide.Enemy && (__result.CombatState.Players.Any(c => MiyabiFuncBase.IsMiyabiModChar(c)) || MiyabiModConfig.ChangeToAllPlayers))
             {
                 decimal hpPer = 1m;
                 if ((int)MiyabiModConfig.CombatHardSelected >= 1)

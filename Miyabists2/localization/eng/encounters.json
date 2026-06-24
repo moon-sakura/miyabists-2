@@ -1,10 +1,10 @@
 {
-    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.title": "Encounter Hoshimi Miyabi",
-    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.loss": "{character} was defeated in the [gold]{encounter}[/gold].",
+    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.title": "Encounter: Hoshimi Miyabi",
+    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.loss": "{character} was defeated in [gold]{encounter}[/gold].",
 
-    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.title": "Encounter Hoshimi Miyabi",
-    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.loss": "{character} was defeated in the [gold]{encounter}[/gold].",
+    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.title": "Encounter: Hoshimi Miyabi",
+    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.loss": "{character} was defeated in [gold]{encounter}[/gold].",
 
-    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.title": "Encounter Yixuan",
-    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character} was defeated in the [gold]{encounter}[/gold]."
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.title": "Encounter: Yi Xuan",
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character} was defeated in [gold]{encounter}[/gold]."
 }

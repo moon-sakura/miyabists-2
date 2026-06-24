@@ -1,5 +1,5 @@
 {
     "BEE_GROUP_ENCHANTMENT.title": "Bee Swarm",
-    "BEE_GROUP_ENCHANTMENT.extraCardText": "When you play this card, randomly attach [gold]Bee Swarm[/gold] to another card",
-    "BEE_GROUP_ENCHANTMENT.description": "Become one with the swarm and serve the hive!"
+    "BEE_GROUP_ENCHANTMENT.extraCardText": "When this card is played, randomly enchant another card with [gold]Bee Swarm[/gold] that can trigger {OriChance} times.\\nCan still trigger {Chance} times.",
+    "BEE_GROUP_ENCHANTMENT.description": "Become part of the swarm and serve the hive! Has a chance to be played automatically when you play cards."
 }

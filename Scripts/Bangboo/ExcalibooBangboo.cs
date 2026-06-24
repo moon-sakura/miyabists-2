@@ -62,7 +62,7 @@ namespace Miyabists2.Scripts.Bangboo
         {
             DynamicVars["Charged"].BaseValue += MAXUSE;
 
-            if (DynamicVars["Charged"].BaseValue >= 3 || MiyabiFuncBase.GetIsTrue100(20, Owner.PetOwner))
+            if (DynamicVars["Charged"].BaseValue >= 3)// || MiyabiFuncBase.GetIsTrue100(20, Owner.PetOwner))
             {
                 var bangboo = base.Owner;
 

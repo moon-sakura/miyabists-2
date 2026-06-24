@@ -1,7 +1,7 @@
 {
     "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.title": "Full Preparation",
-    "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.description": "Gain 2 [gold]Parry[/gold], 2 [gold]Support Points[/gold], 2 [gold]Frostfall[/gold], 1 [gold]Slippery[/gold]",
+    "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.description": "Gain 2 [gold]Parry[/gold], 2 [gold]Support Points[/gold], 2 [gold]Frostfall[/gold], and 1 [gold]Slippery[/gold].",
 
-    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.title": "Glance of the Break King",
-    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.description": "If the enemy is not [gold]Broken[/gold], [gold]Break[/gold] the enemy"
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.title": "Break King's Glimpse",
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.description": "If the enemy is not in [gold]Break[/gold] state, apply [gold]Break[/gold] to the enemy."
 }

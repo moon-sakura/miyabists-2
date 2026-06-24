@@ -1,63 +1,66 @@
 {
-  // Inner monologue during the Chaotic Aroma event
-  "MIYABISTS2_CHARACTER_MIYABI.aromaPrinciple": "[sine][blue]……Training……[/blue][/sine]",
-  // Multiplayer: alive turn end banter
-  "MIYABISTS2_CHARACTER_MIYABI.banter.alive.endTurnPing": "Rally up",
-  // Multiplayer: dead turn end banter
-  "MIYABISTS2_CHARACTER_MIYABI.banter.dead.endTurnPing": "Can't fall yet……",
-  // Custom mode text
-  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierDescription": "Hoshimi Miyabi and her companions' cards will now appear in rewards and shops.",
-  // Card pool name
-  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierTitle": "Hoshimi Miyabi & Companions",
-  // Character select screen description
+  "MIYABISTS2_CHARACTER_MIYABI.aromaPrinciple": "[sine][blue]...Training...[/blue][/sine]",
+  "MIYABISTS2_CHARACTER_MIYABI.banter.alive.endTurnPing": "Requesting regroup.",
+  "MIYABISTS2_CHARACTER_MIYABI.banter.dead.endTurnPing": "Can't fall yet...",
+  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierDescription": "Hoshimi Miyabi and her partners' cards will now appear in rewards and shops.",
+  "MIYABISTS2_CHARACTER_MIYABI.cardsModifierTitle": "Hoshimi Miyabi & Partners",
   "MIYABISTS2_CHARACTER_MIYABI.description": "Section 6, Hoshimi Miyabi, ready for duty.",
-  // Death event dialogue
-  "MIYABISTS2_CHARACTER_MIYABI.eventDeathPrevention": "Could this…… be the end?",
-  // Gold monologue at Sunken Vault event
-  "MIYABISTS2_CHARACTER_MIYABI.goldMonologue": "[sine]Can I use these coins to sharpen my blade?[/sine]",
-  // Possessive adjective for dynamic text
+  "MIYABISTS2_CHARACTER_MIYABI.eventDeathPrevention": "Could this... be the end?",
+  "MIYABISTS2_CHARACTER_MIYABI.goldMonologue": "[sine]These coins... can they be used to sharpen a blade?[/sine]",
   "MIYABISTS2_CHARACTER_MIYABI.possessiveAdjective": "Miyabi's",
-  // Object pronoun
   "MIYABISTS2_CHARACTER_MIYABI.pronounObject": "Miyabi",
-  // Possessive pronoun
   "MIYABISTS2_CHARACTER_MIYABI.pronounPossessive": "Miyabi's",
-  // Subject pronoun
   "MIYABISTS2_CHARACTER_MIYABI.pronounSubject": "Miyabi",
-  // Character name (title)
   "MIYABISTS2_CHARACTER_MIYABI.title": "Hoshimi Miyabi",
-  // Character name (object)
   "MIYABISTS2_CHARACTER_MIYABI.titleObject": "Miyabi",
-  // Unlock condition text, {Prerequisite} is replaced
   "MIYABISTS2_CHARACTER_MIYABI.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character.",
 
-  // ====== Yixuan ======
-  // Character name (title)
-  "MIYABISTS2_CHARACTER_YIXUAN.title": "Yixuan",
-  // Character name (object)
-  "MIYABISTS2_CHARACTER_YIXUAN.titleObject": "Yixuan",
-  // Character select screen description
-  "MIYABISTS2_CHARACTER_YIXUAN.description": "Overcome motion with stillness; stillness and motion in harmony. Within motion there is stillness, and within stillness, motion.",
-  // Subject pronoun
-  "MIYABISTS2_CHARACTER_YIXUAN.pronounSubject": "Yixuan",
-  // Object pronoun
-  "MIYABISTS2_CHARACTER_YIXUAN.pronounObject": "Yixuan",
-  // Possessive pronoun
-  "MIYABISTS2_CHARACTER_YIXUAN.pronounPossessive": "Yixuan's",
-  // Possessive adjective
-  "MIYABISTS2_CHARACTER_YIXUAN.possessiveAdjective": "Yixuan's",
-  // Death event dialogue
-  "MIYABISTS2_CHARACTER_YIXUAN.eventDeathPrevention": "How could this be……",
-  // Custom mode text
-  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierTitle": "Yixuan & Companions",
-  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierDescription": "Yixuan's cards will now appear in rewards and shops.",
-  // Multiplayer: alive turn end banter
-  "MIYABISTS2_CHARACTER_YIXUAN.banter.alive.endTurnPing": "Ready for battle",
-  // Multiplayer: dead turn end banter
-  "MIYABISTS2_CHARACTER_YIXUAN.banter.dead.endTurnPing": "Sorry……",
-  // Gold monologue at Sunken Vault event
-  "MIYABISTS2_CHARACTER_YIXUAN.goldMonologue": "[sine]The more, the better[/sine]",
-  // Inner monologue during the Chaotic Aroma event
-  "MIYABISTS2_CHARACTER_YIXUAN.aromaPrinciple": "[sine][orange]……Calm the mind……[/orange][/sine]",
-  // Unlock condition text
-  "MIYABISTS2_CHARACTER_YIXUAN.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character."
+  "MIYABISTS2_CHARACTER_YIXUAN.title": "Yi Xuan",
+  "MIYABISTS2_CHARACTER_YIXUAN.titleObject": "Yi Xuan",
+  "MIYABISTS2_CHARACTER_YIXUAN.description": "Use stillness to overcome motion. Stillness and motion harmonize. Within motion there is stillness, within stillness there is motion.",
+  "MIYABISTS2_CHARACTER_YIXUAN.pronounSubject": "Yi Xuan",
+  "MIYABISTS2_CHARACTER_YIXUAN.pronounObject": "Yi Xuan",
+  "MIYABISTS2_CHARACTER_YIXUAN.pronounPossessive": "Yi Xuan's",
+  "MIYABISTS2_CHARACTER_YIXUAN.possessiveAdjective": "Yi Xuan's",
+  "MIYABISTS2_CHARACTER_YIXUAN.eventDeathPrevention": "How can this be...",
+  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierTitle": "Yi Xuan & Partners",
+  "MIYABISTS2_CHARACTER_YIXUAN.cardsModifierDescription": "Yi Xuan's cards will now appear in rewards and shops.",
+  "MIYABISTS2_CHARACTER_YIXUAN.banter.alive.endTurnPing": "Prepare for battle.",
+  "MIYABISTS2_CHARACTER_YIXUAN.banter.dead.endTurnPing": "Sorry...",
+  "MIYABISTS2_CHARACTER_YIXUAN.goldMonologue": "[sine]The more the merrier.[/sine]",
+  "MIYABISTS2_CHARACTER_YIXUAN.aromaPrinciple": "[sine][orange]...Calm the mind...[/orange][/sine]",
+  "MIYABISTS2_CHARACTER_YIXUAN.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character.",
+
+  "MIYABISTS2-MIYABI.aromaPrinciple": "[sine][blue]...Training...[/blue][/sine]",
+  "MIYABISTS2-MIYABI.banter.alive.endTurnPing": "Requesting regroup.",
+  "MIYABISTS2-MIYABI.banter.dead.endTurnPing": "Can't fall yet...",
+  "MIYABISTS2-MIYABI.cardsModifierDescription": "Hoshimi Miyabi and her partners' cards will now appear in rewards and shops.",
+  "MIYABISTS2-MIYABI.cardsModifierTitle": "Hoshimi Miyabi & Partners",
+  "MIYABISTS2-MIYABI.description": "Section 6, Hoshimi Miyabi, ready for duty.",
+  "MIYABISTS2-MIYABI.eventDeathPrevention": "Could this... be the end?",
+  "MIYABISTS2-MIYABI.goldMonologue": "[sine]These coins... can they be used to sharpen a blade?[/sine]",
+  "MIYABISTS2-MIYABI.possessiveAdjective": "Miyabi's",
+  "MIYABISTS2-MIYABI.pronounObject": "Miyabi",
+  "MIYABISTS2-MIYABI.pronounPossessive": "Miyabi's",
+  "MIYABISTS2-MIYABI.pronounSubject": "Miyabi",
+  "MIYABISTS2-MIYABI.title": "Hoshimi Miyabi",
+  "MIYABISTS2-MIYABI.titleObject": "Miyabi",
+  "MIYABISTS2-MIYABI.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character.",
+
+
+  "MIYABISTS2-YIXUAN.title": "Yi Xuan",
+  "MIYABISTS2-YIXUAN.titleObject": "Yi Xuan",
+  "MIYABISTS2-YIXUAN.description": "Use stillness to overcome motion. Stillness and motion harmonize. Within motion there is stillness, within stillness there is motion.",
+  "MIYABISTS2-YIXUAN.pronounSubject": "Yi Xuan",
+  "MIYABISTS2-YIXUAN.pronounObject": "Yi Xuan",
+  "MIYABISTS2-YIXUAN.pronounPossessive": "Yi Xuan's",
+  "MIYABISTS2-YIXUAN.possessiveAdjective": "Yi Xuan's",
+  "MIYABISTS2-YIXUAN.eventDeathPrevention": "How can this be...",
+  "MIYABISTS2-YIXUAN.cardsModifierTitle": "Yi Xuan & Partners",
+  "MIYABISTS2-YIXUAN.cardsModifierDescription": "Yi Xuan's cards will now appear in rewards and shops.",
+  "MIYABISTS2-YIXUAN.banter.alive.endTurnPing": "Prepare for battle.",
+  "MIYABISTS2-YIXUAN.banter.dead.endTurnPing": "Sorry...",
+  "MIYABISTS2-YIXUAN.goldMonologue": "[sine]The more the merrier.[/sine]",
+  "MIYABISTS2-YIXUAN.aromaPrinciple": "[sine][orange]...Calm the mind...[/orange][/sine]",
+  "MIYABISTS2-YIXUAN.unlockText": "Play a game with [pink]{Prerequisite}[/pink] to unlock this character."
 }
