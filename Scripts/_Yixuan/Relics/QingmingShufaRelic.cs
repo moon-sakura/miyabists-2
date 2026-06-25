@@ -276,7 +276,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                 return;
             }
 
-            GD.Print($"[MiyabiRelic] : Yixuan got hurted form {dealer.LogName}!\\nHook : {choiceContext.GetType().FullName}");
+            //GD.Print($"[MiyabiRelic] : Yixuan got hurted form {dealer.LogName}!\\nHook : {choiceContext.GetType().FullName}");
 
             if (dealer != Owner.Creature && result.UnblockedDamage > 0)
             {
