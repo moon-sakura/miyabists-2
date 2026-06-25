@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         //public override string PortraitPath => $"res://images/cards/fengHua.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(5, ValueProp.Unblockable | ValueProp.Move),
+            new DamageVar(4, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar("HitCount", 2),
             new BlockVar(8, ValueProp.Move),

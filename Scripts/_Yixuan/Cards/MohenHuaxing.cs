@@ -25,12 +25,14 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(10, ValueProp.Move),
+            new BlockVar(6, ValueProp.Move),
             new DynamicVar(ThornsVarName, 3),
             new DynamicVar(VigorVarName, 5),
             new DynamicVar(ShannengVarName, 10),
             new DynamicVar("ExtraVigor", 5),
         ];
+
+        public override bool GainsBlock => false;
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
@@ -66,7 +68,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Block.UpgradeValueBy(4);
+            DynamicVars.Block.UpgradeValueBy(3);
             DynamicVars[ThornsVarName].UpgradeValueBy(2);
         }
     }

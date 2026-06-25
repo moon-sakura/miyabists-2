@@ -1,10 +1,10 @@
 {
 	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.title": "妖刀无尾",
-  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
   	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.flavor": "很硬很硬的刀",
 
 	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.title": "妖刀解放",
-  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]；战斗开始时，加入一张[red]妖刀解放[/red]到手卡",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]；战斗开始时，加入一张[red]妖刀解放[/red]到手卡",
   	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.title": "镜花匿影",
@@ -28,7 +28,7 @@
   	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "在绝境中绽放的意志",
 
 	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.title": "养气香囊",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧嚣值[/gold]，最大喧嚣值上限变为[blue]{MAX:diff()}[/blue]",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧响值[/gold]，最大喧响值上限变为[blue]{MAX:diff()}[/blue]",
   	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
 
 
@@ -137,7 +137,7 @@
   	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.flavor": "在绝境中绽放的意志",
 
 	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.title": "养气香囊",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧嚣值[/gold]，最大喧嚣值上限变为[blue]{MAX:diff()}[/blue]",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧响值[/gold]，最大喧响值上限变为[blue]{MAX:diff()}[/blue]",
   	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
 
 	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.title": "加密母带",
@@ -150,10 +150,10 @@
 	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.title": "青溟术法",
-	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "战斗开始时恢复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "战斗开始时恢复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
 	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "青溟鸟",
-	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "战斗开始时回复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧嚣值[/gold]，[gold]喧嚣值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]\\n每次失去生命时，从获得{Vigor}点[gold]活力[/gold]、获得{Thorns}层[gold]荆棘[/gold]、对所有敌人施加{Shufa}层[gold]术法值[/gold]中随机触发一个效果。\\n右键点击：失去最大生命值5%的生命，可以选择一个效果触发。",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "战斗开始时回复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]\\n每次失去生命时，从获得{Vigor}点[gold]活力[/gold]、获得{Thorns}层[gold]荆棘[/gold]、对所有敌人施加{Shufa}层[gold]术法值[/gold]中随机触发一个效果。\\n右键点击：失去最大生命值5%的生命，可以选择一个效果触发。",
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": ""
 }

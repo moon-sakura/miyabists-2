@@ -35,6 +35,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             new DamageVar(3, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar("HitCount",8),
+            new DynamicVar("Heal",25),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
@@ -55,7 +56,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 await PowerCmd.Apply<ShufaZhi>(choiceContext, enemy, 25, Owner.Creature, this);
             }
 
-            await CreatureCmd.Heal(Owner.Creature, Owner.Creature.MaxHp * 0.3m);
+            await CreatureCmd.Heal(Owner.Creature, Owner.Creature.MaxHp * DynamicVars["Heal"].BaseValue / 100);
         }
 
         protected override void OnUpgrade()

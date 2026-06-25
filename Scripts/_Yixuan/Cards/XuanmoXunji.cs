@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
     [RegisterCard(typeof(YixuanCardPool))]
     internal class XuanmoXunji : YixuanAtkCardBase
     {
-        public XuanmoXunji() : base(1, CardRarity.Rare, TargetType.AnyEnemy)
+        public XuanmoXunji() : base(1, CardRarity.Rare, TargetType.AnyEnemy,CardType.Skill)
         {
         }
 

@@ -22,7 +22,7 @@ namespace Miyabists2.Scripts.Cards
         public BestPartner() : base(1, CardRarity.Uncommon, TargetType.Self) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new BlockVar(6,ValueProp.Move),
+            new BlockVar(5,ValueProp.Move),
             new DynamicVar(SupportVarName,1),
         ];
 

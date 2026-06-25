@@ -110,7 +110,7 @@
     "MIYABISTS2_CARD_LUOYU_SHENGHUA.description": "每回合对敌人造成伤害后给予敌人[gold]属性积蓄[/gold][blue]1[/blue]，最多可触发[blue]{LuoYu:diff()}[/blue]次\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：所有敌人[gold]属性积蓄[/gold][blue]1[/blue]",
 
 	"MIYABISTS2_CARD_MINGFU_WANGE.title": "冥府挽歌",
-    "MIYABISTS2_CARD_MINGFU_WANGE.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]35%[/blue][gold]失衡易伤[/gold]\\n在[blue]{WanGe:diff()}[/blue]回合内，每回合开始时增加一张[gold]协奏狙杀[/gold]到手里\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张[gold]协奏狙杀[/gold]加入手卡",
+    "MIYABISTS2_CARD_MINGFU_WANGE.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]35%[/blue][gold]失衡易伤[/gold]\\n在{WanGe:diff()}回合内，每回合开始时增加一张[gold]协奏狙杀[/gold]到手里\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张[gold]协奏狙杀[/gold]加入手卡",
 
 	"MIYABISTS2_CARD_XIEZOU_JUSHA.title": "协奏狙杀",
     "MIYABISTS2_CARD_XIEZOU_JUSHA.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]15%[/blue][gold]失衡易伤[/gold]",
@@ -148,7 +148,7 @@
     "MIYABISTS2_CARD_MANHAN_QUANXI.description": "获得{Block:diff()}点格挡\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]2[/blue]层[gold]再生[/gold]",
 
 	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.title": "恶虎七式·猛虎炸开花",
-    "MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]{Decible:diff()}[/blue]点[gold]喧响值[/gold]",
+    "MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得{Decible:diff()}点[gold]喧响值[/gold]",
 
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG.title": "一切献给虎破王",
     "MIYABISTS2_CARD_ALL_FOR_HUPOWANG.description": "消耗卡组中所有[gold]失衡值[/gold]大于[blue]15[/blue]的卡\\n如果消耗[blue]3[/blue]张以上，[gold]击破[/gold]敌人\\n不足[blue]3[/blue]张则在抽卡堆中添加[blue]3[/blue]张[gold]恶虎七式·猛虎炸开花[/gold]",
@@ -318,7 +318,7 @@
     "MIYABISTS2_CARD_XUANMO_ANYONG.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人是攻击意图，获得{Block:diff()}点格挡与4层[gold]荆棘[/gold]\\n获得1层[gold]玄墨暗涌[/gold]",
 
 	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "青溟云影",
-	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "全场{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加25层[gold]术法值[/gold]\\n恢复自身最大生命值[gold]30%[/gold]生命值",
+	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "全场{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n所有敌人施加25层[gold]术法值[/gold]\\n恢复自身最大生命值{Heal:diff()}%生命值",
 
     "MIYABISTS2_CARD_MOYING_NINGYUN.title": "墨影凝云",
     "MIYABISTS2_CARD_MOYING_NINGYUN.description": "全体造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得{Block:diff()}点格挡\\n所有敌人施加10层[gold]术法值[/gold]",
@@ -370,10 +370,10 @@
 	"MIYABISTS2_CARD_MANHAN_QUANXI_YIXUAN.description": "获得{Block:diff()}点格挡\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]2[/blue]层[gold]再生[/gold]",
 
 	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.title": "恶虎七式·猛虎炸开花",
-	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]{Decible:diff()}[/blue]点[gold]喧响值[/gold]",
+	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得{Decible:diff()}点[gold]喧响值[/gold]",
 
 	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.title": "冥府挽歌",
-	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]35%[/blue][gold]失衡易伤[/gold]\\n在[blue]{WanGe:diff()}[/blue]回合内，每回合开始时增加一张[gold]协奏狙杀[/gold]到手里\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张[gold]协奏狙杀[/gold]加入手卡",
+	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]35%[/blue][gold]失衡易伤[/gold]\\n在{WanGe:diff()}回合内，每回合开始时增加一张[gold]协奏狙杀[/gold]到手里\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张[gold]协奏狙杀[/gold]加入手卡",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.title": "法厄同的呼朋引伴",
 	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡\\n(包括[gold]异界伙伴[/gold]！)",
@@ -434,7 +434,7 @@
 
 	// ====== 仪玄新专属卡牌 ======
 	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.title": "清霄同游",
-	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.description": "每回合开始时，获得{VIGOR_POWER:diff()}点[gold]活力[/gold]、{THORNS_POWER:diff()}层[gold]荆棘[/gold]，恢复[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]",
+	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.description": "每回合开始时，获得{VIGOR_POWER:diff()}层[gold]活力[/gold]、{THORNS_POWER:diff()}层[gold]荆棘[/gold]，恢复{SHANNENG_POWER:diff()}点[gold]闪能[/gold]",
 
 	"MIYABISTS2_CARD_LIUYUN_YINGSHEN.title": "流云影身",
 	"MIYABISTS2_CARD_LIUYUN_YINGSHEN.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]荆棘[/gold]",
@@ -449,22 +449,22 @@
 	"MIYABISTS2_CARD_QINGMING_ZHENJI.description": "造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n施加[blue]{SHUFA_POWER:diff()}[/blue]层[gold]术法值[/gold]\\n在手卡时每消耗[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]费用[blue]-1[/blue]",
 
 	"MIYABISTS2_CARD_MOHEN_HUAXING.title": "墨痕化形",
-	"MIYABISTS2_CARD_MOHEN_HUAXING.description": "[gold]覆甲[/gold]{Block:diff()}\\n获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]荆棘[/gold]和[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]\\n恢复[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]\\n如果敌人是攻击意图：再获得[blue]{ExtraVigor:diff()}[/blue]点[gold]活力[/gold]，下一张[orange]玄墨[/orange]伤害卡费用变为[blue]0[/blue]",
+	"MIYABISTS2_CARD_MOHEN_HUAXING.description": "[gold]覆甲[/gold]{Block:diff()}\\n获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]荆棘[/gold]和[blue]{VIGOR_POWER:diff()}[/blue]层[gold]活力[/gold]\\n恢复[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]\\n如果敌人是攻击意图：再获得[blue]{ExtraVigor:diff()}[/blue]层[gold]活力[/gold]，下一张[orange]玄墨[/orange]伤害卡费用变为[blue]0[/blue]",
 
 	"MIYABISTS2_CARD_MOJIN_YINGXIAO.title": "墨烬影消",
 	"MIYABISTS2_CARD_MOJIN_YINGXIAO.description": "获得{Block:diff()}点格挡\\n抽[blue]1[/blue]张卡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]荆棘[/gold]",
 
 	"MIYABISTS2_CARD_XIAOYUN_XUNJI.title": "霄云迅击",
-	"MIYABISTS2_CARD_XIAOYUN_XUNJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]",
+	"MIYABISTS2_CARD_XIAOYUN_XUNJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{VIGOR_POWER:diff()}[/blue]层[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_XIAOYUN_XUNJI_PO.title": "霄云迅击·破",
-	"MIYABISTS2_CARD_XIAOYUN_XUNJI_PO.description": "造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]",
+	"MIYABISTS2_CARD_XIAOYUN_XUNJI_PO.description": "造成{HitCount:diff()}次[orange]玄墨[/orange]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{VIGOR_POWER:diff()}[/blue]层[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.title": "青溟震击·破",
 	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n施加[blue]{SHUFA_POWER:diff()}[/blue]层[gold]术法值[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：施加10层[gold]术法值[/gold]",
 
 	"MIYABISTS2_CARD_XUANMO_XUNJI.title": "玄墨迅击",
-	"MIYABISTS2_CARD_XUANMO_XUNJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{VIGOR_POWER:diff()}[/blue]点[gold]活力[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：再获得[blue]{ExtraVigor:diff()}[/blue]点[gold]活力[/gold]",
+	"MIYABISTS2_CARD_XUANMO_XUNJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{VIGOR_POWER:diff()}[/blue]层[gold]活力[/gold]\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：再获得[blue]{ExtraVigor:diff()}[/blue]层[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_JIE_FA.title" : "借法",
 	"MIYABISTS2_CARD_JIE_FA.description":"选择一项：\\n消耗全部[gold]活力[/gold]，获得{Percent:diff()}%消耗量的[gold]荆棘[/gold]\\n消耗全部[gold]荆棘[/gold]，获得{Percent:diff()}%消耗量的[gold]活力[/gold]。",
@@ -476,7 +476,7 @@
 	"MIYABISTS2_CARD_THORNS2VIGOR.description":"消耗全部荆棘，获得活力。",
 
 	"MIYABISTS2_CARD_VIGOR_CHOICE.title" : "获得活力",
-	"MIYABISTS2_CARD_VIGOR_CHOICE.description":"获得2点[gold]活力[/gold]",
+	"MIYABISTS2_CARD_VIGOR_CHOICE.description":"获得2层[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_THORNS_CHOICE.title" : "获得荆棘",
 	"MIYABISTS2_CARD_THORNS_CHOICE.description":"获得2层[gold]荆棘[/gold]",
@@ -501,7 +501,7 @@
 	"MIYABISTS2_CARD_MIYABI_DUEL_YIXUAN.description": "将敌人的意图变为造成4次1点伤害\\n获得{THORNS_POWER:diff()}层[gold]荆棘[/gold]",
 
 	"MIYABISTS2_CARD_MITU_YESONG.title": "迷途夜颂",
-	"MIYABISTS2_CARD_MITU_YESONG.description": "{Turns:diff()}回合内使用非攻击卡后获得[blue]2[/blue]点[gold]活力[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复所有角色[blue]6[/blue]点生命",
+	"MIYABISTS2_CARD_MITU_YESONG.description": "{Turns:diff()}回合内使用非攻击卡后获得[blue]2[/blue]层[gold]活力[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复所有角色[blue]6[/blue]点生命",
 
 	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.title": "贴山震脉靠",
 	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.description": "接下来[blue]{MingpoCount:diff()}[/blue]张[gold]命破伤害[/gold]卡伤害[blue]+{MingpoBonus:diff()}%[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：抽[blue]1[/blue]张卡，下一张攻击卡费用[blue]-1[/blue]",
