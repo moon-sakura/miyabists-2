@@ -21,6 +21,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
+        protected override string ArtPath => "res://images/_YiXuan/cards/jiefa.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Percent",100),
         ];

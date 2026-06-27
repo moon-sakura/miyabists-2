@@ -22,7 +22,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
-        //public override string PortraitPath => $"res://images/cards/fengHua.png";
+        protected override string ArtPath => "res://images/_YiXuan/cards/qingmingYunying.png";
+
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
             MiyabiKeywords.Xuanmo,

@@ -15,6 +15,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         public YixuanBlock() : base(1, CardRarity.Basic, TargetType.Self, CardType.Skill)
         {
         }
+
+        protected override string ArtPath => "res://images/_YiXuan/cards/yixuanBlock.png";
         protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Defend };
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(5,ValueProp.Move),

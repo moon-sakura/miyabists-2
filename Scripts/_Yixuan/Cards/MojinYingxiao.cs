@@ -21,6 +21,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
+        protected override string ArtPath => "res://images/_YiXuan/cards/mojinYingxiao.png";
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(8, ValueProp.Move),
             new DynamicVar(ShannengVarName, 10),
