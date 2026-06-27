@@ -48,6 +48,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            try2Eat = true;
+
             await base.OnPlay(choiceContext, cardPlay);
 
             if (DynamicVars["Eat"].BaseValue < 5)
@@ -67,7 +69,7 @@ namespace Miyabists2.Scripts.Cards
                 if (cardsIn.Count != 0)
                 {
                     IEnumerable<CardModel> cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs));
-                    if (cardModel != null)
+                    if (cardModel.Count() > 0)
                     {
                         foreach (CardModel c in cardModel) 
                         {
@@ -110,7 +112,7 @@ namespace Miyabists2.Scripts.Cards
                 if(result == 1 || count >= 3)
                 {
                     IEnumerable<CardModel> card = base.Owner.PlayerCombatState.AllCards
-                        .Where(c => !(c is SheWen))
+                        .Where(c => c is not SheWen)
                         .TakeRandom(1, base.Owner.RunState.Rng.CombatCardSelection);
 
                     foreach (CardModel c in card)
@@ -128,12 +130,12 @@ namespace Miyabists2.Scripts.Cards
         {
             if (card != this) return;
             count++;
-            IEnumerable<CardModel> cards = base.Owner.PlayerCombatState.AllCards
+            if (count >= 3)
+            {
+                IEnumerable<CardModel> cards = base.Owner.PlayerCombatState.AllCards
                         .Where(c => !(c is SheWen))
                         .TakeRandom(1, base.Owner.RunState.Rng.CombatCardSelection);
 
-            if (count >= 3)
-            {
                 foreach (CardModel c in cards)
                 {
                     await CardCmd.Exhaust(choiceContext, c);
