@@ -110,7 +110,7 @@
     "MIYABISTS2_CARD_LUOYU_SHENGHUA.description": "After dealing damage to an enemy each turn, apply [blue]1[/blue] [gold]Anomaly Buildup[/gold]. Can trigger up to [blue]{LuoYu:diff()}[/blue] times\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply [blue]1[/blue] [gold]Anomaly Buildup[/gold] to ALL enemies",
 
 	"MIYABISTS2_CARD_MINGFU_WANGE.title": "Underworld Elegy",
-    "MIYABISTS2_CARD_MINGFU_WANGE.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]35%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn\\nFor [blue]{WanGe:diff()}[/blue] turns, add a [gold]Concerto Snipe[/gold] to your hand at the start of each turn\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Concerto Snipe[/gold] to your hand",
+    "MIYABISTS2_CARD_MINGFU_WANGE.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]35%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn\\nFor {WanGe:diff()} turns, add a [gold]Concerto Snipe[/gold] to your hand at the start of each turn\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Concerto Snipe[/gold] to your hand",
 
 	"MIYABISTS2_CARD_XIEZOU_JUSHA.title": "Concerto Snipe",
     "MIYABISTS2_CARD_XIEZOU_JUSHA.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]15%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn",
@@ -148,7 +148,7 @@
     "MIYABISTS2_CARD_MANHAN_QUANXI.description": "Gain {Block:diff()} Block\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]2[/blue] [gold]Regeneration[/gold]",
 
 	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.title": "Vicious Tiger: Explosive Tiger Blossom",
-    "MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]{Decible:diff()}[/blue] [gold]Decibel[/gold]",
+    "MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain {Decible:diff()} [gold]Decibel[/gold]",
 
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG.title": "All for the Tiger King",
     "MIYABISTS2_CARD_ALL_FOR_HUPOWANG.description": "Exhaust all cards in your deck with [gold]Daze[/gold] greater than [blue]15[/blue]\\nIf [blue]3[/blue] or more cards are exhausted, [gold]Break[/gold] the enemy\\nIf fewer than [blue]3[/blue], add [blue]3[/blue] [gold]Vicious Tiger: Explosive Tiger Blossom[/gold] to your draw pile",
@@ -318,7 +318,7 @@
     "MIYABISTS2_CARD_XUANMO_ANYONG.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy has an Attack intent, gain {Block:diff()} Block and [blue]4[/blue] [gold]Thorns[/gold]\\nGain [blue]1[/blue] [gold]Dark Ink Surge[/gold]",
 
 	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "Azure Cloud Shadow",
-	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL enemies [blue]{HitCount:diff()}[/blue] times. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]25[/blue] [gold]Technique Value[/gold] to ALL enemies\\nRecover [gold]30%[/gold] of your max HP",
+	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL enemies [blue]{HitCount:diff()}[/blue] times. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]25[/blue] [gold]Technique Value[/gold] to ALL enemies\\nRecover {Heal:diff()}% of your max HP",
 
     "MIYABISTS2_CARD_MOYING_NINGYUN.title": "Ink Shadow Congealed Cloud",
     "MIYABISTS2_CARD_MOYING_NINGYUN.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} to ALL enemies [blue]{HitCount:diff()}[/blue] times. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain {Block:diff()} Block\\nApply [blue]10[/blue] [gold]Technique Value[/gold] to ALL enemies",
@@ -370,10 +370,10 @@
 	"MIYABISTS2_CARD_MANHAN_QUANXI_YIXUAN.description": "Gain {Block:diff()} Block\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]2[/blue] [gold]Regeneration[/gold]",
 
 	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.title": "Vicious Tiger: Explosive Tiger Blossom",
-	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]{Decible:diff()}[/blue] [gold]Decibel[/gold]",
+	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA_YIXUAN.description": "[gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain {Decible:diff()} [gold]Decibel[/gold]",
 
 	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.title": "Underworld Elegy",
-	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]35%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn\\nFor [blue]{WanGe:diff()}[/blue] turns, add a [gold]Concerto Snipe[/gold] to your hand at the start of each turn\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Concerto Snipe[/gold] to your hand",
+	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]35%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn\\nFor {WanGe:diff()} turns, add a [gold]Concerto Snipe[/gold] to your hand at the start of each turn\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Concerto Snipe[/gold] to your hand",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.title": "Phaethon's Call",
 	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Partner[/gold] cards and add it to your hand\\n(Including [gold]Otherworld Partners[/gold]!)",
@@ -434,7 +434,7 @@
 
 	// ====== Yi Xuan New Exclusive Cards ======
 	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.title": "Clear Sky Journey",
-	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.description": "At the start of each turn, gain {VIGOR_POWER:diff()} [gold]Vigor[/gold], {THORNS_POWER:diff()} [gold]Thorns[/gold], and recover [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold]",
+	"MIYABISTS2_CARD_QINGXIAO_TONGYOU.description": "At the start of each turn, gain {VIGOR_POWER:diff()} [gold]Vigor[/gold], {THORNS_POWER:diff()} [gold]Thorns[/gold], and recover {SHANNENG_POWER:diff()} [gold]Flash Energy[/gold]",
 
 	"MIYABISTS2_CARD_LIUYUN_YINGSHEN.title": "Flowing Cloud Shadow",
 	"MIYABISTS2_CARD_LIUYUN_YINGSHEN.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]{THORNS_POWER:diff()}[/blue] [gold]Thorns[/gold]",

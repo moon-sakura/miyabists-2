@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts.Events
         public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<YixuanEnemy>()];
 
         // 这个遭遇在那些层级出现
-        public override bool IsValidForAct(ActModel act) => act.ActNumber() == 3 && MiyabiModConfig.MiyabiEnemiesAppearWhenPlayingOtherChar; // 只在第三幕出现
+        public override bool IsValidForAct(ActModel act) => act.ActNumber() == 3 && MiyabiModConfig.MiyabiEnemiesAppear; // 只在第三幕出现
 
         // 这个遭遇是否是弱怪池
         //public override bool IsWeak => false;

@@ -77,6 +77,16 @@ namespace Miyabists2.Scripts.Service
             return new LocString("monsters", entryName+".banter");
         }
 
+        public static bool isModEffectApply(Player player)
+        {
+            return IsMiyabiModChar(player) || MiyabiModConfig.ChangeToAllPlayers;
+        }
+
+        //public static bool isEnemyAppear(ActModel act)
+        //{
+        //    return IsMiyabiModChar(player) || MiyabiModConfig.MiyabiEnemiesAppearWhenPlayingOtherChar;
+        //}
+
 
         //public static void AddRelicToChar<T>(RelicModel r) where T : RelicPoolModel
         //{

@@ -113,7 +113,7 @@ namespace Miyabists2.Scripts.Service
         //[ConfigHoverTip]
         public static bool MiyabiEnemiesStronger { get; set; } = false;
 
-        public static bool MiyabiEnemiesAppearWhenPlayingOtherChar { get; set; } = true;
+        public static bool MiyabiEnemiesAppear { get; set; } = true;
 
         //[ConfigSlider(0.5, 5.0, 0.1, Format = "{0:0.#}x")]
         //[ConfigHoverTip]

@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Events
         // 所有可能出现的怪物
         public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<MiyabiBoss>()];
 
-        public override bool IsValidForAct(ActModel act) => act.ActNumber() == 3 && MiyabiModConfig.MiyabiEnemiesAppearWhenPlayingOtherChar;
+        public override bool IsValidForAct(ActModel act) => act.ActNumber() == 3 && MiyabiModConfig.MiyabiEnemiesAppear;
 
         public override RoomType RoomType => RoomType.Elite; // 这个遭遇的房间类型，这里是普通怪物
 
