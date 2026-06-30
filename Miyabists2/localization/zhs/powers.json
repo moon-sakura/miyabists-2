@@ -316,5 +316,9 @@
 
 	"KAKANIA_POWER.title": "本我，自我，超我",
 	"KAKANIA_POWER.description": "增加受到伤害25%，记录受到所有伤害。右键消耗5支援点数释放记录伤害，回合结束时造成百分比伤害。",
-	"KAKANIA_POWER.smartDescription": "受到伤害[red]+25%[/red]，已记录[blue]{RecordedDamage:diff()}[/blue]点受伤。\\n右键触发：消耗[blue]5[/blue]支援点数，对所有敌人造成记录受伤数值的伤害；回合结束对所有敌人造成[blue]{OutgoingDamage:diff()}[/blue]点伤害（回合结束以[blue]{BurstRatio:diff()}%[/blue]释放）。"
+	"KAKANIA_POWER.smartDescription": "受到伤害[red]+25%[/red]，已记录[blue]{RecordedDamage:diff()}[/blue]点受伤。\\n右键触发：消耗[blue]5[/blue]支援点数，对所有敌人造成记录受伤数值的伤害；回合结束对所有敌人造成[blue]{OutgoingDamage:diff()}[/blue]点伤害（回合结束以[blue]{BurstRatio:diff()}%[/blue]释放）。",
+
+	"SHIMENG_KONGXIANG_POWER.title": "拾梦空想",
+	"SHIMENG_KONGXIANG_POWER.description": "每回合开始时失去10%生命值。命破伤害次数+1。每次失去生命值时获得1点喧响值。",
+	"SHIMENG_KONGXIANG_POWER.smartDescription": "每回合失去{HpLossPercent:diff()}%生命值，命破伤害次数+{Amount}，每次失去生命获得{Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()}点喧响值。"
 }

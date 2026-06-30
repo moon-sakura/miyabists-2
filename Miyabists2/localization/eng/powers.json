@@ -1,4 +1,4 @@
-{
+﻿{
 	"FROST_BUILD_POWER.smartDescription": "After accumulating {PlayerCount:choose(1|2|3|4):50|65|80|95|50} stacks, triggers [aqua]Frost Burn[/aqua] and applies 1 stack of [purple]Attribute Anomaly[/purple]{PlayerCount:cond:>4?(+[blue]15[/blue] trigger stacks per additional player)|}",
 	"FROST_BUILD_POWER.description": "After accumulating 50 stacks, triggers [aqua]Frost Burn[/aqua] and applies 1 stack of [purple]Attribute Anomaly[/purple] (+[blue]15[/blue] trigger stacks per additional player)",
 	"FROST_BUILD_POWER.title": "Rending Frost",
@@ -305,5 +305,9 @@
 
 	"KAKANIA_POWER.title": "Id, Ego, Superego",
 	"KAKANIA_POWER.description": "Increases damage taken by 25%. Records all damage taken. Right-click and spend 5 Support Points to release recorded damage. Deals percentage damage at end of turn.",
-	"KAKANIA_POWER.smartDescription": "Damage taken [red]+25%[/red]. Recorded [blue]{RecordedDamage:diff()}[/blue] damage taken.\\nRight-click: Spend [blue]5[/blue] Support Points to deal the recorded damage amount to all enemies. At end of turn, deal [blue]{OutgoingDamage:diff()}[/blue] damage to all enemies (end of turn releases at [blue]{BurstRatio:diff()}%[/blue])."
+	"KAKANIA_POWER.smartDescription": "Damage taken [red]+25%[/red]. Recorded [blue]{RecordedDamage:diff()}[/blue] damage taken.\\nRight-click: Spend [blue]5[/blue] Support Points to deal the recorded damage amount to all enemies. At end of turn, deal [blue]{OutgoingDamage:diff()}[/blue] damage to all enemies (end of turn releases at [blue]{BurstRatio:diff()}%[/blue]).",
+
+	"SHIMENG_KONGXIANG_POWER.title": "Dream-Picking Reverie",
+	"SHIMENG_KONGXIANG_POWER.description": "At the start of each turn, lose 10% HP. Fate Break damage hit count +1. Each time you lose HP, gain 1 Decibel.",
+	"SHIMENG_KONGXIANG_POWER.smartDescription": "Lose {HpLossPercent:diff()}% HP each turn. Fate Break damage hit count +1. Gain {DecibelAmount:diff()} Decibel each time you lose HP."
 }

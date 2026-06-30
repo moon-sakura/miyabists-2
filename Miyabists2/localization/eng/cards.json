@@ -1,4 +1,4 @@
-{
+﻿{
 	"MIYABISTS2_CARD_FENG_HUA.title": "Wind Flower",
     "MIYABISTS2_CARD_FENG_HUA.description": "[aqua]Rending Frost[/aqua]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}",
 
@@ -525,5 +525,13 @@
 	"MIYABISTS2_CARD_BEST_PARTNER.description": "Gain {Block:diff()} Block\\nEvery [blue]2[/blue] cards played, restore [blue]1[/blue] HP. Triggers up to [blue]3[/blue] times per turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore [blue]3[/blue] HP",
 
 	"MIYABISTS2_CARD_BEST_PARTNER_YIXUAN.title": "Best Colleague",
-	"MIYABISTS2_CARD_BEST_PARTNER_YIXUAN.description": "Gain {Block:diff()} Block\\nEvery [blue]2[/blue] cards played, restore [blue]1[/blue] HP. Triggers up to [blue]3[/blue] times per turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore [blue]3[/blue] HP"
+	"MIYABISTS2_CARD_BEST_PARTNER_YIXUAN.description": "Gain {Block:diff()} Block\\nEvery [blue]2[/blue] cards played, restore [blue]1[/blue] HP. Triggers up to [blue]3[/blue] times per turn.\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore [blue]3[/blue] HP",
+
+	"MIYABISTS2_CARD_QISHI_FEITI.title": "Knight Flying Kick",
+	"MIYABISTS2_CARD_QISHI_FEITI.description": "Lose {LifeLoss:diff()} HP. Deal [gold]Fate Break damage[/gold]{Damage:diff()} [blue]{HitCount:diff()}[/blue] times. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nDamage increases based on missing HP percentage\\nIf HP is below [blue]25%[/blue], gain {Block:diff()} [gold]Block[/gold]",
+
+	"MIYABISTS2_CARD_ZHONGMU_WANGSHI_DUQUE.title": "Final Act - Lost Sorrow Crossed",
+	"MIYABISTS2_CARD_ZHONGMU_WANGSHI_DUQUE.description": "Lose {LifeLoss:diff()} HP. Deal [gold]Fate Break damage[/gold]{Damage:diff()} [blue]{HitCount:diff()}[/blue] times randomly. [gold]Daze[/gold]{DAZE_POWER:diff()}\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain {Block:diff()} [gold]Block[/gold] for each hit on an attacking enemy",
+	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.title": "Dream-Picking Reverie",
+	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "At the start of each turn, lose {HpLossPercent:diff()}% HP\n[gold]Fate Break damage[/gold] hit count +1\nEach time you lose HP, gain {DecibelAmount:diff()} [gold]Decibel[/gold]\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore {ShannengAmount:diff()} [gold]Flash Energy[/gold]"
 }

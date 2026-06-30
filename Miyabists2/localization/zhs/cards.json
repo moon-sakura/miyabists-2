@@ -525,5 +525,14 @@
 	"MIYABISTS2_CARD_BEST_PARTNER.description": "获得{Block:diff()}点格挡\\n每使用2张卡恢复1点生命，每回合最多触发3次。\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复3点生命",
 
 	"MIYABISTS2_CARD_BEST_PARTNER_YIXUAN.title": "最佳同事",
-	"MIYABISTS2_CARD_BEST_PARTNER_YIXUAN.description": "获得{Block:diff()}点格挡\\n每使用2张卡恢复1点生命，每回合最多触发3次。\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复3点生命"
+	"MIYABISTS2_CARD_BEST_PARTNER_YIXUAN.description": "获得{Block:diff()}点格挡\\n每使用2张卡恢复1点生命，每回合最多触发3次。\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复3点生命",
+
+	"MIYABISTS2_CARD_QISHI_FEITI.title": "骑士飞踢",
+	"MIYABISTS2_CARD_QISHI_FEITI.description": "失去{LifeLoss:diff()}点生命值，造成{HitCount:diff()}次[gold]命破伤害[/gold]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n根据已损失生命值百分比提升伤害\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：生命低于[blue]25%[/blue]时获得{Block:diff()}点[gold]格挡[/gold]",
+
+	"MIYABISTS2_CARD_ZHONGMU_WANGSHI_DUQUE.title": "终幕·惘事渡却",
+	"MIYABISTS2_CARD_ZHONGMU_WANGSHI_DUQUE.description": "失去{LifeLoss:diff()}点生命值，随机造成{HitCount:diff()}次[gold]命破伤害[/gold]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：每击中1次攻击意图敌人获得{Block:diff()}点[gold]格挡[/gold]",
+	
+	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.title": "拾梦空想",
+	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "每回合开始时失去{HpLossPercent:diff()}%生命值，造成[gold]命破伤害[/gold]次数+1\n每次失去生命值时获得{DecibelAmount:diff()}点[gold]喧响值[/gold]\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复{ShannengAmount:diff()}点[gold]闪能[/gold]"
 }
