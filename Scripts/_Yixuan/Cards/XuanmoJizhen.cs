@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         protected override string ArtPath => "res://images/_YiXuan/cards/xuanmoJizhen.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(6, ValueProp.Unblockable | ValueProp.Move),
+            new DamageVar(2, ValueProp.Unblockable | ValueProp.Move),
             new DynamicVar(DazeVarName, 3),
             new DynamicVar("HitCount",3),
         ];
@@ -56,7 +56,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(2);
+            DynamicVars.Damage.UpgradeValueBy(1);
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(2);
         }
     }

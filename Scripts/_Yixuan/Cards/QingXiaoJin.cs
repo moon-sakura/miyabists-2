@@ -5,7 +5,9 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Cards.NoneShow;
 using Miyabists2.Scripts._Yixuan.Powers;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,8 +49,16 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
             await ShannengFunc(choiceContext, DynamicVars[ShannengVarName].IntValue, async () =>
             {
-                await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
-                await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, DynamicVars[VigorVarName].IntValue, Owner.Creature, this);
+                // 荆棘或活力二选一
+                await MiyabiCombatService.ChooseResYi(choiceContext, base.Owner, new Dictionary<Type, (int, Func<PlayerChoiceContext, Task>)>
+                {
+                    { typeof(ThornsChoice), (DynamicVars[ThornsVarName].IntValue, async ctx => {
+                        await PowerCmd.Apply<ThornsPower>(ctx, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
+                    })},
+                    { typeof(VigorChoice), (DynamicVars[VigorVarName].IntValue, async ctx => {
+                        await PowerCmd.Apply<VigorPower>(ctx, Owner.Creature, DynamicVars[VigorVarName].IntValue, Owner.Creature, this);
+                    })},
+                });
             });
         }
 

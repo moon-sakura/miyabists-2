@@ -8,7 +8,9 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Cards.NoneShow;
 using Miyabists2.Scripts._Yixuan.Powers;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +31,9 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new BlockVar(6, ValueProp.Move),
             new DynamicVar(ThornsVarName, 3),
-            new DynamicVar(VigorVarName, 5),
+            new DynamicVar(VigorVarName, 3),
             new DynamicVar(ShannengVarName, 10),
-            new DynamicVar("ExtraVigor", 5),
+            //new DynamicVar("ExtraVigor", 5),
         ];
 
         public override bool GainsBlock => false;
@@ -49,11 +51,16 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             // 覆甲
             await PowerCmd.Apply<PlatingPower>(choiceContext, Owner.Creature, DynamicVars.Block.IntValue, Owner.Creature, this);
 
-            // 荆棘
-            await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
-
-            // 活力
-            await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, DynamicVars[VigorVarName].IntValue, Owner.Creature, this);
+            // 荆棘或活力二选一
+            await MiyabiCombatService.ChooseResYi(choiceContext, base.Owner, new Dictionary<Type, (int, Func<PlayerChoiceContext, Task>)>
+            {
+                { typeof(ThornsChoice), (DynamicVars[ThornsVarName].IntValue, async ctx => {
+                    await PowerCmd.Apply<ThornsPower>(ctx, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
+                })},
+                { typeof(VigorChoice), (DynamicVars[VigorVarName].IntValue, async ctx => {
+                    await PowerCmd.Apply<VigorPower>(ctx, Owner.Creature, DynamicVars[VigorVarName].IntValue, Owner.Creature, this);
+                })},
+            });
 
             // 恢复闪能
             await PowerCmd.Apply<ShannengPower>(choiceContext, Owner.Creature, DynamicVars[ShannengVarName].IntValue, Owner.Creature, this);
@@ -62,16 +69,15 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             bool enemyAttacking = Owner.Creature.CombatState.Enemies.Any(e => e.IsAlive && e.Monster.IntendsToAttack);
             if (enemyAttacking)
             {
-                await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, DynamicVars["ExtraVigor"].IntValue, Owner.Creature, this);
-
                 await PowerCmd.Apply<MohenhxPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
             }
         }
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Block.UpgradeValueBy(3);
+            DynamicVars.Block.UpgradeValueBy(2);
             DynamicVars[ThornsVarName].UpgradeValueBy(2);
+            DynamicVars[VigorVarName].UpgradeValueBy(2);
         }
     }
 }
