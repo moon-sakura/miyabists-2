@@ -65,7 +65,7 @@
 
 	"TUNAFA_POWER.title": "吐纳法",
     "TUNAFA_POWER.description": "",
-    "TUNAFA_POWER.smartDescription": "每回合前[blue]{Amount}[/blue]张[gold]风花[/gold]变为0费，每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]{Amount}[/blue]点[gold]落霜[/gold]，已使用{CardCount:diff()}张",
+    "TUNAFA_POWER.smartDescription": "每回合前[blue]{Amount}[/blue]次使用[gold]风花[/gold]时，获得[blue]1[/blue]点[gold]落霜[/gold]，已使用{CardCount:diff()}张",
 
 	"JUN_LIE_POWER.title": "皲裂",
     "JUN_LIE_POWER.description": "",
@@ -87,7 +87,7 @@
 	"BLESSING_MOON_POWER.smartDescription": "受到致命伤害时，避免死亡并恢复[blue]{Amount}%[/blue]的生命\\n触发[gold]属性异常[/gold]与[gold]紊乱[/gold]时额外造成[blue]5%[/blue]最大生命值伤害",
 
 	"SHUANGYUEJS_POWER.title": "霜月架势",
-    "SHUANGYUEJS_POWER.smartDescription": "每回合开始时获得[blue]{Amount}[/blue]点[gold]落霜[/gold]",
+    "SHUANGYUEJS_POWER.smartDescription": "每回合开始时获得[blue]{Amount}[/blue]点[gold]落霜[/gold]，每次使用霜月时获得4点格挡",
 	"SHUANGYUEJS_POWER.description": "每回合开始时获得[blue]2[/blue]点[gold]落霜[/gold]",
 
 	"TIANMIJX_POWER.title": "甜蜜惊吓",

@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using Miyabists2.Scripts.Cards;
 
 namespace Miyabists2.Scripts.Powers
 {
@@ -36,6 +38,14 @@ namespace Miyabists2.Scripts.Powers
 
         //    await PowerCmd.Apply<FrostFallPower>(base.Owner, Amount, null, null);
         //}
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (cardPlay.Card is not ShuangYue || cardPlay.Card.Owner.Creature != Owner)
+                return;
+
+            await CreatureCmd.GainBlock(Owner, 4m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered, cardPlay);
+        }
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {

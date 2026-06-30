@@ -1,5 +1,7 @@
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -39,6 +41,14 @@ namespace Miyabists2.Scripts.Powers
             {
                 triggered = true;
             }
+        }
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (cardPlay.Card is not ShuangYue || cardPlay.Card.Owner.Creature != Owner)
+                return;
+
+            await PowerCmd.Apply<FrostFallPower>(choiceContext, Owner, 1m, Owner, null);
         }
 
         public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)

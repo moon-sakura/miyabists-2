@@ -3,7 +3,7 @@
     "MIYABISTS2_CARD_FENG_HUA.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2_CARD_XINNIAN_WUWO.title": "心念无我",
-    "MIYABISTS2_CARD_XINNIAN_WUWO.description": "本回合若触发过[gold]击破[/gold]，本回合所有[gold]霜月[/gold]费用为0",
+    "MIYABISTS2_CARD_XINNIAN_WUWO.description": "本回合若触发过[gold]击破[/gold]，本回合所有[gold]霜月[/gold]费用为0，每次使用[gold]霜月[/gold]后获得[blue]1[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2_CARD_SHEN_XUE.title": "深雪",
     "MIYABISTS2_CARD_SHEN_XUE.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]1[/blue]点[gold]落霜[/gold]",
@@ -98,7 +98,7 @@
     "MIYABISTS2_CARD_TIANMI_JINGXIA.description": "自己回合结束时，对所有敌人给予{Jingxia:diff()}层[gold]属性异常[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：改为[blue]2[/blue]层",
 
 	"MIYABISTS2_CARD_XIEZUO_SHIGONG.title": "协作施工",
-    "MIYABISTS2_CARD_XIEZUO_SHIGONG.description": "发动{RepeatCount:diff()}次对随机敌人造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予{ANOBUILD_POWER:diff()}层[gold]属性积蓄[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：本场战斗中下次发动次数+[blue]1[/blue]",
+    "MIYABISTS2_CARD_XIEZUO_SHIGONG.description": "发动{RepeatCount:diff()}次对随机敌人造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予{ANOBUILD_POWER:diff()}层[gold]属性积蓄[/gold]\\n本场战斗中下次发动次数+[blue]1[/blue]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将这张卡放回[gold]抽牌堆[/gold]中",
 
 	"MIYABISTS2_CARD_CUTE_FEITIANZHUANG.title": "可爱地雷飞天撞",
     "MIYABISTS2_CARD_CUTE_FEITIANZHUANG.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n敌人每有[blue]1[/blue]层[gold]属性积蓄[/gold]，额外造成[gold]失衡值[/gold][blue]5[/blue]（[gold]属性异常[/gold]视为[blue]3[/blue]层，[gold]紊乱[/gold]视为[blue]5[/blue]层）\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：造成[gold]失衡值[/gold]+[blue]20%[/blue]",
@@ -124,7 +124,7 @@
 	"MIYABISTS2_CARD_SHE_WEN.selectionScreenPrompt": "给希希芙的食物（最多选择{Cards:diff()}张消耗）",
 
 	"MIYABISTS2_CARD_HUA_XIN_FENG.title": "花信风",
-    "MIYABISTS2_CARD_HUA_XIN_FENG.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n本回合若使用过[gold]伙伴[/gold]卡则费用为[blue]0[/blue]",
+    "MIYABISTS2_CARD_HUA_XIN_FENG.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]1[/blue]点[gold]落霜[/gold]\\n本回合若使用过[gold]伙伴[/gold]卡则费用为[blue]0[/blue]",
 
 	"MIYABISTS2_CARD_SHUANG_SUI_XUE.title": "霜碎雪",
     "MIYABISTS2_CARD_SHUANG_SUI_XUE.description": "全体[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}",
@@ -158,7 +158,7 @@
 	"MIYABISTS2_CARD_YONGTAN_HUACAI.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2_CARD_SHUANGYUE_JIASHI.title": "霜月架势",
-    "MIYABISTS2_CARD_SHUANGYUE_JIASHI.description": "每回合开始时获得{FrostFall:diff()}点[gold]落霜[/gold]",
+    "MIYABISTS2_CARD_SHUANGYUE_JIASHI.description": "每回合开始时获得{FrostFall:diff()}点[gold]落霜[/gold]，每次使用霜月时获得4点格挡",
 
 	"MIYABISTS2_CARD_NO_TAIL_FULL.title": "妖刀解放",
     "MIYABISTS2_CARD_NO_TAIL_FULL.description": "你能[jitter][gold]驾驭[/gold][/jitter]{IfUpgraded:show:[aqua]它[/aqua]|[red]它[/red]}吗？",
@@ -186,7 +186,7 @@
 	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "选择一张伙伴卡",
 
 	"MIYABISTS2_CARD_TU_NA_FA.title": "吐纳法",
-    "MIYABISTS2_CARD_TU_NA_FA.description": "每回合前[blue]1[/blue]张[gold]风花[/gold]变为0费，每使用[blue]5[/blue]张[gold]风花[/gold]，获得[blue]1[/blue]点[gold]落霜[/gold]",
+    "MIYABISTS2_CARD_TU_NA_FA.description": "每回合前[blue]1[/blue]次使用[gold]风花[/gold]时，获得[blue]1[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2_CARD_MIYABI_DUEL.title": "对决",
     "MIYABISTS2_CARD_MIYABI_DUEL.description": "将敌人的意图变为造成6点伤害\\n[gold]招架[/gold]1",

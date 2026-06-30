@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Commands;
+using Miyabists2.Scripts.Powers;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -24,9 +26,15 @@ namespace Miyabists2.Scripts.Cards
 
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(7, ValueProp.Move),
-            new DynamicVar(DazeVarName, 4)
+            new DamageVar(4, ValueProp.Move),
+            new DynamicVar(DazeVarName, 3)
         ];
+
+        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await base.OnPlay(choiceContext, cardPlay);
+            await PowerCmd.Apply<FrostFallPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+        }
 
         public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
         {
@@ -58,7 +66,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(3);
+            DynamicVars.Damage.UpgradeValueBy(2);
             //if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v)) v.UpgradeValueBy(1);
         }
 

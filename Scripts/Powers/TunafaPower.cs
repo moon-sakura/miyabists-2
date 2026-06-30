@@ -55,37 +55,42 @@ namespace Miyabists2.Scripts.Powers
 
             //await PowerCmd.SetAmount<TunafaPower>(Owner, Amount + 1, null, null);
 
-            if (cardPlay != null && !cardPlay.IsAutoPlay && cardPlay.IsLastInSeries)
+            if (cardPlay != null && cardPlay.IsLastInSeries)
             {
                 GetInternalData<Data>().cardsPlayedThisTurn++;
-                DynamicVars["CardCount"].BaseValue += 1;
+                DynamicVars["CardCount"].BaseValue = GetInternalData<Data>().cardsPlayedThisTurn;
             }
 
-            if (DynamicVars["CardCount"].IntValue == 4) 
-                Flash();
-
-            if(DynamicVars["CardCount"].IntValue >= 5) 
+            if(GetInternalData<Data>().cardsPlayedThisTurn <= Amount)
             {
                 await PowerCmd.Apply<FrostFallPower>(context, Owner, Amount, Owner, null);
-                DynamicVars["CardCount"].BaseValue = 0;
             }
+
+            //if (DynamicVars["CardCount"].IntValue == 4) 
+            //    Flash();
+
+            //if(DynamicVars["CardCount"].IntValue >= 5) 
+            //{
+            //    await PowerCmd.Apply<FrostFallPower>(context, Owner, Amount, Owner, null);
+            //    DynamicVars["CardCount"].BaseValue = 0;
+            //}
         }
 
 
 
         // 核心逻辑 1：修改能量消耗
-        public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
-        {
-            modifiedCost = originalCost;
-            if (ShouldSkip(card))
-            {
-                return false;
-            }
+        //public override bool TryModifyEnergyCostInCombat(CardModel card, decimal originalCost, out decimal modifiedCost)
+        //{
+        //    modifiedCost = originalCost;
+        //    if (ShouldSkip(card))
+        //    {
+        //        return false;
+        //    }
 
-            // 源码参考：这里不再设为 default(decimal)，而是减 1，且不能小于 0
-            modifiedCost = 0;
-            return true;
-        }
+        //    // 源码参考：这里不再设为 default(decimal)，而是减 1，且不能小于 0
+        //    modifiedCost = 0;
+        //    return true;
+        //}
 
         // 回合开始重置计数
         public override Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
@@ -98,16 +103,16 @@ namespace Miyabists2.Scripts.Powers
         }
 
         // 判定条件：是否应该跳过减费效果
-        private bool ShouldSkip(CardModel card)
-        {
-            // 1. 如果卡牌拥有者不是该 Power 拥有者，跳过
-            if (card.Owner.Creature != base.Owner || !(card is FengHua)) return true;
+        //private bool ShouldSkip(CardModel card)
+        //{
+        //    // 1. 如果卡牌拥有者不是该 Power 拥有者，跳过
+        //    if (card.Owner.Creature != base.Owner || !(card is FengHua)) return true;
 
-            // 2. 只有手牌中的卡显示减费效果
-            bool inHand = card.Pile?.Type == PileType.Hand || card.Pile?.Type == PileType.Play;
-            if (!inHand) return true;
+        //    // 2. 只有手牌中的卡显示减费效果
+        //    bool inHand = card.Pile?.Type == PileType.Hand || card.Pile?.Type == PileType.Play;
+        //    if (!inHand) return true;
 
-            return GetInternalData<Data>().cardsPlayedThisTurn >= Amount;
-        }
+        //    return GetInternalData<Data>().cardsPlayedThisTurn >= Amount;
+        //}
     }
 }

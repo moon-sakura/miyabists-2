@@ -66,8 +66,9 @@ namespace Miyabists2.Scripts.Cards
                     enemies = base.Owner.Creature.CombatState.Enemies.Where(c => c.IsAlive);
                     continue; 
                 }
-               
             }
+
+            if (DynamicVars.TryGetValue("RepeatCount", out DynamicVar repeat)) repeat.BaseValue += 1;
 
             //if (base.CheckSupportCost(1) != 0)
             //{
@@ -79,7 +80,8 @@ namespace Miyabists2.Scripts.Cards
 
         async Task FriendFunc(PlayerChoiceContext choiceContext)
         {
-            if (DynamicVars.TryGetValue("RepeatCount", out DynamicVar repeat)) repeat.BaseValue += 1;
+            await CardPileCmd.Add(this, PileType.Draw.GetPile(Owner),CardPilePosition.Random);
+            //if (DynamicVars.TryGetValue("RepeatCount", out DynamicVar repeat)) repeat.BaseValue += 1;
         }
 
         public override Task AfterCombatEnd(CombatRoom room)
