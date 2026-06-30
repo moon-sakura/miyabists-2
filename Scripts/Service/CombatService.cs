@@ -25,6 +25,7 @@ using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Interop.AutoRegistration;
 using System.Drawing;
+using System.Reflection;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -427,6 +428,95 @@ namespace Miyabists2.Scripts.Service
                 else
                     await CardCmd.AutoPlay(choiceContext, reward1, target);
             }
+        }
+
+        /// <summary>
+        /// 通用资源选择机制：根据传入的卡片Type和对应的执行方法映射，
+        /// 为每个Type生成选择卡片并展示选择界面，玩家选择后执行对应的回调。
+        /// 参考 RelicClick.OnPlay 的选择模式。
+        /// </summary>
+        /// <param name="choiceContext">选择上下文</param>
+        /// <param name="owner">执行选择的玩家</param>
+        /// <param name="typeActions">卡片Type → 执行方法的映射；Key为选择卡片类型，Value为当选中该类型时执行的异步回调</param>
+        /// <param name="onCardCreated">可选回调，每张卡片创建后调用，用于在展示前对卡片进行额外配置（如SetAmount等）</param>
+        public static async Task ChooseRes(PlayerChoiceContext choiceContext, Player owner, Dictionary<Type, Func<PlayerChoiceContext, Task>> typeActions, Action<CardModel> onCardCreated = null)
+        {
+            if (typeActions == null || typeActions.Count == 0) return;
+
+            var combatState = owner.Creature?.CombatState;
+            if (combatState == null) return;
+
+            // 通过反射获取泛型 CreateCard<T>(Player) 方法
+            var createCardMethod = typeof(CombatState)
+                .GetMethods()
+                .FirstOrDefault(m => m.Name == "CreateCard"
+                    && m.IsGenericMethod
+                    && m.GetParameters().Length == 1);
+
+            if (createCardMethod == null)
+            {
+                GD.PrintErr("[MiyabiCombatService.ChooseRes] CreateCard method not found on CombatState");
+                return;
+            }
+
+            // 为每个Type创建对应的选择卡片实例
+            List<CardModel> options = new List<CardModel>();
+            foreach (var type in typeActions.Keys)
+            {
+                try
+                {
+                    var genericMethod = createCardMethod.MakeGenericMethod(type);
+                    var card = genericMethod.Invoke(combatState, new object[] { owner }) as CardModel;
+                    if (card != null)
+                    {
+                        onCardCreated?.Invoke(card);
+                        options.Add(card);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    GD.PrintErr($"[MiyabiCombatService.ChooseRes] Failed to create card of type {type.Name}: {ex.Message}");
+                }
+            }
+
+            if (options.Count == 0) return;
+
+            // 展示选择界面
+            CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, owner);
+
+            // 根据玩家选择的卡片类型，执行对应的回调方法
+            if (chosen != null && typeActions.TryGetValue(chosen.GetType(), out var action))
+            {
+                await action(choiceContext);
+            }
+        }
+
+        /// <summary>
+        /// Yixuan专用资源选择（带数值）：在ChooseRes基础上，
+        /// 为每个选择卡片调用SetAmount(int)设置显示数值。
+        /// 参考 VigorChoice / ThornsChoice 的 SetAmount 用法。
+        /// </summary>
+        /// <param name="choiceContext">选择上下文</param>
+        /// <param name="owner">执行选择的玩家</param>
+        /// <param name="typeActions">卡片Type → (数值Amount, 选中后执行的异步回调) 的映射</param>
+        public static async Task ChooseResYi(PlayerChoiceContext choiceContext, Player owner, Dictionary<Type, (int Amount, Func<PlayerChoiceContext, Task> Action)> typeActions)
+        {
+            if (typeActions == null || typeActions.Count == 0) return;
+
+            // 分离出纯 action 字典供 ChooseRes 使用
+            var actionMap = typeActions.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.Action);
+
+            // 通过 onCardCreated 回调，为卡片调用 SetAmount 设置数值
+            await ChooseRes(choiceContext, owner, actionMap, card =>
+            {
+                var cardType = card.GetType();
+                if (typeActions.TryGetValue(cardType, out var entry))
+                {
+                    // 反射调用 SetAmount(int) —— VigorChoice / ThornsChoice 均定义此方法
+                    var setAmountMethod = cardType.GetMethod("SetAmount");
+                    setAmountMethod?.Invoke(card, new object[] { entry.Amount });
+                }
+            });
         }
     }
 }

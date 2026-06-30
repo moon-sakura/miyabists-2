@@ -133,7 +133,7 @@
     "MIYABISTS2_CARD_MING_CAN_XUE.description": "全体造成[blue]5[/blue]次[aqua]烈霜[/aqua]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n本回合每使用一张攻击牌次数获得[blue]1[/blue]点，每攻击[blue]2[/blue]次，获得[blue]1[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2_CARD_BAOJUN_MENGJI.title": "暴君猛击",
-    "MIYABISTS2_CARD_BAOJUN_MENGJI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，获得{Block:diff()}点格挡，[gold]招架[/gold]{PARRY_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]6[/blue]点[gold]覆甲[/gold]",
+    "MIYABISTS2_CARD_BAOJUN_MENGJI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，获得{Block:diff()}点格挡，[gold]招架[/gold]{PARRY_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]4[/blue]点[gold]覆甲[/gold]",
 
 	"MIYABISTS2_CARD_BINGYUAN_QIANXI.title": "冰渊潜袭",
     "MIYABISTS2_CARD_BINGYUAN_QIANXI.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：每造成{Buffer:diff()}点伤害，获得[blue]1[/blue]层[gold]招架[/gold]和[gold]滑溜[/gold]",
@@ -452,7 +452,7 @@
 	"MIYABISTS2_CARD_MOHEN_HUAXING.description": "[gold]覆甲[/gold]{Block:diff()}\\n获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]荆棘[/gold]和[blue]{VIGOR_POWER:diff()}[/blue]层[gold]活力[/gold]\\n恢复[blue]{SHANNENG_POWER:diff()}[/blue]点[gold]闪能[/gold]\\n如果敌人是攻击意图：再获得[blue]{ExtraVigor:diff()}[/blue]层[gold]活力[/gold]，下一张[orange]玄墨[/orange]伤害卡费用变为[blue]0[/blue]",
 
 	"MIYABISTS2_CARD_MOJIN_YINGXIAO.title": "墨烬影消",
-	"MIYABISTS2_CARD_MOJIN_YINGXIAO.description": "获得{Block:diff()}点格挡\\n抽[blue]1[/blue]张卡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]荆棘[/gold]",
+	"MIYABISTS2_CARD_MOJIN_YINGXIAO.description": "获得{Block:diff()}点格挡\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：抽[blue]1[/blue]张卡，如果是技能卡则获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]荆棘[/gold]，如果是攻击卡则获得[blue]{THORNS_POWER:diff()}[/blue]层[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_XIAOYUN_XUNJI.title": "霄云迅击",
 	"MIYABISTS2_CARD_XIAOYUN_XUNJI.description": "[orange]玄墨[/orange]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]闪能[/gold][blue]{SHANNENG_POWER:diff()}[/blue]：获得[blue]{VIGOR_POWER:diff()}[/blue]层[gold]活力[/gold]",
@@ -476,10 +476,10 @@
 	"MIYABISTS2_CARD_THORNS2VIGOR.description":"消耗全部荆棘，获得活力。",
 
 	"MIYABISTS2_CARD_VIGOR_CHOICE.title" : "获得活力",
-	"MIYABISTS2_CARD_VIGOR_CHOICE.description":"获得2层[gold]活力[/gold]",
+	"MIYABISTS2_CARD_VIGOR_CHOICE.description":"获得{Amount}层[gold]活力[/gold]",
 
 	"MIYABISTS2_CARD_THORNS_CHOICE.title" : "获得荆棘",
-	"MIYABISTS2_CARD_THORNS_CHOICE.description":"获得2层[gold]荆棘[/gold]",
+	"MIYABISTS2_CARD_THORNS_CHOICE.description":"获得{Amount}层[gold]荆棘[/gold]",
 
 	"MIYABISTS2_CARD_SHUFA_CHOICE.title" : "施加术法值",
 	"MIYABISTS2_CARD_SHUFA_CHOICE.description":"对所有敌人施加5层[gold]术法值[/gold]",
@@ -492,7 +492,7 @@
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG_YIXUAN.description": "消耗卡组中所有[gold]失衡值[/gold]大于[blue]15[/blue]的卡\\n如果消耗[blue]3[/blue]张以上，[gold]击破[/gold]敌人\\n不足[blue]3[/blue]张则在抽卡堆中添加[blue]3[/blue]张[gold]恶虎七式·猛虎炸开花[/gold]",
 
 	"MIYABISTS2_CARD_BAOJUN_MENGJI_YIXUAN.title": "暴君猛击",
-	"MIYABISTS2_CARD_BAOJUN_MENGJI_YIXUAN.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，获得{Block:diff()}点格挡，{THORNS_POWER:diff()}层[gold]荆棘[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]6[/blue]点[gold]覆甲[/gold]",
+	"MIYABISTS2_CARD_BAOJUN_MENGJI_YIXUAN.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，获得{Block:diff()}点格挡，{THORNS_POWER:diff()}层[gold]荆棘[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：获得[blue]4[/blue]点[gold]覆甲[/gold]",
 
 	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI_YIXUAN.title": "超强力盾击",
 	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI_YIXUAN.description": "获得{Block:diff()}点格挡，{THORNS_POWER:diff()}层[gold]荆棘[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：对所有敌人造成[gold]荆棘[/gold]层数的伤害\\n[gold]消耗{ExhaustCount:diff()}[/gold]",

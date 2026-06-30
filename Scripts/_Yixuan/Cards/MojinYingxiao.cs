@@ -41,13 +41,23 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
             await base.OnPlay(choiceContext, cardPlay);
 
-            // 抽一张卡
-            await CardPileCmd.Draw(choiceContext, 1, Owner);
+            
 
             // 闪能10：获得荆棘
             await ShannengFunc(choiceContext, DynamicVars[ShannengVarName].IntValue, async () =>
             {
-                await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
+                // 抽一张卡
+                var card = (await CardPileCmd.Draw(choiceContext, 1, Owner)).FirstOrDefault();
+
+                if(card != null)
+                {
+
+                    if (card.Type == CardType.Skill)
+                        await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
+
+                    if(card.Type == CardType.Attack)
+                        await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, DynamicVars[ThornsVarName].IntValue, Owner.Creature, this);
+                }
             });
         }
 

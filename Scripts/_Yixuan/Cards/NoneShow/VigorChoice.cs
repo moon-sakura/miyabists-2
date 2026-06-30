@@ -1,5 +1,7 @@
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,15 @@ namespace Miyabists2.Scripts._Yixuan.Cards.NoneShow
     {
         public VigorChoice() : base(-1, CardType.Status, CardRarity.Token, TargetType.None, false)
         {
+        }
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar("Amount",2),
+        ];
+
+        public void SetAmount(int amount)
+        {
+            DynamicVars["Amount"].BaseValue = amount;
         }
     }
 }

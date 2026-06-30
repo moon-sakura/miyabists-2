@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 12),
-            new BlockVar(12,ValueProp.Move),
+            new BlockVar(10,ValueProp.Move),
             new DynamicVar(ParryVarName, 2),
             new DynamicVar(SupportVarName,2),
         ];
@@ -60,7 +60,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected async Task FriendFunc(PlayerChoiceContext choiceContext)
         {
-            await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, 6, base.Owner.Creature, this);
+            await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, 4, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
