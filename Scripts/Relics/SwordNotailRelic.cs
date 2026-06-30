@@ -181,6 +181,15 @@ namespace Miyabists2.Scripts.Relics
             }
         }
 
+        public void SetThreshold(int threshold) => Threshold = threshold;
+        public void ResetThreshold() => Threshold = 30;
+
+        public override async Task AfterCombatVictory(CombatRoom room)
+        {
+            ResetThreshold();
+        }
+
+
         //public override Task AfterCombatEnd(CombatRoom _)
         //{
         //    base.Status = RelicStatus.Normal;

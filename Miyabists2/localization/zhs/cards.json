@@ -85,7 +85,7 @@
     "MIYABISTS2_CARD_WUZHI_JIZHI.description": "[aqua]烈霜[/aqua]{Damage:diff()}\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]2[/blue]点[gold]落霜[/gold]",
 
 	"MIYABISTS2_CARD_BAMIAN_WEIFENG.title": "八面威风",
-    "MIYABISTS2_CARD_BAMIAN_WEIFENG.description": "每次使用[gold]终结技[/gold]后获得[blue]5[/blue]点[gold]喧响值[/gold]，使用[gold]伙伴[/gold]卡后获得[blue]2[/blue]点[gold]喧响值[/gold]",
+    "MIYABISTS2_CARD_BAMIAN_WEIFENG.description": "本场战斗中[gold]喧响值[/gold]达到{Threshold}即可获得[gold]终结技[/gold]",
 
 	"MIYABISTS2_CARD_SP_XIAOYE.title": "SP：小夜骑士",
     "MIYABISTS2_CARD_SP_XIAOYE.description": "自己和敌方各获得[blue]1[/blue]层[gold]无实体[/gold]，从所有卡牌里选择{Cards:diff()}张卡牌[gold]消耗[/gold]",
@@ -338,7 +338,7 @@
 
 	// ====== 仪玄共享卡牌 ======
 	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.title": "八面威风",
-	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.description": "每次使用[gold]终结技[/gold]后获得[blue]5[/blue]点[gold]喧响值[/gold]，使用[gold]伙伴[/gold]卡后获得[blue]2[/blue]点[gold]喧响值[/gold]",
+	"MIYABISTS2_CARD_BAMIAN_WEIFENG_YIXUAN.description": "本场战斗中[gold]喧响值[/gold]达到{Threshold}即可获得[gold]终结技[/gold]",
 
 	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE_YIXUAN.title": "邦布出击！",
 	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE_YIXUAN.description": "指定一个邦布，可以免费使用其1次能力\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",

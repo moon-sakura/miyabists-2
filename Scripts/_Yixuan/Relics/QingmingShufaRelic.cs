@@ -15,6 +15,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Relics;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts._Yixuan.Cards.NoneShow;
@@ -141,6 +142,15 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         }
 
         public void SetUsed(int used) => ShannengUsed = used;
+
+        public void SetThreshold(int threshold) => Threshold = threshold;
+        public void ResetThreshold() => Threshold = 30;
+
+        public override async Task AfterCombatVictory(CombatRoom room)
+        {
+            ResetThreshold();
+        }
+
     }
 
     /// <summary>
@@ -343,5 +353,14 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                     break;
             }
         }
+
+        public void SetThreshold(int threshold) => Threshold = threshold;
+        public void ResetThreshold() => Threshold = 30;
+
+        public override async Task AfterCombatVictory(CombatRoom room)
+        {
+            ResetThreshold();
+        }
+
     }
 }

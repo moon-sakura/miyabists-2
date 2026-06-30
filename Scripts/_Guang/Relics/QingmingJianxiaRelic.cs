@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
@@ -104,6 +105,14 @@ namespace Miyabists2.Scripts._Guang.Relics
                 await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 4, null, null);
             }
         }
+
+        public void SetThreshold(int threshold) => Threshold = threshold;
+        public void ResetThreshold() => Threshold = 30;
+
+        public override async Task AfterCombatVictory(CombatRoom room)
+        {
+            ResetThreshold();
+        }
     }
 
     /// <summary>
@@ -191,6 +200,14 @@ namespace Miyabists2.Scripts._Guang.Relics
                 Flash();
                 await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 4, null, null);
             }
+        }
+
+        public void SetThreshold(int threshold) => Threshold = threshold;
+        public void ResetThreshold() => Threshold = 30;
+
+        public override async Task AfterCombatVictory(CombatRoom room)
+        {
+            ResetThreshold();
         }
     }
 }

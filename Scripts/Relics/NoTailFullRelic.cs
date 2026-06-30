@@ -1,5 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
-using STS2RitsuLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -8,11 +6,14 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using Miyabists2.Scripts.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -122,6 +123,13 @@ namespace Miyabists2.Scripts.Relics
             }
         }
 
-        
+        public void SetThreshold(int threshold) => Threshold = threshold;
+        public void ResetThreshold() => Threshold = 30;
+
+        public override async Task AfterCombatVictory(CombatRoom room)
+        {
+            ResetThreshold();
+        }
+
     }
 }

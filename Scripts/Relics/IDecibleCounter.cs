@@ -10,5 +10,9 @@ namespace Miyabists2.Scripts.Relics
         void AddCounter(int amount, bool forceAdd = false);
         void SetMax(int amount);
         void ResetMax();
+        void SetThreshold(int threshold);
+        void ResetThreshold();
+
+
     }
 }

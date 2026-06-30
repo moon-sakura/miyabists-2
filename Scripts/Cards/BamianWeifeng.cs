@@ -28,6 +28,10 @@ namespace Miyabists2.Scripts.Cards
             HoverTipFactory.FromKeyword(MiyabiKeywords.EndSkill),
         ];
 
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar("Threshold",20),
+        ];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<BamianwfPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
