@@ -158,6 +158,6 @@
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.title": "青溟笼舍",
-	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "每场战斗开始时，随机获取 [blue]1[/blue] 个上一场战斗结束时的正面能力及其层数（不包括[gold]闪能[/gold]）。每累计受到[blue]100%[/blue]的生命伤害，额外获取1个。",
-	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": ""
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "每场战斗开始时，随机获取[blue]{Get}[/blue]个上一场战斗结束时的正面能力及其层数（不包括[gold]闪能[/gold]与[gold]支援点数[/gold]）。每累计受到[blue]100%[/blue]的生命伤害，额外获取[blue]1[/blue]个。\\n当前累计失去生命百分比：[blue]{Record}%[/blue]。",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": "江河易改，旧梦难消"
 }

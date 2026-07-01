@@ -5,7 +5,9 @@ using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Patches;
 using Miyabists2.Scripts.Powers;
@@ -57,36 +59,20 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
             await base.OnPlay(choiceContext, cardPlay);
 
-            // 随机造成3次命破伤害，追踪击中攻击意图敌人的次数
-            int attackIntentHits = 0;
-
-            for (int i = 0; i < DynamicVars["HitCount"].IntValue; i++)
-            {
-                var enemies = Owner.Creature.CombatState.HittableEnemies.ToList();
-                if (enemies.Count == 0) break;
-                var target = enemies.TakeRandom(1, Owner.RunState.Rng.Shuffle).FirstOrDefault();
-                if (target == null) continue;
-
-                await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
                     .FromCard(this)
                     .Unblockable()
-                    .Targeting(target)
+                    .TargetingRandomOpponents(Owner.Creature.CombatState)
+                    .WithHitCount(DynamicVars["HitCount"].IntValue)
                     .WithHitFx("vfx/vfx_attack_blunt")
                     .Execute(choiceContext);
+        }
 
-                if (target.Monster.IntendsToAttack)
-                {
-                    attackIntentHits++;
-                }
-            }
-
-            // 支援点数1：根据击中攻击意图敌人的次数获得格挡
-            if (attackIntentHits > 0)
+        public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
+        {
+            if(dealer == Owner.Creature && cardSource == this && target.IsMonster && target.Monster.IntendsToAttack)
             {
-                await SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () =>
-                {
-                    await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-                });
+                await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, null);
             }
         }
 
