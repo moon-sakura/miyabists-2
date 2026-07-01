@@ -158,6 +158,6 @@
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.title": "Azure Cage",
-	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "At the start of each combat, randomly gain [blue]1[/blue] positive buff (and its stacks) from the end of the previous combat (excluding [gold]Flash Energy[/gold]). For every [blue]100%[/blue] of Max HP taken as unblocked damage, gain 1 additional buff.",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "At the start of each combat, randomly gain [blue]{Get}[/blue] positive buff(s) (and their stacks) from the end of the previous combat (excluding [gold]Flash Energy[/gold] and [gold]Support Points[/gold]). For every cumulative [blue]100%[/blue] of Max HP taken as damage, gain [blue]1[/blue] additional buff.\\nCurrent cumulative HP loss percentage: [blue]{Record}%[/blue].",
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": ""
 }

@@ -65,7 +65,7 @@
 
 	"TUNAFA_POWER.title": "Breathing Method",
 	"TUNAFA_POWER.description": "",
-	"TUNAFA_POWER.smartDescription": "The first [blue]{Amount}[/blue] [gold]Wind Blossom[/gold] cards each turn cost 0. Every [blue]5[/blue] [gold]Wind Blossom[/gold] cards played grants [blue]{Amount}[/blue] [gold]Frostfall[/gold]. [blue]{CardCount:diff()}[/blue] played so far",
+	"TUNAFA_POWER.smartDescription": "The first [blue]{Amount}[/blue] times you play [gold]Wind Blossom[/gold] each turn, gain [blue]1[/blue] [gold]Frostfall[/gold]. [blue]{CardCount:diff()}[/blue] played so far",
 
 	"JUN_LIE_POWER.title": "Chapped",
 	"JUN_LIE_POWER.description": "",
@@ -87,7 +87,7 @@
 	"BLESSING_MOON_POWER.smartDescription": "When taking fatal damage, prevent death and recover [blue]{Amount}%[/blue] HP\\nWhen triggering [gold]Attribute Anomaly[/gold] and [gold]Disorder[/gold], deal an additional [blue]5%[/blue] Max HP damage",
 
 	"SHUANGYUEJS_POWER.title": "Frost Moon Stance",
-	"SHUANGYUEJS_POWER.smartDescription": "At the start of each turn, gain [blue]{Amount}[/blue] [gold]Frostfall[/gold]",
+	"SHUANGYUEJS_POWER.smartDescription": "At the start of each turn, gain [blue]{Amount}[/blue] [gold]Frostfall[/gold]. Gain [blue]4[/blue] Block each time you play [gold]Frost Moon[/gold]",
 	"SHUANGYUEJS_POWER.description": "At the start of each turn, gain [blue]2[/blue] [gold]Frostfall[/gold]",
 
 	"TIANMIJX_POWER.title": "Sweet Surprise",
@@ -309,5 +309,5 @@
 
 	"SHIMENG_KONGXIANG_POWER.title": "Dream-Picking Reverie",
 	"SHIMENG_KONGXIANG_POWER.description": "At the start of each turn, lose 10% HP. Fate Break damage hit count +1. Each time you lose HP, gain 1 Decibel.",
-	"SHIMENG_KONGXIANG_POWER.smartDescription": "Lose {HpLossPercent:diff()}% HP each turn. Fate Break damage hit count +1. Gain {DecibelAmount:diff()} Decibel each time you lose HP."
+	"SHIMENG_KONGXIANG_POWER.smartDescription": "Lose {HpLossPercent:diff()}% HP each turn. Fate Break damage hit count +{Amount}. Gain {Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()} Decibel each time you lose HP."
 }
