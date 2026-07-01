@@ -1,0 +1,273 @@
+using Godot;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Saves.Runs;
+using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Yixuan.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+
+namespace Miyabists2.Scripts._Yixuan.Relics
+{
+    /// <summary>
+    /// 青溟笼舍（Rare遗物）：
+    /// 每场战斗开始时，随机获取 1 个上一场战斗结束时的正面能力及其层数（不包括闪能）。
+    /// 每累计受到100%的生命伤害，额外获取1个。
+    /// </summary>
+    [RegisterRelic(typeof(YixuanRelicPool))]
+    internal class QingmingLongsheRelic : ModRelicTemplate
+    {
+        public override RelicRarity Rarity => RelicRarity.Rare;
+
+        // TODO: 替换为Yixuan专属遗物图标
+        public override string PackedIconPath => "res://images/_YiXuan/relics/qingminLongshe.png";
+        protected override string PackedIconOutlinePath => PackedIconPath;
+        protected override string BigIconPath => PackedIconPath;
+
+        //protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        //[
+        //    HoverTipFactory.FromPower<ShannengPower>(),
+        //];
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DynamicVar("Get",1),
+            new DynamicVar("Record",0),
+        ];
+
+        // ========== Saved State ==========
+
+        /// <summary>上一场战斗结束时保存的正面能力类型全名</summary>
+        private List<string> _savedPowerTypeNames = new();
+
+        [SavedProperty]
+        public List<string> SavedPowerTypeNames
+        {
+            get => _savedPowerTypeNames;
+            private set
+            {
+                AssertMutable();
+                _savedPowerTypeNames = value;
+            }
+        }
+
+        /// <summary>上一场战斗结束时保存的对应能力层数（与SavedPowerTypeNames一一对应）</summary>
+        private List<int> _savedPowerAmounts = new();
+
+        [SavedProperty]
+        public List<int> SavedPowerAmounts
+        {
+            get => _savedPowerAmounts;
+            private set
+            {
+                AssertMutable();
+                _savedPowerAmounts = value;
+            }
+        }
+
+        /// <summary>本局战斗累计受到的未格挡伤害（用于计算额外抽取次数）</summary>
+        private decimal _accumulatedDamage;
+
+        [SavedProperty]
+        public decimal AccumulatedDamage
+        {
+            get => _accumulatedDamage;
+            private set
+            {
+                AssertMutable();
+                _accumulatedDamage = value;
+            }
+        }
+
+        private decimal _getCount = 0; // 基础1次抽取 + 累计伤害额外抽取
+        [SavedProperty]
+        public decimal GetCount
+        {
+            get => _getCount;
+            private set
+            {
+                AssertMutable();
+                _getCount = value;
+            }
+        }
+
+        // ========== Hooks ==========
+
+        /// <summary>战斗胜利后：保存当前所有正面能力（不含闪能）及其层数</summary>
+        public override async Task AfterCombatVictory(CombatRoom room)
+        {
+            await SaveCurrentPositivePowers();
+        }
+
+        /// <summary>
+        /// 每场战斗第一回合开始时：
+        /// 基础1次抽取 + 每累计100%生命伤害额外1次，
+        /// 从上一场战斗保存的能力池中随机抽取并附加给玩家。
+        /// 先不重复抽取所有不重复能力，若抽取次数多于能力数则允许重复。
+        /// </summary>
+        public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        {
+            if (player != Owner) return;
+            if (Owner.Creature.CombatState.RoundNumber != 1) return;
+
+            GetCount = 1 + CalculateBonusDraws();
+            DynamicVars["Get"].BaseValue = GetCount;
+            DynamicVars["Record"].BaseValue = AccumulatedDamage;
+
+            // 重置累积伤害（新战斗开始重新计算）
+            //AccumulatedDamage = 0;
+
+            if (SavedPowerTypeNames == null || SavedPowerTypeNames.Count == 0) return;
+            if (GetCount <= 0) return;
+
+            Flash();
+            await DrawAndApplyPowers(choiceContext, (int)GetCount);
+        }
+
+        /// <summary>受到伤害后：累计未格挡伤害用于计算额外抽取次数</summary>
+        public override async Task AfterDamageReceivedLate(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
+        {
+            if (target != Owner?.Creature) return;
+            if (!CombatManager.Instance.IsInProgress) return;
+            if (result.UnblockedDamage <= 0) return;
+
+            AccumulatedDamage += 100 * result.UnblockedDamage / Owner.Creature.MaxHp;
+        }
+
+        // ========== Private Methods ==========
+
+        /// <summary>读取玩家身上所有非闪能的Buff型能力及其层数，保存到列表中</summary>
+        private async Task SaveCurrentPositivePowers()
+        {
+            var creature = Owner?.Creature;
+            if (creature == null) return;
+
+            var powers = creature.Powers.ToList();
+            var typeNames = new List<string>();
+            var amounts = new List<int>();
+
+            foreach (var power in powers)
+            {
+                // 排除闪能
+                if (power is ShannengPower) continue;
+                // 只保留正面Buff型能力
+                if (power.Type != PowerType.Buff) continue;
+
+                typeNames.Add(power.GetType().FullName!);
+                amounts.Add(power.Amount);
+            }
+
+            SavedPowerTypeNames = typeNames;
+            SavedPowerAmounts = amounts;
+        }
+
+        /// <summary>根据累计伤害计算额外抽取次数：每100%最大生命值伤害 = +1次</summary>
+        private int CalculateBonusDraws()
+        {
+            if (Owner?.Creature == null) return 0;
+            var maxHp = Owner.Creature.MaxHp;
+            if (maxHp <= 0) return 0;
+
+            return (int)(AccumulatedDamage / 100);
+        }
+
+        /// <summary>
+        /// 从保存的能力池中随机抽取 totalDraws 次并应用。
+        /// 先不重复地抽取，若池中能力不足则重置池子允许重复抽取。
+        /// </summary>
+        private async Task DrawAndApplyPowers(PlayerChoiceContext choiceContext, int totalDraws)
+        {
+            var creature = Owner.Creature;
+            var rng = Owner.RunState.Rng.Shuffle;
+
+            // 可用索引池：从中随机选取（不放回）
+            var availableIndices = Enumerable.Range(0, SavedPowerTypeNames.Count).ToList();
+            var drawnCount = 0;
+
+            while (drawnCount < totalDraws)
+            {
+                if (availableIndices.Count == 0)
+                {
+                    // 所有能力都已抽过一轮，重置池子（之后允许重复）
+                    availableIndices = Enumerable.Range(0, SavedPowerTypeNames.Count).ToList();
+                    if (availableIndices.Count == 0) break; // 池子为空，安全退出
+                }
+
+                // 随机选取一个索引
+                int pick = rng.NextInt(0, availableIndices.Count);
+                int index = availableIndices[pick];
+                availableIndices.RemoveAt(pick);
+
+                // 应用该能力
+                await ApplyPowerByTypeName(
+                    choiceContext, creature,
+                    SavedPowerTypeNames[index],
+                    SavedPowerAmounts[index]);
+
+                drawnCount++;
+            }
+        }
+
+        /// <summary>通过反射动态调用 PowerCmd.Apply&lt;T&gt; 来附加指定类型的能力</summary>
+        private static async Task ApplyPowerByTypeName(PlayerChoiceContext choiceContext, Creature creature, string typeName, int amount)
+        {
+            try
+            {
+                var powerType = ResolvePowerType(typeName);
+                if (powerType == null) return;
+
+                // 反射调用 PowerCmd.Apply<T>(choiceContext, creature, amount, null, null)
+                var applyMethod = typeof(PowerCmd)
+                    .GetMethods(BindingFlags.Public | BindingFlags.Static)
+                    .FirstOrDefault(m => m.Name == "Apply"
+                        && m.IsGenericMethod
+                        && m.GetParameters().Length == 5);
+
+                if (applyMethod == null) return;
+
+                var genericMethod = applyMethod.MakeGenericMethod(powerType);
+                await (Task)genericMethod.Invoke(null, new object?[] { choiceContext, creature, (decimal)amount, null, null });
+            }
+            catch (Exception ex)
+            {
+                GD.PrintErr($"[QingmingLongsheRelic] Failed to apply power '{typeName}': {ex.Message}");
+            }
+        }
+
+        /// <summary>根据类型全名解析 Power 类型</summary>
+        private static Type? ResolvePowerType(string typeName)
+        {
+            // 先在已加载的程序集中查找
+            var powerType = Type.GetType(typeName);
+            if (powerType != null) return powerType;
+
+            // 回退：遍历所有程序集查找
+            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                try
+                {
+                    powerType = asm.GetType(typeName);
+                    if (powerType != null) return powerType;
+                }
+                catch
+                {
+                    // 某些程序集可能无法访问，忽略
+                }
+            }
+
+            return null;
+        }
+    }
+}

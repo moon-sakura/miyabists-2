@@ -155,5 +155,9 @@
 
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "Azure Bird",
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "At combat start, restore all [gold]Flash Energy[/gold]. Each time you play a card, gain [blue]1[/blue] [gold]Decibel[/gold]. When [gold]Decibel[/gold] reaches [blue]30[/blue], gain an [gold]Ultimate[/gold].\\nEach time you lose HP, randomly trigger one of the following effects: Gain {Vigor} [gold]Vigor[/gold], Gain {Thorns} [gold]Thorns[/gold], Apply {Shufa} [gold]Technique Value[/gold] to all enemies.\\nRight-click: Lose 5% of max HP to choose and trigger one effect.",
-	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": ""
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.title": "Azure Cage",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "At the start of each combat, randomly gain [blue]1[/blue] positive buff (and its stacks) from the end of the previous combat (excluding [gold]Flash Energy[/gold]). For every [blue]100%[/blue] of Max HP taken as unblocked damage, gain 1 additional buff.",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": ""
 }
