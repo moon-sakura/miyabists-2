@@ -65,6 +65,24 @@ namespace Miyabists2.Scripts.Service
             return player.Relics.OfType<T>().FirstOrDefault();
         }
 
+        public static async Task<IEnumerable<CardPileAddResult>> AddCardToDesk<T>(Player player, float showTime = 2f) where T : CardModel
+        {
+            GD.Print($"[AddCardToDesk] 开始 — T={typeof(T).Name}, player={player.Character?.GetType().Name}");
+
+            List<CardPileAddResult> results = new List<CardPileAddResult>();
+            CardModel card = player.RunState.CreateCard(ModelDb.Card<PriceOfPower>(), player);
+            GD.Print($"[AddCardToDesk] CreateCard 完成 — cardType={card.GetType().Name}, is PriceOfPower={card is PriceOfPower}, Owner={card.Owner != null}");
+
+            results.Add(await CardPileCmd.Add(card, PileType.Deck));
+            GD.Print($"[AddCardToDesk] CardPileCmd.Add 完成 — results.Count={results.Count}");
+
+            CardCmd.PreviewCardPileAdd(results, showTime);
+            GD.Print($"[AddCardToDesk] 结束");
+
+            return results;
+        }
+
+
         public static bool IsMiyabiModChar(Player player) 
         {
             if(player == null) return false;

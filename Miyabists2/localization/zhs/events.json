@@ -38,6 +38,37 @@
     "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.description": "真的不是大师姐吗？",
 
     "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.JUFUFU.description" : "[outline_size=10][outline_color=black]小师妹如此看好我，我一定要给你露两手！[/outline_color][/outline_size]",
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]你让大师姐伤心了！[/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]你让大师姐伤心了！[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.title" : "异界之声",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]\"你渴望力量吗，我可以给你力量。\"不知从何处传来了这样的声音。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.WANT_POWER.title": "我想要力量",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.WANT_POWER.description": "也许值得一试。",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.REFUSE.title": "拒绝",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.REFUSE.description": "这可能不是什么好事。",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.description" : "[outline_size=10][outline_color=black]\"很好，我会给予你力量，以及一点小礼物。\"\\n是否还要？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.MORE.title": "力量多多益善",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.MORE.description": "再获得一张[red]力量的代价[/red]。",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.REFUSE.title": "拒绝",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.REFUSE.description": "到此为止。",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.END.description" : "[outline_size=10][outline_color=black]那声音消失了，但你的牌组中留下了些不祥之物……[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.description" : "[outline_size=10][outline_color=black]\"你真贪婪。\"那声音带着一丝嘲讽，消失了。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.title": "离开",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.description": "你感到牌组变得异常沉重……",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_LEAVE.description" : "[outline_size=10][outline_color=black]你获得了力量，但代价是什么呢？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.description" : "[outline_size=10][outline_color=black]天上才不会掉馅饼！[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.title": "离开",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.description": "敬而远之。",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_LEAVE.description" : "[outline_size=10][outline_color=black]你选择远离那神秘的声音，这也许是正确的选择。[/outline_color][/outline_size]"
 
 }

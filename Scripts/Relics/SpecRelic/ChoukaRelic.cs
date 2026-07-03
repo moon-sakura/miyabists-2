@@ -128,6 +128,8 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             }
         }
 
+        public void AddCinimaCounter(int amount) => CinimaCounter += amount;
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("CINIMA",0),
             new DynamicVar("Uppercount", 25m),

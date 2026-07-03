@@ -38,6 +38,37 @@
     "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.description": "Are you sure it's not your senior sister?",
 
     "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.JUFUFU.description" : "[outline_size=10][outline_color=black]Since you think so highly of me, little junior sister, I must show you what I can do![/outline_color][/outline_size]",
-    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]You've made your senior sister sad![/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]You've made your senior sister sad![/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.title" : "Voice from Another World",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]\"Do you desire power? I can give it to you.\" A voice comes from nowhere.[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.WANT_POWER.title": "I want power",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.WANT_POWER.description": "It might be worth a try.",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.REFUSE.title": "Refuse",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.REFUSE.description": "This might not be a good thing.",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.description" : "[outline_size=10][outline_color=black]\"Very well, I will grant you power, along with a little gift.\"\\nDo you want more?[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.MORE.title": "The more, the better",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.MORE.description": "Gain another [red]Price of Power[/red].",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.REFUSE.title": "Refuse",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.REFUSE.description": "That's enough.",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.END.description" : "[outline_size=10][outline_color=black]The voice fades away, but something ominous remains in your deck...[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.description" : "[outline_size=10][outline_color=black]\"How greedy of you.\" The voice fades away with a hint of mockery.[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.title": "Leave",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.description": "Your deck feels unusually heavy...",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_LEAVE.description" : "[outline_size=10][outline_color=black]You've gained power, but at what cost?[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.description" : "[outline_size=10][outline_color=black]There's no such thing as a free lunch![/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.title": "Leave",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.description": "Stay away from it.",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_LEAVE.description" : "[outline_size=10][outline_color=black]You choose to stay away from the mysterious voice. Perhaps it was the right choice.[/outline_color][/outline_size]"
 
 }

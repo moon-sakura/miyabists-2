@@ -226,6 +226,9 @@
 	"MIYABISTS2_CARD_PRINCESS_YEARS.title": "八千年的等待",
     "MIYABISTS2_CARD_PRINCESS_YEARS.description": "加入一张[gold]超人彩叶[/gold]到弃牌堆",
 
+	"MIYABISTS2_CARD_PRICE_OF_POWER.title": "力量的代价",
+    "MIYABISTS2_CARD_PRICE_OF_POWER.description": "添加到卡组时，影画+1；从卡组移除时，影画-1。",
+
 	"MIYABISTS2_CARD_PRINCESS_INOHA.title": "超人彩叶",
     "MIYABISTS2_CARD_PRINCESS_INOHA.description": "与[gold]八千年的等待[/gold]同时在手卡时，所有卡牌[gold]升级[/gold]且获得[gold]重放1[/gold]，将[gold]八千年的等待[/gold]变化为[gold]辉夜姬[/gold]",
 
