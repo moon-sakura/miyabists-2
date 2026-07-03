@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts.Cards
         ];
 
         public PriceOfPower()
-            : base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+            : base(-1, CardType.Power, CardRarity.Curse, TargetType.None)
         {
             //GD.Print($"[PriceOfPower] 构造函数被调用 — 实例Hash: {GetHashCode()}");
         }

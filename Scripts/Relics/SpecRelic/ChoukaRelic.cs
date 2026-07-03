@@ -110,6 +110,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             {
                 AssertMutable();
                 _freeCounter = value;
+                DynamicVars["FreeCount"].BaseValue = FreeCounter;
                 InvokeDisplayAmountChanged();
             }
         }
@@ -124,6 +125,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
             {
                 AssertMutable();
                 _cinimaCounter = value;
+                DynamicVars["CINIMA"].BaseValue = CinimaCounter;
                 InvokeDisplayAmountChanged();
             }
         }
