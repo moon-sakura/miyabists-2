@@ -227,7 +227,7 @@
     "MIYABISTS2_CARD_PRINCESS_YEARS.description": "Add a [gold]Superhuman Colored Leaf[/gold] to your discard pile",
 
 	"MIYABISTS2_CARD_PRICE_OF_POWER.title": "Price of Power",
-    "MIYABISTS2_CARD_PRICE_OF_POWER.description": "This power seems to come with a price...",
+    "MIYABISTS2_CARD_PRICE_OF_POWER.description": "When added to your deck, Cinema +1. When removed from your deck, Cinema -1.",
 
 	"MIYABISTS2_CARD_PRINCESS_INOHA.title": "Superhuman Colored Leaf",
     "MIYABISTS2_CARD_PRINCESS_INOHA.description": "When in hand together with [gold]Eight Thousand Years of Waiting[/gold]: all cards are [gold]Upgraded[/gold] and gain [gold]Replay 1[/gold]. Transform [gold]Eight Thousand Years of Waiting[/gold] into [gold]Kaguya[/gold]",
@@ -536,5 +536,17 @@
 	"MIYABISTS2_CARD_ZHONGMU_WANGSHI_DUQUE.title": "Final Act - Lost Sorrow Crossed",
 	"MIYABISTS2_CARD_ZHONGMU_WANGSHI_DUQUE.description": "Lose {LifeLoss:diff()} HP. Deal [gold]Fate Break damage[/gold]{Damage:diff()} [blue]{HitCount:diff()}[/blue] times randomly. [gold]Daze[/gold]{DAZE_POWER:diff()}\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain {Block:diff()} [gold]Block[/gold] for each hit on an attacking enemy",
 	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.title": "Dream-Picking Reverie",
-	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "At the start of each turn, lose {HpLossPercent:diff()}% HP\n[gold]Fate Break damage[/gold] hit count +1\nEach time you lose HP, gain {DecibelAmount:diff()} [gold]Decibel[/gold]\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore {ShannengAmount:diff()} [gold]Flash Energy[/gold]"
+	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "At the start of each turn, lose {HpLossPercent:diff()}% HP\n[gold]Fate Break damage[/gold] hit count +1\nEach time you lose HP, gain {DecibelAmount:diff()} [gold]Decibel[/gold]\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore {ShannengAmount:diff()} [gold]Flash Energy[/gold]",
+
+	"MIYABISTS2_CARD_XIAOZAI_DUE.title": "Disaster Dispelling",
+	"MIYABISTS2_CARD_XIAOZAI_DUE.description": "Every {CardsPerTrigger:diff()} cards played, add a [gold]Thousandfold Talisman Art: Break[/gold] to your hand",
+
+	"MIYABISTS2_CARD_YINYANG_XIANGSHENG.title": "Yin Yang Harmony",
+	"MIYABISTS2_CARD_YINYANG_XIANGSHENG.description": "The next time you gain Block, gain that much [gold]Vigor[/gold], or the next time you deal damage, gain that much [gold]Thorns[/gold]",
+
+	"MIYABISTS2_CARD_SHUDAO_GUIYI.title": "Technique Unity",
+	"MIYABISTS2_CARD_SHUDAO_GUIYI.description": "Lose all Block. Deal [orange]Dark Ink[/orange] damage equal to the Block lost to an enemy\\n[gold]Exhaust{ExhaustCount:diff()}[/gold]",
+
+	"MIYABISTS2_CARD_DONGJING_XIANGYI.title": "Motion Stillness Harmony",
+	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "After playing [gold]Azure Cloud Shadow[/gold], consume all [gold]Flash Energy[/gold] and recover {ShannengRecoverPercent:diff()}% of the Flash Energy consumed\\nAfter playing [gold]Thousandfold Talisman Art[/gold], gain {DecibelAmount:diff()} [gold]Decibel[/gold]"
 }

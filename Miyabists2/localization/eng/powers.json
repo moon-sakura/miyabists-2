@@ -309,5 +309,17 @@
 
 	"SHIMENG_KONGXIANG_POWER.title": "Dream-Picking Reverie",
 	"SHIMENG_KONGXIANG_POWER.description": "At the start of each turn, lose 10% HP. Fate Break damage hit count +1. Each time you lose HP, gain 1 Decibel.",
-	"SHIMENG_KONGXIANG_POWER.smartDescription": "Lose {HpLossPercent:diff()}% HP each turn. Fate Break damage hit count +{Amount}. Gain {Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()} Decibel each time you lose HP."
+	"SHIMENG_KONGXIANG_POWER.smartDescription": "Lose {HpLossPercent:diff()}% HP each turn. Fate Break damage hit count +{Amount}. Gain {Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()} Decibel each time you lose HP.",
+
+	"XIAOZAI_DUE_POWER.title": "Disaster Dispelling",
+	"XIAOZAI_DUE_POWER.description": "Every 10 cards played, add a Thousandfold Talisman Art: Break to your hand",
+	"XIAOZAI_DUE_POWER.smartDescription": "Every [blue]{CardsPerTrigger:diff()}[/blue] cards played, add a [gold]Thousandfold Talisman Art: Break[/gold] to your hand. [blue]{CardsPlayed:diff()}[/blue] cards played so far.",
+
+	"YINYANG_XIANGSHENG_POWER.title": "Yin Yang Harmony",
+	"YINYANG_XIANGSHENG_POWER.description": "The next time you gain Block, gain that much Vigor. Or the next time you deal damage, gain that much Thorns.",
+	"YINYANG_XIANGSHENG_POWER.smartDescription": "The next time you gain Block, gain that much [gold]Vigor[/gold]. Or the next time you deal damage, gain that much [gold]Thorns[/gold].",
+
+	"DONGJING_XIANGYI_POWER.title": "Motion Stillness Harmony",
+	"DONGJING_XIANGYI_POWER.description": "After playing Azure Cloud Shadow, consume all Flash Energy and recover a percentage. After playing Thousandfold Talisman Art, gain Decibel.",
+	"DONGJING_XIANGYI_POWER.smartDescription": "After playing [gold]Azure Cloud Shadow[/gold], consume all [gold]Flash Energy[/gold] and recover {ShannengRecoverPercent:diff()}%. After playing [gold]Thousandfold Talisman Art[/gold], gain [blue]{DecibelAmount:diff()}[/blue] [gold]Decibel[/gold]."
 }
