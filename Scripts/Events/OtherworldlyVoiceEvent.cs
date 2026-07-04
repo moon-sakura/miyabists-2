@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Events
 
         // 背景图位置
         public override EventAssetProfile AssetProfile => new(
-            InitialPortraitPath: "res://images/events/GetSlxd.png"
+            InitialPortraitPath: "res://images/events/elseWorldvoice.png"
         );
 
         // 设置一些数值
