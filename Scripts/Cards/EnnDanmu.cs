@@ -31,6 +31,9 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar(SupportVarName, 1),
         ];
 
+        protected override string ArtPath => "res://images/cards/ennDanmu.png";
+        
+
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<SupportPointPower>(),
