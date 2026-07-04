@@ -539,8 +539,17 @@
 	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.title": "拾梦空想",
 	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "每回合开始时失去{HpLossPercent:diff()}%生命值，造成[gold]命破伤害[/gold]次数+1\\n每次失去生命值时获得{DecibelAmount:diff()}点[gold]喧响值[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复{ShannengAmount:diff()}点[gold]闪能[/gold]",
 
+	"MIYABISTS2_CARD_ENN_DANMU_YIXUAN.title": "嗯呢弹幕",
+	"MIYABISTS2_CARD_ENN_DANMU_YIXUAN.description": "随机造成{Times:diff()}次{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n场上每有1个邦布额外攻击1次\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：随机召唤1个邦布",
+	
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO_YIXUAN.title": "优势火力学说",
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO_YIXUAN.description": "随机召唤{SummonCount:diff()}只邦布，每有1只邦布对所有敌人造成6点伤害，6点失衡\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：每有1只邦布再获得6点格挡",
+	
 	"MIYABISTS2_CARD_ENN_DANMU.title": "嗯呢弹幕",
-	"MIYABISTS2_CARD_ENN_DANMU.description": "随机造成{Times:diff()}次{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n场上每有1个邦布额外攻击1次\\n[gold]支援点数[/gold][blue]1[/blue]：随机召唤1个邦布",
+	"MIYABISTS2_CARD_ENN_DANMU.description": "随机造成{Times:diff()}次{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n场上每有1个邦布额外攻击1次\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：随机召唤1个邦布",
+	
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO.title": "优势火力学说",
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO.description": "随机召唤{SummonCount:diff()}只邦布，每有1只邦布对所有敌人造成6点伤害，6点失衡\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：每有1只邦布再获得6点格挡",
 
 	"MIYABISTS2_CARD_XIAOZAI_DUE.title": "消灾渡厄",
 	"MIYABISTS2_CARD_XIAOZAI_DUE.description": "每使用{CardsPerTrigger:diff()}张卡，将一张[gold]符法千重·破[/gold]加入手卡",
