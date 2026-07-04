@@ -1,9 +1,13 @@
 using Godot;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
+using MegaCrit.Sts2.Core.Random;
+using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using Miyabists2.Scripts.Relics.SpecRelic;
 using Miyabists2.Scripts.Service;
@@ -12,7 +16,7 @@ using System.Collections.Generic;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [RegisterCard(typeof(StatusCardPool))]
+    [RegisterCard(typeof(CurseCardPool))]
     internal class PriceOfPower : MiyabiCardBase
     {
         //protected override string ArtPath => "res://images/cards/priceOfPower.png";
@@ -38,92 +42,100 @@ namespace Miyabists2.Scripts.Cards
         /// </summary>
         public override async Task BeforeCardRemoved(CardModel card)
         {
-            //GD.Print($"[PriceOfPower] BeforeCardRemoved 触发 — card={card.GetType().Name}, this={GetType().Name}, _effect={_effect}");
+            GD.Print($"[PriceOfPower] BeforeCardRemoved — _effect={_effect}");
 
-            if (card != this)
-            {
-                //GD.Print($"[PriceOfPower] BeforeCardRemoved — card != this, 跳过 (card hash: {card.GetHashCode()}, this hash: {GetHashCode()})");
-                return;
-            }
-            if (!_effect)
-            {
-                //GD.Print($"[PriceOfPower] BeforeCardRemoved — _effect=false, 跳过");
-                return;
-            }
+            if (card != this) return;
 
-            //GD.Print($"[PriceOfPower] BeforeCardRemoved — _effect=true, Owner={Owner != null}");
-            if (Owner != null)
+            if (Owner != null && _effect)
             {
-                ChoukaRelic choukaRelic = (ChoukaRelic)MiyabiFuncBase.GetRelic<ChoukaRelic>(Owner);
-                //GD.Print($"[PriceOfPower] BeforeCardRemoved — ChoukaRelic={choukaRelic != null}, CinimaCounter={choukaRelic?.CinimaCounter}");
-                if (choukaRelic != null && choukaRelic.CinimaCounter > 0)
-                {
-                    choukaRelic.AddCinimaCounter(-1);
-                    //GD.Print($"[PriceOfPower] BeforeCardRemoved — CinimaCounter -1, 现在: {choukaRelic.CinimaCounter}");
-                }
+                RemoveEffect();
+                _effect = false;
             }
         }
 
         public override int MaxUpgradeLevel => 0;
+
+        internal void RemoveEffect()
+        {
+            ChoukaRelic choukaRelic = (ChoukaRelic)MiyabiFuncBase.GetRelic<ChoukaRelic>(Owner);
+            if (choukaRelic != null && choukaRelic.CinimaCounter > 0)
+            {
+                choukaRelic.AddCinimaCounter(-1);
+                GD.Print($"[PriceOfPower] RemoveEffect — CinimaCounter -1 → {choukaRelic.CinimaCounter}");
+            }
+        }
+
+        internal static void TryAddEffect(CardModel card)
+        {
+            if (card is not PriceOfPower priceOfPower) return;
+            if (priceOfPower._effect) return; // 已处理过，防止重复计数
+
+            var owner = priceOfPower.Owner;
+            if (owner == null) return;
+
+            var choukaRelic = (ChoukaRelic)MiyabiFuncBase.GetRelic<ChoukaRelic>(owner);
+            if (choukaRelic == null) return;
+            if (choukaRelic.CinimaCounter >= 6) return;
+
+            choukaRelic.AddCinimaCounter(1);
+            priceOfPower._effect = true;
+            GD.Print($"[PriceOfPower] TryAddEffect — CinimaCounter +1 → {choukaRelic.CinimaCounter}");
+        }
     }
 
+    // ========== Harmony Patches ==========
+
     /// <summary>
-    /// Harmony Patch：当 PriceOfPower 被添加到 Deck 时，增加 ChoukaRelic 的 CinimaCounter
+    /// Patch 1：拦截 CardPileCmd.Add，PriceOfPower 被加入 Deck 时计数器 +1
     /// </summary>
     [HarmonyPatch]
     public static class PriceOfPowerAddToDeckPatch
     {
-        // 实际签名: Add(CardModel card, PileType newPileType, CardPilePosition position=Bottom, AbstractModel? clonedBy=null, bool skipVisuals=false)
         [HarmonyPatch(typeof(CardPileCmd), nameof(CardPileCmd.Add),
             typeof(CardModel), typeof(PileType), typeof(CardPilePosition), typeof(AbstractModel), typeof(bool))]
         [HarmonyPostfix]
-        public static void Postfix(CardModel card, PileType newPileType, CardPilePosition position, AbstractModel clonedBy, bool skipVisuals)
+        public static void Postfix(CardModel card, PileType newPileType)
         {
-            //GD.Print($"[PriceOfPower Patch] Postfix 触发 — cardType={card.GetType().Name}, pileType={newPileType}");
-
-            if (card is not PriceOfPower priceOfPower)
-            {
-                //GD.Print($"[PriceOfPower Patch] card 不是 PriceOfPower (是 {card.GetType().Name}), 跳过");
-                return;
-            }
-
-            //GD.Print($"[PriceOfPower Patch] card 是 PriceOfPower! Hash={priceOfPower.GetHashCode()}");
-
-            if (newPileType != PileType.Deck)
-            {
-                //GD.Print($"[PriceOfPower Patch] pileType={newPileType} 不是 Deck, 跳过");
-                return;
-            }
-
-            //GD.Print($"[PriceOfPower Patch] pileType=Deck, 继续检查 Owner...");
-
-            var owner = priceOfPower.Owner;
-            if (owner == null)
-            {
-                //GD.Print($"[PriceOfPower Patch] ⚠ Owner 为 null! 跳过");
-                return;
-            }
-
-            //GD.Print($"[PriceOfPower Patch] Owner OK: {owner.Character?.GetType().Name}");
-
-            var choukaRelic = (ChoukaRelic)MiyabiFuncBase.GetRelic<ChoukaRelic>(owner);
-            if (choukaRelic == null)
-            {
-                //GD.Print($"[PriceOfPower Patch] ⚠ ChoukaRelic 未找到! 跳过");
-                return;
-            }
-
-            //GD.Print($"[PriceOfPower Patch] ChoukaRelic 找到, CinimaCounter={choukaRelic.CinimaCounter}");
-
-            if (choukaRelic.CinimaCounter >= 6)
-            {
-                //GD.Print($"[PriceOfPower Patch] CinimaCounter >= 6 ({choukaRelic.CinimaCounter}), 跳过");
-                return;
-            }
-
-            choukaRelic.AddCinimaCounter(1);
-            priceOfPower._effect = true;
-            //GD.Print($"[PriceOfPower Patch] ✅ 成功! CinimaCounter +1 → {choukaRelic.CinimaCounter}, _effect=true");
+            GD.Print($"[PP AddPatch] card={card.GetType().Name}, pile={newPileType}");
+            if (newPileType != PileType.Deck) return;
+            PriceOfPower.TryAddEffect(card);
         }
+    }
+
+    /// <summary>
+    /// Patch 2：拦截 CardCmd.TransformToRandom
+    ///   Prefix  — 原卡是 PriceOfPower → 计数器 -1
+    ///   Postfix — 结果卡是 PriceOfPower → 计数器 +1
+    /// </summary>
+    [HarmonyPatch]
+    public static class PriceOfPowerTransformPatch
+    {
+        [HarmonyPatch(typeof(CardCmd), nameof(CardCmd.TransformToRandom),
+            typeof(CardModel), typeof(Rng), typeof(CardPreviewStyle))]
+        [HarmonyPrefix]
+        public static void Prefix(CardModel original)
+        {
+            GD.Print($"[PP TransformPatch Prefix] original={original.GetType().Name}, isPP={original is PriceOfPower}");
+
+            if (original is PriceOfPower pop && pop._effect)
+            {
+                pop.RemoveEffect();
+                pop._effect = false; // 防止 BeforeCardRemoved 重复扣
+                GD.Print($"[PP TransformPatch Prefix] 原卡是 PriceOfPower，已移除效果");
+            }
+        }
+
+        //[HarmonyPatch(typeof(CardCmd), nameof(CardCmd.TransformToRandom),
+        //    typeof(CardModel), typeof(Rng), typeof(CardPreviewStyle))]
+        //[HarmonyPostfix]
+        //public static void Postfix(CardPileAddResult __result)
+        //{
+        //    GD.Print($"[PP TransformPatch Postfix] success={__result.success}, card={__result.cardAdded?.GetType().Name}");
+
+        //    if (__result.success && __result.cardAdded is PriceOfPower)
+        //    {
+        //        PriceOfPower.TryAddEffect(__result.cardAdded);
+        //    }
+        //}
     }
 }
