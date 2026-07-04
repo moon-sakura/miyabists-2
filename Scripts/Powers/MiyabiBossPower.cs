@@ -91,15 +91,15 @@ namespace Miyabists2.Scripts.Powers
         {
             if (dealer == base.Owner && target.IsPlayer && target.IsAlive)
             {
-                int dazeMulti = MiyabiModConfig.MiyabiEnemiesStronger ? 5 : 3;
+                int dazeMulti = MiyabiModConfig.MiyabiEnemiesStronger ? 3 : 2;
                 await MiyabiCombatService.DazeAddtoPlayer(choiceContext, target, result.UnblockedDamage * dazeMulti);
 
                 ///
                 ///
                 ///
 
-                MiyabiCombatService.SetFrostTriggerMultiply(base.Owner);
-                int trigger = MiyabiModConfig.MiyabiEnemiesStronger ? 60 : 50;
+                //MiyabiCombatService.SetFrostTriggerMultiply(base.Owner);
+                int trigger = MiyabiModConfig.MiyabiEnemiesStronger ? 50 : 60;
 
                 int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.TotalDamage;
 

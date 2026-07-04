@@ -388,7 +388,7 @@ namespace Miyabists2.Scripts.Service
                 chkDaze += player.GetPowerAmount<DazePower>();
             }
             
-            if(chkDaze >= 100)
+            if(chkDaze >= 100 && !player.HasPower<BreakPlayerPower>())
             {
                 await PowerCmd.Apply<BreakPlayerPower>(choiceContext, player, 1, null, null);
                 await PowerCmd.Remove<DazePower>(player);
