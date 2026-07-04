@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(3, ValueProp.Move),
             new DynamicVar(DazeVarName, 8),
-            new DynamicVar("Times", 1),
+            new DynamicVar("Times", 2),
             new DynamicVar(SupportVarName, 1),
         ];
 
@@ -50,26 +50,32 @@ namespace Miyabists2.Scripts.Cards
             IEnumerable<Creature> enemies = Owner.Creature.CombatState.Enemies.Where(c => c.IsAlive);
 
             // Attack first (before summoning)
-            for (int i = 0; i < totalAttacks; i++)
-            {
-                Creature target = enemies.TakeRandom(1, Owner.RunState.Rng.Shuffle).FirstOrDefault();
-                if (target == null) break;
+            //for (int i = 0; i < totalAttacks; i++)
+            //{
+            //    Creature target = enemies.TakeRandom(1, Owner.RunState.Rng.Shuffle).FirstOrDefault();
+            //    if (target == null) break;
 
-                // Apply stagger (失衡)
-                if (DynamicVars.TryGetValue(DazeVarName, out DynamicVar daze))
-                    await MiyabiCombatService.AddDaze(choiceContext, target, daze, Owner.Creature);
+            //    // Apply stagger (失衡)
+            //    if (DynamicVars.TryGetValue(DazeVarName, out DynamicVar daze))
+            //        await MiyabiCombatService.AddDaze(choiceContext, target, daze, Owner.Creature);
 
-                // Deal damage
-                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                    .FromCard(this)
-                    .Targeting(target)
-                    .Execute(choiceContext);
+            //    // Deal damage
+            //    await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            //        .FromCard(this)
+            //        .Targeting(target)
+            //        .Execute(choiceContext);
 
-                if (target.IsDead)
-                {
-                    enemies = Owner.Creature.CombatState.Enemies.Where(c => c.IsAlive);
-                }
-            }
+            //    if (target.IsDead)
+            //    {
+            //        enemies = Owner.Creature.CombatState.Enemies.Where(c => c.IsAlive);
+            //    }
+            //}
+
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                .WithHitCount(totalAttacks)
+                .FromCard(this)
+                .TargetingRandomOpponents(Owner.Creature.CombatState)
+                .Execute(choiceContext);
 
             // Support point: summon a random Bangboo (after attacking)
             await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await SummonBangboo(choiceContext));

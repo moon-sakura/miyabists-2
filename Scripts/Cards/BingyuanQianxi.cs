@@ -54,6 +54,8 @@ namespace Miyabists2.Scripts.Cards
         {
             if(cardSource != this) return;
 
+            await base.AfterDamageGiven(choiceContext, dealer, result, props, target, cardSource);
+
             await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => await FriendFunc(choiceContext, result.TotalDamage));
         }
 
