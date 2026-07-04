@@ -59,7 +59,7 @@
 
     "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.END.description" : "[outline_size=10][outline_color=black]\"我们还会再见的。\"[/outline_color][/outline_size]",
 
-    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.description" : "[outline_size=10][outline_color=black]\"你真贪婪。\"那声音带着一丝嘲讽，消失了。[/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.description" : "[outline_size=10][outline_color=black]\"你真贪婪，不过我们还会再见的。\"[/outline_color][/outline_size]",
 
     "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.title": "离开",
     "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.description": "你感到变得异常沉重……",

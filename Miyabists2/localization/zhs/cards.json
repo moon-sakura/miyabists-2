@@ -537,5 +537,17 @@
 	"MIYABISTS2_CARD_ZHONGMU_WANGSHI_DUQUE.description": "失去{LifeLoss:diff()}点生命值，随机造成{HitCount:diff()}次[gold]命破伤害[/gold]{Damage:diff()}，[gold]失衡值[/gold]{DAZE_POWER:diff()}\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：每击中1次攻击意图敌人获得{Block:diff()}点[gold]格挡[/gold]",
 	
 	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.title": "拾梦空想",
-	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "每回合开始时失去{HpLossPercent:diff()}%生命值，造成[gold]命破伤害[/gold]次数+1\n每次失去生命值时获得{DecibelAmount:diff()}点[gold]喧响值[/gold]\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复{ShannengAmount:diff()}点[gold]闪能[/gold]"
+	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "每回合开始时失去{HpLossPercent:diff()}%生命值，造成[gold]命破伤害[/gold]次数+1\n每次失去生命值时获得{DecibelAmount:diff()}点[gold]喧响值[/gold]\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：恢复{ShannengAmount:diff()}点[gold]闪能[/gold]",
+
+	"MIYABISTS2_CARD_XIAOZAI_DUE.title": "消灾渡厄",
+	"MIYABISTS2_CARD_XIAOZAI_DUE.description": "每使用{CardsPerTrigger:diff()}张卡，将一张[gold]符法千重·破[/gold]加入手卡",
+
+	"MIYABISTS2_CARD_YINYANG_XIANGSHENG.title": "阴阳相生",
+	"MIYABISTS2_CARD_YINYANG_XIANGSHENG.description": "下一次获得格挡时，获得对应数值的[gold]活力[/gold]，或者下一次造成伤害时，获得对应数值的[gold]荆棘[/gold]",
+
+	"MIYABISTS2_CARD_SHUDAO_GUIYI.title": "术道归一",
+	"MIYABISTS2_CARD_SHUDAO_GUIYI.description": "失去所有格挡，对敌人造成失去格挡数量的[orange]玄墨[/orange]伤害\\n[gold]消耗{ExhaustCount:diff()}[/gold]",
+
+	"MIYABISTS2_CARD_DONGJING_XIANGYI.title": "动静相宜",
+	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "使用[gold]青溟云影[/gold]后，消耗所有[gold]闪能[/gold]，恢复消耗闪能的{ShannengRecoverPercent:diff()}%数值\\n使用[gold]符法千重[/gold]后，获得{DecibelAmount:diff()}点[gold]喧响值[/gold]"
 }

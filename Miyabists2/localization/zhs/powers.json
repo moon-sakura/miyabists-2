@@ -320,5 +320,17 @@
 
 	"SHIMENG_KONGXIANG_POWER.title": "拾梦空想",
 	"SHIMENG_KONGXIANG_POWER.description": "每回合开始时失去10%生命值。命破伤害次数+1。每次失去生命值时获得1点喧响值。",
-	"SHIMENG_KONGXIANG_POWER.smartDescription": "每回合失去{HpLossPercent:diff()}%生命值，命破伤害次数+{Amount}，每次失去生命获得{Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()}点喧响值。"
+	"SHIMENG_KONGXIANG_POWER.smartDescription": "每回合失去{HpLossPercent:diff()}%生命值，命破伤害次数+{Amount}，每次失去生命获得{Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()}点喧响值。",
+
+	"XIAOZAI_DUE_POWER.title": "消灾渡厄",
+	"XIAOZAI_DUE_POWER.description": "每使用10张卡，将一张符法千重·破加入手卡",
+	"XIAOZAI_DUE_POWER.smartDescription": "每使用[blue]{CardsPerTrigger:diff()}[/blue]张卡，将一张[gold]符法千重·破[/gold]加入手卡。已使用[blue]{CardsPlayed:diff()}[/blue]张。",
+
+	"YINYANG_XIANGSHENG_POWER.title": "阴阳相生",
+	"YINYANG_XIANGSHENG_POWER.description": "下一次获得格挡时获得对应数值的活力，或者下一次造成伤害时获得对应数值的荆棘",
+	"YINYANG_XIANGSHENG_POWER.smartDescription": "下一次获得格挡时获得对应数值的[gold]活力[/gold]，或者下一次造成伤害时获得对应数值的[gold]荆棘[/gold]。",
+
+	"DONGJING_XIANGYI_POWER.title": "动静相宜",
+	"DONGJING_XIANGYI_POWER.description": "使用青溟云影后消耗所有闪能恢复百分比闪能；使用符法千重后获得喧响值",
+	"DONGJING_XIANGYI_POWER.smartDescription": "使用[gold]青溟云影[/gold]后消耗所有[gold]闪能[/gold]并恢复{ShannengRecoverPercent:diff()}%；使用[gold]符法千重[/gold]后获得[blue]{DecibelAmount:diff()}[/blue]点[gold]喧响值[/gold]。"
 }
