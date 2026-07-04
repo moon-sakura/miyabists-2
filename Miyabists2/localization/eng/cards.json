@@ -538,6 +538,18 @@
 	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.title": "Dream-Picking Reverie",
 	"MIYABISTS2_CARD_SHIMENG_KONGXIANG.description": "At the start of each turn, lose {HpLossPercent:diff()}% HP\n[gold]Fate Break damage[/gold] hit count +1\nEach time you lose HP, gain {DecibelAmount:diff()} [gold]Decibel[/gold]\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore {ShannengAmount:diff()} [gold]Flash Energy[/gold]",
 
+	"MIYABISTS2_CARD_ENN_DANMU_YIXUAN.title": "Enna Barrage",
+	"MIYABISTS2_CARD_ENN_DANMU_YIXUAN.description": "Deal {Damage:diff()} damage [blue]{Times:diff()}[/blue] times randomly. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nAttack 1 extra time for each Bangboo on the field\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Randomly summon 1 Bangboo",
+
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO_YIXUAN.title": "Superior Firepower Doctrine",
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO_YIXUAN.description": "Randomly summon {SummonCount:diff()} Bangboo(s). Deal [blue]6[/blue] damage and [blue]6[/blue] [gold]Daze[/gold] to ALL enemies per Bangboo\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]6[/blue] Block per Bangboo",
+
+	"MIYABISTS2_CARD_ENN_DANMU.title": "Enna Barrage",
+	"MIYABISTS2_CARD_ENN_DANMU.description": "Deal {Damage:diff()} damage [blue]{Times:diff()}[/blue] times randomly. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nAttack 1 extra time for each Bangboo on the field\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Randomly summon 1 Bangboo",
+
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO.title": "Superior Firepower Doctrine",
+	"MIYABISTS2_CARD_YOUSHI_HUOLI_XUESHUO.description": "Randomly summon {SummonCount:diff()} Bangboo(s). Deal [blue]6[/blue] damage and [blue]6[/blue] [gold]Daze[/gold] to ALL enemies per Bangboo\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain [blue]6[/blue] Block per Bangboo",
+
 	"MIYABISTS2_CARD_XIAOZAI_DUE.title": "Disaster Dispelling",
 	"MIYABISTS2_CARD_XIAOZAI_DUE.description": "Every {CardsPerTrigger:diff()} cards played, add a [gold]Thousandfold Talisman Art: Break[/gold] to your hand",
 

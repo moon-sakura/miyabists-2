@@ -123,7 +123,8 @@ class Miyabi : ModCharacterTemplate<MiyabiCardPool, MiyabiRelicPool, MiyabiPotio
     ];
 
     private IEnumerable<StartingDeckEntry> GetBangbooDeck() => [
-        new(typeof(BangbooSummonOne), 5),
+        new(typeof(BangbooSummonOne), 4),
+        new(typeof(EnnDanmu), 1),
         new(typeof(BangbooActiveOne), 2),
         new(typeof(BangbooChargeAll), 1),
         new(typeof(BangbooHelpmeOne), 2),
