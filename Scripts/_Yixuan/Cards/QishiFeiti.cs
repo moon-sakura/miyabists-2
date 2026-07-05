@@ -57,7 +57,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 ValueProp.Unpowered | ValueProp.Unblockable, Owner.Creature);
 
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this, cardPlay)
                 .Unblockable()
                 .WithHitCount(DynamicVars["HitCount"].IntValue)
                 .Targeting(cardPlay.Target)
@@ -76,7 +76,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         
 
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             if(cardSource == this)
             {

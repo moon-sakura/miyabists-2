@@ -55,7 +55,7 @@ namespace Miyabists2.Scripts.Cards
             if (DynamicVars["Eat"].BaseValue < 5)
             {
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                    .FromCard(this)
+                    .FromCard(this, cardPlay)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);
 
@@ -93,7 +93,7 @@ namespace Miyabists2.Scripts.Cards
             {
                 DynamicVars["Eat"].BaseValue = 0;
                 await DamageCmd.Attack(15m)
-                .FromCard(this).TargetingAllOpponents(base.CombatState)
+                .FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_giant_horizontal_slash")
                 .Execute(choiceContext);
 

@@ -48,7 +48,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this, cardPlay)
                 .Unblockable()
                 .WithHitCount(DynamicVars["HitCount"].IntValue)
                 .Targeting(cardPlay.Target)

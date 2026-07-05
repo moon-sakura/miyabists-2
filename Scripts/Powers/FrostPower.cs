@@ -83,7 +83,7 @@ namespace Miyabists2.Scripts.Powers
         //    //await PowerCmd.TickDownDuration(this);
         //}
 
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
             decimal damageMultiplier = 1m + 0.2m * Amount;

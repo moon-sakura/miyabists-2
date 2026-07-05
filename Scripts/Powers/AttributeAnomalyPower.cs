@@ -31,7 +31,7 @@ namespace Miyabists2.Scripts.Powers
         ];
 
         // 效果 1：受到伤害 +20%
-        //public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        //public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         //{
         //    bool isValidMove = props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered);
         //    if (target == base.Owner && isValidMove)

@@ -61,7 +61,7 @@ namespace Miyabists2.Scripts.Cards
 
             //    // Deal damage
             //    await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            //        .FromCard(this)
+            //        .FromCard(this, cardPlay)
             //        .Targeting(target)
             //        .Execute(choiceContext);
 
@@ -73,7 +73,7 @@ namespace Miyabists2.Scripts.Cards
 
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
                 .WithHitCount(totalAttacks)
-                .FromCard(this)
+                .FromCard(this, cardPlay)
                 .TargetingRandomOpponents(Owner.Creature.CombatState)
                 .Execute(choiceContext);
 

@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Powers
 
         }
 
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             if (target == base.Owner && !base.Owner.HasPower<BreakPlayerPower>() && dealer != base.Owner)
             {

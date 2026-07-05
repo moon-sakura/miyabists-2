@@ -76,7 +76,7 @@ namespace Miyabists2.Scripts.Powers
             return base.AfterSideTurnEnd(choiceContext, side, participants);
         }
 
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             if (target != base.Owner)
             {

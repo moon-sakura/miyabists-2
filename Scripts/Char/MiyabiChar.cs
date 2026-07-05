@@ -133,6 +133,7 @@ class Miyabi : ModCharacterTemplate<MiyabiCardPool, MiyabiRelicPool, MiyabiPotio
 
 
     //初始卡组，或者在卡牌类上用RegisterCharacterStarterCard就不用写这个
+    [Obsolete]
     protected override IEnumerable<StartingDeckEntry> StartingDeckEntries
     {
         get

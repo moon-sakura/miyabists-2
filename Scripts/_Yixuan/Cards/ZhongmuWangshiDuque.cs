@@ -60,7 +60,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             await base.OnPlay(choiceContext, cardPlay);
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-                    .FromCard(this)
+                    .FromCard(this, cardPlay)
                     .Unblockable()
                     .TargetingRandomOpponents(Owner.Creature.CombatState)
                     .WithHitCount(DynamicVars["HitCount"].IntValue)

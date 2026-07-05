@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Cards
             if (base.DynamicVars.Damage.BaseValue > 0)
             {
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                    .FromCard(this)
+                    .FromCard(this, cardPlay)
                     .WithHitCount(DynamicVars["HitCount"].IntValue)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);

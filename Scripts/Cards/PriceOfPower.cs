@@ -13,6 +13,7 @@ using Miyabists2.Scripts.Relics.SpecRelic;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Interop.AutoRegistration;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -34,22 +35,33 @@ namespace Miyabists2.Scripts.Cards
             //GD.Print($"[PriceOfPower] 构造函数被调用 — 实例Hash: {GetHashCode()}");
         }
 
+        
+        private bool _effect = false;
+
         [SavedProperty]
-        public bool _effect = false;
+        public bool Effected
+        {
+            get => _effect;
+            set
+            {
+                AssertMutable(); // 确保在合法的修改状态
+                _effect = value;
+            }
+        }
 
         /// <summary>
         /// 卡牌被移出牌组时，如果之前触发过效果，则归还 ChoukaRelic 计数
         /// </summary>
         public override async Task BeforeCardRemoved(CardModel card)
         {
-            GD.Print($"[PriceOfPower] BeforeCardRemoved — _effect={_effect}");
+            GD.Print($"[PriceOfPower] BeforeCardRemoved — _effect={Effected}");
 
             if (card != this) return;
 
-            if (Owner != null && _effect)
+            if (Owner != null && Effected)
             {
                 RemoveEffect();
-                _effect = false;
+                Effected = false;
             }
         }
 
@@ -68,7 +80,7 @@ namespace Miyabists2.Scripts.Cards
         internal static void TryAddEffect(CardModel card)
         {
             if (card is not PriceOfPower priceOfPower) return;
-            if (priceOfPower._effect) return; // 已处理过，防止重复计数
+            if (priceOfPower.Effected) return; // 已处理过，防止重复计数
 
             var owner = priceOfPower.Owner;
             if (owner == null) return;
@@ -78,7 +90,7 @@ namespace Miyabists2.Scripts.Cards
             if (choukaRelic.CinimaCounter >= 6) return;
 
             choukaRelic.AddCinimaCounter(1);
-            priceOfPower._effect = true;
+            priceOfPower.Effected = true;
             GD.Print($"[PriceOfPower] TryAddEffect — CinimaCounter +1 → {choukaRelic.CinimaCounter}");
         }
     }
@@ -117,10 +129,10 @@ namespace Miyabists2.Scripts.Cards
         {
             GD.Print($"[PP TransformPatch Prefix] original={original.GetType().Name}, isPP={original is PriceOfPower}");
 
-            if (original is PriceOfPower pop && pop._effect)
+            if (original is PriceOfPower pop && pop.Effected)
             {
                 pop.RemoveEffect();
-                pop._effect = false; // 防止 BeforeCardRemoved 重复扣
+                pop.Effected = false; // 防止 BeforeCardRemoved 重复扣
                 GD.Print($"[PP TransformPatch Prefix] 原卡是 PriceOfPower，已移除效果");
             }
         }

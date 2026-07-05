@@ -70,7 +70,7 @@ namespace Miyabists2.Scripts.Cards
 
                 // Deal AOE damage
                 await DamageCmd.Attack(totalDamage)
-                    .FromCard(this)
+                    .FromCard(this, cardPlay)
                     .TargetingAllOpponents(base.CombatState)
                     .Execute(choiceContext);
             }

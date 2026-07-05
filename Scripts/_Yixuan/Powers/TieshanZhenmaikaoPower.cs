@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             DynamicVars["FreeCount"].BaseValue += amount;
         }
 
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             if (dealer != Owner || cardSource == null)
                 return 1m;

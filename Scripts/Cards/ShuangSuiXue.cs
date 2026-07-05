@@ -38,7 +38,7 @@ namespace Miyabists2.Scripts.Cards
                 NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
             }
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-                .FromCard(this).TargetingAllOpponents(base.CombatState)
+                .FromCard(this, cardPlay).TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_giant_horizontal_slash")
                 .Execute(choiceContext);
         }

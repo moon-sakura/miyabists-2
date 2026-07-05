@@ -57,7 +57,7 @@ namespace Miyabists2.Scripts.Cards
                     await MiyabiCombatService.AddAnoBuildup(target, anomalyBuildup.IntValue, base.Owner.Creature, this, choiceContext);
 
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                    .FromCard(this)
+                    .FromCard(this, cardPlay)
                     .Targeting(target)
                     .Execute(choiceContext);
 

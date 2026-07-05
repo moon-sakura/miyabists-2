@@ -76,7 +76,7 @@ namespace Miyabists2.Scripts.Powers
                 {
                     if (Enemy != null && Enemy.IsAlive)
                     {
-                        await CreatureCmd.Damage(choiceContext, Enemy, 6m, ValueProp.Unpowered, base.Owner, null);
+                        await CreatureCmd.Damage(choiceContext, Enemy, 6m, ValueProp.Unpowered, base.Owner, null, null);
                     }
                 }
             }

@@ -24,7 +24,7 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             bool isValidMove = !props.HasFlag(ValueProp.Unpowered);
             if (dealer == base.Owner && isValidMove && cardSource.Type == CardType.Attack)

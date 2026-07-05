@@ -53,7 +53,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             if (lostBlock > 0)
             {
                 await DamageCmd.Attack(lostBlock)
-                    .FromCard(this)
+                    .FromCard(this, cardPlay)
                     .Unblockable()
                     .Targeting(cardPlay.Target)
                     .WithHitFx("vfx/vfx_attack_blunt")

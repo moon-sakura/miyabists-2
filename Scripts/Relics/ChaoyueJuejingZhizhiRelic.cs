@@ -34,7 +34,7 @@ namespace Miyabists2.Scripts.Relics
             // HoverTipFactory.FromCard<MyCard>(),
         ];
 
-        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
             if (dealer != base.Owner.Creature)
             {
