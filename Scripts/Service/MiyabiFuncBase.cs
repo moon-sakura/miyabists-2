@@ -18,10 +18,14 @@ using MegaCrit.Sts2.Core.Models.Acts;
 using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Relics;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Runs.Metrics;
 using MegaCrit.Sts2.Core.ValueProps;
+using MinionLib.Commands;
+using MinionLib.Minion;
 using Miyabists2.Scripts.Bangboo.BangbooRelic;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
@@ -99,6 +103,186 @@ namespace Miyabists2.Scripts.Service
         {
             return IsMiyabiModChar(player) || MiyabiModConfig.ChangeToAllPlayers;
         }
+
+
+
+
+
+
+
+
+
+        // 随从位置偏移，参考 MinionCmd
+        private static readonly Vector2 MinionOffset = new Vector2(250f, 25f);
+
+        private static readonly Vector2[] SlotOffsets = new Vector2[4]
+        {
+            new Vector2(500f, -150f),
+            new Vector2(-150f, -150f),
+            new Vector2(-200f, 50f),
+            new Vector2(450f, 50f)
+        };
+
+        /// <summary>
+        /// 将怪物作为随从召唤到玩家侧，参考 MinionCmd.AddMinion 实现。
+        /// 由 TonghuaJishibenRelic 等遗物调用。
+        /// </summary>
+        /// <param name="recordedMonster">已记录的怪物模型</param>
+        /// <param name="player">召唤者</param>
+        /// <param name="maxHp">最大生命值，传 1 则使用怪物的默认 MinInitialHp</param>
+        /// <param name="currentHp">当前生命值，传 1 则使用怪物的默认 MinInitialHp</param>
+        public static async Task<Creature?> AddMonsterAsPet(
+            PlayerChoiceContext context,
+            MonsterModel recordedMonster,
+            Player player,
+            int maxHp = 1,
+            int currentHp = 1
+        )
+        {
+            ArgumentNullException.ThrowIfNull(recordedMonster);
+            ArgumentNullException.ThrowIfNull(player);
+
+            Creature? pet = player.Creature.CombatState?.CreateCreature(
+                recordedMonster.CanonicalInstance.ToMutable(),
+                CombatSide.Player,
+                null
+            );
+
+            if (pet == null)
+            {
+                return null;
+            }
+
+            await CreatureCmd.Add(pet);
+
+            player.PlayerCombatState?.AddPetInternal(pet);
+
+            // 设置随从位置（玩家位置 + 偏移），并翻转精灵朝向
+            NCreature? nCreature = NCombatRoom.Instance?.GetCreatureNode(pet);
+            if (NCombatRoom.Instance != null && nCreature != null)
+            {
+                ((Control)nCreature).Position =
+                    ((Control)NCombatRoom.Instance.GetCreatureNode(player.Creature)).Position + MinionOffset;
+                await FlipScale(NCombatRoom.Instance?.GetCreatureNode(pet)?.Body);
+            }
+
+            await PowerCmd.Apply<SummonMonsterPower>(context, pet, 1m, (Creature)null, (CardModel)null, false);
+
+            // 设置血量：默认使用怪物自身的初始血量
+            int finalMaxHp = maxHp == 1 ? pet.Monster.MinInitialHp : maxHp;
+            int finalCurrentHp = currentHp == 1 ? pet.Monster.MinInitialHp : currentHp;
+            await CreatureCmd.SetMaxHp(pet, finalMaxHp);
+            await CreatureCmd.SetCurrentHp(pet, finalCurrentHp);
+
+            return pet;
+        }
+
+        /// <summary>
+        /// 水平翻转精灵（使怪物朝向玩家侧），参考 MinionCmd.FlipScale
+        /// </summary>
+        public static Task FlipScale(Node2D? body)
+        {
+            if (body == null)
+            {
+                return Task.CompletedTask;
+            }
+            body.Scale *= new Vector2(-1f, 1f);
+            return Task.CompletedTask;
+        }
+
+        public static async Task PerformPetMonsterMove(Creature pet)
+        {
+            MonsterModel monster = pet.Monster;
+
+            if (monster.CombatState == null)
+            {
+                return;
+            }
+
+            ICombatState combatState = monster.CombatState;
+
+            await Cmd.CustomScaledWait(0.1f, 0.2f);
+
+            bool IsPerformingMove = true;
+
+            try
+            {
+                MoveState move = monster.NextMove;
+
+                IReadOnlyList<Creature> targets = combatState.HittableEnemies;
+
+                GD.Print(
+                    $"Pet monster {monster.Id.Entry} performing move {move.Id}"
+                );
+
+                await move.PerformMove(targets);
+
+                monster.MoveStateMachine?.OnMovePerformed(move);
+
+                CombatManager.Instance.History.MonsterPerformedMove(
+                    combatState,
+                    monster,
+                    move,
+                    targets
+                );
+
+                if (pet.IsDead &&
+                    Hook.ShouldCreatureBeRemovedFromCombatAfterDeath(combatState, pet))
+                {
+                    combatState.RemoveCreature(pet);
+                }
+            }
+            finally
+            {
+                IsPerformingMove = false;
+            }
+
+            await Cmd.CustomScaledWait(0.1f, 0.4f);
+        }
+
+        //public static async Task<Creature> AddMonsterPet<T>(Player player) where T : MonsterModel
+        //{
+        //    ArgumentNullException.ThrowIfNull(player);
+
+        //    Creature pet = await PlayerCmd.AddPet<T>(player);
+
+        //    PetOrderSnapshotManager.TakeSnapshot(player);
+        //    await MinionAnimCmd.Rearrange();
+
+        //    return pet;
+        //}
+
+        //private class SummonMinion : MinionModel
+        //{
+        //    int _minInitialHp = 1;
+        //    int _maxInitialHp = 1;
+        //    public override int MinInitialHp => _minInitialHp;
+        //    public override int MaxInitialHp => _maxInitialHp;
+
+        //    private readonly MonsterModel _innerMonster;
+
+        //    public SummonMinion(MonsterModel monster)
+        //    {
+        //        _innerMonster = monster;
+        //        _minInitialHp = monster.MinInitialHp;
+        //        _maxInitialHp = monster.MaxInitialHp;
+        //    }
+
+        //    public override string DeathSfx => _innerMonster.DeathSfx;
+
+        //    protected override MonsterMoveStateMachine GenerateMoveStateMachine()
+        //    {
+        //        var method = typeof(MonsterModel).GetMethod("GenerateMoveStateMachine", BindingFlags.NonPublic | BindingFlags.Instance);
+        //        return (MonsterMoveStateMachine)method.Invoke(_innerMonster, null);
+        //    }
+        //}
+
+        //public static async Task<MinionModel> AddMonsterAsMinion(PlayerChoiceContext choiceContext, MonsterModel monster) 
+        //{ 
+        //    if (monster == null) return null;
+        //    SummonMinion minion = new SummonMinion(monster);
+        //    return minion;
+        //}
 
         //public static bool isEnemyAppear(ActModel act)
         //{

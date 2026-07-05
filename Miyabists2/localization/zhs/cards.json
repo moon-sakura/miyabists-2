@@ -561,5 +561,8 @@
 	"MIYABISTS2_CARD_SHUDAO_GUIYI.description": "失去所有格挡，对敌人造成失去格挡数量的[orange]玄墨[/orange]伤害\\n[gold]消耗{ExhaustCount:diff()}[/gold]",
 
 	"MIYABISTS2_CARD_DONGJING_XIANGYI.title": "动静相宜",
-	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "使用[gold]青溟云影[/gold]后，消耗所有[gold]闪能[/gold]，恢复消耗闪能的{ShannengRecoverPercent:diff()}%数值\\n使用[gold]符法千重[/gold]后，获得{DecibelAmount:diff()}点[gold]喧响值[/gold]"
+	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "使用[gold]青溟云影[/gold]后，消耗所有[gold]闪能[/gold]，恢复消耗闪能的{ShannengRecoverPercent:diff()}%数值\\n使用[gold]符法千重[/gold]后，获得{DecibelAmount:diff()}点[gold]喧响值[/gold]",
+
+	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.title": "长夜诗篇",
+	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.description": "记录1只怪物。"
 }
