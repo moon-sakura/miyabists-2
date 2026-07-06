@@ -1,4 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -6,9 +5,11 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,35 @@ namespace Miyabists2.Scripts.Powers
         {
             if(applier != base.Owner || !(power is BreakPlayerPower || power is DisorderPower) || amount < 1)
             {
+                if(Owner.IsPet && Owner.PetOwner != null)
+                {
+                    if (power is BreakPower)
+                    {
+                        foreach (var powerItem in base.Owner.Powers)
+                        {
+                            if (powerItem.Type == PowerType.Debuff)
+                            {
+                                await PowerCmd.Remove(powerItem);
+                            }
+                        }
+
+                        foreach (var powerItem in base.Owner.PetOwner.Creature.Powers)
+                        {
+                            if (powerItem.Type == PowerType.Debuff)
+                            {
+                                await PowerCmd.Remove(powerItem);
+                            }
+                        }
+                    }
+
+                    if (power is DisorderPower && (applier.IsPlayer || applier == base.Owner))
+                    {
+                        await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner, 2m, base.Owner, null);
+                    }
+
+                    return;
+                }
+
                 return;
             }
 
@@ -130,6 +160,30 @@ namespace Miyabists2.Scripts.Powers
                         await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, base.Owner, null);
                     }
                 }
+            }
+
+            if(dealer == Owner && Owner.IsPet && Owner.PetOwner != null && target.IsEnemy && target.IsAlive)
+            {
+                int dazeMulti = MiyabiModConfig.MiyabiEnemiesStronger ? 3 : 2;
+                MiyabiCombatService.SetDazeTriggerMultiply(base.Owner);
+                await MiyabiCombatService.AddDaze(choiceContext, target, new DynamicVar("Daze" , dazeMulti * result.UnblockedDamage), base.Owner);
+
+                MiyabiCombatService.SetFrostTriggerMultiply(base.Owner);
+                int trigger = MiyabiCombatService.GetFrostTrigger();
+
+                int chkFB = target.GetPowerAmount<FrostBuildPower>() + result.UnblockedDamage;
+
+                // 确保是本卡造成的实际伤害，且目标存活
+                if (result.UnblockedDamage > 0 && chkFB <= trigger && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
+                {
+                    await PowerCmd.Apply<FrostBuildPower>(choiceContext, target, result.UnblockedDamage, base.Owner, null);
+                }
+                //烈霜积蓄值积攒逻辑
+                if (chkFB >= trigger + 1 && (!target.HasPower<FrostPower>() || MiyabiCombatService.GetCanAddWhenFire()))
+                {
+                    await MiyabiCombatService.FrostApply(target, Owner, choiceContext);
+                }
+
             }
         }
 

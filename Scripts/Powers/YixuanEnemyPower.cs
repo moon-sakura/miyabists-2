@@ -168,11 +168,13 @@ namespace Miyabists2.Scripts.Powers
 
                 DynamicVars["DebuffReduce"].BaseValue = MiyabiModConfig.MiyabiEnemiesStronger ? 50 : 35;
 
-                foreach (Player player in Owner.CombatState.Players)
+                if(!Owner.IsPet && Owner.PetOwner == null)
                 {
-                    PlayerCmd.EndTurn(player, false);
+                    foreach (Player player in Owner.CombatState.Players)
+                    {
+                        PlayerCmd.EndTurn(player, false);
+                    }
                 }
-
 
                 phase1 = true;
             }
@@ -185,9 +187,12 @@ namespace Miyabists2.Scripts.Powers
 
                 DynamicVars["DebuffReduce"].BaseValue = MiyabiModConfig.MiyabiEnemiesStronger ? 80 : 50;
 
-                foreach (Player player in Owner.CombatState.Players)
+                if (!Owner.IsPet && Owner.PetOwner == null)
                 {
-                    PlayerCmd.EndTurn(player, false);
+                    foreach (Player player in Owner.CombatState.Players)
+                    {
+                        PlayerCmd.EndTurn(player, false);
+                    }
                 }
 
 
@@ -203,9 +208,12 @@ namespace Miyabists2.Scripts.Powers
                 DynamicVars["DebuffReduce"].BaseValue = MiyabiModConfig.MiyabiEnemiesStronger ? 100 : 70;
 
 
-                foreach (Player player in Owner.CombatState.Players)
+                if (!Owner.IsPet && Owner.PetOwner == null)
                 {
-                    PlayerCmd.EndTurn(player, false);
+                    foreach (Player player in Owner.CombatState.Players)
+                    {
+                        PlayerCmd.EndTurn(player, false);
+                    }
                 }
 
                 phase3 = true;

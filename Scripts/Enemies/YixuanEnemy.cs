@@ -193,7 +193,7 @@ namespace Miyabists2.Scripts.Enemies
             // 分支2：目标有易伤 → 2/3 概率强化，1/3 概率攻防
             if (creature.HasPower<VulnerablePower>())
             {
-                int re = MiyabiFuncBase.RandomInt(0, 3, CombatState.Players.OrderBy(p => p.NetId).FirstOrDefault());
+                int re = base.RunRng.Shuffle.NextInt(0, 3);
                 if (re != 0)
                     await PowerUpF(targets);
                 else

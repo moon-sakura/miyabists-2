@@ -65,7 +65,7 @@ namespace Miyabists2.Scripts.Enemies
         public override async Task AfterAddedToRoom()
         {
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger?6m:4m;
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount*CombatState.Players.Count, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount*CombatState.Enemies.Count, base.Creature, null);
             //await PowerCmd.Apply<MiyabiBossPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1, base.Creature, null);
         }
 
@@ -168,7 +168,7 @@ namespace Miyabists2.Scripts.Enemies
             }
 
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 4m : 2m;
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Players.Count, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Enemies.Count, base.Creature, null);
 
             decimal thornsAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 2m : 1m;
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, thornsAmount, base.Creature, null);

@@ -65,7 +65,7 @@ namespace Miyabists2.Scripts.Enemies
         // 战斗开始时，在这里给自己上buff之类
         public override async Task AfterAddedToRoom()
         {
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 10m * CombatState.Players.Count, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, 10m * CombatState.Enemies.Count, base.Creature, null);
             await PowerCmd.Apply<MiyabiBossPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
         }
 
@@ -76,15 +76,26 @@ namespace Miyabists2.Scripts.Enemies
         /// 检查是否有任何玩家处于"易伤"状态：
         /// 拥有 BreakPlayerPower，或抽牌堆中攻击牌不足且无减伤能力
         /// </summary>
-        private bool IsAnyPlayerVulnerable()
+        private bool IsAnyEnemyVulnerable()
         {
-            foreach (Player player in base.Creature.CombatState.Players)
+            foreach (var creature in base.Creature.CombatState.Enemies)
             {
-                if (player.Creature.HasPower<BreakPlayerPower>())
-                    return true;
-                if (player.PlayerCombatState.DrawPile.Cards.CountBy(c => !c.GainsBlock).Count() < 3
-                    && !player.Creature.HasPower<IntangiblePower>())
-                    return true;
+                if (creature.IsPlayer)
+                {
+                    if (creature.HasPower<BreakPlayerPower>())
+                        return true;
+                    if (creature.Player.PlayerCombatState.DrawPile.Cards.CountBy(c => !c.GainsBlock).Count() < 3
+                        && !creature.HasPower<IntangiblePower>())
+                        return true;
+                }
+                if (creature.IsMonster)
+                {
+                    if (creature.HasPower<BreakPower>())
+                        return true;
+                    if (creature.HasPower<VulnerablePower>()
+                        && !creature.HasPower<IntangiblePower>())
+                        return true;
+                }
             }
             return false;
         }
@@ -158,7 +169,7 @@ namespace Miyabists2.Scripts.Enemies
             conditionalBranchState.AddState(heavyAttack,
                 () =>
                 {
-                    if (!HeavyAttackUsed && IsAnyPlayerVulnerable())
+                    if (!HeavyAttackUsed && IsAnyEnemyVulnerable())
                     {
                         HeavyAttackUsed = true;
                         MultiHitUsed = false;
@@ -170,7 +181,7 @@ namespace Miyabists2.Scripts.Enemies
             conditionalBranchState.AddState(multiHitAttack,
                 () =>
                 {
-                    if (!MultiHitUsed && IsAnyPlayerVulnerable())
+                    if (!MultiHitUsed && IsAnyEnemyVulnerable())
                     {
                         MultiHitUsed = true;
                         HeavyAttackUsed = false;
@@ -229,16 +240,16 @@ namespace Miyabists2.Scripts.Enemies
             await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
 
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 6m : 4m;
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Players.Count, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Enemies.Count, base.Creature, null);
 
             decimal thornsAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 3m : 2m;
             await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), base.Creature, thornsAmount, base.Creature, null);
 
             decimal debuffAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 3m : 2m;
-            foreach (var player in CombatState.Players)
+            foreach (var creature in CombatState.Enemies)
             {
-                await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), player.Creature, debuffAmount, base.Creature, null);
-                await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), player.Creature, debuffAmount, base.Creature, null);
+                await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), creature, debuffAmount, base.Creature, null);
+                await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), creature, debuffAmount, base.Creature, null);
             }
 
         }
@@ -274,7 +285,7 @@ namespace Miyabists2.Scripts.Enemies
                     .Execute(null);
 
             decimal slipperyAmount = MiyabiModConfig.MiyabiEnemiesStronger ? 6m : 4m;
-            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Players.Count, base.Creature, null);
+            await PowerCmd.Apply<SlipperyPower>(new ThrowingPlayerChoiceContext(), base.Creature, slipperyAmount * CombatState.Enemies.Count, base.Creature, null);
         }
     }
 }
