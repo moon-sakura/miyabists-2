@@ -83,17 +83,32 @@ namespace Miyabists2.Scripts.Relics
         //    }
         //}
 
-        protected MonsterModel _recordedMonster = null;
+        protected string _recordedMonsterType = null;
 
+        /// <summary>
+        /// 已记录怪物的 Type.FullName，用于存档序列化。
+        /// 召唤时通过 ModelDb.Monster&lt;T&gt;() 反射还原为 MonsterModel。
+        /// </summary>
         [SavedProperty]
-        public MonsterModel RecordedMonster
+        public string RecordedMonsterType
         {
-            get => _recordedMonster;
+            get => _recordedMonsterType;
             private set
             {
                 AssertMutable();
-                _recordedMonster = value;
-                //InvokeDisplayAmountChanged();
+                _recordedMonsterType = value;
+            }
+        }
+
+        protected string _recordedMonsterName = "";
+        [SavedProperty]
+        public string RecordedMonsterName
+        {
+            get => _recordedMonsterName;
+            private set
+            {
+                AssertMutable();
+                _recordedMonsterName = value;
             }
         }
 
@@ -104,13 +119,14 @@ namespace Miyabists2.Scripts.Relics
         {
             if (target == null || !target.IsMonster) return;
 
-            if(target.Monster != null)
+            if (target.Monster != null)
             {
-                RecordedMonster = target.Monster;
+                RecordedMonsterType = target.Monster.GetType().FullName;
                 // 同步 DynamicVar 用于显示
                 if (DynamicVars != null && DynamicVars.TryGetValue("Monster", out var dv))
                 {
-                    ((StringVar)dv).StringValue = RecordedMonster.Creature.Name;
+                    ((StringVar)dv).StringValue = target.Name;
+                    RecordedMonsterName = target.Name;
                 }
             }
         }
@@ -138,37 +154,31 @@ namespace Miyabists2.Scripts.Relics
         // --- 右键点击：将记录的怪物加入战场 ---
         public bool CanHandleRightClickLocal(ModRightClickContext context)
         {
-            return RecordedMonster != null && !_summoned;
+            return !string.IsNullOrEmpty(RecordedMonsterType) && !_summoned;
         }
 
         public async Task OnRightClick(ModRightClickExecutionContext context)
         {
-            if (RecordedMonster == null || _summoned) return;
+            if (string.IsNullOrEmpty(RecordedMonsterType) || _summoned) return;
 
             Flash();
 
-            await MiyabiFuncBase.AddMonsterAsPet(context.PlayerChoiceContext ,RecordedMonster, Owner, RecordedMonster.MinInitialHp, RecordedMonster.MinInitialHp);
-
-            // 将记录的怪物作为随从召唤到战场（最多一只）
-            // 通过反射调用 PlayerCmd.AddPet<T>(Owner)，其中 T 是 RecordedMonster 的运行时类型
-            //Type monsterType = RecordedMonster.GetType();
-            //MethodInfo addPetMethod = typeof(MiyabiFuncBase).GetMethod(nameof(MiyabiFuncBase.AddMonsterPet), new[] { typeof(Player) })
-            //    ?? throw new InvalidOperationException("method not found");
-            //MethodInfo genericMethod = addPetMethod.MakeGenericMethod(monsterType);
-            //var task = (Task<Creature>)genericMethod.Invoke(null, new object[] { Owner });
-            //Creature pet = await task;
-
-            //PetOrderSnapshotManager.TakeSnapshot(Owner);
-            //MinionAnimCmd.Rearrange();
+            await MiyabiFuncBase.AddMonsterAsPet(context.PlayerChoiceContext, RecordedMonsterType, Owner);
 
             _summoned = true;
         }
 
         // --- 战斗结束重置 ---
-        public override Task AfterCombatEnd(CombatRoom room)
+        public override Task AfterRoomEntered(AbstractRoom room)
         {
             _summoned = false;
-            return base.AfterCombatEnd(room);
+            ((StringVar)DynamicVars["Monster"]).StringValue = RecordedMonsterName;
+            return base.AfterRoomEntered(room);
         }
+        //public override Task AfterCombatEnd(CombatRoom room)
+        //{
+        //    _summoned = false;
+        //    return base.AfterCombatEnd(room);
+        //}
     }
 }

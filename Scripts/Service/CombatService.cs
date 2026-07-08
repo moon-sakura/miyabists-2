@@ -325,7 +325,9 @@ namespace Miyabists2.Scripts.Service
         {
             if (target == null || target.IsDead) return;
 
-            bool hasHanyan = dealer.Player.PlayerCombatState.AllCards.Any(c => c is ShenxueHanyan);
+            bool hasHanyan = false;
+            if (dealer.IsPlayer)
+                hasHanyan = dealer.Player.PlayerCombatState.AllCards.Any(c => c is ShenxueHanyan);
 
             SetFrostTriggerMultiply(target);
 

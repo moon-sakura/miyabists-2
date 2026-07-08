@@ -32,6 +32,8 @@ namespace Miyabists2.Scripts.Powers
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
+        private bool _isFirstMove = true;
+
         public override Creature ModifyUnblockedDamageTarget(Creature target, decimal _, ValueProp props, Creature? __)
         {
             if (target != base.Owner.PetOwner?.Creature)
@@ -76,11 +78,17 @@ namespace Miyabists2.Scripts.Powers
         //    }
         //}
 
-        public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+        public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
-            MonsterModel monster = Owner.Monster;
+            await base.AfterApplied(applier, cardSource);
 
-            return base.AfterApplied(applier, cardSource);
+            // 刚召唤时 Roll 第一次意图用于显示，否则要等到 BeforeSideTurnEnd 才有意图
+            IReadOnlyList<Creature> targets =
+                Owner.PetOwner?.Creature.CombatState.HittableEnemies;
+            if (targets != null && targets.Count > 0)
+            {
+                Owner.Monster.RollMove(targets);
+            }
         }
 
         public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
@@ -96,15 +104,21 @@ namespace Miyabists2.Scripts.Powers
             IReadOnlyList<Creature> targets =
                 Owner.PetOwner.Creature.CombatState.HittableEnemies;
 
+            if (_isFirstMove)
+            {
+                monster.RollMove(targets);
+                _isFirstMove = false;
+            }
+
+            await MiyabiFuncBase.PerformPetMonsterMove(Owner);
             //GD.Print($"[SummonMonsterPower] MoveState is null?: {monster.MoveStateMachine == null}");
 
             //GD.Print($"[SummonMonsterPower] Next Move is : {monster.NextMove.Id}");
+            if(!_isFirstMove)
             monster.RollMove(targets);
-
 
             //GD.Print($"[SummonMonsterPower] Next Move is : {monster.NextMove.Id}");
 
-            await MiyabiFuncBase.PerformPetMonsterMove(Owner);
 
         }
     }

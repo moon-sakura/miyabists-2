@@ -32,7 +32,9 @@ using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Relics;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Interop.AutoRegistration;
+using System;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using static Godot.XmlParser;
 
@@ -127,20 +129,48 @@ namespace Miyabists2.Scripts.Service
         /// 将怪物作为随从召唤到玩家侧，参考 MinionCmd.AddMinion 实现。
         /// 由 TonghuaJishibenRelic 等遗物调用。
         /// </summary>
-        /// <param name="recordedMonster">已记录的怪物模型</param>
+        /// <param name="context">PlayerChoiceContext</param>
+        /// <param name="recordedMonsterType">已记录怪物的 Type.FullName</param>
         /// <param name="player">召唤者</param>
         /// <param name="maxHp">最大生命值，传 1 则使用怪物的默认 MinInitialHp</param>
         /// <param name="currentHp">当前生命值，传 1 则使用怪物的默认 MinInitialHp</param>
         public static async Task<Creature?> AddMonsterAsPet(
             PlayerChoiceContext context,
-            MonsterModel recordedMonster,
+            string recordedMonsterType,
             Player player,
             int maxHp = 1,
             int currentHp = 1
         )
         {
-            ArgumentNullException.ThrowIfNull(recordedMonster);
+            ArgumentNullException.ThrowIfNull(recordedMonsterType);
             ArgumentNullException.ThrowIfNull(player);
+
+            // --- 通过 Type.FullName 反射还原 MonsterModel ---
+            Type? monsterType = Type.GetType(recordedMonsterType);
+            if (monsterType == null)
+            {
+                // Type.GetType 对非 mscorlib 类型需要 assembly-qualified name，
+                // 兜底搜索所有已加载程序集
+                foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    monsterType = asm.GetType(recordedMonsterType);
+                    if (monsterType != null) break;
+                }
+            }
+            if (monsterType == null)
+                return null;
+
+            // ModelDb.Monster<T>() 泛型调用
+            MethodInfo monsterMethod = typeof(ModelDb).GetMethods()
+                .FirstOrDefault(m => m.Name == "Monster"
+                    && m.IsGenericMethod
+                    && m.GetParameters().Length == 0);
+            if (monsterMethod == null)
+                return null;
+
+            MethodInfo genericMethod = monsterMethod.MakeGenericMethod(monsterType);
+            MonsterModel recordedMonster = (MonsterModel)genericMethod.Invoke(null, null);
+            // --- 还原结束 ---
 
             Creature? pet = player.Creature.CombatState?.CreateCreature(
                 recordedMonster.CanonicalInstance.ToMutable(),
@@ -152,6 +182,7 @@ namespace Miyabists2.Scripts.Service
             {
                 return null;
             }
+
 
             await CreatureCmd.Add(pet);
 
@@ -167,6 +198,7 @@ namespace Miyabists2.Scripts.Service
             }
 
             await PowerCmd.Apply<SummonMonsterPower>(context, pet, 1m, (Creature)null, (CardModel)null, false);
+            await pet.Monster.AfterAddedToRoom();
 
             // 设置血量：默认使用怪物自身的初始血量
             int finalMaxHp = maxHp == 1 ? pet.Monster.MinInitialHp : maxHp;

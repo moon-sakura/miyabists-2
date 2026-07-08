@@ -36,7 +36,7 @@ namespace Miyabists2.Scripts.Powers
 
             //PlayerChoiceContext choiceContext = new HookPlayerChoiceContext(applier.Player, applier.Player.NetId, MegaCrit.Sts2.Core.Entities.Multiplayer.GameActionType.Any);
 
-            if (applier.IsMonster) return;
+            if (applier.IsMonster && !applier.IsPet) return;
 
             foreach (Creature Player in base.CombatState.PlayerCreatures)
             {
