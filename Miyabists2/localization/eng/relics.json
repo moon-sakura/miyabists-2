@@ -159,5 +159,13 @@
 
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.title": "Azure Cage",
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "At the start of each combat, randomly gain [blue]{Get}[/blue] positive buff(s) (and their stacks) from the end of the previous combat (excluding [gold]Flash Energy[/gold] and [gold]Support Points[/gold]). For every cumulative [blue]100%[/blue] of Max HP taken as damage, gain [blue]1[/blue] additional buff.\\nCurrent cumulative HP loss percentage: [blue]{Record}%[/blue].",
-	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": ""
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.title": "Fairy Tale Notebook",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.description": "At the end of turn 2 in a normal combat or turn 4 in an elite combat, add [blue]1[/blue] [gold]Long Night Poem[/gold] to your hand.\\nRight-click: Summon the recorded monster to the battlefield.\\nCurrent recorded monster: [gold]{Monster}[/gold].\\nDo not add monsters that add status cards, or the game will freeze!",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.flavor": "I've drawn them all in my notebook — now with a wave of my wand, I can summon them all!",
+
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "Fairy Tale Notebook",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "At the end of turn 2 in a normal combat or turn 4 in an elite combat, add [blue]1[/blue] [gold]Long Night Poem[/gold] to your hand.\\nRight-click: Summon the recorded monster to the battlefield.\\nCurrent recorded monster: [gold]{Monster}[/gold].\\nDo not add monsters that add status cards, or the game will freeze!",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "I've drawn them all in my notebook — now with a wave of my wand, I can summon them all!"
 }

@@ -20,21 +20,24 @@
 	"MIYABISTS2-COMBAT_HARD_SELECTED.Hg" : "10. Mercury Tier",
 
 
-	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.title" : "Hoshimi Miyabi Special Starting Deck",
-	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.title" : "Select Starting Deck",
-	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.desc" : "Choose a different special starting deck for your challenge.\\n[gold]Default[/gold]: No changes\\n[gold]Bangboo House[/gold]: Starting deck becomes a Bangboo-related deck\\n[gold]Swarm Assembly[/gold]: Add 1 upgraded [gold]Swarm Assembly[/gold] to your starting deck",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.title" : "Hoshimi Miyabi Special Challenge",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.title" : "Select Special Challenge",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.desc" : "Choose a different special challenge.\\n[gold]Default[/gold]: No changes\\n[gold]Bangboo House[/gold]: Starting deck becomes a Bangboo-related deck\\n[gold]Swarm Assembly[/gold]: Add 1 upgraded [gold]Swarm Assembly[/gold] to your starting deck\\n[gold]Skeletal Recorder[/gold]: Start with a [gold]Fairy Tale Notebook[/gold]\\n[gold]Grace's Counterattack[/gold]: Starting deck becomes a Grace deck",
 
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Default" : "Default Deck",
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.AllBangboo" : "Bangboo House",
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.BeeGroup" : "Swarm Assembly",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Lucia" : "Skeletal Recorder",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Grace" : "Grace's Counterattack",
 
-	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.title" : "Yi Xuan Special Starting Deck",
-	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.title" : "Select Starting Deck",
-	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.desc" : "Choose a different special starting deck for your challenge.\\n[gold]Default[/gold]: No changes\\n[gold]Bangboo House[/gold]: Starting deck becomes a Bangboo-related deck\\n[gold]Swarm Assembly[/gold]: Add 1 upgraded [gold]Swarm Assembly[/gold] to your starting deck",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.title" : "Yi Xuan Special Challenge",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.title" : "Select Special Challenge",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.desc" : "Choose a different special challenge.\\n[gold]Default[/gold]: No changes\\n[gold]Bangboo House[/gold]: Starting deck becomes a Bangboo-related deck\\n[gold]Swarm Assembly[/gold]: Add 1 upgraded [gold]Swarm Assembly[/gold] to your starting deck\\n[gold]Skeletal Recorder[/gold]: Start with a [gold]Fairy Tale Notebook[/gold]",
 
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Default" : "Default Deck",
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.AllBangboo" : "Bangboo House",
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.BeeGroup" : "Swarm Assembly",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Lucia" : "Skeletal Recorder",
 
 
 

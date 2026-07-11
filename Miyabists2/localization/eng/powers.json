@@ -246,6 +246,10 @@
 	"XIXIFU_ACT.description": "Can eat a card to trigger a bonus effect.",
 	"XIXIFU_ACT.smartDescription": "[blue]{MAXUSE:diff()}[/blue] time(s) per turn, choose a card from hand to eat, then trigger a random effect.\\nUsed [blue]{Used:diff()}[/blue] time(s).",
 
+		"SUMMON_MONSTER_POWER.title": "Dream Partner",
+	"SUMMON_MONSTER_POWER.description": "Dream Partner",
+	"SUMMON_MONSTER_POWER.smartDescription": "The Dream Partner will protect you! Acts at the end of your turn.",
+
 	"MIYABI_BOSS_POWER.title": "Cold Flame",
 	"MIYABI_BOSS_POWER.description": "",
 	"MIYABI_BOSS_POWER.smartDescription": "Attacks accumulate [gold]Rending Frost Buildup[/gold] and [gold]Daze[/gold]. After causing [gold]Break[/gold], cleanse all [gold]Debuffs[/gold] from self. After causing [gold]Disorder[/gold], gain [blue]2[/blue] [gold]Strength[/gold]. Can block [blue]{DeathPrevent:diff()}[/blue] fatal blow(s), cleansing all [gold]Debuffs[/gold], gaining [blue]1[/blue] stack of Intangible, and restoring HP to full.",
@@ -321,5 +325,20 @@
 
 	"DONGJING_XIANGYI_POWER.title": "Motion Stillness Harmony",
 	"DONGJING_XIANGYI_POWER.description": "After playing Azure Cloud Shadow, consume all Flash Energy and recover a percentage. After playing Thousandfold Talisman Art, gain Decibel.",
-	"DONGJING_XIANGYI_POWER.smartDescription": "After playing [gold]Azure Cloud Shadow[/gold], consume all [gold]Flash Energy[/gold] and recover {ShannengRecoverPercent:diff()}%. After playing [gold]Thousandfold Talisman Art[/gold], gain [blue]{DecibelAmount:diff()}[/blue] [gold]Decibel[/gold]."
+	"DONGJING_XIANGYI_POWER.smartDescription": "After playing [gold]Azure Cloud Shadow[/gold], consume all [gold]Flash Energy[/gold] and recover {ShannengRecoverPercent:diff()}%. After playing [gold]Thousandfold Talisman Art[/gold], gain [blue]{DecibelAmount:diff()}[/blue] [gold]Decibel[/gold].",
+
+	"HOLLOW_EXINGYILAI_POWER.title": "Malignant Dependency",
+	"HOLLOW_EXINGYILAI_POWER.description": "At the end of your turn, gain {Amount} [gold]Strength[/gold] and take {Amount}*6 damage.",
+
+	"HOLLOW_JISHENGYIJUN_POWER.title": "Parasitic Fungus",
+	"HOLLOW_JISHENGYIJUN_POWER.description": "At the start of your turn, if HP is above 50%, gain {Amount} [gold]Weak[/gold]; if HP is below 50%, gain {Amount} [gold]Strength[/gold] and [gold]Dexterity[/gold].",
+
+	"HOLLOW_JUWUKONGJU_POWER.title": "Megalophobia",
+	"HOLLOW_JUWUKONGJU_POWER.description": "Per stack: Elite and Boss enemies deal +25% damage, you deal +20% damage to enemies.",
+
+	"HOLLOW_TANLANWUDU_POWER.title": "Insatiable Greed",
+	"HOLLOW_TANLANWUDU_POWER.description": "Each time you deal damage to an enemy, gain {Amount} [gold]Gold[/gold] and take {Amount} damage.",
+
+	"HOLLOW_ZHIJUETONGHUA_POWER.title": "Sensory Assimilation",
+	"HOLLOW_ZHIJUETONGHUA_POWER.description": "Each time you play a Skill card, take {Amount} damage."
 }

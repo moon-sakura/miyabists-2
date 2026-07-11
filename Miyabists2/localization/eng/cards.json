@@ -560,6 +560,35 @@
 	"MIYABISTS2_CARD_SHUDAO_GUIYI.description": "Lose all Block. Deal [orange]Dark Ink[/orange] damage equal to the Block lost to an enemy\\n[gold]Exhaust{ExhaustCount:diff()}[/gold]",
 
 	"MIYABISTS2_CARD_DONGJING_XIANGYI.title": "Motion Stillness Harmony",
-	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "After playing [gold]Azure Cloud Shadow[/gold], consume all [gold]Flash Energy[/gold] and recover {ShannengRecoverPercent:diff()}% of the Flash Energy consumed\\nAfter playing [gold]Thousandfold Talisman Art[/gold], gain {DecibelAmount:diff()} [gold]Decibel[/gold]"
+	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "After playing [gold]Azure Cloud Shadow[/gold], consume all [gold]Flash Energy[/gold] and recover {ShannengRecoverPercent:diff()}% of the Flash Energy consumed\\nAfter playing [gold]Thousandfold Talisman Art[/gold], gain {DecibelAmount:diff()} [gold]Decibel[/gold]",
 
+	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.title": "Long Night Poem",
+	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.description": "Record 1 monster.",
+
+	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.title": "Quiet Cloud Watching",
+	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.description": "Activate X times: Randomly multiply one of your [gold]positive buffs[/gold] by {Multiplier:diff()}% (can repeat, excludes [gold]Flash Energy[/gold] and [gold]Support Points[/gold])\\n[gold]Exhaust[/gold]",
+
+	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "Clear Spirit Heart",
+	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "Lose {HpLossPercent:diff()}% of your Max HP. Remove all [purple]Debuffs[/purple] from yourself",
+
+	"MIYABISTS2_CARD_HOLLOW_EROSION.title": "Hollow Erosion",
+	"MIYABISTS2_CARD_HOLLOW_EROSION.description": "Each time this is drawn, choose from 3 random Erosions",
+
+	"MIYABISTS2_CARD_HOLLOW_EXINGYILAI.title": "Malignant Dependency",
+	"MIYABISTS2_CARD_HOLLOW_EXINGYILAI.description": "At the end of your turn, gain [blue]1[/blue] [gold]Strength[/gold] and take [blue]6[/blue] damage",
+
+	"MIYABISTS2_CARD_HOLLOW_JISHENGYIJUN.title": "Parasitic Fungus",
+	"MIYABISTS2_CARD_HOLLOW_JISHENGYIJUN.description": "At the start of your turn, if HP is above 50%, gain [blue]1[/blue] [gold]Weak[/gold]; if HP is below 50%, gain [blue]1[/blue] [gold]Strength[/gold] and [gold]Dexterity[/gold]",
+
+	"MIYABISTS2_CARD_HOLLOW_JUWUKONGJU.title": "Megalophobia",
+	"MIYABISTS2_CARD_HOLLOW_JUWUKONGJU.description": "Elite and Boss enemies deal [red]+25%[/red] damage; you deal [blue]+20%[/blue] damage to enemies",
+
+	"MIYABISTS2_CARD_HOLLOW_TANLANWUDU.title": "Insatiable Greed",
+	"MIYABISTS2_CARD_HOLLOW_TANLANWUDU.description": "Each time you deal damage to an enemy, gain [blue]1[/blue] [gold]Gold[/gold] and take [blue]1[/blue] damage",
+
+	"MIYABISTS2_CARD_HOLLOW_ZHIJUETONGHUA.title": "Sensory Assimilation",
+	"MIYABISTS2_CARD_HOLLOW_ZHIJUETONGHUA.description": "Gain [blue]1[/blue] [gold]Dexterity[/gold]. Each time you play a Skill card, take [blue]1[/blue] damage",
+
+	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.title": "Hypercaution",
+	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.description": "While in hand, gain [blue]4[/blue] Block at the end of each turn"
 }
