@@ -92,6 +92,7 @@ namespace Miyabists2.Scripts.Service
         Default = 0,
         AllBangboo,
         BeeGroup,
+        Lucia,
         //UltimateGrace
     }
 
@@ -101,6 +102,7 @@ namespace Miyabists2.Scripts.Service
         // 可在此扩展 Yixuan 专属挑战
         AllBangboo,
         BeeGroup,
+        Lucia,
     }
 
     [ConfigHoverTipsByDefault]

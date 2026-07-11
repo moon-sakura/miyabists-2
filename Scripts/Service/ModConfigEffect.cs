@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Miyabists2.Scripts.Relics;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -213,29 +214,30 @@ namespace Miyabists2.Scripts.Service
                 //    player.Gold /= 2;
                 //}
 
-                if(MiyabiFuncBase.IsMiyabiModChar(player) && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.BeeGroup)
+                if(MiyabiFuncBase.IsMiyabiModChar(player))
                 {
-                    if(player.Character is Miyabi)
+                    if(player.Character is Miyabi && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.BeeGroup)
                     {
                         CardModel card = player.RunState.CreateCard<BeeGroup>(player);
                         card.UpgradeInternal();
                         CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
                     }
 
-                    if(player.Character is Yixuan)
+                    if(player.Character is Yixuan && MiyabiModConfig.YixuanFunPileSelected == YixuanFunPile.BeeGroup)
                     {
                         CardModel card = player.RunState.CreateCard<BeeGroupYixuan>(player);
                         card.UpgradeInternal();
                         CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
                     }
-                    
-                }
 
-                if (player.Character is Yixuan && MiyabiModConfig.YixuanFunPileSelected == YixuanFunPile.BeeGroup)
-                {
-                    CardModel card = player.RunState.CreateCard<BeeGroup>(player);
-                    card.UpgradeInternal();
-                    CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
+                    if(player.Character is Miyabi && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.Lucia)
+                    {
+                        await RelicCmd.Obtain<TonghuaJishibenRelic>(player);
+                    }
+                    if (player.Character is Yixuan && MiyabiModConfig.YixuanFunPileSelected == YixuanFunPile.Lucia)
+                    {
+                        await RelicCmd.Obtain<TonghuaJishibenRelic>(player);
+                    }
                 }
             }
         }

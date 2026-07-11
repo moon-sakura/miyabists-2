@@ -162,10 +162,10 @@
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": "江河易改，旧梦难消",
 
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.title": "童话记事本",
-	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。\\n请勿添加会添加状态卡牌的怪物，否则会导致游戏卡住！",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.flavor": "我把他们都画在了本子上——现在，只要挥挥法杖，我就能把他们都召唤出来！",
 
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "童话记事本",
-	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。\\n请勿添加会添加状态卡牌的怪物，否则会导致游戏卡住！",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "我把他们都画在了本子上——现在，只要挥挥法杖，我就能把他们都召唤出来！"
 }
