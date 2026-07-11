@@ -69,6 +69,29 @@
 
     "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.title": "离开",
     "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.description": "敬而远之。",
-    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_LEAVE.description" : "[outline_size=10][outline_color=black]你选择远离那神秘的声音，这也许是正确的选择。[/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_LEAVE.description" : "[outline_size=10][outline_color=black]你选择远离那神秘的声音，这也许是正确的选择。[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.title" : "奇怪的空洞",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]眼前似乎是一个空洞，可是这里为什么会有空洞呢？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.EXPLORE.title": "进去探索",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.EXPLORE.description": "看看里面有什么。",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.LEAVE.title": "远离",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.LEAVE.description": "这太反常了。",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.description" : "[outline_size=10][outline_color=black]这里似乎有不少好东西，不过已经被侵蚀了。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.title": "获取随机一个稀有遗物",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.description": "被侵蚀的遗物依然散发着力量。",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.title": "获取随机一张稀有卡牌",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.description": "从3张随机稀有卡牌中选择一张。",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.title": "获得240金币",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.description": "些许被侵蚀的钱币……但还能用。",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.END_PAGE.description" : "[outline_size=10][outline_color=black]再待下去可能会有不好的事情发生，赶快离开吧。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]这太反常了，还是不要靠近了。[/outline_color][/outline_size]"
 
 }

@@ -69,6 +69,29 @@
 
     "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.title": "Leave",
     "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.description": "Stay away from it.",
-    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_LEAVE.description" : "[outline_size=10][outline_color=black]You choose to stay away from the mysterious voice. Perhaps it was the right choice.[/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_LEAVE.description" : "[outline_size=10][outline_color=black]You choose to stay away from the mysterious voice. Perhaps it was the right choice.[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.title" : "Strange Hollow",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]A hollow seems to lie before you, but why would there be a hollow here?[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.EXPLORE.title": "Explore",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.EXPLORE.description": "See what's inside.",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.LEAVE.title": "Stay Away",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.LEAVE.description": "This is too strange.",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.description" : "[outline_size=10][outline_color=black]There seems to be quite a few good things here, but they've already been eroded.[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.title": "Obtain a random Rare Relic",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.description": "The eroded relic still radiates power.",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.title": "Obtain a random Rare Card",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.description": "Choose 1 card from 3 random rare cards.",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.title": "Gain 240 Gold",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.description": "Some eroded coins... but they can still be used.",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.END_PAGE.description" : "[outline_size=10][outline_color=black]Something bad might happen if you stay any longer. Better leave quickly.[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]This is far too abnormal. Better not get close.[/outline_color][/outline_size]"
 
 }

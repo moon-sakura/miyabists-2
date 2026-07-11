@@ -570,5 +570,34 @@
 	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.description": "发动X次：随机将自身一项[gold]正面能力[/gold]层数变为[blue]{Multiplier:diff()}%[/blue]（可重复，不含[gold]闪能[/gold]和[gold]支援点数[/gold]）\\n[gold]消耗[/gold]",
 
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "清灵道心",
-	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "失去最大生命值{HpLossPercent:diff()}%的生命值，消除自身所有[purple]负面效果[/purple]"
+	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "失去最大生命值{HpLossPercent:diff()}%的生命值，消除自身所有[purple]负面效果[/purple]",
+
+
+
+
+
+
+
+
+
+	"MIYABISTS2_CARD_HOLLOW_EROSION.title": "空洞侵蚀",
+	"MIYABISTS2_CARD_HOLLOW_EROSION.description": "每次抽到时从随机3种侵蚀中进行抉择",
+
+	"MIYABISTS2_CARD_HOLLOW_EXINGYILAI.title": "恶性依赖",
+	"MIYABISTS2_CARD_HOLLOW_EXINGYILAI.description": "回合结束时，获得1点[gold]力量[/gold]，受到6点伤害",
+
+	"MIYABISTS2_CARD_HOLLOW_JISHENGYIJUN.title": "寄生异菌",
+	"MIYABISTS2_CARD_HOLLOW_JISHENGYIJUN.description": "回合开始时，若生命值大于50%时，获得1层[gold]虚弱[/gold]；生命值小于50%时，获得1点[gold]力量[/gold]与[gold]敏捷[/gold]",
+
+	"MIYABISTS2_CARD_HOLLOW_JUWUKONGJU.title": "巨物恐惧",
+	"MIYABISTS2_CARD_HOLLOW_JUWUKONGJU.description": "精英敌人、boss造成伤害+25%；对敌人造成伤害+20%",
+
+	"MIYABISTS2_CARD_HOLLOW_TANLANWUDU.title": "贪婪无度",
+	"MIYABISTS2_CARD_HOLLOW_TANLANWUDU.description": "每次对敌人造成伤害时，获得1个[gold]金币[/gold]，受到1点伤害",
+
+	"MIYABISTS2_CARD_HOLLOW_ZHIJUETONGHUA.title": "知觉同化",
+	"MIYABISTS2_CARD_HOLLOW_ZHIJUETONGHUA.description": "获得1点[gold]敏捷[/gold]，每次使用技能牌时，受到1点伤害",
+
+	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.title": "过度谨慎",
+	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.description": "在手牌时，每回合结束获得4点护甲"
 }

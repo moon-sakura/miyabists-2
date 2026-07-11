@@ -333,5 +333,28 @@
 
 	"DONGJING_XIANGYI_POWER.title": "动静相宜",
 	"DONGJING_XIANGYI_POWER.description": "使用青溟云影后消耗所有闪能恢复百分比闪能；使用符法千重后获得喧响值",
-	"DONGJING_XIANGYI_POWER.smartDescription": "使用[gold]青溟云影[/gold]后消耗所有[gold]闪能[/gold]并恢复{ShannengRecoverPercent:diff()}%；使用[gold]符法千重[/gold]后获得[blue]{DecibelAmount:diff()}[/blue]点[gold]喧响值[/gold]。"
+	"DONGJING_XIANGYI_POWER.smartDescription": "使用[gold]青溟云影[/gold]后消耗所有[gold]闪能[/gold]并恢复{ShannengRecoverPercent:diff()}%；使用[gold]符法千重[/gold]后获得[blue]{DecibelAmount:diff()}[/blue]点[gold]喧响值[/gold]。",
+
+
+
+
+
+
+
+
+
+	"HOLLOW_EXINGYILAI_POWER.title": "恶性依赖",
+	"HOLLOW_EXINGYILAI_POWER.description": "回合结束时，获得{Amount}点[gold]力量[/gold]，受到{Amount}*6点伤害。",
+
+	"HOLLOW_JISHENGYIJUN_POWER.title": "寄生异菌",
+	"HOLLOW_JISHENGYIJUN_POWER.description": "回合开始时，若生命值大于50%时，获得{Amount}层[gold]虚弱[/gold]；生命值小于50%时，获得{Amount}点[gold]力量[/gold]与[gold]敏捷[/gold]。",
+
+	"HOLLOW_JUWUKONGJU_POWER.title": "巨物恐惧",
+	"HOLLOW_JUWUKONGJU_POWER.description": "每层使精英敌人、boss造成伤害+25%，对敌人造成伤害+20%。",
+
+	"HOLLOW_TANLANWUDU_POWER.title": "贪婪无度",
+	"HOLLOW_TANLANWUDU_POWER.description": "每次对敌人造成伤害时，获得{Amount}[gold]金币[/gold]，受到{Amount}点伤害。",
+
+	"HOLLOW_ZHIJUETONGHUA_POWER.title": "知觉同化",
+	"HOLLOW_ZHIJUETONGHUA_POWER.description": "每次使用技能牌时，受到{Amount}点伤害。"
 }

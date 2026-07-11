@@ -76,7 +76,7 @@ namespace Miyabists2.Scripts.Service
             GD.Print($"[AddCardToDesk] 开始 — T={typeof(T).Name}, player={player.Character?.GetType().Name}");
 
             List<CardPileAddResult> results = new List<CardPileAddResult>();
-            CardModel card = player.RunState.CreateCard(ModelDb.Card<PriceOfPower>(), player);
+            CardModel card = player.RunState.CreateCard(ModelDb.Card<T>(), player);
             GD.Print($"[AddCardToDesk] CreateCard 完成 — cardType={card.GetType().Name}, is PriceOfPower={card is PriceOfPower}, Owner={card.Owner != null}");
 
             results.Add(await CardPileCmd.Add(card, PileType.Deck));

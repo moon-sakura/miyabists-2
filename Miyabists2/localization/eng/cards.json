@@ -561,4 +561,5 @@
 
 	"MIYABISTS2_CARD_DONGJING_XIANGYI.title": "Motion Stillness Harmony",
 	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "After playing [gold]Azure Cloud Shadow[/gold], consume all [gold]Flash Energy[/gold] and recover {ShannengRecoverPercent:diff()}% of the Flash Energy consumed\\nAfter playing [gold]Thousandfold Talisman Art[/gold], gain {DecibelAmount:diff()} [gold]Decibel[/gold]"
+
 }
