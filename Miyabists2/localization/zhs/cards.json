@@ -564,5 +564,11 @@
 	"MIYABISTS2_CARD_DONGJING_XIANGYI.description": "使用[gold]青溟云影[/gold]后，消耗所有[gold]闪能[/gold]，恢复消耗闪能的{ShannengRecoverPercent:diff()}%数值\\n使用[gold]符法千重[/gold]后，获得{DecibelAmount:diff()}点[gold]喧响值[/gold]",
 
 	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.title": "长夜诗篇",
-	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.description": "记录1只怪物。"
+	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.description": "记录1只怪物。",
+
+	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.title": "静观流云",
+	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.description": "发动{TriggerCount:diff()}次：随机将自身一项[gold]正面能力[/gold]层数变为[blue]{Multiplier:diff()}%[/blue]（可重复，不含[gold]闪能[/gold]和[gold]支援点数[/gold]）\\n[gold]消耗[/gold]",
+
+	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "清灵道心",
+	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "失去最大生命值{HpLossPercent:diff()}%的生命值，消除自身所有[purple]负面效果[/purple]"
 }

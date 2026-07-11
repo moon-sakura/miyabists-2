@@ -11,11 +11,16 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-    internal class JinlongSzb : ModCardTemplate
+    internal class JinlongSzb : MiyabiCardBase
     {
         public override string PortraitPath => $"res://images/cards/jinlongSzb.png";
 
-        public JinlongSzb() : base(3, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
+        public JinlongSzb() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
+
+        public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [
+            MiyabiKeywords.OtherWorldFriends,
+        ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
@@ -24,8 +29,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override void OnUpgrade()
         {
-            //this.AddKeyword(CardKeyword.Innate);
-            EnergyCost.UpgradeBy(-1);
+            this.AddKeyword(CardKeyword.Innate);
+            //EnergyCost.UpgradeBy(-1);
         }
     }
 }
