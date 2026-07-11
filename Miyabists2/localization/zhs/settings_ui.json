@@ -22,12 +22,13 @@
 
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.title" : "星见雅特殊挑战",
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.title" : "选择特殊挑战",
-	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.desc" : "选择不同的特殊挑战进行挑战。\\n[gold]默认[/gold]：无变化\\n[gold]邦布当家[/gold]：初始卡组变为邦布相关卡组\\n[gold]蜂群集结[/gold]：初始卡组中添加1张升级后的[gold]蜂群集结[/gold]\\n[gold]以骸记录者[/gold]：游戏开始时获得一个[gold]童话记事本[/gold]",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.desc" : "选择不同的特殊挑战进行挑战。\\n[gold]默认[/gold]：无变化\\n[gold]邦布当家[/gold]：初始卡组变为邦布相关卡组\\n[gold]蜂群集结[/gold]：初始卡组中添加1张升级后的[gold]蜂群集结[/gold]\\n[gold]以骸记录者[/gold]：游戏开始时获得一个[gold]童话记事本[/gold]\\n[gold]格莉丝的逆袭[/gold]：初始卡组变为格莉丝卡组",
 
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Default" : "默认卡组",
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.AllBangboo" : "邦布当家",
 	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.BeeGroup" : "蜂群集结",
-	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.LUCIA" : "以骸记录者",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Lucia" : "以骸记录者",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Grace" : "格莉丝的逆袭",
 
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.title" : "仪玄特殊挑战",
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.title" : "选择特殊挑战",
@@ -36,7 +37,7 @@
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Default" : "默认卡组",
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.AllBangboo" : "邦布当家",
 	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.BeeGroup" : "蜂群集结",
-	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.LUCIA" : "以骸记录者",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Lucia" : "以骸记录者",
 
 
 

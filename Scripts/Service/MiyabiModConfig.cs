@@ -93,7 +93,7 @@ namespace Miyabists2.Scripts.Service
         AllBangboo,
         BeeGroup,
         Lucia,
-        //UltimateGrace
+        Grace,
     }
 
     public enum YixuanFunPile
@@ -133,9 +133,14 @@ namespace Miyabists2.Scripts.Service
 
         public static bool ChangeToAllPlayers { get; set; } = false;
 
-        [ConfigSection("MiyabiConfig")]
         [ConfigHoverTip]
         public static MiyabiFunPile MiyabiFunPileSelected { get; set; } = MiyabiFunPile.Default;
+
+
+        [ConfigHoverTip]
+        public static YixuanFunPile YixuanFunPileSelected { get; set; } = YixuanFunPile.Default;
+
+        [ConfigSection("MiyabiConfig")]
 
         [ConfigHoverTip]
         public static MiyabiCombatSkinSlot CombatSelectedSlot { get; set; } = MiyabiCombatSkinSlot.Slot0;
@@ -148,8 +153,6 @@ namespace Miyabists2.Scripts.Service
 
 
         [ConfigSection("YixuanConfig")]
-        [ConfigHoverTip]
-        public static YixuanFunPile YixuanFunPileSelected { get; set; } = YixuanFunPile.Default;
 
         [ConfigHoverTip]
         public static YixuanCombatSkinSlot YixuanCombatSelectedSlot { get; set; } = YixuanCombatSkinSlot.Slot0;

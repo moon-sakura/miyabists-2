@@ -315,6 +315,7 @@ public static class MiyabiCharSelectSkinPatch
                     ("邦布当家", "初始卡组变为邦布相关卡组"),
                     ("蜂群集结", "初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]"),
                     ("以骸记录者", "游戏开始时获得一个[color=#FFD700]童话记事本[/color]"),
+                    ("格莉丝的逆袭", "初始卡组变为格莉丝卡组"),
                 };
                 currentIndex = (int)MiyabiModConfig.MiyabiFunPileSelected;
                 break;

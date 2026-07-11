@@ -125,10 +125,19 @@ class Miyabi : ModCharacterTemplate<MiyabiCardPool, MiyabiRelicPool, MiyabiPotio
     private IEnumerable<StartingDeckEntry> GetBangbooDeck() => [
         new(typeof(BangbooSummonOne), 4),
         new(typeof(EnnDanmu), 1),
-        new(typeof(BangbooActiveOne), 2),
+        new(typeof(YoushiHuoliXueshuo), 1),
+        new(typeof(BangbooActiveOne), 1),
         new(typeof(BangbooChargeAll), 1),
-        new(typeof(BangbooHelpmeOne), 2),
+        new(typeof(BangbooHelpmeOne), 1),
         new(typeof(BangbooUseOnemore), 1),
+    ];
+
+    private IEnumerable<StartingDeckEntry> GetGraceDeck() => [
+        new(typeof(XiezuoShigong), 3),
+        new(typeof(QuanmianQingchang), 2),
+        new(typeof(ShuiNiao), 2),
+        new(typeof(MiyabiBlock), 2),
+        new(typeof(DongFeng), 1),
     ];
 
 
@@ -144,6 +153,8 @@ class Miyabi : ModCharacterTemplate<MiyabiCardPool, MiyabiRelicPool, MiyabiPotio
                     return GetDefaultDeck();
                 case MiyabiFunPile.AllBangboo:
                     return GetBangbooDeck();
+                case MiyabiFunPile.Grace:
+                    return GetGraceDeck();
                 default:
                     return GetDefaultDeck();
             }
