@@ -296,8 +296,8 @@
 	"QINGXIAO_TONGYOU_POWER.smartDescription": "每回合开始时，获得[blue]{Vigor}点[/blue][gold]活力[/gold]、[blue]{Thorns}点[/blue][gold]荆棘[/gold]，恢复[blue]{Shanneng}点[/blue][gold]闪能[/gold]。",
 
 	"MITU_YESONG_POWER.title": "迷途夜颂",
-	"MITU_YESONG_POWER.description": "每次使用非攻击卡后获得2点活力。",
-	"MITU_YESONG_POWER.smartDescription": "还剩[blue]{Amount}[/blue]回合，每次使用非攻击卡后获得[blue]{Vigor:diff()}点[/blue][gold]活力[/gold]。",
+	"MITU_YESONG_POWER.description": "每次使用非攻击卡后获得2点活力，每过一个回合额外获得1点。",
+	"MITU_YESONG_POWER.smartDescription": "还剩[blue]{Amount}[/blue]回合，每次使用非攻击卡后获得[blue]{Vigor:diff()}点[/blue][gold]活力[/gold]，每过一个回合额外获得1点。",
 
 	"TIESHAN_ZHENMAIKAO_POWER.title": "贴山震脉靠",
 	"TIESHAN_ZHENMAIKAO_POWER.description": "接下来的命破伤害卡伤害提升。",

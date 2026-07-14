@@ -37,11 +37,8 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         {
             if (player.Creature != Owner) return;
             // 递减回合计数
-            SetAmount(Amount - 1);
-            if (Amount <= 0)
-            {
-                await PowerCmd.Remove<MituYesongPower>(Owner);
-            }
+            await PowerCmd.Decrement(this);
+            DynamicVars["Turns"].BaseValue += 1;
         }
 
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)

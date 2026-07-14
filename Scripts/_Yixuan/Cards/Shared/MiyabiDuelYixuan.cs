@@ -48,15 +48,15 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 FollowUpStateId = cardPlay.Target.Monster.NextMove.StateId,
                 MustPerformOnceBeforeTransitioning = true
             };
-
-            cardPlay.Target.Monster.SetMoveImmediate(duelAttack, true);
+            if (!cardPlay.Target.Powers.Any(p => p is AsleepPower))
+                cardPlay.Target.Monster.SetMoveImmediate(duelAttack, true);
 
             await PowerCmd.Apply<ThornsPower>(choiceContext, base.Owner.Creature, 2m, base.Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
         {
-            DynamicVars["THORNS_POWER"].UpgradeValueBy(1);
+            //DynamicVars["THORNS_POWER"].UpgradeValueBy(1);
             AddKeyword(CardKeyword.Retain);
         }
     }

@@ -61,7 +61,8 @@ namespace Miyabists2.Scripts.Cards
                 MustPerformOnceBeforeTransitioning = true
             };
 
-            cardPlay.Target.Monster.SetMoveImmediate(duelAttack, true);
+            if(!cardPlay.Target.Powers.Any(p => p is AsleepPower))
+                cardPlay.Target.Monster.SetMoveImmediate(duelAttack, true);
 
             await PowerCmd.Apply<MiyabiParryPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
         }

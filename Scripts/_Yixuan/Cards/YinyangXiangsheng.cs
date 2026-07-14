@@ -14,16 +14,21 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Yixuan.Cards
 {
     /// <summary>
-    /// 阴阳相生 - 1费Common技能卡
+    /// 阴阳相生 - 1费Uncommon技能卡
     /// 下一次获得格挡时，获得对应数值的活力，或者下一次造成伤害时，获得对应数值的荆棘
     /// 升级后添加保留
     /// </summary>
     [RegisterCard(typeof(YixuanCardPool))]
     internal class YinyangXiangsheng : YixuanCardBase
     {
-        public YinyangXiangsheng() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+        public YinyangXiangsheng() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
         {
         }
+
+        public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [
+            CardKeyword.Exhaust,
+        ];
 
         //protected override string ArtPath => "res://images/_YiXuan/cards/yinyangXiangsheng.png";
 
