@@ -60,7 +60,6 @@ public class Entry
 
         MiyabiSkinManager.RegisterCombatSkinYixuan("青溟鸟", "res://scenes/_Yixuan/yixuan_char_bird.tscn", "res://images/_YiXuan/char/yixuan_rest.png");
         MiyabiSkinManager.RegisterShopSkinYixuan("青溟鸟", "res://scenes/_Yixuan/yixuan_Shop_bird.tscn", "res://images/_YiXuan/char/yixuan_rest.png");
-        //MiyabiSkinManager.RegisterRestSkinYixuan("蜜瓜雅", "res://scenes/Miyabi_Rest_melon.tscn", "res://images/_YiXuan/char/yixuan_rest.png");
         //Log.Debug("星见雅MOD加载完成");
     }
 

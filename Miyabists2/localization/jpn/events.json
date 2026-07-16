@@ -1,0 +1,97 @@
+{
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.title" : "妖刀の試練",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]あなたは夢の中に迷い込んだようだ。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.DEEP_IN_HEART.title": "試練を受ける",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.DEEP_IN_HEART.description": "[red]{Damage}[/red]ダメージを受ける。",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.LEAVE.title": "立ち去る",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.INITIAL.options.LEAVE.description": "妖刀に私を叙勲する資格はない。",
+
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.description" : "[outline_size=10][outline_color=black]まだ続けるつもりか？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CONTINUE_DEEP.title": "続ける",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CONTINUE_DEEP.description": "[red]{Damage}[/red]ダメージを受ける。",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CANNOT_BARE.title": "耐えられない",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.DEEP_PAGE.options.CANNOT_BARE.description": "早めに諦めるのも一つの選択だ。ランダムなカード5枚から1枚を獲得する。",
+
+
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.description" : "[outline_size=10][outline_color=black]あなたは試練の最終段階にたどり着いた。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.title": "試練を完遂する",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GET_SLXD.description": "[red]特殊な戦闘に突入し[/red]、[gold]{Relic}[/gold]を獲得する。",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.title": "諦める",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CORE_PAGE.options.GIVE_UP.description": "これ以上続けるべきではないのかもしれない。ランダムなレアカード3枚から1枚を獲得する。",
+
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.LEAVE.description" : "[outline_size=10][outline_color=black]それは賢明な選択だ。[/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.CANNOT_BARE_LEAVE.description" : "[outline_size=10][outline_color=black]それは賢明な選択だ。[/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.GET_SLXD.description" : "[outline_size=10][outline_color=black]試練を乗り越えたな。また会おう。[/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_GET_SLXD_EVENT.pages.GIVE_UP_LEAVE.description" : "[outline_size=10][outline_color=black]それは賢明な選択だ。[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.title" : "最強の撃破エージェントは誰だ？",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]数人の撃破エージェントが、誰が最強の撃破エージェントかを議論している。\\n「ん？南宮羽かな」\\n「状況にもよるが、やはり南宮羽だろう」\\n「南宮羽だろうな。もし琉音も含めるなら、結果は変わるかもしれないが」\\n「私と琉音を除けば……」\\n「私だ！」と、橘福福が突然議論に加わり、そう宣言した。\\n「妹弟子ちゃん、あなたはどう思う？」[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.title": "もちろん橘福福！",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.ALL_FOR_HUPOWANG_CHOICE.description": "姉弟子がご褒美をくれるだろう。",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.title": "他の誰かかもしれない",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.INITIAL.options.OTHERS.description": "本当に姉弟子ではないのか？",
+
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.JUFUFU.description" : "[outline_size=10][outline_color=black]妹弟子ちゃんにそこまで見込まれたからには、腕前を見せてあげないとね！[/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_ALL_FOR_HUPOWANG_EVENT.pages.OTHER_BREAKER.description" : "[outline_size=10][outline_color=black]姉弟子を悲しませてしまった！[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.title" : "異界の声（未完成）",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]\"力が欲しいか。力を与えてやろう。\"\\nどこからともなく、そんな声が聞こえてきた。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.WANT_POWER.title": "力が欲しい",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.WANT_POWER.description": "試してみる価値はあるかもしれない。",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.REFUSE.title": "拒否する",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.INITIAL.options.REFUSE.description": "うまい話には裏があるものだ。",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.description" : "[outline_size=10][outline_color=black]\"よかろう。力と、ささやかな贈り物を与えよう。\\nさらなる力が欲しいか？\"[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.MORE.title": "もっと欲しい！",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.MORE.description": "影画の誘惑を拒める者などいない。",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.REFUSE.title": "拒否する",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.CONTINUE_ASK.options.REFUSE.description": "タダより高いものはない。",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.END.description" : "[outline_size=10][outline_color=black]\"また会おう。\"[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.description" : "[outline_size=10][outline_color=black]\"強欲な奴だ。だが、また会おう。\"[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.title": "立ち去る",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_END.options.LEAVE.description": "体が異様に重くなったように感じる……",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.GREEDY_LEAVE.description" : "[outline_size=10][outline_color=black]あなたは力を手に入れた。だが、その代償は何だろうか？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.description" : "[outline_size=10][outline_color=black]うまい話などあるはずがない！[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.title": "立ち去る",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_PAGE.options.LEAVE.description": "敬して遠ざける。",
+    "MIYABISTS2_EVENT_OTHERWORLDLY_VOICE_EVENT.pages.REFUSE_LEAVE.description" : "[outline_size=10][outline_color=black]あなたは謎めいた声から遠ざかることを選んだ。それは正しい選択だったのかもしれない。[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.title" : "奇妙なホロウ",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]目の前にあるのはホロウのようだ。だが、なぜこんな場所にホロウが？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.EXPLORE.title": "中を探索する",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.EXPLORE.description": "中に何があるか見てみよう。",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.LEAVE.title": "離れる",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.INITIAL.options.LEAVE.description": "あまりにも異常だ。",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.description" : "[outline_size=10][outline_color=black]ここには良い物がたくさんあるようだが、すでに侵蝕されている。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.title": "ランダムなレアレリックを1つ獲得",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.description": "侵蝕されたレリックは、今もなお力を放っている。",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.title": "ランダムなレアカードを1枚獲得",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.description": "ランダムなレアカード3枚から1枚を選ぶ。",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.title": "240ゴールドを獲得",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.description": "侵蝕された硬貨がいくらか……だが、まだ使える。",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.END_PAGE.description" : "[outline_size=10][outline_color=black]これ以上留まると良くないことが起こるかもしれない。早く立ち去ろう。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]あまりにも異常だ。近づかないでおこう。[/outline_color][/outline_size]"
+
+}

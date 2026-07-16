@@ -1,0 +1,357 @@
+{
+	"FROST_BUILD_POWER.smartDescription": "누적 {PlayerCount:choose(1|2|3|4):50|65|80|95|50}스택 후 [aqua]상작[/aqua] 발동, [purple]속성 이상[/purple] 1 부여{PlayerCount:cond:>4?(플레이어 1명 추가당 발동 스택 +[blue]15[/blue])|}",
+	"FROST_BUILD_POWER.description": "누적 50스택 후 [aqua]상작[/aqua] 발동, [purple]속성 이상[/purple] 1 부여(플레이어 1명 추가당 발동 스택 +[blue]15[/blue])",
+	"FROST_BUILD_POWER.title": "열상",
+
+	"DAZE_POWER.smartDescription": "누적 {PlayerCount:choose(1|2|3|4):100|120|140|160|100}스택 후 [gold]격파[/gold] 발동{PlayerCount:cond:>4?(플레이어 1명 추가당 발동 스택 +[blue]20[/blue])|}",
+	"DAZE_POWER.description": "누적 100스택 후 [gold]격파[/gold] 발동(플레이어 1명 추가당 발동 스택 +[blue]20[/blue])",
+	"DAZE_POWER.title": "균형 붕괴 수치",
+
+	"BREAK_POWER.smartDescription": "[gold]기절[/gold], 1턴간 [gold]균형 붕괴 취약[/gold] [blue]50%[/blue] 획득. 이 상태에서는 [gold]균형 붕괴 수치[/gold] 중첩 불가.",
+	"BREAK_POWER.description": "격파 시 적 [gold]기절[/gold], 1턴간 [gold]균형 붕괴 취약[/gold] [blue]50%[/blue] 부여. 이 상태에서는 [gold]균형 붕괴 수치[/gold] 중첩 불가.",
+	"BREAK_POWER.title": "격파",
+
+	"BREAK_PLAYER_POWER.smartDescription": "1턴간 카드 사용 불가",
+	"BREAK_PLAYER_POWER.description": "1턴간 카드 사용 불가",
+	"BREAK_PLAYER_POWER.title": "격파",
+
+	"FROST_FIRE_POWER.title": "빙염",
+    "FROST_FIRE_POWER.description": "스택당 [aqua]열상[/aqua] 피해 [blue]5%[/blue] 증가(상한 존재).",
+    "FROST_FIRE_POWER.smartDescription": "스택당 [aqua]열상[/aqua] 피해 [blue]5%[/blue] 증가(상한 [blue]{Limit:diff()}%[/blue]).",
+
+    "XINNIAN_WUWO_POWER.smartDescription": "이번 턴에 [gold]격파[/gold] 발동 시, 이번 턴 모든 [gold]상월[/gold] 비용 0",
+	"XINNIAN_WUWO_POWER.description": "",
+	"XINNIAN_WUWO_POWER.title": "심념무아",
+
+	"FROST_POWER.title": "상작",
+    "FROST_POWER.description": "받는 피해 증가, [aqua]열상 축적치[/aqua] 중첩 불가",
+    "FROST_POWER.smartDescription": "받는 피해 +[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|, [aqua]열상 축적치[/aqua] 중첩 불가}",
+
+    "FROSTPO_POWER.title": "상작·파",
+    "FROSTPO_POWER.description": "모든 빙염 제거, 빙염 스택에 따라 피해 및 힘 획득, 적 받는 피해 증가, [aqua]열상 축적치[/aqua] 중첩 불가",
+    "FROSTPO_POWER.smartDescription": "[gold]빙염[/gold] 스택의 [blue]5[/blue]배 피해, [gold]빙염[/gold] 5스택당 [gold]힘[/gold] 1 획득, 모든 [gold]빙염[/gold] 제거, 받는 피해 +[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|, [aqua]열상 축적치[/aqua] 중첩 불가}",
+
+	"DAZE_VULN_POWER.smartDescription": "1턴간 받는 피해 +[blue]{Amount}%[/blue]",
+	"DAZE_VULN_POWER.description": "적이 받는 피해 증가",
+	"DAZE_VULN_POWER.title": "균형 붕괴 취약",
+
+	"FROST_FALL_POWER.title": "낙상",
+    "FROST_FALL_POWER.description": "[gold]상월[/gold] 사용에 필요, 2스택이고 손패에 [gold]상월[/gold]이 없을 때 [gold]상월[/gold] 1장을 손패에 추가",
+    "FROST_FALL_POWER.smartDescription": "여섯 낙상이 뇌를 연결, 사고 대신 차지",
+
+	"ATTRIBUTE_ANOMALY_POWER.title": "속성 이상",
+    "ATTRIBUTE_ANOMALY_POWER.description": "매 턴 종료 시 최대 생명력의 [blue]5%[/blue] 피해. 부여 시 이미 해당 효과가 존재하면 [purple]혼란[/purple] 발동",
+    "ATTRIBUTE_ANOMALY_POWER.smartDescription": "매 턴 종료 시 최대 생명력의 [blue]5%[/blue] 피해. 부여 시 이미 해당 효과가 존재하면 [purple]혼란[/purple] 발동",
+
+	"ANOMALY_BUILDUP_POWER.title": "속성 축적",
+    "ANOMALY_BUILDUP_POWER.description": "누적 5스택 후 적에게 [purple]속성 이상[/purple] 부여(플레이어 1명 추가당 발동 스택 +[blue]2[/blue])",
+    "ANOMALY_BUILDUP_POWER.smartDescription": "누적 {PlayerCount:choose(1|2|3|4):5|7|9|11|5}스택 후 적에게 [purple]속성 이상[/purple] 부여{PlayerCount:cond:>4?(플레이어 1명 추가당 발동 스택 +[blue]2[/blue])|}",
+
+	"DISORDER_POWER.title": "혼란",
+    "DISORDER_POWER.description": "즉시 최대 생명력의 [blue]10%[/blue] 피해, 다음 공격 피해 [blue]2[/blue]배",
+    "DISORDER_POWER.smartDescription": "즉시 최대 생명력의 [blue]10%[/blue] 피해, 다음 공격 피해 [blue]2[/blue]배",
+
+	"SUPPORT_POINT_POWER.title": "지원 포인트",
+    "SUPPORT_POINT_POWER.description": "상한 [blue]6[/blue], 파트너 카드의 추가 능력 발동에 사용",
+    "SUPPORT_POINT_POWER.smartDescription": "유대는 이정도, 상한 [blue]6[/blue]",
+
+	"JIFU_POWER.title": "기복",
+    "JIFU_POWER.description": "격파 시 추가 [gold]균형 붕괴 취약[/gold] 제공",
+    "JIFU_POWER.smartDescription": "격파 시 [blue]2*{Amount}%[/blue]의 [gold]균형 붕괴 취약[/gold] 추가 제공",
+
+	"TEBIE_PZJQ_POWER.title": "특별 촬영 기술",
+    "TEBIE_PZJQ_POWER.description": "적 [gold]격파[/gold] 시 추가 [gold]균형 붕괴 취약[/gold] 획득, [gold]공격 의도[/gold]가 있는 적이 일정 확률로 피해를 주지 않음",
+    "TEBIE_PZJQ_POWER.smartDescription": "적 [gold]격파[/gold] 시 {DazeVuln:diff()}% [gold]균형 붕괴 취약[/gold] 추가 획득, [gold]공격 의도[/gold]가 있는 적이 {Amount:cond:<3?낮은|}{Amount:cond:>7?높은|} 확률로 피해를 주지 않음",
+
+	"TUNAFA_POWER.title": "토납법",
+    "TUNAFA_POWER.description": "",
+    "TUNAFA_POWER.smartDescription": "매 턴 처음 [blue]{Amount}[/blue]회 [gold]풍화[/gold] 사용 시 [blue]1[/blue] [gold]낙상[/gold] 획득, 사용 완료 {CardCount:diff()}장",
+
+	"JUN_LIE_POWER.title": "균열",
+    "JUN_LIE_POWER.description": "",
+    "JUN_LIE_POWER.smartDescription": "[aqua]열상[/aqua] 카드 사용 시마다 [blue]1[/blue] [gold]와글와글 수치[/gold] 획득",
+
+	"TIANZIZY_POWER.title": "천재탁월",
+    "TIANZIZY_POWER.smartDescription": "[gold]상월[/gold] 사용 시마다 [gold]상월·극의[/gold] {Amount}회 자동 사용",
+
+	"WEIMINGDDS_POWER.title": "위명 도검술",
+    "WEIMINGDDS_POWER.description": "",
+    "WEIMINGDDS_POWER.smartDescription": "[gold]격파[/gold]되지 않았을 때 받는 피해 [blue]25%[/blue] 감소, 피격 시마다 [blue]{Amount}[/blue]장의 [gold]화사[/gold]를 손패에 추가\\n방어되지 않은 피해를 받을 때 자신에게 [blue]{Daze:diff()}[/blue] 균형 붕괴 부여, 누적 [blue]100[/blue]스택 후 [gold]격파[/gold] 발동",
+
+	"YONGTAN_HUACAI_POWER.title": "영탄화채",
+    "YONGTAN_HUACAI_POWER.description": "[gold]파트너[/gold] 카드 사용 시마다 {Energy:energyIcons()} 획득",
+	"YONGTAN_HUACAI_POWER.smartDescription": "[gold]파트너[/gold] 카드 사용 시마다 [blue]{Amount}[/blue] 에너지 획득",
+
+	"BLESSING_MOON_POWER.title": "초승달의 축복",
+    "BLESSING_MOON_POWER.description": "치명적 피해를 받을 때 죽음 방지 및 생명력 [blue]{Amount}%[/blue] 회복\\n[gold]속성 이상[/gold]과 [gold]혼란[/gold] 발동 시 추가로 최대 생명력의 [blue]5%[/blue] 피해",
+	"BLESSING_MOON_POWER.smartDescription": "치명적 피해를 받을 때 죽음 방지 및 생명력 [blue]{Amount}%[/blue] 회복\\n[gold]속성 이상[/gold]과 [gold]혼란[/gold] 발동 시 추가로 최대 생명력의 [blue]5%[/blue] 피해",
+
+	"SHUANGYUEJS_POWER.title": "상월 자세",
+    "SHUANGYUEJS_POWER.smartDescription": "매 턴 시작 시 [blue]{Amount}[/blue] [gold]낙상[/gold] 획득, 상월 사용 시마다 방어도 4 획득",
+	"SHUANGYUEJS_POWER.description": "매 턴 시작 시 [blue]2[/blue] [gold]낙상[/gold] 획득",
+
+	"TIANMIJX_POWER.title": "달콤한 깜짝",
+    "TIANMIJX_POWER.description": "매 턴 종료 시 모든 적에게 [blue]{Amount}[/blue]스택의 [gold]속성 이상[/gold] 부여",
+	"TIANMIJX_POWER.smartDescription": "매 턴 종료 시 모든 적에게 [blue]{Amount}[/blue]스택의 [gold]속성 이상[/gold] 부여",
+
+	"YACHIYO_POWER.title": "야치요의 파수",
+    "YACHIYO_POWER.description": "",
+	"YACHIYO_POWER.smartDescription": "우클릭으로 발동: [blue]{Amount}[/blue]장의 [gold]{Card}[/gold]를 손패에 추가, 해당 턴 비용 0",
+
+	"KAGUYA_POWER.title": "카구야",
+    "KAGUYA_POWER.description": "",
+	"KAGUYA_POWER.smartDescription": "턴 시작 시 무작위 효과 [blue]{Amount}[/blue]개 발동",
+
+	"EJIZHAN_POWER.title": "대왕 거위 닭 베기",
+    "EJIZHAN_POWER.description": "",
+	"EJIZHAN_POWER.smartDescription": "이번 턴 [blue]{Amount}[/blue] [gold]힘[/gold] 획득",
+
+	"CIQUANLJ_POWER.title": "L식 굉음권-잽 연타",
+    "CIQUANLJ_POWER.description": "",
+	"CIQUANLJ_POWER.smartDescription": "{TurnCount:diff()}턴 동안 적이 받는 [aqua]열상[/aqua] 피해 +[blue]{Amount}%[/blue]",
+
+	"ZHONGMUYC_POWER.title": "종막 연출",
+    "ZHONGMUYC_POWER.description": "",
+	"ZHONGMUYC_POWER.smartDescription": "받는 [purple]속성 이상[/purple] 및 [purple]혼란[/purple] 피해 [blue]1.5[/blue]배",
+
+	"NO_TAIL_FULL_POWER.title": "요도 해방",
+    "NO_TAIL_FULL_POWER.description": "",
+    "NO_TAIL_FULL_POWER.smartDescription": "모든 비[gold]파트너[/gold] 공격 카드 [gold]강화[/gold], 비용 [blue]0[/blue], [gold]소모[/gold] 및 [gold]허무[/gold] 추가; 비[gold]파트너[/gold] 공격 카드 사용 시마다 생명력 [red]1[/red] 손실, [gold]힘[/gold] [blue]1[/blue] 획득",
+
+	"MIYABI_FULL_POWER.title": "요도 해방",
+    "MIYABI_FULL_POWER.description": "",
+    "MIYABI_FULL_POWER.smartDescription": "모든 비[gold]파트너[/gold] 공격 카드 [gold]강화[/gold], 비용 [blue]0[/blue], 비[gold]파트너[/gold] 공격 카드 사용 시마다 [blue]1[/blue]장 드로우; 비[gold]파트너[/gold] 공격 카드 사용 시마다 생명력 [red]1[/red] 손실, [gold]힘[/gold] [blue]1[/blue] 획득",
+
+	"TRAIN_SPEAK_POWER.title": "다섯 글자 이하로 말하기 수행",
+    "TRAIN_SPEAK_POWER.description": "",
+    "TRAIN_SPEAK_POWER.smartDescription": "매 턴 카드 [blue]5[/blue]장만 사용 가능, 남은 턴 [blue]{Amount}[/blue]",
+
+	"TRAIN_SPEAK_OVER_POWER.title": "수행 완료",
+    "TRAIN_SPEAK_OVER_POWER.description": "",
+    "TRAIN_SPEAK_OVER_POWER.smartDescription": "매 턴 처음 [blue]5[/blue]장 카드 비용 [blue]1[/blue] 감소",
+
+	"TRAIN_ATTACK_POWER.title": "세 수만 쓰기 수행",
+    "TRAIN_ATTACK_POWER.description": "",
+    "TRAIN_ATTACK_POWER.smartDescription": "매 턴 최대 [blue]3[/blue]장 카드 사용, 모든 카드 비용 0, 남은 턴 [blue]{Amount}[/blue]",
+
+	"TRAIN_ATTACK_OVER_POWER.title": "수행 완료",
+    "TRAIN_ATTACK_OVER_POWER.description": "",
+    "TRAIN_ATTACK_OVER_POWER.smartDescription": "매 턴 시작 시 {Energy:energyIcons()} 획득",
+
+	"TRAIN_STEP_POWER.title": "오른발 먼저 들이기 수행",
+    "TRAIN_STEP_POWER.description": "",
+    "TRAIN_STEP_POWER.smartDescription": "매 턴 공격 카드 사용 후 손패 1장 [gold]버리기[/gold], 남은 턴 [blue]{Amount}[/blue]",
+
+	"TRAIN_STEP_OVER_POWER.title": "수행 완료",
+    "TRAIN_STEP_OVER_POWER.description": "",
+    "TRAIN_STEP_OVER_POWER.smartDescription": "매 턴 공격 카드 사용 후 [blue]1[/blue]장 드로우",
+
+	"TRAIN_EAT_POWER.title": "멜론만 먹기 수행",
+    "TRAIN_EAT_POWER.description": "",
+    "TRAIN_EAT_POWER.smartDescription": "공격 카드 사용 불가, 남은 턴 [blue]{Amount}[/blue]",
+
+	"TRAIN_EAT_OVER_POWER.title": "수행 완료",
+    "TRAIN_EAT_OVER_POWER.description": "",
+    "TRAIN_EAT_OVER_POWER.smartDescription": "모든 공격 카드 비용 [blue]1[/blue] 감소",
+
+	"ZHANJINZE_POWER.title": "죄악 참멸",
+    "ZHANJINZE_POWER.description": "",
+    "ZHANJINZE_POWER.smartDescription": "이번 턴 피해 2배",
+
+	"XSJS_POWER.title": "설상가상",
+    "XSJS_POWER.description": "",
+    "XSJS_POWER.smartDescription": "[gold]상월[/gold] 사용 시마다 이번 턴 [blue]{Amount}[/blue] [gold]힘[/gold] 획득",
+
+	"MINGFUWG_POWER.title": "명부 만가",
+    "MINGFUWG_POWER.description": "",
+    "MINGFUWG_POWER.smartDescription": "[blue]{Amount}[/blue]턴 동안 턴 시작 시 [gold]협주 저격[/gold] 1장을 손패에 추가",
+
+	"BAMIANWF_POWER.title": "팔면위풍",
+	"BAMIANWF_POWER.description": "[gold]필살기[/gold] 사용 후 [blue]5[/blue] [gold]와글와글 수치[/gold] 획득, [gold]파트너[/gold] 카드 사용 후 [blue]2[/blue] [gold]와글와글 수치[/gold] 획득",
+    "BAMIANWF_POWER.smartDescription": "[gold]필살기[/gold] 사용 후 [blue]5[/blue] [gold]와글와글 수치[/gold] 획득, [gold]파트너[/gold] 카드 사용 후 [blue]2[/blue] [gold]와글와글 수치[/gold] 획득",
+
+	"LUOYUSH_POWER.title": "낙우생화",
+	"LUOYUSH_POWER.description": "매 턴 적에게 피해를 준 후 적에게 [blue]1[/blue]스택의 [gold]속성 축적[/gold] 부여, 최대 [blue]{Amount}[/blue]회 발동",
+    "LUOYUSH_POWER.smartDescription": "매 턴 적에게 피해를 준 후 적에게 [blue]1[/blue]스택의 [gold]속성 축적[/gold] 부여, 최대 [blue]{Amount}[/blue]회 발동",
+
+	"MIYABI_PARRY_POWER.title": "패링",
+    "MIYABI_PARRY_POWER.description": "방어된 피해를 받을 때마다 [gold]화사[/gold] 1장을 손패에 추가, 그 후 스택 [red]1[/red] 감소.",
+    "MIYABI_PARRY_POWER.smartDescription": "방어된 피해를 받을 때마다 [gold]화사[/gold] 1장을 손패에 추가, 그 후 스택 [red]1[/red] 감소.",
+
+	"TONGMU_SHUANGXUE_POWER.title": "동목상설",
+    "TONGMU_SHUANGXUE_POWER.description": "비[gold]파트너[/gold] 카드 사용 시마다 [blue]1[/blue] [gold]지원 포인트[/gold] 획득",
+	"TONGMU_SHUANGXUE_POWER.smartDescription": "비[gold]파트너[/gold] 카드 사용 시마다 [blue]1[/blue] [gold]지원 포인트[/gold] 획득",
+
+	"DONG_FENG_SP_POWER.title": "동봉·극",
+    "DONG_FENG_SP_POWER.description": "패링은 이정도",
+    "DONG_FENG_SP_POWER.smartDescription": "다음 공격 카드 피해 +[blue]25%[/blue].",
+
+    "JINLONG_SZB_POWER.title": "황금 위신·루미오르",
+    "JINLONG_SZB_POWER.description": "",
+    "JINLONG_SZB_POWER.smartDescription": "매 턴 시작 시 최대 {Amount}장의 카드 버리기, 버린 수만큼 드로우.\\n카드를 버리거나 소모할 때마다 모든 적에게 {Amount} 피해.",
+
+    "BYE_QUANLEIDA_POWER.title": "굿바이 홈런!",
+    "BYE_QUANLEIDA_POWER.description": "돼지 돌격!",
+    "BYE_QUANLEIDA_POWER.smartDescription": "이번 턴 모든 피해 +{Amount}.",
+
+
+
+    "MIYABI_GUARDIAN_POWER.title": "수호자",
+    "MIYABI_GUARDIAN_POWER.description": "널 위해 죽는다",
+    "MIYABI_GUARDIAN_POWER.smartDescription": "적의 피해를 막는다.",
+
+	"LUCKYBOO_ACT.title": "재물 부",
+    "LUCKYBOO_ACT.description": "골드를 소모하여 적 하나에게 피해를 줄 수 있다.",
+    "LUCKYBOO_ACT.smartDescription": "매 턴 [blue]{MAXUSE:diff()}[/blue]회, [red]10[/red] [gold]골드[/gold]를 소모하여 적 하나에게 [blue]20[/blue] 피해.\\n사용 횟수 [blue]{Used:diff()}[/blue]회.",
+
+	"EOUS_ACT.title": "이아스",
+    "EOUS_ACT.description": "에너지를 사용하여 방어도를 얻을 수 있다.",
+    "EOUS_ACT.smartDescription": "매 턴 [blue]{MAXUSE:diff()}[/blue]회, [red]1[/red] 에너지를 사용하여 [blue]6[/blue] 방어도 획득.\\n사용 횟수 [blue]{Used:diff()}[/blue]회.",
+
+	"EXPLOREBOO_ACT.title": "보물 부",
+    "EXPLOREBOO_ACT.description": "매 턴 종료 시 [gold]골드[/gold] 축적, 전투 승리 시 해당 [gold]골드[/gold] 획득.",
+    "EXPLOREBOO_ACT.smartDescription": "매 턴 종료 시 [blue]{MAXUSE:diff()}[/blue]회 발동, 현재 턴 수*[blue]5[/blue]의 [gold]골드[/gold] 획득, 턴당 획득 상한 [blue]{MaxGold:diff()}[/blue]. 현재 획득량 [blue]{Gold:diff()}[/blue] [gold]골드[/gold].",
+
+    "SHARKBOO_ACT.title": "상어 이빨 부",
+    "SHARKBOO_ACT.description": "매 턴 종료 시 피해 축적, 적 공격 전에 적에게 해당 피해를 줌.",
+    "SHARKBOO_ACT.smartDescription": "매 턴 종료 시 {Damage:diff()} * {MAXUSE:diff()} 피해 축적. 적이 주인을 공격하기 전 적에게 [blue]{AllDamage:diff()}[/blue] 피해.",
+
+    "EXCALIBOO_ACT.title": "성검 부",
+    "EXCALIBOO_ACT.description": "매 턴 종료 시 충전, 3회 이상 충전 시 모든 적에게 피해.",
+    "EXCALIBOO_ACT.smartDescription": "매 턴 종료 시 [blue]{MAXUSE:diff()}[/blue]회 충전. 3회 이상 충전 시 모든 적에게 [blue]{Damage:diff()}[/blue] 피해.\\n충전 횟수 [blue]{Charged:diff()}[/blue]회.",
+
+    "AGENT_ACT.title": "걸리버 요원",
+    "AGENT_ACT.description": "[red]1[/red] 에너지를 사용하여 적 하나에게 피해를 주고, 파트너 카드로부터 받는 피해 증가.",
+    "AGENT_ACT.smartDescription": "매 턴 [blue]{MAXUSE:diff()}[/blue]회, [red]1[/red] 에너지를 사용하여 적 하나에게 [blue]{Damage:diff()}[/blue] 피해, 파트너 카드로부터 받는 피해 [blue]{DamageUp:diff()}%[/blue] 증가.\\n사용 횟수 [blue]{Used:diff()}[/blue]회.",
+
+	"SUMOBOO_ACT.title": "덮치기 부",
+    "SUMOBOO_ACT.description": "[red]1[/red] 에너지를 사용하여 적 하나에게 균형 붕괴 수치 부여.",
+    "SUMOBOO_ACT.smartDescription": "매 턴 [blue]{MAXUSE:diff()}[/blue]회, [red]1[/red] 에너지를 사용하여 적 하나에게 [blue]{Daze:diff()}[/blue] 균형 붕괴 수치 부여.\\n사용 횟수 [blue]{Used:diff()}[/blue]회.",
+
+	"OVERTIMEBOO_ACT.title": "야근 부",
+    "OVERTIMEBOO_ACT.description": "[red]1[/red] [gold]생명력[/gold]을 소모하여 플레이어 하나에게 에너지 부여.",
+    "OVERTIMEBOO_ACT.smartDescription": "[red]1[/red] [gold]생명력[/gold]을 소모하여 플레이어 하나에게 {Energy:energyIcons()} 부여. 야근으로 모든 생명력을 잃으면 [red]유물 상실[/red]!",
+
+    "PAPERBOO_ACT.title": "종이껍질 부",
+    "PAPERBOO_ACT.description": "[red]1[/red] 에너지를 사용하여 방어도 획득.",
+    "PAPERBOO_ACT.smartDescription": "매 턴 [blue]{MAXUSE:diff()}[/blue]회, [red]1[/red] 에너지를 사용하여 [blue]10[/blue] 방어도 획득.\\n사용 횟수 [blue]{Used:diff()}[/blue]회.",
+
+    "MAGNETIBOO_ACT.title": "자력 부",
+    "MAGNETIBOO_ACT.description": "[red]1[/red] 에너지를 사용하여 모든 적에게 [purple]속성 축적[/purple] 부여, 턴 종료 시 모든 적에게 [purple]속성 축적[/purple] 부여.",
+    "MAGNETIBOO_ACT.smartDescription": "매 턴 [blue]{MAXUSE:diff()}[/blue]회, [red]1[/red] 에너지를 사용하여 모든 적에게 [blue]{AnoAmount:diff()}[/blue]스택의 [purple]속성 축적[/purple] 부여. 턴 종료 시 모든 적에게 [blue]{AnoAmount:diff()}[/blue]스택의 [purple]속성 축적[/purple] 부여.\\n사용 횟수 [blue]{Used:diff()}[/blue]회.",
+
+    "ONE_DENNYBOO_ACT.title": "1데니 부",
+    "ONE_DENNYBOO_ACT.description": "적 행동 전 일정 확률로 적 행동이 플레이어에게 [gold]1[/gold] 골드 부여로 변경.",
+    "ONE_DENNYBOO_ACT.smartDescription": "적 행동 전 [blue]{MAXUSE}0%[/blue] 확률로 적 행동이 플레이어에게 [gold]1[/gold] 골드 부여로 변경.",
+
+    "XIXIFU_ACT.title": "시시프",
+    "XIXIFU_ACT.description": "카드 1장을 먹고 추가 효과 발동 가능.",
+    "XIXIFU_ACT.smartDescription": "매 턴 [blue]{MAXUSE:diff()}[/blue]회, 손패에서 카드 1장을 선택해 먹고 무작위 효과 발동.\\n사용 횟수 [blue]{Used:diff()}[/blue]회.",
+
+
+
+    "SUMMON_MONSTER_POWER.title":"꿈속 파트너",
+    "SUMMON_MONSTER_POWER.description":"꿈속 파트너",
+    "SUMMON_MONSTER_POWER.smartDescription":"꿈속 파트너가 널 지켜줄 거야! 턴 종료 시 행동 발동.",
+
+	"MIYABI_BOSS_POWER.title": "한염",
+    "MIYABI_BOSS_POWER.description": "",
+    "MIYABI_BOSS_POWER.smartDescription": "공격 시 [gold]열상 축적치[/gold]와 [gold]균형 붕괴 수치[/gold] 누적. [gold]격파[/gold] 후 자신의 모든 [gold]해로운 효과[/gold] 제거; [gold]혼란[/gold] 발동 후 [gold]힘[/gold] [blue]2[/blue] 획득. 치명적 피해 [blue]{DeathPrevent:diff()}[/blue]회 방어 가능, 자신의 모든 [gold]해로운 효과[/gold] 제거, [blue]1[/blue] 무실체 획득 및 생명력 최대치까지 회복.",
+
+	"YIXUAN_ENEMY_POWER.title": "청명 수호",
+    "YIXUAN_ENEMY_POWER.description": "",
+    "YIXUAN_ENEMY_POWER.smartDescription": "모든 [gold]해로운 효과[/gold] 획득량 [blue]{DebuffReduce:diff()}%[/blue] 감소. 매 턴 [blue]{HittedTrigger:diff()}[/blue]회 피격 후 [blue]{DamageReduce:diff()}%[/blue] 피해 감소 획득. 최대 생명력의 [blue]33%[/blue] 손실 또는 동일 수치의 [gold]중독[/gold]이나 [gold]재앙[/gold] 획득 시([gold]중독[/gold] 또는 [gold]재앙[/gold] 스택 절반), [blue]무실체[/blue] 1 획득, 효과 저항 강화 및 모든 플레이어 턴 종료.",
+
+
+
+	// ====== 의현 능력 ======
+	"SHUFA_ZHI.title": "술법 수치",
+	"SHUFA_ZHI.description": "적 생명력이 일정치 이하일 때 추가 피해를 받고 주는 피해 감소",
+	"SHUFA_ZHI.smartDescription": "적 생명력이 [blue]{Amount}%[/blue] 이하일 때 2배 피해를 받고 주는 피해 20% 감소. 술법 수치 100 초과 시 100스택 소모하여 [gold]복마[/gold] 1 부여",
+
+    "FUMO_POWER.title" : "복마",
+    "FUMO_POWER.description" : "추가 피해를 받고 주는 피해 감소",
+    "FUMO_POWER.smartDescription" : "추가로 {Amount}배 피해를 받고 주는 피해 {Amount:choose(1|2|3|4):20|40|60|80|100}% 추가 감소. 술법 수치 효과와 합산.",
+
+    "SHUFA_ZONGSHI_POWER.title": "술법 종사",
+    "SHUFA_ZONGSHI_POWER.description": "현묵 피해를 줄 때마다 적에게 술법 수치 부여",
+    "SHUFA_ZONGSHI_POWER.smartDescription": "현묵 피해를 줄 때마다 적에게 {Amount}스택의 술법 수치 부여",
+
+    "MOHENHX_POWER.title": "묵흔화형",
+    "MOHENHX_POWER.description": "",
+    "MOHENHX_POWER.smartDescription": "다음 {Amount}장의 [gold]현묵[/gold] 카드 비용 0",
+
+    "XUANMO_ANYONG_POWER.title": "현묵암용",
+    "XUANMO_ANYONG_POWER.description": "[gold]파트너[/gold] 카드 사용 시마다 [gold]섬에너지[/gold] 회복, 적에게 [gold]현묵[/gold] 피해",
+    "XUANMO_ANYONG_POWER.smartDescription": "[gold]파트너[/gold] 카드 사용 시마다 2*{Amount} [gold]섬에너지[/gold] 회복, 적에게 3*{Amount} [gold]현묵[/gold] 피해",
+
+
+	"SHANNENG_POWER.title": "섬에너지",
+	"SHANNENG_POWER.description": "추가 효과 발동에 사용 가능. 상한 [blue]150[/blue].",
+	"SHANNENG_POWER.smartDescription": "추가 효과 발동에 사용 가능. 상한 [blue]150[/blue]. 사용량 [blue]{Used:diff()}[/blue], [blue]150[/blue] 사용 후 [gold]부법천중[/gold] 1장 획득.",
+
+	"QINGXIAO_TONGYOU_POWER.title": "청소동유",
+	"QINGXIAO_TONGYOU_POWER.description": "매 턴 시작 시 활력, 가시, 섬에너지 획득.",
+	"QINGXIAO_TONGYOU_POWER.smartDescription": "매 턴 시작 시 [blue]{Vigor} [/blue][gold]활력[/gold], [blue]{Thorns} [/blue][gold]가시[/gold] 획득, [blue]{Shanneng} [/blue][gold]섬에너지[/gold] 회복.",
+
+	"MITU_YESONG_POWER.title": "미도야송",
+	"MITU_YESONG_POWER.description": "비공격 카드 사용 시마다 활력 2 획득, 턴 경과 시마다 추가 1 획득.",
+	"MITU_YESONG_POWER.smartDescription": "남은 턴 [blue]{Amount}[/blue], 비공격 카드 사용 시마다 [blue]{Vigor:diff()} [/blue][gold]활력[/gold] 획득, 턴 경과 시마다 추가 1 획득.",
+
+	"TIESHAN_ZHENMAIKAO_POWER.title": "첩산진맥고",
+	"TIESHAN_ZHENMAIKAO_POWER.description": "다음 명파 피해 카드의 피해 증가.",
+	"TIESHAN_ZHENMAIKAO_POWER.smartDescription": "다음 {FreeCount:diff()}장 공격 카드 비용 [blue]-1[/blue], 다음 [blue]{Amount}[/blue]장 [purple]명파[/purple] 피해 카드 피해 [blue]+20%[/blue].",
+
+	"RONGLU_SHENGWEN_POWER.title": "용광로 가열",
+	"RONGLU_SHENGWEN_POWER.description": "균형 붕괴 부여 시마다 추가 5 부여, 그 후 스택 -1.",
+	"RONGLU_SHENGWEN_POWER.smartDescription": "[gold]균형 붕괴 수치[/gold] 부여 시마다 추가 [blue]5[/blue] 부여",
+
+    "BEST_PARTNER_POWER.title": "최고의 동료",
+	"BEST_PARTNER_POWER.description": "카드 2장 사용 시마다 생명력 1 회복, 매 턴 최대 3회 발동.",
+	"BEST_PARTNER_POWER.smartDescription": "카드 2장 사용 시마다 생명력 {Amount} 회복, 매 턴 최대 3회 발동.",
+
+	"HUALIAN_XIEYI_POWER.title": "화련 프로토콜",
+	"HUALIAN_XIEYI_POWER.description": "우클릭으로 지원 포인트 소모하여 효과 사용",
+	"HUALIAN_XIEYI_POWER.smartDescription": "우클릭으로 발동: [gold]지원 포인트[/gold] [blue]2[/blue]: {Energy:energyIcons()} 획득, 모든 적에게 [blue]{Damage:diff()}[/blue] 피해",
+
+	"KAKANIA_POWER.title": "이드, 에고, 초자아",
+	"KAKANIA_POWER.description": "받는 피해 25% 증가, 받은 모든 피해 기록. 우클릭으로 지원 포인트 5 소모하여 기록된 피해 방출, 턴 종료 시 백분율 피해.",
+	"KAKANIA_POWER.smartDescription": "받는 피해 [red]+25%[/red], 기록된 피해 [blue]{RecordedDamage:diff()}[/blue].\\n우클릭으로 발동: [blue]5[/blue] 지원 포인트 소모, 모든 적에게 기록된 피해 수치의 피해; 턴 종료 시 모든 적에게 [blue]{OutgoingDamage:diff()}[/blue] 피해(턴 종료 시 [blue]{BurstRatio:diff()}%[/blue] 방출).",
+
+	"SHIMENG_KONGXIANG_POWER.title": "습몽공상",
+	"SHIMENG_KONGXIANG_POWER.description": "매 턴 시작 시 생명력 10% 손실. 명파 피해 횟수 +1. 생명력 손실 시마다 와글와글 수치 1 획득.",
+	"SHIMENG_KONGXIANG_POWER.smartDescription": "매 턴 생명력 {HpLossPercent:diff()}% 손실, 명파 피해 횟수 +{Amount}, 생명력 손실 시마다 {Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()} 와글와글 수치 획득.",
+
+	"XIAOZAI_DUE_POWER.title": "소재도액",
+	"XIAOZAI_DUE_POWER.description": "카드 10장 사용 시마다 부법천중·파 1장을 손패에 추가",
+	"XIAOZAI_DUE_POWER.smartDescription": "[blue]{CardsPerTrigger:diff()}[/blue]장 카드 사용 시마다 [gold]부법천중·파[/gold] 1장을 손패에 추가. 사용량 [blue]{CardsPlayed:diff()}[/blue]장.",
+
+	"YINYANG_XIANGSHENG_POWER.title": "음양상생",
+	"YINYANG_XIANGSHENG_POWER.description": "다음 방어도 획득 시 해당 수치의 활력 획득, 또는 다음 피해를 줄 때 해당 수치의 가시 획득",
+	"YINYANG_XIANGSHENG_POWER.smartDescription": "다음 방어도 획득 시 해당 수치의 [gold]활력[/gold] 획득, 또는 다음 피해를 줄 때 해당 수치의 [gold]가시[/gold] 획득.",
+
+	"DONGJING_XIANGYI_POWER.title": "동정상의",
+	"DONGJING_XIANGYI_POWER.description": "청명운영 사용 후 모든 섬에너지 소모하여 백분율 회복; 부법천중 사용 후 와글와글 수치 획득",
+	"DONGJING_XIANGYI_POWER.smartDescription": "[gold]청명운영[/gold] 사용 후 모든 [gold]섬에너지[/gold] 소모 후 {ShannengRecoverPercent:diff()}% 회복; [gold]부법천중[/gold] 사용 후 [blue]{DecibelAmount:diff()}[/blue] [gold]와글와글 수치[/gold] 획득.",
+
+
+
+
+
+
+
+	"HOLLOW_EXINGYILAI_POWER.title": "악성 의존",
+	"HOLLOW_EXINGYILAI_POWER.description": "턴 종료 시 {Amount} [gold]힘[/gold] 획득, {Amount}*6 피해.",
+
+	"HOLLOW_JISHENGYIJUN_POWER.title": "기생 이균",
+	"HOLLOW_JISHENGYIJUN_POWER.description": "턴 시작 시 생명력 50% 초과 시 {Amount}스택의 [gold]약화[/gold] 획득; 생명력 50% 미만 시 {Amount} [gold]힘[/gold] 및 [gold]민첩[/gold] 획득.",
+
+	"HOLLOW_JUWUKONGJU_POWER.title": "거대 공포",
+	"HOLLOW_JUWUKONGJU_POWER.description": "스택당 정예 적, 보스의 주는 피해 +25%, 적에게 주는 피해 +20%.",
+
+	"HOLLOW_TANLANWUDU_POWER.title": "탐욕 무도",
+	"HOLLOW_TANLANWUDU_POWER.description": "적에게 피해를 줄 때마다 {Amount} [gold]골드[/gold] 획득, {Amount} 피해.",
+
+	"HOLLOW_ZHIJUETONGHUA_POWER.title": "지각 동화",
+	"HOLLOW_ZHIJUETONGHUA_POWER.description": "스킬 카드 사용 시마다 {Amount} 피해."
+}

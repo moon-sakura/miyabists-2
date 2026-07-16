@@ -1,0 +1,171 @@
+{
+	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.title": "요도 무미",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "전투 시작 시 [blue]3[/blue]점의 [gold]낙상[/gold]을 획득하고, 카드를 사용할 때마다 [blue]1[/blue]점의 [gold]와글와글 수치[/gold]를 획득합니다. [gold]와글와글 수치[/gold]가 [blue]30[/blue]에 도달하면 [gold]필살기[/gold]를 획득합니다.",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.flavor": "아주 단단한 칼",
+
+	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.title": "요도 해방",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "전투 시작 시 [blue]3[/blue]점의 [gold]낙상[/gold]을 획득하고, 카드를 사용할 때마다 [blue]1[/blue]점의 [gold]와글와글 수치[/gold]를 획득합니다. [gold]와글와글 수치[/gold]가 [blue]30[/blue]에 도달하면 [gold]필살기[/gold]를 획득합니다; 전투 시작 시 [red]요도 해방[/red] 카드 1장을 손패에 추가합니다.",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.title": "경화닉영",
+  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.description": "매 전투마다 처음으로 공격을 받기 전에 자동으로 [gold]리미트 시야[/gold]를 1장 사용합니다.",
+  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.flavor": "회피",
+
+	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.title": "상염열작",
+  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.description": "[gold]상작[/gold]을 발동한 후에도 [gold]열상 축적치[/gold]를 계속 중첩할 수 있으며, [gold]빙염[/gold]이 제공하는 피해 증폭 상한이 [blue]100%[/blue]로 변경됩니다.",
+  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.title": "산락성전",
+  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.description": "매 전투 승리 시 카운트를 획득합니다: 일반 적, 카운트+[blue]1[/blue]; 정예, 카운트+[blue]2[/blue]; 보스, 카운트+[blue]3[/blue]; 누적 [blue]7[/blue]포인트 후, 전투 시작 시 [gold]무의 극치[/gold] 1장을 손패에 추가하고, 누적 [blue]15[/blue]포인트 후에는 [gold]죄악을 베어내다[/gold] 1장으로 변경됩니다.",
+  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.flavor": "「수행에 아주 적합할 것 같아요... 제가 그것과 같은 크기가 될 수 있다면 말이죠。」",
+
+	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.title": "6과 휘장",
+  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.description": "전투 시작 시 [blue]6[/blue]점의 [gold]지원 포인트[/gold]를 획득합니다.",
+  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.flavor": "아주 좋은 과",
+
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "절경을 초월하는 의지",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "체력이 [blue]80%[/blue] 이상일 때 피해가 [red]50%[/red] 감소합니다; 체력이 [blue]50%[/blue] 미만일 때 피해가 [blue]20%[/blue] 증가합니다; 체력이 [blue]20%[/blue] 미만일 때 피해가 [blue]50%[/blue] 증가합니다.",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "절경 속에서 피어나는 의지",
+
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.title": "양기 향낭",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "매 [blue]3[/blue]턴마다 [blue]{ADD:diff()}[/blue]점의 [gold]와글와글 수치[/gold]를 획득하고, 최대 와글와글 수치 상한이 [blue]{MAX:diff()}[/blue]로 변경됩니다.",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.flavor": "신비로운 기운을 담은 향낭으로, 안정적으로 에너지를 축적할 수 있습니다.",
+
+
+
+
+	"MIYABISTS2_RELIC_CHOUKA_RELIC.title": "암호화 마스터 테이프",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC.description": "이제 휴식처에서 가챠를 진행할 수 있습니다! 매 전투 종료 시 [blue]1[/blue]회의 무료 뽑기 기회를 획득합니다.\\n현재 영화: [gold]{CINIMA:diff()}[/gold]\\n현재 무료 뽑기 횟수: [blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]전투 시작 시, 상월 태세 2중첩 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 토납법 3중첩 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 4점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 균열 2중첩 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 천자탁월 2중첩 획득[/color][/s]|전투 시작 시, [color=gold]상월 태세[/color] 2중첩 획득\\n[s][color=gray]전투 시작 시, 토납법 3중첩 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 4점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 균열 2중첩 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 천자탁월 2중첩 획득[/color][/s]|전투 시작 시, [color=gold]상월 태세[/color] 2중첩 획득\\n전투 시작 시, [color=gold]토납법[/color] 3중첩 획득\\n[s][color=gray]전투 시작 시, 힘 4점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 균열 2중첩 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 천자탁월 2중첩 획득[/color][/s]|전투 시작 시, [color=gold]상월 태세[/color] 2중첩 획득\\n전투 시작 시, [color=gold]토납법[/color] 3중첩 획득\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n[s][color=gray]전투 시작 시, 균열 2중첩 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 천자탁월 2중첩 획득[/color][/s]|전투 시작 시, [color=gold]상월 태세[/color] 2중첩 획득\\n전투 시작 시, [color=gold]토납법[/color] 3중첩 획득\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n전투 시작 시, [color=gold]균열[/color] 2중첩 획득\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 천자탁월 2중첩 획득[/color][/s]|전투 시작 시, [color=gold]상월 태세[/color] 2중첩 획득\\n전투 시작 시, [color=gold]토납법[/color] 3중첩 획득\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n전투 시작 시, [color=gold]균열[/color] 2중첩 획득\\n전투 시작 시, [color=gold]힘[/color] 6점 획득\\n[s][color=gray]전투 시작 시, 천자탁월 2중첩 획득[/color][/s]|전투 시작 시, [color=gold]상월 태세[/color] 2중첩 획득\\n전투 시작 시, [color=gold]토납법[/color] 3중첩 획득\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n전투 시작 시, [color=gold]균열[/color] 2중첩 획득\\n전투 시작 시, [color=gold]힘[/color] 6점 획득\\n전투 시작 시, [color=gold]천자탁월[/color] 2중첩 획득|뭔가 문제가 생긴 것 같아요 X(}",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC.flavor": "한 방을 노려라, 자전거가 오토바이가 될 수도!",
+
+
+
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.title": "야근부",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.description": "턴 시작 시 [gold]야근부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.flavor": "우마부",
+
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC.title": "페이퍼부",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.description": "턴 시작 시 [gold]페이퍼부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.flavor": "내가 지켜줄게!",
+
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC.title": "샤크부",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.description": "턴 시작 시 [gold]샤크부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.flavor": "시동 중이야!",
+
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.title": "엑스칼리부",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.description": "턴 시작 시 [gold]엑스칼리부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.flavor": "곧 될 거야!",
+
+	"MIYABISTS2_RELIC_AGENT_RELIC.title": "걸리버 요원",
+  	"MIYABISTS2_RELIC_AGENT_RELIC.description": "턴 시작 시 [gold]걸리버 요원[/gold]을 소환합니다.",
+  	"MIYABISTS2_RELIC_AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
+
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.title": "머니부",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.description": "턴 시작 시 [gold]머니부[/gold]를 소환하며, 낮은 확률로 [gold]원코인부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.flavor": "진짜로 재물을 부를까?",
+
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.title": "트레저부",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.description": "턴 시작 시 [gold]트레저부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.flavor": "부자가 될 거야!",
+
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC.title": "점프부",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.description": "턴 시작 시 [gold]점프부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.flavor": "이륙.",
+
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.title": "이아이스",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.description": "턴 시작 시 [gold]이아이스[/gold]를 소환하며, 다음 층의 방을 선택할 때 [blue]{Rooms:diff()}[/blue]회의 기회 동안 현재 경로를 무시할 수 있습니다.",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.flavor": "최고의 이아이스",
+
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.title": "마그네틱부",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "턴 시작 시 [gold]마그네틱부[/gold]를 소환합니다.",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "자기력 풀가동!",
+
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.title": "시시후",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.description": "턴 시작 시 [gold]시시후[/gold]를 소환합니다.",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.flavor": "이게 무슨 방부?",
+
+
+
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.title": "야근부",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]야근부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.flavor": "우마부",
+
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.title": "페이퍼부",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]페이퍼부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.flavor": "내가 지켜줄게!",
+
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.title": "샤크부",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]샤크부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.flavor": "시동 중이야!",
+
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.title": "엑스칼리부",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]엑스칼리부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.flavor": "곧 될 거야!",
+
+	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.title": "걸리버 요원",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.description": "턴 시작 시 [gold]걸리버 요원[/gold]을 소환합니다.",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.flavor": "FBI, OPEN THE DOOR!",
+
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.title": "머니부",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]머니부[/gold]를 소환하며, 낮은 확률로 [gold]원코인부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.flavor": "진짜로 재물을 부를까?",
+
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.title": "트레저부",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]트레저부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.flavor": "부자가 될 거야!",
+
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.title": "점프부",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]점프부[/gold]를 소환합니다.",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.flavor": "이륙.",
+
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.title": "이아이스",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]이아이스[/gold]를 소환하며, 다음 층의 방을 선택할 때 [blue]{Rooms:diff()}[/blue]회의 기회 동안 현재 경로를 무시할 수 있습니다.",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.flavor": "최고의 이아이스",
+
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.title": "마그네틱부",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.description": "턴 시작 시 [gold]마그네틱부[/gold]를 소환합니다.",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.flavor": "자기력 풀가동!",
+
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.title": "시시후",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.description": "턴 시작 시 [gold]시시후[/gold]를 소환합니다.",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.flavor": "이게 무슨 방부?",
+
+
+
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.title": "절경을 초월하는 의지",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.description": "체력이 [blue]80%[/blue] 이상일 때 피해가 [red]50%[/red] 감소합니다; 체력이 [blue]50%[/blue] 미만일 때 피해가 [blue]20%[/blue] 증가합니다; 체력이 [blue]20%[/blue] 미만일 때 피해가 [blue]50%[/blue] 증가합니다.",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.flavor": "절경 속에서 피어나는 의지",
+
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.title": "양기 향낭",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "매 [blue]3[/blue]턴마다 [blue]{ADD:diff()}[/blue]점의 [gold]와글와글 수치[/gold]를 획득하고, 최대 와글와글 수치 상한이 [blue]{MAX:diff()}[/blue]로 변경됩니다.",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.flavor": "신비로운 기운을 담은 향낭으로, 안정적으로 에너지를 축적할 수 있습니다.",
+
+	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.title": "암호화 마스터 테이프",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.description": "이제 휴식처에서 가챠를 진행할 수 있습니다! 매 전투 종료 시 [blue]1[/blue]회의 무료 뽑기 기회를 획득합니다.\\n현재 영화: [gold]{CINIMA:diff()}[/gold]\\n현재 무료 뽑기 횟수: [blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]전투 시작 시, 부법천중 1장을 손패에 추가[/color][/s]\\n[s][color=gray]부법천중 사용 후, 부법천중·파 1장을 손패에 추가[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 4점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 모든 적에게 복마 1중첩 부여[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]청명운영 사용 후, 부법천중 1장을 손패에 추가。[/color][/s]|전투 시작 시, [color=gold]부법천중[/color] 1장을 손패에 추가\\n[s][color=gray]부법천중 사용 후, 부법천중·파 1장을 손패에 추가[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 4점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 모든 적에게 복마 1중첩 부여[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]청명운영 사용 후, 부법천중 1장을 손패에 추가。[/color][/s]|전투 시작 시, [color=gold]부법천중[/color] 1장을 손패에 추가\\n[color=gold]부법천중[/color] 사용 후, [color=gold]부법천중·파[/color] 1장을 손패에 추가\\n[s][color=gray]전투 시작 시, 힘 4점 획득[/color][/s]\\n[s][color=gray]전투 시작 시, 모든 적에게 복마 1중첩 부여[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]청명운영 사용 후, 부법천중 1장을 손패에 추가。[/color][/s]|전투 시작 시, [color=gold]부법천중[/color] 1장을 손패에 추가\\n[color=gold]부법천중[/color] 사용 후, [color=gold]부법천중·파[/color] 1장을 손패에 추가\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n[s][color=gray]전투 시작 시, 모든 적에게 복마 1중첩 부여[/color][/s]\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]청명운영 사용 후, 부법천중 1장을 손패에 추가。[/color][/s]|전투 시작 시, [color=gold]부법천중[/color] 1장을 손패에 추가\\n[color=gold]부법천중[/color] 사용 후, [color=gold]부법천중·파[/color] 1장을 손패에 추가\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n전투 시작 시, 모든 적에게 [color=gold]복마[/color] 1중첩 부여\\n[s][color=gray]전투 시작 시, 힘 6점 획득[/color][/s]\\n[s][color=gray]청명운영 사용 후, 부법천중 1장을 손패에 추가。[/color][/s]|전투 시작 시, [color=gold]부법천중[/color] 1장을 손패에 추가\\n[color=gold]부법천중[/color] 사용 후, [color=gold]부법천중·파[/color] 1장을 손패에 추가\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n전투 시작 시, 모든 적에게 [color=gold]복마[/color] 1중첩 부여\\n전투 시작 시, [color=gold]힘[/color] 6점 획득\\n[s][color=gray]청명운영 사용 후, 부법천중 1장을 손패에 추가。[/color][/s]|전투 시작 시, [color=gold]부법천중[/color] 1장을 손패에 추가\\n[color=gold]부법천중[/color] 사용 후, [color=gold]부법천중·파[/color] 1장을 손패에 추가\\n전투 시작 시, [color=gold]힘[/color] 4점 획득\\n전투 시작 시, 모든 적에게 [color=gold]복마[/color] 1중첩 부여\\n전투 시작 시, [color=gold]힘[/color] 6점 획득\\n[color=gold]청명운영[/color] 사용 후, [color=gold]부법천중[/color] 1장을 손패에 추가|뭔가 문제가 생긴 것 같아요 X(}",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.flavor": "한 방을 노려라, 자전거가 오토바이가 될 수도!",
+
+	// ====== 이현 유물 ======
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.title": "운귀산",
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.description": "전투 시작 시 6점의 지원 포인트를 획득합니다.",
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.title": "청명술법",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "전투 시작 시 모든 [gold]섬광 에너지[/gold]를 회복하고, 카드를 사용할 때마다 [blue]1[/blue]점의 [gold]와글와글 수치[/gold]를 획득합니다. [gold]와글와글 수치[/gold]가 [blue]30[/blue]에 도달하면 [gold]필살기[/gold]를 획득합니다.",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "청명조",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "전투 시작 시 모든 [gold]섬광 에너지[/gold]를 회복하고, 카드를 사용할 때마다 [blue]1[/blue]점의 [gold]와글와글 수치[/gold]를 획득합니다. [gold]와글와글 수치[/gold]가 [blue]30[/blue]에 도달하면 [gold]필살기[/gold]를 획득합니다.\\n매번 생명력을 잃을 때마다, {Vigor}점의 [gold]활력[/gold] 획득, {Thorns}중첩의 [gold]가시[/gold] 획득, 모든 적에게 {Shufa}중첩의 [gold]술법 수치[/gold] 부여 중 하나의 효과가 무작위로 발동됩니다.\\n우클릭: 최대 생명력의 5%를 잃고, 하나의 효과를 선택하여 발동할 수 있습니다.",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.title": "청명농사",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "매 전투 시작 시, 이전 전투 종료 시의 긍정적 능력 및 그 중첩 수 중 [blue]{Get}[/blue]개를 무작위로 획득합니다（[gold]섬광 에너지[/gold]와 [gold]지원 포인트[/gold] 제외）. 누적 생명력 피해 [blue]100%[/blue]마다 [blue]1[/blue]개를 추가로 획득합니다.\\n현재 누적 생명력 손실 비율: [blue]{Record}%[/blue]",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": "강하는 쉽게 바뀌어도, 옛 꿈은 사라지기 어렵다",
+
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.title": "동화 수첩",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.description": "일반 전투의 2턴 종료 시 또는 정예 전투의 4턴 종료 시, [gold]장야시편[/gold] 1장을 손패에 추가합니다.\\n우클릭: 기록된 몬스터를 전장에 추가합니다.\\n현재 기록된 몬스터: [gold]{Monster}[/gold]\\n상태 카드를 추가하는 몬스터는 추가하지 마세요. 게임이 멈출 수 있습니다!",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.flavor": "전부 수첩에 그려놨어요——이제 지팡이만 휘두르면, 모두 소환할 수 있답니다!",
+
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "동화 수첩",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "일반 전투의 2턴 종료 시 또는 정예 전투의 4턴 종료 시, [gold]장야시편[/gold] 1장을 손패에 추가합니다.\\n우클릭: 기록된 몬스터를 전장에 추가합니다.\\n현재 기록된 몬스터: [gold]{Monster}[/gold]\\n상태 카드를 추가하는 몬스터는 추가하지 마세요. 게임이 멈출 수 있습니다!",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "전부 수첩에 그려놨어요——이제 지팡이만 휘두르면, 모두 소환할 수 있답니다!"
+}

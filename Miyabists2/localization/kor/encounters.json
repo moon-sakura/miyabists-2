@@ -1,0 +1,10 @@
+{
+    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.title": "호시미 미야비 조우",
+    "MIYABISTS2_ENCOUNTER_MIYABI_TEST_ENCOUNTER.loss": "{character}이/가 [gold]{encounter}[/gold]에서 패배했습니다.",
+
+    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.title": "호시미 미야비 조우",
+    "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.loss": "{character}이/가 [gold]{encounter}[/gold]에서 패배했습니다.",
+
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.title": "이현 조우",
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character}이/가 [gold]{encounter}[/gold]에서 패배했습니다."
+}

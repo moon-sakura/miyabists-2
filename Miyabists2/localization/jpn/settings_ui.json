@@ -1,0 +1,101 @@
+{
+	"MIYABISTS2.mod_title" : "星見雅モッド設定",
+
+	"MIYABISTS2-COMBAT_CONFIG.title" : "戦闘設定",
+
+	"MIYABISTS2-COMBAT_HARD_SELECTED.title" : "挑戦難易度",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.title" : "難易度選択",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.desc" : "難易度を上げると[gold]追加ボーナス[/gold]も得られる。これは苦行にして、修行でもある。\\n[gold]1.アンチモン級[/gold]：敵のHP+10%\\n[gold]2.亜鉛級[/gold]：各幕の開始時、ランダムなカード1枚が[red]ダウングレード[/red]される\\n[gold]3.スズ級[/gold]：使用する最初のカードの[red]コスト+1[/red]\\n[gold]4.マンガン級[/gold]：戦闘開始時、敵は筋力を1得て、自分は筋力を1失う\\n[gold]5.カドミウム級[/gold]：敵のHPが+20%に変更\\n[gold]6.ニッケル級[/gold]：最初の3ターンは[red]ドローが1枚減る[/red]\\n[gold]7.銅級[/gold]：敵は死亡時に6ダメージを与える\\n[gold]8.ビスマス級[/gold]：敵のHPが+30%に変更、さらに筋力を1得る\\n[gold]9.鉛級[/gold]：新しい幕に入るたび、デッキにランダムな[red]呪い[/red]が1枚追加される\\n[gold]10.水銀級[/gold]：敵は初めて致命的なダメージを受ける前に[gold]バッファー[/gold]1と[gold]筋力[/gold]2を得て、HPを30%回復する",
+
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Zero" : "アセンションなし",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sb" : "1.アンチモン級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Zn" : "2.亜鉛級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sn" : "3.スズ級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Mn" : "4.マンガン級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cd" : "5.カドミウム級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Ni" : "6.ニッケル級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cu" : "7.銅級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Bi" : "8.ビスマス級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Pb" : "9.鉛級",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Hg" : "10.水銀級",
+
+
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.title" : "星見雅特殊挑戦",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.title" : "特殊挑戦を選択",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.desc" : "異なる特殊挑戦を選んで挑戦する。\\n[gold]デフォルト[/gold]：変化なし\\n[gold]ボンプにお任せ[/gold]：初期デッキがボンプ関連のデッキになる\\n[gold]蜂群集結[/gold]：初期デッキにアップグレード済みの[gold]蜂群集結[/gold]を1枚追加する\\n[gold]以骸記録者[/gold]：ゲーム開始時に[gold]童話ノート[/gold]を1つ獲得する\\n[gold]グレースの逆襲[/gold]：初期デッキがグレースのデッキになる",
+
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Default" : "デフォルトデッキ",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.AllBangboo" : "ボンプにお任せ",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.BeeGroup" : "蜂群集結",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Lucia" : "以骸記録者",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Grace" : "グレースの逆襲",
+
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.title" : "儀玄特殊挑戦",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.title" : "特殊挑戦を選択",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.desc" : "異なる特殊挑戦を選んで挑戦する。\\n[gold]デフォルト[/gold]：変化なし\\n[gold]ボンプにお任せ[/gold]：初期デッキがボンプ関連のデッキになる\\n[gold]蜂群集結[/gold]：初期デッキにアップグレード済みの[gold]蜂群集結[/gold]を1枚追加する\\n[gold]以骸記録者[/gold]：ゲーム開始時に[gold]童話ノート[/gold]を1つ獲得する",
+
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Default" : "デフォルトデッキ",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.AllBangboo" : "ボンプにお任せ",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.BeeGroup" : "蜂群集結",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Lucia" : "以骸記録者",
+
+
+
+	"MIYABISTS2-MIYABI_ENEMIES_STRONGER.title" : "モッド敵強化",
+
+	"MIYABISTS2-MONSTER_HP_MAX.title" : "敵の最大HP",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.title" : "敵の最大HP倍率",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.desc" : "敵の最大HPの倍率。1xが通常のHP。これは苦行にして、修行でもある。",
+
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.title" : "星見雅ダメージ倍率",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.title" : "ダメージ倍率",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.desc" : "星見雅が敵に与えるダメージの倍率。1xが通常ダメージ。これは苦行にして、修行でもある。",
+
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.title" : "星見雅被ダメージ倍率",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.title" : "被ダメージ倍率",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.desc" : "星見雅が敵から受けるダメージの倍率。1xが通常ダメージ。これは苦行にして、修行でもある。",
+
+	"MIYABISTS2-CHANGE_TO_ALL_PLAYERS.title" : "戦闘設定を全キャラクターに適用",
+
+	"MIYABISTS2-MIYABI_ENEMIES_APPEAR.title" : "モッド専用の敵が対局に出現",
+
+	"MIYABISTS2-ELSE_CONFIG.title" : "その他の設定",
+
+	"MIYABISTS2-MIYABI_PANEL_OPEN.title" : "キャラクター選択画面のパネルを表示",
+
+	"MIYABISTS2-SHOW_SAME_RELIC.title" : "重複レリックを表示",
+
+	"MIYABISTS2-MIYABI_CONFIG.title" : "星見雅関連設定",
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "星見雅戦闘スキン設定",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.title" : "星見雅戦闘スキン",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.desc" : "設定を切り替えて異なるスキンを使用できる。",
+
+	"MIYABISTS2-SHOP_SELECTED_SLOT.title" : "星見雅ショップスキン設定",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.title" : "星見雅ショップスキン",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.desc" : "設定を切り替えて異なるスキンを使用できる。",
+
+	"MIYABISTS2-REST_SELECTED_SLOT.title" : "星見雅休憩スキン設定",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.title" : "星見雅休憩スキン",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.desc" : "設定を切り替えて異なるスキンを使用できる。",
+
+	"MIYABISTS2-YIXUAN_CONFIG.title" : "儀玄関連設定",
+
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.title" : "儀玄戦闘スキン設定",
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.hover.title" : "儀玄戦闘スキン",
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.hover.desc" : "設定を切り替えて異なるスキンを使用できる。",
+
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.title" : "儀玄ショップスキン設定",
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.hover.title" : "儀玄ショップスキン",
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.hover.desc" : "設定を切り替えて異なるスキンを使用できる。",
+
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.title" : "儀玄休憩スキン設定",
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.hover.title" : "儀玄休憩スキン",
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.hover.desc" : "設定を切り替えて異なるスキンを使用できる。",
+
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0" : "烈露濯霜",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.Slot0" : "烈露濯霜",
+	"MIYABISTS2-REST_SELECTED_SLOT.Slot0" : "ミヤビちゃん"
+
+}

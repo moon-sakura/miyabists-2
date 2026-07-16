@@ -1,0 +1,23 @@
+{
+	"MIYABISTS2_KEYWORD_LIE_SHUANG.description": "적에게 피해량만큼의 [gold]열상 축적 수치[/gold]를 부여합니다",
+    "MIYABISTS2_KEYWORD_LIE_SHUANG.title": "열상",
+
+	"MIYABISTS2_KEYWORD_XUANMO.description": "명파 피해에 속하며, [gold]막을 수 없음[/gold] 피해를 줍니다. 사용 후 섬광 에너지를 회복합니다.",
+    "MIYABISTS2_KEYWORD_XUANMO.title": "현묵",
+
+	"MIYABISTS2_KEYWORD_MINGPO.description": "관통 피해 유형, [gold]막을 수 없음[/gold] 피해를 줍니다.",
+    "MIYABISTS2_KEYWORD_MINGPO.title": "명파",
+
+	"MIYABISTS2_KEYWORD_EXHAUST_X.description": "X회 사용 후 소모됩니다.",
+    "MIYABISTS2_KEYWORD_EXHAUST_X.title": "소모 X",
+
+	"MIYABISTS2_KEYWORD_FRIENDS.description": "우리의 유대를 얕보지 마, 코라",
+    "MIYABISTS2_KEYWORD_FRIENDS.title": "파트너",
+
+	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.description": "이계에서 온 축복",
+	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.title": "이계 파트너",
+
+	"MIYABISTS2_KEYWORD_END_SKILL.description": "아주 강력한 스킬",
+    "MIYABISTS2_KEYWORD_END_SKILL.title": "필살기"
+
+}

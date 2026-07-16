@@ -43,8 +43,6 @@ public static class MiyabiCharSelectSkinPatch
 
         bool showPanels = charType != CharType.None && MiyabiModConfig.MiyabiPanelOpen;
 
-        string language = SaveManager.Instance.SettingsSave.Language;
-
         string language = SaveManager.Instance != null
             ? MiyabiUILoc.NormalizeLang(SaveManager.Instance.SettingsSave.Language)
             : "eng";
@@ -319,25 +317,21 @@ public static class MiyabiCharSelectSkinPatch
         switch (charType)
         {
             case CharType.Miyabi:
-                options = new (string, string)[]
-                {
-                    ("Default", MiyabiUILoc.Get("funp_miyabi_default", language)),
-                    ("Bangboo", MiyabiUILoc.Get("funp_miyabi_bangboo", language)),
-                    ("Swarm",  MiyabiUILoc.Get("funp_miyabi_bee", language)),
-                    ("Recorder", MiyabiUILoc.Get("funp_miyabi_recorder", language)),
-                    ("Grace",  MiyabiUILoc.Get("funp_miyabi_grace", language)),
-                };
+                options = MakeOptions(language,
+                    "funp_miyabi_default",
+                    "funp_miyabi_bangboo",
+                    "funp_miyabi_bee",
+                    "funp_miyabi_recorder",
+                    "funp_miyabi_grace");
                 currentIndex = (int)MiyabiModConfig.MiyabiFunPileSelected;
                 break;
 
             case CharType.Yixuan:
-                options = new (string, string)[]
-                {
-                    ("Default", MiyabiUILoc.Get("funp_yixuan_default", language)),
-                    ("Bangboo", MiyabiUILoc.Get("funp_yixuan_bangboo", language)),
-                    ("Swarm",  MiyabiUILoc.Get("funp_yixuan_bee", language)),
-                    ("Recorder", MiyabiUILoc.Get("funp_yixuan_recorder", language)),
-                };
+                options = MakeOptions(language,
+                    "funp_yixuan_default",
+                    "funp_yixuan_bangboo",
+                    "funp_yixuan_bee",
+                    "funp_yixuan_recorder");
                 currentIndex = (int)MiyabiModConfig.YixuanFunPileSelected;
                 break;
 
@@ -345,6 +339,19 @@ public static class MiyabiCharSelectSkinPatch
         }
 
         panel.SetOptions(options, currentIndex);
+    }
+
+    private static (string name, string desc)[] MakeOptions(string language, params string[] locKeys)
+    {
+        var result = new (string name, string desc)[locKeys.Length];
+        for (int i = 0; i < locKeys.Length; i++)
+        {
+            string fullText = MiyabiUILoc.Get(locKeys[i], language);
+            int idx = fullText.IndexOf('：');
+            string displayName = idx > 0 ? fullText.Substring(0, idx) : fullText;
+            result[i] = (displayName, fullText);
+        }
+        return result;
     }
 
     // ============================================================

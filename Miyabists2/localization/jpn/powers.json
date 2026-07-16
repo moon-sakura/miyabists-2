@@ -1,0 +1,359 @@
+{
+	"FROST_BUILD_POWER.smartDescription": "{PlayerCount:choose(1|2|3|4):50|65|80|95|50}層まで蓄積すると[aqua]霜灼[/aqua]が発動し、[purple]状態異常[/purple]を1層付与する{PlayerCount:cond:>4?(プレイヤーが1人増えるごとに発動必要層数+[blue]15[/blue])|}",
+	"FROST_BUILD_POWER.description": "50層まで蓄積すると[aqua]霜灼[/aqua]が発動し、[purple]状態異常[/purple]を1層付与する(プレイヤーが1人増えるごとに発動必要層数+[blue]15[/blue])",
+	"FROST_BUILD_POWER.title": "烈霜",
+
+	"DAZE_POWER.smartDescription": "{PlayerCount:choose(1|2|3|4):100|120|140|160|100}層まで蓄積すると[gold]ブレイク[/gold]が発動する{PlayerCount:cond:>4?(プレイヤーが1人増えるごとに発動必要層数+[blue]20[/blue])|}",
+	"DAZE_POWER.description": "100層まで蓄積すると[gold]ブレイク[/gold]が発動する(プレイヤーが1人増えるごとに発動必要層数+[blue]20[/blue])",
+	"DAZE_POWER.title": "ブレイク値",
+
+	"BREAK_POWER.smartDescription": "[gold]スタン[/gold]状態になり、1ターンの間[gold]ブレイク弱体化[/gold][blue]50%[/blue]を受ける。この状態では[gold]ブレイク値[/gold]を蓄積できない。",
+	"BREAK_POWER.description": "ブレイク時に敵を[gold]スタン[/gold]させ、1ターンの間[gold]ブレイク弱体化[/gold][blue]50%[/blue]を与える。この状態では[gold]ブレイク値[/gold]を蓄積できない。",
+	"BREAK_POWER.title": "ブレイク",
+
+	"BREAK_PLAYER_POWER.smartDescription": "1ターンの間カードを使用できない",
+	"BREAK_PLAYER_POWER.description": "1ターンの間カードを使用できない",
+	"BREAK_PLAYER_POWER.title": "ブレイク",
+
+	"FROST_FIRE_POWER.title": "氷炎",
+    "FROST_FIRE_POWER.description": "1層につき[aqua]烈霜[/aqua]ダメージが[blue]5%[/blue]増加する（上限あり）。",
+    "FROST_FIRE_POWER.smartDescription": "1層につき[aqua]烈霜[/aqua]ダメージが[blue]5%[/blue]増加する（上限[blue]{Limit:diff()}%[/blue]）。",
+
+    "XINNIAN_WUWO_POWER.smartDescription": "このターンに[gold]ブレイク[/gold]を発動していた場合、このターンの[gold]霜月[/gold]のコストがすべて0になる",
+	"XINNIAN_WUWO_POWER.description": "",
+	"XINNIAN_WUWO_POWER.title": "心念無我",
+
+	"FROST_POWER.title": "霜灼",
+    "FROST_POWER.description": "受けるダメージが増加し、[aqua]烈霜蓄積値[/aqua]を蓄積できない",
+    "FROST_POWER.smartDescription": "受けるダメージ+[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|、[aqua]烈霜蓄積値[/aqua]を蓄積できない}",
+
+    "FROSTPO_POWER.title": "霜灼・破",
+    "FROSTPO_POWER.description": "すべての氷炎を消去し、氷炎の層数に応じてダメージを与え筋力を得る。敵は受けるダメージが増加し、[aqua]烈霜蓄積値[/aqua]を蓄積できない",
+    "FROSTPO_POWER.smartDescription": "[gold]氷炎[/gold]の層数×[blue]5[/blue]のダメージを与え、[gold]氷炎[/gold]5層につき[gold]筋力[/gold]を1得て、すべての[gold]氷炎[/gold]を消去する。受けるダメージ+[blue]{DamageVuln:diff()}%[/blue]{CanAdd:cond:>0?|、[aqua]烈霜蓄積値[/aqua]を蓄積できない}",
+
+	"DAZE_VULN_POWER.smartDescription": "1ターンの間、受けるダメージ+[blue]{Amount}%[/blue]",
+	"DAZE_VULN_POWER.description": "敵の受けるダメージを増加させる",
+	"DAZE_VULN_POWER.title": "ブレイク弱体化",
+
+	"FROST_FALL_POWER.title": "落霜",
+    "FROST_FALL_POWER.description": "[gold]霜月[/gold]の発動に使用する。2つ溜まっていて手札に[gold]霜月[/gold]がない場合、[gold]霜月[/gold]を1枚手札に加える",
+    "FROST_FALL_POWER.smartDescription": "六つの豆で脳と直結、チャージは思考の代わり",
+
+	"ATTRIBUTE_ANOMALY_POWER.title": "状態異常",
+    "ATTRIBUTE_ANOMALY_POWER.description": "毎ターン終了時、最大HPの[blue]5%[/blue]のダメージを受ける。付与時に既にこの効果がある場合、[purple]紊乱[/purple]が発動する",
+    "ATTRIBUTE_ANOMALY_POWER.smartDescription": "毎ターン終了時、最大HPの[blue]5%[/blue]のダメージを受ける。付与時に既にこの効果がある場合、[purple]紊乱[/purple]が発動する",
+
+	"ANOMALY_BUILDUP_POWER.title": "異常蓄積",
+    "ANOMALY_BUILDUP_POWER.description": "5層まで蓄積すると敵に[purple]状態異常[/purple]を付与する(プレイヤーが1人増えるごとに発動必要層数+[blue]2[/blue])",
+    "ANOMALY_BUILDUP_POWER.smartDescription": "{PlayerCount:choose(1|2|3|4):5|7|9|11|5}層まで蓄積すると敵に[purple]状態異常[/purple]を付与する{PlayerCount:cond:>4?(プレイヤーが1人増えるごとに発動必要層数+[blue]2[/blue])|}",
+
+	"DISORDER_POWER.title": "紊乱",
+    "DISORDER_POWER.description": "直ちに最大HPの[blue]10%[/blue]のダメージを与え、次の一撃のダメージが[blue]2[/blue]倍になる",
+    "DISORDER_POWER.smartDescription": "直ちに最大HPの[blue]10%[/blue]のダメージを与え、次の一撃のダメージが[blue]2[/blue]倍になる",
+
+	"SUPPORT_POINT_POWER.title": "支援ポイント",
+    "SUPPORT_POINT_POWER.description": "上限は[blue]6[/blue]。仲間カードの追加能力の発動に使用する",
+    "SUPPORT_POINT_POWER.smartDescription": "絆ってやつだ。上限は[blue]6[/blue]",
+
+	"JIFU_POWER.title": "羈服",
+    "JIFU_POWER.description": "ブレイク時に追加の[gold]ブレイク弱体化[/gold]を与える",
+    "JIFU_POWER.smartDescription": "ブレイク時に[blue]2*{Amount}%[/blue]の[gold]ブレイク弱体化[/gold]を追加で与える",
+
+	"TEBIE_PZJQ_POWER.title": "特別な撮影テクニック",
+    "TEBIE_PZJQ_POWER.description": "敵は[gold]ブレイク[/gold]時に追加で[gold]ブレイク弱体化[/gold]を受け、[gold]攻撃の意図[/gold]を持つ敵は一定確率でダメージを与えられなくなる",
+    "TEBIE_PZJQ_POWER.smartDescription": "敵は[gold]ブレイク[/gold]時に追加で{DazeVuln:diff()}%の[gold]ブレイク弱体化[/gold]を受け、[gold]攻撃の意図[/gold]を持つ敵は{Amount:cond:<3?低い|}{Amount:cond:>7?高い|}確率でダメージを与えられなくなる",
+
+	"TUNAFA_POWER.title": "吐納法",
+    "TUNAFA_POWER.description": "",
+    "TUNAFA_POWER.smartDescription": "毎ターン、最初の[blue]{Amount}[/blue]回[gold]風花[/gold]を使用した時、[gold]落霜[/gold]を[blue]1[/blue]得る。使用済み{CardCount:diff()}枚",
+
+	"JUN_LIE_POWER.title": "皸裂",
+    "JUN_LIE_POWER.description": "",
+    "JUN_LIE_POWER.smartDescription": "[aqua]烈霜[/aqua]カードを使用するたびに、[gold]デシベル[/gold]を[blue]1[/blue]得る",
+
+	"TIANZIZY_POWER.title": "天資卓越",
+    "TIANZIZY_POWER.smartDescription": "[gold]霜月[/gold]を使用するたびに、[gold]霜月・極意[/gold]を{Amount}回自動的に使用する",
+
+	"WEIMINGDDS_POWER.title": "葦名抖刀術",
+    "WEIMINGDDS_POWER.description": "",
+    "WEIMINGDDS_POWER.smartDescription": "[gold]ブレイク[/gold]されていない間、受けるダメージが[blue]25%[/blue]減少し、攻撃を受けるたびに[gold]花辞[/gold]を[blue]{Amount}[/blue]枚手札に加える\\nブロックされなかったダメージを受けた時、自身にブレイク値を[blue]{Daze:diff()}[/blue]層蓄積し、累計[blue]100[/blue]層で[gold]ブレイク[/gold]が発動する",
+
+	"YONGTAN_HUACAI_POWER.title": "詠嘆のカデンツァ",
+    "YONGTAN_HUACAI_POWER.description": "[gold]仲間[/gold]カードを使用するたびに{Energy:energyIcons()}を得る",
+	"YONGTAN_HUACAI_POWER.smartDescription": "[gold]仲間[/gold]カードを使用するたびにエナジーを[blue]{Amount}[/blue]得る",
+
+	"BLESSING_MOON_POWER.title": "新月の祝福",
+    "BLESSING_MOON_POWER.description": "致命的なダメージを受けた時、死亡を回避してHPを[blue]{Amount}%[/blue]回復する\\n[gold]状態異常[/gold]と[gold]紊乱[/gold]の発動時、最大HPの[blue]5%[/blue]の追加ダメージを与える",
+	"BLESSING_MOON_POWER.smartDescription": "致命的なダメージを受けた時、死亡を回避してHPを[blue]{Amount}%[/blue]回復する\\n[gold]状態異常[/gold]と[gold]紊乱[/gold]の発動時、最大HPの[blue]5%[/blue]の追加ダメージを与える",
+
+	"SHUANGYUEJS_POWER.title": "霜月の構え",
+    "SHUANGYUEJS_POWER.smartDescription": "毎ターン開始時に[gold]落霜[/gold]を[blue]{Amount}[/blue]得て、霜月を使用するたびにブロックを4得る",
+	"SHUANGYUEJS_POWER.description": "毎ターン開始時に[gold]落霜[/gold]を[blue]2[/blue]得る",
+
+	"TIANMIJX_POWER.title": "スイートサプライズ",
+    "TIANMIJX_POWER.description": "毎ターン終了時、すべての敵に[gold]状態異常[/gold]を[blue]{Amount}[/blue]層与える",
+	"TIANMIJX_POWER.smartDescription": "毎ターン終了時、すべての敵に[gold]状態異常[/gold]を[blue]{Amount}[/blue]層与える",
+
+	"YACHIYO_POWER.title": "八千代の見守り",
+    "YACHIYO_POWER.description": "",
+	"YACHIYO_POWER.smartDescription": "右クリックで発動：[gold]{Card}[/gold]を[blue]{Amount}[/blue]枚手札に加え、そのターンの間コストが0になる",
+
+	"KAGUYA_POWER.title": "輝夜姫",
+    "KAGUYA_POWER.description": "",
+	"KAGUYA_POWER.smartDescription": "ターン開始時にランダムな効果を[blue]{Amount}[/blue]個発動する",
+
+	"EJIZHAN_POWER.title": "大盛り鵞鶏斬",
+    "EJIZHAN_POWER.description": "",
+	"EJIZHAN_POWER.smartDescription": "このターン、[gold]筋力[/gold]を[blue]{Amount}[/blue]得る",
+
+	"CIQUANLJ_POWER.title": "L式轟鳴拳・ジャブ連撃",
+    "CIQUANLJ_POWER.description": "",
+	"CIQUANLJ_POWER.smartDescription": "{TurnCount:diff()}ターンの間、敵の受ける[aqua]烈霜[/aqua]ダメージ+[blue]{Amount}%[/blue]",
+
+	"ZHONGMUYC_POWER.title": "終幕演出",
+    "ZHONGMUYC_POWER.description": "",
+	"ZHONGMUYC_POWER.smartDescription": "受ける[purple]状態異常[/purple]と[purple]紊乱[/purple]のダメージが[blue]1.5[/blue]倍になる",
+
+	"NO_TAIL_FULL_POWER.title": "妖刀解放",
+    "NO_TAIL_FULL_POWER.description": "",
+	"NO_TAIL_FULL_POWER.smartDescription": "[gold]仲間[/gold]以外のすべてのアタックカードを[gold]アップグレード[/gold]し、コストを[blue]0[/blue]にして[gold]廃棄[/gold]と[gold]エセリアル[/gold]を付与する。[gold]仲間[/gold]以外のアタックカードを使用するたびにHPを[red]1[/red]失い、[gold]筋力[/gold]を[blue]1[/blue]得る",
+
+	"MIYABI_FULL_POWER.title": "妖刀解放",
+    "MIYABI_FULL_POWER.description": "",
+	"MIYABI_FULL_POWER.smartDescription": "[gold]仲間[/gold]以外のすべてのアタックカードを[gold]アップグレード[/gold]し、コストを[blue]0[/blue]にする。[gold]仲間[/gold]以外のアタックカードを1枚使用するごとにカードを[blue]1[/blue]枚ドローする。[gold]仲間[/gold]以外のアタックカードを使用するたびにHPを[red]1[/red]失い、[gold]筋力[/gold]を[blue]1[/blue]得る",
+
+	"TRAIN_SPEAK_POWER.title": "五文字以上喋らない修行",
+    "TRAIN_SPEAK_POWER.description": "",
+    "TRAIN_SPEAK_POWER.smartDescription": "毎ターン[blue]5[/blue]枚までしかカードを使用できない。残り[blue]{Amount}[/blue]ターン",
+
+	"TRAIN_SPEAK_OVER_POWER.title": "修行完了",
+    "TRAIN_SPEAK_OVER_POWER.description": "",
+    "TRAIN_SPEAK_OVER_POWER.smartDescription": "毎ターン、最初の[blue]5[/blue]枚のカードのコスト-[blue]1[/blue]",
+
+	"TRAIN_ATTACK_POWER.title": "三手しか出さない修行",
+    "TRAIN_ATTACK_POWER.description": "",
+    "TRAIN_ATTACK_POWER.smartDescription": "毎ターン最大[blue]3[/blue]枚までカードを使用でき、すべてのカードのコストが0になる。残り[blue]{Amount}[/blue]ターン",
+
+	"TRAIN_ATTACK_OVER_POWER.title": "修行完了",
+    "TRAIN_ATTACK_OVER_POWER.description": "",
+    "TRAIN_ATTACK_OVER_POWER.smartDescription": "毎ターン開始時に{Energy:energyIcons()}を得る",
+
+	"TRAIN_STEP_POWER.title": "右足から入室する修行",
+    "TRAIN_STEP_POWER.description": "",
+    "TRAIN_STEP_POWER.smartDescription": "毎ターン、アタックカードを使用した後に手札を1枚[gold]捨てる[/gold]必要がある。残り[blue]{Amount}[/blue]ターン",
+
+	"TRAIN_STEP_OVER_POWER.title": "修行完了",
+    "TRAIN_STEP_OVER_POWER.description": "",
+    "TRAIN_STEP_OVER_POWER.smartDescription": "毎ターン、アタックカードを使用した後にカードを[blue]1[/blue]枚ドローする",
+
+	"TRAIN_EAT_POWER.title": "メロンしか食べない修行",
+    "TRAIN_EAT_POWER.description": "",
+    "TRAIN_EAT_POWER.smartDescription": "アタックカードを使用できない。残り[blue]{Amount}[/blue]ターン",
+
+	"TRAIN_EAT_OVER_POWER.title": "修行完了",
+    "TRAIN_EAT_OVER_POWER.description": "",
+    "TRAIN_EAT_OVER_POWER.smartDescription": "すべてのアタックカードのコスト-[blue]1[/blue]",
+
+	"ZHANJINZE_POWER.title": "斬尽罪悪",
+    "ZHANJINZE_POWER.description": "",
+    "ZHANJINZE_POWER.smartDescription": "このターン、与えるダメージが2倍になる",
+
+	"XSJS_POWER.title": "雪上加霜",
+    "XSJS_POWER.description": "",
+    "XSJS_POWER.smartDescription": "[gold]霜月[/gold]を使用するたびに、このターン[gold]筋力[/gold]を[blue]{Amount}[/blue]得る",
+
+	"MINGFUWG_POWER.title": "冥府挽歌",
+    "MINGFUWG_POWER.description": "",
+    "MINGFUWG_POWER.smartDescription": "[blue]{Amount}[/blue]ターンの間、ターン開始時に[gold]協奏狙殺[/gold]を1枚手札に加える",
+
+	"BAMIANWF_POWER.title": "八面威風",
+	"BAMIANWF_POWER.description": "[gold]終結スキル[/gold]を使用するたびに[gold]デシベル[/gold]を[blue]5[/blue]得て、[gold]仲間[/gold]カードを使用した後に[gold]デシベル[/gold]を[blue]2[/blue]得る",
+    "BAMIANWF_POWER.smartDescription": "[gold]終結スキル[/gold]を使用するたびに[gold]デシベル[/gold]を[blue]5[/blue]得て、[gold]仲間[/gold]カードを使用した後に[gold]デシベル[/gold]を[blue]2[/blue]得る",
+
+	"LUOYUSH_POWER.title": "落羽生花",
+	"LUOYUSH_POWER.description": "毎ターン、敵にダメージを与えた後、その敵に[gold]異常蓄積[/gold]を[blue]1[/blue]層与える。最大[blue]{Amount}[/blue]回発動できる",
+    "LUOYUSH_POWER.smartDescription": "毎ターン、敵にダメージを与えた後、その敵に[gold]異常蓄積[/gold]を[blue]1[/blue]層与える。最大[blue]{Amount}[/blue]回発動できる",
+
+	"MIYABI_PARRY_POWER.title": "パリィ",
+    "MIYABI_PARRY_POWER.description": "ブロックで防いだダメージを受けるたびに、[gold]花辞[/gold]を1枚手札に加え、その後層数が[red]1[/red]減る。",
+    "MIYABI_PARRY_POWER.smartDescription": "ブロックで防いだダメージを受けるたびに、[gold]花辞[/gold]を1枚手札に加え、その後層数が[red]1[/red]減る。",
+
+	"TONGMU_SHUANGXUE_POWER.title": "同沐霜雪",
+    "TONGMU_SHUANGXUE_POWER.description": "[gold]仲間[/gold]以外のカードを使用するたびに、[gold]支援ポイント[/gold]を[blue]1[/blue]得る",
+	"TONGMU_SHUANGXUE_POWER.smartDescription": "[gold]仲間[/gold]以外のカードを使用するたびに、[gold]支援ポイント[/gold]を[blue]1[/blue]得る",
+
+	"DONG_FENG_SP_POWER.title": "冬蜂・極",
+    "DONG_FENG_SP_POWER.description": "刀弾きならお任せ",
+    "DONG_FENG_SP_POWER.smartDescription": "次のアタックカードのダメージ+[blue]25%[/blue]。",
+
+    "JINLONG_SZB_POWER.title": "金色の威信・ルミエール",
+    "JINLONG_SZB_POWER.description": "",
+    "JINLONG_SZB_POWER.smartDescription": "毎ターン開始時に最大{Amount}枚のカードを捨て、捨てた枚数だけカードをドローする。\\nカードを捨てるか廃棄するたびに、すべての敵に{Amount}のダメージを与える。",
+
+    "BYE_QUANLEIDA_POWER.title": "さよならホームラン！",
+    "BYE_QUANLEIDA_POWER.description": "ブタさんインパクト！",
+    "BYE_QUANLEIDA_POWER.smartDescription": "このターン、与えるすべてのダメージ+{Amount}。",
+
+
+
+    "MIYABI_GUARDIAN_POWER.title": "守護者",
+    "MIYABI_GUARDIAN_POWER.description": "君のために死ぬ",
+    "MIYABI_GUARDIAN_POWER.smartDescription": "敵の与えるダメージを身代わりに受ける。",
+
+	"LUCKYBOO_ACT.title": "ラッキーブー",
+    "LUCKYBOO_ACT.description": "ゴールドを消費して敵1体にダメージを与えられる。",
+    "LUCKYBOO_ACT.smartDescription": "毎ターン[blue]{MAXUSE:diff()}[/blue]回、[red]10[/red][gold]ゴールド[/gold]を消費して敵1体に[blue]20[/blue]のダメージを与えられる。\\n使用済み[blue]{Used:diff()}[/blue]回。",
+
+	"EOUS_ACT.title": "イーアス",
+    "EOUS_ACT.description": "エナジーを使用してブロックを得られる。",
+    "EOUS_ACT.smartDescription": "毎ターン[blue]{MAXUSE:diff()}[/blue]回、エナジーを[red]1[/red]使用して、ブロックを[blue]6[/blue]得る。\\n使用済み[blue]{Used:diff()}[/blue]回。",
+
+	"EXPLOREBOO_ACT.title": "エクスプローラーブー",
+    "EXPLOREBOO_ACT.description": "毎ターン終了時に[gold]ゴールド[/gold]を貯め、戦闘勝利時にその[gold]ゴールド[/gold]を獲得する。",
+    "EXPLOREBOO_ACT.smartDescription": "毎ターン終了時に[blue]{MAXUSE:diff()}[/blue]回発動し、現在のターン数×[blue]5[/blue]の[gold]ゴールド[/gold]を獲得する。毎ターンの獲得上限は[blue]{MaxGold:diff()}[/blue]。現在[blue]{Gold:diff()}[/blue][gold]ゴールド[/gold]獲得済み。",
+
+    "SHARKBOO_ACT.title": "シャークブー",
+    "SHARKBOO_ACT.description": "毎ターン終了時にダメージを蓄積し、敵の攻撃前にそのダメージを敵に与える。",
+    "SHARKBOO_ACT.smartDescription": "毎ターン終了時に{Damage:diff()} * {MAXUSE:diff()}のダメージを蓄積する。敵が主人を攻撃する前に、敵に[blue]{AllDamage:diff()}[/blue]のダメージを与える。",
+
+    "EXCALIBOO_ACT.title": "エクスキャリブー",
+    "EXCALIBOO_ACT.description": "毎ターン終了時にチャージし、チャージが3回以上なら、すべての敵にダメージを与える。",
+    "EXCALIBOO_ACT.smartDescription": "毎ターン終了時に[blue]{MAXUSE:diff()}[/blue]回チャージする。チャージが3回以上の場合、すべての敵に[blue]{Damage:diff()}[/blue]のダメージを与える。\\nチャージ済み[blue]{Charged:diff()}[/blue]回。",
+
+    "AGENT_ACT.title": "エージェント・ガリバー",
+    "AGENT_ACT.description": "エナジーを[red]1[/red]使用して、敵1体にダメージを与え、その敵が仲間カードから受けるダメージを増加させられる。",
+    "AGENT_ACT.smartDescription": "毎ターン[blue]{MAXUSE:diff()}[/blue]回、エナジーを[red]1[/red]使用して、敵1体に[blue]{Damage:diff()}[/blue]のダメージを与え、その敵が仲間カードから受けるダメージを[blue]{DamageUp:diff()}%[/blue]増加させる。\\n使用済み[blue]{Used:diff()}[/blue]回。",
+
+	"SUMOBOO_ACT.title": "スモウブー",
+    "SUMOBOO_ACT.description": "エナジーを[red]1[/red]使用して、敵1体にブレイク値を与えられる。",
+    "SUMOBOO_ACT.smartDescription": "毎ターン[blue]{MAXUSE:diff()}[/blue]回、エナジーを[red]1[/red]使用して、敵1体に[blue]{Daze:diff()}[/blue]のブレイク値を与えられる。\\n使用済み[blue]{Used:diff()}[/blue]回。",
+
+	"OVERTIMEBOO_ACT.title": "残業ブー",
+    "OVERTIMEBOO_ACT.description": "[red]1[/red][gold]HP[/gold]を消費して、プレイヤー1人にエナジーを与えられる。",
+    "OVERTIMEBOO_ACT.smartDescription": "[red]1[/red][gold]HP[/gold]を消費して、プレイヤー1人に{Energy:energyIcons()}を与えられる。残業でHPをすべて失うと[red]レリックを失う[/red]！",
+
+    "PAPERBOO_ACT.title": "ペーパーブー",
+    "PAPERBOO_ACT.description": "エナジーを[red]1[/red]使用して、ブロックを得られる。",
+    "PAPERBOO_ACT.smartDescription": "毎ターン[blue]{MAXUSE:diff()}[/blue]回、エナジーを[red]1[/red]使用して、ブロックを[blue]10[/blue]得る。\\n使用済み[blue]{Used:diff()}[/blue]回。",
+
+    "MAGNETIBOO_ACT.title": "マグネットブー",
+    "MAGNETIBOO_ACT.description": "エナジーを[red]1[/red]使用して、すべての敵に[purple]異常蓄積[/purple]を与えられる。ターン終了時にすべての敵に[purple]異常蓄積[/purple]を与える。",
+    "MAGNETIBOO_ACT.smartDescription": "毎ターン[blue]{MAXUSE:diff()}[/blue]回、エナジーを[red]1[/red]使用して、すべての敵に[blue]{AnoAmount:diff()}[/blue]層の[purple]異常蓄積[/purple]を与える。ターン終了時にすべての敵に[blue]{AnoAmount:diff()}[/blue]層の[purple]異常蓄積[/purple]を与える。\\n使用済み[blue]{Used:diff()}[/blue]回。",
+
+    "ONE_DENNYBOO_ACT.title": "1ディニーブー",
+    "ONE_DENNYBOO_ACT.description": "敵の行動前に、一定確率でその行動を「プレイヤーに[gold]1[/gold]ゴールドを与える」に変化させる。",
+    "ONE_DENNYBOO_ACT.smartDescription": "敵の行動前に、[blue]{MAXUSE}0%[/blue]の確率でその行動を「プレイヤーに[gold]1[/gold]ゴールドを与える」に変化させる。",
+
+    "XIXIFU_ACT.title": "シシフ",
+    "XIXIFU_ACT.description": "カードを1枚食べさせて、追加効果を発動できる。",
+    "XIXIFU_ACT.smartDescription": "毎ターン[blue]{MAXUSE:diff()}[/blue]回、手札からカードを1枚選んで食べさせ、ランダムな効果を発動できる。\\n使用済み[blue]{Used:diff()}[/blue]回。",
+
+
+
+
+    "SUMMON_MONSTER_POWER.title":"夢境の仲間",
+    "SUMMON_MONSTER_POWER.description":"夢境の仲間",
+    "SUMMON_MONSTER_POWER.smartDescription":"夢境の仲間が守ってくれる！ターン終了時に行動を発動する。",
+
+	"MIYABI_BOSS_POWER.title": "寒炎",
+    "MIYABI_BOSS_POWER.description": "",
+    "MIYABI_BOSS_POWER.smartDescription": "攻撃で[gold]烈霜蓄積値[/gold]と[gold]ブレイク値[/gold]を蓄積させる。[gold]ブレイク[/gold]の発動後、自身のすべての[gold]デバフ[/gold]を解除する。[gold]紊乱[/gold]の発動後、[gold]筋力[/gold]を[blue]2[/blue]得る。致命的なダメージを[blue]{DeathPrevent:diff()}[/blue]回防ぐことができ、その際自身のすべての[gold]デバフ[/gold]を解除し、非実体を[blue]1[/blue]層得てHPを上限まで回復する。",
+
+	"YIXUAN_ENEMY_POWER.title": "青冥の加護",
+    "YIXUAN_ENEMY_POWER.description": "",
+    "YIXUAN_ENEMY_POWER.smartDescription": "すべての[gold]デバフ[/gold]の獲得量が[blue]{DebuffReduce:diff()}%[/blue]減少する。毎ターン、攻撃を[blue]{HittedTrigger:diff()}[/blue]回受けた後、[blue]{DamageReduce:diff()}%[/blue]のダメージ軽減を得る。最大HPの[blue]33%[/blue]分のHPを失うか、同数値の[gold]毒[/gold]または[gold]災厄[/gold]を得るたびに（[gold]毒[/gold]または[gold]災厄[/gold]の層数は半減）、[blue]非実体[/blue]を1層得て、効果への耐性を強化し、すべてのプレイヤーのターンを終了させる。",
+
+
+
+	"SHUFA_ZHI.title": "術法値",
+	"SHUFA_ZHI.description": "敵のHPが一定値を下回ると、受けるダメージが増加し、与えるダメージが減少する",
+	"SHUFA_ZHI.smartDescription": "敵のHPが[blue]{Amount}%[/blue]を下回ると、受けるダメージが2倍になり、与えるダメージが20%減少する。術法値が100を超えると、100層を消費して[gold]伏魔[/gold]を1層付与する",
+
+    "FUMO_POWER.title" : "伏魔",
+    "FUMO_POWER.description" : "受けるダメージが増加し、与えるダメージが減少する",
+    "FUMO_POWER.smartDescription" : "受けるダメージが追加で{Amount}倍になり、与えるダメージが追加で{Amount:choose(1|2|3|4):20|40|60|80|100}%減少する。術法値の効果とは加算。",
+
+    "SHUFA_ZONGSHI_POWER.title": "術法宗師",
+    "SHUFA_ZONGSHI_POWER.description": "玄墨ダメージを与えるたびに、敵に術法値を付与する",
+    "SHUFA_ZONGSHI_POWER.smartDescription": "玄墨ダメージを与えるたびに、敵に術法値を{Amount}層付与する",
+
+    "MOHENHX_POWER.title": "墨痕化形",
+    "MOHENHX_POWER.description": "",
+    "MOHENHX_POWER.smartDescription": "次の{Amount}枚の[gold]玄墨[/gold]カードのコストが0になる",
+
+    "XUANMO_ANYONG_POWER.title": "玄墨暗湧",
+    "XUANMO_ANYONG_POWER.description": "[gold]仲間[/gold]カードを使用するたびに、[gold]閃能[/gold]を回復し、敵に[gold]玄墨[/gold]ダメージを与える",
+    "XUANMO_ANYONG_POWER.smartDescription": "[gold]仲間[/gold]カードを使用するたびに、[gold]閃能[/gold]を2*{Amount}回復し、敵に3*{Amount}の[gold]玄墨[/gold]ダメージを与える",
+
+
+	"SHANNENG_POWER.title": "閃能",
+	"SHANNENG_POWER.description": "追加効果の発動に使用できる。上限は[blue]150[/blue]。",
+	"SHANNENG_POWER.smartDescription": "追加効果の発動に使用できる。上限は[blue]150[/blue]。使用済み[blue]{Used:diff()}[/blue]。[blue]150[/blue]使用した後、[gold]符法千重[/gold]を1枚獲得する。",
+
+	"QINGXIAO_TONGYOU_POWER.title": "清霄同遊",
+	"QINGXIAO_TONGYOU_POWER.description": "毎ターン開始時、活力・トゲ・閃能を得る。",
+	"QINGXIAO_TONGYOU_POWER.smartDescription": "毎ターン開始時、[blue]{Vigor}[/blue]の[gold]活力[/gold]と[blue]{Thorns}[/blue]の[gold]トゲ[/gold]を得て、[blue]{Shanneng}[/blue]の[gold]閃能[/gold]を回復する。",
+
+	"MITU_YESONG_POWER.title": "迷途夜頌",
+	"MITU_YESONG_POWER.description": "アタックカード以外のカードを使用した後に活力を2得る。1ターン経過するごとに獲得量が1増える。",
+	"MITU_YESONG_POWER.smartDescription": "残り[blue]{Amount}[/blue]ターン。アタックカード以外のカードを使用した後に[blue]{Vigor:diff()}[/blue]の[gold]活力[/gold]を得る。1ターン経過するごとに獲得量が1増える。",
+
+	"TIESHAN_ZHENMAIKAO_POWER.title": "貼山震脈靠",
+	"TIESHAN_ZHENMAIKAO_POWER.description": "次の命破ダメージカードのダメージが上昇する。",
+	"TIESHAN_ZHENMAIKAO_POWER.smartDescription": "次の{FreeCount:diff()}枚のアタックカードのコスト[blue]-1[/blue]。次の[blue]{Amount}[/blue]枚の[purple]命破[/purple]ダメージカードのダメージ[blue]+20%[/blue]。",
+
+	"RONGLU_SHENGWEN_POWER.title": "熔炉昇温",
+	"RONGLU_SHENGWEN_POWER.description": "ブレイク値を与えるたびに追加で5を与え、その後層数が1減る。",
+	"RONGLU_SHENGWEN_POWER.smartDescription": "[gold]ブレイク値[/gold]を与えるたびに追加で[blue]5[/blue]を与える",
+
+    "BEST_PARTNER_POWER.title": "最高の同僚",
+	"BEST_PARTNER_POWER.description": "カードを2枚使用するごとにHPを1回復する。毎ターン最大3回発動する。",
+	"BEST_PARTNER_POWER.smartDescription": "カードを2枚使用するごとにHPを{Amount}回復する。毎ターン最大3回発動する。",
+
+	"HUALIAN_XIEYI_POWER.title": "花鎖プロトコル",
+	"HUALIAN_XIEYI_POWER.description": "右クリックで支援ポイントを消費して効果を発動する",
+	"HUALIAN_XIEYI_POWER.smartDescription": "能力を右クリック：[gold]支援ポイント[/gold][blue]2[/blue]：{Energy:energyIcons()}を得て、すべての敵に[blue]{Damage:diff()}[/blue]のダメージを与える",
+
+	"KAKANIA_POWER.title": "イド・自我・超自我",
+	"KAKANIA_POWER.description": "受けるダメージが25%増加し、受けたすべてのダメージを記録する。右クリックで支援ポイントを5消費し、記録したダメージを解放する。ターン終了時に割合分のダメージを与える。",
+	"KAKANIA_POWER.smartDescription": "受けるダメージ[red]+25%[/red]。記録済みの被ダメージは[blue]{RecordedDamage:diff()}[/blue]。\\n右クリックで発動：支援ポイントを[blue]5[/blue]消費し、すべての敵に記録した被ダメージ分のダメージを与える。ターン終了時、すべての敵に[blue]{OutgoingDamage:diff()}[/blue]のダメージを与える（ターン終了時に[blue]{BurstRatio:diff()}%[/blue]の割合で解放）。",
+
+	"SHIMENG_KONGXIANG_POWER.title": "拾夢空想",
+	"SHIMENG_KONGXIANG_POWER.description": "毎ターン開始時にHPの10%を失う。命破ダメージ回数+1。HPを失うたびにデシベルを1得る。",
+	"SHIMENG_KONGXIANG_POWER.smartDescription": "毎ターン{HpLossPercent:diff()}%のHPを失う。命破ダメージ回数+{Amount}。HPを失うたびに{Amount:cond:>1?{Amount} * |}{DecibelAmount:diff()}のデシベルを得る。",
+
+	"XIAOZAI_DUE_POWER.title": "消災渡厄",
+	"XIAOZAI_DUE_POWER.description": "カードを10枚使用するごとに、符法千重・破を1枚手札に加える",
+	"XIAOZAI_DUE_POWER.smartDescription": "カードを[blue]{CardsPerTrigger:diff()}[/blue]枚使用するごとに、[gold]符法千重・破[/gold]を1枚手札に加える。使用済み[blue]{CardsPlayed:diff()}[/blue]枚。",
+
+	"YINYANG_XIANGSHENG_POWER.title": "陰陽相生",
+	"YINYANG_XIANGSHENG_POWER.description": "次にブロックを得た時に同数値の活力を得る。または次にダメージを与えた時に同数値のトゲを得る",
+	"YINYANG_XIANGSHENG_POWER.smartDescription": "次にブロックを得た時に同数値の[gold]活力[/gold]を得る。または次にダメージを与えた時に同数値の[gold]トゲ[/gold]を得る。",
+
+	"DONGJING_XIANGYI_POWER.title": "動静相宜",
+	"DONGJING_XIANGYI_POWER.description": "青溟雲影の使用後、すべての閃能を消費して割合分の閃能を回復する。符法千重の使用後、デシベルを得る",
+	"DONGJING_XIANGYI_POWER.smartDescription": "[gold]青溟雲影[/gold]の使用後、すべての[gold]閃能[/gold]を消費して{ShannengRecoverPercent:diff()}%回復する。[gold]符法千重[/gold]の使用後、[blue]{DecibelAmount:diff()}[/blue]の[gold]デシベル[/gold]を得る。",
+
+
+
+
+
+
+
+
+
+	"HOLLOW_EXINGYILAI_POWER.title": "悪性依存",
+	"HOLLOW_EXINGYILAI_POWER.description": "ターン終了時、[gold]筋力[/gold]を{Amount}得て、{Amount}*6のダメージを受ける。",
+
+	"HOLLOW_JISHENGYIJUN_POWER.title": "寄生異菌",
+	"HOLLOW_JISHENGYIJUN_POWER.description": "ターン開始時、HPが50%より多い場合、[gold]弱体[/gold]を{Amount}層得る。HPが50%未満の場合、[gold]筋力[/gold]と[gold]敏捷[/gold]を{Amount}得る。",
+
+	"HOLLOW_JUWUKONGJU_POWER.title": "巨物恐怖",
+	"HOLLOW_JUWUKONGJU_POWER.description": "1層につき、エリートとボスの与えるダメージ+25%、敵に与えるダメージ+20%。",
+
+	"HOLLOW_TANLANWUDU_POWER.title": "貪欲無度",
+	"HOLLOW_TANLANWUDU_POWER.description": "敵にダメージを与えるたびに、{Amount}[gold]ゴールド[/gold]を獲得し、{Amount}のダメージを受ける。",
+
+	"HOLLOW_ZHIJUETONGHUA_POWER.title": "知覚同化",
+	"HOLLOW_ZHIJUETONGHUA_POWER.description": "スキルカードを使用するたびに、{Amount}のダメージを受ける。"
+}

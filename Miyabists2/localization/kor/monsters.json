@@ -1,0 +1,44 @@
+{
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.name": "호시미 미야비 (환영)",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.BASIC_ATTACK.title": "탐색 공격",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.BASIC_ATTACK.banter": "[jitter]이걸 받아라![/jitter]",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.HEAVY_ATTACK.title": "악, 즉참",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.MULTIHIT_ATTACK.title": "명잔설",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.POWER_UP.title": "강화",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.POWER_UP.banter": "[jitter]……[/jitter]",
+
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.name": "이현",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.START_MOVE.title": "기세",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.ATTACK_AND_DEFENCE.title": "공수겸비",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.HEAVY_ATTACK.title": "현천검무",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.POWER_UP.title": "축세",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.DEBUFF_ADD.title": "현명결",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.UNCLEAR_MOVE.title": "불명",
+
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.name": "호시미 미야비",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.BASIC_MOVE.title": "탐색 공격",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.EJIZHAN.title": "악, 즉참",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.MINGCANXUE.title": "명잔설",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.POWER_UP.title": "증강",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.DASH_ATTACK.title": "회피 반격",
+
+    "XIXIFU_BANGBOO.name": "시시후",
+    "XIXIFU_GET_MONEY.banter":"보스, 내가 찾았어.",
+    "XIXIFU_DAMAGE.banter":"보스, 내가 도와줄게!",
+    "XIXIFU_BLOCK.banter":"보스, 죽지 마!",
+    "XIXIFU_NOMOVE.banter":"보스, 아직 배 안 불러……",
+
+
+    "EOUS_BANGBOO.name": "이아이스",
+    "EXPLOREBOO_BANGBOO.name": "트레저부",
+    "SUMOBOO_BANGBOO.name": "점프부",
+    "OVERTIMEBOO_BANGBOO.name": "야근부",
+    "LUCKYBOO_BANGBOO.name": "머니부",
+    "SHARKBOO_BANGBOO.name": "샤크부",
+    "AGENT_BANGBOO.name": "걸리버 요원",
+    "EXCALIBOO_BANGBOO.name": "엑스칼리부",
+    "PAPERBOO_BANGBOO.name": "페이퍼부",
+    "MAGNETIBOO_BANGBOO.name": "마그네틱부",
+
+    "ONE_DENNYBOO_BANGBOO.name": "원코인부"
+}

@@ -1,0 +1,170 @@
+{
+	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.title": "妖刀・無尾",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "戦闘開始時に[blue]3[/blue]ポイントの[gold]落霜[/gold]を獲得する。カードを使用するたびに[gold]デシベル[/gold]を[blue]1[/blue]獲得し、[gold]デシベル[/gold]が[blue]30[/blue]に達すると[gold]終結スキル[/gold]を獲得する",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.flavor": "とてもとても硬い刀",
+
+	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.title": "妖刀解放",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "戦闘開始時に[blue]3[/blue]ポイントの[gold]落霜[/gold]を獲得する。カードを使用するたびに[gold]デシベル[/gold]を[blue]1[/blue]獲得し、[gold]デシベル[/gold]が[blue]30[/blue]に達すると[gold]終結スキル[/gold]を獲得する；戦闘開始時、[red]妖刀解放[/red]を1枚手札に加える",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.title": "鏡花匿影",
+  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.description": "各戦闘で初めて攻撃を受ける前に、[gold]極限視域[/gold]を1枚自動的に使用する",
+  	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.flavor": "閃",
+
+	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.title": "霜炎烈灼",
+  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.description": "[gold]霜灼[/gold]の発動後も[gold]烈霜蓄積値[/gold]を蓄積できるようになり、[gold]氷炎[/gold]によるダメージ増幅の上限が[blue]100%[/blue]になる",
+  	"MIYABISTS2_RELIC_SHUANGYAN_LIEZHUO_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.title": "霰落星殿",
+  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.description": "戦闘に勝利するたびにカウントを獲得する：通常の敵はカウント+[blue]1[/blue]、エリートはカウント+[blue]2[/blue]、ボスはカウント+[blue]3[/blue]。累計[blue]7[/blue]に達すると、戦闘開始時に[gold]武の極致[/gold]を1枚手札に加える。累計[blue]15[/blue]に達すると、代わりに[gold]罪悪を斬り尽くす[/gold]を1枚加えるようになる",
+  	"MIYABISTS2_RELIC_SANLUO_XINGDIAN_RELIC.flavor": "「修行にとても向いていると思う…私がこれと同じ大きさになれれば、の話だが。」",
+
+	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.title": "六課の徽章",
+  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.description": "戦闘開始時に[blue]6[/blue]ポイントの[gold]支援ポイント[/gold]を獲得する",
+  	"MIYABISTS2_RELIC_SECTION_SIX_RELIC.flavor": "とてもとてもいい課",
+
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.title": "絶境を超える志",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.description": "HPが[blue]80%[/blue]より高い時、与えるダメージが[red]50%[/red]低下する；HPが[blue]50%[/blue]を下回ると、与えるダメージが[blue]20%[/blue]増加する；HPが[blue]20%[/blue]を下回ると、与えるダメージが[blue]50%[/blue]増加する",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "絶境の中で咲き誇る意志",
+
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.title": "養気の香嚢",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "[blue]3[/blue]ターンごとに[gold]デシベル[/gold]を[blue]{ADD:diff()}[/blue]獲得し、デシベルの上限が[blue]{MAX:diff()}[/blue]になる",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.flavor": "神秘的な気配を宿した香嚢。安定してエネルギーを蓄えることができる",
+
+
+
+
+	"MIYABISTS2_RELIC_CHOUKA_RELIC.title": "暗号化マスターテープ",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC.description": "休憩所でガチャが引けるようになった！戦闘終了のたびに、無料ガチャ回数を[blue]1[/blue]回獲得する\\n現在の心象映画：[gold]{CINIMA:diff()}[/gold]\\n現在の無料ガチャ回数：[blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]戦闘開始時、霜月の構えを2スタック獲得[/color][/s]\\n[s][color=gray]戦闘開始時、吐納法を3スタック獲得[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を4獲得[/color][/s]\\n[s][color=gray]戦闘開始時、亀裂を2スタック獲得[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]戦闘開始時、天資卓越を2スタック獲得[/color][/s]|戦闘開始時、[color=gold]霜月の構え[/color]を2スタック獲得\\n[s][color=gray]戦闘開始時、吐納法を3スタック獲得[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を4獲得[/color][/s]\\n[s][color=gray]戦闘開始時、亀裂を2スタック獲得[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]戦闘開始時、天資卓越を2スタック獲得[/color][/s]|戦闘開始時、[color=gold]霜月の構え[/color]を2スタック獲得\\n戦闘開始時、[color=gold]吐納法[/color]を3スタック獲得\\n[s][color=gray]戦闘開始時、筋力を4獲得[/color][/s]\\n[s][color=gray]戦闘開始時、亀裂を2スタック獲得[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]戦闘開始時、天資卓越を2スタック獲得[/color][/s]|戦闘開始時、[color=gold]霜月の構え[/color]を2スタック獲得\\n戦闘開始時、[color=gold]吐納法[/color]を3スタック獲得\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n[s][color=gray]戦闘開始時、亀裂を2スタック獲得[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]戦闘開始時、天資卓越を2スタック獲得[/color][/s]|戦闘開始時、[color=gold]霜月の構え[/color]を2スタック獲得\\n戦闘開始時、[color=gold]吐納法[/color]を3スタック獲得\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n戦闘開始時、[color=gold]亀裂[/color]を2スタック獲得\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]戦闘開始時、天資卓越を2スタック獲得[/color][/s]|戦闘開始時、[color=gold]霜月の構え[/color]を2スタック獲得\\n戦闘開始時、[color=gold]吐納法[/color]を3スタック獲得\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n戦闘開始時、[color=gold]亀裂[/color]を2スタック獲得\\n戦闘開始時、[color=gold]筋力[/color]を6獲得\\n[s][color=gray]戦闘開始時、天資卓越を2スタック獲得[/color][/s]|戦闘開始時、[color=gold]霜月の構え[/color]を2スタック獲得\\n戦闘開始時、[color=gold]吐納法[/color]を3スタック獲得\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n戦闘開始時、[color=gold]亀裂[/color]を2スタック獲得\\n戦闘開始時、[color=gold]筋力[/color]を6獲得\\n戦闘開始時、[color=gold]天資卓越[/color]を2スタック獲得|何か問題が起きたみたいだX(}",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC.flavor": "一か八か、自転車がバイクに化ける！",
+
+
+
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.title": "ザンギョウブー",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.description": "ターン開始時に[gold]ザンギョウブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC.flavor": "社畜ブー",
+
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC.title": "ペーパーブー",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.description": "ターン開始時に[gold]ペーパーブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC.flavor": "守ってあげる！",
+
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC.title": "シャークブー",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.description": "ターン開始時に[gold]シャークブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC.flavor": "起動中！",
+
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.title": "エクスカリブー",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.description": "ターン開始時に[gold]エクスカリブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC.flavor": "もうすぐできるよ！",
+
+	"MIYABISTS2_RELIC_AGENT_RELIC.title": "エージェント・ガリバー",
+  	"MIYABISTS2_RELIC_AGENT_RELIC.description": "ターン開始時に[gold]エージェント・ガリバー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_AGENT_RELIC.flavor": "FBI, OPEN THE DOOR!",
+
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.title": "ラッキーブー",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.description": "ターン開始時に[gold]ラッキーブー[/gold]を召喚する。低確率で[gold]ワンデニーブー[/gold]を召喚することがある。",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC.flavor": "本当に福を招いてくれるの？",
+
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.title": "エクスプロアブー",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.description": "ターン開始時に[gold]エクスプロアブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC.flavor": "大金持ちになるぞ！",
+
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC.title": "スモウブー",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.description": "ターン開始時に[gold]スモウブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC.flavor": "離陸。",
+
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.title": "イーアス",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.description": "ターン開始時に[gold]イーアス[/gold]を召喚する。次の階の部屋を選ぶ際、[blue]{Rooms:diff()}[/blue]回まで現在のルートを無視して選ぶことができる。",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC.flavor": "最高のイーアス",
+
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.title": "マグネティブー",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.description": "ターン開始時に[gold]マグネティブー[/gold]を召喚する。",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC.flavor": "磁力全開！",
+
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.title": "シシフ",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.description": "ターン開始時に[gold]シシフ[/gold]を召喚する。",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC.flavor": "これは何のボンプ？",
+
+
+
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.title": "ザンギョウブー",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]ザンギョウブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_YIXUAN.flavor": "社畜ブー",
+
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.title": "ペーパーブー",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]ペーパーブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_YIXUAN.flavor": "守ってあげる！",
+
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.title": "シャークブー",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]シャークブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_YIXUAN.flavor": "起動中！",
+
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.title": "エクスカリブー",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]エクスカリブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_YIXUAN.flavor": "もうすぐできるよ！",
+
+	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.title": "エージェント・ガリバー",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.description": "ターン開始時に[gold]エージェント・ガリバー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_YIXUAN.flavor": "FBI, OPEN THE DOOR!",
+
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.title": "ラッキーブー",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]ラッキーブー[/gold]を召喚する。低確率で[gold]ワンデニーブー[/gold]を召喚することがある。",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_YIXUAN.flavor": "本当に福を招いてくれるの？",
+
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.title": "エクスプロアブー",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]エクスプロアブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_YIXUAN.flavor": "大金持ちになるぞ！",
+
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.title": "スモウブー",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]スモウブー[/gold]を召喚する。",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_YIXUAN.flavor": "離陸。",
+
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.title": "イーアス",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]イーアス[/gold]を召喚する。次の階の部屋を選ぶ際、[blue]{Rooms:diff()}[/blue]回まで現在のルートを無視して選ぶことができる。",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_YIXUAN.flavor": "最高のイーアス",
+
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.title": "マグネティブー",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.description": "ターン開始時に[gold]マグネティブー[/gold]を召喚する。",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_YIXUAN.flavor": "磁力全開！",
+
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.title": "シシフ",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.description": "ターン開始時に[gold]シシフ[/gold]を召喚する。",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_YIXUAN.flavor": "これは何のボンプ？",
+
+
+
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.title": "絶境を超える志",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.description": "HPが[blue]80%[/blue]より高い時、与えるダメージが[red]50%[/red]低下する；HPが[blue]50%[/blue]を下回ると、与えるダメージが[blue]20%[/blue]増加する；HPが[blue]20%[/blue]を下回ると、与えるダメージが[blue]50%[/blue]増加する",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.flavor": "絶境の中で咲き誇る意志",
+
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.title": "養気の香嚢",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "[blue]3[/blue]ターンごとに[gold]デシベル[/gold]を[blue]{ADD:diff()}[/blue]獲得し、デシベルの上限が[blue]{MAX:diff()}[/blue]になる",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.flavor": "神秘的な気配を宿した香嚢。安定してエネルギーを蓄えることができる",
+
+	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.title": "暗号化マスターテープ",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.description": "休憩所でガチャが引けるようになった！戦闘終了のたびに、無料ガチャ回数を[blue]1[/blue]回獲得する\\n現在の心象映画：[gold]{CINIMA:diff()}[/gold]\\n現在の無料ガチャ回数：[blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]戦闘開始時、符法千重を1枚手札に加える[/color][/s]\\n[s][color=gray]符法千重を使用した後、符法千重・破を1枚手札に加える[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を4獲得[/color][/s]\\n[s][color=gray]戦闘開始時、すべての敵に伏魔を1スタック付与[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]青溟雲影を使用した後、符法千重を1枚手札に加える。[/color][/s]|戦闘開始時、[color=gold]符法千重[/color]を1枚手札に加える\\n[s][color=gray]符法千重を使用した後、符法千重・破を1枚手札に加える[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を4獲得[/color][/s]\\n[s][color=gray]戦闘開始時、すべての敵に伏魔を1スタック付与[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]青溟雲影を使用した後、符法千重を1枚手札に加える。[/color][/s]|戦闘開始時、[color=gold]符法千重[/color]を1枚手札に加える\\n[color=gold]符法千重[/color]を使用した後、[color=gold]符法千重・破[/color]を1枚手札に加える\\n[s][color=gray]戦闘開始時、筋力を4獲得[/color][/s]\\n[s][color=gray]戦闘開始時、すべての敵に伏魔を1スタック付与[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]青溟雲影を使用した後、符法千重を1枚手札に加える。[/color][/s]|戦闘開始時、[color=gold]符法千重[/color]を1枚手札に加える\\n[color=gold]符法千重[/color]を使用した後、[color=gold]符法千重・破[/color]を1枚手札に加える\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n[s][color=gray]戦闘開始時、すべての敵に伏魔を1スタック付与[/color][/s]\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]青溟雲影を使用した後、符法千重を1枚手札に加える。[/color][/s]|戦闘開始時、[color=gold]符法千重[/color]を1枚手札に加える\\n[color=gold]符法千重[/color]を使用した後、[color=gold]符法千重・破[/color]を1枚手札に加える\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n戦闘開始時、すべての敵に[color=gold]伏魔[/color]を1スタック付与\\n[s][color=gray]戦闘開始時、筋力を6獲得[/color][/s]\\n[s][color=gray]青溟雲影を使用した後、符法千重を1枚手札に加える。[/color][/s]|戦闘開始時、[color=gold]符法千重[/color]を1枚手札に加える\\n[color=gold]符法千重[/color]を使用した後、[color=gold]符法千重・破[/color]を1枚手札に加える\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n戦闘開始時、すべての敵に[color=gold]伏魔[/color]を1スタック付与\\n戦闘開始時、[color=gold]筋力[/color]を6獲得\\n[s][color=gray]青溟雲影を使用した後、符法千重を1枚手札に加える。[/color][/s]|戦闘開始時、[color=gold]符法千重[/color]を1枚手札に加える\\n[color=gold]符法千重[/color]を使用した後、[color=gold]符法千重・破[/color]を1枚手札に加える\\n戦闘開始時、[color=gold]筋力[/color]を4獲得\\n戦闘開始時、すべての敵に[color=gold]伏魔[/color]を1スタック付与\\n戦闘開始時、[color=gold]筋力[/color]を6獲得\\n[color=gold]青溟雲影[/color]を使用した後、[color=gold]符法千重[/color]を1枚手札に加える|何か問題が起きたみたいだX(}",
+  	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.flavor": "一か八か、自転車がバイクに化ける！",
+
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.title": "雲巋山",
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.description": "戦闘開始時に6ポイントの支援ポイントを獲得する",
+	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.title": "青溟術法",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "戦闘開始時にすべての[gold]閃能[/gold]を回復する。カードを使用するたびに[gold]デシベル[/gold]を[blue]1[/blue]獲得し、[gold]デシベル[/gold]が[blue]30[/blue]に達すると[gold]終結スキル[/gold]を獲得する",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "青溟鳥",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "戦闘開始時にすべての[gold]閃能[/gold]を回復する。カードを使用するたびに[gold]デシベル[/gold]を[blue]1[/blue]獲得し、[gold]デシベル[/gold]が[blue]30[/blue]に達すると[gold]終結スキル[/gold]を獲得する\\nHPを失うたびに、[gold]活力[/gold]を{Vigor}ポイント獲得する、[gold]トゲ[/gold]を{Thorns}スタック獲得する、すべての敵に[gold]術法値[/gold]を{Shufa}スタック付与する、のうちいずれかの効果がランダムに発動する。\\n右クリック：最大HPの5%分のHPを失い、発動する効果を1つ選択できる。",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.title": "青溟籠舎",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "各戦闘開始時、前の戦闘終了時に所持していたプラス能力とそのスタック数のうち、ランダムに[blue]{Get}[/blue]個を獲得する（[gold]閃能[/gold]と[gold]支援ポイント[/gold]は含まない）。累計で[blue]100%[/blue]分のHPダメージを受けるごとに、さらに[blue]1[/blue]個追加で獲得する。\\n現在の累計HP喪失率：[blue]{Record}%[/blue]。",
+	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": "川の流れは変わりやすく、古い夢は消え難い",
+
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.title": "童話ノート",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.description": "通常戦闘の2ターン目終了時、またはエリート戦闘の4ターン目終了時に、[gold]長夜詩篇[/gold]を1枚手札に加える。\\n右クリック：記録したモンスターを戦場に加える。\\n現在記録中のモンスター：[gold]{Monster}[/gold]。\\nステータスカードを追加するモンスターは加えないでください。ゲームがフリーズする原因になります！",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.flavor": "みんなノートに描いておいたの——今なら、杖をひと振りするだけで、みんな呼び出せるんだから！",
+
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "童話ノート",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "通常戦闘の2ターン目終了時、またはエリート戦闘の4ターン目終了時に、[gold]長夜詩篇[/gold]を1枚手札に加える。\\n右クリック：記録したモンスターを戦場に加える。\\n現在記録中のモンスター：[gold]{Monster}[/gold]。\\nステータスカードを追加するモンスターは加えないでください。ゲームがフリーズする原因になります！",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "みんなノートに描いておいたの——今なら、杖をひと振りするだけで、みんな呼び出せるんだから！"
+}

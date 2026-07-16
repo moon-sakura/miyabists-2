@@ -1,0 +1,101 @@
+{
+	"MIYABISTS2.mod_title" : "호시미 미야비 모드 설정",
+
+	"MIYABISTS2-COMBAT_CONFIG.title" : "전투 설정",
+
+	"MIYABISTS2-COMBAT_HARD_SELECTED.title" : "도전 난이도",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.title" : "난이도 선택",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.hover.desc" : "난이도를 올리면 [gold]추가 버프[/gold]를 획득합니다. 이는 고행이자 수행입니다.\\n[gold]1. 안티몬급[/gold]: 적 +10% 생명력\\n[gold]2. 아연급[/gold]: 매 막 시작 시, 무작위 카드 1장을 [red]강등[/red]\\n[gold]3. 주석급[/gold]: 첫 번째 사용 카드 [red]비용 +1[/red]\\n[gold]4. 망간급[/gold]: 전투 시작 시, 적이 힘 1을 획득하고 자신은 힘 1을 잃음\\n[gold]5. 카드뮴급[/gold]: 적 +20% 생명력\\n[gold]6. 니켈급[/gold]: 처음 3턴 동안 [red]카드 1장 덜 뽑기[/red]\\n[gold]7. 구리급[/gold]: 적이 사망 시 6의 피해를 줌\\n[gold]8. 비스무트급[/gold]: 적 +30% 생명력, 추가로 힘 1 획득\\n[gold]9. 납급[/gold]: 새로운 막 진입 시 덱에 무작위 [red]저주[/red] 1장 추가\\n[gold]10. 수은급[/gold]: 적이 처음으로 치명적 피해를 받기 전에 [gold]완충[/gold] 1중첩과 [gold]힘[/gold] 2를 획득하고 생명력 30% 회복",
+
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Zero" : "무등급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sb" : "1. 안티몬급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Zn" : "2. 아연급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Sn" : "3. 주석급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Mn" : "4. 망간급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cd" : "5. 카드뮴급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Ni" : "6. 니켈급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Cu" : "7. 구리급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Bi" : "8. 비스무트급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Pb" : "9. 납급",
+	"MIYABISTS2-COMBAT_HARD_SELECTED.Hg" : "10. 수은급",
+
+
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.title" : "호시미 미야비 특수 도전",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.title" : "특수 도전 선택",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.hover.desc" : "다른 특수 도전을 선택하여 도전합니다.\\n[gold]기본[/gold]: 변화 없음\\n[gold]방부 당가[/gold]: 시작 덱이 방부 관련 덱으로 변경\\n[gold]봉군 집결[/gold]: 시작 덱에 강화된 [gold]봉군 집결[/gold] 1장 추가\\n[gold]에테르 기록자[/gold]: 게임 시작 시 [gold]동화 수첩[/gold] 1개 획득\\n[gold]그레이스의 역습[/gold]: 시작 덱이 그레이스 덱으로 변경",
+
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Default" : "기본 덱",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.AllBangboo" : "방부 당가",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.BeeGroup" : "봉군 집결",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Lucia" : "에테르 기록자",
+	"MIYABISTS2-MIYABI_FUN_PILE_SELECTED.Grace" : "그레이스의 역습",
+
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.title" : "이현 특수 도전",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.title" : "특수 도전 선택",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.hover.desc" : "다른 특수 도전을 선택하여 도전합니다.\\n[gold]기본[/gold]: 변화 없음\\n[gold]방부 당가[/gold]: 시작 덱이 방부 관련 덱으로 변경\\n[gold]봉군 집결[/gold]: 시작 덱에 강화된 [gold]봉군 집결[/gold] 1장 추가\\n[gold]에테르 기록자[/gold]: 게임 시작 시 [gold]동화 수첩[/gold] 1개 획득",
+
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Default" : "기본 덱",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.AllBangboo" : "방부 당가",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.BeeGroup" : "봉군 집결",
+	"MIYABISTS2-YIXUAN_FUN_PILE_SELECTED.Lucia" : "에테르 기록자",
+
+
+
+	"MIYABISTS2-MIYABI_ENEMIES_STRONGER.title" : "모드 적 강화",
+
+	"MIYABISTS2-MONSTER_HP_MAX.title" : "적 최대 생명력",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.title" : "적 최대 생명력 배율",
+	"MIYABISTS2-MONSTER_HP_MAX.hover.desc" : "적 최대 생명력 배율, 1x는 정상 생명력입니다. 이는 고행이자 수행입니다.",
+
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.title" : "호시미 미야비 피해 배율",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.title" : "피해 배율",
+	"MIYABISTS2-DAMAGE_DEALT_LIMIT.hover.desc" : "호시미 미야비가 적에게 주는 피해, 1x는 정상 피해입니다. 이는 고행이자 수행입니다.",
+
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.title" : "호시미 미야비 피격 배율",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.title" : "피격 배율",
+	"MIYABISTS2-DAMAGE_TAKEN_MULTIPLIER.hover.desc" : "호시미 미야비가 적에게 받는 피해 배율, 1x는 정상 피해입니다. 이는 고행이자 수행입니다.",
+
+	"MIYABISTS2-CHANGE_TO_ALL_PLAYERS.title" : "전투 설정을 모든 캐릭터에 적용",
+
+	"MIYABISTS2-MIYABI_ENEMIES_APPEAR.title" : "모드 전용 적이 대전에 등장",
+
+	"MIYABISTS2-ELSE_CONFIG.title" : "기타 설정",
+
+	"MIYABISTS2-MIYABI_PANEL_OPEN.title" : "캐릭터 선택 화면 패널 활성화",
+
+	"MIYABISTS2-SHOW_SAME_RELIC.title" : "중복 유물 표시",
+
+	"MIYABISTS2-MIYABI_CONFIG.title" : "호시미 미야비 관련 설정",
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "호시미 미야비 전투 스킨 옵션",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.title" : "호시미 미야비 전투 스킨",
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.hover.desc" : "다른 설정을 선택하여 다른 스킨을 사용합니다.",
+
+	"MIYABISTS2-SHOP_SELECTED_SLOT.title" : "호시미 미야비 상점 스킨 옵션",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.title" : "호시미 미야비 상점 스킨",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.hover.desc" : "다른 설정을 선택하여 다른 스킨을 사용합니다.",
+
+	"MIYABISTS2-REST_SELECTED_SLOT.title" : "호시미 미야비 휴식 스킨 옵션",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.title" : "호시미 미야비 휴식 스킨",
+	"MIYABISTS2-REST_SELECTED_SLOT.hover.desc" : "다른 설정을 선택하여 다른 스킨을 사용합니다.",
+
+	"MIYABISTS2-YIXUAN_CONFIG.title" : "이현 관련 설정",
+
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.title" : "이현 전투 스킨 옵션",
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.hover.title" : "이현 전투 스킨",
+	"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.hover.desc" : "다른 설정을 선택하여 다른 스킨을 사용합니다.",
+
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.title" : "이현 상점 스킨 옵션",
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.hover.title" : "이현 상점 스킨",
+	"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.hover.desc" : "다른 설정을 선택하여 다른 스킨을 사용합니다.",
+
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.title" : "이현 휴식 스킨 옵션",
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.hover.title" : "이현 휴식 스킨",
+	"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.hover.desc" : "다른 설정을 선택하여 다른 스킨을 사용합니다.",
+
+
+	"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot0" : "열로탁상",
+	"MIYABISTS2-SHOP_SELECTED_SLOT.Slot0" : "열로탁상",
+	"MIYABISTS2-REST_SELECTED_SLOT.Slot0" : "소아"
+
+}

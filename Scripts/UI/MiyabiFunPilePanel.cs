@@ -166,6 +166,6 @@ public partial class MiyabiFunPilePanel : Control
         _prevButton.Disabled = _options.Length <= 1 || _currentIndex <= 0;
         _nextButton.Disabled = _options.Length <= 1 || _currentIndex >= MaxIndex;
 
-        _descriptionLabel.Text = $"[color=#FFD700]{name}[/color]：{desc}";
+        _descriptionLabel.Text = desc;
     }
 }

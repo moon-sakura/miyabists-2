@@ -1,0 +1,44 @@
+{
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.name": "星見雅（幻影）",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.BASIC_ATTACK.title": "牽制攻撃",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.BASIC_ATTACK.banter": "[jitter]この一撃、受けてみろ！[/jitter]",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.HEAVY_ATTACK.title": "悪・即・斬",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.MULTIHIT_ATTACK.title": "名残雪",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.POWER_UP.title": "強化",
+    "MIYABISTS2_MONSTER_MIYABI_GHOST_ENEMY.moves.POWER_UP.banter": "[jitter]……[/jitter]",
+
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.name": "儀玄",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.START_MOVE.title": "構え",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.ATTACK_AND_DEFENCE.title": "攻守兼備",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.HEAVY_ATTACK.title": "玄天剣舞",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.POWER_UP.title": "力溜め",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.DEBUFF_ADD.title": "玄冥訣",
+    "MIYABISTS2_MONSTER_YIXUAN_ENEMY.moves.UNCLEAR_MOVE.title": "不明",
+
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.name": "星見雅",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.BASIC_MOVE.title": "牽制攻撃",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.EJIZHAN.title": "悪・即・斬",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.MINGCANXUE.title": "名残雪",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.POWER_UP.title": "増強",
+    "MIYABISTS2_MONSTER_MIYABI_BOSS.moves.DASH_ATTACK.title": "回避反撃",
+
+    "XIXIFU_BANGBOO.name": "シシフ",
+    "XIXIFU_GET_MONEY.banter":"ボス、こんなの見つけたよ。",
+    "XIXIFU_DAMAGE.banter":"ボス、手伝うよ！",
+    "XIXIFU_BLOCK.banter":"ボス、死なないで！",
+    "XIXIFU_NOMOVE.banter":"ボス、まだお腹いっぱいじゃない……",
+
+
+    "EOUS_BANGBOO.name": "イーアス",
+    "EXPLOREBOO_BANGBOO.name": "エクスプロアブー",
+    "SUMOBOO_BANGBOO.name": "スモウブー",
+    "OVERTIMEBOO_BANGBOO.name": "ザンギョウブー",
+    "LUCKYBOO_BANGBOO.name": "ラッキーブー",
+    "SHARKBOO_BANGBOO.name": "シャークブー",
+    "AGENT_BANGBOO.name": "エージェント・ガリバー",
+    "EXCALIBOO_BANGBOO.name": "エクスカリブー",
+    "PAPERBOO_BANGBOO.name": "ペーパーブー",
+    "MAGNETIBOO_BANGBOO.name": "マグネティブー",
+
+    "ONE_DENNYBOO_BANGBOO.name": "ワンデニーブー"
+}

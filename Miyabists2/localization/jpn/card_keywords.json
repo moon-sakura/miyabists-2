@@ -1,0 +1,23 @@
+{
+	"MIYABISTS2_KEYWORD_LIE_SHUANG.description": "ダメージ量と同じ数の[gold]烈霜蓄積値[/gold]を敵に与える",
+    "MIYABISTS2_KEYWORD_LIE_SHUANG.title": "烈霜",
+
+	"MIYABISTS2_KEYWORD_XUANMO.description": "命破ダメージに属し、[gold]防御不可[/gold]のダメージを与える。使用後、閃エネルギーを回復する。",
+    "MIYABISTS2_KEYWORD_XUANMO.title": "玄墨",
+
+	"MIYABISTS2_KEYWORD_MINGPO.description": "貫通ダメージタイプで、[gold]防御不可[/gold]のダメージを与える。",
+    "MIYABISTS2_KEYWORD_MINGPO.title": "命破",
+
+	"MIYABISTS2_KEYWORD_EXHAUST_X.description": "X回使用した後、廃棄する。",
+    "MIYABISTS2_KEYWORD_EXHAUST_X.title": "廃棄X",
+
+	"MIYABISTS2_KEYWORD_FRIENDS.description": "オレたちの絆を舐めるなよ、コラ",
+    "MIYABISTS2_KEYWORD_FRIENDS.title": "仲間",
+
+	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.description": "異界からの祝福",
+	"MIYABISTS2_KEYWORD_OTHER_WORLD_FRIENDS.title": "異界の仲間",
+
+	"MIYABISTS2_KEYWORD_END_SKILL.description": "とてもとても強いスキル",
+    "MIYABISTS2_KEYWORD_END_SKILL.title": "終結スキル"
+
+}
