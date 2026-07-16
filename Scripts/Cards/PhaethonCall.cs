@@ -44,6 +44,7 @@ namespace Miyabists2.Scripts.Cards
             if (chosen != null)
             {
                 //cardModel.SetToFreeThisTurn();
+                chosen.EnergyCost.AddThisTurn(-1);
                 await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner);
             }
         }

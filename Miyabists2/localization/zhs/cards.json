@@ -164,7 +164,7 @@
     "MIYABISTS2_CARD_NO_TAIL_FULL.description": "你能[jitter][gold]驾驭[/gold][/jitter]{IfUpgraded:show:[aqua]它[/aqua]|[red]它[/red]}吗？",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL.title": "法厄同的呼朋引伴",
-    "MIYABISTS2_CARD_PHAETHON_CALL.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡\\n(包括[gold]异界伙伴[/gold]！)",
+    "MIYABISTS2_CARD_PHAETHON_CALL.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡，本回合费用减少1\\n(包括[gold]异界伙伴[/gold]！)",
 
 	"MIYABISTS2_CARD_BIG_EJIZHAN.title": "大份鹅鸡斩",
     "MIYABISTS2_CARD_BIG_EJIZHAN.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，[gold]属性积蓄[/gold]{ANOBUILD_POWER:diff()}，本回合获得[blue]{Strength:diff()}[/blue]点[gold]力量[/gold]\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外获得[blue]1[/blue]点[gold]力量[/gold]",
@@ -379,7 +379,7 @@
 	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.description": "造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}，给予[blue]1[/blue]回合[blue]35%[/blue][gold]失衡易伤[/gold]\\n在{WanGe:diff()}回合内，每回合开始时增加一张[gold]协奏狙杀[/gold]到手里\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张[gold]协奏狙杀[/gold]加入手卡",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.title": "法厄同的呼朋引伴",
-	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡\\n(包括[gold]异界伙伴[/gold]！)",
+	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.description": "从[blue]3[/blue]张[gold]伙伴[/gold]卡中选择一张加入手卡，本回合费用减少1\\n(包括[gold]异界伙伴[/gold]！)",
 
 	"MIYABISTS2_CARD_PRINCESS_YIXUAN.title": "超时空辉夜姬",
 	"MIYABISTS2_CARD_PRINCESS_YIXUAN.description": "来自超时空辉夜姬的祝福",
