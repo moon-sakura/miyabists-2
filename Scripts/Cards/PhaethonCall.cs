@@ -15,8 +15,11 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-        internal class PhaethonCall : MiyabiCardBase
+    internal class PhaethonCall : MiyabiCardBase
     {
+
+        protected override string ArtPath => $"res://images/cards/phaethonCall.png";
+
         public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>

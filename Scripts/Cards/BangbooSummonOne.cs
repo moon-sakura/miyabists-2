@@ -17,9 +17,9 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-        internal class BangbooSummonOne : MiyabiCardBase
+    internal class BangbooSummonOne : MiyabiCardBase
     {
-        //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
+        protected override string ArtPath => $"res://images/cards/bangboo1.png";
 
         public BangbooSummonOne() : base(0,CardType.Skill ,CardRarity.Uncommon,TargetType.Self) { }
 

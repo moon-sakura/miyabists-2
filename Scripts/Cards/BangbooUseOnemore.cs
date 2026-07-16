@@ -17,9 +17,9 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-        internal class BangbooUseOnemore : MiyabiCardBase, IModRightClickableCard
+    internal class BangbooUseOnemore : MiyabiCardBase, IModRightClickableCard
     {
-        //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
+        protected override string ArtPath => $"res://images/cards/bangbooBrust.png";
 
         public BangbooUseOnemore() : base(0, CardType.Skill, CardRarity.Uncommon, MinionTargetTypes.AnyMinion) { }
 

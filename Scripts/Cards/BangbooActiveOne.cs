@@ -20,7 +20,7 @@ namespace Miyabists2.Scripts.Cards
     [RegisterCard(typeof(MiyabiCardPool))]
     internal class BangbooActiveOne : MiyabiCardBase, IModRightClickableCard
     {
-        //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
+        protected override string ArtPath => $"res://images/cards/bangboochuji.png";
 
         public BangbooActiveOne() : base(0, CardType.Skill, CardRarity.Common, MinionTargetTypes.AnyMinion) { }
 

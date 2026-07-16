@@ -15,9 +15,9 @@ using Miyabists2.Scripts.Service;
 namespace Miyabists2.Scripts.Cards
 {
     [RegisterCard(typeof(MiyabiCardPool))]
-        internal class BangbooChargeAll : MiyabiCardBase
+    internal class BangbooChargeAll : MiyabiCardBase
     {
-        //protected override string ArtPath => $"res://images/cards/zhaojiaZhunbei.png";
+        protected override string ArtPath => $"res://images/cards/bangbooCharge.png";
 
         public BangbooChargeAll() : base(1, CardType.Skill, CardRarity.Common, TargetType.None) { }
 
