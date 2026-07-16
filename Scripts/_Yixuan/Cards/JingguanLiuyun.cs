@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override bool HasEnergyCostX => true;
 
-        //protected override string ArtPath => "res://images/_YiXuan/cards/jingguanLiuyun.png";
+        protected override string ArtPath => "res://images/_YiXuan/cards/jingguanliuyun.png";
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [

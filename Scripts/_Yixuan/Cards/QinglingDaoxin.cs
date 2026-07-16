@@ -27,7 +27,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
-        //protected override string ArtPath => "res://images/_YiXuan/cards/qinglingDaoxin.png";
+        protected override string ArtPath => "res://images/_YiXuan/cards/qinglingDaoxin.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("HpLossPercent", 15),

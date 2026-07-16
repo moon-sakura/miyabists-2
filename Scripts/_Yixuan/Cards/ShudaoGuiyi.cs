@@ -26,7 +26,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
-        //protected override string ArtPath => "res://images/_YiXuan/cards/shudaoGuiyi.png";
+        protected override string ArtPath => "res://images/_YiXuan/cards/shudaoGuiyi.png";
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [

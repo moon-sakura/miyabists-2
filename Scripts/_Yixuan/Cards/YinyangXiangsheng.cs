@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             CardKeyword.Exhaust,
         ];
 
-        //protected override string ArtPath => "res://images/_YiXuan/cards/yinyangXiangsheng.png";
+        protected override string ArtPath => "res://images/_YiXuan/cards/yinyangXiangsheng.png";
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [

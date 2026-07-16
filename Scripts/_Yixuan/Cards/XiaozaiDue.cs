@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         {
         }
 
-        //protected override string ArtPath => "res://images/_YiXuan/cards/xiaozaiDue.png";
+        protected override string ArtPath => "res://images/_YiXuan/cards/xiaozaiDue.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("CardsPerTrigger", 10),
