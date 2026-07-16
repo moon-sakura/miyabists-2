@@ -288,8 +288,8 @@
 	"QINGXIAO_TONGYOU_POWER.smartDescription": "At the start of each turn, gain [blue]{Vigor}[/blue] [gold]Vigor[/gold], [blue]{Thorns}[/blue] [gold]Thorns[/gold], and restore [blue]{Shanneng}[/blue] [gold]Flash Energy[/gold].",
 
 	"MITU_YESONG_POWER.title": "Lost Night Hymn",
-	"MITU_YESONG_POWER.description": "After playing a non-attack card, gain 2 Vigor.",
-	"MITU_YESONG_POWER.smartDescription": "[blue]{Amount}[/blue] turn(s) remaining. After playing a non-attack card, gain [blue]{Vigor:diff()}[/blue] [gold]Vigor[/gold].",
+	"MITU_YESONG_POWER.description": "After playing a non-attack card, gain 2 Vigor. Gain an extra 1 for each turn that has passed.",
+	"MITU_YESONG_POWER.smartDescription": "[blue]{Amount}[/blue] turn(s) remaining. After playing a non-attack card, gain [blue]{Vigor:diff()}[/blue] [gold]Vigor[/gold]. Gain an extra 1 for each turn that has passed.",
 
 	"TIESHAN_ZHENMAIKAO_POWER.title": "Mountain Pressing Pulse Shock",
 	"TIESHAN_ZHENMAIKAO_POWER.description": "Increases the damage of your next Fate Break damage cards.",

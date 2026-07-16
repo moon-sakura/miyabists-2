@@ -164,7 +164,7 @@
     "MIYABISTS2_CARD_NO_TAIL_FULL.description": "Can you [jitter][gold]control[/gold][/jitter] {IfUpgraded:show:[aqua]it[/aqua]|[red]it[/red]}?",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL.title": "Phaethon's Call",
-    "MIYABISTS2_CARD_PHAETHON_CALL.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Partner[/gold] cards and add it to your hand\\n(Including [gold]Otherworld Partners[/gold]!)",
+    "MIYABISTS2_CARD_PHAETHON_CALL.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Partner[/gold] cards and add it to your hand. Costs [blue]1[/blue] less this turn\\n(Including [gold]Otherworld Partners[/gold]!)",
 
 	"MIYABISTS2_CARD_BIG_EJIZHAN.title": "Big Goose-Chicken Slash",
     "MIYABISTS2_CARD_BIG_EJIZHAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. [gold]Anomaly Buildup[/gold]{ANOBUILD_POWER:diff()}. Gain [blue]{Strength:diff()}[/blue] [gold]Strength[/gold] this turn\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Gain an additional [blue]1[/blue] [gold]Strength[/gold]",
@@ -379,7 +379,7 @@
 	"MIYABISTS2_CARD_MINGFU_WANGE_YIXUAN.description": "Deal {Damage:diff()} damage. [gold]Daze[/gold]{DAZE_POWER:diff()}. Apply [blue]35%[/blue] [gold]Daze Vulnerability[/gold] for [blue]1[/blue] turn\\nFor {WanGe:diff()} turns, add a [gold]Concerto Snipe[/gold] to your hand at the start of each turn\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Add a [gold]Concerto Snipe[/gold] to your hand",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.title": "Phaethon's Call",
-	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Partner[/gold] cards and add it to your hand\\n(Including [gold]Otherworld Partners[/gold]!)",
+	"MIYABISTS2_CARD_PHAETHON_CALL_YIXUAN.description": "Choose [blue]1[/blue] of [blue]3[/blue] [gold]Partner[/gold] cards and add it to your hand. Costs [blue]1[/blue] less this turn\\n(Including [gold]Otherworld Partners[/gold]!)",
 
 	"MIYABISTS2_CARD_PRINCESS_YIXUAN.title": "Super-Temporal Princess Kaguya",
 	"MIYABISTS2_CARD_PRINCESS_YIXUAN.description": "A blessing from Super-Temporal Princess Kaguya",
@@ -449,7 +449,7 @@
 	"MIYABISTS2_CARD_CHUSUI_YIJI.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nRecover [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold]\\nEach time you consume [gold]Flash Energy[/gold], automatically play this card (wherever it is)",
 
 	"MIYABISTS2_CARD_QINGMING_ZHENJI.title": "Azure Quake Strike",
-	"MIYABISTS2_CARD_QINGMING_ZHENJI.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} [blue]{HitCount:diff()}[/blue] times. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]{SHUFA_POWER:diff()}[/blue] [gold]Technique Value[/gold]\\nWhile in hand, every [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold] consumed reduces its cost by [blue]1[/blue]",
+	"MIYABISTS2_CARD_QINGMING_ZHENJI.description": "Deal [orange]Dark Ink[/orange]{Damage:diff()} [blue]{HitCount:diff()}[/blue] times. [gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply {SHUFA_POWER:diff()} [gold]Technique Value[/gold]\\nWhile in hand, every [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold] consumed reduces its cost by [blue]1[/blue]",
 
 	"MIYABISTS2_CARD_MOHEN_HUAXING.title": "Ink Trace Manifestation",
 	"MIYABISTS2_CARD_MOHEN_HUAXING.description": "[gold]Plated Armor[/gold]{Block:diff()}\\n[gold]Choose[/gold]: Gain {THORNS_POWER:diff()} [gold]Thorns[/gold] or {VIGOR_POWER:diff()} [gold]Vigor[/gold]\\nRecover [blue]{SHANNENG_POWER:diff()}[/blue] [gold]Flash Energy[/gold]\\nIf the enemy has an Attack intent: your next [orange]Dark Ink[/orange] Attack card costs [blue]0[/blue]",
@@ -467,7 +467,7 @@
 	"MIYABISTS2_CARD_QINGMING_ZHENJI_PO.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nApply [blue]{SHUFA_POWER:diff()}[/blue] [gold]Technique Value[/gold]\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Apply [blue]10[/blue] [gold]Technique Value[/gold]",
 
 	"MIYABISTS2_CARD_XUANMO_XUNJI.title": "Dark Ink Swift Strike",
-	"MIYABISTS2_CARD_XUANMO_XUNJI.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain [blue]{VIGOR_POWER:diff()}[/blue] [gold]Vigor[/gold]\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain an additional [blue]{ExtraVigor:diff()}[/blue] [gold]Vigor[/gold]",
+	"MIYABISTS2_CARD_XUANMO_XUNJI.description": "[orange]Dark Ink[/orange]{Damage:diff()}\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nGain {VIGOR_POWER:diff()} [gold]Vigor[/gold]\\n[gold]Flash Energy[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: Gain an additional [blue]{ExtraVigor:diff()}[/blue] [gold]Vigor[/gold]",
 
 	"MIYABISTS2_CARD_JIE_FA.title" : "Borrowed Art",
 	"MIYABISTS2_CARD_JIE_FA.description":"Choose one:\\nConsume all [gold]Vigor[/gold] to gain {Percent:diff()}% of the amount consumed as [gold]Thorns[/gold]\\nConsume all [gold]Thorns[/gold] to gain {Percent:diff()}% of the amount consumed as [gold]Vigor[/gold].",
@@ -504,7 +504,7 @@
 	"MIYABISTS2_CARD_MIYABI_DUEL_YIXUAN.description": "Change the enemy's intent to: Deal [blue]1[/blue] damage [blue]4[/blue] times\\nGain {THORNS_POWER:diff()} [gold]Thorns[/gold]",
 
 	"MIYABISTS2_CARD_MITU_YESONG.title": "Lost Night Hymn",
-	"MIYABISTS2_CARD_MITU_YESONG.description": "For [blue]{Turns:diff()}[/blue] turns, after playing a non-Attack card, gain [blue]2[/blue] [gold]Vigor[/gold]\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore [blue]6[/blue] HP to all characters",
+	"MIYABISTS2_CARD_MITU_YESONG.description": "For [blue]{Turns:diff()}[/blue] turns, after playing a non-Attack card, gain [blue]2[/blue] [gold]Vigor[/gold], gain an extra [blue]1[/blue] for each turn that has passed\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Restore [blue]6[/blue] HP to all characters",
 
 	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.title": "Mountain Pressing Pulse Strike",
 	"MIYABISTS2_CARD_TIESHAN_ZHENMAIKAO.description": "Your next [blue]{MingpoCount:diff()}[/blue] [gold]Fate Break damage[/gold] cards deal [blue]+{MingpoBonus:diff()}%[/blue] damage\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Draw [blue]1[/blue] card. Your next Attack card costs [blue]-1[/blue]",
@@ -566,7 +566,7 @@
 	"MIYABISTS2_CARD_CHANG_YE_SHIPIAN.description": "Record 1 monster.",
 
 	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.title": "Quiet Cloud Watching",
-	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.description": "Activate X times: Randomly multiply one of your [gold]positive buffs[/gold] by {Multiplier:diff()}% (can repeat, excludes [gold]Flash Energy[/gold] and [gold]Support Points[/gold])\\n[gold]Exhaust[/gold]",
+	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.description": "Activate X times: Randomly multiply one of your [gold]positive buffs[/gold] by {Multiplier:diff()}% (excludes [gold]Flash Energy[/gold] and [gold]Support Points[/gold])",
 
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "Clear Spirit Heart",
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "Lose {HpLossPercent:diff()}% of your Max HP. Remove all [purple]Debuffs[/purple] from yourself",
