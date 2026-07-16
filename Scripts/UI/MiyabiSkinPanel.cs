@@ -32,6 +32,17 @@ public partial class MiyabiSkinPanel : Control
     private List<string> _previewImagePaths = new();
     private int _currentIndex;
     private SkinType _currentSkinType = SkinType.Combat;
+    private string _language = "eng";
+
+    public string Language
+    {
+        get => _language;
+        set
+        {
+            _language = MiyabiUILoc.NormalizeLang(value);
+            RefreshUILoc();
+        }
+    }
 
     // ===== 可配置属性 =====
 
@@ -174,6 +185,16 @@ public partial class MiyabiSkinPanel : Control
         _skinNameLabel.AddThemeColorOverride("font_color", new Color("afcdde"));
         _skinNameLabel.AddThemeFontSizeOverride("font_size", 14);
         AddChild(_skinNameLabel);
+    }
+
+    private void RefreshUILoc()
+    {
+        if (_combatTab != null)
+        {
+            _combatTab.Text = MiyabiUILoc.Get("skin_combat", _language);
+            _restTab.Text = MiyabiUILoc.Get("skin_rest", _language);
+            _shopTab.Text = MiyabiUILoc.Get("skin_shop", _language);
+        }
     }
 
     // ===== 标签样式 =====

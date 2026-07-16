@@ -18,6 +18,17 @@ public partial class MiyabiFunPilePanel : Control
 
     private int _currentIndex;
     private (string name, string desc)[] _options = Array.Empty<(string, string)>();
+    private string _language = "eng";
+
+    public string Language
+    {
+        get => _language;
+        set
+        {
+            _language = MiyabiUILoc.NormalizeLang(value);
+            RefreshUILoc();
+        }
+    }
 
     private int MaxIndex => _options.Length - 1;
 
@@ -63,7 +74,7 @@ public partial class MiyabiFunPilePanel : Control
         AddChild(_background);
 
         _titleLabel = new Label();
-        _titleLabel.Text = "特殊挑战";
+        _titleLabel.Text = MiyabiUILoc.Get("funp_title", _language);
         _titleLabel.Position = new Vector2(10, 8);
         _titleLabel.AddThemeColorOverride("font_color", Colors.White);
         _titleLabel.AddThemeFontSizeOverride("font_size", 16);
@@ -115,6 +126,13 @@ public partial class MiyabiFunPilePanel : Control
         if (currentIndex > MaxIndex) currentIndex = 0;
 
         _currentIndex = currentIndex;
+        RefreshDisplay();
+    }
+
+    private void RefreshUILoc()
+    {
+        if (_titleLabel != null)
+            _titleLabel.Text = MiyabiUILoc.Get("funp_title", _language);
         RefreshDisplay();
     }
 

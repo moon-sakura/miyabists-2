@@ -3,9 +3,11 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect;
 using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Char;
+using MegaCrit.Sts2.Core.Saves;
 using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
+using MegaCrit.Sts2.Core.Saves;
 
 namespace Miyabists2.Scripts.UI;
 
@@ -41,8 +43,13 @@ public static class MiyabiCharSelectSkinPatch
 
         bool showPanels = charType != CharType.None && MiyabiModConfig.MiyabiPanelOpen;
 
+        string language = SaveManager.Instance.SettingsSave.Language;
+
+        string language = SaveManager.Instance != null
+            ? MiyabiUILoc.NormalizeLang(SaveManager.Instance.SettingsSave.Language)
+            : "eng";
         GD.Print($"[MiyabiSkinPatch] Postfix | char={characterModel?.Id.Entry ?? "null"} "
-            + $"| charType={charType} | panelOpen={MiyabiModConfig.MiyabiPanelOpen} | show={showPanels}");
+            + $"| charType={charType} | lang={language} | panelOpen={MiyabiModConfig.MiyabiPanelOpen} | show={showPanels}");
 
         try
         {
@@ -52,6 +59,7 @@ public static class MiyabiCharSelectSkinPatch
 
                 // --- 进阶选项（共用） ---
                 var diffPanel = GetOrCreateDifficultyPanel(__instance);
+                diffPanel.Language = language;
                 if (!_diffHandlerWired)
                 {
                     diffPanel.LevelChanged += OnDifficultyChanged;
@@ -63,22 +71,24 @@ public static class MiyabiCharSelectSkinPatch
 
                 // --- 皮肤面板 ---
                 var skinPanel = GetOrCreateSkinPanel(__instance);
+                skinPanel.Language = language;
                 if (!_skinHandlerWired)
                 {
                     skinPanel.SkinChanged += OnSkinChanged;
                     skinPanel.SkinTypeChanged += OnSkinTypeChanged;
                     _skinHandlerWired = true;
                 }
-                LoadSkinData(skinPanel, _currentSkinType, charType);
+                LoadSkinData(skinPanel, _currentSkinType, charType, language);
 
                 // --- 特殊挑战（按角色分开） ---
                 var funPilePanel = GetOrCreateFunPilePanel(__instance);
+                funPilePanel.Language = language;
                 if (!_funPileHandlerWired)
                 {
                     funPilePanel.FunPileChanged += OnFunPileChanged;
                     _funPileHandlerWired = true;
                 }
-                LoadFunPileData(funPilePanel, charType);
+                LoadFunPileData(funPilePanel, charType, language);
             }
             else
             {
@@ -158,7 +168,7 @@ public static class MiyabiCharSelectSkinPatch
     {
         _currentSkinType = newType;
         if (_skinPanel == null || !GodotObject.IsInstanceValid(_skinPanel)) return;
-        LoadSkinData(_skinPanel, newType, _currentCharType);
+        LoadSkinData(_skinPanel, newType, _currentCharType, _skinPanel.Language);
     }
 
     private static void OnSkinChanged(int newIndex)
@@ -212,7 +222,7 @@ public static class MiyabiCharSelectSkinPatch
     // 皮肤数据加载
     // ============================================================
 
-    private static void LoadSkinData(MiyabiSkinPanel panel, SkinType skinType, CharType charType)
+    private static void LoadSkinData(MiyabiSkinPanel panel, SkinType skinType, CharType charType, string language)
     {
         int skinCount;
         string keyPrefix;
@@ -280,7 +290,7 @@ public static class MiyabiCharSelectSkinPatch
         for (int i = 0; i < skinCount; i++)
         {
             string dataKey = $"MIYABISTS2-{keyPrefix}_SELECTED_SLOT.Slot{i}";
-            string name = MiyabiSkinManager.skinDatas.TryGetValue(dataKey, out var n) ? n : $"{skinType} Skin {i}";
+            string name = MiyabiSkinManager.GetSkinName(dataKey, language);
             names.Add(name);
 
             if (MiyabiSkinManager.previewDatas.TryGetValue(dataKey, out var previewPath))
@@ -301,7 +311,7 @@ public static class MiyabiCharSelectSkinPatch
     // 特殊挑战数据加载（按角色分开）
     // ============================================================
 
-    private static void LoadFunPileData(MiyabiFunPilePanel panel, CharType charType)
+    private static void LoadFunPileData(MiyabiFunPilePanel panel, CharType charType, string language)
     {
         (string name, string desc)[] options;
         int currentIndex;
@@ -311,11 +321,11 @@ public static class MiyabiCharSelectSkinPatch
             case CharType.Miyabi:
                 options = new (string, string)[]
                 {
-                    ("默认", "无变化"),
-                    ("邦布当家", "初始卡组变为邦布相关卡组"),
-                    ("蜂群集结", "初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]"),
-                    ("以骸记录者", "游戏开始时获得一个[color=#FFD700]童话记事本[/color]"),
-                    ("格莉丝的逆袭", "初始卡组变为格莉丝卡组"),
+                    ("Default", MiyabiUILoc.Get("funp_miyabi_default", language)),
+                    ("Bangboo", MiyabiUILoc.Get("funp_miyabi_bangboo", language)),
+                    ("Swarm",  MiyabiUILoc.Get("funp_miyabi_bee", language)),
+                    ("Recorder", MiyabiUILoc.Get("funp_miyabi_recorder", language)),
+                    ("Grace",  MiyabiUILoc.Get("funp_miyabi_grace", language)),
                 };
                 currentIndex = (int)MiyabiModConfig.MiyabiFunPileSelected;
                 break;
@@ -323,10 +333,10 @@ public static class MiyabiCharSelectSkinPatch
             case CharType.Yixuan:
                 options = new (string, string)[]
                 {
-                    ("默认", "无变化"),
-                    ("邦布当家", "初始卡组变为邦布相关卡组"),
-                    ("蜂群集结", "初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]"),
-                    ("以骸记录者", "游戏开始时获得一个[color=#FFD700]童话记事本[/color]"),
+                    ("Default", MiyabiUILoc.Get("funp_yixuan_default", language)),
+                    ("Bangboo", MiyabiUILoc.Get("funp_yixuan_bangboo", language)),
+                    ("Swarm",  MiyabiUILoc.Get("funp_yixuan_bee", language)),
+                    ("Recorder", MiyabiUILoc.Get("funp_yixuan_recorder", language)),
                 };
                 currentIndex = (int)MiyabiModConfig.YixuanFunPileSelected;
                 break;

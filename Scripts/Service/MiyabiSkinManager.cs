@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Nodes.RestSite;
+using Miyabists2.Scripts.UI;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -24,6 +25,28 @@ namespace Miyabists2.Scripts.Service
         /// 皮肤预览图路径。Key 与 skinDatas 共用同一套键名。
         /// </summary>
         public static Dictionary<string, string> previewDatas = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 根据语言获取皮肤名称。优先取 {key}.{lang}，没有则回退到 {key}。
+        /// </summary>
+        public static string GetSkinName(string dataKey, string language)
+        {
+            string lang = MiyabiUILoc.NormalizeLang(language);
+            string langKey = $"{dataKey}.{lang}";
+            if (skinDatas.TryGetValue(langKey, out var name))
+                return name;
+            if (skinDatas.TryGetValue(dataKey, out name))
+                return name;
+            return dataKey;
+        }
+
+        private static void StoreLangNames(string key, string nameEng, string nameKor, string nameJpn, string nameZhs)
+        {
+            if (!string.IsNullOrEmpty(nameEng)) skinDatas[$"{key}.eng"] = nameEng;
+            if (!string.IsNullOrEmpty(nameKor)) skinDatas[$"{key}.kor"] = nameKor;
+            if (!string.IsNullOrEmpty(nameJpn)) skinDatas[$"{key}.jpn"] = nameJpn;
+            if (!string.IsNullOrEmpty(nameZhs)) skinDatas[$"{key}.zhs"] = nameZhs;
+        }
 
         static MiyabiSkinManager()
         {
@@ -48,64 +71,74 @@ namespace Miyabists2.Scripts.Service
             previewDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "res://images/charui/yiXuan.png";
         }
 
-        public static void RegisterCombatSkin(string name, string tscnPath, string previewPath = null)
+        public static void RegisterCombatSkin(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
         {
-            if (Miyabi.CombatSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
+            if (Miyabi.CombatSkinPaths.Count < MAX_SLOTS)
             {
                 Miyabi.CombatSkinPaths.Add(tscnPath);
                 tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
 
                 int slot = Miyabi.CombatSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot{slot}";
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{slot}!");
-                skinDatas.Add($"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot{slot}", name);
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
 
                 if (!string.IsNullOrEmpty(previewPath))
                 {
-                    previewDatas[$"MIYABISTS2-COMBAT_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    previewDatas[key] = previewPath;
                     GD.Print($"[MiyabiSkinManager] 战斗皮肤预览图已注册: Slot{slot} -> {previewPath}");
                 }
             }
         }
 
-        public static void RegisterRestSkin(string name, string tscnPath, string previewPath = null)
+        public static void RegisterRestSkin(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
         {
-            if (Miyabi.RestSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
+            if (Miyabi.RestSkinPaths.Count < MAX_SLOTS)
             {
                 Miyabi.RestSkinPaths.Add(tscnPath);
                 tscnPath?.RegisterSceneForConversion<NRestSiteCharacter>();
 
                 int slot = Miyabi.RestSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-REST_SELECTED_SLOT.Slot{slot}";
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{slot}!");
-                skinDatas.Add($"MIYABISTS2-REST_SELECTED_SLOT.Slot{slot}", name);
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
 
                 if (!string.IsNullOrEmpty(previewPath))
                 {
-                    previewDatas[$"MIYABISTS2-REST_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    previewDatas[key] = previewPath;
                     GD.Print($"[MiyabiSkinManager] 休息皮肤预览图已注册: Slot{slot} -> {previewPath}");
                 }
             }
         }
 
-        public static void RegisterShopSkin(string name, string tscnPath, string previewPath = null)
+        public static void RegisterShopSkin(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
         {
-            if (Miyabi.ShopSkinPaths.Count < MAX_SLOTS) // 取决于你写了多少个 Slot
+            if (Miyabi.ShopSkinPaths.Count < MAX_SLOTS)
             {
                 Miyabi.ShopSkinPaths.Add(tscnPath);
                 tscnPath?.RegisterSceneForConversion<NMerchantCharacter>();
 
                 int slot = Miyabi.ShopSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-SHOP_SELECTED_SLOT.Slot{slot}";
                 GD.Print($"[MiyabiSkinManager] 外部皮肤成功入驻槽位 Slot_{slot}!");
-                skinDatas.Add($"MIYABISTS2-SHOP_SELECTED_SLOT.Slot{slot}", name);
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
 
                 if (!string.IsNullOrEmpty(previewPath))
                 {
-                    previewDatas[$"MIYABISTS2-SHOP_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    previewDatas[key] = previewPath;
                     GD.Print($"[MiyabiSkinManager] 商店皮肤预览图已注册: Slot{slot} -> {previewPath}");
                 }
             }
         }
 
-        public static void RegisterCombatSkinYixuan(string name, string tscnPath, string previewPath = null)
+        public static void RegisterCombatSkinYixuan(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
         {
             if (Yixuan.CombatSkinPaths.Count < MAX_SLOTS)
             {
@@ -113,18 +146,21 @@ namespace Miyabists2.Scripts.Service
                 tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
 
                 int slot = Yixuan.CombatSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot{slot}";
                 GD.Print($"[MiyabiSkinManager] Yixuan 外部皮肤成功入驻槽位 Slot_{slot}!");
-                skinDatas.Add($"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot{slot}", name);
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
 
                 if (!string.IsNullOrEmpty(previewPath))
                 {
-                    previewDatas[$"MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    previewDatas[key] = previewPath;
                     GD.Print($"[MiyabiSkinManager] Yixuan 战斗皮肤预览图已注册: Slot{slot} -> {previewPath}");
                 }
             }
         }
 
-        public static void RegisterRestSkinYixuan(string name, string tscnPath, string previewPath = null)
+        public static void RegisterRestSkinYixuan(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
         {
             if (Yixuan.RestSkinPaths.Count < MAX_SLOTS)
             {
@@ -132,18 +168,21 @@ namespace Miyabists2.Scripts.Service
                 tscnPath?.RegisterSceneForConversion<NRestSiteCharacter>();
 
                 int slot = Yixuan.RestSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot{slot}";
                 GD.Print($"[MiyabiSkinManager] Yixuan 外部皮肤成功入驻槽位 Slot_{slot}!");
-                skinDatas.Add($"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot{slot}", name);
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
 
                 if (!string.IsNullOrEmpty(previewPath))
                 {
-                    previewDatas[$"MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    previewDatas[key] = previewPath;
                     GD.Print($"[MiyabiSkinManager] Yixuan 休息皮肤预览图已注册: Slot{slot} -> {previewPath}");
                 }
             }
         }
 
-        public static void RegisterShopSkinYixuan(string name, string tscnPath, string previewPath = null)
+        public static void RegisterShopSkinYixuan(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
         {
             if (Yixuan.ShopSkinPaths.Count < MAX_SLOTS)
             {
@@ -151,12 +190,14 @@ namespace Miyabists2.Scripts.Service
                 tscnPath?.RegisterSceneForConversion<NMerchantCharacter>();
 
                 int slot = Yixuan.ShopSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot{slot}";
                 GD.Print($"[MiyabiSkinManager] Yixuan 外部皮肤成功入驻槽位 Slot_{slot}!");
-                skinDatas.Add($"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot{slot}", name);
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
 
                 if (!string.IsNullOrEmpty(previewPath))
                 {
-                    previewDatas[$"MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot{slot}"] = previewPath;
+                    previewDatas[key] = previewPath;
                     GD.Print($"[MiyabiSkinManager] Yixuan 商店皮肤预览图已注册: Slot{slot} -> {previewPath}");
                 }
             }

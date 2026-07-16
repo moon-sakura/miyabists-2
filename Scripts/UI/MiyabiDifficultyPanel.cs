@@ -21,26 +21,23 @@ public partial class MiyabiDifficultyPanel : Control
 
     private int _currentLevel;
     private bool _enemyStronger;
+    private string _language = "eng";
+
+    // ===== 属性 =====
+
+    public string Language
+    {
+        get => _language;
+        set
+        {
+            _language = MiyabiUILoc.NormalizeLang(value);
+            RefreshUI();
+        }
+    }
 
     // ===== 难度数据 =====
 
-    private static readonly (string name, string desc)[] _difficultyLevels = new[]
-    {
-        ("无进阶", ""),
-        ("锑级", "敌人+10%生命值"),
-        ("锌级", "每一幕（第一幕除外）开始时，随机[color=red]降级[/color]一张卡牌"),
-        ("锡级", "战斗开始后，使用的第一张牌[color=red]费用+1[/color]"),
-        ("锰级", "战斗开始时，敌人获得1点力量，自己失去1点力量"),
-        ("镉级", "敌人改为+20%生命"),
-        ("镍级", "前三个回合[color=red]少抽1张牌[/color]"),
-        ("铜级", "敌人在死亡时造成6点伤害"),
-        ("铋级", "敌人改为+30%生命，额外获得1点力量"),
-        ("铅级", "进入新的一幕后会向卡组里加一张随机[color=red]诅咒[/color]"),
-        ("汞级", "敌人第一次受到致命伤害前会获得1层[color=#FFD700]缓冲[/color]"
-            + "与2点[color=#FFD700]力量[/color]并恢复30%生命"),
-    };
-
-    public static int MaxLevel => _difficultyLevels.Length - 1;
+    public const int MaxLevel = 10;
 
     // ===== 属性 =====
 
@@ -99,7 +96,7 @@ public partial class MiyabiDifficultyPanel : Control
 
         // 标题
         _titleLabel = new Label();
-        _titleLabel.Text = "进阶选项";
+        _titleLabel.Text = MiyabiUILoc.Get("diff_title", _language);
         _titleLabel.Position = new Vector2(10, 8);
         _titleLabel.AddThemeColorOverride("font_color", Colors.White);
         _titleLabel.AddThemeFontSizeOverride("font_size", 16);
@@ -133,7 +130,7 @@ public partial class MiyabiDifficultyPanel : Control
 
         // 加强模组敌人
         _enemyStrongerCheck = new CheckBox();
-        _enemyStrongerCheck.Text = "加强模组敌人";
+        _enemyStrongerCheck.Text = MiyabiUILoc.Get("diff_enemy_stronger", _language);
         _enemyStrongerCheck.Position = new Vector2(14, 72);
         _enemyStrongerCheck.Size = new Vector2(250, 24);
         _enemyStrongerCheck.AddThemeColorOverride("font_color", Colors.White);
@@ -178,12 +175,23 @@ public partial class MiyabiDifficultyPanel : Control
 
     // ===== 显示刷新 =====
 
+    private void RefreshUI()
+    {
+        if (_titleLabel != null)
+        {
+            _titleLabel.Text = MiyabiUILoc.Get("diff_title", _language);
+            _enemyStrongerCheck.Text = MiyabiUILoc.Get("diff_enemy_stronger", _language);
+        }
+        RefreshDisplay();
+    }
+
     private void RefreshDisplay()
     {
         if (_levelLabel == null) return;
 
-        var (name, _) = _difficultyLevels[_currentLevel];
-        _levelLabel.Text = _currentLevel == 0 ? "无进阶" : $"Lv.{_currentLevel} {name}";
+        _levelLabel.Text = _currentLevel == 0
+            ? MiyabiUILoc.Get("diff_none", _language)
+            : $"Lv.{_currentLevel}";
 
         _prevButton.Disabled = _currentLevel <= 0;
         _nextButton.Disabled = _currentLevel >= MaxLevel;
@@ -191,22 +199,15 @@ public partial class MiyabiDifficultyPanel : Control
         _descriptionLabel.Text = BuildCumulativeDescription(_currentLevel);
     }
 
-    // ===== 累积描述生成 =====
-
-    private static string BuildCumulativeDescription(int level)
+    private string BuildCumulativeDescription(int level)
     {
-        if (level <= 0) return "[color=#888888]未启用任何难度修正[/color]";
+        if (level <= 0)
+            return $"[color=#888888]{MiyabiUILoc.Get("diff_no_modifiers", _language)}[/color]";
 
         var sb = new StringBuilder();
         for (int i = 1; i <= level; i++)
         {
-            var (name, desc) = _difficultyLevels[i];
-            sb.Append("[color=#FFD700]");
-            sb.Append(i);
-            sb.Append('.');
-            sb.Append(name);
-            sb.Append("[/color]：");
-            sb.Append(desc);
+            sb.Append(MiyabiUILoc.Get($"diff_lv{i}", _language));
             if (i < level) sb.Append('\n');
         }
         return sb.ToString();
