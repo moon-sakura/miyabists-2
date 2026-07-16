@@ -1,10 +1,11 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Minion;
 using MinionLib.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Miyabists2.Scripts.Powers
 
         public override PowerStackType StackType => PowerStackType.Single;
 
-        public string BigIconPath => "res://images/powers/commonPowers.png";
+        public string BigIconPath => ImageHelper.GetImagePath("powers/" + "die_for_you_power.png");
         public string BigBetaIconPath => BigIconPath;
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
