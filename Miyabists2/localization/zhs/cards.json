@@ -472,6 +472,21 @@
 	"MIYABISTS2_CARD_JIE_FA.title" : "借法",
 	"MIYABISTS2_CARD_JIE_FA.description":"选择一项：\\n消耗全部[gold]活力[/gold]，获得{Percent:diff()}%消耗量的[gold]荆棘[/gold]\\n消耗全部[gold]荆棘[/gold]，获得{Percent:diff()}%消耗量的[gold]活力[/gold]。",
 
+	"MIYABISTS2_CARD_WUWU_LIANGWANG.title" : "物我两忘",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG.description":"消耗所有能力，舍弃所有手牌，然后添加舍弃手牌数的随机特殊卡牌（卡牌数值由消除能力数决定）。",
+	
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.title" : "攻",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.description":"[orange]玄墨[/orange]{ExhaustedPowerCount:diff()}\\n[gold]失衡值[/gold]{ExhaustedPowerCount:diff()}",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.title" : "守",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.description":"获得{ExhaustedPowerCount:diff()}点格挡\\n对所有敌人施加{ExhaustedPowerCount:diff()}层[gold]术法值[/gold]",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.title" : "生",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.description":"获得{Energy:energyIcons()}\\n抽{ExhaustedPowerCount:diff()}张卡",
+	
+	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title" : "守华照寂",
+	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description":"获得格挡时变为0格挡，然后获得{Energy:energyIcons()}，抽1张卡。",
+
 	"MIYABISTS2_CARD_VIGOR2THORNS.title" : "转化活力",
 	"MIYABISTS2_CARD_VIGOR2THORNS.description":"消耗全部活力，获得荆棘。",
 
