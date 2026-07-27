@@ -1,301 +1,301 @@
 {
 	"MIYABISTS2_CARD_FENG_HUA.title": "풍화",
-    "MIYABISTS2_CARD_FENG_HUA.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
+	"MIYABISTS2_CARD_FENG_HUA.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2_CARD_XINNIAN_WUWO.title": "심념무아",
-    "MIYABISTS2_CARD_XINNIAN_WUWO.description": "이번 턴에 [gold]격파[/gold]가 발동했다면, 이번 턴 모든 [gold]상월[/gold] 비용이 0이 되고, [gold]상월[/gold] 사용 시마다 [blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_XINNIAN_WUWO.description": "이번 턴에 [gold]격파[/gold]가 발동했다면, 이번 턴 모든 [gold]상월[/gold] 비용이 0이 되고, [gold]상월[/gold] 사용 시마다 [blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_SHEN_XUE.title": "심설",
-    "MIYABISTS2_CARD_SHEN_XUE.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_SHEN_XUE.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_SHENXUE_HANYAN.title": "심설·한염",
-    "MIYABISTS2_CARD_SHENXUE_HANYAN.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다\\n이 카드를 보유 중일 때, [gold]상작[/gold] 부여가 [gold]상작·파[/gold] 부여로 변경됩니다",
+	"MIYABISTS2_CARD_SHENXUE_HANYAN.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다\\n이 카드를 보유 중일 때, [gold]상작[/gold] 부여가 [gold]상작·파[/gold] 부여로 변경됩니다",
 
 	"MIYABISTS2_CARD_FEI_XUE.title": "비설",
-    "MIYABISTS2_CARD_FEI_XUE.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]2[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_FEI_XUE.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]2[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_FEI_XUE_TWO.title": "비설·2단",
-    "MIYABISTS2_CARD_FEI_XUE_TWO.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]2[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_FEI_XUE_TWO.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]2[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_SHUI_NIAO.title": "수조",
-    "MIYABISTS2_CARD_SHUI_NIAO.description": "[gold]회피[/gold][blue]1[/blue]\\n[gold]소모{ExhaustCount:diff()}[/gold]",
+	"MIYABISTS2_CARD_SHUI_NIAO.description": "[gold]회피[/gold][blue]1[/blue]\\n[gold]소모{ExhaustCount:diff()}[/gold]",
 
 	"MIYABISTS2_CARD_DONG_FENG.title": "동봉",
-    "MIYABISTS2_CARD_DONG_FENG.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{Cards:diff()}장의 카드를 뽑습니다. [gold]회피[/gold] 보유 시 비용이 [blue]0[/blue]이 됩니다",
+	"MIYABISTS2_CARD_DONG_FENG.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{Cards:diff()}장의 카드를 뽑습니다. [gold]회피[/gold] 보유 시 비용이 [blue]0[/blue]이 됩니다",
 
 	"MIYABISTS2_CARD_DONG_FENG_SP.title": "동봉·극",
-    "MIYABISTS2_CARD_DONG_FENG_SP.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n다음 공격 카드 피해 +[blue]25%[/blue], [gold]회피[/gold] 보유 시 비용이 [blue]0[/blue]이 됩니다",
+	"MIYABISTS2_CARD_DONG_FENG_SP.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n다음 공격 카드 피해 +[blue]25%[/blue], [gold]회피[/gold] 보유 시 비용이 [blue]0[/blue]이 됩니다",
 
 	"MIYABISTS2_CARD_HAN_QUE.title": "한작",
-    "MIYABISTS2_CARD_HAN_QUE.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]회피[/gold] 보유 시 피해 +[blue]4[/blue]",
+	"MIYABISTS2_CARD_HAN_QUE.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]회피[/gold] 보유 시 피해 +[blue]4[/blue]",
 
 	"MIYABISTS2_CARD_MIYABI_BLOCK.title": "방어",
-    "MIYABISTS2_CARD_MIYABI_BLOCK.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}",
+	"MIYABISTS2_CARD_MIYABI_BLOCK.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}",
 
 	"MIYABISTS2_CARD_JIXIAN_SHIYU.title": "극한시역",
-    "MIYABISTS2_CARD_JIXIAN_SHIYU.description": "[gold]회피[/gold]{SLIPPERY_POWER:diff()}\\n손패에 [gold]소모[/gold]가 붙은 [gold]한작[/gold]을 {Cards:diff()}장 추가합니다. 이번 전투에서 비용이 0이 됩니다\\n이번 턴에는 더 이상 카드를 뽑을 수 없습니다",
+	"MIYABISTS2_CARD_JIXIAN_SHIYU.description": "[gold]회피[/gold]{SLIPPERY_POWER:diff()}\\n손패에 [gold]소모[/gold]가 붙은 [gold]한작[/gold]을 {Cards:diff()}장 추가합니다. 이번 전투에서 비용이 0이 됩니다\\n이번 턴에는 더 이상 카드를 뽑을 수 없습니다",
 
 	"MIYABISTS2_CARD_HUA_CI.title": "화사",
-    "MIYABISTS2_CARD_HUA_CI.description": "[aqua]열상[/aqua]{Damage:diff()}\\n{Block:diff()}점의 방어도를 얻습니다\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n손패에 추가될 때 초과분이 있으면 자동으로 사용됩니다",
+	"MIYABISTS2_CARD_HUA_CI.description": "[aqua]열상[/aqua]{Damage:diff()}\\n{Block:diff()}점의 방어도를 얻습니다\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n손패에 추가될 때 초과분이 있으면 자동으로 사용됩니다",
 
 	"MIYABISTS2_CARD_HUA_FA.title": "화벌",
-    "MIYABISTS2_CARD_HUA_FA.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}\\n이번 턴에 [gold]파트너[/gold] 카드를 사용했다면, 추가로 [blue]6[/blue]점의 방어도를 얻고 [blue]1[/blue]점의 [gold]패링[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_HUA_FA.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}\\n이번 턴에 [gold]파트너[/gold] 카드를 사용했다면, 추가로 [blue]6[/blue]점의 방어도를 얻고 [blue]1[/blue]점의 [gold]패링[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_QUICK_PARRY.title": "쾌속 패링",
-    "MIYABISTS2_CARD_QUICK_PARRY.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}\\n[blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻고, 뽑기 카드 더미에서 무작위 [gold]파트너[/gold] 카드 1장을 손패에 추가합니다",
+	"MIYABISTS2_CARD_QUICK_PARRY.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}\\n[blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻고, 뽑기 카드 더미에서 무작위 [gold]파트너[/gold] 카드 1장을 손패에 추가합니다",
 
 	"MIYABISTS2_CARD_QUICK_SUPPORT.title": "쾌속 지원",
-    "MIYABISTS2_CARD_QUICK_SUPPORT.description": "자신에게 {Damage:diff()}점의 피해를 주고, 뽑기 카드 더미에서 무작위 파트너 카드 1장을 사용합니다",
+	"MIYABISTS2_CARD_QUICK_SUPPORT.description": "자신에게 {Damage:diff()}점의 피해를 주고, 뽑기 카드 더미에서 무작위 파트너 카드 1장을 사용합니다",
 
 	"MIYABISTS2_CARD_ZHAOJIA_ZHUNBEI.title": "패링 준비",
-    "MIYABISTS2_CARD_ZHAOJIA_ZHUNBEI.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}\\n자신의 턴을 종료합니다",
+	"MIYABISTS2_CARD_ZHAOJIA_ZHUNBEI.description": "{Block:diff()}점의 방어도를 얻습니다\\n[gold]패링[/gold]{PARRY_POWER:diff()}\\n자신의 턴을 종료합니다",
 
 	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG.title": "전술 재정비",
-    "MIYABISTS2_CARD_ZHANSHU_CHONGZHENG.description": "{Cards:diff()}장의 카드를 뽑습니다\\n[gold]파트너[/gold] 카드 1장당 [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다",
+	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG.description": "{Cards:diff()}장의 카드를 뽑습니다\\n[gold]파트너[/gold] 카드 1장당 [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_RANYOUYIN_SHARE.title": "연료음료 공유팩",
-    "MIYABISTS2_CARD_RANYOUYIN_SHARE.description": "자신이 [blue]1[/blue]중첩의 [gold]취약[/gold]을 얻고, [blue]{Decible:diff()}[/blue]점의 [gold]와글와글 수치[/gold]를 얻고, [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다\\n이번 턴에 [gold]파트너[/gold] 카드를 사용했다면, 다시 [blue]{Decible:diff()}[/blue]점의 [gold]와글와글 수치[/gold]를 얻고, [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다",
+	"MIYABISTS2_CARD_RANYOUYIN_SHARE.description": "자신이 [blue]1[/blue]중첩의 [gold]취약[/gold]을 얻고, [blue]{Decible:diff()}[/blue]점의 [gold]와글와글 수치[/gold]를 얻고, [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다\\n이번 턴에 [gold]파트너[/gold] 카드를 사용했다면, 다시 [blue]{Decible:diff()}[/blue]점의 [gold]와글와글 수치[/gold]를 얻고, [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_CHUN_LIN.title": "춘림",
-    "MIYABISTS2_CARD_CHUN_LIN.description": "전체 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n뽑기 카드 더미에서 [gold]파트너[/gold] 카드 1장을 선택해 손패에 추가하고 [gold]보존[/gold]을 부여합니다\\n이번 턴에 적이 [gold]격파[/gold]되었다면, 이 카드의 비용이 [blue]0[/blue]이 됩니다",
+	"MIYABISTS2_CARD_CHUN_LIN.description": "전체 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n뽑기 카드 더미에서 [gold]파트너[/gold] 카드 1장을 선택해 손패에 추가하고 [gold]보존[/gold]을 부여합니다\\n이번 턴에 적이 [gold]격파[/gold]되었다면, 이 카드의 비용이 [blue]0[/blue]이 됩니다",
 	"MIYABISTS2_CARD_CHUN_LIN.selectionScreenPrompt": "[gold]파트너[/gold] 카드 1장 선택",
 
 	"MIYABISTS2_CARD_E_JI_ZHAN.title": "악, 즉참",
-    "MIYABISTS2_CARD_E_JI_ZHAN.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]3[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_E_JI_ZHAN.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]3[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_SHUANG_YUE.title": "상월",
-    "MIYABISTS2_CARD_SHUANG_YUE.description": "전체 적에게 [blue]{HitCount:diff()}[/blue]회의 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]낙상[/gold]이 [blue]2[/blue]점 이상이면, [blue]2[/blue]점의 [gold]낙상[/gold]을 소모하여 강화된 [gold]상월[/gold]을 손패에 추가합니다\\n（레벨 2 초과 시 비용이 1이 됩니다! 턴 종료 시 레벨이 감소합니다!）",
+	"MIYABISTS2_CARD_SHUANG_YUE.description": "전체 적에게 [blue]{HitCount:diff()}[/blue]회의 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]낙상[/gold]이 [blue]2[/blue]점 이상이면, [blue]2[/blue]점의 [gold]낙상[/gold]을 소모하여 강화된 [gold]상월[/gold]을 손패에 추가합니다\\n（레벨 2 초과 시 비용이 1이 됩니다! 턴 종료 시 레벨이 감소합니다!）",
 
 	"MIYABISTS2_CARD_SHUANG_YUE_SP.title": "상월·극의",
-    "MIYABISTS2_CARD_SHUANG_YUE_SP.description": "전체 적에게 [blue]{HitCount:diff()}[/blue]회의 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
+	"MIYABISTS2_CARD_SHUANG_YUE_SP.description": "전체 적에게 [blue]{HitCount:diff()}[/blue]회의 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2_CARD_TONGMU_SHUANGXUE.title": "동욕상설",
-    "MIYABISTS2_CARD_TONGMU_SHUANGXUE.description": "[gold]파트너[/gold]가 아닌 카드를 사용할 때마다 [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다",
+	"MIYABISTS2_CARD_TONGMU_SHUANGXUE.description": "[gold]파트너[/gold]가 아닌 카드를 사용할 때마다 [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_XUESHANG_JIASHUANG.title": "설상가상",
-    "MIYABISTS2_CARD_XUESHANG_JIASHUANG.description": "[gold]상월[/gold] 사용 시마다 이번 턴에 [blue]1[/blue]점의 [gold]힘[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_XUESHANG_JIASHUANG.description": "[gold]상월[/gold] 사용 시마다 이번 턴에 [blue]1[/blue]점의 [gold]힘[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_TIANZI_ZHUOYUE.title": "천자탁월",
-    "MIYABISTS2_CARD_TIANZI_ZHUOYUE.description": "[gold]상월[/gold] 사용 시마다 [gold]상월·극의[/gold]를 자동으로 1회 사용합니다",
+	"MIYABISTS2_CARD_TIANZI_ZHUOYUE.description": "[gold]상월[/gold] 사용 시마다 [gold]상월·극의[/gold]를 자동으로 1회 사용합니다",
 
 	"MIYABISTS2_CARD_ZHANJIN_ZUIE.title": "참진죄악",
-    "MIYABISTS2_CARD_ZHANJIN_ZUIE.description": "이번 턴에 가하는 피해가 2배가 됩니다",
+	"MIYABISTS2_CARD_ZHANJIN_ZUIE.description": "이번 턴에 가하는 피해가 2배가 됩니다",
 
 	"MIYABISTS2_CARD_WUZHI_JIZHI.title": "무지극치",
-    "MIYABISTS2_CARD_WUZHI_JIZHI.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]2[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_WUZHI_JIZHI.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]2[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_BAMIAN_WEIFENG.title": "팔면위풍",
-    "MIYABISTS2_CARD_BAMIAN_WEIFENG.description": "이번 전투에서 [gold]와글와글 수치[/gold]가 {Threshold}에 도달하면 [gold]필살기[/gold]를 얻습니다",
+	"MIYABISTS2_CARD_BAMIAN_WEIFENG.description": "이번 전투에서 [gold]와글와글 수치[/gold]가 {Threshold}에 도달하면 [gold]필살기[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_SP_XIAOYE.title": "SP: 소야 기사",
-    "MIYABISTS2_CARD_SP_XIAOYE.description": "자신과 적이 각각 [blue]1[/blue]중첩의 [gold]무실체[/gold]를 얻고, 모든 카드 중에서 {Cards:diff()}장을 선택해 [gold]소모[/gold]합니다",
+	"MIYABISTS2_CARD_SP_XIAOYE.description": "자신과 적이 각각 [blue]1[/blue]중첩의 [gold]무실체[/gold]를 얻고, 모든 카드 중에서 {Cards:diff()}장을 선택해 [gold]소모[/gold]합니다",
 	"MIYABISTS2_CARD_SP_XIAOYE.selectionScreenPrompt": "{Cards:diff()}장의 카드를 선택해 [gold]소모[/gold]",
 
 	"MIYABISTS2_CARD_BLESSING_OFMOON.title": "신월의 축복",
-    "MIYABISTS2_CARD_BLESSING_OFMOON.description": "치명적인 피해를 받을 때, 사망을 회피하고 [blue]{Bless:diff()}%[/blue]의 생명력을 회복합니다\\n[gold]속성 이상[/gold]과 [gold]혼란[/gold] 발동 시 추가로 적 최대 생명력의 [blue]5%[/blue] 피해를 줍니다",
+	"MIYABISTS2_CARD_BLESSING_OFMOON.description": "치명적인 피해를 받을 때, 사망을 회피하고 [blue]{Bless:diff()}%[/blue]의 생명력을 회복합니다\\n[gold]속성 이상[/gold]과 [gold]혼란[/gold] 발동 시 추가로 적 최대 생명력의 [blue]5%[/blue] 피해를 줍니다",
 
 	"MIYABISTS2_CARD_TIANMI_JINGXIA.title": "달콤한 깜짝",
-    "MIYABISTS2_CARD_TIANMI_JINGXIA.description": "자신의 턴 종료 시, 모든 적에게 {Jingxia:diff()}중첩의 [gold]속성 이상[/gold]을 부여합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [blue]2[/blue]중첩으로 변경",
+	"MIYABISTS2_CARD_TIANMI_JINGXIA.description": "자신의 턴 종료 시, 모든 적에게 {Jingxia:diff()}중첩의 [gold]속성 이상[/gold]을 부여합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [blue]2[/blue]중첩으로 변경",
 
 	"MIYABISTS2_CARD_XIEZUO_SHIGONG.title": "협력 시공",
-    "MIYABISTS2_CARD_XIEZUO_SHIGONG.description": "{RepeatCount:diff()}회 발동: 무작위 적에게 {Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, {ANOBUILD_POWER:diff()}중첩의 [gold]속성 축적[/gold] 부여\\n이번 전투에서 다음 발동 횟수 +[blue]1[/blue]\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 이 카드를 [gold]뽑기 카드 더미[/gold]로 되돌립니다",
+	"MIYABISTS2_CARD_XIEZUO_SHIGONG.description": "{RepeatCount:diff()}회 발동: 무작위 적에게 {Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, {ANOBUILD_POWER:diff()}중첩의 [gold]속성 축적[/gold] 부여\\n이번 전투에서 다음 발동 횟수 +[blue]1[/blue]\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 이 카드를 [gold]뽑기 카드 더미[/gold]로 되돌립니다",
 
 	"MIYABISTS2_CARD_CUTE_FEITIANZHUANG.title": "귀여운 지뢰 비천충",
-    "MIYABISTS2_CARD_CUTE_FEITIANZHUANG.description": "[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적의 [gold]속성 축적[/gold] 1중첩당 추가 [gold]균형 붕괴 수치[/gold][blue]5[/blue]（[gold]속성 이상[/gold]은 [blue]3[/blue]중첩, [gold]혼란[/gold]은 [blue]5[/blue]중첩으로 간주）\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]균형 붕괴 수치[/gold] +[blue]20%[/blue]",
+	"MIYABISTS2_CARD_CUTE_FEITIANZHUANG.description": "[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적의 [gold]속성 축적[/gold] 1중첩당 추가 [gold]균형 붕괴 수치[/gold][blue]5[/blue]（[gold]속성 이상[/gold]은 [blue]3[/blue]중첩, [gold]혼란[/gold]은 [blue]5[/blue]중첩으로 간주）\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]균형 붕괴 수치[/gold] +[blue]20%[/blue]",
 
 	"MIYABISTS2_CARD_SONG_KE.title": "송객!",
-    "MIYABISTS2_CARD_SONG_KE.description": "[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 비용이 [blue]0[/blue]인 [gold]허무[/gold][gold]필살기[/gold]（[gold]명잔설[/gold]）를 손패에 추가합니다",
+	"MIYABISTS2_CARD_SONG_KE.description": "[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 비용이 [blue]0[/blue]인 [gold]허무[/gold][gold]필살기[/gold]（[gold]명잔설[/gold]）를 손패에 추가합니다",
 
 	"MIYABISTS2_CARD_LUOYU_SHENGHUA.title": "낙우생화",
-    "MIYABISTS2_CARD_LUOYU_SHENGHUA.description": "매 턴 적에게 피해를 준 후 [gold]속성 축적[/gold][blue]1[/blue] 부여, 최대 [blue]{LuoYu:diff()}[/blue]회 발동 가능\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 모든 적에게 [gold]속성 축적[/gold][blue]1[/blue]",
+	"MIYABISTS2_CARD_LUOYU_SHENGHUA.description": "매 턴 적에게 피해를 준 후 [gold]속성 축적[/gold][blue]1[/blue] 부여, 최대 [blue]{LuoYu:diff()}[/blue]회 발동 가능\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 모든 적에게 [gold]속성 축적[/gold][blue]1[/blue]",
 
 	"MIYABISTS2_CARD_MINGFU_WANGE.title": "명부만가",
-    "MIYABISTS2_CARD_MINGFU_WANGE.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [blue]1[/blue]턴 [blue]35%[/blue] [gold]균형 붕괴 취약[/gold] 부여\\n{WanGe:diff()}턴 동안, 매 턴 시작 시 [gold]협주저격[/gold] 1장을 손패에 추가합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]협주저격[/gold] 1장을 손패에 추가",
+	"MIYABISTS2_CARD_MINGFU_WANGE.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [blue]1[/blue]턴 [blue]35%[/blue] [gold]균형 붕괴 취약[/gold] 부여\\n{WanGe:diff()}턴 동안, 매 턴 시작 시 [gold]협주저격[/gold] 1장을 손패에 추가합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]협주저격[/gold] 1장을 손패에 추가",
 
 	"MIYABISTS2_CARD_XIEZOU_JUSHA.title": "협주저격",
-    "MIYABISTS2_CARD_XIEZOU_JUSHA.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [blue]1[/blue]턴 [blue]15%[/blue] [gold]균형 붕괴 취약[/gold] 부여",
+	"MIYABISTS2_CARD_XIEZOU_JUSHA.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [blue]1[/blue]턴 [blue]15%[/blue] [gold]균형 붕괴 취약[/gold] 부여",
 
 	"MIYABISTS2_CARD_BYE_QUANLEIDA.title": "안녕 홈런!",
-    "MIYABISTS2_CARD_BYE_QUANLEIDA.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n버린 카드 더미에서 {Cards:diff()}장의 공격 카드를 선택해 손패에 추가합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 이번 턴 가하는 피해 +2\\n적이 이미 [gold]격파[/gold] 상태라면 [gold]지원 포인트[/gold]를 소모하지 않습니다",
+	"MIYABISTS2_CARD_BYE_QUANLEIDA.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n버린 카드 더미에서 {Cards:diff()}장의 공격 카드를 선택해 손패에 추가합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 이번 턴 가하는 피해 +2\\n적이 이미 [gold]격파[/gold] 상태라면 [gold]지원 포인트[/gold]를 소모하지 않습니다",
 	"MIYABISTS2_CARD_BYE_QUANLEIDA.selectionScreenPrompt": "{Cards:diff()}장의 [gold]공격 카드[/gold] 선택",
 
 	"MIYABISTS2_CARD_SHE_WEN.title": "사문",
-    "MIYABISTS2_CARD_SHE_WEN.description": "적에게 {Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n손패와 뽑기 카드 더미에서 최대 {Cards:diff()}장을 선택해 [gold]소모[/gold]합니다. 이미 [blue]5[/blue]장 이상 [gold]소모[/gold]했다면, 대신 모든 적에게 15점 피해를 주고 [gold]취약[/gold] 2중첩을 부여합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 이번에는 절대 몰래 먹지 않습니다!\\n(이미 {Eat:diff()}장 먹음)",
+	"MIYABISTS2_CARD_SHE_WEN.description": "적에게 {Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n손패와 뽑기 카드 더미에서 최대 {Cards:diff()}장을 선택해 [gold]소모[/gold]합니다. 이미 [blue]5[/blue]장 이상 [gold]소모[/gold]했다면, 대신 모든 적에게 15점 피해를 주고 [gold]취약[/gold] 2중첩을 부여합니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 이번에는 절대 몰래 먹지 않습니다!\\n(이미 {Eat:diff()}장 먹음)",
 	"MIYABISTS2_CARD_SHE_WEN.selectionScreenPrompt": "시시프에게 줄 먹이（최대 {Cards:diff()}장 소모 선택）",
 
 	"MIYABISTS2_CARD_HUA_XIN_FENG.title": "화신풍",
-    "MIYABISTS2_CARD_HUA_XIN_FENG.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다\\n이번 턴에 [gold]파트너[/gold] 카드를 사용했다면 비용이 [blue]0[/blue]이 됩니다",
+	"MIYABISTS2_CARD_HUA_XIN_FENG.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다\\n이번 턴에 [gold]파트너[/gold] 카드를 사용했다면 비용이 [blue]0[/blue]이 됩니다",
 
 	"MIYABISTS2_CARD_SHUANG_SUI_XUE.title": "상쇄설",
-    "MIYABISTS2_CARD_SHUANG_SUI_XUE.description": "전체 [aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
+	"MIYABISTS2_CARD_SHUANG_SUI_XUE.description": "전체 [aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2_CARD_MING_CAN_XUE.title": "명잔설",
-    "MIYABISTS2_CARD_MING_CAN_XUE.description": "전체 적에게 [blue]5[/blue]회의 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n이번 턴에 공격 카드 1장 사용 시마다 횟수 [blue]1[/blue] 증가, [blue]2[/blue]회 공격 시마다 [blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_MING_CAN_XUE.description": "전체 적에게 [blue]5[/blue]회의 [aqua]열상[/aqua]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n이번 턴에 공격 카드 1장 사용 시마다 횟수 [blue]1[/blue] 증가, [blue]2[/blue]회 공격 시마다 [blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_BAOJUN_MENGJI.title": "폭군 맹격",
-    "MIYABISTS2_CARD_BAOJUN_MENGJI.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, {Block:diff()}점 방어도 획득, [gold]패링[/gold]{PARRY_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [blue]4[/blue]점의 [gold]복갑[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_BAOJUN_MENGJI.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, {Block:diff()}점 방어도 획득, [gold]패링[/gold]{PARRY_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [blue]4[/blue]점의 [gold]복갑[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_BINGYUAN_QIANXI.title": "빙연잠습",
-    "MIYABISTS2_CARD_BINGYUAN_QIANXI.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: {Buffer:diff()}점 피해를 줄 때마다 [blue]1[/blue]중첩의 [gold]패링[/gold]과 [gold]회피[/gold]를 얻습니다",
+	"MIYABISTS2_CARD_BINGYUAN_QIANXI.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: {Buffer:diff()}점 피해를 줄 때마다 [blue]1[/blue]중첩의 [gold]패링[/gold]과 [gold]회피[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI.title": "초강력 실드 타격",
-    "MIYABISTS2_CARD_CHAOQIANGLI_DUNJI.description": "{Block:diff()}점 방어도 획득, [gold]패링[/gold]{PARRY_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]패링[/gold] 중첩 수만큼의 [gold]화사[/gold]를 얻습니다\\n[gold]소모{ExhaustCount:diff()}[/gold]",
+	"MIYABISTS2_CARD_CHAOQIANGLI_DUNJI.description": "{Block:diff()}점 방어도 획득, [gold]패링[/gold]{PARRY_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]패링[/gold] 중첩 수만큼의 [gold]화사[/gold]를 얻습니다\\n[gold]소모{ExhaustCount:diff()}[/gold]",
 
 	"MIYABISTS2_CARD_QUANMIAN_QINGCHANG.title": "주먹 빚, 전면 청산",
-    "MIYABISTS2_CARD_QUANMIAN_QINGCHANG.description": "{Block:diff()}점 방어도 획득, {SUPPORT_POINT_POWER:diff()}점 [gold]지원 포인트[/gold] 획득",
+	"MIYABISTS2_CARD_QUANMIAN_QINGCHANG.description": "{Block:diff()}점 방어도 획득, {SUPPORT_POINT_POWER:diff()}점 [gold]지원 포인트[/gold] 획득",
 
 	"MIYABISTS2_CARD_MANHAN_QUANXI.title": "만한전석!",
-    "MIYABISTS2_CARD_MANHAN_QUANXI.description": "{Block:diff()}점 방어도 획득\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [blue]2[/blue]중첩의 [gold]재생[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_MANHAN_QUANXI.description": "{Block:diff()}점 방어도 획득\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [blue]2[/blue]중첩의 [gold]재생[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.title": "악호칠식·맹호작개화",
-    "MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.description": "[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: {Decible:diff()}점의 [gold]와글와글 수치[/gold]를 얻습니다",
+	"MIYABISTS2_CARD_MENGHU_ZHAKAIHUA.description": "[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: {Decible:diff()}점의 [gold]와글와글 수치[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG.title": "모든 것을 호파왕에게",
-    "MIYABISTS2_CARD_ALL_FOR_HUPOWANG.description": "덱에서 [gold]균형 붕괴 수치[/gold]가 [blue]15[/blue]를 초과하는 모든 카드를 소모합니다\\n[blue]3[/blue]장 이상 소모하면 적을 [gold]격파[/gold]합니다\\n[blue]3[/blue]장 미만이면 뽑기 카드 더미에 [blue]3[/blue]장의 [gold]악호칠식·맹호작개화[/gold]를 추가합니다",
+	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG.description": "덱에서 [gold]균형 붕괴 수치[/gold]가 [blue]15[/blue]를 초과하는 모든 카드를 소모합니다\\n[blue]3[/blue]장 이상 소모하면 적을 [gold]격파[/gold]합니다\\n[blue]3[/blue]장 미만이면 뽑기 카드 더미에 [blue]3[/blue]장의 [gold]악호칠식·맹호작개화[/gold]를 추가합니다",
 
 	"MIYABISTS2_CARD_YONGTAN_HUACAI.title": "영탄화채",
-    "MIYABISTS2_CARD_YONGTAN_HUACAI.description": "[gold]파트너[/gold] 카드 사용 시마다 {Energy:energyIcons()} 획득\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 뽑기 카드 더미에서 [gold]파트너[/gold] 카드 1장을 선택해 손패에 추가합니다",
+	"MIYABISTS2_CARD_YONGTAN_HUACAI.description": "[gold]파트너[/gold] 카드 사용 시마다 {Energy:energyIcons()} 획득\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 뽑기 카드 더미에서 [gold]파트너[/gold] 카드 1장을 선택해 손패에 추가합니다",
 	"MIYABISTS2_CARD_YONGTAN_HUACAI.selectionScreenPrompt": "파트너 카드 1장 선택",
 
 	"MIYABISTS2_CARD_SHUANGYUE_JIASHI.title": "상월 자세",
-    "MIYABISTS2_CARD_SHUANGYUE_JIASHI.description": "매 턴 시작 시 {FrostFall:diff()}점의 [gold]낙상[/gold]을 얻고, 상월 사용 시마다 4점의 방어도를 얻습니다",
+	"MIYABISTS2_CARD_SHUANGYUE_JIASHI.description": "매 턴 시작 시 {FrostFall:diff()}점의 [gold]낙상[/gold]을 얻고, 상월 사용 시마다 4점의 방어도를 얻습니다",
 
 	"MIYABISTS2_CARD_NO_TAIL_FULL.title": "요도해방",
-    "MIYABISTS2_CARD_NO_TAIL_FULL.description": "당신은 [jitter][gold]그것[/gold][/jitter]을 {IfUpgraded:show:[aqua]다룰[/aqua]|[red]다룰[/red]} 수 있습니까?",
+	"MIYABISTS2_CARD_NO_TAIL_FULL.description": "당신은 [jitter][gold]그것[/gold][/jitter]을 {IfUpgraded:show:[aqua]다룰[/aqua]|[red]다룰[/red]} 수 있습니까?",
 
 	"MIYABISTS2_CARD_PHAETHON_CALL.title": "파에톤의 친구 소환",
-    "MIYABISTS2_CARD_PHAETHON_CALL.description": "[blue]3[/blue]장의 [gold]파트너[/gold] 카드 중 1장을 선택해 손패에 추가합니다. 이번 턴 비용 1 감소\\n([gold]이계 파트너[/gold] 포함!)",
+	"MIYABISTS2_CARD_PHAETHON_CALL.description": "[blue]3[/blue]장의 [gold]파트너[/gold] 카드 중 1장을 선택해 손패에 추가합니다. 이번 턴 비용 1 감소\\n([gold]이계 파트너[/gold] 포함!)",
 
 	"MIYABISTS2_CARD_BIG_EJIZHAN.title": "대형 거위닭 베기",
-    "MIYABISTS2_CARD_BIG_EJIZHAN.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}, 이번 턴 [blue]{Strength:diff()}[/blue]점의 [gold]힘[/gold]을 얻습니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가로 [blue]1[/blue]점의 [gold]힘[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_BIG_EJIZHAN.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}, 이번 턴 [blue]{Strength:diff()}[/blue]점의 [gold]힘[/gold]을 얻습니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가로 [blue]1[/blue]점의 [gold]힘[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_XINGYUE_XIANGSUI.title": "성월상수",
-    "MIYABISTS2_CARD_XINGYUE_XIANGSUI.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 적이 이미 [gold]속성 이상[/gold] 상태라면, 즉시 정산 효과를 1회 발동합니다",
+	"MIYABISTS2_CARD_XINGYUE_XIANGSUI.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 적이 이미 [gold]속성 이상[/gold] 상태라면, 즉시 정산 효과를 1회 발동합니다",
 
 	"MIYABISTS2_CARD_YUANQI100.title": "원기 백퍼센트",
-    "MIYABISTS2_CARD_YUANQI100.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n적이 이미 [gold]속성 이상[/gold] 상태라면, 추가로 [blue]50%[/blue] 피해의 정산 효과를 1회 발동합니다. 적이 동시에 [gold]격파[/gold] 상태라면 [blue]100%[/blue]로 변경\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]소모[/gold]가 붙은 자신의 복사본을 손패에 추가, 이번 턴에 무료로 사용 가능",
+	"MIYABISTS2_CARD_YUANQI100.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n적이 이미 [gold]속성 이상[/gold] 상태라면, 추가로 [blue]50%[/blue] 피해의 정산 효과를 1회 발동합니다. 적이 동시에 [gold]격파[/gold] 상태라면 [blue]100%[/blue]로 변경\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]소모[/gold]가 붙은 자신의 복사본을 손패에 추가, 이번 턴에 무료로 사용 가능",
 
 	"MIYABISTS2_CARD_XINGMANG_ZHONGZHANG.title": "성망종장",
-    "MIYABISTS2_CARD_XINGMANG_ZHONGZHANG.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]성망원무곡[/gold] 1장을 손패에 추가, 이번 턴 비용 [blue]0[/blue]",
+	"MIYABISTS2_CARD_XINGMANG_ZHONGZHANG.description": "{Damage:diff()}점 피해, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [gold]성망원무곡[/gold] 1장을 손패에 추가, 이번 턴 비용 [blue]0[/blue]",
 
 	"MIYABISTS2_CARD_XINGMANG_YUANWUQU.title": "성망원무곡",
-    "MIYABISTS2_CARD_XINGMANG_YUANWUQU.description": "{Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}",
+	"MIYABISTS2_CARD_XINGMANG_YUANWUQU.description": "{Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}",
 
 	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.title": "환상식 주명",
-    "MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.description": "뽑기 카드 더미에서 능력 카드가 아닌 카드 1장을 선택해 손패에 추가합니다. 이번 턴 비용이 [blue]0[/blue]이 됩니다. [gold]파트너[/gold] 카드라면 다음 1회 사용 시 [gold]지원 포인트[/gold]를 소모하지 않습니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가로 버린 카드 더미에서 1장을 선택해 손패에 추가합니다",
+	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.description": "뽑기 카드 더미에서 능력 카드가 아닌 카드 1장을 선택해 손패에 추가합니다. 이번 턴 비용이 [blue]0[/blue]이 됩니다. [gold]파트너[/gold] 카드라면 다음 1회 사용 시 [gold]지원 포인트[/gold]를 소모하지 않습니다\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가로 버린 카드 더미에서 1장을 선택해 손패에 추가합니다",
 	"MIYABISTS2_CARD_HUANXIANGSHI_ZOUMING.selectionScreenPrompt": "파트너 카드 1장 선택",
 
 	"MIYABISTS2_CARD_TU_NA_FA.title": "토납법",
-    "MIYABISTS2_CARD_TU_NA_FA.description": "매 턴 첫 [blue]1[/blue]회 [gold]풍화[/gold] 사용 시 [blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
+	"MIYABISTS2_CARD_TU_NA_FA.description": "매 턴 첫 [blue]1[/blue]회 [gold]풍화[/gold] 사용 시 [blue]1[/blue]점의 [gold]낙상[/gold]을 얻습니다",
 
 	"MIYABISTS2_CARD_MIYABI_DUEL.title": "대결",
-    "MIYABISTS2_CARD_MIYABI_DUEL.description": "적의 의도를 6점 피해로 변경합니다\\n[gold]패링[/gold]1",
+	"MIYABISTS2_CARD_MIYABI_DUEL.description": "적의 의도를 6점 피해로 변경합니다\\n[gold]패링[/gold]1",
 
 	"MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.title": "특별 촬영 기술",
-    "MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.description": "적이 [gold]격파[/gold]될 때 추가로 {DazeVuln:diff()}% [gold]균형 붕괴 취약[/gold]을 얻고, [gold]공격 의도[/gold]를 가진 적이 낮은 확률로 피해를 주지 않습니다",
+	"MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.description": "적이 [gold]격파[/gold]될 때 추가로 {DazeVuln:diff()}% [gold]균형 붕괴 취약[/gold]을 얻고, [gold]공격 의도[/gold]를 가진 적이 낮은 확률로 피해를 주지 않습니다",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.title": "취화월운전",
-    "MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "{HitCount:diff()}회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 격파 상태가 아니면 [gold]기복[/gold] 5중첩 부여, [gold]회피[/gold] 보유 시 추가 2중첩 부여; [gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가 3중첩 [gold]기복[/gold] 부여",
+	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "{HitCount:diff()}회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 격파 상태가 아니면 [gold]기복[/gold] 5중첩 부여, [gold]회피[/gold] 보유 시 추가 2중첩 부여; [gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가 3중첩 [gold]기복[/gold] 부여",
 
 	"MIYABISTS2_CARD_CIQUAN_LIANJI.title": "L식 굉명권-잽 연격",
-    "MIYABISTS2_CARD_CIQUAN_LIANJI.description": "{HitCount:diff()}회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n2턴 동안 적이 받는 [aqua]열상[/aqua] 피해 +[blue]50%[/blue], [gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: +[blue]75%[/blue]로 변경",
+	"MIYABISTS2_CARD_CIQUAN_LIANJI.description": "{HitCount:diff()}회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n2턴 동안 적이 받는 [aqua]열상[/aqua] 피해 +[blue]50%[/blue], [gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: +[blue]75%[/blue]로 변경",
 
 	"MIYABISTS2_CARD_ZHONGMU_YANCHU.title": "종막연출",
-    "MIYABISTS2_CARD_ZHONGMU_YANCHU.description": "3회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 적이 받는 [purple]속성 이상[/purple]과 [purple]혼란[/purple] 피해가 [blue]1.5[/blue]배가 됩니다",
+	"MIYABISTS2_CARD_ZHONGMU_YANCHU.description": "3회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}, [gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 적이 받는 [purple]속성 이상[/purple]과 [purple]혼란[/purple] 피해가 [blue]1.5[/blue]배가 됩니다",
 
 	"MIYABISTS2_CARD_JUN_LIE.title": "균열",
-    "MIYABISTS2_CARD_JUN_LIE.description": "[aqua]열상[/aqua] 카드 사용 시마다 [blue]1[/blue]점의 [gold]와글와글 수치[/gold]를 얻습니다",
+	"MIYABISTS2_CARD_JUN_LIE.description": "[aqua]열상[/aqua] 카드 사용 시마다 [blue]1[/blue]점의 [gold]와글와글 수치[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.title": "종말재결",
-    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "{Damage:diff()}점 피해, 적이 [gold]격파[/gold] 상태면 피해가 [blue]3[/blue]배가 되고, 적의 [gold]격파[/gold]와 [gold]균형 붕괴 취약[/gold]을 제거합니다. 제거 후 [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 피해 +[blue]8[/blue]",
+	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "{Damage:diff()}점 피해, 적이 [gold]격파[/gold] 상태면 피해가 [blue]3[/blue]배가 되고, 적의 [gold]격파[/gold]와 [gold]균형 붕괴 취약[/gold]을 제거합니다. 제거 후 [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 피해 +[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_PRINCESS.title": "초시공 카구야 공주",
-    "MIYABISTS2_CARD_PRINCESS.description": "초시공 카구야 공주의 축복",
+	"MIYABISTS2_CARD_PRINCESS.description": "초시공 카구야 공주의 축복",
 	"MIYABISTS2_CARD_PRINCESS.selectionScreenPrompt": "축복 선택",
 
 	"MIYABISTS2_CARD_PRINCESS_KAGUYA.title": "카구야 공주",
-    "MIYABISTS2_CARD_PRINCESS_KAGUYA.description": "덱에서 [gold]초인 이로하[/gold] 1장을 소모하여 강력한 효과 1회 발동\\n매 턴 시작 시 무작위로 {Kaguya:diff()}회 효과 발동",
+	"MIYABISTS2_CARD_PRINCESS_KAGUYA.description": "덱에서 [gold]초인 이로하[/gold] 1장을 소모하여 강력한 효과 1회 발동\\n매 턴 시작 시 무작위로 {Kaguya:diff()}회 효과 발동",
 
 	"MIYABISTS2_CARD_PRINCESS_INOP.title": "이로하의 축복",
-    "MIYABISTS2_CARD_PRINCESS_INOP.description": "[gold]인공 유물[/gold] 1중첩, [gold]회피[/gold] 1중첩 획득\\n[gold]활력[/gold] 2중첩, [gold]가시[/gold] 1중첩 획득\\n[gold]복갑[/gold] 2중첩 획득",
+	"MIYABISTS2_CARD_PRINCESS_INOP.description": "[gold]인공 유물[/gold] 1중첩, [gold]회피[/gold] 1중첩 획득\\n[gold]활력[/gold] 2중첩, [gold]가시[/gold] 1중첩 획득\\n[gold]복갑[/gold] 2중첩 획득",
 
 	"MIYABISTS2_CARD_PRINCESS_YACHIYO.title": "야치요의 수호",
-    "MIYABISTS2_CARD_PRINCESS_YACHIYO.description": "손패에서 1장을 선택해 [gold]소모[/gold]합니다. 이후 원하는 손패에 추가하고 비용 0으로 만들 수 있습니다",
+	"MIYABISTS2_CARD_PRINCESS_YACHIYO.description": "손패에서 1장을 선택해 [gold]소모[/gold]합니다. 이후 원하는 손패에 추가하고 비용 0으로 만들 수 있습니다",
 	"MIYABISTS2_CARD_PRINCESS_YACHIYO.selectionScreenPrompt": "미래로 보낼 카드 1장 선택",
 
 	"MIYABISTS2_CARD_PRINCESS_YEARS.title": "팔천년의 기다림",
-    "MIYABISTS2_CARD_PRINCESS_YEARS.description": "[gold]초인 이로하[/gold] 1장을 버린 카드 더미에 추가합니다",
+	"MIYABISTS2_CARD_PRINCESS_YEARS.description": "[gold]초인 이로하[/gold] 1장을 버린 카드 더미에 추가합니다",
 
 	"MIYABISTS2_CARD_PRICE_OF_POWER.title": "힘의 대가",
-    "MIYABISTS2_CARD_PRICE_OF_POWER.description": "덱에 추가될 때 영화 +1; 덱에서 제거될 때 영화 -1",
+	"MIYABISTS2_CARD_PRICE_OF_POWER.description": "덱에 추가될 때 영화 +1; 덱에서 제거될 때 영화 -1",
 
 	"MIYABISTS2_CARD_PRINCESS_INOHA.title": "초인 이로하",
-    "MIYABISTS2_CARD_PRINCESS_INOHA.description": "[gold]팔천년의 기다림[/gold]과 함께 손패에 있을 때, 모든 카드가 [gold]강화[/gold]되고 [gold]재생 1[/gold]을 얻습니다. [gold]팔천년의 기다림[/gold]을 [gold]카구야 공주[/gold]로 변환합니다",
+	"MIYABISTS2_CARD_PRINCESS_INOHA.description": "[gold]팔천년의 기다림[/gold]과 함께 손패에 있을 때, 모든 카드가 [gold]강화[/gold]되고 [gold]재생 1[/gold]을 얻습니다. [gold]팔천년의 기다림[/gold]을 [gold]카구야 공주[/gold]로 변환합니다",
 
 	"MIYABISTS2_CARD_WEIMING_DOUDAOSHU.title": "위명 떨검술",
-    "MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "[gold]격파[/gold]되지 않았을 때 받는 피해 [blue]25%[/blue] 감소, 피격 시마다 [gold]화사[/gold] 1장을 손패에 추가\\n방어되지 않은 피해를 받을 때마다 {Daze:diff()}층의 균형 붕괴 추가, 누적 [blue]100[/blue]층 도달 시 [gold]격파[/gold] 발동",
+	"MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "[gold]격파[/gold]되지 않았을 때 받는 피해 [blue]25%[/blue] 감소, 피격 시마다 [gold]화사[/gold] 1장을 손패에 추가\\n방어되지 않은 피해를 받을 때마다 {Daze:diff()}층의 균형 붕괴 추가, 누적 [blue]100[/blue]층 도달 시 [gold]격파[/gold] 발동",
 
 	"MIYABISTS2_CARD_BEE_GROUP.title": "봉군 집결",
-    "MIYABISTS2_CARD_BEE_GROUP.description": "손패와 뽑기 카드 더미 중 무작위 {Cards:diff()}장에 {Chance}회 발동 가능한 [gold]봉군[/gold]을 부여합니다",
+	"MIYABISTS2_CARD_BEE_GROUP.description": "손패와 뽑기 카드 더미 중 무작위 {Cards:diff()}장에 {Chance}회 발동 가능한 [gold]봉군[/gold]을 부여합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.title": "Bangboo 습래!",
-    "MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "무작위로 {summon:diff()}마리의 Bangboo를 소환합니다",
+	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "무작위로 {summon:diff()}마리의 Bangboo를 소환합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.title": "Bangboo 출격!",
-    "MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.description": "Bangboo 1마리를 지정하여 그 능력을 1회 무료로 사용할 수 있습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
+	"MIYABISTS2_CARD_BANGBOO_ACTIVE_ONE.description": "Bangboo 1마리를 지정하여 그 능력을 1회 무료로 사용할 수 있습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.title": "Bangboo 폭발!",
-    "MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.description": "Bangboo 1마리를 지정하여 매 턴 그 능력을 1회 추가로 사용할 수 있습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
+	"MIYABISTS2_CARD_BANGBOO_USE_ONEMORE.description": "Bangboo 1마리를 지정하여 매 턴 그 능력을 1회 추가로 사용할 수 있습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.title": "Bangboo 충전!",
-    "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "모든 Bangboo의 능력 사용 횟수를 1회 회복합니다\\n필드에 Bangboo가 없으면 무작위 Bangboo 1마리를 소환합니다",
+	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "모든 Bangboo의 능력 사용 횟수를 1회 회복합니다\\n필드에 Bangboo가 없으면 무작위 Bangboo 1마리를 소환합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "Bangboo 구해줘!",
-    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Bangboo 1마리를 지정하여 [gold]수호자[/gold]를 얻습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Bangboo 1마리를 지정하여 [gold]수호자[/gold]를 얻습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "오늘의 수행",
-    "MIYABISTS2_CARD_TRAINING_TODAY.description": "오늘의 수행을 선택합니다",
+	"MIYABISTS2_CARD_TRAINING_TODAY.description": "오늘의 수행을 선택합니다",
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "수행 선택",
 
 	"MIYABISTS2_CARD_TRAIN_SPEAK.title": "말은 5글자 이하로",
-    "MIYABISTS2_CARD_TRAIN_SPEAK.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 매 턴 [blue]5[/blue]장을 초과하여 카드를 낼 수 없습니다\\n[gold]수행[/gold] 종료 후, 매 턴 처음 [blue]5[/blue]장의 카드 비용 -[blue]1[/blue]",
+	"MIYABISTS2_CARD_TRAIN_SPEAK.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 매 턴 [blue]5[/blue]장을 초과하여 카드를 낼 수 없습니다\\n[gold]수행[/gold] 종료 후, 매 턴 처음 [blue]5[/blue]장의 카드 비용 -[blue]1[/blue]",
 
 	"MIYABISTS2_CARD_TRAIN_STEP.title": "문에 들어갈 땐 오른발 먼저",
-    "MIYABISTS2_CARD_TRAIN_STEP.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 공격 카드 사용 전에 카드 1장을 [gold]버려야[/gold] 합니다\\n[gold]수행[/gold] 종료 후, 공격 카드 사용 시 카드 [blue]1[/blue]장을 뽑습니다",
+	"MIYABISTS2_CARD_TRAIN_STEP.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 공격 카드 사용 전에 카드 1장을 [gold]버려야[/gold] 합니다\\n[gold]수행[/gold] 종료 후, 공격 카드 사용 시 카드 [blue]1[/blue]장을 뽑습니다",
 
 	"MIYABISTS2_CARD_TRAIN_EAT.title": "멜론 맛 음식만 먹기",
-    "MIYABISTS2_CARD_TRAIN_EAT.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 공격 카드를 낼 수 없습니다\\n[gold]수행[/gold] 종료 후, 모든 공격 카드의 비용 -[blue]1[/blue]",
+	"MIYABISTS2_CARD_TRAIN_EAT.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 공격 카드를 낼 수 없습니다\\n[gold]수행[/gold] 종료 후, 모든 공격 카드의 비용 -[blue]1[/blue]",
 
 	"MIYABISTS2_CARD_TRAIN_ATTACK.title": "단 3초만 사용",
-    "MIYABISTS2_CARD_TRAIN_ATTACK.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 매 턴 [blue]3[/blue]장의 카드만 사용 가능하며, 모든 카드를 무료로 사용합니다\\n[gold]수행[/gold] 종료 후, 매 턴 시작 시 {Energy:energyIcons()} 획득",
+	"MIYABISTS2_CARD_TRAIN_ATTACK.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 매 턴 [blue]3[/blue]장의 카드만 사용 가능하며, 모든 카드를 무료로 사용합니다\\n[gold]수행[/gold] 종료 후, 매 턴 시작 시 {Energy:energyIcons()} 획득",
 
 	"MIYABISTS2_CARD_EARS_ALL.title": "All Ears",
-    "MIYABISTS2_CARD_EARS_ALL.description": "손패의 모든 [gold]공격 카드[/gold]를 [gold]왼쪽 귀 고데미지[/gold]로, 모든 [gold]스킬 카드[/gold]를 [gold]오른쪽 귀 데미지 고[/gold]로 변환합니다",
+	"MIYABISTS2_CARD_EARS_ALL.description": "손패의 모든 [gold]공격 카드[/gold]를 [gold]왼쪽 귀 고데미지[/gold]로, 모든 [gold]스킬 카드[/gold]를 [gold]오른쪽 귀 데미지 고[/gold]로 변환합니다",
 
 	"MIYABISTS2_CARD_EARS_LEFT.title": "왼쪽 귀 고데미지",
-    "MIYABISTS2_CARD_EARS_LEFT.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{Cards:diff()}장의 카드를 뽑습니다",
+	"MIYABISTS2_CARD_EARS_LEFT.description": "[aqua]열상[/aqua]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{Cards:diff()}장의 카드를 뽑습니다",
 
 	"MIYABISTS2_CARD_EARS_RIGHT.title": "오른쪽 귀 데미지 고",
-    "MIYABISTS2_CARD_EARS_RIGHT.description": "[aqua]열상[/aqua]{Damage:diff()}\\n{Block:diff()}점 방어도 획득\\n[gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}",
+	"MIYABISTS2_CARD_EARS_RIGHT.description": "[aqua]열상[/aqua]{Damage:diff()}\\n{Block:diff()}점 방어도 획득\\n[gold]속성 축적[/gold]{ANOBUILD_POWER:diff()}",
 
 	"MIYABISTS2_CARD_JINLONG_SZB.title": "금색위신·루미오르",
-    "MIYABISTS2_CARD_JINLONG_SZB.description": "매 턴 시작 시 최대 2장의 카드를 버리고, 버린 수만큼 카드를 뽑습니다.\\n카드를 버리거나 소모할 때마다 모든 적에게 2점 피해를 줍니다.",
+	"MIYABISTS2_CARD_JINLONG_SZB.description": "매 턴 시작 시 최대 2장의 카드를 버리고, 버린 수만큼 카드를 뽑습니다.\\n카드를 버리거나 소모할 때마다 모든 적에게 2점 피해를 줍니다.",
 
 	"MIYABISTS2_CARD_KAKANIA.title": "이드, 자아, 초자아",
-    "MIYABISTS2_CARD_KAKANIA.description": "받는 피해 [red]25%[/red] 증가, 받은 모든 피해를 기록합니다.\\n우클릭 발동: [gold]지원 포인트[/gold] 5점을 소모하여 모든 적에게 기록된 수치의 피해를 줍니다. 턴 종료 시 이번 턴에 준 피해의 {BurstRatio:diff()}%만큼 피해를 줍니다.",
+	"MIYABISTS2_CARD_KAKANIA.description": "받는 피해 [red]25%[/red] 증가, 받은 모든 피해를 기록합니다.\\n우클릭 발동: [gold]지원 포인트[/gold] 5점을 소모하여 모든 적에게 기록된 수치의 피해를 줍니다. 턴 종료 시 이번 턴에 준 피해의 {BurstRatio:diff()}%만큼 피해를 줍니다.",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "균형 붕괴 테스트 카드",
-    "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]균형 붕괴 수치[/gold][blue]50[/blue]",
+	"MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]균형 붕괴 수치[/gold][blue]50[/blue]",
 
 	"MIYABISTS2_CARD_TEST_CARD_ANO.title": "속성 테스트 카드",
-    "MIYABISTS2_CARD_TEST_CARD_ANO.description": "[gold]속성 축적[/gold][blue]3[/blue]",
+	"MIYABISTS2_CARD_TEST_CARD_ANO.description": "[gold]속성 축적[/gold][blue]3[/blue]",
 
 	"MIYABISTS2_CARD_TEST_CARD_FROST.title": "열상 테스트 카드",
-    "MIYABISTS2_CARD_TEST_CARD_FROST.description": "[aqua]열상 축적[/aqua][blue]50[/blue]",
+	"MIYABISTS2_CARD_TEST_CARD_FROST.description": "[aqua]열상 축적[/aqua][blue]50[/blue]",
 
 
 	"MIYABISTS2_CARD_TEST_CARD_SHUFA.title": "술법 테스트 카드",
-    "MIYABISTS2_CARD_TEST_CARD_SHUFA.description": "술법 수치[blue]60[/blue]",
+	"MIYABISTS2_CARD_TEST_CARD_SHUFA.description": "술법 수치[blue]60[/blue]",
 
 
 	// ====== 의현 전용 카드 ======
@@ -309,31 +309,31 @@
 	"MIYABISTS2_CARD_FUFA_QIANCHONG_PO.description": "전체 적에게 {HitCount:diff()}회 [orange]현묵[/orange]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n모든 적에게 20층의 [gold]술법 수치[/gold] 부여",
 
 	"MIYABISTS2_CARD_XIAOYUN_JIN.title": "소운경",
-    "MIYABISTS2_CARD_XIAOYUN_JIN.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
+	"MIYABISTS2_CARD_XIAOYUN_JIN.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}",
 
 	"MIYABISTS2_CARD_YIXUAN_BLOCK.title": "방어",
-    "MIYABISTS2_CARD_YIXUAN_BLOCK.description": "{Block:diff()}점 방어도 획득\\n{THORNS_POWER:diff()}중첩의 [gold]가시[/gold] 획득",
+	"MIYABISTS2_CARD_YIXUAN_BLOCK.description": "{Block:diff()}점 방어도 획득\\n{THORNS_POWER:diff()}중첩의 [gold]가시[/gold] 획득",
 
 	"MIYABISTS2_CARD_JINYING_JUE.title": "신영결",
-    "MIYABISTS2_CARD_JINYING_JUE.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 공격 의도면 {Block:diff()}점 방어도와 [gold]가시[/gold] 2중첩 획득",
+	"MIYABISTS2_CARD_JINYING_JUE.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 공격 의도면 {Block:diff()}점 방어도와 [gold]가시[/gold] 2중첩 획득",
 
 	"MIYABISTS2_CARD_XUANMO_ANYONG.title": "현묵암용",
-    "MIYABISTS2_CARD_XUANMO_ANYONG.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 공격 의도면 {Block:diff()}점 방어도와 [gold]가시[/gold] 4중첩 획득\\n[gold]현묵암용[/gold] 1중첩 획득",
+	"MIYABISTS2_CARD_XUANMO_ANYONG.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 공격 의도면 {Block:diff()}점 방어도와 [gold]가시[/gold] 4중첩 획득\\n[gold]현묵암용[/gold] 1중첩 획득",
 
 	"MIYABISTS2_CARD_QINGMING_YUNYING.title": "청명운영",
 	"MIYABISTS2_CARD_QINGMING_YUNYING.description": "전체 {HitCount:diff()}회 [orange]현묵[/orange]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n모든 적에게 25층의 [gold]술법 수치[/gold] 부여\\n자신의 최대 생명력 {Heal:diff()}% 회복",
 
-    "MIYABISTS2_CARD_MOYING_NINGYUN.title": "묵영응운",
-    "MIYABISTS2_CARD_MOYING_NINGYUN.description": "전체 적에게 {HitCount:diff()}회 [orange]현묵[/orange]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{Block:diff()}점 방어도 획득\\n모든 적에게 10층의 [gold]술법 수치[/gold] 부여",
+	"MIYABISTS2_CARD_MOYING_NINGYUN.title": "묵영응운",
+	"MIYABISTS2_CARD_MOYING_NINGYUN.description": "전체 적에게 {HitCount:diff()}회 [orange]현묵[/orange]{Damage:diff()}, [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{Block:diff()}점 방어도 획득\\n모든 적에게 10층의 [gold]술법 수치[/gold] 부여",
 
-    "MIYABISTS2_CARD_YINYUN_SHENFA.title": "은운신법",
-    "MIYABISTS2_CARD_YINYUN_SHENFA.description": "{Block:diff()}점 방어도 획득\\n[gold]섬에너지[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: {VIGOR_POWER:diff()}중첩의 [gold]활력[/gold] 획득",
+	"MIYABISTS2_CARD_YINYUN_SHENFA.title": "은운신법",
+	"MIYABISTS2_CARD_YINYUN_SHENFA.description": "{Block:diff()}점 방어도 획득\\n[gold]섬에너지[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: {VIGOR_POWER:diff()}중첩의 [gold]활력[/gold] 획득",
 
-    "MIYABISTS2_CARD_LINGYUN_PO.title": "능운파",
-    "MIYABISTS2_CARD_LINGYUN_PO.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{VIGOR_POWER:diff()}중첩의 [gold]활력[/gold] 획득",
+	"MIYABISTS2_CARD_LINGYUN_PO.title": "능운파",
+	"MIYABISTS2_CARD_LINGYUN_PO.description": "[orange]현묵[/orange]{Damage:diff()}\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n{VIGOR_POWER:diff()}중첩의 [gold]활력[/gold] 획득",
 
-    "MIYABISTS2_CARD_QING_XIAO_JIN.title": "청소경",
-    "MIYABISTS2_CARD_QING_XIAO_JIN.description": "{Block:diff()}점 방어도 획득\\n[gold]섬에너지[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: [gold]선택[/gold] {THORNS_POWER:diff()}중첩의 [gold]가시[/gold] 또는 {VIGOR_POWER:diff()}중첩의 [gold]활력[/gold] 획득",
+	"MIYABISTS2_CARD_QING_XIAO_JIN.title": "청소경",
+	"MIYABISTS2_CARD_QING_XIAO_JIN.description": "{Block:diff()}점 방어도 획득\\n[gold]섬에너지[/gold][blue]{SHANNENG_POWER:diff()}[/blue]: [gold]선택[/gold] {THORNS_POWER:diff()}중첩의 [gold]가시[/gold] 또는 {VIGOR_POWER:diff()}중첩의 [gold]활력[/gold] 획득",
 
 	"MIYABISTS2_CARD_SHUFA_ZONGSHI.title": "술법종사",
 	"MIYABISTS2_CARD_SHUFA_ZONGSHI.description": "현묵 피해를 줄 때마다 적에게 {SHUFA_ZONGSHI_AMOUNT:diff()}층의 [gold]술법 수치[/gold] 부여",
@@ -432,7 +432,7 @@
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "{HitCount:diff()}회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 격파 상태가 아니면 [gold]기복[/gold] 5중첩 부여, [gold]회피[/gold] 보유 시 추가 2중첩 부여; [gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가 3중첩 [gold]기복[/gold] 부여",
 
 	"MIYABISTS2_CARD_KAKANIA_YIXUAN.title": "이드, 자아, 초자아",
-    "MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "받는 피해 [red]25%[/red] 증가, 받은 모든 피해를 기록합니다.\\n우클릭 발동: [gold]지원 포인트[/gold] 5점을 소모하여 모든 적에게 기록된 수치의 피해를 줍니다. 턴 종료 시 이번 턴에 준 피해의 {BurstRatio:diff()}%만큼 피해를 줍니다.",
+	"MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "받는 피해 [red]25%[/red] 증가, 받은 모든 피해를 기록합니다.\\n우클릭 발동: [gold]지원 포인트[/gold] 5점을 소모하여 모든 적에게 기록된 수치의 피해를 줍니다. 턴 종료 시 이번 턴에 준 피해의 {BurstRatio:diff()}%만큼 피해를 줍니다.",
 
 
 	// ====== 의현 신규 전용 카드 ======
@@ -489,7 +489,7 @@
 
 	// ====== 의현 신규 공유 카드 ======
 	"MIYABISTS2_CARD_JINLONG_SZB_YIXUAN.title": "금색위신·루미오르",
-    "MIYABISTS2_CARD_JINLONG_SZB_YIXUAN.description": "매 턴 시작 시 최대 2장의 카드를 버리고, 버린 수만큼 카드를 뽑습니다.\\n카드를 버리거나 소모할 때마다 모든 적에게 2점 피해를 줍니다.",
+	"MIYABISTS2_CARD_JINLONG_SZB_YIXUAN.description": "매 턴 시작 시 최대 2장의 카드를 버리고, 버린 수만큼 카드를 뽑습니다.\\n카드를 버리거나 소모할 때마다 모든 적에게 2점 피해를 줍니다.",
 
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG_YIXUAN.title": "모든 것을 호파왕에게",
 	"MIYABISTS2_CARD_ALL_FOR_HUPOWANG_YIXUAN.description": "덱에서 [gold]균형 붕괴 수치[/gold]가 [blue]15[/blue]를 초과하는 모든 카드를 소모합니다\\n[blue]3[/blue]장 이상 소모하면 적을 [gold]격파[/gold]합니다\\n[blue]3[/blue]장 미만이면 뽑기 카드 더미에 [blue]3[/blue]장의 [gold]악호칠식·맹호작개화[/gold]를 추가합니다",

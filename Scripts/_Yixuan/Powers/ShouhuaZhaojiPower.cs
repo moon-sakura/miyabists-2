@@ -26,10 +26,10 @@ namespace Miyabists2.Scripts._Yixuan.Powers
         public override int DisplayAmount => Amount;
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
-        //public string BigIconPath => "res://images/_YiXuan/powers/shouhuaZhaoji.png";
-        //public string BigBetaIconPath => BigIconPath;
-        //public override string CustomIconPath => BigIconPath;
-        //public override string CustomBigIconPath => BigIconPath;
+        public string BigIconPath => "res://images/_YiXuan/powers/shouhuaZhaoji.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new EnergyVar(0),
