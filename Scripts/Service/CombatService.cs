@@ -299,23 +299,9 @@ namespace Miyabists2.Scripts.Service
         {
             if (target == null || target.IsDead) return;
 
-            bool moonBless = false;
-            if (dealer.IsPlayer)
-            {
-                moonBless = IsAnyHasMoonBlessing(dealer);
-            }
-            bool hasZmyc = target.HasPower<ZhongmuycPower>();
-
             await PowerCmd.Remove<AttributeAnomalyPower>(target);
 
-            //造成10%点伤害
-            decimal damage = target.MaxHp * DisorderDamageRate;
-
-            if (moonBless) damage += target.MaxHp * 0.05m;
-
-            if (hasZmyc) damage *= 1.5m;
-
-            await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered | ValueProp.Unblockable, dealer);
+            await DealAnoDamage(choiceContext, dealer, target, 10);
 
             await PowerCmd.Apply<DisorderPower>(choiceContext, target, 1, dealer, null);
         }
@@ -360,6 +346,34 @@ namespace Miyabists2.Scripts.Service
                 await PowerCmd.Apply<AttributeAnomalyPower>(choiceContext, target, 1, dealer, null);
             }
         }
+
+        public static async Task DealAnoDamage(PlayerChoiceContext choiceContext, Creature dealer, Creature target, int perD, decimal f = 100)
+        {
+            bool moonBless = false;
+            if (dealer != null && dealer.IsPlayer)
+            {
+                moonBless = IsAnyHasMoonBlessing(dealer);
+            }
+            bool hasZmyc = target.HasPower<ZhongmuycPower>();
+
+            decimal percent = ((decimal)perD) / 100m;
+            if (moonBless)
+                percent += 0.05m;
+            if (target.HasPower<YaobianPower>())
+            {
+                percent += ((decimal)target.GetPowerAmount<YaobianPower>()) / 100m;
+            }
+
+            //造成属性异常伤害
+            decimal damage = target.MaxHp * percent;
+
+            if (hasZmyc) damage *= 1.5m;
+
+            damage *= f / 100;
+
+            await CreatureCmd.Damage(choiceContext, target, damage, ValueProp.Unpowered | ValueProp.Unblockable, dealer);
+        }
+
 
         //失衡值叠加
         public static async Task AddDaze(PlayerChoiceContext choiceContext, Creature target,DynamicVar dazeVar,Creature dealer)

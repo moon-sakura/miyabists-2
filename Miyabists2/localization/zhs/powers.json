@@ -47,6 +47,14 @@
     "ANOMALY_BUILDUP_POWER.description": "累积到5层后使敌人获得[purple]属性异常[/purple](每多一个玩家触发层数+[blue]2[/blue])",
     "ANOMALY_BUILDUP_POWER.smartDescription": "累积到{PlayerCount:choose(1|2|3|4):5|7|9|11|5}层后使敌人获得[purple]属性异常[/purple]{PlayerCount:cond:>4?(每多一个玩家触发层数+[blue]2[/blue])|}",
 
+    "LIUMING_POWER.title": "流明",
+    "LIUMING_POWER.description": "回合结束时受到5%[purple]属性异常[/purple]伤害。与[purple]属性异常[/purple]同时存在时触发[gold]耀变[/gold]并造成5%[purple]属性异常[/purple]伤害",
+    "LIUMING_POWER.smartDescription": "回合结束时受到5%[purple]属性异常[/purple]伤害。与[purple]属性异常[/purple]同时存在时触发[gold]耀变[/gold]并造成5%[purple]属性异常[/purple]伤害",
+
+    "YAOBIAN_POWER.title": "耀变",
+    "YAOBIAN_POWER.description": "造成的[purple]属性异常[/purple]伤害增加。累计至3层时，回合结束清除[gold]耀变[/gold]并对敌人造成15%的[purple]属性异常[/purple]伤害。",
+    "YAOBIAN_POWER.smartDescription": "造成的[purple]属性异常[/purple]伤害额外增加{Amount}%伤害。累计至3层时，回合结束清除[gold]耀变[/gold]并对敌人造成15%的[purple]属性异常[/purple]伤害。",
+
 	"DISORDER_POWER.title": "紊乱",
     "DISORDER_POWER.description": "立即造成最大生命值[blue]10%[/blue]的伤害，下一击伤害变为[blue]2[/blue]倍",
     "DISORDER_POWER.smartDescription": "立即造成最大生命值[blue]10%[/blue]的伤害，下一击伤害变为[blue]2[/blue]倍",
@@ -157,6 +165,10 @@
 	"ZHANJINZE_POWER.title": "斩尽罪恶",
     "ZHANJINZE_POWER.description": "",
     "ZHANJINZE_POWER.smartDescription": "本回合伤害翻倍",
+
+    "FANGFEI_ZHIYAO_POWER.title": "芳菲之邀",
+    "FANGFEI_ZHIYAO_POWER.description": "每回合结束时对所有敌人造成6点伤害，并施加1层[gold]流明[/gold]。",
+    "FANGFEI_ZHIYAO_POWER.smartDescription": "每回合结束时对所有敌人造成6点伤害，并施加1层[gold]流明[/gold]。",
 
 	"XSJS_POWER.title": "雪上加霜",
     "XSJS_POWER.description": "",

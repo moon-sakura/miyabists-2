@@ -257,6 +257,10 @@
     "MIYABISTS2_CARD_TRAINING_TODAY.description": "选择今天的修行",
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "选择修行",
 
+	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "芳菲之邀",
+    "MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "每回合结束时对所有敌人造成{Damage:diff}点伤害，并施加1层[gold]流明[/gold]。",
+	
+
 	"MIYABISTS2_CARD_TRAIN_SPEAK.title": "说话不超过5个字",
     "MIYABISTS2_CARD_TRAIN_SPEAK.description": "[gold]修行[/gold]\\n[blue]3[/blue]回合内，每回合出牌不可超过[blue]5[/blue]张\\n[gold]修行[/gold]结束后，每回合前[blue]5[/blue]张卡费用-[blue]1[/blue]",
 
