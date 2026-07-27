@@ -62,8 +62,9 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             {
                 if(power is not ShannengPower && power is not SupportPointPower)
                 {
-                    if(power is not YixuanCinimasixPower && power is not YixuanCinimatwoPower)
+                    if(power.Type != PowerType.None)
                     {
+                        GD.Print($"[MIYABIMOD] WUWOLIANGWANG REMOVE {power.Title.ToString()}");
                         exhaustedPowerAmount += power.Amount;
                         await PowerCmd.Remove(power);
                     }
@@ -82,10 +83,10 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             // 3. 随机添加特殊卡牌（数量=舍弃手牌数，数值由消除能力数决定）
             for (int i = 0; i < discardCount; i++)
             {
-                int tokenType = rng.NextInt(0, 3);
                 CardModel specialCard = null;
                 if (exhaustedPowerAmount >= 10)
                 {
+                    int tokenType = rng.NextInt(0, 3);
                     specialCard = tokenType switch
                     {
                         0 => base.Owner.Creature.CombatState.CreateCard<WuwuLiangwangAtk>(base.Owner.Creature.Player),
@@ -95,6 +96,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 }
                 else
                 {
+                    int tokenType = rng.NextInt(0, 2);
                     specialCard = tokenType switch
                     {
                         0 => base.Owner.Creature.CombatState.CreateCard<WuwuLiangwangDef>(base.Owner.Creature.Player),

@@ -56,7 +56,7 @@ namespace Miyabists2.Scripts.Powers
 
             if (_isConverting) return;
 
-            if (power is AttributeAnomalyPower || power is LiumingPower)
+            if ((power is AttributeAnomalyPower || power is LiumingPower) && Owner.HasPower<AttributeAnomalyPower>())
             {
                 _isConverting = true;
                 try

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Yixuan.Cards
 {
-    [RegisterCard(typeof(YixuanCardPool))]
+    //[RegisterCard(typeof(YixuanCardPool))]
     internal class AllForHupowangYixuan : AllForHupowang
     {
     }
