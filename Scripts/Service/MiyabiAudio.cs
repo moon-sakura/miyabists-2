@@ -261,6 +261,19 @@ namespace Miyabists2.Scripts.Service
             MiyabiAudioService.Play(keys[idx], volume, stopOthers);
         }
 
+        public static string RandomGetOne(string[] keys, float volume = 1f, bool stopOthers = true)
+        {
+            if (keys == null || keys.Length == 0)
+            {
+                GD.PrintErr("[MiyabiAudio] PlayRandom: keys 数组为空");
+                return "";
+            }
+
+            int idx = (int)(GD.Randi() % keys.Length);
+            //MiyabiAudioService.Play(keys[idx], volume, stopOthers);
+            return "res://scenes/audio/" + keys[idx];
+        }
+
         /// <summary>
         /// 从语音池中随机选一条播放（params 重载，无需手动创建数组）
         /// 用法：MiyabiAudioPlay.Random("voice_1", "voice_2", "voice_3")
