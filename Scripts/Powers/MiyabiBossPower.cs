@@ -42,13 +42,14 @@ namespace Miyabists2.Scripts.Powers
 
         public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
-            if(applier != base.Owner || !(power is BreakPlayerPower || power is DisorderPower) || amount < 1)
+            if((power is BreakPower || power is DisorderPower) && amount >= 1)
             {
                 if(Owner.IsPet && Owner.PetOwner != null)
                 {
                     if (power is BreakPower)
                     {
-                        foreach (var powerItem in base.Owner.Powers)
+                        var powers = base.Owner.Powers.ToList();
+                        foreach (var powerItem in powers)
                         {
                             if (powerItem.Type == PowerType.Debuff)
                             {
@@ -56,6 +57,7 @@ namespace Miyabists2.Scripts.Powers
                             }
                         }
 
+                        powers = base.Owner.PetOwner.Creature.Powers.ToList();
                         foreach (var powerItem in base.Owner.PetOwner.Creature.Powers)
                         {
                             if (powerItem.Type == PowerType.Debuff)
@@ -65,7 +67,7 @@ namespace Miyabists2.Scripts.Powers
                         }
                     }
 
-                    if (power is DisorderPower && (applier.IsPlayer || applier == base.Owner))
+                    if (power is DisorderPower)
                     {
                         await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner, 2m, base.Owner, null);
                     }
@@ -78,7 +80,8 @@ namespace Miyabists2.Scripts.Powers
 
             if(power is BreakPlayerPower)
             {
-                foreach(var powerItem in base.Owner.Powers)
+                var powers = base.Owner.Powers.ToList();
+                foreach (var powerItem in powers)
                 {
                     if(powerItem.Type == PowerType.Debuff) 
                     {
