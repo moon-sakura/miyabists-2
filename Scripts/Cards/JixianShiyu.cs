@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts.Cards
                 if (base.IsUpgraded) reward1.UpgradeInternal();
                 reward1.AddKeyword(CardKeyword.Exhaust);
                 reward1.SetToFreeThisCombat();
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
             }
 
             await PowerCmd.Apply<NoDrawPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);

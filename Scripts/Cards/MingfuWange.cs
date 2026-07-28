@@ -59,7 +59,7 @@ namespace Miyabists2.Scripts.Cards
         async Task FriendFunc(PlayerChoiceContext choiceContext)
         {
             CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XiezouJusha>(base.Owner.Creature.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
         }
 
         protected override void OnUpgrade()

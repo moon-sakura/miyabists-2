@@ -51,7 +51,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers
                 for (int i = 0; i < Amount; i++)
                 {
                     CardModel reward = Owner.CombatState.CreateCard<FufaQianchongPo>(Owner.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward, PileType.Hand, Owner.Player, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward, PileType.Hand, Owner.Player);
                 }
             }
         }

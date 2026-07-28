@@ -147,7 +147,7 @@ namespace Miyabists2.Scripts.Relics
             {
                 Flash();
                 CardModel card = Owner.Creature.CombatState.CreateCard<ChangYeShipian>(Owner.Creature.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
             }
         }
 

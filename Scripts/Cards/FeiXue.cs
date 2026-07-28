@@ -41,7 +41,7 @@ namespace Miyabists2.Scripts.Cards
             await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 2, base.Owner.Creature, this);
             CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<FeiXueTwo>(base.Owner.Creature.Player);
             if(base.IsUpgraded) reward1.UpgradeInternal();
-            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
         }
 
         protected override void OnUpgrade()

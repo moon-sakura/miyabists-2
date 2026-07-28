@@ -114,7 +114,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                     specialCard.DynamicVars.Energy.BaseValue = exhaustedPowerAmount / 10;
                 }
 
-                await CardPileCmd.AddGeneratedCardToCombat(specialCard, PileType.Hand, Owner, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(specialCard, PileType.Hand, Owner);
             }
         }
 

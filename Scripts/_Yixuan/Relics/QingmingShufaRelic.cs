@@ -111,7 +111,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                     Flash();
 
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<QingmingYunying>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 }
 
             }
@@ -234,7 +234,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
                     Flash();
 
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<QingmingYunying>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 }
             }
         }

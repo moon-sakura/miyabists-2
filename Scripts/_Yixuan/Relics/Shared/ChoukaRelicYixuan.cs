@@ -32,7 +32,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics.Shared
                 if (CinimaCounter >= 1)
                 {
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<FufaQianchong>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 }
 
                 if (CinimaCounter >= 2)

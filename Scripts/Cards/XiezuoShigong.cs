@@ -80,7 +80,7 @@ namespace Miyabists2.Scripts.Cards
 
         async Task FriendFunc(PlayerChoiceContext choiceContext)
         {
-            await CardPileCmd.Add(this, PileType.Draw.GetPile(Owner),CardPilePosition.Random);
+            await CardPileCmd.Add(this, PileType.Draw.GetPile(Owner));
             //if (DynamicVars.TryGetValue("RepeatCount", out DynamicVar repeat)) repeat.BaseValue += 1;
         }
 

@@ -58,7 +58,7 @@ namespace Miyabists2.Scripts.Cards
                     }
                     else if (chosen is HollowGuodujinshe)
                     {
-                        await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner, CardPilePosition.Random);
+                        await CardPileCmd.AddGeneratedCardToCombat(chosen, PileType.Hand, Owner);
                     }
                     else if (chosen is HollowJishengyijun)
                     {

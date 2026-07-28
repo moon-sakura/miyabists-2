@@ -51,9 +51,17 @@ namespace Miyabists2.Scripts.Service
             await PowerCmd.ModifyAmount(context, power, powerAmount - currentAmount, applier, cardSource);
         }
 
+        /// <summary>
+        /// 已舍弃，请根据当前环境使用对应随机数rng
+        /// </summary>
+        /// <param name="Min"></param>
+        /// <param name="exMax"></param>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        [Obsolete]
         public static int RandomInt(int Min , int exMax, Player player)
         {
-            int result = player.RunState.Rng.Shuffle.NextInt(Min, exMax);
+            int result = player.RunState.Rng.Niche.NextInt(Min, exMax);
             return result;
         }
 

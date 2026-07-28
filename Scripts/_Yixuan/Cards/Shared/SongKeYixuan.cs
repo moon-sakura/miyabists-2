@@ -39,7 +39,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<QingmingYunying>(base.Owner.Creature.Player);
                 reward1.AddKeyword(CardKeyword.Ethereal);
                 reward1.SetToFreeThisTurn();
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 await CostSupporPoint(DynamicVars[SupportVarName].IntValue, choiceContext);
             }
         }

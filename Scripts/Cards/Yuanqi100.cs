@@ -78,7 +78,7 @@ namespace Miyabists2.Scripts.Cards
             card.AddKeyword(CardKeyword.Exhaust);
             //card.AddKeyword(CardKeyword.Ethereal);
             card.SetToFreeThisTurn();
-            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner, CardPilePosition.Random);
+            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
         }
 
         protected override void OnUpgrade()

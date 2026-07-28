@@ -59,7 +59,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 copy.AddKeyword(CardKeyword.Exhaust);
                 copy.AddKeyword(CardKeyword.Ethereal);
                 copy.SetToFreeThisTurn();
-                await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Hand, Owner);
             });
         }
 

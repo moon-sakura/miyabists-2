@@ -87,7 +87,7 @@ namespace Miyabists2.Scripts.Powers
             {
                 // 加入一张《霜月》到手中
                 CardModel reward1 = base.Owner.CombatState.CreateCard<ShuangYue>(base.Owner.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player);
 
                 // 如果你的逻辑是触发后消耗层数，可以加在这里。
                 // 如果只是“大于 2 点就给一张”且不消耗，则不写 Reduce。

@@ -23,7 +23,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers.CinimaPower
             if (cardPlay.Card is QingmingYunying && cardPlay.Card.Owner.Creature == Owner)
             {
                 CardModel reward1 = base.Owner.CombatState.CreateCard<FufaQianchong>(base.Owner.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player);
             }
         }
     }

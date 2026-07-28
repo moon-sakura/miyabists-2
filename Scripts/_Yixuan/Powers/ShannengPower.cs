@@ -88,7 +88,7 @@ namespace Miyabists2.Scripts._Yixuan.Powers
             if (DynamicVars["Used"].BaseValue >= MaxPoints - 1)
             {
                 CardModel reward1 = base.Owner.CombatState.CreateCard<FufaQianchong>(base.Owner.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player);
                 TotalConsumed = 0;
                 DynamicVars["Used"].BaseValue = 0;
             }

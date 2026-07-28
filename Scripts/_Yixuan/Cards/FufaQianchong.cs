@@ -67,7 +67,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XuanmoJizhen>(base.Owner.Creature.Player);
             reward1.SetToFreeThisTurn();
             reward1.AddKeyword(CardKeyword.Exhaust);
-            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
         }
 
         protected override void OnUpgrade()

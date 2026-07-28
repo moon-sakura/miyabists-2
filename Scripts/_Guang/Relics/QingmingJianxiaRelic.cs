@@ -91,7 +91,7 @@ namespace Miyabists2.Scripts._Guang.Relics
                     Flash();
 
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 }
             }
         }
@@ -187,7 +187,7 @@ namespace Miyabists2.Scripts._Guang.Relics
                     Flash();
 
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 }
             }
         }

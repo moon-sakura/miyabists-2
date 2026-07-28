@@ -32,7 +32,7 @@ namespace Miyabists2.Scripts.Powers
         //{
         //    if(side != base.Owner.Side) return;
         //    CardModel reward1 = base.Owner.CombatState.CreateCard<XiezouJusha>(base.Owner.Player);
-        //    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+        //    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player);
 
         //    await PowerCmd.TickDownDuration(this);
         //}
@@ -40,7 +40,7 @@ namespace Miyabists2.Scripts.Powers
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
             CardModel reward1 = base.Owner.CombatState.CreateCard<XiezouJusha>(base.Owner.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player, CardPilePosition.Random);
+            await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner.Player);
 
             await PowerCmd.TickDownDuration(this);
         }

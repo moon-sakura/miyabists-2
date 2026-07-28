@@ -98,7 +98,7 @@ namespace Miyabists2.Scripts.Cards
                 {
                     reward1.UpgradeInternal();
                 }
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, -2, null, null);
             }
         }

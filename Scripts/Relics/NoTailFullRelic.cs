@@ -105,7 +105,7 @@ namespace Miyabists2.Scripts.Relics
                     Flash();
 
                     CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
                 }
             }
         }
@@ -119,7 +119,7 @@ namespace Miyabists2.Scripts.Relics
                 await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 4, null, null);
 
                 CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<NoTailFull>(base.Owner.Creature.Player);
-                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner, CardPilePosition.Random);
+                await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
             }
         }
 

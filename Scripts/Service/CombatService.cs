@@ -440,7 +440,7 @@ namespace Miyabists2.Scripts.Service
                 CardModel reward1 = owner.CombatState.CreateCard<HuaCi>(owner.Player);
 
                 if (handSize + i <= RitsuLibFramework.GetMaxHandSize(owner.Player))
-                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, owner.Player, CardPilePosition.Random);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, owner.Player);
                 else
                     await CardCmd.AutoPlay(choiceContext, reward1, target);
             }
