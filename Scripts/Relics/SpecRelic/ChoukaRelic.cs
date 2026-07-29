@@ -805,7 +805,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
 
             if (result == 2)
             {
-                IEnumerable<CardModel> enumerable = PileType.Deck.GetPile(base.Owner).Cards.Where((CardModel c) => c?.IsUpgradable ?? false).ToList().StableShuffle(base.Owner.RunState.Rng.Niche)
+                IEnumerable<CardModel> enumerable = PileType.Deck.GetPile(base.Owner).Cards.Where((CardModel c) => c?.IsUpgradable ?? false).ToList().StableShuffle(base.Owner.RunState.Rng.Shuffle)
                     .Take(1);
                 foreach (CardModel item in enumerable)
                 {

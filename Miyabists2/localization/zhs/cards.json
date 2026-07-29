@@ -288,6 +288,21 @@
 	"MIYABISTS2_CARD_KAKANIA.title": "本我，自我，超我",
     "MIYABISTS2_CARD_KAKANIA.description": "增加受到伤害[red]25%[/red]，记录受到的所有伤害。\\n右键触发：消耗5点[gold]支援点数[/gold]对所有敌人造成记录数值的伤害，回合结束时造成本回合造成伤害数值的{BurstRatio:diff()}%的伤害。",
 
+	"MIYABISTS2_CARD_XUANHE_CHENIAN.title": "煊赫车辇",
+    "MIYABISTS2_CARD_XUANHE_CHENIAN.description": "如果[gold]喧响值[/gold]不足20，则回复5点[gold]喧响值[/gold]。\\n[gold]喧响值[/gold]大于20，则消耗20点[gold]喧响值[/gold]，选择一个技能释放。",
+
+	"MIYABISTS2_CARD_WUJU_JIANSHI.title": "无拘剑势",
+    "MIYABISTS2_CARD_WUJU_JIANSHI.description": "每次使用攻击卡时，对随机敌人造成{DamagePerAttack}点伤害。",
+
+	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.title": "永陷幽囚",
+    "MIYABISTS2_CARD_YONGXIAN_YOUQIU.description": "对所有敌人造成8点伤害。\\n如果敌人处于[gold]击破[/gold]状态，则造成3倍伤害，并清除[gold]击破[/gold]状态。",
+
+	"MIYABISTS2_CARD_WANJUN_ZHUJUE.title": "万军诛绝",
+    "MIYABISTS2_CARD_WANJUN_ZHUJUE.description": "获得{Energy:energyIcons()}，抽2张牌。",
+
+	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "凯旋坦途",
+    "MIYABISTS2_CARD_KAIXUAN_TANTU.description": "获得2点力量，2点敏捷。",
+
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "失衡测试卡",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]失衡值[/gold][blue]50[/blue]",
 
@@ -296,7 +311,6 @@
 
 	"MIYABISTS2_CARD_TEST_CARD_FROST.title": "烈霜测试卡",
     "MIYABISTS2_CARD_TEST_CARD_FROST.description": "[aqua]烈霜积蓄[/aqua][blue]50[/blue]",
-
 
 	"MIYABISTS2_CARD_TEST_CARD_SHUFA.title": "术法测试卡",
     "MIYABISTS2_CARD_TEST_CARD_SHUFA.description": "术法值[blue]60[/blue]",

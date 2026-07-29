@@ -206,6 +206,9 @@
     "BYE_QUANLEIDA_POWER.description": "猪猪冲击！",
     "BYE_QUANLEIDA_POWER.smartDescription": "本回合所有造成伤害+{Amount}。",
 
+    "WUJU_JIANSHI_POWER.title": "无拘剑势",
+    "WUJU_JIANSHI_POWER.description": "每次使用攻击卡时，对随机敌人造成伤害。",
+    "WUJU_JIANSHI_POWER.smartDescription": "每次使用攻击卡时，对随机敌人造成{Amount}点伤害。",
 
 
     "MIYABI_GUARDIAN_POWER.title": "守护者",

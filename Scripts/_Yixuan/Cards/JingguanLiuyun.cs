@@ -50,7 +50,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            var rng = Owner.RunState.Rng.Shuffle;
+            var rng = Owner.RunState.Rng.CombatCardSelection;
             int triggerCount = ResolveEnergyXValue();
             double multiplier = DynamicVars["Multiplier"].IntValue / 100.0;
 

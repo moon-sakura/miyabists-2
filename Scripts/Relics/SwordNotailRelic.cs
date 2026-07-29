@@ -93,6 +93,8 @@ namespace Miyabists2.Scripts.Relics
         public void SetMax(int amount) => Max = amount;
         public void ResetMax() => Max = 30;
 
+        public int GetCounter() => Counter;
+
         // 每次打出卡牌后检查
         public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         {

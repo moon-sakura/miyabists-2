@@ -86,7 +86,7 @@ namespace Miyabists2.Scripts.Enchantment
             cards.AddRange(base.Card.Owner.PlayerCombatState.Hand.Cards.ToList());
 
             List<CardModel> validCards = cards.Where(cardin => CanEnchant(cardin)).ToList();
-            var targetCard = validCards.TakeRandom(1, base.Card.Owner.RunState.Rng.Shuffle).FirstOrDefault();
+            var targetCard = validCards.TakeRandom(1, base.Card.Owner.RunState.Rng.CombatCardSelection).FirstOrDefault();
 
             if (targetCard != null)
             {

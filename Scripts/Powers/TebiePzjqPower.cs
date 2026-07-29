@@ -46,7 +46,7 @@ namespace Miyabists2.Scripts.Powers
 
             foreach (Creature enemy in Owner.CombatState.Enemies.ToList())
             {
-                int result = base.Owner.Player.RunState.Rng.Shuffle.NextInt(1, 11);
+                int result = base.Owner.Player.RunState.Rng.CombatCardSelection.NextInt(1, 11);
                 if (enemy.Monster.IntendsToAttack)
                 {
                     var duelAttack = new MoveState(

@@ -61,7 +61,7 @@ namespace Miyabists2.Scripts.Service
         [Obsolete]
         public static int RandomInt(int Min , int exMax, Player player)
         {
-            int result = player.RunState.Rng.Niche.NextInt(Min, exMax);
+            int result = player.RunState.Rng.CombatCardGeneration.NextInt(Min, exMax);
             return result;
         }
 

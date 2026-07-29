@@ -47,7 +47,7 @@ namespace Miyabists2.Scripts.Cards
             var beeEnchant = ModelDb.Enchantment<BeeGroupEnchantment>();
 
             List<CardModel> validCards = cards.Where(cardin => beeEnchant.CanEnchant(cardin)).ToList();
-            var targetCard = validCards.TakeRandom(DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.Shuffle);
+            var targetCard = validCards.TakeRandom(DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.CombatCardSelection);
 
             if (targetCard != null)
             {

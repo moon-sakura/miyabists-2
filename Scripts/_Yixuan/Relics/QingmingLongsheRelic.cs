@@ -202,7 +202,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics
         private async Task DrawAndApplyPowers(PlayerChoiceContext choiceContext, int totalDraws)
         {
             var creature = Owner.Creature;
-            var rng = Owner.RunState.Rng.Shuffle;
+            var rng = Owner.RunState.Rng.CombatCardSelection;
 
             // 解析保存的能力数据
             var powerEntries = ParseSavedPowers();

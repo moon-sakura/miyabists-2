@@ -1,3 +1,5 @@
+using Steamworks;
+
 namespace Miyabists2.Scripts.Relics
 {
     /// <summary>
@@ -13,6 +15,6 @@ namespace Miyabists2.Scripts.Relics
         void SetThreshold(int threshold);
         void ResetThreshold();
 
-
+        public int GetCounter();
     }
 }

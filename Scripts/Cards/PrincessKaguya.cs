@@ -55,7 +55,7 @@ namespace Miyabists2.Scripts.Cards
 
         private async Task DoRandomEffectSP(PlayerChoiceContext choiceContext)
         {
-            int effect =  base.Owner.RunState.Rng.Shuffle.NextInt(1, 7);
+            int effect =  base.Owner.RunState.Rng.CombatCardGeneration.NextInt(1, 7);
             switch (effect)
             {
                 case 1:

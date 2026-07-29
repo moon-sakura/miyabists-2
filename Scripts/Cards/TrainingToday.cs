@@ -40,7 +40,7 @@ namespace Miyabists2.Scripts.Cards
             {
                 List<CardModel> options = new List<CardModel> { optionSpeak, optionAttack, optionEat, optionStep };
 
-                int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, options.Count + 1);
+                int result = base.Owner.RunState.Rng.CombatCardSelection.NextInt(1, options.Count + 1);
                 options.RemoveRange(result - 1, 1);
 
                 CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, base.Owner);

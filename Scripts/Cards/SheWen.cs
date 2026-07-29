@@ -107,7 +107,7 @@ namespace Miyabists2.Scripts.Cards
 
             if (try2Eat || count >= 3)
             {
-                int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, 11);
+                int result = base.Owner.RunState.Rng.CombatCardSelection.NextInt(1, 11);
 
                 if(result == 1 || count >= 3)
                 {

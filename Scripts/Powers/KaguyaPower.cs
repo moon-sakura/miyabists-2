@@ -41,7 +41,7 @@ namespace Miyabists2.Scripts.Powers
 
         private async Task DoRandomEffect(PlayerChoiceContext choiceContext)
         {
-            int result = base.Owner.Player.RunState.Rng.Shuffle.NextInt(1, 13);
+            int result = base.Owner.Player.RunState.Rng.CombatCardSelection.NextInt(1, 13);
             if (result == 1)
             {
                 await CreatureCmd.Heal(base.Owner, 3m);

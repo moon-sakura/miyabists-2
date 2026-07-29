@@ -49,7 +49,7 @@ namespace Miyabists2.Scripts.Cards
             IEnumerable<Creature> enemies = base.Owner.Creature.CombatState.Enemies.Where(c => c.IsAlive);
             for (int i = 0; i < DynamicVars["RepeatCount"].BaseValue; i++)
             {
-                Creature target = enemies.TakeRandom(1,base.Owner.RunState.Rng.Shuffle).FirstOrDefault();
+                Creature target = enemies.TakeRandom(1,base.Owner.RunState.Rng.CombatTargets).FirstOrDefault();
 
                 if (DynamicVars.TryGetValue(DazeVarName, out DynamicVar daze))
                     await MiyabiCombatService.AddDaze(choiceContext, target, daze, base.Owner.Creature);

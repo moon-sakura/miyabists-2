@@ -193,7 +193,7 @@ namespace Miyabists2.Scripts.Enemies
             // 分支2：目标有易伤 → 2/3 概率强化，1/3 概率攻防
             if (creature.HasPower<VulnerablePower>())
             {
-                int re = base.RunRng.Shuffle.NextInt(0, 3);
+                int re = base.RunRng.MonsterAi.NextInt(0, 3);
                 if (re != 0)
                     await PowerUpF(targets);
                 else

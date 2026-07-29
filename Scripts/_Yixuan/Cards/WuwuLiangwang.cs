@@ -52,7 +52,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             int xValue = ResolveEnergyXValue();
-            var rng = Owner.RunState.Rng.Shuffle;
+            var rng = Owner.RunState.Rng.CombatCardGeneration;
 
             // 1. 消除所有能力（移除自身所有Power）
             var powersToRemove = Owner.Creature.Powers.ToList();

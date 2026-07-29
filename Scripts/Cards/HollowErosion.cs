@@ -47,7 +47,7 @@ namespace Miyabists2.Scripts.Cards
 
                     for (int i = 0; i < 3; i++)
                     {
-                        int result = base.Owner.RunState.Rng.Shuffle.NextInt(1, options.Count + 1);
+                        int result = base.Owner.RunState.Rng.CombatCardSelection.NextInt(1, options.Count + 1);
                         options.RemoveRange(result - 1, 1);
                     }
 
