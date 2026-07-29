@@ -1,12 +1,14 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,10 +50,9 @@ namespace Miyabists2.Scripts.Cards
 
             if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
             {
-                DynamicVars.Damage.BaseValue += 8;
+                damageor += 8;
                 await CostSupporPoint(DynamicVars[SupportVarName].IntValue, choiceContext);
             }
-            if(cardPlay.Target.HasPower<BreakPower>()) DynamicVars.Damage.BaseValue *= 3;
 
             decimal daze = 0;
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar v))
@@ -62,9 +63,9 @@ namespace Miyabists2.Scripts.Cards
 
             await base.OnPlay(choiceContext, cardPlay);
 
-            if (base.DynamicVars.Damage.BaseValue > 0)
+            if (damageor > 0)
             {
-                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                await DamageCmd.Attack(damageor)
                     .FromCard(this, cardPlay)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);
@@ -73,11 +74,18 @@ namespace Miyabists2.Scripts.Cards
             if (cardPlay.Target.HasPower<BreakPower>())
             {
                 await PowerCmd.Remove<BreakPower>(cardPlay.Target);
-                await PowerCmd.Remove<DazeVulnPower>(cardPlay.Target);
                 await PowerCmd.Apply<DazePower>(choiceContext, cardPlay.Target, daze, base.Owner.Creature, this);
             }
+        }
 
-            DynamicVars.Damage.BaseValue = damageor;
+        public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
+        {
+            if (cardSource == this && target.HasPower<BreakPower>())
+            {
+                return 3m;
+            }
+
+            return 1m;
         }
 
         protected override void OnUpgrade()

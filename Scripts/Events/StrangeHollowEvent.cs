@@ -92,13 +92,42 @@ namespace Miyabists2.Scripts.Events
         // 从3张随机稀有卡牌中获取一张
         private async Task GetRareCard()
         {
-            await RewardsCmd.OfferCustom(Owner!, [
-                new CardReward(
-                    CardCreationOptions.ForNonCombatWithDefaultOdds(
-                        [Owner!.Character.CardPool],
-                        FilterRareCards),
-                    3, Owner)
-            ]);
+            int result = Owner.PlayerRng.Rewards.NextInt(0, 3);
+            switch (result)
+            {
+                case 0:
+                    if(Owner.Character is Miyabi)
+                    {
+                        await MiyabiFuncBase.AddCardToDesk<FangfeiZhiyao>(base.Owner);
+                    }
+                    if(Owner.Character is Yixuan)
+                    {
+                        await MiyabiFuncBase.AddCardToDesk<ZhanwangKaitian>(base.Owner);
+                    }
+                    break;
+                case 1:
+                    if (Owner.Character is Miyabi)
+                    {
+                        await MiyabiFuncBase.AddCardToDesk<XuanheChenian>(base.Owner);
+                    }
+                    if (Owner.Character is Yixuan)
+                    {
+                        await MiyabiFuncBase.AddCardToDesk<XuanheChenian>(base.Owner);
+                    }
+                    break;
+                case 2:
+                    if (Owner.Character is Miyabi)
+                    {
+                        await MiyabiFuncBase.AddCardToDesk<AllForHupowang>(base.Owner);
+                    }
+                    if (Owner.Character is Yixuan)
+                    {
+                        await MiyabiFuncBase.AddCardToDesk<AllForHupowang>(base.Owner);
+                    }
+                    break; 
+                default:
+                    break;
+            }
             await EnterEndPage();
         }
 
@@ -117,9 +146,9 @@ namespace Miyabists2.Scripts.Events
         }
 
         // 过滤稀有卡牌
-        private bool FilterRareCards(CardModel card)
+        private bool FilterANCards(CardModel card)
         {
-            return card.Rarity == CardRarity.Rare;
+            return card.Rarity == CardRarity.Ancient;
         }
     }
 }
