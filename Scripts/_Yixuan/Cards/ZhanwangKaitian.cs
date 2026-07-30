@@ -42,6 +42,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
             CardKeyword.Exhaust,
+            MiyabiKeywords.Friends,
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>

@@ -30,10 +30,10 @@ namespace Miyabists2.Scripts.Events
         protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
         // 什么时候会遇到。
-        //public override bool IsAllowed(IRunState runState)
-        //{
-        //    return runState.Players.All(p => MiyabiFuncBase.IsMiyabiModChar(p));
-        //}
+        public override bool IsAllowed(IRunState runState)
+        {
+            return runState.Players.All(p => MiyabiFuncBase.IsMiyabiModChar(p));
+        }
 
         // 事件开始前的逻辑。
         protected override Task BeforeEventStarted(bool isPreFinished)

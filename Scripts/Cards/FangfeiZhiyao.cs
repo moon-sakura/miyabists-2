@@ -26,6 +26,11 @@ namespace Miyabists2.Scripts.Cards
         {
         }
 
+        public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [
+            MiyabiKeywords.Friends,
+        ];
+
         protected override string ArtPath => "res://images/cards/fangfeiZhiyao.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

@@ -37,6 +37,7 @@ namespace Miyabists2.Scripts.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
             CardKeyword.Exhaust,
+            MiyabiKeywords.Friends,
         ];
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
