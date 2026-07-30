@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Cards
     {
         protected override string ArtPath => $"res://images/cards/shenxue_hanyan.png";
 
-        public ShenxueHanyan() : base(1, CardRarity.Ancient, TargetType.AnyEnemy, true) { }
+        public ShenxueHanyan() : base(0, CardRarity.Ancient, TargetType.AnyEnemy, true) { }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(6, ValueProp.Move),
