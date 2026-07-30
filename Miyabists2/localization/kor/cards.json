@@ -207,7 +207,7 @@
 	"MIYABISTS2_CARD_JUN_LIE.description": "[aqua]열상[/aqua] 카드 사용 시마다 [blue]1[/blue]점의 [gold]와글와글 수치[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.title": "종말재결",
-	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "{Damage:diff()}점 피해, 적이 [gold]격파[/gold] 상태면 피해가 [blue]3[/blue]배가 되고, 적의 [gold]격파[/gold]와 [gold]균형 붕괴 취약[/gold]을 제거합니다. 제거 후 [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 피해 +[blue]8[/blue]",
+	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "{Damage:diff()}점 피해, 적이 [gold]격파[/gold] 상태면 피해가 [blue]3[/blue]배가 되고, 적의 [gold]격파[/gold]를 제거합니다. 제거 후 [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 피해 +[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_PRINCESS.title": "초시공 카구야 공주",
 	"MIYABISTS2_CARD_PRINCESS.description": "초시공 카구야 공주의 축복",
@@ -257,6 +257,10 @@
 	"MIYABISTS2_CARD_TRAINING_TODAY.description": "오늘의 수행을 선택합니다",
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "수행 선택",
 
+	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "방비의 초대",
+    "MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "매 턴 종료 시 모든 적에게 {Damage:diff}점 피해를 주고, [gold]루멘[/gold] 1중첩을 부여합니다.",
+
+
 	"MIYABISTS2_CARD_TRAIN_SPEAK.title": "말은 5글자 이하로",
 	"MIYABISTS2_CARD_TRAIN_SPEAK.description": "[gold]수행[/gold]\\n[blue]3[/blue]턴 동안 매 턴 [blue]5[/blue]장을 초과하여 카드를 낼 수 없습니다\\n[gold]수행[/gold] 종료 후, 매 턴 처음 [blue]5[/blue]장의 카드 비용 -[blue]1[/blue]",
 
@@ -283,6 +287,24 @@
 
 	"MIYABISTS2_CARD_KAKANIA.title": "이드, 자아, 초자아",
 	"MIYABISTS2_CARD_KAKANIA.description": "받는 피해 [red]25%[/red] 증가, 받은 모든 피해를 기록합니다.\\n우클릭 발동: [gold]지원 포인트[/gold] 5점을 소모하여 모든 적에게 기록된 수치의 피해를 줍니다. 턴 종료 시 이번 턴에 준 피해의 {BurstRatio:diff()}%만큼 피해를 줍니다.",
+
+	"MIYABISTS2_CARD_XUANHE_CHENIAN.title": "훤혁거연",
+    "MIYABISTS2_CARD_XUANHE_CHENIAN.description": "[gold]와글와글 수치[/gold]가 20 미만이면 5점 회복합니다.\\n[gold]와글와글 수치[/gold]가 20 이상이면 20점을 소모하여 스킬 하나를 선택해 사용합니다.",
+
+	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.title": "훤혁거연",
+    "MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.description": "[gold]와글와글 수치[/gold]가 20 미만이면 5점 회복합니다.\\n[gold]와글와글 수치[/gold]가 20 이상이면 20점을 소모하여 스킬 하나를 선택해 사용합니다.",
+
+	"MIYABISTS2_CARD_WUJU_JIANSHI.title": "무구검세",
+    "MIYABISTS2_CARD_WUJU_JIANSHI.description": "공격 카드 사용 시마다 무작위 적에게 {DamagePerAttack}점 피해를 줍니다.",
+
+	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.title": "영함유수",
+    "MIYABISTS2_CARD_YONGXIAN_YOUQIU.description": "모든 적에게 8점 피해.\\n적이 [gold]격파[/gold] 상태면 3배 피해를 주고 [gold]격파[/gold] 상태를 제거합니다.",
+
+	"MIYABISTS2_CARD_WANJUN_ZHUJUE.title": "만군주절",
+    "MIYABISTS2_CARD_WANJUN_ZHUJUE.description": "{Energy:energyIcons()} 획득, 카드 2장을 뽑습니다.",
+
+	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "개선탄도",
+    "MIYABISTS2_CARD_KAIXUAN_TANTU.description": "힘 2점, 민첩 2점을 얻습니다.",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "균형 붕괴 테스트 카드",
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]균형 붕괴 수치[/gold][blue]50[/blue]",
@@ -426,7 +448,7 @@
 	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG_YIXUAN.description": "{Cards:diff()}장의 카드를 뽑습니다\\n[gold]파트너[/gold] 카드 1장당 [blue]1[/blue]점의 [gold]지원 포인트[/gold]를 얻습니다",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.title": "종말재결",
-	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "{Damage:diff()}점 피해, 적이 [gold]격파[/gold] 상태면 피해가 [blue]3[/blue]배가 되고, 적의 [gold]격파[/gold]와 [gold]균형 붕괴 취약[/gold]을 제거합니다. 제거 후 [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 피해 +[blue]8[/blue]",
+	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "{Damage:diff()}점 피해, 적이 [gold]격파[/gold] 상태면 피해가 [blue]3[/blue]배가 되고, 적의 [gold]격파[/gold]를 제거합니다. 제거 후 [gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n[gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 피해 +[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "취화월운전",
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "{HitCount:diff()}회 {Damage:diff()}점 피해\\n[gold]균형 붕괴 수치[/gold]{DAZE_POWER:diff()}\\n적이 격파 상태가 아니면 [gold]기복[/gold] 5중첩 부여, [gold]회피[/gold] 보유 시 추가 2중첩 부여; [gold]지원 포인트[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: 추가 3중첩 [gold]기복[/gold] 부여",
@@ -471,6 +493,24 @@
 
 	"MIYABISTS2_CARD_JIE_FA.title" : "차법",
 	"MIYABISTS2_CARD_JIE_FA.description":"하나를 선택:\\n모든 [gold]활력[/gold]을 소모하여 소모량의 {Percent:diff()}%만큼 [gold]가시[/gold] 획득\\n모든 [gold]가시[/gold]를 소모하여 소모량의 {Percent:diff()}%만큼 [gold]활력[/gold] 획득",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG.title" : "물아양망",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG.description":"모든 능력을 소모하고（[gold]섬에너지[/gold]와 [gold]지원 포인트[/gold] 제외）, 모든 손패를 버린 후, 버린 카드 수만큼 무작위 특수 카드를 추가합니다 (카드 수치는 제거된 능력 수에 의해 결정됩니다).",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.title" : "공",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.description":"[orange]현묵[/orange]{ExhaustedPowerCount:diff()}\\n[gold]균형 붕괴 수치[/gold]{ExhaustedPowerCount:diff()}",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.title" : "수",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.description":"{ExhaustedPowerCount:diff()}점의 방어도 획득\\n모든 적에게 {ExhaustedPowerCount:diff()}층의 [gold]술법 수치[/gold] 부여",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.title" : "생",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.description":"{Energy:energyIcons()} 획득\\n{ExhaustedPowerCount:diff()}장의 카드 뽑기",
+
+	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title" : "수화조적",
+	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description":"방어도 획득 시 0 방어도로 전환 후 {Energy:energyIcons()} 획득, 카드 1장을 뽑습니다.",
+
+	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.title" : "참망개천",
+	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.description":"즉시 모든 적에게 20% [gold]균형 붕괴 취약[/gold] 부여, 자신의 [gold]긍정적 능력[/gold] 하나당 추가 10% 부여.\\n모든 손패를 버리고 버린 카드 수만큼 뽑은 후, 그 횟수만큼 무작위로 {Damage:diff}점 피해를 줍니다.",
 
 	"MIYABISTS2_CARD_VIGOR2THORNS.title" : "활력 변환",
 	"MIYABISTS2_CARD_VIGOR2THORNS.description":"모든 활력을 소모하여 가시를 얻습니다.",
@@ -570,7 +610,7 @@
 	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.description": "X회 발동: 무작위로 자신의 [gold]긍정적 능력[/gold] 1개의 중첩 수를 {Multiplier:diff()}%로 변경합니다（[gold]섬에너지[/gold]와 [gold]지원 포인트[/gold] 제외）",
 
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "청령도심",
-	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "최대 생명력의 {HpLossPercent:diff()}% 생명력 손실, 자신의 모든 [purple]부정적 효과[/purple] 제거",
+	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "최대 생명력의 {HpLossPercent:diff()}% 생명력 손실, 자신의 모든 [purple]부정적 효과[/purple] 제거, 잃은 생명력만큼 방어도를 얻습니다.",
 
 
 

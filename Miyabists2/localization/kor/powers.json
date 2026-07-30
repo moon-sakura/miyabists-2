@@ -47,6 +47,14 @@
     "ANOMALY_BUILDUP_POWER.description": "누적 5스택 후 적에게 [purple]속성 이상[/purple] 부여(플레이어 1명 추가당 발동 스택 +[blue]2[/blue])",
     "ANOMALY_BUILDUP_POWER.smartDescription": "누적 {PlayerCount:choose(1|2|3|4):5|7|9|11|5}스택 후 적에게 [purple]속성 이상[/purple] 부여{PlayerCount:cond:>4?(플레이어 1명 추가당 발동 스택 +[blue]2[/blue])|}",
 
+    "LIUMING_POWER.title": "루멘",
+    "LIUMING_POWER.description": "턴 종료 시 5% [purple]속성 이상[/purple] 피해. [purple]속성 이상[/purple]과 동시에 존재하면 [gold]요변[/gold] 발동 및 5% [purple]속성 이상[/purple] 피해",
+    "LIUMING_POWER.smartDescription": "턴 종료 시 5% [purple]속성 이상[/purple] 피해. [purple]속성 이상[/purple]과 동시에 존재하면 [gold]요변[/gold] 발동 및 5% [purple]속성 이상[/purple] 피해",
+
+    "YAOBIAN_POWER.title": "요변",
+    "YAOBIAN_POWER.description": "주는 [purple]속성 이상[/purple] 피해 증가. 누적 3스택 시, 턴 종료 시 [gold]요변[/gold] 제거 및 적에게 15% [purple]속성 이상[/purple] 피해.",
+    "YAOBIAN_POWER.smartDescription": "주는 [purple]속성 이상[/purple] 피해 추가 {Amount}% 증가. 누적 3스택 시, 턴 종료 시 [gold]요변[/gold] 제거 및 적에게 15% [purple]속성 이상[/purple] 피해.",
+
 	"DISORDER_POWER.title": "혼란",
     "DISORDER_POWER.description": "즉시 최대 생명력의 [blue]10%[/blue] 피해, 다음 공격 피해 [blue]2[/blue]배",
     "DISORDER_POWER.smartDescription": "즉시 최대 생명력의 [blue]10%[/blue] 피해, 다음 공격 피해 [blue]2[/blue]배",
@@ -158,6 +166,10 @@
     "ZHANJINZE_POWER.description": "",
     "ZHANJINZE_POWER.smartDescription": "이번 턴 피해 2배",
 
+    "FANGFEI_ZHIYAO_POWER.title": "방비의 초대",
+    "FANGFEI_ZHIYAO_POWER.description": "매 턴 종료 시 모든 적에게 6점 피해를 주고, [gold]루멘[/gold] 1중첩을 부여합니다.",
+    "FANGFEI_ZHIYAO_POWER.smartDescription": "매 턴 종료 시 모든 적에게 6점 피해를 주고, [gold]루멘[/gold] 1중첩을 부여합니다.",
+
 	"XSJS_POWER.title": "설상가상",
     "XSJS_POWER.description": "",
     "XSJS_POWER.smartDescription": "[gold]상월[/gold] 사용 시마다 이번 턴 [blue]{Amount}[/blue] [gold]힘[/gold] 획득",
@@ -193,6 +205,10 @@
     "BYE_QUANLEIDA_POWER.title": "굿바이 홈런!",
     "BYE_QUANLEIDA_POWER.description": "돼지 돌격!",
     "BYE_QUANLEIDA_POWER.smartDescription": "이번 턴 모든 피해 +{Amount}.",
+
+    "WUJU_JIANSHI_POWER.title": "무구검세",
+    "WUJU_JIANSHI_POWER.description": "공격 카드 사용 시마다 무작위 적에게 피해를 줍니다.",
+    "WUJU_JIANSHI_POWER.smartDescription": "공격 카드 사용 시마다 무작위 적에게 {Amount}점 피해를 줍니다.",
 
 
 
@@ -309,6 +325,10 @@
     "BEST_PARTNER_POWER.title": "최고의 동료",
 	"BEST_PARTNER_POWER.description": "카드 2장 사용 시마다 생명력 1 회복, 매 턴 최대 3회 발동.",
 	"BEST_PARTNER_POWER.smartDescription": "카드 2장 사용 시마다 생명력 {Amount} 회복, 매 턴 최대 3회 발동.",
+
+    "SHOUHUA_ZHAOJI_POWER.title" : "수화조적",
+	"SHOUHUA_ZHAOJI_POWER.description":"방어도 획득 시 0 방어도로 전환 후 에너지 획득 및 카드 뽑기.",
+    "SHOUHUA_ZHAOJI_POWER.smartDescription":"방어도 획득 시 0 방어도로 전환 후 {Energy:energyIcons()} 획득, {Amount}장의 카드 뽑기.",
 
 	"HUALIAN_XIEYI_POWER.title": "화련 프로토콜",
 	"HUALIAN_XIEYI_POWER.description": "우클릭으로 지원 포인트 소모하여 효과 사용",

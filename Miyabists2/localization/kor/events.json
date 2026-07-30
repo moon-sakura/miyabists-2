@@ -85,8 +85,8 @@
 
     "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.title": "무작위 희귀 유물 하나를 획득한다",
     "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_RELIC.description": "침식된 유물이지만 여전히 힘을 발산하고 있다.",
-    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.title": "무작위 희귀 카드 한 장을 획득한다",
-    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.description": "무작위 희귀 카드 3장 중에서 한 장을 선택한다.",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.title": "전방에 다른 에이전트가 있는 것 같다",
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_CARD.description": "무작위 선고 파트너 카드 1장 획득.",
     "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.title": "240 골드를 획득한다",
     "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.REWARD_PAGE.options.GET_GOLD.description": "약간 침식된 동전들…… 하지만 아직 쓸 수 있다.",
 

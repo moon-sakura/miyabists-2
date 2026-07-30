@@ -207,7 +207,7 @@
     "MIYABISTS2_CARD_JUN_LIE.description": "每次使用[aqua]烈霜[/aqua]卡牌时，获得[blue]1[/blue]点[gold]喧响值[/gold]",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.title": "终末裁决",
-    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "造成{Damage:diff()}点伤害，若敌人处于[gold]击破[/gold]状态，伤害变为[blue]3[/blue]倍，移除敌人的[gold]击破[/gold]与[gold]失衡易伤[/gold]，移除后[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：伤害+[blue]8[/blue]",
+    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "造成{Damage:diff()}点伤害，若敌人处于[gold]击破[/gold]状态，伤害变为[blue]3[/blue]倍，移除敌人的[gold]击破[/gold]，移除后[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：伤害+[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_PRINCESS.title": "超时空辉夜姬",
     "MIYABISTS2_CARD_PRINCESS.description": "来自超时空辉夜姬的祝福",
@@ -290,6 +290,9 @@
 
 	"MIYABISTS2_CARD_XUANHE_CHENIAN.title": "煊赫车辇",
     "MIYABISTS2_CARD_XUANHE_CHENIAN.description": "如果[gold]喧响值[/gold]不足20，则回复5点[gold]喧响值[/gold]。\\n[gold]喧响值[/gold]大于20，则消耗20点[gold]喧响值[/gold]，选择一个技能释放。",
+
+	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.title": "煊赫车辇",
+    "MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.description": "如果[gold]喧响值[/gold]不足20，则回复5点[gold]喧响值[/gold]。\\n[gold]喧响值[/gold]大于20，则消耗20点[gold]喧响值[/gold]，选择一个技能释放。",
 
 	"MIYABISTS2_CARD_WUJU_JIANSHI.title": "无拘剑势",
     "MIYABISTS2_CARD_WUJU_JIANSHI.description": "每次使用攻击卡时，对随机敌人造成{DamagePerAttack}点伤害。",

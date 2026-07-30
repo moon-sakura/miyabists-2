@@ -340,5 +340,25 @@
 	"HOLLOW_TANLANWUDU_POWER.description": "Each time you deal damage to an enemy, gain {Amount} [gold]Gold[/gold] and take {Amount} damage.",
 
 	"HOLLOW_ZHIJUETONGHUA_POWER.title": "Sensory Assimilation",
-	"HOLLOW_ZHIJUETONGHUA_POWER.description": "Each time you play a Skill card, take {Amount} damage."
+	"HOLLOW_ZHIJUETONGHUA_POWER.description": "Each time you play a Skill card, take {Amount} damage.",
+
+	"LIUMING_POWER.title": "Lumen",
+	"LIUMING_POWER.description": "At the end of turn, take 5% [purple]Attribute Anomaly[/purple] damage. When present alongside [purple]Attribute Anomaly[/purple], trigger [gold]Flare[/gold] and deal 5% [purple]Attribute Anomaly[/purple] damage",
+	"LIUMING_POWER.smartDescription": "At the end of turn, take 5% [purple]Attribute Anomaly[/purple] damage. When present alongside [purple]Attribute Anomaly[/purple], trigger [gold]Flare[/gold] and deal 5% [purple]Attribute Anomaly[/purple] damage",
+
+	"YAOBIAN_POWER.title": "Flare",
+	"YAOBIAN_POWER.description": "Increases [purple]Attribute Anomaly[/purple] damage dealt. At 3 stacks, clears [gold]Flare[/gold] at end of turn and deals 15% [purple]Attribute Anomaly[/purple] damage to the enemy.",
+	"YAOBIAN_POWER.smartDescription": "Increases [purple]Attribute Anomaly[/purple] damage dealt by an additional {Amount}%. At 3 stacks, clears [gold]Flare[/gold] at end of turn and deals 15% [purple]Attribute Anomaly[/purple] damage to the enemy.",
+
+	"FANGFEI_ZHIYAO_POWER.title": "Fragrant Invitation",
+	"FANGFEI_ZHIYAO_POWER.description": "At the end of each turn, deal 6 damage to ALL enemies and apply 1 [gold]Lumen[/gold].",
+	"FANGFEI_ZHIYAO_POWER.smartDescription": "At the end of each turn, deal 6 damage to ALL enemies and apply 1 [gold]Lumen[/gold].",
+
+	"WUJU_JIANSHI_POWER.title": "Unbound Sword Stance",
+	"WUJU_JIANSHI_POWER.description": "Each time you play an Attack card, deal damage to a random enemy.",
+	"WUJU_JIANSHI_POWER.smartDescription": "Each time you play an Attack card, deal {Amount} damage to a random enemy.",
+
+	"SHOUHUA_ZHAOJI_POWER.title": "Guarding Radiance",
+	"SHOUHUA_ZHAOJI_POWER.description": "When you would gain Block, instead gain 0 Block, then gain Energy and draw cards.",
+	"SHOUHUA_ZHAOJI_POWER.smartDescription": "When you would gain Block, instead gain 0 Block, then gain {Energy:energyIcons()} and draw {Amount} card(s)."
 }

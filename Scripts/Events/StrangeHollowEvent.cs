@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Runs;
+using Miyabists2.Scripts._Yixuan.Cards.Shared;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Interop.AutoRegistration;
@@ -112,7 +113,7 @@ namespace Miyabists2.Scripts.Events
                     }
                     if (Owner.Character is Yixuan)
                     {
-                        await MiyabiFuncBase.AddCardToDesk<XuanheChenian>(base.Owner);
+                        await MiyabiFuncBase.AddCardToDesk<XuanheChenianYixuan>(base.Owner);
                     }
                     break;
                 case 2:

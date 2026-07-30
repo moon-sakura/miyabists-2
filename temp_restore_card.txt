@@ -207,7 +207,7 @@
     "MIYABISTS2_CARD_JUN_LIE.description": "[aqua]烈霜[/aqua]カードを使用するたびに、[gold]デシベル[/gold]を[blue]1[/blue]獲得",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.title": "終末の裁き",
-    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "{Damage:diff()}ダメージを与える。敵が[gold]ブレイク[/gold]状態の場合、ダメージが[blue]3[/blue]倍になり、敵の[gold]ブレイク[/gold]を解除する。解除後、[gold]ブレイク値[/gold]{DAZE_POWER:diff()}\\n[gold]支援ポイント[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：ダメージ+[blue]8[/blue]",
+    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "{Damage:diff()}ダメージを与える。敵が[gold]ブレイク[/gold]状態の場合、ダメージが[blue]3[/blue]倍になり、敵の[gold]ブレイク[/gold]と[gold]ブレイク弱体[/gold]を解除する。解除後、[gold]ブレイク値[/gold]{DAZE_POWER:diff()}\\n[gold]支援ポイント[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：ダメージ+[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_PRINCESS.title": "超時空かぐや姫",
     "MIYABISTS2_CARD_PRINCESS.description": "超時空かぐや姫からの祝福",
@@ -257,9 +257,6 @@
     "MIYABISTS2_CARD_TRAINING_TODAY.description": "今日の修行を選ぶ",
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "修行を選ぶ",
 
-	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "芳菲の誘い",
-	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "毎ターン終了時、全ての敵に{Damage:diff}ダメージを与え、[gold]流明[/gold]を1層付与する。",
-
 	"MIYABISTS2_CARD_TRAIN_SPEAK.title": "話は5文字まで",
     "MIYABISTS2_CARD_TRAIN_SPEAK.description": "[gold]修行[/gold]\\n[blue]3[/blue]ターンの間、毎ターン[blue]5[/blue]枚までしかカードをプレイできない\\n[gold]修行[/gold]終了後、毎ターン最初の[blue]5[/blue]枚のカードのコスト-[blue]1[/blue]",
 
@@ -286,19 +283,6 @@
 
 	"MIYABISTS2_CARD_KAKANIA.title": "イド・自我・超自我",
     "MIYABISTS2_CARD_KAKANIA.description": "受けるダメージが[red]25%[/red]増加し、受けたすべてのダメージを記録する。\\n右クリックで発動：[gold]支援ポイント[/gold]を5消費して敵全体に記録した数値のダメージを与え、ターン終了時にこのターンに与えたダメージの{BurstRatio:diff()}%のダメージを与える。",
-
-	"MIYABISTS2_CARD_XUANHE_CHENIAN.title": "煊赫の車輦",
-	"MIYABISTS2_CARD_XUANHE_CHENIAN.description": "[gold]デシベル[/gold]が20未満の場合、[blue]5[/blue]ポイントの[gold]デシベル[/gold]を回復する。\n[gold]デシベル[/gold]が20以上の場合、[blue]20[/blue]ポイントの[gold]デシベル[/gold]を消費し、スキルを一つ選択して発動する。",
-	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.title": "煊赫の車輦",
-	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.description": "[gold]デシベル[/gold]が20未満の場合、[blue]5[/blue]ポイントの[gold]デシベル[/gold]を回復する。\n[gold]デシベル[/gold]が20以上の場合、[blue]20[/blue]ポイントの[gold]デシベル[/gold]を消費し、スキルを一つ選択して発動する。",
-	"MIYABISTS2_CARD_WUJU_JIANSHI.title": "無拘の剣勢",
-	"MIYABISTS2_CARD_WUJU_JIANSHI.description": "アタックカードを使用するたび、ランダムな敵に{DamagePerAttack}ダメージを与える。",
-	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.title": "永陥の幽囚",
-	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.description": "全ての敵に8ダメージを与える。\n敵が[gold]ブレイク[/gold]状態の場合、ダメージが3倍になり、[gold]ブレイク[/gold]状態を解除する。",
-	"MIYABISTS2_CARD_WANJUN_ZHUJUE.title": "万軍誅絶",
-	"MIYABISTS2_CARD_WANJUN_ZHUJUE.description": "{Energy:energyIcons()}を獲得し、カードを2枚引く。",
-	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "凱旋の坦途",
-	"MIYABISTS2_CARD_KAIXUAN_TANTU.description": "筋力を2、敏捷を2獲得する。",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "ブレイクテストカード",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]ブレイク値[/gold][blue]50[/blue]",
@@ -436,7 +420,7 @@
 	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG_YIXUAN.description": "カードを{Cards:diff()}枚引く\\nその中の[gold]仲間[/gold]カード1枚につき、[gold]支援ポイント[/gold]を[blue]1[/blue]獲得",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.title": "終末の裁き",
-	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "{Damage:diff()}ダメージを与える。敵が[gold]ブレイク[/gold]状態の場合、ダメージが[blue]3[/blue]倍になり、敵の[gold]ブレイク[/gold]を解除する。解除後、[gold]ブレイク値[/gold]{DAZE_POWER:diff()}\\n[gold]支援ポイント[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：ダメージ+[blue]8[/blue]",
+	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "{Damage:diff()}ダメージを与える。敵が[gold]ブレイク[/gold]状態の場合、ダメージが[blue]3[/blue]倍になり、敵の[gold]ブレイク[/gold]と[gold]ブレイク弱体[/gold]を解除する。解除後、[gold]ブレイク値[/gold]{DAZE_POWER:diff()}\\n[gold]支援ポイント[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：ダメージ+[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "酔花月雲転",
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "{HitCount:diff()}回、{Damage:diff()}ダメージを与える\\n[gold]ブレイク値[/gold]{DAZE_POWER:diff()}\\n敵がブレイク状態でない場合、敵に[gold]束縛[/gold]を5付与。[gold]滑走[/gold]を持っている場合、さらに[gold]束縛[/gold]を2付与。[gold]支援ポイント[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：さらに[gold]束縛[/gold]を3付与",
@@ -478,19 +462,6 @@
 
 	"MIYABISTS2_CARD_JIE_FA.title" : "借法",
 	"MIYABISTS2_CARD_JIE_FA.description":"1つを選ぶ：\\nすべての[gold]活力[/gold]を消費し、消費量の{Percent:diff()}%の[gold]トゲ[/gold]を獲得\\nすべての[gold]トゲ[/gold]を消費し、消費量の{Percent:diff()}%の[gold]活力[/gold]を獲得。",
-
-	"MIYABISTS2_CARD_WUWU_LIANGWANG.title": "物我両忘",
-	"MIYABISTS2_CARD_WUWU_LIANGWANG.description": "全ての能力（[gold]閃能[/gold]と[gold]支援ポイント[/gold]を除く）を消費し、全ての手札を捨てる。その後、捨てた手札の枚数分のランダムな特殊カードを手札に加える（カードの数値は消費した能力数で決まる）。",
-	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.title": "攻",
-	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.description": "[orange]玄墨[/orange]{ExhaustedPowerCount:diff()}\n[gold]ブレイク値[/gold]{ExhaustedPowerCount:diff()}",
-	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.title": "守",
-	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.description": "{ExhaustedPowerCount:diff()}ブロックを獲得する\n全ての敵に{ExhaustedPowerCount:diff()}層の[gold]術法値[/gold]を付与する",
-	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.title": "生",
-	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.description": "{Energy:energyIcons()}を獲得する\nカードを{ExhaustedPowerCount:diff()}枚引く",
-	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title": "守華照寂",
-	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description": "ブロック獲得時、ブロックが0になり、その後{Energy:energyIcons()}を獲得し、カードを1枚引く。",
-	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.title": "斬妄開天",
-	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.description": "全ての敵に即座に20%の[gold]ブレイク弱体[/gold]を付与する。自身の[gold]バフ[/gold]1種類につき、さらに10%を追加付与する。\n全ての手札を捨て、捨てた枚数分カードを引き、その回数分ランダムに{Damage:diff}ダメージを与える。",
 
 	"MIYABISTS2_CARD_VIGOR2THORNS.title" : "活力転化",
 	"MIYABISTS2_CARD_VIGOR2THORNS.description":"すべての活力を消費し、トゲを獲得。",

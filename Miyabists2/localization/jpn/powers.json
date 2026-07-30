@@ -47,6 +47,13 @@
     "ANOMALY_BUILDUP_POWER.description": "5層まで蓄積すると敵に[purple]状態異常[/purple]を付与する(プレイヤーが1人増えるごとに発動必要層数+[blue]2[/blue])",
     "ANOMALY_BUILDUP_POWER.smartDescription": "{PlayerCount:choose(1|2|3|4):5|7|9|11|5}層まで蓄積すると敵に[purple]状態異常[/purple]を付与する{PlayerCount:cond:>4?(プレイヤーが1人増えるごとに発動必要層数+[blue]2[/blue])|}",
 
+	"LIUMING_POWER.title": "流明",
+	"LIUMING_POWER.description": "ターン終了時、5%の[purple]状態異常[/purple]ダメージを受ける。[purple]状態異常[/purple]と同時に存在する場合、[gold]耀変[/gold]を発動し、5%の[purple]状態異常[/purple]ダメージを与える。",
+	"LIUMING_POWER.smartDescription": "ターン終了時、5%の[purple]状態異常[/purple]ダメージを受ける。[purple]状態異常[/purple]と同時に存在する場合、[gold]耀変[/gold]を発動し、5%の[purple]状態異常[/purple]ダメージを与える。",
+	"YAOBIAN_POWER.title": "耀変",
+	"YAOBIAN_POWER.description": "与える[purple]状態異常[/purple]ダメージが増加する。3層に達すると、ターン終了時に[gold]耀変[/gold]を解除し、敵に15%の[purple]状態異常[/purple]ダメージを与える。",
+	"YAOBIAN_POWER.smartDescription": "与える[purple]状態異常[/purple]ダメージが{Amount}%追加増加する。3層に達すると、ターン終了時に[gold]耀変[/gold]を解除し、敵に15%の[purple]状態異常[/purple]ダメージを与える。",
+
 	"DISORDER_POWER.title": "紊乱",
     "DISORDER_POWER.description": "直ちに最大HPの[blue]10%[/blue]のダメージを与え、次の一撃のダメージが[blue]2[/blue]倍になる",
     "DISORDER_POWER.smartDescription": "直ちに最大HPの[blue]10%[/blue]のダメージを与え、次の一撃のダメージが[blue]2[/blue]倍になる",
@@ -158,6 +165,10 @@
     "ZHANJINZE_POWER.description": "",
     "ZHANJINZE_POWER.smartDescription": "このターン、与えるダメージが2倍になる",
 
+	"FANGFEI_ZHIYAO_POWER.title": "芳菲の誘い",
+	"FANGFEI_ZHIYAO_POWER.description": "毎ターン終了時、全ての敵に6ダメージを与え、[gold]流明[/gold]を1層付与する。",
+	"FANGFEI_ZHIYAO_POWER.smartDescription": "毎ターン終了時、全ての敵に6ダメージを与え、[gold]流明[/gold]を1層付与する。",
+
 	"XSJS_POWER.title": "雪上加霜",
     "XSJS_POWER.description": "",
     "XSJS_POWER.smartDescription": "[gold]霜月[/gold]を使用するたびに、このターン[gold]筋力[/gold]を[blue]{Amount}[/blue]得る",
@@ -193,6 +204,10 @@
     "BYE_QUANLEIDA_POWER.title": "さよならホームラン！",
     "BYE_QUANLEIDA_POWER.description": "ブタさんインパクト！",
     "BYE_QUANLEIDA_POWER.smartDescription": "このターン、与えるすべてのダメージ+{Amount}。",
+
+	"WUJU_JIANSHI_POWER.title": "無拘の剣勢",
+	"WUJU_JIANSHI_POWER.description": "アタックカードを使用するたび、ランダムな敵にダメージを与える。",
+	"WUJU_JIANSHI_POWER.smartDescription": "アタックカードを使用するたび、ランダムな敵に{Amount}ダメージを与える。",
 
 
 
@@ -309,6 +324,10 @@
     "BEST_PARTNER_POWER.title": "最高の同僚",
 	"BEST_PARTNER_POWER.description": "カードを2枚使用するごとにHPを1回復する。毎ターン最大3回発動する。",
 	"BEST_PARTNER_POWER.smartDescription": "カードを2枚使用するごとにHPを{Amount}回復する。毎ターン最大3回発動する。",
+
+	"SHOUHUA_ZHAOJI_POWER.title": "守華照寂",
+	"SHOUHUA_ZHAOJI_POWER.description": "ブロック獲得時、ブロックが0になり、その後エネルギーを獲得してカードを引く。",
+	"SHOUHUA_ZHAOJI_POWER.smartDescription": "ブロック獲得時、ブロックが0になり、その後{Energy:energyIcons()}を獲得し、カードを{Amount}枚引く。",
 
 	"HUALIAN_XIEYI_POWER.title": "花鎖プロトコル",
 	"HUALIAN_XIEYI_POWER.description": "右クリックで支援ポイントを消費して効果を発動する",

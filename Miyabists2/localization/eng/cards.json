@@ -207,7 +207,7 @@
     "MIYABISTS2_CARD_JUN_LIE.description": "Each time you play an [aqua]Rending Frost[/aqua] card, gain [blue]1[/blue] [gold]Decibel[/gold]",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE.title": "Final Judgment",
-    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], damage is multiplied by [blue]3[/blue]. Remove the enemy's [gold]Break[/gold] and [gold]Daze Vulnerability[/gold]. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue]",
+    "MIYABISTS2_CARD_ZHONGMO_CAIJUE.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], damage is multiplied by [blue]3[/blue]. Remove the enemy's [gold]Break[/gold]. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_PRINCESS.title": "Super-Temporal Princess Kaguya",
     "MIYABISTS2_CARD_PRINCESS.description": "A blessing from Super-Temporal Princess Kaguya",
@@ -426,7 +426,7 @@
 	"MIYABISTS2_CARD_ZHANSHU_CHONGZHENG_YIXUAN.description": "Draw {Cards:diff()} cards\\nFor each [gold]Partner[/gold] card you have, gain [blue]1[/blue] [gold]Support Points[/gold]",
 
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.title": "Final Judgment",
-	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], damage is multiplied by [blue]3[/blue]. Remove the enemy's [gold]Break[/gold] and [gold]Daze Vulnerability[/gold]. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue]",
+	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], damage is multiplied by [blue]3[/blue]. Remove the enemy's [gold]Break[/gold]. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "Drunken Flower Moon Cloud Spin",
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "Deal {Damage:diff()} damage [blue]{HitCount:diff()}[/blue] times\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] [gold]Submission[/gold]. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] [gold]Submission[/gold]",
@@ -569,7 +569,7 @@
 	"MIYABISTS2_CARD_JINGGUAN_LIUYUN.description": "Activate X times: Randomly multiply one of your [gold]positive buffs[/gold] by {Multiplier:diff()}% (excludes [gold]Flash Energy[/gold] and [gold]Support Points[/gold])",
 
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "Clear Spirit Heart",
-	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "Lose {HpLossPercent:diff()}% of your Max HP. Remove all [purple]Debuffs[/purple] from yourself",
+	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "Lose {HpLossPercent:diff()}% of your Max HP. Remove all [purple]Debuffs[/purple] from yourself. Gain Block equal to the HP lost",
 
 	"MIYABISTS2_CARD_HOLLOW_EROSION.title": "Hollow Erosion",
 	"MIYABISTS2_CARD_HOLLOW_EROSION.description": "Each time this is drawn, choose from 3 random Erosions",
@@ -590,5 +590,44 @@
 	"MIYABISTS2_CARD_HOLLOW_ZHIJUETONGHUA.description": "Gain [blue]1[/blue] [gold]Dexterity[/gold]. Each time you play a Skill card, take [blue]1[/blue] damage",
 
 	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.title": "Hypercaution",
-	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.description": "While in hand, gain [blue]4[/blue] Block at the end of each turn"
+	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.description": "While in hand, gain [blue]4[/blue] Block at the end of each turn",
+
+	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "Fragrant Invitation",
+	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "At the end of each turn, deal {Damage:diff} damage to ALL enemies and apply [blue]1[/blue] [gold]Lumen[/gold]",
+
+	"MIYABISTS2_CARD_XUANHE_CHENIAN.title": "Glorious Chariot",
+	"MIYABISTS2_CARD_XUANHE_CHENIAN.description": "If [gold]Decibel[/gold] is below 20, recover [blue]5[/blue] [gold]Decibel[/gold].\\nIf [gold]Decibel[/gold] is above 20, consume [blue]20[/blue] [gold]Decibel[/gold] and choose a skill to use",
+
+	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.title": "Glorious Chariot",
+	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.description": "If [gold]Decibel[/gold] is below 20, recover [blue]5[/blue] [gold]Decibel[/gold].\\nIf [gold]Decibel[/gold] is above 20, consume [blue]20[/blue] [gold]Decibel[/gold] and choose a skill to use",
+
+	"MIYABISTS2_CARD_WUJU_JIANSHI.title": "Unbound Sword Stance",
+	"MIYABISTS2_CARD_WUJU_JIANSHI.description": "Each time you play an Attack card, deal {DamagePerAttack} damage to a random enemy",
+
+	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.title": "Eternal Imprisonment",
+	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.description": "Deal [blue]8[/blue] damage to ALL enemies.\\nIf the enemy is [gold]Broken[/gold], deal [blue]3[/blue]x damage and remove the [gold]Break[/gold] status",
+
+	"MIYABISTS2_CARD_WANJUN_ZHUJUE.title": "Armies Annihilated",
+	"MIYABISTS2_CARD_WANJUN_ZHUJUE.description": "Gain {Energy:energyIcons()}. Draw [blue]2[/blue] cards",
+
+	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "Triumphant Path",
+	"MIYABISTS2_CARD_KAIXUAN_TANTU.description": "Gain [blue]2[/blue] [gold]Strength[/gold] and [blue]2[/blue] [gold]Dexterity[/gold]",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG.title": "Object-Self Forgetting",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG.description": "Consume all buffs (excluding [gold]Flash Energy[/gold] and [gold]Support Points[/gold]). Discard your entire hand, then add random special cards equal to the number of cards discarded (card values determined by the number of buffs consumed)",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.title": "Attack",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_ATK.description": "[orange]Dark Ink[/orange]{ExhaustedPowerCount:diff()}\\n[gold]Daze[/gold]{ExhaustedPowerCount:diff()}",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.title": "Defend",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_DEF.description": "Gain {ExhaustedPowerCount:diff()} Block\\nApply {ExhaustedPowerCount:diff()} [gold]Technique Value[/gold] to ALL enemies",
+
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.title": "Sustain",
+	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.description": "Gain {Energy:energyIcons()}\\nDraw {ExhaustedPowerCount:diff()} cards",
+
+	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title": "Guarding Radiance",
+	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description": "When you would gain Block, instead gain 0 Block, then gain {Energy:energyIcons()} and draw [blue]1[/blue] card",
+
+	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.title": "Delusion-Slaying Sky",
+	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.description": "Immediately apply [blue]20%[/blue] [gold]Daze Vulnerability[/gold] to ALL enemies. For each [gold]positive buff[/gold] you have, apply an additional [blue]10%[/blue].\\nDiscard your entire hand, draw that many cards, and deal {Damage:diff} damage randomly that many times"
 }
