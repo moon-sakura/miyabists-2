@@ -54,6 +54,8 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             {
                 await PowerCmd.Remove(debuff);
             }
+
+            await CreatureCmd.GainBlock(Owner.Creature, hpLoss, ValueProp.Unpowered, cardPlay);
         }
 
         protected override void OnUpgrade()
