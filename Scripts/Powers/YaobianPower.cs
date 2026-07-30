@@ -42,12 +42,16 @@ namespace Miyabists2.Scripts.Powers
         /// <summary>
         /// 回合结束时，若累计至三层：清除耀变并造成15%属性异常伤害
         /// </summary>
+        /// 
+
+        private static readonly string[] DanVoices = { "dan_spec_weimuluoxia", "dan_spec_zhunbeihao"};
         public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (side != Owner.Side) return;
 
             if (Amount >= 3)
             {
+                MiyabiAudioPlay.Random(DanVoices);
                 // 清除耀变
                 await PowerCmd.Remove(this);
 

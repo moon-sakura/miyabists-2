@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Miyabists2.Scripts.Service;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -45,8 +46,11 @@ namespace Miyabists2.Scripts.Cards
             HoverTipFactory.FromPower<AttributeAnomalyPower>(),
         ];
 
+        private static readonly string[] DanVoices = { "dan_endskill_gaoguangshike", "dan_endskill_xhongxianrongguang", "dan_endskill_ximiezhangsheng" };
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            MiyabiAudioPlay.Random(DanVoices);
             await PowerCmd.Apply<FangfeiZhiyaoPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
         }
 

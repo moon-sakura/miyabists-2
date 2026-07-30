@@ -43,6 +43,8 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            MiyabiAudioPlay.Play("nuomu_hahahaha");
+
             // 1. First, summon Bangboos
             int summonCount = DynamicVars["SummonCount"].IntValue;
             for (int i = 0; i < summonCount; i++)

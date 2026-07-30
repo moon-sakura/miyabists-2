@@ -68,6 +68,8 @@ namespace Miyabists2.Scripts.Cards
             }
             else
             {
+                MiyabiAudioPlay.Play("pp_gongzhicijian");
+
                 // 喧响值≥20 → 消耗20点喧响值
                 // TODO: 消耗喧响值的逻辑，由用户完成
                 await MiyabiCombatService.AddDecible(Owner, -cost);
