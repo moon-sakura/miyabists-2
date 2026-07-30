@@ -111,6 +111,9 @@ namespace Miyabists2.Scripts.Cards
             if (cardSource != this)
                 return;
 
+            if (cardSource is ZhongmoCaijue)
+                return;
+
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar) && dazeVar.BaseValue > 0)
             {
                 await MiyabiCombatService.AddDaze(choiceContext, target, dazeVar, base.Owner.Creature);

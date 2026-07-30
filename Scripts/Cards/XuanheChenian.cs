@@ -133,6 +133,11 @@ namespace Miyabists2.Scripts.Cards
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
+            if(cardSource == null || target == null)
+            {
+                return 1m;
+            }
+
             if(cardSource == this && target.HasPower<BreakPower>())
             {
                 return 3m;

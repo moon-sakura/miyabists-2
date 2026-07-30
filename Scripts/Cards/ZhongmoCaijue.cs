@@ -61,7 +61,7 @@ namespace Miyabists2.Scripts.Cards
                 //v.BaseValue = 0;
             }
 
-            await base.OnPlay(choiceContext, cardPlay);
+            //await base.OnPlay(choiceContext, cardPlay);
 
             if (damageor > 0)
             {
@@ -80,6 +80,9 @@ namespace Miyabists2.Scripts.Cards
 
         public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
         {
+            if(cardSource == null || target == null) 
+                return 1m;
+
             if (cardSource == this && target.HasPower<BreakPower>())
             {
                 return 3m;
