@@ -210,6 +210,17 @@
     "WUJU_JIANSHI_POWER.description": "每次使用攻击卡时，对随机敌人造成伤害。",
     "WUJU_JIANSHI_POWER.smartDescription": "每次使用攻击卡时，对随机敌人造成{Amount}点伤害。",
 
+    "WUZHE_XIUYANG_POWER.title": "武者修养",
+    "WUZHE_XIUYANG_POWER.description": "使用[gold]花辞[/gold]后抽1张卡。",
+    "WUZHE_XIUYANG_POWER.smartDescription": "使用[gold]花辞[/gold]后抽{Amount}张卡。",
+
+    "WULIANG_FANJI_POWER.title": "无量反击",
+    "WULIANG_FANJI_POWER.description": "本回合每完全格挡1次攻击，下回合获得{Energy:energyIcons()}。",
+    "WULIANG_FANJI_POWER.smartDescription": "本回合每完全格挡1次攻击，下回合获得{Amount}{Energy:energyIcons()}。",
+
+
+
+
 
     "MIYABI_GUARDIAN_POWER.title": "守护者",
     "MIYABI_GUARDIAN_POWER.description": "为你而死",

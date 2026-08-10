@@ -236,7 +236,7 @@
     "MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "未被[gold]击破[/gold]时受到伤害降低[blue]25%[/blue]，每次受击时添加1张[gold]花辞[/gold]到手卡\\n受到未被格挡的伤害时为自己添加{Daze:diff()}层失衡，累计[blue]100[/blue]层后触发[gold]击破[/gold]",
 
 	"MIYABISTS2_CARD_BEE_GROUP.title": "蜂群集结",
-    "MIYABISTS2_CARD_BEE_GROUP.description": "为手卡与抽牌堆中任意{Cards:diff()}张卡附上可以触发{Chance}次的[gold]蜂群[/gold]",
+    "MIYABISTS2_CARD_BEE_GROUP.description": "为手卡与抽牌堆中任意{Cards:diff()}张卡附上[gold]蜂群[/gold]",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.title": "邦布来袭！",
     "MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "随机召唤{summon:diff()}个邦布",
@@ -305,6 +305,12 @@
 
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "凯旋坦途",
     "MIYABISTS2_CARD_KAIXUAN_TANTU.description": "获得2点力量，2点敏捷。",
+
+	"MIYABISTS2_CARD_WULIANG_FANJI.title": "无量反击",
+	"MIYABISTS2_CARD_WULIANG_FANJI.description": "获得{Block:diff()}点格挡，结束自己的回合。\\n本回合每完全格挡1次攻击，下回合获得{Energy:energyIcons()}。",
+
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.title": "武者修养",
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.description": "使用[gold]花辞[/gold]后抽1张卡。",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "失衡测试卡",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]失衡值[/gold][blue]50[/blue]",
@@ -610,6 +616,9 @@
 
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "清灵道心",
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "失去最大生命值{HpLossPercent:diff()}%的生命值，消除自身所有[purple]负面效果[/purple]，获得失去生命值量的格挡。",
+
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.title": "无量反击",
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.description": "获得{Block:diff()}点格挡，结束自己的回合。\\n本回合每完全格挡1次攻击，下回合获得{Energy:energyIcons()}。",
 
 
 

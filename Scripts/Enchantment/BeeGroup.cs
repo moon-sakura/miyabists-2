@@ -43,22 +43,22 @@ namespace Miyabists2.Scripts.Enchantment
 
 
 
-        [SavedProperty]
-        public int TriggerChance { get; private set; } = 1;
+        //[SavedProperty]
+        //public int TriggerChance { get; private set; } = 1;
 
-        public void SetChance(int chance)
-        {
-            TriggerChance = chance;
-            DynamicVars["Chance"].BaseValue = TriggerChance;
-            DynamicVars["OriChance"].BaseValue = TriggerChance;
-        }
+        //public void SetChance(int chance)
+        //{
+        //    TriggerChance = chance;
+        //    DynamicVars["Chance"].BaseValue = TriggerChance;
+        //    DynamicVars["OriChance"].BaseValue = TriggerChance;
+        //}
 
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => 
-        [
-            new DynamicVar("Chance",1),
-            new DynamicVar("OriChance",1),
-        ];
+        //protected override IEnumerable<DynamicVar> CanonicalVars => 
+        //[
+        //    new DynamicVar("Chance",1),
+        //    new DynamicVar("OriChance",1),
+        //];
         //protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromKeyword(CardKeyword.Retain)];
 
         // 图标位置。大小1:1就行，原版是64x64
@@ -79,8 +79,6 @@ namespace Miyabists2.Scripts.Enchantment
         // 当附魔的卡牌被打出时调用。
         public override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay? cardPlay)
         {
-            await base.OnPlay(choiceContext, cardPlay);
-
             List<CardModel> cards = [];
             cards.AddRange(base.Card.Owner.PlayerCombatState.DrawPile.Cards.ToList());
             cards.AddRange(base.Card.Owner.PlayerCombatState.Hand.Cards.ToList());
@@ -92,14 +90,15 @@ namespace Miyabists2.Scripts.Enchantment
             {
                 var e = CardCmd.Enchant<BeeGroupEnchantment>(targetCard, 1m);
                 e.SetTemporary(true);
-                e.SetChance(DynamicVars["OriChance"].IntValue);
+                //e.SetChance(DynamicVars["OriChance"].IntValue);
             }
         }
 
 
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if(base.Card.Pile == null) { return; }
+            if(cardPlay.Card.Owner != base.Card.Owner) { return; }
+            if (base.Card.Pile == null) { return; }
             if (base.Card.Pile.Type != PileType.Hand && base.Card.Pile.Type != PileType.Draw)
             {
                 return;
@@ -113,19 +112,19 @@ namespace Miyabists2.Scripts.Enchantment
             if (MiyabiFuncBase.GetIsTrue100(20, base.Card.Owner)||(cardPlay.Card.Enchantment is BeeGroupEnchantment && MiyabiFuncBase.GetIsTrue100(35, base.Card.Owner)))
             {
                 await CardCmd.AutoPlay(choiceContext, base.Card, null);
-                TriggerChance--;
-                DynamicVars["Chance"].BaseValue = TriggerChance;
-                if (TriggerChance <= 0)
-                {
-                    CardCmd.ClearEnchantment(base.Card);
-                }
+                //TriggerChance--;
+                //DynamicVars["Chance"].BaseValue = TriggerChance;
+                //if (TriggerChance <= 0)
+                //{
+                //    CardCmd.ClearEnchantment(base.Card);
+                //}
             }
         }
 
-        public override async Task AfterCombatEnd(CombatRoom room)
-        {
-            if(isTemporary)
-                CardCmd.ClearEnchantment(base.Card);
-        }
+        //public override async Task AfterCombatEnd(CombatRoom room)
+        //{
+        //    if(isTemporary)
+        //        CardCmd.ClearEnchantment(base.Card);
+        //}
     }
 }

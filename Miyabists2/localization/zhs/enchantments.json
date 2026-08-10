@@ -1,5 +1,5 @@
 {
     "BEE_GROUP_ENCHANTMENT.title": "蜂群",
-    "BEE_GROUP_ENCHANTMENT.extraCardText": "打出这张卡时，随机为另外一张卡附上可以触发{OriChance}次的[gold]蜂群[/gold]。\\n还可以触发{Chance}次。",
+    "BEE_GROUP_ENCHANTMENT.extraCardText": "打出这张卡时，随机为另外1张卡附上[gold]蜂群[/gold]。",
     "BEE_GROUP_ENCHANTMENT.description": "成为蜂群的一员，为蜂群效力吧！在出牌时有概率自动打出。" 
 }

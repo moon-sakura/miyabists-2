@@ -25,13 +25,13 @@ namespace Miyabists2.Scripts.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords => [MiyabiKeywords.OtherWorldFriends];
 
         public BeeGroup()
-            : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+            : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
         {
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new CardsVar(1),
-            new DynamicVar("Chance",1),
+            //new DynamicVar("Chance",1),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
@@ -55,7 +55,7 @@ namespace Miyabists2.Scripts.Cards
                 {
                     var e = CardCmd.Enchant<BeeGroupEnchantment>(card, 1m);
                     e?.SetTemporary(true);
-                    e.SetChance(DynamicVars["Chance"].IntValue);
+                    //e.SetChance(DynamicVars["Chance"].IntValue);
                 }
                
             }
@@ -65,7 +65,7 @@ namespace Miyabists2.Scripts.Cards
         {
             AddKeyword(CardKeyword.Innate);
             //DynamicVars.Cards.UpgradeValueBy(1);
-            DynamicVars["Chance"].UpgradeValueBy(1);
+            //DynamicVars["Chance"].UpgradeValueBy(1);
         }
     }
 }
