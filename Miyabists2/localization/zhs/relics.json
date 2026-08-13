@@ -167,5 +167,10 @@
 
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "童话记事本",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。\\n请勿添加会添加状态卡牌的怪物，否则会导致游戏卡住！",
-	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "我把他们都画在了本子上——现在，只要挥挥法杖，我就能把他们都召唤出来！"
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "我把他们都画在了本子上——现在，只要挥挥法杖，我就能把他们都召唤出来！",
+
+
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.title": "猎犬遗骸",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.description": "战斗结束之后，额外获得一份随机奖励.",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "神之迷宫最强猎手的证明！来财！"
 }

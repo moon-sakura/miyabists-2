@@ -92,6 +92,44 @@
 
     "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.END_PAGE.description" : "[outline_size=10][outline_color=black]再待下去可能会有不好的事情发生，赶快离开吧。[/outline_color][/outline_size]",
 
-    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]这太反常了，还是不要靠近了。[/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]这太反常了，还是不要靠近了。[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.title" : "迷宫诡域",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]铃和哲邀请你去探索【神之迷宫】帕帕戈空洞。里面似乎有不少好东西，但是也会伴随不小的风险……\\n要接受委托吗？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.ACCEPT.title": "同意",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.ACCEPT.description": "也许会有不错的收获。",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.REFUSE.title": "拒绝",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.REFUSE.description": "风险太大，还是算了吧。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.description" : "[outline_size=10][outline_color=black]你伴随法厄同进入了帕帕戈空洞。\\n也许满载而归，也许会出师不利。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.options.ADVANCE.title": "前进",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.options.ADVANCE.description": "一探究竟。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.description" : "[outline_size=10][outline_color=black]你搜寻到了不少东西……也许现在就撤离不是个坏事。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.CONTINUE.title": "继续前进",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.CONTINUE.description": "或许会有丰厚的回报，但也有危险。",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.title": "撤离",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.description": "及时止损。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.description" : "[outline_size=10][outline_color=black][jitter][red]旧日猎犬·乌利迪姆[/red][/jitter]已经锁定你了！[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.title": "进入战斗",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.description": "只能应战了。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.description" : "[outline_size=10][outline_color=black]你暂时摆脱了猎犬的追捕，还要继续吗……后面的奖励会更丰厚，但是风险也会上升。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.CONTINUE.title": "继续前进",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.CONTINUE.description": "富贵险中求。",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.RETREAT.title": "撤离",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.RETREAT.description": "是时候离开了。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.REFUSE_END.description" : "[outline_size=10][outline_color=black]我现在有更重要的事，还是之后再说吧。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.RETREAT_END.description" : "[outline_size=10][outline_color=black]过度贪婪不是好事，还是见好就收吧。[/outline_color][/outline_size]"
 
 }

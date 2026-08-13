@@ -40,5 +40,13 @@
     "PAPERBOO_BANGBOO.name": "Paperboo",
     "MAGNETIBOO_BANGBOO.name": "Magnetiboo",
 
-    "ONE_DENNYBOO_BANGBOO.name": "One Dennyboo"
+    "ONE_DENNYBOO_BANGBOO.name": "One Dennyboo",
+
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.name": "Old Hunting Dog · Uridimu",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.BITE.title": "Bite",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.PIERCE.title": "Pierce",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.DOG_CART.title": "Dog Cart",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.SHOOT.title": "Shoot",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.CROUCH.title": "Ambush",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.FLEE.title": "Flee"
 }

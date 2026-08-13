@@ -167,5 +167,10 @@
 
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "Fairy Tale Notebook",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "At the end of turn 2 in a normal combat or turn 4 in an elite combat, add [blue]1[/blue] [gold]Long Night Poem[/gold] to your hand.\\nRight-click: Summon the recorded monster to the battlefield.\\nCurrent recorded monster: [gold]{Monster}[/gold].\\nDo not add monsters that add status cards, or the game will freeze!",
-	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "I've drawn them all in my notebook — now with a wave of my wand, I can summon them all!"
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "I've drawn them all in my notebook — now with a wave of my wand, I can summon them all!",
+
+
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.title": "Hound's Remains",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.description": "After each combat victory, gain an extra random reward — a [gold]Potion[/gold], [gold]Card[/gold], [gold]Relic[/gold], or [gold]Gold[/gold] of random rarity.",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "\"It is far from enough. This is merely the first old bone it has shed in a millennium.\""
 }

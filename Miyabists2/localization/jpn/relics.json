@@ -167,4 +167,9 @@
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "童話ノート",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "通常戦闘の2ターン目終了時、またはエリート戦闘の4ターン目終了時に、[gold]長夜詩篇[/gold]を1枚手札に加える。\\n右クリック：記録したモンスターを戦場に加える。\\n現在記録中のモンスター：[gold]{Monster}[/gold]。\\nステータスカードを追加するモンスターは加えないでください。ゲームがフリーズする原因になります！",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "みんなノートに描いておいたの——今なら、杖をひと振りするだけで、みんな呼び出せるんだから！"
+,
+
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.title": "猟犬の遺骸",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.description": "戦闘終了後、ランダムなレアリティの[gold]ポーション[/gold]・[gold]カード[/gold]・[gold]レリック[/gold]・[gold]ゴールド[/gold]のいずれかを追加で1つ獲得する。",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "「まだまだだ。これは千年で初めて抜け落ちた古い骨に過ぎない。」"
 }

@@ -168,4 +168,9 @@
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.title": "동화 수첩",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.description": "일반 전투의 2턴 종료 시 또는 정예 전투의 4턴 종료 시, [gold]장야시편[/gold] 1장을 손패에 추가합니다.\\n우클릭: 기록된 몬스터를 전장에 추가합니다.\\n현재 기록된 몬스터: [gold]{Monster}[/gold]\\n상태 카드를 추가하는 몬스터는 추가하지 마세요. 게임이 멈출 수 있습니다!",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_YIXUAN.flavor": "전부 수첩에 그려놨어요——이제 지팡이만 휘두르면, 모두 소환할 수 있답니다!"
+,
+
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.title": "사냥개의 유해",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.description": "전투 종료 후, 무작위 희귀도의 [gold]물약[/gold]·[gold]카드[/gold]·[gold]유물[/gold]·[gold]골드[/gold] 중 하나를 추가로 1개 획득한다.",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "「아직 멀었다. 이것은 천 년 만에 처음 벗겨진 낡은 뼈일 뿐이다.」"
 }

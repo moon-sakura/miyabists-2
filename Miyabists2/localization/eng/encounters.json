@@ -6,5 +6,8 @@
     "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.loss": "{character} was defeated in [gold]{encounter}[/gold].",
 
     "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.title": "Encounter: Yi Xuan",
-    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character} was defeated in [gold]{encounter}[/gold]."
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character} was defeated in [gold]{encounter}[/gold].",
+
+    "MIYABISTS2_ENCOUNTER_URIDIMU_HOUND_ENCOUNTER.title": "Encounter: Old Hunting Dog · Uridimu",
+    "MIYABISTS2_ENCOUNTER_URIDIMU_HOUND_ENCOUNTER.loss": "{character} was defeated in [gold]{encounter}[/gold]."
 }

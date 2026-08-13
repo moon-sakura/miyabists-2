@@ -258,7 +258,7 @@
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "수행 선택",
 
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "방비의 초대",
-    "MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "매 턴 종료 시 모든 적에게 {Damage:diff}점 피해를 주고, [gold]루멘[/gold] 1중첩을 부여합니다.",
+	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "매 턴 종료 시 모든 적에게 {Damage:diff}점 피해를 주고, [gold]루멘[/gold] 1중첩을 부여합니다.",
 
 
 	"MIYABISTS2_CARD_TRAIN_SPEAK.title": "말은 5글자 이하로",
@@ -289,22 +289,22 @@
 	"MIYABISTS2_CARD_KAKANIA.description": "받는 피해 [red]25%[/red] 증가, 받은 모든 피해를 기록합니다.\\n우클릭 발동: [gold]지원 포인트[/gold] 5점을 소모하여 모든 적에게 기록된 수치의 피해를 줍니다. 턴 종료 시 이번 턴에 준 피해의 {BurstRatio:diff()}%만큼 피해를 줍니다.",
 
 	"MIYABISTS2_CARD_XUANHE_CHENIAN.title": "훤혁거연",
-    "MIYABISTS2_CARD_XUANHE_CHENIAN.description": "[gold]와글와글 수치[/gold]가 20 미만이면 5점 회복합니다.\\n[gold]와글와글 수치[/gold]가 20 이상이면 20점을 소모하여 스킬 하나를 선택해 사용합니다.",
+	"MIYABISTS2_CARD_XUANHE_CHENIAN.description": "[gold]와글와글 수치[/gold]가 20 미만이면 5점 회복합니다.\\n[gold]와글와글 수치[/gold]가 20 이상이면 20점을 소모하여 스킬 하나를 선택해 사용합니다.",
 
 	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.title": "훤혁거연",
-    "MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.description": "[gold]와글와글 수치[/gold]가 20 미만이면 5점 회복합니다.\\n[gold]와글와글 수치[/gold]가 20 이상이면 20점을 소모하여 스킬 하나를 선택해 사용합니다.",
+	"MIYABISTS2_CARD_XUANHE_CHENIAN_YIXUAN.description": "[gold]와글와글 수치[/gold]가 20 미만이면 5점 회복합니다.\\n[gold]와글와글 수치[/gold]가 20 이상이면 20점을 소모하여 스킬 하나를 선택해 사용합니다.",
 
 	"MIYABISTS2_CARD_WUJU_JIANSHI.title": "무구검세",
-    "MIYABISTS2_CARD_WUJU_JIANSHI.description": "공격 카드 사용 시마다 무작위 적에게 {DamagePerAttack}점 피해를 줍니다.",
+	"MIYABISTS2_CARD_WUJU_JIANSHI.description": "공격 카드 사용 시마다 무작위 적에게 {DamagePerAttack}점 피해를 줍니다.",
 
 	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.title": "영함유수",
-    "MIYABISTS2_CARD_YONGXIAN_YOUQIU.description": "모든 적에게 8점 피해.\\n적이 [gold]격파[/gold] 상태면 3배 피해를 주고 [gold]격파[/gold] 상태를 제거합니다.",
+	"MIYABISTS2_CARD_YONGXIAN_YOUQIU.description": "모든 적에게 8점 피해.\\n적이 [gold]격파[/gold] 상태면 3배 피해를 주고 [gold]격파[/gold] 상태를 제거합니다.",
 
 	"MIYABISTS2_CARD_WANJUN_ZHUJUE.title": "만군주절",
-    "MIYABISTS2_CARD_WANJUN_ZHUJUE.description": "{Energy:energyIcons()} 획득, 카드 2장을 뽑습니다.",
+	"MIYABISTS2_CARD_WANJUN_ZHUJUE.description": "{Energy:energyIcons()} 획득, 카드 2장을 뽑습니다.",
 
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "개선탄도",
-    "MIYABISTS2_CARD_KAIXUAN_TANTU.description": "힘 2점, 민첩 2점을 얻습니다.",
+	"MIYABISTS2_CARD_KAIXUAN_TANTU.description": "힘 2점, 민첩 2점을 얻습니다.",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "균형 붕괴 테스트 카드",
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]균형 붕괴 수치[/gold][blue]50[/blue]",

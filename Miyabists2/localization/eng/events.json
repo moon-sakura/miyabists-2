@@ -92,6 +92,44 @@
 
     "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.END_PAGE.description" : "[outline_size=10][outline_color=black]Something bad might happen if you stay any longer. Better leave quickly.[/outline_color][/outline_size]",
 
-    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]This is far too abnormal. Better not get close.[/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]This is far too abnormal. Better not get close.[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.title" : "Labyrinth of Phantoms",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]Belle and Wise invite you to explore the [Divine Labyrinth] Papago Hollow. There seems to be plenty of good stuff inside, but it comes with no small amount of risk...\\nWill you accept the commission?[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.ACCEPT.title": "Accept",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.ACCEPT.description": "It might yield a fine haul.",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.REFUSE.title": "Refuse",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.REFUSE.description": "The risk is too great.",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.description" : "[outline_size=10][outline_color=black]You enter the Papago Hollow alongside Phaethon.\\nYou may return loaded, or you may fail at the very start.[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.options.ADVANCE.title": "Advance",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.options.ADVANCE.description": "See what lies ahead.",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.description" : "[outline_size=10][outline_color=black]You've scrounged up quite a bit... Perhaps it's not a bad idea to retreat now (obtain a random reward or a curse).[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.CONTINUE.title": "Continue",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.CONTINUE.description": "The rewards may be rich, but so is the danger.",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.title": "Retreat",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.description": "Cut your losses.",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.description" : "[outline_size=10][outline_color=black]The Old Hunting Dog, Uridimu, has locked onto you![/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.title": "Enter Battle",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.description": "There's no choice but to fight.",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.description" : "[outline_size=10][outline_color=black]You've temporarily shaken off the hound's pursuit. Will you continue...? The rewards ahead will be richer, but so will the risks.[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.CONTINUE.title": "Continue",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.CONTINUE.description": "Nothing ventured, nothing gained.",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.RETREAT.title": "Retreat",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.RETREAT.description": "It's time to leave.",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.REFUSE_END.description" : "[outline_size=10][outline_color=black]I have more important things to do right now. Maybe some other time.[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.RETREAT_END.description" : "[outline_size=10][outline_color=black]Greed is not a good thing. Better quit while you're ahead.[/outline_color][/outline_size]"
 
 }

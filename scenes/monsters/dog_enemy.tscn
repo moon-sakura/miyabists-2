@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cimiici644ejs"]
+
+[ext_resource type="Texture2D" uid="uid://bla2vm5cvica2" path="res://images/elseui/dogEnemy.png" id="1_xluw0"]
+
+[node name="YixuanEnemy" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-24.000002, -239)
+scale = Vector2(0.20332198, 0.20332198)
+texture = ExtResource("1_xluw0")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -222.0
+offset_top = -502.0
+offset_right = 278.0
+offset_bottom = -2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -564)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-147, -219)
