@@ -2,8 +2,10 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Encounters;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -58,12 +60,44 @@ namespace Miyabists2.Scripts.Enemies
                 await PowerCmd.Apply<IntangiblePower>(ctx, base.Creature, stacks, base.Creature, null);
                 await PowerCmd.Apply<StrengthPower>(ctx, base.Creature, stacks, base.Creature, null);
             }
-            await PowerCmd.Apply<ThieveryPower>(ctx, base.Creature, StealAmount, base.Creature, null);
+            // 偷窃能力不会自动扣钱：Steal() 里要求 Target 指向玩家，否则 Target 为 null 直接返回。
+            // 照抄 Gremlin Merc 的做法：给每个玩家单独建一个 ThieveryPower 实例、手动设置 Target，
+            // 再挂到猎犬身上；攻击动作里再显式调用 Steal() 才真正扣钱。
+            foreach (Player player in base.CombatState.Players)
+            {
+                ThieveryPower thieveryPower = (ThieveryPower)ModelDb.Power<ThieveryPower>().ToMutable();
+                thieveryPower.Target = player.Creature;
+                await PowerCmd.Apply(new ThrowingPlayerChoiceContext(), thieveryPower, base.Creature, StealAmount, base.Creature, null);
+            }
 
             await CreatureCmd.SetMaxAndCurrentHp(base.Creature, base.Creature.MaxHp * HpMultiplier);
         }
 
         // ===== 动作 =====
+
+        // 偷钱并挂「赃物袋」：每次实际偷到的钱记为一次 HeistPower，猎犬被击杀时按这些金额返给玩家。
+        // 注意三点：
+        // 1) GetPowerInstances 是 _powers 的实时枚举，循环里再 Apply 会改集合 → 必须先 ToList() 快照。
+        // 2) HeistPower 和 ThieveryPower 一样，Target 要手动指向被偷的玩家，否则 BeforeDeath 里 base.Target.Player 空引用。
+        // 3) 金额用本次实际偷到数（偷前偷后 DynamicVars.Gold 之差），不要用层数 Amount——
+        //    玩家钱不够时 Steal() 会按 Math.Min 截断，按层数返还会多退钱。
+        private async Task Steal()
+        {
+            foreach (ThieveryPower powerInstance in base.Creature.GetPowerInstances<ThieveryPower>().ToList())
+            {
+                int before = powerInstance.DynamicVars.Gold.IntValue;
+                await powerInstance.Steal();
+                int stolen = powerInstance.DynamicVars.Gold.IntValue - before;
+                if (stolen <= 0)
+                {
+                    continue;
+                }
+                HeistPower heistPower = (HeistPower)ModelDb.Power<HeistPower>().ToMutable();
+                heistPower.Target = powerInstance.Target;
+                await PowerCmd.Apply(new ThrowingPlayerChoiceContext(), heistPower, base.Creature, stolen, base.Creature, null);
+            }
+        }
+
         // 撕咬：12-15伤害 + 3层易伤（偷钱由偷窃能力处理）
         private int BiteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 15, 12);
         private async Task BiteMove(IReadOnlyList<Creature> targets)
@@ -77,6 +111,8 @@ namespace Miyabists2.Scripts.Enemies
             {
                 await PowerCmd.Apply<VulnerablePower>(new ThrowingPlayerChoiceContext(), creature, 3m, base.Creature, null);
             }
+
+            await Steal();
         }
 
         // 穿刺攻击：10-14伤害 + 3层脆弱（偷钱由偷窃能力处理）
@@ -92,6 +128,7 @@ namespace Miyabists2.Scripts.Enemies
             {
                 await PowerCmd.Apply<FrailPower>(new ThrowingPlayerChoiceContext(), creature, 3m, base.Creature, null);
             }
+            await Steal();
         }
 
         // 狗车：28-35伤害
@@ -103,6 +140,8 @@ namespace Miyabists2.Scripts.Enemies
                 .FromMonster(this)
                 .WithHitFx("vfx/vfx_giant_horizontal_slash")
                 .Execute(null);
+
+            await Steal();
         }
 
         // 射击：14-18伤害 + 6层消亡
@@ -118,12 +157,15 @@ namespace Miyabists2.Scripts.Enemies
             {
                 await PowerCmd.Apply<DisintegrationPower>(new ThrowingPlayerChoiceContext(), creature, 6m, base.Creature, null);
             }
+
+
+            await Steal();
         }
 
         // 潜伏蓄力：获得6点力量
         private async Task CrouchMove(IReadOnlyList<Creature> targets)
         {
-            await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, 6m, base.Creature, null);
+            await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), base.Creature, NextEncounterIndex, base.Creature, null);
         }
 
         // 逃跑：主动离开战斗，不视为击杀、不给遗骸遗物，正常回到事件
@@ -140,6 +182,10 @@ namespace Miyabists2.Scripts.Enemies
         private int _turnsWithoutIntangible = 0;
         public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
+            if(side != Creature.Side)
+            {
+                return base.AfterSideTurnEnd(choiceContext, side, participants);
+            }
             if (!Creature.HasPower<IntangiblePower>())
             {
                 _turnsWithoutIntangible++;

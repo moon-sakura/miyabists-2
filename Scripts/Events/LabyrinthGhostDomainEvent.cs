@@ -335,6 +335,13 @@ namespace Miyabists2.Scripts.Events
             _combatSynchronizer?.InitializeForEvent(this);
 
             UridimuHoundEncounter.NextEncounterIndex = _houndEncounters + 1;
+
+            // 战斗回放记录器是整局共享的：初始状态只在进入地图节点时记录（EnterMapPointInternal），
+            // 事件战斗走的是 EnterRoomWithoutExitingCurrentRoom，不会记录。且每次战斗胜利后
+            // WriteReplay(stopRecording:true) 会清空记录，所以第 2 次及之后的战斗必须先重新记录初始状态，
+            // 否则战斗中第一次生成校验和就会抛 "RecordInitialState must be called first" 并卡死战斗。
+            RunManager.Instance.CombatReplayWriter.RecordInitialState(RunManager.Instance.ToSave(null));
+
             EnterCombatWithoutExitingEvent<UridimuHoundEncounter>([], shouldResumeAfterCombat: true);
             return Task.CompletedTask;
         }
@@ -350,13 +357,13 @@ namespace Miyabists2.Scripts.Events
             UridimuHoundEncounter uridimuHoundEncounter = (UridimuHoundEncounter)combatRoom.Encounter;
             if (!uridimuHoundEncounter.RanOutOfTime)
             {
-                _houndEncounters++;
                 // 第四次战胜猎犬后获得专属遗物（猎犬遗骸，只会获得一次）
                 if (_houndEncounters >= 4 && MiyabiFuncBase.GetRelic<HoundRemainsRelic>(Owner) == null)
                 {
                     await RelicCmd.Obtain<HoundRemainsRelic>(Owner);
                 }
             }
+            _houndEncounters++;
 
             SetEventState(L10NLookup($"{Id.Entry}.pages.POST_COMBAT_PAGE.description"), [
                 new EventOption(this, ContinueAdvance, ModOptionKey("POST_COMBAT_PAGE", "CONTINUE")),
