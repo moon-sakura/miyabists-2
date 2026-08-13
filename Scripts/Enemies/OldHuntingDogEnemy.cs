@@ -29,7 +29,9 @@ namespace Miyabists2.Scripts.Enemies
         }
 
         // 旧日猎犬·乌利迪姆
-        public override string? CustomVisualsPath => "res://images/elseui/dogEnemy.png";
+        // 注意：CreateVisuals 会用 GetScene().Instantiate<NCreatureVisuals>() 加载，必须是 .tscn 场景而非贴图。
+        // 场景里通过 Sprite2D 引用 images/elseui/dogEnemy.png；构造函数里的 RegisterSceneForConversion 负责转换。
+        public override string? CustomVisualsPath => "res://scenes/monsters/dog_enemy.tscn";
 
         // 本次战斗是第几次遇到猎犬（由迷宫诡域事件在进入战斗前设置，默认1=无强化）
         public int NextEncounterIndex = 1;
@@ -56,7 +58,7 @@ namespace Miyabists2.Scripts.Enemies
                 await PowerCmd.Apply<IntangiblePower>(ctx, base.Creature, stacks, base.Creature, null);
                 await PowerCmd.Apply<StrengthPower>(ctx, base.Creature, stacks, base.Creature, null);
             }
-            await PowerCmd.Apply<SwipePower>(ctx, base.Creature, StealAmount, base.Creature, null);
+            await PowerCmd.Apply<ThieveryPower>(ctx, base.Creature, StealAmount, base.Creature, null);
 
             await CreatureCmd.SetMaxAndCurrentHp(base.Creature, base.Creature.MaxHp * HpMultiplier);
         }
