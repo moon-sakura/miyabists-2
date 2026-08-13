@@ -26,10 +26,10 @@ namespace Miyabists2.Scripts.Powers
         public override int DisplayAmount => Amount;
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
-        //public string BigIconPath => "res://images/powers/wuzheXiuyang.png";
-        //public string BigBetaIconPath => BigIconPath;
-        //public override string CustomIconPath => BigIconPath;
-        //public override string CustomBigIconPath => BigIconPath;
+        public string BigIconPath => "res://images/powers/shuangyuejiashi.png";
+        public string BigBetaIconPath => BigIconPath;
+        public override string CustomIconPath => BigIconPath;
+        public override string CustomBigIconPath => BigIconPath;
 
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
