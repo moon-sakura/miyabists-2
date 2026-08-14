@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Events
 
         public override RoomType RoomType => RoomType.Elite;
 
-        public override bool ShouldGiveRewards => false;
+        public override bool ShouldGiveRewards => RanOutOfTime;
 
         private bool _ranOutOfTime = false;
 

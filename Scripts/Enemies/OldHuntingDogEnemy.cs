@@ -194,7 +194,7 @@ namespace Miyabists2.Scripts.Enemies
         }
         private bool ShouldFlee()
         {
-            return _turnsWithoutIntangible >= 3;
+            return _turnsWithoutIntangible >= 4;
         }
 
         protected override MonsterMoveStateMachine GenerateMoveStateMachine()

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eeaedebdefaac"
-path="res://.godot/imported/miyabists2_event_labyrinth_ghost_domain_event.png-3a909d5ca5e61dd8fabce91c517a7cbc.ctex"
+uid="uid://iuircd3s7eik"
+path="res://.godot/imported/miyabists2_event_labyrinth_ghost_domain_event.png-bb29880a3efbd20ed345418467fc0d8c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/events/miyabists2_event_labyrinth_ghost_domain_event.png"
-dest_files=["res://.godot/imported/miyabists2_event_labyrinth_ghost_domain_event.png-3a909d5ca5e61dd8fabce91c517a7cbc.ctex"]
+dest_files=["res://.godot/imported/miyabists2_event_labyrinth_ghost_domain_event.png-bb29880a3efbd20ed345418467fc0d8c.ctex"]
 
 [params]
 

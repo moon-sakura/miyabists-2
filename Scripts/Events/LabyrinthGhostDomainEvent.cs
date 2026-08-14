@@ -5,12 +5,14 @@ using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Events;
 using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Encounters;
 using MegaCrit.Sts2.Core.Models.PotionPools;
 using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Nodes.Relics;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
@@ -225,17 +227,32 @@ namespace Miyabists2.Scripts.Events
 
         // ====== 奖励实现 ======
 
-        // 从3张该稀有度的卡牌中选择一张（卡池为空则返回false，改给金币保底）
+        // 从该稀有度的卡牌中选择（卡池为空则返回false，改给金币保底）
+        // 注意：不能走 CardFactory.CreateForReward 生成奖励！它先按稀有度概率 roll 出一个稀有度，
+        // 再在卡池里找该稀有度的卡。本角色卡池里只有 Ancient 卡（煊赫车辇、斩妄开天），
+        // 而 RegularEncounter 概率永远只 roll 出 Common/Uncommon/Rare，GetNextAllowedRarity
+        // 的回绕链（Common→Uncommon→Rare→Common，Ancient→None）永远到不了 Ancient，
+        // 所以第一张卡就抛 "couldn't generate a valid rarity"。
+        // 解决办法：自己选好卡、用卡片版构造器直接塞给 CardReward（_cardsWereManuallySet 路径，
+        // Populate 不再调 CardFactory，也不会因卡池不足/稀有度 roll 失败而崩）。
         private async Task<bool> TryOfferCard(CardRarity rarity)
         {
-            if (!Owner!.Character.CardPool
+            List<CardModel> unlocked = Owner!.Character.CardPool
                 .GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint)
-                .Any(c => c.Rarity == rarity))
+                .Where(c => c.Rarity == rarity && c.MultiplayerConstraint != CardMultiplayerConstraint.MultiplayerOnly && c is not XuanmoAnyong)
+                .Distinct()
+                .ToList();
+            if (unlocked.Count == 0)
             {
                 return false;
             }
+            int offerCount = Math.Min(3, unlocked.Count);
+            List<CardModel> cardsToOffer = unlocked
+                .TakeRandom(offerCount, Owner.PlayerRng.Rewards)
+                .Select(c => Owner.RunState.CreateCard(c, Owner))
+                .ToList();
             await RewardsCmd.OfferCustom(Owner!, [
-                new CardReward(CardCreationOptions.ForNonCombatWithDefaultOdds([Owner!.Character.CardPool], c => c.Rarity == rarity), 3, Owner)
+                new CardReward(cardsToOffer, CardCreationSource.Other, Owner, CardCreationOptions.ForNonCombatWithDefaultOdds([]))
             ]);
             return true;
         }
@@ -360,7 +377,9 @@ namespace Miyabists2.Scripts.Events
                 // 第四次战胜猎犬后获得专属遗物（猎犬遗骸，只会获得一次）
                 if (_houndEncounters >= 4 && MiyabiFuncBase.GetRelic<HoundRemainsRelic>(Owner) == null)
                 {
-                    await RelicCmd.Obtain<HoundRemainsRelic>(Owner);
+                    //await RelicCmd.Obtain<HoundRemainsRelic>(Owner);
+                    var relic = new RelicReward(ModelDb.Relic<HoundRemainsRelic>(), Owner);
+                    await RewardsCmd.OfferCustom(Owner!, [relic]);
                 }
             }
             _houndEncounters++;

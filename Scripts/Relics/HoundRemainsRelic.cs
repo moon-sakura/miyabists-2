@@ -29,10 +29,9 @@ namespace Miyabists2.Scripts.Relics
         protected override string BigIconPath => PackedIconPath;
 
         // 战斗胜利后，额外获得一份随机奖励
-        public override async Task AfterCombatVictory(CombatRoom room)
+        public override async Task BeforeRoomEntered(AbstractRoom room)
         {
-            await base.AfterCombatVictory(room);
-            if (Owner == null) return;
+            await base.BeforeRoomEntered(room);
             await GrantRandomBonusReward();
         }
 
