@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts.Events
 
         public override RoomType RoomType => RoomType.Elite;
 
-        public override bool ShouldGiveRewards => RanOutOfTime;
+        public override bool ShouldGiveRewards => !RanOutOfTime;
 
         private bool _ranOutOfTime = false;
 
@@ -40,8 +40,36 @@ namespace Miyabists2.Scripts.Events
         // 因此战斗内临时数据不能写进 canonical 实例，只能通过静态字段传给 GenerateMonsters()。
         public static int NextEncounterIndex = 1;
 
+        // 事件侧的累计战斗概率（由迷宫诡域事件在进入战斗前写入，SL 后从这里恢复）。
+        // 因为遭遇房间的 EncounterState 是唯一会被框架写入存档的字符串字典，
+        // 事件自身的字段（包括 _houndEncounters）不随 SL 保留，只能借战斗房间带出来。
+        public static int EventBaseCombatChance = 20;
+        public static int EventCombatChance = 20;
+
         public UridimuHoundEncounter() : base() // 这个遭遇的房间类型，这里是普通怪物
         {
+        }
+
+        // 持久化：保存（pre-finished）战斗房间时，框架会调用 Encounter.SaveCustomState()
+        // 把返回值写进 SerializableRoom.EncounterState；读档恢复战斗时再调用 LoadCustomState 还原。
+        // 这样 SL / 退出重进时，事件能在 Resume 里读回遭遇次数与战斗概率。
+        public override Dictionary<string, string> SaveCustomState()
+        {
+            return new Dictionary<string, string>
+            {
+                ["RanOutOfTime"] = RanOutOfTime.ToString(),
+                ["NextEncounterIndex"] = NextEncounterIndex.ToString(),
+                ["EventBaseCombatChance"] = EventBaseCombatChance.ToString(),
+                ["EventCombatChance"] = EventCombatChance.ToString(),
+            };
+        }
+
+        public override void LoadCustomState(Dictionary<string, string> state)
+        {
+            RanOutOfTime = bool.Parse(state["RanOutOfTime"]);
+            if (state.TryGetValue("NextEncounterIndex", out string? idx)) NextEncounterIndex = int.Parse(idx);
+            if (state.TryGetValue("EventBaseCombatChance", out string? bcc)) EventBaseCombatChance = int.Parse(bcc);
+            if (state.TryGetValue("EventCombatChance", out string? cc)) EventCombatChance = int.Parse(cc);
         }
 
         private MonsterModel GetEnemy()

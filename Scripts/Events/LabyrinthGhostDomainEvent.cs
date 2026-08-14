@@ -239,7 +239,8 @@ namespace Miyabists2.Scripts.Events
         {
             List<CardModel> unlocked = Owner!.Character.CardPool
                 .GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint)
-                .Where(c => c.Rarity == rarity && c.MultiplayerConstraint != CardMultiplayerConstraint.MultiplayerOnly && c is not XuanmoAnyong)
+                .Where(c => c.Rarity == rarity && c.MultiplayerConstraint != CardMultiplayerConstraint.MultiplayerOnly 
+                && c is not XuanmoAnyong && c is not NoTailFull && c is not ShenxueHanyan)
                 .Distinct()
                 .ToList();
             if (unlocked.Count == 0)
@@ -352,6 +353,10 @@ namespace Miyabists2.Scripts.Events
             _combatSynchronizer?.InitializeForEvent(this);
 
             UridimuHoundEncounter.NextEncounterIndex = _houndEncounters + 1;
+            // 把事件当前数值写进静态字段：进入战斗后 EncounterState 会把它持久化，
+            // SL 后 Resume 里能从猎犬遭遇里恢复这些值（事件自身字段不随 SL 保留）。
+            UridimuHoundEncounter.EventBaseCombatChance = _baseCombatChance;
+            UridimuHoundEncounter.EventCombatChance = _combatChance;
 
             // 战斗回放记录器是整局共享的：初始状态只在进入地图节点时记录（EnterMapPointInternal），
             // 事件战斗走的是 EnterRoomWithoutExitingCurrentRoom，不会记录。且每次战斗胜利后
@@ -369,17 +374,30 @@ namespace Miyabists2.Scripts.Events
             // 战斗胜利（未死亡）才继续，否则事件直接结束
             if (Owner.Creature.CurrentHp <= 0) return;
 
-            // 猎犬主动逃跑了：不计入战胜次数、不给猎犬遗骸遗物，正常回到事件页面A
             CombatRoom combatRoom = (CombatRoom)exitedRoom;
             UridimuHoundEncounter uridimuHoundEncounter = (UridimuHoundEncounter)combatRoom.Encounter;
+
+            // SL/读档恢复：读档时框架会用 canonical 事件重新 ToMutable() 生成新事件实例，
+            // BeforeEventStarted 会把 _houndEncounters 清零，事件自身字段不随存档保留。
+            // 只有战斗房间的 EncounterState（UridimuHoundEncounter.SaveCustomState 写入，
+            // LoadCustomState 还原）能把这些值带回来，所以在这里从猎犬遭遇里恢复。
+            // 正常运行流程里这几行也是幂等的：FightHound 写入的就是当前值。
+            if (UridimuHoundEncounter.NextEncounterIndex > 0)
+            {
+                _houndEncounters = UridimuHoundEncounter.NextEncounterIndex - 1;
+            }
+            _baseCombatChance = UridimuHoundEncounter.EventBaseCombatChance;
+            _combatChance = UridimuHoundEncounter.EventCombatChance;
+
+            // 猎犬主动逃跑了：不计入战胜次数、不给猎犬遗骸遗物，正常回到事件页面A
             if (!uridimuHoundEncounter.RanOutOfTime)
             {
                 // 第四次战胜猎犬后获得专属遗物（猎犬遗骸，只会获得一次）
-                if (_houndEncounters >= 4 && MiyabiFuncBase.GetRelic<HoundRemainsRelic>(Owner) == null)
+                if (_houndEncounters >= 3 && MiyabiFuncBase.GetRelic<HoundRemainsRelic>(Owner) == null)
                 {
-                    //await RelicCmd.Obtain<HoundRemainsRelic>(Owner);
-                    var relic = new RelicReward(ModelDb.Relic<HoundRemainsRelic>(), Owner);
-                    await RewardsCmd.OfferCustom(Owner!, [relic]);
+                    await RelicCmd.Obtain<HoundRemainsRelic>(Owner);
+                    //var relic = new RelicReward(ModelDb.Relic<HoundRemainsRelic>(), Owner);
+                    //await RewardsCmd.OfferCustom(Owner!, [relic]);
                 }
             }
             _houndEncounters++;

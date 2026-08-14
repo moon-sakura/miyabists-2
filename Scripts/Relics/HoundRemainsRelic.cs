@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Extensions;
@@ -10,6 +11,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Runs;
+using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
 using STS2RitsuLib.Interop.AutoRegistration;
 using System.Collections.Generic;
@@ -28,10 +30,13 @@ namespace Miyabists2.Scripts.Relics
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 
-        // 战斗胜利后，额外获得一份随机奖励
-        public override async Task BeforeRoomEntered(AbstractRoom room)
+        // 战斗胜利后，额外获得一份随机奖励。
+        // 注意：不能放在 BeforeRoomEntered / AfterRoomEntered——进入下一场战斗的房间时也会触发，
+        // RewardsCmd.OfferCustom 会在战斗开始前弹出奖励界面，把战斗卡死（之前就是这么卡的）。
+        // AfterCombatVictory 在战斗胜利后（奖励/转场前）触发，此时弹奖励界面是安全的。
+        public override async Task AfterCombatVictory(CombatRoom room)
         {
-            await base.BeforeRoomEntered(room);
+            await base.AfterCombatVictory(room);
             await GrantRandomBonusReward();
         }
 
@@ -80,15 +85,28 @@ namespace Miyabists2.Scripts.Relics
 
         private async Task<bool> TryOfferCard(CardRarity rarity)
         {
-            // 保底：该稀有度的卡池为空时，改为金币
-            if (!Owner.Character.CardPool
+            // 注意：不能走 CardFactory.CreateForReward（即 CardReward 带 Odds 的构造器）！
+            // 它先按稀有度概率 roll 出一个稀有度，再在卡池里找该稀有度的卡。本角色卡池只有
+            // Ancient 卡（煊赫车辇、斩妄开天），而 RegularEncounter 概率永远只 roll 出
+            // Common/Uncommon/Rare，GetNextAllowedRarity 的回绕链永远到不了 Ancient，
+            // 第一张卡就抛 "couldn't generate a valid rarity"。跟迷宫诡域事件一样，改为自己选好卡、
+            // 用卡片版构造器直接塞给 CardReward（_cardsWereManuallySet 路径，不再调 CardFactory）。
+            List<CardModel> unlocked = Owner.Character.CardPool
                 .GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint)
-                .Any(c => c.Rarity == rarity))
+                .Where(c => c.Rarity == rarity && c.MultiplayerConstraint != CardMultiplayerConstraint.MultiplayerOnly && c is not XuanmoAnyong && c is not NoTailFull)
+                .Distinct()
+                .ToList();
+            if (unlocked.Count == 0)
             {
                 return false;
             }
+            int offerCount = Math.Min(3, unlocked.Count);
+            List<CardModel> cardsToOffer = unlocked
+                .TakeRandom(offerCount, Owner.PlayerRng.Rewards)
+                .Select(c => Owner.RunState.CreateCard(c, Owner))
+                .ToList();
             await RewardsCmd.OfferCustom(Owner, [
-                new CardReward(CardCreationOptions.ForNonCombatWithDefaultOdds([Owner.Character.CardPool], c => c.Rarity == rarity), 3, Owner)
+                new CardReward(cardsToOffer, CardCreationSource.Other, Owner, CardCreationOptions.ForNonCombatWithDefaultOdds([]))
             ]);
             return true;
         }
