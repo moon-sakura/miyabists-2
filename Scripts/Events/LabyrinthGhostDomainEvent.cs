@@ -152,32 +152,32 @@ namespace Miyabists2.Scripts.Events
             // 1档：普通卡牌、药水、遗物、少量金币为主，小概率Uncommon/Rare
             1 =>
             [
-                (RewardKind.CommonCard, 25), (RewardKind.UncommonCard, 6), (RewardKind.RareCard, 3),
-                (RewardKind.Potion, 22), (RewardKind.Relic, 19), (RewardKind.Gold, 15), (RewardKind.Curse, 10),
+                (RewardKind.CommonCard, 25), (RewardKind.UncommonCard, 5), (RewardKind.RareCard, 2),
+                (RewardKind.Potion, 20), (RewardKind.Relic, 18), (RewardKind.Gold, 20), (RewardKind.Curse, 10),
             ],
             // 2档：Uncommon为主，普通稍少，Rare更高，极小概率Ancient，金币上升
             2 =>
             [
-                (RewardKind.CommonCard, 15), (RewardKind.UncommonCard, 25), (RewardKind.RareCard, 9), (RewardKind.AncientCard, 2),
-                (RewardKind.Potion, 18), (RewardKind.Relic, 13), (RewardKind.Gold, 13), (RewardKind.Curse, 5),
+                (RewardKind.CommonCard, 15), (RewardKind.UncommonCard, 15), (RewardKind.RareCard, 8), (RewardKind.AncientCard, 2),
+                (RewardKind.Potion, 19), (RewardKind.Relic, 18), (RewardKind.Gold, 15), (RewardKind.Curse, 8),
             ],
             // 3档：Uncommon和Rare为主，普通大幅下降，小概率Ancient，金币再次上升
             3 =>
             [
-                (RewardKind.CommonCard, 8), (RewardKind.UncommonCard, 25), (RewardKind.RareCard, 20), (RewardKind.AncientCard, 4),
-                (RewardKind.Potion, 15), (RewardKind.Relic, 12), (RewardKind.Gold, 13), (RewardKind.Curse, 3),
+                (RewardKind.CommonCard, 6), (RewardKind.UncommonCard, 20), (RewardKind.RareCard, 14), (RewardKind.AncientCard, 4),
+                (RewardKind.Potion, 18), (RewardKind.Relic, 18), (RewardKind.Gold, 15), (RewardKind.Curse, 5),
             ],
             // 4档：Rare为主，Uncommon少见，普通极少见，Ancient概率稍微上升，金币再次上升
             4 =>
             [
-                (RewardKind.CommonCard, 4), (RewardKind.UncommonCard, 11), (RewardKind.RareCard, 30), (RewardKind.AncientCard, 7),
-                (RewardKind.Potion, 12), (RewardKind.Relic, 14), (RewardKind.Gold, 20), (RewardKind.Curse, 2),
+                (RewardKind.CommonCard, 3), (RewardKind.UncommonCard, 14), (RewardKind.RareCard, 22), (RewardKind.AncientCard, 7),
+                (RewardKind.Potion, 18), (RewardKind.Relic, 18), (RewardKind.Gold, 15), (RewardKind.Curse, 3),
             ],
             // 5档：Rare为主，Uncommon少见，Ancient概率上升，金币大量
             _ =>
             [
-                (RewardKind.CommonCard, 3), (RewardKind.UncommonCard, 8), (RewardKind.RareCard, 32), (RewardKind.AncientCard, 12),
-                (RewardKind.Potion, 10), (RewardKind.Relic, 12), (RewardKind.Gold, 22), (RewardKind.Curse, 1),
+                (RewardKind.CommonCard, 1), (RewardKind.UncommonCard, 10), (RewardKind.RareCard, 27), (RewardKind.AncientCard, 10),
+                (RewardKind.Potion, 18), (RewardKind.Relic, 18), (RewardKind.Gold, 15), (RewardKind.Curse, 1),
             ],
         };
 
