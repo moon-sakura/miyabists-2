@@ -236,7 +236,7 @@
     "MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "[gold]ブレイク[/gold]されていない間、受けるダメージが[blue]25%[/blue]減少し、攻撃を受けるたびに[gold]花辞[/gold]1枚を手札に加える\\nブロックされなかったダメージを受けた時、自分に{Daze:diff()}のブレイク値を追加し、累計[blue]100[/blue]に達すると[gold]ブレイク[/gold]が発動する",
 
 	"MIYABISTS2_CARD_BEE_GROUP.title": "蜂群集結",
-    "MIYABISTS2_CARD_BEE_GROUP.description": "手札と山札の任意の{Cards:diff()}枚に、{Chance}回発動できる[gold]蜂群[/gold]を付与する",
+    "MIYABISTS2_CARD_BEE_GROUP.description": "手札と山札の任意の{Cards:diff()}枚に[gold]蜂群[/gold]を付与する",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.title": "ボンプ来襲！",
     "MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "ランダムにボンプを{summon:diff()}体召喚する",
@@ -299,6 +299,12 @@
 	"MIYABISTS2_CARD_WANJUN_ZHUJUE.description": "{Energy:energyIcons()}を獲得し、カードを2枚引く。",
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "凱旋の坦途",
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.description": "筋力を2、敏捷を2獲得する。",
+
+	"MIYABISTS2_CARD_WULIANG_FANJI.title": "無量返撃",
+	"MIYABISTS2_CARD_WULIANG_FANJI.description": "ブロックを{Block:diff()}獲得し、自分のターンを終了する。\\nこのターン中、攻撃を1回完全にブロックするたびに、次のターン{Energy:energyIcons()}を獲得する。",
+
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.title": "武者の修養",
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.description": "[gold]花辞[/gold]を使用した後、カードを1枚引く。",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "ブレイクテストカード",
     "MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]ブレイク値[/gold][blue]50[/blue]",
@@ -589,6 +595,9 @@
 
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "清霊道心",
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "最大HPの{HpLossPercent:diff()}%のHPを失い、自身のすべての[purple]デバフ[/purple]を取り除く",
+
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.title": "無量返撃",
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.description": "ブロックを{Block:diff()}獲得し、自分のターンを終了する。\\nこのターン中、攻撃を1回完全にブロックするたびに、次のターン{Energy:energyIcons()}を獲得する。",
 
 
 

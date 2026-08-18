@@ -236,7 +236,7 @@
 	"MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "[gold]격파[/gold]되지 않았을 때 받는 피해 [blue]25%[/blue] 감소, 피격 시마다 [gold]화사[/gold] 1장을 손패에 추가\\n방어되지 않은 피해를 받을 때마다 {Daze:diff()}층의 균형 붕괴 추가, 누적 [blue]100[/blue]층 도달 시 [gold]격파[/gold] 발동",
 
 	"MIYABISTS2_CARD_BEE_GROUP.title": "봉군 집결",
-	"MIYABISTS2_CARD_BEE_GROUP.description": "손패와 뽑기 카드 더미 중 무작위 {Cards:diff()}장에 {Chance}회 발동 가능한 [gold]봉군[/gold]을 부여합니다",
+	"MIYABISTS2_CARD_BEE_GROUP.description": "손패와 뽑기 카드 더미 중 무작위 {Cards:diff()}장에 [gold]봉군[/gold]을 부여합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.title": "Bangboo 습래!",
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "무작위로 {summon:diff()}마리의 Bangboo를 소환합니다",
@@ -305,6 +305,12 @@
 
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "개선탄도",
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.description": "힘 2점, 민첩 2점을 얻습니다.",
+
+	"MIYABISTS2_CARD_WULIANG_FANJI.title": "무량반격",
+	"MIYABISTS2_CARD_WULIANG_FANJI.description": "{Block:diff()}점의 방어도를 얻고, 자신의 턴을 종료합니다.\\n이번 턴 공격을 완전히 막을 때마다, 다음 턴 {Energy:energyIcons()}을 얻습니다.",
+
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.title": "무자수양",
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.description": "[gold]화사[/gold] 사용 후 카드 1장을 뽑습니다.",
 
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.title": "균형 붕괴 테스트 카드",
 	"MIYABISTS2_CARD_TEST_CARD_DAZE.description": "[gold]균형 붕괴 수치[/gold][blue]50[/blue]",
@@ -611,6 +617,9 @@
 
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "청령도심",
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "최대 생명력의 {HpLossPercent:diff()}% 생명력 손실, 자신의 모든 [purple]부정적 효과[/purple] 제거, 잃은 생명력만큼 방어도를 얻습니다.",
+
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.title": "무량반격",
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.description": "{Block:diff()}점의 방어도를 얻고, 자신의 턴을 종료합니다.\\n이번 턴 공격을 완전히 막을 때마다, 다음 턴 {Energy:energyIcons()}을 얻습니다.",
 
 
 

@@ -6,5 +6,8 @@
     "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.loss": "{character}は[gold]{encounter}[/gold]で敗北した。",
 
     "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.title": "儀玄との遭遇",
-    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character}は[gold]{encounter}[/gold]で敗北した。"
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character}は[gold]{encounter}[/gold]で敗北した。",
+
+    "MIYABISTS2_ENCOUNTER_URIDIMU_HOUND_ENCOUNTER.title": "旧日猟犬・ウリディムとの遭遇",
+    "MIYABISTS2_ENCOUNTER_URIDIMU_HOUND_ENCOUNTER.loss": "{character}は[gold]{encounter}[/gold]で敗北した。"
 }

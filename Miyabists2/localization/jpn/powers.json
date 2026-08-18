@@ -209,6 +209,14 @@
 	"WUJU_JIANSHI_POWER.description": "アタックカードを使用するたび、ランダムな敵にダメージを与える。",
 	"WUJU_JIANSHI_POWER.smartDescription": "アタックカードを使用するたび、ランダムな敵に{Amount}ダメージを与える。",
 
+	"WUZHE_XIUYANG_POWER.title": "武者の修養",
+	"WUZHE_XIUYANG_POWER.description": "[gold]花辞[/gold]を使用した後、カードを1枚引く。",
+	"WUZHE_XIUYANG_POWER.smartDescription": "[gold]花辞[/gold]を使用した後、カードを{Amount}枚引く。",
+
+	"WULIANG_FANJI_POWER.title": "無量返撃",
+	"WULIANG_FANJI_POWER.description": "このターン中、攻撃を1回完全にブロックするたびに、次のターン{Energy:energyIcons()}を獲得する。",
+	"WULIANG_FANJI_POWER.smartDescription": "このターン中、攻撃を1回完全にブロックするたびに、次のターン{Amount}{Energy:energyIcons()}を獲得する。",
+
 
 
     "MIYABI_GUARDIAN_POWER.title": "守護者",

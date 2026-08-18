@@ -210,6 +210,14 @@
     "WUJU_JIANSHI_POWER.description": "공격 카드 사용 시마다 무작위 적에게 피해를 줍니다.",
     "WUJU_JIANSHI_POWER.smartDescription": "공격 카드 사용 시마다 무작위 적에게 {Amount}점 피해를 줍니다.",
 
+    "WUZHE_XIUYANG_POWER.title": "무자수양",
+    "WUZHE_XIUYANG_POWER.description": "[gold]화사[/gold] 사용 후 카드 1장을 뽑습니다.",
+    "WUZHE_XIUYANG_POWER.smartDescription": "[gold]화사[/gold] 사용 후 카드 {Amount}장을 뽑습니다.",
+
+    "WULIANG_FANJI_POWER.title": "무량반격",
+    "WULIANG_FANJI_POWER.description": "이번 턴 공격을 완전히 막을 때마다, 다음 턴 {Energy:energyIcons()}을 얻습니다.",
+    "WULIANG_FANJI_POWER.smartDescription": "이번 턴 공격을 완전히 막을 때마다, 다음 턴 {Amount}{Energy:energyIcons()}을 얻습니다.",
+
 
 
     "MIYABI_GUARDIAN_POWER.title": "수호자",

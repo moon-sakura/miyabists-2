@@ -2,6 +2,12 @@
     "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.title": "万全の準備",
     "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.description": "[gold]受け流し[/gold]を2、[gold]支援ポイント[/gold]を2、[gold]落霜[/gold]を2、[gold]ヌルヌル[/gold]を1得る",
 
+    "MIYABISTS2_POTION_YANJIUSHENG_YAOYIN_POTION.title": "研究生の薬飲",
+    "MIYABISTS2_POTION_YANJIUSHENG_YAOYIN_POTION.description": "エネルギーを上限まで回復し、その枚数分のカードを引く。",
+
     "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.title": "撃破王の一瞥",
-    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.description": "敵が[gold]ブレイク[/gold]状態でない場合、敵を[gold]ブレイク[/gold]する"
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.description": "敵が[gold]ブレイク[/gold]状態でない場合、敵を[gold]ブレイク[/gold]する",
+
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION_YIXUAN.title": "撃破王の一瞥",
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION_YIXUAN.description": "敵が[gold]ブレイク[/gold]状態でない場合、敵を[gold]ブレイク[/gold]する"
 }
