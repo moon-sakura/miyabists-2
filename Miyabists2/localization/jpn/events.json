@@ -92,6 +92,44 @@
 
     "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.END_PAGE.description" : "[outline_size=10][outline_color=black]これ以上留まると良くないことが起こるかもしれない。早く立ち去ろう。[/outline_color][/outline_size]",
 
-    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]あまりにも異常だ。近づかないでおこう。[/outline_color][/outline_size]"
+    "MIYABISTS2_EVENT_STRANGE_HOLLOW_EVENT.pages.LEAVE_PAGE.description" : "[outline_size=10][outline_color=black]あまりにも異常だ。近づかないでおこう。[/outline_color][/outline_size]",
+
+
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.title" : "迷宮の怪域",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.description" : "[outline_size=10][outline_color=black]リンとテツが、あなたを【神の迷宮】パパゴ空洞の探索に誘う。中には良さそうな物もかなりあるが、少なからぬ危険も伴う……\\n依頼を受けるか？[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.ACCEPT.title": "引き受ける",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.ACCEPT.description": "良い収穫があるかもしれない。",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.REFUSE.title": "断る",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.INITIAL.options.REFUSE.description": "リスクが大きすぎる。やめておこう。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.description" : "[outline_size=10][outline_color=black]あなたはパエトーンと共にパパゴ空洞へ足を踏み入れた。\\n満載で戻れるかもしれないし、出鼻をくじかれるかもしれない。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.options.ADVANCE.title": "進む",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.AGREE_PAGE.options.ADVANCE.description": "真相を確かめる。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.description" : "[outline_size=10][outline_color=black]かなりの品を探し当てた……今すぐ撤退するのも悪くないかもしれない。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.CONTINUE.title": "さらに進む",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.CONTINUE.description": "豊かな報酬があるかもしれないが、危険も伴う。",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.title": "撤退する",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.description": "被害が広がる前に退く。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.description" : "[outline_size=10][outline_color=black][jitter][red]旧日猟犬・ウリディム[/red][/jitter]があなたをロックオンした！[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.title": "戦闘開始",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.description": "応戦するしかない。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.description" : "[outline_size=10][outline_color=black]ひとまず猟犬の追跡を振り切った。まだ進むか……この先の報酬はより豪華になるが、リスクも高まる。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.CONTINUE.title": "さらに進む",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.CONTINUE.description": "危険の中にこそ富はある。",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.RETREAT.title": "撤退する",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.POST_COMBAT_PAGE.options.RETREAT.description": "そろそろ離れる時だ。",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.REFUSE_END.description" : "[outline_size=10][outline_color=black]今はもっと大事なことがある。また今度にしよう。[/outline_color][/outline_size]",
+
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.RETREAT_END.description" : "[outline_size=10][outline_color=black]過度な欲張りは良くない。ほどほどにして引き際を見極めよう。[/outline_color][/outline_size]"
 
 }

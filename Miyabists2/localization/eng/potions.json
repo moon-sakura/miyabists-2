@@ -2,6 +2,12 @@
     "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.title": "Full Preparation",
     "MIYABISTS2_POTION_WANQUAN_ZHUNBEI_POTION.description": "Gain 2 [gold]Parry[/gold], 2 [gold]Support Points[/gold], 2 [gold]Frostfall[/gold], and 1 [gold]Slippery[/gold].",
 
+    "MIYABISTS2_POTION_YANJIUSHENG_YAOYIN_POTION.title": "Graduate Student's Tonic",
+    "MIYABISTS2_POTION_YANJIUSHENG_YAOYIN_POTION.description": "Restore Energy to its maximum and draw that many cards.",
+
     "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.title": "Break King's Glimpse",
-    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.description": "If the enemy is not in [gold]Break[/gold] state, apply [gold]Break[/gold] to the enemy."
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION.description": "If the enemy is not in [gold]Break[/gold] state, apply [gold]Break[/gold] to the enemy.",
+
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION_YIXUAN.title": "Break King's Glimpse",
+    "MIYABISTS2_POTION_JIPOWANG_YIPIE_POTION_YIXUAN.description": "If the enemy is not in [gold]Break[/gold] state, apply [gold]Break[/gold] to the enemy."
 }

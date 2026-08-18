@@ -1,5 +1,5 @@
 {
     "BEE_GROUP_ENCHANTMENT.title": "蜂群",
-    "BEE_GROUP_ENCHANTMENT.extraCardText": "このカードをプレイした時、ランダムな別のカード1枚に{OriChance}回発動できる[gold]蜂群[/gold]を付与する。\\nあと{Chance}回発動できる。",
+    "BEE_GROUP_ENCHANTMENT.extraCardText": "このカードをプレイした時、ランダムな別のカード1枚に[gold]蜂群[/gold]を付与する。",
     "BEE_GROUP_ENCHANTMENT.description": "蜂群の一員となり、蜂群のために尽くそう！カードをプレイした時、確率で自動的にプレイされる。"
 }

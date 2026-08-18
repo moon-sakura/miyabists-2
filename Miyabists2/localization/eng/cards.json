@@ -236,7 +236,7 @@
     "MIYABISTS2_CARD_WEIMING_DOUDAOSHU.description": "When not [gold]Broken[/gold], reduce damage taken by [blue]25%[/blue]. Each time you are hit, add [blue]1[/blue] [gold]Flower Farewell[/gold] to your hand\\nWhen you take unblocked damage, gain {Daze:diff()} Daze on yourself. Upon accumulating [blue]100[/blue] Daze, trigger [gold]Break[/gold]",
 
 	"MIYABISTS2_CARD_BEE_GROUP.title": "Swarm Assembly",
-    "MIYABISTS2_CARD_BEE_GROUP.description": "Attach [gold]Bee Swarm[/gold] (triggers up to {Chance} times) to {Cards:diff()} random cards in your hand and draw pile",
+    "MIYABISTS2_CARD_BEE_GROUP.description": "Attach [gold]Bee Swarm[/gold] to {Cards:diff()} random cards in your hand and draw pile",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.title": "Bangboo Incoming!",
     "MIYABISTS2_CARD_BANGBOO_SUMMON_ONE.description": "Randomly summon {summon:diff()} Bangboo(s)",
@@ -571,6 +571,9 @@
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.title": "Clear Spirit Heart",
 	"MIYABISTS2_CARD_QINGLING_DAOXIN.description": "Lose {HpLossPercent:diff()}% of your Max HP. Remove all [purple]Debuffs[/purple] from yourself. Gain Block equal to the HP lost",
 
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.title": "Boundless Counter",
+	"MIYABISTS2_CARD_WULIANG_FANJI_YIXUAN.description": "Gain {Block:diff()} Block and end your turn.\\nFor each attack fully blocked this turn, gain {Energy:energyIcons()} next turn",
+
 	"MIYABISTS2_CARD_HOLLOW_EROSION.title": "Hollow Erosion",
 	"MIYABISTS2_CARD_HOLLOW_EROSION.description": "Each time this is drawn, choose from 3 random Erosions",
 
@@ -612,6 +615,12 @@
 
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.title": "Triumphant Path",
 	"MIYABISTS2_CARD_KAIXUAN_TANTU.description": "Gain [blue]2[/blue] [gold]Strength[/gold] and [blue]2[/blue] [gold]Dexterity[/gold]",
+
+	"MIYABISTS2_CARD_WULIANG_FANJI.title": "Boundless Counter",
+	"MIYABISTS2_CARD_WULIANG_FANJI.description": "Gain {Block:diff()} Block and end your turn.\\nFor each attack fully blocked this turn, gain {Energy:energyIcons()} next turn",
+
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.title": "Martial Artist's Training",
+	"MIYABISTS2_CARD_WUZHE_XIUYANG.description": "After using a [gold]Flower Farewell[/gold], draw 1 card",
 
 	"MIYABISTS2_CARD_WUWU_LIANGWANG.title": "Object-Self Forgetting",
 	"MIYABISTS2_CARD_WUWU_LIANGWANG.description": "Consume all buffs (excluding [gold]Flash Energy[/gold] and [gold]Support Points[/gold]). Discard your entire hand, then add random special cards equal to the number of cards discarded (card values determined by the number of buffs consumed)",

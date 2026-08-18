@@ -6,5 +6,8 @@
     "MIYABISTS2_ENCOUNTER_MIYABI_BOSS_ENCOUNTER.loss": "{character}이/가 [gold]{encounter}[/gold]에서 패배했습니다.",
 
     "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.title": "이현 조우",
-    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character}이/가 [gold]{encounter}[/gold]에서 패배했습니다."
+    "MIYABISTS2_ENCOUNTER_YIXUAN_TEST_ENCOUNTER.loss": "{character}이/가 [gold]{encounter}[/gold]에서 패배했습니다.",
+
+    "MIYABISTS2_ENCOUNTER_URIDIMU_HOUND_ENCOUNTER.title": "옛날의 사냥개·울리디무 조우",
+    "MIYABISTS2_ENCOUNTER_URIDIMU_HOUND_ENCOUNTER.loss": "{character}이/가 [gold]{encounter}[/gold]에서 패배했습니다."
 }

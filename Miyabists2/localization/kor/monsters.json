@@ -40,5 +40,13 @@
     "PAPERBOO_BANGBOO.name": "페이퍼부",
     "MAGNETIBOO_BANGBOO.name": "마그네틱부",
 
-    "ONE_DENNYBOO_BANGBOO.name": "원코인부"
+    "ONE_DENNYBOO_BANGBOO.name": "원코인부",
+
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.name": "옛날의 사냥개·울리디무",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.BITE.title": "물어뜯기",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.PIERCE.title": "관통 공격",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.DOG_CART.title": "개 마차",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.SHOOT.title": "사격",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.CROUCH.title": "잠복 충전",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.FLEE.title": "도주"
 }

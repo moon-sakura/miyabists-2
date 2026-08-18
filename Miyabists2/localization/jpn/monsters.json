@@ -40,5 +40,13 @@
     "PAPERBOO_BANGBOO.name": "ペーパーブー",
     "MAGNETIBOO_BANGBOO.name": "マグネティブー",
 
-    "ONE_DENNYBOO_BANGBOO.name": "ワンデニーブー"
+    "ONE_DENNYBOO_BANGBOO.name": "ワンデニーブー",
+
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.name": "旧日猟犬・ウリディム",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.BITE.title": "噛みつき",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.PIERCE.title": "貫通攻撃",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.DOG_CART.title": "犬車",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.SHOOT.title": "射撃",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.CROUCH.title": "潜伏・蓄力",
+    "MIYABISTS2_MONSTER_OLD_HUNTING_DOG_ENEMY.moves.FLEE.title": "逃走"
 }

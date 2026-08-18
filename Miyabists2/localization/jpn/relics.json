@@ -170,6 +170,6 @@
 ,
 
 	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.title": "猟犬の遺骸",
-	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.description": "戦闘終了後、ランダムなレアリティの[gold]ポーション[/gold]・[gold]カード[/gold]・[gold]レリック[/gold]・[gold]ゴールド[/gold]のいずれかを追加で1つ獲得する。",
-	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "「まだまだだ。これは千年で初めて抜け落ちた古い骨に過ぎない。」"
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.description": "戦闘勝利のたびに、追加でランダムな報酬を1つ獲得する。",
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "神の迷宮最強の猟手の証！金が舞い込む！"
 }

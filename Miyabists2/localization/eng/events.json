@@ -116,7 +116,7 @@
     "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.title": "Retreat",
     "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.PAGE_A.options.RETREAT.description": "Cut your losses.",
 
-    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.description" : "[outline_size=10][outline_color=black]The Old Hunting Dog, Uridimu, has locked onto you![/outline_color][/outline_size]",
+    "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.description" : "[outline_size=10][outline_color=black][jitter][red]The Old Hunting Dog, Uridimu[/red][/jitter] has locked onto you![/outline_color][/outline_size]",
 
     "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.title": "Enter Battle",
     "MIYABISTS2_EVENT_LABYRINTH_GHOST_DOMAIN_EVENT.pages.COMBAT_PAGE.options.FIGHT.description": "There's no choice but to fight.",

@@ -358,6 +358,14 @@
 	"WUJU_JIANSHI_POWER.description": "Each time you play an Attack card, deal damage to a random enemy.",
 	"WUJU_JIANSHI_POWER.smartDescription": "Each time you play an Attack card, deal {Amount} damage to a random enemy.",
 
+	"WUZHE_XIUYANG_POWER.title": "Martial Artist's Training",
+	"WUZHE_XIUYANG_POWER.description": "After using a [gold]Flower Farewell[/gold], draw 1 card.",
+	"WUZHE_XIUYANG_POWER.smartDescription": "After using a [gold]Flower Farewell[/gold], draw {Amount} cards.",
+
+	"WULIANG_FANJI_POWER.title": "Boundless Counter",
+	"WULIANG_FANJI_POWER.description": "For each attack fully blocked this turn, gain {Energy:energyIcons()} next turn.",
+	"WULIANG_FANJI_POWER.smartDescription": "For each attack fully blocked this turn, gain {Amount}{Energy:energyIcons()} next turn.",
+
 	"SHOUHUA_ZHAOJI_POWER.title": "Guarding Radiance",
 	"SHOUHUA_ZHAOJI_POWER.description": "When you would gain Block, instead gain 0 Block, then gain Energy and draw cards.",
 	"SHOUHUA_ZHAOJI_POWER.smartDescription": "When you would gain Block, instead gain 0 Block, then gain {Energy:energyIcons()} and draw {Amount} card(s)."
