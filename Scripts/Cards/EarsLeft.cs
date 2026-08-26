@@ -17,7 +17,7 @@ namespace Miyabists2.Scripts.Cards
     {
         protected override string ArtPath => $"res://images/cards/earsAll.png";
 
-        public EarsLeft() : base(1, CardRarity.Token, TargetType.AnyEnemy, true) { }
+        public EarsLeft() : base(0, CardRarity.Token, TargetType.AnyEnemy, true) { }
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [

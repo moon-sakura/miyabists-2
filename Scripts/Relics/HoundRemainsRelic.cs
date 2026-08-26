@@ -40,6 +40,20 @@ namespace Miyabists2.Scripts.Relics
             await GrantRandomBonusReward();
         }
 
+        //public override bool TryModifyRewards(Player player, List<Reward> rewards, AbstractRoom? room)
+        //{
+        //    if (player != base.Owner)
+        //    {
+        //        return false;
+        //    }
+        //    if (room == null)
+        //    {
+        //        return false;
+        //    }
+        //    rewards.Add(new RelicReward(player));
+        //    return true;
+        //}
+
         private async Task GrantRandomBonusReward()
         {
             int kind = Owner.PlayerRng.Rewards.NextInt(0, 4);

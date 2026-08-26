@@ -20,7 +20,7 @@ namespace Miyabists2.Scripts.Cards
     {
         protected override string ArtPath => $"res://images/cards/earsAll.png";
 
-        public EarsRight() : base(1, CardRarity.Token, TargetType.AnyEnemy, true) { }
+        public EarsRight() : base(0, CardRarity.Token, TargetType.AnyEnemy, true) { }
 
         public override bool GainsBlock => true;
 
