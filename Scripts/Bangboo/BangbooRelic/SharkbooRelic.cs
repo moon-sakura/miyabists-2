@@ -15,7 +15,7 @@ namespace Miyabists2.Scripts.Bangboo.BangbooRelic
     [RegisterRelic(typeof(MiyabiRelicPool))]
     internal class SharkbooRelic : MiyabiBangbooRelicBase
     {
-        public override RelicRarity Rarity => RelicRarity.Common;
+        public override RelicRarity Rarity => RelicRarity.Uncommon;
         public override string PackedIconPath => "res://images/bangboo/relicMode/sharkbooRelic.png";
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)

@@ -72,7 +72,7 @@ namespace Miyabists2.Scripts.Bangboo
             await MinionAnimCmd.PlayBumpAttackAsync(Owner, target);
             await CreatureCmd.Damage(choiceContext, dealer, DynamicVars["AllDamage"].BaseValue, ValueProp.Move, null, null);
 
-            DynamicVars["AllDamage"].BaseValue = 0;
+            //DynamicVars["AllDamage"].BaseValue = 0;
         }
     }
 }
