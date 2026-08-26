@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts.Bangboo
             if (options.PrimaryStatAmount is decimal buffer && buffer > 0m)
                 await PowerCmd.Apply<PaperbooAct>(new ThrowingPlayerChoiceContext(), this.Creature, buffer, owner.Creature, options.Source);
 
-            await PowerCmd.Apply<MinionGuardianPower>(new ThrowingPlayerChoiceContext(), this.Creature, 1m, owner.Creature, options.Source);
+            await PowerCmd.Apply<MiyabiGuardianPower>(new ThrowingPlayerChoiceContext(), this.Creature, 1m, owner.Creature, options.Source);
         }
     }
 
