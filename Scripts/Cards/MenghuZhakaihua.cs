@@ -40,7 +40,9 @@ namespace Miyabists2.Scripts.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await base.OnPlay(choiceContext, cardPlay);
+            //await base.OnPlay(choiceContext, cardPlay);
+
+            await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, DynamicVars[DazeVarName], base.Owner.Creature);
 
             //if (base.DynamicVars.Damage.BaseValue > 0)
             //{
