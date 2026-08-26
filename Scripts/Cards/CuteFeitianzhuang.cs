@@ -1,4 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -10,6 +9,8 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,7 +66,8 @@ namespace Miyabists2.Scripts.Cards
 
             await base.SupportPointFunc(choiceContext, DynamicVars[SupportVarName].IntValue, async () => { v.BaseValue *= 1.2m; });
 
-            await base.OnPlay(choiceContext, cardPlay);
+            //await base.OnPlay(choiceContext, cardPlay);
+            await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, DynamicVars[DazeVarName], base.Owner.Creature);
 
             DynamicVars[DazeVarName].BaseValue = ori;
         }
