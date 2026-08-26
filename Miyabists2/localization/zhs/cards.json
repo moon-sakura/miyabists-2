@@ -195,7 +195,7 @@
     "MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.description": "敌人被[gold]击破[/gold]时额外获得{DazeVuln:diff()}%[gold]失衡易伤[/gold]，有[gold]攻击意图[/gold]的敌人有小概率不造成伤害",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.title": "醉花月云转",
-    "MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]",
+    "MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]",
 
 	"MIYABISTS2_CARD_CIQUAN_LIANJI.title": "L式轰鸣拳-刺拳连击",
     "MIYABISTS2_CARD_CIQUAN_LIANJI.description": "造成{HitCount:diff()}次{Damage:diff()}伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n两回合内，敌人受到[aqua]烈霜[/aqua]伤害+[blue]50%[/blue]，[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：改为+[blue]75%[/blue]",
@@ -456,7 +456,7 @@
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "造成{Damage:diff()}点伤害，若敌人处于[gold]击破[/gold]状态，伤害变为[blue]3[/blue]倍，移除敌人的[gold]击破[/gold]，移除后[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：伤害+[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "醉花月云转",
-	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害\\n[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]",
+	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "造成{HitCount:diff()}次{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人不处于击破则给敌人施加5层[gold]羁服[/gold],如果有[gold]滑溜[/gold]，额外施加2层[gold]羁服[/gold]；[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：额外施加3层[gold]羁服[/gold]",
 
 	"MIYABISTS2_CARD_KAKANIA_YIXUAN.title": "本我，自我，超我",
     "MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "增加受到伤害[red]25%[/red]，记录受到的所有伤害。\\n右键触发：消耗5点[gold]支援点数[/gold]对所有敌人造成记录数值的伤害，回合结束时造成本回合造成伤害数值的{BurstRatio:diff()}%的伤害。",
