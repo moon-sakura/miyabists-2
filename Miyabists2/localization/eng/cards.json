@@ -195,7 +195,7 @@
     "MIYABISTS2_CARD_TEBIE_PAIZHAO_JIQIAO.description": "When an enemy is [gold]Broken[/gold], they gain an additional {DazeVuln:diff()}% [gold]Daze Vulnerability[/gold]. Enemies with an [gold]Attack intent[/gold] have a small chance to not deal damage",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.title": "Drunken Flower Moon Cloud Spin",
-    "MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "Deal {Damage:diff()} damage [blue]{HitCount:diff()}[/blue] times\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] [gold]Submission[/gold]. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] [gold]Submission[/gold]",
+    "MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN.description": "Deal {Damage:diff()} damage [blue]{HitCount:diff()}[/blue] times, [gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] [gold]Submission[/gold]. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] [gold]Submission[/gold]",
 
 	"MIYABISTS2_CARD_CIQUAN_LIANJI.title": "L-Style Roaring Fist: Jab Combo",
     "MIYABISTS2_CARD_CIQUAN_LIANJI.description": "Deal {Damage:diff()} damage [blue]{HitCount:diff()}[/blue] times\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nFor [blue]2[/blue] turns, the enemy takes [blue]+50%[/blue] [aqua]Rending Frost[/aqua] damage. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: [blue]+75%[/blue] instead",
@@ -429,7 +429,7 @@
 	"MIYABISTS2_CARD_ZHONGMO_CAIJUE_YIXUAN.description": "Deal {Damage:diff()} damage. If the enemy is [gold]Broken[/gold], damage is multiplied by [blue]3[/blue]. Remove the enemy's [gold]Break[/gold]. After removal, [gold]Daze[/gold]{DAZE_POWER:diff()}\\n[gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Damage +[blue]8[/blue]",
 
 	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.title": "Drunken Flower Moon Cloud Spin",
-	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "Deal {Damage:diff()} damage [blue]{HitCount:diff()}[/blue] times\\n[gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] [gold]Submission[/gold]. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] [gold]Submission[/gold]",
+	"MIYABISTS2_CARD_ZUIHUA_YUEYUNZHUAN_YIXUAN.description": "Deal {Damage:diff()} damage [blue]{HitCount:diff()}[/blue] times, [gold]Daze[/gold]{DAZE_POWER:diff()}\\nIf the enemy is not Broken, apply [blue]5[/blue] [gold]Submission[/gold]. If you have [gold]Slippery[/gold], apply an additional [blue]2[/blue] [gold]Submission[/gold]. [gold]Support Points[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]: Apply an additional [blue]3[/blue] [gold]Submission[/gold]",
 
 	"MIYABISTS2_CARD_KAKANIA_YIXUAN.title": "Id, Ego, Superego",
     "MIYABISTS2_CARD_KAKANIA_YIXUAN.description": "Increase damage taken by [red]25%[/red]. Record all damage taken.\\nRight-click to trigger: consume [blue]5[/blue] [gold]Support Points[/gold] to deal damage equal to the recorded amount to ALL enemies. At the end of your turn, deal damage equal to {BurstRatio:diff()}% of the damage you dealt this turn.",
