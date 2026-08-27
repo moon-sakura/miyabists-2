@@ -152,21 +152,28 @@ namespace Miyabists2.Scripts.Service
     internal static class ModPatch
     {
         [HarmonyPostfix]
-        private static void Postfix(Task __result, CombatState combatState)
+        private static void Postfix(ref Task __result, CombatState combatState)
         {
+            var original = __result;
+            // 把本 Mod 的异步工作链到 __result，让 await BeforeCombatStart() 的人一并等待
+            __result = ApplyBuffsAsync(original, combatState);
+        }
 
-            // 给所有玩家上 Buff
+        private static async Task ApplyBuffsAsync(Task original, CombatState combatState)
+        {
+            // 先等战斗初始化（含其它 combat-start Power）完成，消除调度竞争
+            await original;
+
             foreach (var player in combatState.Players)
             {
                 if (player?.Creature == null) continue;
-                PowerCmd.Apply<ModConfigEffect>(new ThrowingPlayerChoiceContext(), player.Creature, 1, null, null);
+                await PowerCmd.Apply<ModConfigEffect>(new ThrowingPlayerChoiceContext(), player.Creature, 1, null, null);
             }
 
-            // 给所有敌人上 Buff
             foreach (var enemy in combatState.Enemies)
             {
                 if (enemy == null) continue;
-                PowerCmd.Apply<ModConfigEnemyEffect>(new ThrowingPlayerChoiceContext(), enemy, 1, null, null);
+                await PowerCmd.Apply<ModConfigEnemyEffect>(new ThrowingPlayerChoiceContext(), enemy, 1, null, null);
             }
         }
     }
@@ -174,9 +181,16 @@ namespace Miyabists2.Scripts.Service
     [HarmonyPatch(typeof(Hook), "AfterActEntered")]
     internal static class ActPatch
     {
-        private static async Task Postfix(Task __result, IRunState runState)
+        [HarmonyPostfix]
+        private static void Postfix(ref Task __result, IRunState runState)
         {
-            await __result;
+            var original = __result;
+            __result = ApplyActEnteredAsync(original, runState);
+        }
+
+        private static async Task ApplyActEnteredAsync(Task original, IRunState runState)
+        {
+            await original;
 
             if (runState?.Players == null) return;
 
