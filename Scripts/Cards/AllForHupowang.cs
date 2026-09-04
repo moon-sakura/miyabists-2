@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts.Cards
 {
-    [RegisterCard(typeof(StatusCardPool))]
+    [RegisterCard(typeof(EventCardPool))]
         internal class AllForHupowang : MiyabiCardBase
     {
         protected override string ArtPath => $"res://images/cards/allForHupowang.png";
