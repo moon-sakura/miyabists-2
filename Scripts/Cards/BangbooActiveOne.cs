@@ -42,7 +42,7 @@ namespace Miyabists2.Scripts.Cards
         public async Task OnRightClick(ModRightClickExecutionContext context)
         {
             await CardCmd.Discard(context.PlayerChoiceContext, this);
-            await PlayerCmd.GainEnergy(-1, Owner);
+            await PlayerCmd.LoseEnergy(1, Owner);
             await MiyabiCombatService.SummonBangbooRandom(context.PlayerChoiceContext, Owner);
         }
 
