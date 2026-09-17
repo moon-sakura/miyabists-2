@@ -156,7 +156,7 @@ namespace Miyabists2.Scripts.Relics.SpecRelic
                 Flash();
                 if (CinimaCounter >= 1)
                 {
-                    await PowerCmd.Apply<XsjsPower>(choiceContext, base.Owner.Creature, 2m, null, null);
+                    await PowerCmd.Apply<ShuangyuejsPower>(choiceContext, base.Owner.Creature, 2m, null, null);
                 }
 
                 if (CinimaCounter >= 2)

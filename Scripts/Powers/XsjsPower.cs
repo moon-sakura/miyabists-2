@@ -32,7 +32,7 @@ namespace Miyabists2.Scripts.Powers
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
-            HoverTipFactory.FromCard<FengHua>(),
+            HoverTipFactory.FromCard<ShuangYue>(),
             HoverTipFactory.FromPower<FrostFallPower>()
         ];
 
