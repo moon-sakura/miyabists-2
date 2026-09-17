@@ -49,41 +49,54 @@ namespace Miyabists2.Scripts.Powers
         {
             SupportPointPower p = base.Owner.GetPower<SupportPointPower>();
             if(p != null)   
-                return p.CanUsePoint(2) > 0;
+                return p.CanUsePoint(2) > 0 && !_isRightClicking;
 
             return false;
         }
 
+        private bool _isRightClicking = false;
+
         // 右键执行（多人下会在所有客户端同步执行）
         public async Task OnRightClick(ModRightClickExecutionContext context)
         {
-            List<Creature> enemies = base.CombatState.Enemies
-                    .Where((Creature e) => e != null && e.IsAlive)
-                    .ToList();
+            if (_isRightClicking) return;
 
-            if (enemies.Count > 0)
+            try
             {
-                NHyperbeamVfx nHyperbeamVfx = NHyperbeamVfx.Create(Owner, enemies.Last());
-                if (nHyperbeamVfx != null)
-                {
-                    NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nHyperbeamVfx);
-                    await Cmd.Wait(0.5f);
-                }
+                _isRightClicking = true;
 
-                foreach (Creature item in enemies)
+                List<Creature> enemies = base.CombatState.Enemies
+                        .Where((Creature e) => e != null && e.IsAlive)
+                        .ToList();
+
+                if (enemies.Count > 0)
                 {
-                    NHyperbeamImpactVfx nHyperbeamImpactVfx = NHyperbeamImpactVfx.Create(Owner, item);
-                    if (nHyperbeamImpactVfx != null)
+                    NHyperbeamVfx nHyperbeamVfx = NHyperbeamVfx.Create(Owner, enemies.Last());
+                    if (nHyperbeamVfx != null)
                     {
-                        NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nHyperbeamImpactVfx);
+                        NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nHyperbeamVfx);
+                        await Cmd.Wait(0.5f);
                     }
+
+                    foreach (Creature item in enemies)
+                    {
+                        NHyperbeamImpactVfx nHyperbeamImpactVfx = NHyperbeamImpactVfx.Create(Owner, item);
+                        if (nHyperbeamImpactVfx != null)
+                        {
+                            NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nHyperbeamImpactVfx);
+                        }
+                    }
+
+                    await CreatureCmd.Damage(context.PlayerChoiceContext, enemies, DynamicVars.Damage, Owner);
+
+                    await PlayerCmd.GainEnergy(Amount, Owner.Player);
+
+                    await PowerCmd.Apply<SupportPointPower>(context.PlayerChoiceContext, base.Owner, -2, null, null);
                 }
-
-                await CreatureCmd.Damage(context.PlayerChoiceContext, enemies, DynamicVars.Damage, Owner);
-
-                await PlayerCmd.GainEnergy(Amount, Owner.Player);
-
-                await PowerCmd.Apply<SupportPointPower>(context.PlayerChoiceContext, base.Owner, -2, null, null);
+            }
+            finally
+            {
+                _isRightClicking = false;
             }
         }
     }
