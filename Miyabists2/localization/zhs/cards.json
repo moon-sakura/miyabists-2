@@ -251,7 +251,7 @@
     "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "所有邦布回复1次能力使用次数\\n场上不存在邦布时，随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "邦布救我！",
-    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
+    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布\\获得{Block:diff()}点格挡",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "今日修行",
     "MIYABISTS2_CARD_TRAINING_TODAY.description": "选择今天的修行",
@@ -377,7 +377,7 @@
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "所有邦布回复1次能力使用次数\\n场上不存在邦布时，随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.title": "邦布救我！",
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布\\获得{Block:diff()}点格挡",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.title": "邦布来袭！",
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "随机召唤{summon:diff()}个邦布",

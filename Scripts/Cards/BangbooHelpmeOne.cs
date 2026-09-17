@@ -10,6 +10,7 @@ using MinionLib.Targeting;
 using Miyabists2.Scripts.Bangboo;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
+using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interactions.RightClick;
 using STS2RitsuLib.Interop.AutoRegistration;
 using System;
@@ -29,6 +30,7 @@ namespace Miyabists2.Scripts.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new EnergyVar(1),
+            new BlockVar(5,ValueProp.Move),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -63,9 +65,9 @@ namespace Miyabists2.Scripts.Cards
 
             if (cardPlay.Target is not { Monster: MiyabiBangbooBase } target) return;
 
-            
-
             await PowerCmd.Apply<MiyabiGuardianPower>(choiceContext, target, 1m, Owner.Creature, this);
+
+            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         }
 
         protected override void OnUpgrade()
