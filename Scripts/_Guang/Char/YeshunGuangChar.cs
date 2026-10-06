@@ -1,8 +1,8 @@
-global using STS2RitsuLib.Interop.AutoRegistration;
-global using STS2RitsuLib.Scaffolding.Content;
-global using STS2RitsuLib.Keywords;
-global using STS2RitsuLib;
 global using BaseLib.Extensions;
+global using STS2RitsuLib;
+global using STS2RitsuLib.Interop.AutoRegistration;
+global using STS2RitsuLib.Keywords;
+global using STS2RitsuLib.Scaffolding.Content;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
@@ -13,12 +13,14 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
 using Miyabists2.Scripts._Guang.Relics;
+using Miyabists2.Scripts.Cards;
+using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
 
 namespace Miyabists2.Scripts.Char;
 
-//[RegisterCharacter]
+[RegisterCharacter]
 class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPool, YeshunGuangPotionPool>
 {
     public const string CharacterId = "YeshunGuang";
@@ -33,45 +35,106 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     // 地图绘制颜色
     public override Color MapDrawingColor => Color;
 
-    public override string? PlaceholderCharacterId => "defect";
+    public override string? PlaceholderCharacterId => "ironclad";
 
     // TODO: 添加皮肤管理（参考Miyabi的皮肤系统）
-    // public YeshunGuangCombatSkinSlot CombatSkinSlot => YeshunGuangModConfig.CombatSelectedSlot;
-    // public YeshunGuangRestSkinSlot RestSkinSlot => YeshunGuangModConfig.RestSelectedSlot;
-    // public YeshunGuangShopSkinSlot ShopSkinSlot => YeshunGuangModConfig.ShopSelectedSlot;
+    public GuangCombatSkinSlot CombatSkinSlot => MiyabiModConfig.GuangCombatSelectedSlot;
+    public GuangRestSkinSlot RestSkinSlot => MiyabiModConfig.GuangRestSelectedSlot;
+    public GuangShopSkinSlot ShopSkinSlot => MiyabiModConfig.GuangShopSelectedSlot;
 
     // TODO: 添加皮肤路径列表
-    // public static List<string> CombatSkinPaths = new()
-    // {
-    //     "res://scenes/yeshunguang_char.tscn" // Slot 0 默认是原皮肤
-    // };
-    // public static List<string> RestSkinPaths = new()
-    // {
-    //     "res://scenes/YeshunGuang_Rest.tscn" // Slot 0 默认是原皮肤
-    // };
-    // public static List<string> ShopSkinPaths = new()
-    // {
-    //     "res://scenes/YeshunGuang_Shop.tscn" // Slot 0 默认是原皮肤
-    // };
+    public static List<string> CombatSkinPaths = new()
+     {
+         "res://scenes/_Yixuan/yixuan_char.tscn" // slot 0 默认是原皮肤
+     };
+    public static List<string> RestSkinPaths = new()
+     {
+         "res://scenes/_Yixuan/yixuan_Rest.tscn" // slot 0 默认是原皮肤
+     };
+    public static List<string> ShopSkinPaths = new()
+     {
+         "res://scenes/_Yixuan/yixuan_Shop.tscn" // slot 0 默认是原皮肤
+     };
+
+    public string CombatDynamicVisualPath
+    {
+        get
+        {
+            int index = (int)CombatSkinSlot;
+            if (index < CombatSkinPaths.Count)
+                return CombatSkinPaths[index];
+            return CombatSkinPaths[0];
+        }
+    }
+
+    public string RestDynamicVisualPath
+    {
+        get
+        {
+            int index = (int)RestSkinSlot;
+            if (index < RestSkinPaths.Count)
+                return RestSkinPaths[index];
+            return RestSkinPaths[0];
+        }
+    }
+
+    public string ShopDynamicVisualPath
+    {
+        get
+        {
+            int index = (int)ShopSkinSlot;
+            if (index < ShopSkinPaths.Count)
+            {
+                GD.Print($"[GuangSkin]: Load Skin {index}");
+                return ShopSkinPaths[index];
+            }
+            return ShopSkinPaths[0];
+        }
+    }
 
     public override CharacterGender Gender => CharacterGender.Feminine;
-    public override int StartingHp => 52;
+    public override int StartingHp => 72;
     public override int StartingGold => 99;
 
     public override float AttackAnimDelay => 0f;
     public override float CastAnimDelay => 0f;
 
+    private IEnumerable<StartingDeckEntry> GetDefaultDeck() => [
+        new(typeof(YixuanBlock), 3),
+        new(typeof(XiaoyunJin), 3),
+        new(typeof(YinyunShenfa), 3),
+        new(typeof(JinyingJue), 1),
+    ];
+
+    private IEnumerable<StartingDeckEntry> GetBangbooDeck() => [
+        new(typeof(BangbooSummonOne), 4),
+        new(typeof(EnnDanmu), 1),
+        new(typeof(YoushiHuoliXueshuo), 1),
+        new(typeof(BangbooActiveOne), 1),
+        new(typeof(BangbooChargeAll), 1),
+        new(typeof(BangbooHelpmeOne), 1),
+        new(typeof(BangbooUseOnemore), 1),
+    ];
+
     /// <summary>
     /// 初始卡组。你可以在这里添加需要卡组。
     /// TODO: 替换为YeshunGuang专属卡牌
     /// </summary>
-    protected override IEnumerable<StartingDeckEntry> StartingDeckEntries => [
-        // TODO: 添加YeshunGuang初始卡牌
-        // new(typeof(YeshunGuangAttack), 5),
-        // new(typeof(YeshunGuangSkill), 2),
-        // new(typeof(YeshunGuangBlock), 2),
-        // new(typeof(YeshunGuangSpecial), 1),
-    ];
+    protected override IEnumerable<StartingDeckEntry> StartingDeckEntries
+    {
+        get
+        {
+            switch (MiyabiModConfig.YixuanFunPileSelected)
+            {
+                case YixuanFunPile.Default:
+                    return GetDefaultDeck();
+                case YixuanFunPile.AllBangboo:
+                    return GetBangbooDeck();
+                default:
+                    return GetDefaultDeck();
+            }
+        }
+    }
 
     // 初始遗物
     protected override IEnumerable<Type> StartingRelicTypes => [
@@ -90,7 +153,7 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     public override string CustomCharacterSelectIconPath => "res://images/charui/Miyabi_select.png";
     public override string CustomCharacterSelectLockedIconPath => "res://images/charui/char_select_char_name_locked.png";
     // 人物模型tscn路径。
-    // public override string CustomVisualsPath => CombatDynamicVisualPath;
+    public override string CustomVisualsPath => CombatDynamicVisualPath;
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
     // 人物头像2号。
@@ -98,9 +161,9 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     // 能量表盘tscn路径。
     // public override string CustomEnergyCounterPath => "res://scenes/yeshunguang_energy_counter.tscn";
     // 篝火休息动画。
-    // public override string CustomRestSiteAnimPath => RestDynamicVisualPath;
+    public override string CustomRestSiteAnimPath => RestDynamicVisualPath;
     // 商店人物动画。
-    // public override string CustomMerchantAnimPath => ShopDynamicVisualPath;
+    public override string CustomMerchantAnimPath => ShopDynamicVisualPath;
     // 多人模式-手指。
     public override string CustomArmPointingTexturePath => null;
     // 多人模式剪刀石头布-石头。

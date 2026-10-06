@@ -72,6 +72,36 @@ namespace Miyabists2.Scripts.Service
         Slot5
     }
 
+    public enum GuangCombatSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+
+    public enum GuangRestSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+
+    public enum GuangShopSkinSlot
+    {
+        Slot0 = 0,
+        Slot1,
+        Slot2,
+        Slot3,
+        Slot4,
+        Slot5
+    }
+
     public enum MiyabiSelectedHard
     {
         Zero = 0,
@@ -97,6 +127,15 @@ namespace Miyabists2.Scripts.Service
     }
 
     public enum YixuanFunPile
+    {
+        Default = 0,
+        // 可在此扩展 Yixuan 专属挑战
+        AllBangboo,
+        BeeGroup,
+        Lucia,
+    }
+
+    public enum GuangFunPile
     {
         Default = 0,
         // 可在此扩展 Yixuan 专属挑战
@@ -140,6 +179,9 @@ namespace Miyabists2.Scripts.Service
         [ConfigHoverTip]
         public static YixuanFunPile YixuanFunPileSelected { get; set; } = YixuanFunPile.Default;
 
+        [ConfigHoverTip]
+        public static GuangFunPile GuangFunPileSelected { get; set; } = GuangFunPile.Default;
+
         [ConfigSection("MiyabiConfig")]
 
         [ConfigHoverTip]
@@ -162,8 +204,19 @@ namespace Miyabists2.Scripts.Service
 
         [ConfigHoverTip]
         public static YixuanShopSkinSlot YixuanShopSelectedSlot { get; set; } = YixuanShopSkinSlot.Slot0;
-        
-        
+
+        [ConfigSection("GuangConfig")]
+
+        [ConfigHoverTip]
+        public static GuangCombatSkinSlot GuangCombatSelectedSlot { get; set; } = GuangCombatSkinSlot.Slot0;
+
+        [ConfigHoverTip]
+        public static GuangRestSkinSlot GuangRestSelectedSlot { get; set; } = GuangRestSkinSlot.Slot0;
+
+        [ConfigHoverTip]
+        public static GuangShopSkinSlot GuangShopSelectedSlot { get; set; } = GuangShopSkinSlot.Slot0;
+
+
         [ConfigSection("ElseConfig")]
 
         public static bool MiyabiPanelOpen { get; set; } = true;

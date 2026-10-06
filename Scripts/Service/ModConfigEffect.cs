@@ -1,5 +1,3 @@
-using STS2RitsuLib.Interop.AutoRegistration;
-
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
@@ -21,14 +19,16 @@ using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Guang.Cards;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Char;
+using Miyabists2.Scripts.Relics;
+using STS2RitsuLib.Interop.AutoRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Miyabists2.Scripts.Relics;
 
 namespace Miyabists2.Scripts.Service
 {
@@ -244,11 +244,22 @@ namespace Miyabists2.Scripts.Service
                         CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
                     }
 
-                    if(player.Character is Miyabi && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.Lucia)
+                    if (player.Character is YeshunGuang && MiyabiModConfig.GuangFunPileSelected == GuangFunPile.BeeGroup)
+                    {
+                        CardModel card = player.RunState.CreateCard<BeeGroupGuang>(player);
+                        card.UpgradeInternal();
+                        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
+                    }
+
+                    if (player.Character is Miyabi && MiyabiModConfig.MiyabiFunPileSelected == MiyabiFunPile.Lucia)
                     {
                         await RelicCmd.Obtain<TonghuaJishibenRelic>(player);
                     }
                     if (player.Character is Yixuan && MiyabiModConfig.YixuanFunPileSelected == YixuanFunPile.Lucia)
+                    {
+                        await RelicCmd.Obtain<TonghuaJishibenRelic>(player);
+                    }
+                    if (player.Character is YeshunGuang && MiyabiModConfig.GuangFunPileSelected == GuangFunPile.Lucia)
                     {
                         await RelicCmd.Obtain<TonghuaJishibenRelic>(player);
                     }

@@ -7,11 +7,11 @@ namespace Miyabists2.Scripts.Char
     {
         public override string Title => YeshunGuang.CharacterId; //This is not a display name.
 
-        public override string BigEnergyIconPath => "defect";
+        public override string BigEnergyIconPath => "ironclad";
         //public override string BigEnergyIconPath => "res://images/charui/big_energy.png";
         //public override string TextEnergyIconPath => "res://images/charui/text_energy.png";
 
-        public override string EnergyColorName => "defect";
+        public override string EnergyColorName => "ironclad";
 
         // 粉色卡框
         public override string CardFrameMaterialPath => "card_frame_pink";

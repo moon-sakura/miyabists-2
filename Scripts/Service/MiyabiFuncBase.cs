@@ -101,7 +101,7 @@ namespace Miyabists2.Scripts.Service
         {
             if(player == null) return false;
 
-            return player.Character is Miyabi || player.Character is Yixuan;
+            return player.Character is Miyabi || player.Character is Yixuan || player.Character is YeshunGuang;
         }
 
         public static LocString GetForMonsterString(string entryName)

@@ -61,6 +61,37 @@
   // 解锁条件文案
   "MIYABISTS2_CHARACTER_YIXUAN.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。",
 
+  // ====== 叶瞬光 ======
+  // 角色名（标题用）
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.title": "叶瞬光",
+  // 角色名（作宾语用）
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.titleObject": "瞬光",
+  // 角色选择界面描述
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.description": "叶瞬光，剑已出鞘——一瞬之光，可斩长夜。",
+  // 主语代词
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.pronounSubject": "瞬光",
+  // 宾语代词
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.pronounObject": "瞬光",
+  // 所有格代词
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.pronounPossessive": "瞬光的",
+  // 物主形容词
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.possessiveAdjective": "瞬光的",
+  // 死亡时事件对话
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.eventDeathPrevention": "光……要熄灭了……",
+  // 自定义模式文本
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.cardsModifierTitle": "叶瞬光与伙伴们",
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.cardsModifierDescription": "叶瞬光的卡牌现在会出现在奖励和商店中。",
+  // 多人模式：存活时回合结束对白
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.banter.alive.endTurnPing": "剑还在，我就还在。",
+  // 多人模式：死亡后回合结束对白
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.banter.dead.endTurnPing": "光……散了……",
+  // 沉没宝库事件中对金币的独白
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.goldMonologue": "[sine]攒够了，就能铸一把新剑了……[/sine]",
+  // 混沌香气事件中的内心独白
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.aromaPrinciple": "[sine][pink]……静心，运气……[/pink][/sine]",
+  // 解锁条件文案
+  "MIYABISTS2_CHARACTER_YESHUN_GUANG.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。",
+
   // 混沌香气事件中的内心独白
   "MIYABISTS2-MIYABI.aromaPrinciple": "[sine][blue]……修行……[/blue][/sine]",
   // 多人模式：存活时回合结束对白
@@ -122,5 +153,36 @@
   // 混沌香气事件中的内心独白
   "MIYABISTS2-YIXUAN.aromaPrinciple": "[sine][orange]……静心……[/orange][/sine]",
   // 解锁条件文案
-  "MIYABISTS2-YIXUAN.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。"
+  "MIYABISTS2-YIXUAN.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。",
+
+  // ====== 叶瞬光 ======
+  // 角色名（标题用）
+  "MIYABISTS2-YESHUN_GUANG.title": "叶瞬光",
+  // 角色名（作宾语用）
+  "MIYABISTS2-YESHUN_GUANG.titleObject": "光",
+  // 角色选择界面描述
+  "MIYABISTS2-YESHUN_GUANG.description": "叶瞬光，剑已出鞘——一瞬之光，可斩长夜。",
+  // 主语代词
+  "MIYABISTS2-YESHUN_GUANG.pronounSubject": "光",
+  // 宾语代词
+  "MIYABISTS2-YESHUN_GUANG.pronounObject": "光",
+  // 所有格代词
+  "MIYABISTS2-YESHUN_GUANG.pronounPossessive": "光的",
+  // 物主形容词
+  "MIYABISTS2-YESHUN_GUANG.possessiveAdjective": "光的",
+  // 死亡时事件对话
+  "MIYABISTS2-YESHUN_GUANG.eventDeathPrevention": "光……要熄灭了……",
+  // 自定义模式文本
+  "MIYABISTS2-YESHUN_GUANG.cardsModifierTitle": "叶瞬光与伙伴们",
+  "MIYABISTS2-YESHUN_GUANG.cardsModifierDescription": "叶瞬光的卡牌现在会出现在奖励和商店中。",
+  // 多人模式：存活时回合结束对白
+  "MIYABISTS2-YESHUN_GUANG.banter.alive.endTurnPing": "剑还在，我就还在。",
+  // 多人模式：死亡后回合结束对白
+  "MIYABISTS2-YESHUN_GUANG.banter.dead.endTurnPing": "光……散了……",
+  // 沉没宝库事件中对金币的独白
+  "MIYABISTS2-YESHUN_GUANG.goldMonologue": "[sine]攒够了，就能铸一把新剑了……[/sine]",
+  // 混沌香气事件中的内心独白
+  "MIYABISTS2-YESHUN_GUANG.aromaPrinciple": "[sine][pink]……静心，运气……[/pink][/sine]",
+  // 解锁条件文案
+  "MIYABISTS2-YESHUN_GUANG.unlockText": "用[pink]{Prerequisite}[/pink]进行一局游戏来解锁这个角色。"
 }
