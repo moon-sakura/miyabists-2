@@ -251,11 +251,14 @@
     "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "すべてのボンプのアビリティ使用回数を1回回復する\\n場にボンプがいない場合、ランダムにボンプを1体召喚する",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "ボンプ助けて！",
-    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "ボンプ1体を指定して[gold]守護者[/gold]を獲得させる\\n場に[gold]ボンプがいない[/gold]場合、[gold]右クリック[/gold]でこのカードを捨て、[gold]消費[/gold]{Energy:energyIcons()}でランダムにボンプを1体召喚する",
+    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "ボンプ1体を指定して[gold]守護者[/gold]を獲得させる\\n場に[gold]ボンプがいない[/gold]場合、[gold]右クリック[/gold]でこのカードを捨て、[gold]消費[/gold]{Energy:energyIcons()}でランダムにボンプを1体召喚する\\nブロックを{Block:diff()}獲得する。",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "本日の修行",
     "MIYABISTS2_CARD_TRAINING_TODAY.description": "今日の修行を選ぶ",
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "修行を選ぶ",
+
+	"MIYABISTS2_CARD_WUWEI_QIYUE.title": "無尾契約",
+	"MIYABISTS2_CARD_WUWEI_QIYUE.description": "このカードを引いた時、山札にこのカードの複製を1枚加える。\\nこのカードが手札にある間、[gold]烈霜[/gold]カードが与えるダメージは、代わりに同じ数値だけ最大HPを減少させる。",
 
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "芳菲の誘い",
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "毎ターン終了時、全ての敵に{Damage:diff}ダメージを与え、[gold]流明[/gold]を1層付与する。",
@@ -366,7 +369,7 @@
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "すべてのボンプのアビリティ使用回数を1回回復する\\n場にボンプがいない場合、ランダムにボンプを1体召喚する",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.title": "ボンプ助けて！",
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "ボンプ1体を指定して[gold]守護者[/gold]を獲得させる\\n場に[gold]ボンプがいない[/gold]場合、[gold]右クリック[/gold]でこのカードを捨て、[gold]消費[/gold]{Energy:energyIcons()}でランダムにボンプを1体召喚する",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "ボンプ1体を指定して[gold]守護者[/gold]を獲得させる\\n場に[gold]ボンプがいない[/gold]場合、[gold]右クリック[/gold]でこのカードを捨て、[gold]消費[/gold]{Energy:energyIcons()}でランダムにボンプを1体召喚する\\nブロックを{Block:diff()}獲得する。",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.title": "ボンプ来襲！",
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "ランダムにボンプを{summon:diff()}体召喚する",
@@ -495,6 +498,9 @@
 	"MIYABISTS2_CARD_WUWU_LIANGWANG_SUS.description": "{Energy:energyIcons()}を獲得する\nカードを{ExhaustedPowerCount:diff()}枚引く",
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title": "守華照寂",
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description": "ブロック獲得時、ブロックが0になり、その後{Energy:energyIcons()}を獲得し、カードを1枚引く。",
+	"MIYABISTS2_CARD_NINGSHEN.title": "凝神",
+	"MIYABISTS2_CARD_NINGSHEN.description": "ブロックがターン開始時に消えなくなる。\\n毎ターン終了時に8ダメージを受ける。",
+
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.title": "斬妄開天",
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.description": "全ての敵に即座に20%の[gold]ブレイク弱体[/gold]を付与する。自身の[gold]バフ[/gold]1種類につき、さらに10%を追加付与する。\n全ての手札を捨て、捨てた枚数分カードを引き、その回数分ランダムに{Damage:diff}ダメージを与える。",
 

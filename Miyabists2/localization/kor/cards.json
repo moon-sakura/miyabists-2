@@ -251,11 +251,14 @@
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "모든 Bangboo의 능력 사용 횟수를 1회 회복합니다\\n필드에 Bangboo가 없으면 무작위 Bangboo 1마리를 소환합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "Bangboo 구해줘!",
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Bangboo 1마리를 지정하여 [gold]수호자[/gold]를 얻습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Bangboo 1마리를 지정하여 [gold]수호자[/gold]를 얻습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다\\n{Block:diff()}점의 방어도를 얻습니다.",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "오늘의 수행",
 	"MIYABISTS2_CARD_TRAINING_TODAY.description": "오늘의 수행을 선택합니다",
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "수행 선택",
+
+	"MIYABISTS2_CARD_WUWEI_QIYUE.title": "무미 계약",
+	"MIYABISTS2_CARD_WUWEI_QIYUE.description": "이 카드를 뽑았을 때, 뽑기 카드 더미에 이 카드의 복사본 1장을 추가합니다.\\n이 카드가 손패에 있을 때, [gold]열상[/gold] 카드가 주는 피해는 대신 같은 수치만큼 최대 생명력을 감소시킵니다.",
 
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "방비의 초대",
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "매 턴 종료 시 모든 적에게 {Damage:diff}점 피해를 주고, [gold]루멘[/gold] 1중첩을 부여합니다.",
@@ -378,7 +381,7 @@
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "모든 Bangboo의 능력 사용 횟수를 1회 회복합니다\\n필드에 Bangboo가 없으면 무작위 Bangboo 1마리를 소환합니다",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.title": "Bangboo 구해줘!",
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "Bangboo 1마리를 지정하여 [gold]수호자[/gold]를 얻습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "Bangboo 1마리를 지정하여 [gold]수호자[/gold]를 얻습니다\\n필드에 [gold]Bangboo가 없을 때[/gold], [gold]우클릭[/gold]으로 카드를 버리고 [gold]소모[/gold]{Energy:energyIcons()}하여 무작위 Bangboo 1마리를 소환합니다\\n{Block:diff()}점의 방어도를 얻습니다.",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.title": "Bangboo 습래!",
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "무작위로 {summon:diff()}마리의 Bangboo를 소환합니다",
@@ -514,6 +517,9 @@
 
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title" : "수화조적",
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description":"방어도 획득 시 0 방어도로 전환 후 {Energy:energyIcons()} 획득, 카드 1장을 뽑습니다.",
+
+	"MIYABISTS2_CARD_NINGSHEN.title": "응신",
+	"MIYABISTS2_CARD_NINGSHEN.description": "방어도가 턴 시작 시 사라지지 않습니다.\\n매 턴 종료 시 8점 피해를 받습니다.",
 
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.title" : "참망개천",
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.description":"즉시 모든 적에게 20% [gold]균형 붕괴 취약[/gold] 부여, 자신의 [gold]긍정적 능력[/gold] 하나당 추가 10% 부여.\\n모든 손패를 버리고 버린 카드 수만큼 뽑은 후, 그 횟수만큼 무작위로 {Damage:diff}점 피해를 줍니다.",

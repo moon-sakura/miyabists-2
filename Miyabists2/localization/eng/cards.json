@@ -251,7 +251,7 @@
     "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "All Bangboos recover [blue]1[/blue] ability use\\nIf there are no Bangboos on the field, randomly summon a Bangboo",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "Bangboo Save Me!",
-    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Designate a Bangboo. It gains [gold]Guardian[/gold]\\nIf there are [gold]no Bangboos[/gold] on the field, [gold]right-click[/gold] this card to discard it and [gold]Exhaust[/gold]{Energy:energyIcons()} to randomly summon a Bangboo",
+    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "Designate a Bangboo. It gains [gold]Guardian[/gold]\\nIf there are [gold]no Bangboos[/gold] on the field, [gold]right-click[/gold] this card to discard it and [gold]Exhaust[/gold]{Energy:energyIcons()} to randomly summon a Bangboo\\nGain {Block:diff()} Block",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "Today's Training",
     "MIYABISTS2_CARD_TRAINING_TODAY.description": "Choose today's training",
@@ -350,7 +350,7 @@
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "All Bangboos recover [blue]1[/blue] ability use\\nIf there are no Bangboos on the field, randomly summon a Bangboo",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.title": "Bangboo Save Me!",
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "Designate a Bangboo. It gains [gold]Guardian[/gold]\\nIf there are [gold]no Bangboos[/gold] on the field, [gold]right-click[/gold] this card to discard it and [gold]Exhaust[/gold]{Energy:energyIcons()} to randomly summon a Bangboo",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "Designate a Bangboo. It gains [gold]Guardian[/gold]\\nIf there are [gold]no Bangboos[/gold] on the field, [gold]right-click[/gold] this card to discard it and [gold]Exhaust[/gold]{Energy:energyIcons()} to randomly summon a Bangboo\\nGain {Block:diff()} Block",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.title": "Bangboo Incoming!",
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "Randomly summon {summon:diff()} Bangboo(s)",
@@ -595,6 +595,9 @@
 	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.title": "Hypercaution",
 	"MIYABISTS2_CARD_HOLLOW_GUODUJINSHE.description": "While in hand, gain [blue]4[/blue] Block at the end of each turn",
 
+	"MIYABISTS2_CARD_WUWEI_QIYUE.title": "Notail Pact",
+	"MIYABISTS2_CARD_WUWEI_QIYUE.description": "When you draw this card, add a copy of this card to your draw pile.\\nWhile this card is in your hand, damage dealt by [gold]Rending Frost[/gold] cards instead reduces max HP by an equal amount",
+
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "Fragrant Invitation",
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "At the end of each turn, deal {Damage:diff} damage to ALL enemies and apply [blue]1[/blue] [gold]Lumen[/gold]",
 
@@ -636,6 +639,9 @@
 
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title": "Guarding Radiance",
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description": "When you would gain Block, instead gain 0 Block, then gain {Energy:energyIcons()} and draw [blue]1[/blue] card",
+
+	"MIYABISTS2_CARD_NINGSHEN.title": "Concentration",
+	"MIYABISTS2_CARD_NINGSHEN.description": "Block no longer expires at the start of your turn.\\nAt the end of each turn, take [blue]8[/blue] damage",
 
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.title": "Delusion-Slaying Sky",
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.description": "Immediately apply [blue]20%[/blue] [gold]Daze Vulnerability[/gold] to ALL enemies. For each [gold]positive buff[/gold] you have, apply an additional [blue]10%[/blue].\\nDiscard your entire hand, draw that many cards, and deal {Damage:diff} damage randomly that many times"
