@@ -251,11 +251,14 @@
     "MIYABISTS2_CARD_BANGBOO_CHARGE_ALL.description": "所有邦布回复1次能力使用次数\\n场上不存在邦布时，随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE.title": "邦布救我！",
-    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布\\获得{Block:diff()}点格挡",
+    "MIYABISTS2_CARD_BANGBOO_HELPME_ONE.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布\\n获得{Block:diff()}点格挡。",
 
 	"MIYABISTS2_CARD_TRAINING_TODAY.title": "今日修行",
     "MIYABISTS2_CARD_TRAINING_TODAY.description": "选择今天的修行",
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "选择修行",
+
+	"MIYABISTS2_CARD_WUWEI_QIYUE.title": "无尾契约",
+    "MIYABISTS2_CARD_WUWEI_QIYUE.description": "抽到这张卡时，向抽卡堆中加入一张这张卡的复制。\\n这张卡在手卡时，[gold]烈霜[/gold]卡牌造成的伤害变为减少等量最大生命值。",
 
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "芳菲之邀",
     "MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "每回合结束时对所有敌人造成{Damage:diff}点伤害，并施加1层[gold]流明[/gold]。",
@@ -377,7 +380,7 @@
 	"MIYABISTS2_CARD_BANGBOO_CHARGE_ALL_YIXUAN.description": "所有邦布回复1次能力使用次数\\n场上不存在邦布时，随机召唤一个邦布",
 
 	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.title": "邦布救我！",
-	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布\\获得{Block:diff()}点格挡",
+	"MIYABISTS2_CARD_BANGBOO_HELPME_ONE_YIXUAN.description": "指定一个邦布获得[gold]守护者[/gold]\\n场上[gold]没有邦布[/gold]时，[gold]右击[/gold]卡牌丢弃这张卡然后[gold]消耗[/gold]{Energy:energyIcons()}随机召唤一个邦布\\n获得{Block:diff()}点格挡",
 
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.title": "邦布来袭！",
 	"MIYABISTS2_CARD_BANGBOO_SUMMON_ONE_YIXUAN.description": "随机召唤{summon:diff()}个邦布",
@@ -513,6 +516,9 @@
 	
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.title" : "守华照寂",
 	"MIYABISTS2_CARD_SHOUHUA_ZHAOJI.description":"获得格挡时变为0格挡，然后获得{Energy:energyIcons()}，抽1张卡。",
+
+	"MIYABISTS2_CARD_NINGSHEN.title" : "凝神",
+	"MIYABISTS2_CARD_NINGSHEN.description":"格挡不再在你的回合开始时消失。\\n每回合结束时受到8点伤害。",
 
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.title" : "斩妄开天",
 	"MIYABISTS2_CARD_ZHANWANG_KAITIAN.description":"立即给予所有敌人20%[gold]失衡易伤[/gold]，自身每有一种[gold]正面能力[/gold]，额外给予10%。\\n舍弃所有手卡，抽取舍弃数量的卡，并发动对应次数的随机造成{Damage:diff}点伤害。",

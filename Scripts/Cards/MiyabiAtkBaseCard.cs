@@ -12,6 +12,8 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
 using static Godot.HttpRequest;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.DevConsole.ConsoleCommands;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -56,6 +58,34 @@ namespace Miyabists2.Scripts.Cards
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);
 
+        }
+
+        public override async Task BeforeDamageReceived(PlayerChoiceContext choiceContext, Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+        {
+            if (cardSource != this || target == null || target.IsDead) return;
+
+            if (!cardSource.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang)) return;
+
+            if (!Owner.PlayerCombatState.Hand.Cards.Any(c => c is WuweiQiyue)) return;
+
+            if(amount >= target.MaxHp)
+            {
+                await CreatureCmd.Kill(target);
+            }
+            else
+            {
+                decimal hpMax = target.MaxHp - amount;
+                if (target.CurrentHp > hpMax)
+                {
+                    await CreatureCmd.SetMaxAndCurrentHp(target, target.MaxHp - amount);
+                }
+                else
+                {
+                    await CreatureCmd.SetMaxHp(target, target.MaxHp - amount);
+                }
+            }
+
+            
         }
 
         // 通用伤害后逻辑：将伤害转化为烈霜积蓄值
