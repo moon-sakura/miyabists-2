@@ -68,24 +68,9 @@ namespace Miyabists2.Scripts.Cards
 
             if (!Owner.PlayerCombatState.Hand.Cards.Any(c => c is WuweiQiyue)) return;
 
-            if(amount >= target.MaxHp)
-            {
-                await CreatureCmd.Kill(target);
-            }
-            else
-            {
-                decimal hpMax = target.MaxHp - amount;
-                if (target.CurrentHp > hpMax)
-                {
-                    await CreatureCmd.SetMaxAndCurrentHp(target, target.MaxHp - amount);
-                }
-                else
-                {
-                    await CreatureCmd.SetMaxHp(target, target.MaxHp - amount);
-                }
-            }
+            await CreatureCmd.LoseMaxHp(choiceContext, target, amount, false);
 
-            
+
         }
 
         // 通用伤害后逻辑：将伤害转化为烈霜积蓄值
