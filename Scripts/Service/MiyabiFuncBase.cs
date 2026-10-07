@@ -1,5 +1,6 @@
 using BaseLib.Utils;
 using Godot;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -94,6 +95,15 @@ namespace Miyabists2.Scripts.Service
             GD.Print($"[AddCardToDesk] 结束");
 
             return results;
+        }
+
+        public static async Task ExhaustHandCard(PlayerChoiceContext choiceContext, Player player, int num, AbstractModel model)
+        {
+            CardModel cardModel = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, num), context: choiceContext, player: player, filter: null, source: model)).FirstOrDefault();
+            if (cardModel != null)
+            {
+                await CardCmd.Exhaust(choiceContext, cardModel);
+            }
         }
 
 

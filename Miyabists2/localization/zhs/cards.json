@@ -691,7 +691,7 @@
 	"MIYABISTS2_CARD_QUANMIAN_QINGCHANG_GUANG.description": "获得{Block:diff()}点格挡，获得{SUPPORT_POINT_POWER:diff()}点[gold]支援点数[/gold]",
 
 	"MIYABISTS2_CARD_QUICK_PARRY_GUANG.title": "快速招架",
-	"MIYABISTS2_CARD_QUICK_PARRY_GUANG.description": "获得{Block:diff()}点格挡\\n[gold]招架[/gold]{PARRY_POWER:diff()}\\n获得[blue]1[/blue]点[gold]支援点数[/gold]，将抽牌堆中随机一张[gold]伙伴[/gold]卡加入手卡",
+	"MIYABISTS2_CARD_QUICK_PARRY_GUANG.description": "获得{Block:diff()}点格挡\\n下回合再获得{Block:diff()}点格挡\\n获得[blue]1[/blue]点[gold]支援点数[/gold]，将抽牌堆中随机一张[gold]伙伴[/gold]卡加入手卡",
 
 	"MIYABISTS2_CARD_QUICK_SUPPORT_GUANG.title": "快速支援",
 	"MIYABISTS2_CARD_QUICK_SUPPORT_GUANG.description": "对自己造成{Damage:diff()}点伤害，随机使用抽卡堆中一张伙伴卡",
@@ -704,7 +704,7 @@
 	"MIYABISTS2_CARD_SHE_WEN_GUANG.selectionScreenPrompt": "给希希芙的食物（最多选择{Cards:diff()}张消耗）",
 
 	"MIYABISTS2_CARD_SONG_KE_GUANG.title": "送客！",
-	"MIYABISTS2_CARD_SONG_KE_GUANG.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张费用为[blue]0[/blue]的[gold]虚无[/gold][gold]终结技[/gold]（[gold]名残雪[/gold]）加入手卡",
+	"MIYABISTS2_CARD_SONG_KE_GUANG.description": "[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n[gold]支援点数[/gold][blue]{SUPPORT_POINT_POWER:diff()}[/blue]：将一张费用为[blue]0[/blue]的[gold]虚无[/gold][gold]终结技[/gold]（[gold]逐云惊霆[/gold]）加入手卡",
 
 	"MIYABISTS2_CARD_SP_XIAOYE_GUANG.title": "SP：小夜骑士",
 	"MIYABISTS2_CARD_SP_XIAOYE_GUANG.description": "自己和敌方各获得[blue]1[/blue]层[gold]无实体[/gold]，从所有卡牌里选择{Cards:diff()}张卡牌[gold]消耗[/gold]",

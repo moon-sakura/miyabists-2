@@ -50,6 +50,15 @@ namespace Miyabists2.Scripts.Powers
             }
         }
 
+        public override async Task AfterRemoved(Creature oldOwner)
+        {
+            var decibleRelics = oldOwner.Player.Relics.OfType<IDecibleCounter>();
+            foreach (var relic in decibleRelics)
+            {
+                relic.ResetThreshold();
+            }
+        }
+
         //public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
         //{
         //    if (cardPlay.Card.Owner != base.Owner.Player) return;
