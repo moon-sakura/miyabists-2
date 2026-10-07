@@ -45,15 +45,15 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     // TODO: 添加皮肤路径列表
     public static List<string> CombatSkinPaths = new()
      {
-         "res://scenes/_Yixuan/yixuan_char.tscn" // slot 0 默认是原皮肤
+         "res://scenes/_Guang/guang_char.tscn" // slot 0 默认是原皮肤
      };
     public static List<string> RestSkinPaths = new()
      {
-         "res://scenes/_Yixuan/yixuan_Rest.tscn" // slot 0 默认是原皮肤
+         "res://scenes/_Guang/guang_Rest.tscn" // slot 0 默认是原皮肤
      };
     public static List<string> ShopSkinPaths = new()
      {
-         "res://scenes/_Yixuan/yixuan_Shop.tscn" // slot 0 默认是原皮肤
+         "res://scenes/_Guang/guang_Shop.tscn" // slot 0 默认是原皮肤
      };
 
     public string CombatDynamicVisualPath
@@ -149,15 +149,15 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
 
     // 人物头像路径。
     // TODO: 替换为YeshunGuang专属资源路径
-    public override string CustomIconTexturePath => "res://images/charui/icon.png";
-    public override string CustomCharacterSelectIconPath => "res://images/charui/Miyabi_select.png";
+    public override string CustomIconTexturePath => "res://images/_Guang/char/guangicon.png";
+    public override string CustomCharacterSelectIconPath => "res://images/_Guang/char/guang_select.png";
     public override string CustomCharacterSelectLockedIconPath => "res://images/charui/char_select_char_name_locked.png";
     // 人物模型tscn路径。
     public override string CustomVisualsPath => CombatDynamicVisualPath;
     // 卡牌拖尾路径。
     // public override string CustomTrailPath => "res://scenes/vfx/card_trail_ironclad.tscn";
     // 人物头像2号。
-    // public override string CustomIconPath => "res://scenes/yeshunguang_icon.tscn";
+    public override string CustomIconPath => "res://scenes/_Guang/guang_icon.tscn";
     // 能量表盘tscn路径。
     // public override string CustomEnergyCounterPath => "res://scenes/yeshunguang_energy_counter.tscn";
     // 篝火休息动画。
@@ -175,9 +175,9 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
 
     // 人物选择背景。
     // TODO: 替换为YeshunGuang专属背景
-    public override string CustomCharacterSelectBgPath => "res://scenes/char_select/char_select_bg_miyabi.tscn";
+    public override string CustomCharacterSelectBgPath => "res://scenes/_Guang/char_select_bg_guang.tscn";
     // 地图上的角色标记图标、表情轮盘上的角色头像
-    public override string CustomMapMarkerPath => "res://images/charui/icon.png";
+    public override string CustomMapMarkerPath => "res://images/_Guang/char/guangicon.png";
     // 过渡音效。
     public override string CharacterTransitionSfx => "res://scenes/audio/select_ZhunbeiBadao.mp3";
 

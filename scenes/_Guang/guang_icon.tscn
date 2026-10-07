@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://clj4wyleo35fx"]
+
+[ext_resource type="Texture2D" uid="uid://bphx3qjim8u0i" path="res://images/_Guang/char/guangicon.png" id="1_h505k"]
+
+[node name="yixuanIcon" type="TextureRect"]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 57.0
+offset_bottom = 57.0
+texture = ExtResource("1_h505k")

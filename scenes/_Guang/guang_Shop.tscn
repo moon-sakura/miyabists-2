@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://t2e2225o6k4c"]
+
+[ext_resource type="Texture2D" uid="uid://520degrue4l6" path="res://images/_Guang/char/guang_char.png" id="1_mr4al"]
+
+[node name="MiyabiRest" type="Node2D"]
+
+[node name="MiyabiChar33" type="Sprite2D" parent="."]
+position = Vector2(-3.159873, -284.45804)
+scale = Vector2(0.7913605, 0.7913605)
+texture = ExtResource("1_mr4al")
