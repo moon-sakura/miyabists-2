@@ -366,6 +366,16 @@
 	"DONGJING_XIANGYI_POWER.smartDescription": "使用[gold]青溟云影[/gold]后消耗所有[gold]闪能[/gold]并恢复{ShannengRecoverPercent:diff()}%；使用[gold]符法千重[/gold]后获得[blue]{DecibelAmount:diff()}[/blue]点[gold]喧响值[/gold]。",
 
 
+	// ====== 叶瞬光能力 ======
+	"QINGMING_JIANSHI_POWER.title": "青溟剑势",
+	"QINGMING_JIANSHI_POWER.description": "用于发动[gold]明心镜[/gold]卡牌上的强化效果",
+	"QINGMING_JIANSHI_POWER.smartDescription": "用于发动[gold]明心镜[/gold]卡牌上的强化效果，当前[blue]{Amount}[/blue]点",
+
+	"SU_YING_JING_HONG_POWER.title": "溯影惊鸿",
+	"SU_YING_JING_HONG_POWER.description": "每次使用[gold]伙伴[/gold]卡时，获得[gold]青溟剑势[/gold]",
+	"SU_YING_JING_HONG_POWER.smartDescription": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{Amount}[/blue]点[gold]青溟剑势[/gold]",
+
+
 
 
 

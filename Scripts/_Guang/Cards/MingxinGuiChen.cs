@@ -1,0 +1,58 @@
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts.Powers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Miyabists2.Scripts._Guang.Cards
+{
+    /// <summary>
+    /// 明心镜·归尘 - 青溟剑势归为0后自动加入手卡
+    /// 对所有敌人造成3次3点伤害，失衡2，退出明心镜状态。
+    /// </summary>
+    [RegisterCard(typeof(YeshunGuangCardPool))]
+    internal class MingxinGuiChen : GuangMingxinjingCardBase
+    {
+        public MingxinGuiChen() : base(0, CardType.Attack, CardRarity.Token, TargetType.AllEnemies)
+        {
+        }
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new DamageVar(3, ValueProp.Move),
+            new DynamicVar(DazeVarName, 2),
+            new DynamicVar("HitCount", 3),
+        ];
+
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<DazePower>(),
+            HoverTipFactory.FromPower<DazeVulnPower>(),
+        ];
+
+        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
+                .WithHitCount(DynamicVars["HitCount"].IntValue)
+                .TargetingAllOpponents(Owner.Creature.CombatState)
+                .WithHitFx("vfx/vfx_attack_slash")
+                .Execute(choiceContext);
+
+            // 失衡由 GuangCardBase.AfterDamageGiven 自动结算
+
+            // ========== 待实现 ==========
+            // TODO: 退出明心镜状态（具体实现待明心镜能力完成后接入）
+        }
+
+        // ========== 待实现 ==========
+        // TODO: 青溟剑势归为0时自动加入手卡
+        // 由明心镜状态的能力负责监听青溟剑势变化并加入本卡。
+    }
+}

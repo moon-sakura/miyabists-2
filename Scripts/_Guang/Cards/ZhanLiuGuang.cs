@@ -22,7 +22,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// 升级：6点伤害，失衡2。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
-    internal class ZhanLiuGuang : GuangCardBase
+    internal class ZhanLiuGuang : GuangCardBase, I2MingxinJing
     {
         public ZhanLiuGuang() : base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
         {

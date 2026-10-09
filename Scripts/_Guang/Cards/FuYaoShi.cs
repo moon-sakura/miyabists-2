@@ -19,7 +19,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// 升级：4点活力，2点临时力量。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
-    internal class FuYaoShi : GuangCardBase
+    internal class FuYaoShi : GuangCardBase, I2MingxinJing
     {
         public FuYaoShi() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
         {

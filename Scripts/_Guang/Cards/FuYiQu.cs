@@ -18,7 +18,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// 升级：去掉消耗。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
-    internal class FuYiQu : GuangCardBase
+    internal class FuYiQu : GuangCardBase, I2MingxinJing
     {
         public FuYiQu() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
         {

@@ -23,7 +23,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// 升级：4次。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
-    internal class CheJingLei : GuangCardBase
+    internal class CheJingLei : GuangCardBase, I2MingxinJing
     {
         public CheJingLei() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
         {

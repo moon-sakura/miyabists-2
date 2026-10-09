@@ -20,7 +20,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// 升级：11点格挡。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
-    internal class ZhiGe : GuangCardBase
+    internal class ZhiGe : GuangCardBase, I2MingxinJing
     {
         public ZhiGe() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
         {

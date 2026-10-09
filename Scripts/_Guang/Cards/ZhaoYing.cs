@@ -1,9 +1,11 @@
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using Miyabists2.Scripts._Guang.Powers;
 using System;
 using System.Collections.Generic;
@@ -43,17 +45,34 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // TODO: 消耗1张手卡（需要手牌选择界面）
-            // await CardSelectCmd.FromChooseACardScreen(...) -> CardCmd.Exhaust(...)
+            // 消耗1张手卡（本卡自身已在结算中，不会出现在手牌里）
+            CardModel target = (await CardSelectCmd.FromHand(
+                prefs: new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1),
+                context: choiceContext,
+                player: Owner,
+                filter: null,
+                source: this)).FirstOrDefault();
+
+            if (target != null)
+            {
+                await CardCmd.Exhaust(choiceContext, target);
+            }
 
             await PowerCmd.Apply<QingmingJianshiPower>(choiceContext, Owner.Creature,
                 DynamicVars["JianshiGain"].IntValue, Owner.Creature, this);
 
-            // TODO: 明心镜判定
-            // 若 Owner.Creature.GetPowerAmount<QingmingJianshiPower>() >= MingxinThreshold：
-            //   进入明心镜状态（具体实现待明心镜能力完成后接入）
-            //   回复所有能量
-            //   抽 DynamicVars["DrawCount"] 张牌
+            // 附加：拥有6点青溟剑势则进入明心镜状态
+            int jianshi = Owner.Creature.GetPowerAmount<QingmingJianshiPower>();
+            if (jianshi >= DynamicVars["MingxinThreshold"].IntValue)
+            {
+                // 进入明心镜状态：把手牌中的原卡变换为对应的明心镜卡
+                await MingxinJingTransform.TransformAllInHand(choiceContext, Owner);
+
+                // ========== 待实现 ==========
+                // TODO: 回复所有能量
+                // TODO: 抽 DynamicVars["DrawCount"] 张牌
+                // TODO: 记录"已进入明心镜状态"（具体实现待明心镜能力完成后接入）
+            }
         }
 
         protected override void OnUpgrade()
