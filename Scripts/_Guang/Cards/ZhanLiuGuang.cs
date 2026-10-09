@@ -51,10 +51,7 @@ namespace Miyabists2.Scripts._Guang.Cards
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
 
-            foreach (Creature enemy in Owner.Creature.CombatState.HittableEnemies)
-            {
-                await MiyabiCombatService.AddDaze(choiceContext, enemy, DynamicVars[DazeVarName], base.Owner.Creature);
-            }
+            // 失衡不在这里加：基类 GuangCardBase.AfterDamageGiven 会按每个被命中的敌人各叠一次。
         }
 
         protected override void OnUpgrade()

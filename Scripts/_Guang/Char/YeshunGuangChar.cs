@@ -12,7 +12,9 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Rooms;
+using Miyabists2.Scripts._Guang.Cards;
 using Miyabists2.Scripts._Guang.Relics;
+using Miyabists2.Scripts._Yixuan.Relics;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Service;
 using STS2RitsuLib.Scaffolding.Characters;
@@ -100,10 +102,11 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     public override float CastAnimDelay => 0f;
 
     private IEnumerable<StartingDeckEntry> GetDefaultDeck() => [
-        new(typeof(YixuanBlock), 3),
-        new(typeof(XiaoyunJin), 3),
-        new(typeof(YinyunShenfa), 3),
-        new(typeof(JinyingJue), 1),
+        new(typeof(KuaiJian), 4),
+        new(typeof(GeDang), 3),
+        new(typeof(YinCangLan), 1),
+        new(typeof(BuLiuXing), 1),
+        new(typeof(ZhaoYing), 1),
     ];
 
     private IEnumerable<StartingDeckEntry> GetBangbooDeck() => [
@@ -139,6 +142,7 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     // 初始遗物
     protected override IEnumerable<Type> StartingRelicTypes => [
         typeof(QingmingJianxiaRelic),
+        typeof(YunkuiShanRelic),
     ];
 
     public override async Task AfterRoomEntered(AbstractRoom room)

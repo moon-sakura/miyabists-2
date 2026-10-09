@@ -2,6 +2,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Miyabists2.Scripts._Guang.Powers
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
 
-        public override int DisplayAmount => Amount - 1;
+        public override int DisplayAmount => Amount;
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
 
@@ -48,7 +49,7 @@ namespace Miyabists2.Scripts._Guang.Powers
         public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if (power != this) return;
-            if (Amount > 1) return;
+            if (Amount > 0) return;
 
             await NotifyJianshiReachedZero();
         }

@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Models;
 using Miyabists2.Scripts.Cards;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
+using Miyabists2.Scripts._Guang.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,8 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<DazePower>(),
             HoverTipFactory.FromPower<BreakPower>(),
             HoverTipFactory.FromPower<DazeVulnPower>(),
-            HoverTipFactory.FromCard<MingCanXue>(),
+            HoverTipFactory.FromCard<ZhuYunJingTing>(),
+            HoverTipFactory.FromCard<ZhanWangKaiTian>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -33,7 +35,10 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             if (base.CheckSupportCost(DynamicVars[SupportVarName].IntValue) != 0)
             {
-                CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<MingCanXue>(base.Owner.Creature.Player);
+                // 明心镜状态下送的是《斩妄开天》，否则送《逐云惊霆》
+                CardModel reward1 = base.Owner.Creature.HasPower<MingxinJingPower>()
+                    ? base.Owner.Creature.CombatState.CreateCard<ZhanWangKaiTian>(base.Owner.Creature.Player)
+                    : base.Owner.Creature.CombatState.CreateCard<ZhuYunJingTing>(base.Owner.Creature.Player);
                 reward1.AddKeyword(CardKeyword.Ethereal);
                 reward1.SetToFreeThisTurn();
                 await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);

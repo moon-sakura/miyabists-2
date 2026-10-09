@@ -31,6 +31,11 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
         {
+            // 只有「本卡造成的那次伤害」才叠加失衡。
+            // 没有这个判断的话，任何一次伤害（包括敌人打自己）都会让手里/牌堆里
+            // 每张带失衡变量的卡各叠一次，表现为「敌人攻击我，我却获得失衡值」。
+            if (cardSource != this || target == null || target.IsDead) return;
+
             if (base.DynamicVars.TryGetValue(DazeVarName, out DynamicVar dazeVar))
             {
                 await MiyabiCombatService.AddDaze(choiceContext, target, dazeVar, base.Owner.Creature);

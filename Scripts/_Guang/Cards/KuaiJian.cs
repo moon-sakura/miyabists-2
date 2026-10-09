@@ -52,7 +52,8 @@ namespace Miyabists2.Scripts._Guang.Cards
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
 
-            await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, DynamicVars[DazeVarName], base.Owner.Creature);
+            // 失衡不在这里加：基类 GuangCardBase.AfterDamageGiven 已经会为本卡造成的伤害叠一次。
+            // 这里再加一次会变成两倍。
         }
 
         protected override void OnUpgrade()

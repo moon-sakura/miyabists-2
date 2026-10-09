@@ -82,6 +82,11 @@ namespace Miyabists2.Scripts._Guang.Powers
             await MingxinJingTransform.TransformAllInCombat(owner);
         }
 
+        public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+        {
+            await PowerCmd.Remove(this);
+        }
+
         public override async Task AfterRemoved(Creature oldOwner)
         {
             // 战斗结束时的清场不算"退出明心镜状态"，不处理变回原卡

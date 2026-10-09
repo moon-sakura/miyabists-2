@@ -53,7 +53,7 @@ namespace Miyabists2.Scripts._Guang.Cards
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
 
-            await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, DynamicVars[DazeVarName], base.Owner.Creature);
+            // 失衡不在这里加：基类 GuangCardBase.AfterDamageGiven 已经会为本卡造成的伤害叠一次。
 
             // 附加：本回合使用过伙伴卡，则加入随机普通牌
             bool usedFriendThisTurn = CombatManager.Instance.History.CardPlaysFinished

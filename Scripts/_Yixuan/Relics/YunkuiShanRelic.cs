@@ -50,10 +50,13 @@ namespace Miyabists2.Scripts._Yixuan.Relics
             if (target != base.Owner.Creature || result.WasFullyBlocked || dealer == Owner.Creature) { return; }
 
             // 从受伤语音池随机播放
-            if(result.UnblockedDamage >= 10)
-                MiyabiAudioPlay.Random(YixuanHurtedHeavyVoices);
-            else
-                MiyabiAudioPlay.Random(YixuanHurtedVoices);
+            if(target?.Player?.Character is Yixuan)
+            {
+                if (result.UnblockedDamage >= 10)
+                    MiyabiAudioPlay.Random(YixuanHurtedHeavyVoices);
+                else
+                    MiyabiAudioPlay.Random(YixuanHurtedVoices);
+            }
         }
     }
 }

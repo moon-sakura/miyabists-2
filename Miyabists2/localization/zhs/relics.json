@@ -161,6 +161,10 @@
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.description": "每场战斗开始时，随机获取[blue]{Get}[/blue]个上一场战斗结束时的正面能力及其层数（不包括[gold]闪能[/gold]与[gold]支援点数[/gold]）。每累计受到[blue]100%[/blue]的生命伤害，额外获取[blue]1[/blue]个。\\n当前累计失去生命百分比：[blue]{Record}%[/blue]。",
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": "江河易改，旧梦难消",
 
+	"MIYABISTS2_RELIC_QINGMING_JIANXIA_RELIC.title": "青溟剑匣",
+	"MIYABISTS2_RELIC_QINGMING_JIANXIA_RELIC.description": "自身不处于[gold]明心镜[/gold]状态时，每获得[blue]1[/blue]个自身没有的新能力，获得[blue]1[/blue]点[gold]青溟剑势[/gold]\\n每使用[blue]1[/blue]张卡牌计数+1，计数达到[blue]30[/blue]时，将一张[gold]逐云惊霆+[/gold]加入手卡",
+	"MIYABISTS2_RELIC_QINGMING_JIANXIA_RELIC.flavor": "",
+
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.title": "童话记事本",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。\\n请勿添加会添加状态卡牌的怪物，否则会导致游戏卡住！",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.flavor": "我把他们都画在了本子上——现在，只要挥挥法杖，我就能把他们都召唤出来！",

@@ -45,7 +45,7 @@ namespace Miyabists2.Scripts._Guang.Cards
                 DynamicVars["Vigor"].IntValue, Owner.Creature, this);
 
             // 临时力量：回合结束时消失
-            await PowerCmd.Apply<TemporaryStrengthPower>(choiceContext, Owner.Creature,
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature,
                 DynamicVars["TempStrength"].IntValue, Owner.Creature, this);
         }
 

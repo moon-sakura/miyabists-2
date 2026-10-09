@@ -36,7 +36,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             // 消耗堆中每种卡牌各取一张（排除《明心境·策应》自身）
             CardPile exhaustPile = PileType.Exhaust.GetPile(Owner);
             List<CardModel> lightCards = exhaustPile.Cards
-                .Where(c => c.GetType() != typeof(MingxinCeYing))
+                .Where(c => c.GetType() != typeof(MingxinCeYing) && !c.CanonicalKeywords.Contains(CardKeyword.Unplayable) && !c.CanonicalKeywords.Contains(MiyabiKeywords.EndSkill))
                 .GroupBy(c => c.GetType())
                 .Select(g => g.First())
                 .ToList();
@@ -44,15 +44,17 @@ namespace Miyabists2.Scripts._Guang.Cards
             foreach (CardModel card in lightCards)
             {
                 // 需要指定敌人的卡牌：随机挑一个可攻击的敌人；没有敌人则跳过
-                Creature target = null;
-                if (card.TargetType == TargetType.AnyEnemy || card.TargetType == TargetType.RandomEnemy)
-                {
-                    target = Owner.Creature.CombatState.HittableEnemies
-                        .TakeRandom(1, Owner.RunState.Rng.CombatCardSelection).FirstOrDefault();
-                    if (target == null) continue;
-                }
+                //Creature target = null;
+                //if (card.TargetType == TargetType.AnyEnemy || card.TargetType == TargetType.RandomEnemy)
+                //{
+                //    target = Owner.Creature.CombatState.HittableEnemies
+                //        .TakeRandom(1, Owner.RunState.Rng.CombatCardSelection).FirstOrDefault();
+                //    if (target == null) continue;
+                //}
 
-                await CardCmd.AutoPlay(choiceContext, card, target);
+                await CardCmd.AutoPlay(choiceContext, card, null);
+
+                await CardCmd.Exhaust(choiceContext, card, false, true);
             }
         }
 
