@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,9 +39,9 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // ========== 待实现 ==========
-            // TODO: 获得 DynamicVars["Afterimage"] 层残影
-            // 残影能力本项目暂未确认对应实现，待补充。
+            // 残影（BlurPower）：下个回合开始时格挡不清空
+            await PowerCmd.Apply<BlurPower>(choiceContext, Owner.Creature,
+                DynamicVars["Afterimage"].IntValue, Owner.Creature, this);
 
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
         }

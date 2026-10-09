@@ -57,16 +57,13 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars.Damage.UpgradeValueBy(4);
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时对随机敌人造成 DynamicVars["DamageOnExhaust"] 点伤害
-        // 需要挂接本卡被消耗的时机回调。
-
-        protected async override Task ExhaustEffect(PlayerChoiceContext choiceContext)
+        // 被消耗时对随机敌人造成伤害
+        protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
         {
-                await DamageCmd.Attack(DynamicVars["DamageOnExhaust"].IntValue)
-                    .TargetingRandomOpponents(Owner.Creature.CombatState)
-                    .WithHitFx("vfx/vfx_attack_slash")
-                    .Execute(choiceContext);
+            await DamageCmd.Attack(DynamicVars["DamageOnExhaust"].IntValue)
+                .TargetingRandomOpponents(Owner.Creature.CombatState)
+                .WithHitFx("vfx/vfx_attack_slash")
+                .Execute(choiceContext);
         }
     }
 }

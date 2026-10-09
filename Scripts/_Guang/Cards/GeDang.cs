@@ -48,8 +48,11 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars.Block.UpgradeValueBy(3);
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时获得 DynamicVars["DexterityOnExhaust"] 点敏捷
-        // 需要挂接本卡被消耗的时机回调。
+        // 被消耗时获得敏捷
+        protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Apply<DexterityPower>(choiceContext, Owner.Creature,
+                DynamicVars["DexterityOnExhaust"].IntValue, Owner.Creature, this);
+        }
     }
 }

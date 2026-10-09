@@ -61,8 +61,11 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars[DazeVarName].UpgradeValueBy(1);
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时获得 DynamicVars["StrengthOnExhaust"] 点力量
-        // 需要挂接本卡被消耗的时机回调。
+        // 被消耗时获得力量
+        protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature,
+                DynamicVars["StrengthOnExhaust"].IntValue, Owner.Creature, this);
+        }
     }
 }

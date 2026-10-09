@@ -33,25 +33,38 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // 指定一张手卡进入明心镜状态
-            // 目前只在手牌中挑选；如果要支持其它牌堆，把 PileType.Hand 换成对应牌堆即可
-            List<CardModel> options = PileType.Hand.GetPile(Owner).Cards
+            // 指定一张卡进入明心镜状态
+            // 未升级：只能选手中已有可变换的卡；升级后：也可以从抽牌堆 / 弃牌堆里选
+            PileType[] piles = IsUpgraded
+                ? [PileType.Hand, PileType.Draw, PileType.Discard]
+                : [PileType.Hand];
+
+            List<CardModel> options = piles
+                .SelectMany(p => p.GetPile(Owner).Cards)
                 .Where(MingxinJingTransform.CanTransform)
                 .ToList();
 
             if (options.Count == 0) return;
 
             CardModel chosen = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, Owner);
-            if (chosen != null)
+            if (chosen == null) return;
+
+            bool wasInHand = PileType.Hand.GetPile(Owner).Cards.Contains(chosen);
+
+            CardModel transformed = await MingxinJingTransform.Transform(chosen);
+            if (transformed == null) return;
+
+            // 升级后：原本不在手卡的卡，变换后加入手卡
+            if (IsUpgraded && !wasInHand)
             {
-                await MingxinJingTransform.Transform(choiceContext, chosen);
+                await CardPileCmd.Add(transformed, PileType.Hand.GetPile(Owner));
             }
         }
 
         protected override void OnUpgrade()
         {
-            // TODO: 如果该卡不在手卡则加入手卡
-            // 需要把选择范围从手牌扩大到对应牌堆，并在变换后把明心镜卡加入手卡。
+            // 升级效果由 OnPlay 里的 IsUpgraded 分支处理：
+            // 选择范围扩大到抽牌堆 / 弃牌堆，变换后的卡若不在手卡则加入手卡。
         }
     }
 }

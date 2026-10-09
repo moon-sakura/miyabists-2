@@ -1,5 +1,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -41,13 +43,17 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             foreach (CardModel card in lightCards)
             {
-                // ========== 待实现 ==========
-                // TODO: 打出这张卡
-                // 需要"从消耗堆直接打出卡牌"的指令（本项目暂未确认对应 API），待补充。
-            }
+                // 需要指定敌人的卡牌：随机挑一个可攻击的敌人；没有敌人则跳过
+                Creature target = null;
+                if (card.TargetType == TargetType.AnyEnemy || card.TargetType == TargetType.RandomEnemy)
+                {
+                    target = Owner.Creature.CombatState.HittableEnemies
+                        .TakeRandom(1, Owner.RunState.Rng.CombatCardSelection).FirstOrDefault();
+                    if (target == null) continue;
+                }
 
-            // TODO: 若"打出"需要逐个等待结算，记得 await
-            await Task.CompletedTask;
+                await CardCmd.AutoPlay(choiceContext, card, target);
+            }
         }
 
         protected override void OnUpgrade()

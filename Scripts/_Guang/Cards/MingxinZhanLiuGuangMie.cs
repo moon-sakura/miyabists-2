@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts._Guang.Powers;
@@ -59,9 +60,9 @@ namespace Miyabists2.Scripts._Guang.Cards
             // 附加：消耗1点青溟剑势 -> 获得1层缓冲
             await JianshiFunc(choiceContext, DynamicVars[JianshiVarName].IntValue, async () =>
             {
-                // ========== 待实现 ==========
-                // TODO: 获得 DynamicVars["Buffer"] 层缓冲（缓冲能力本项目暂未确认对应实现）
-                await Task.CompletedTask;
+                // 缓冲（BufferPower）：阻止接下来 N 次生命值损伤
+                await PowerCmd.Apply<BufferPower>(choiceContext, Owner.Creature,
+                    DynamicVars["Buffer"].IntValue, Owner.Creature, this);
             });
         }
 

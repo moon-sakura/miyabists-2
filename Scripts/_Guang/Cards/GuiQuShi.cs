@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
@@ -36,9 +37,9 @@ namespace Miyabists2.Scripts._Guang.Cards
         {
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
-            // ========== 待实现 ==========
-            // TODO: 下回合额外抽 DynamicVars["DrawNextTurn"] 张卡
-            // 需要一个"下回合额外抽牌"的能力承载（本项目暂未确认对应能力），待补充。
+            // 下回合额外抽牌（DrawCardsNextTurnPower）
+            await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature,
+                DynamicVars["DrawNextTurn"].IntValue, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

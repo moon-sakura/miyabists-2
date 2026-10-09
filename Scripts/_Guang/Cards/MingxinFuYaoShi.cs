@@ -39,15 +39,14 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<QingmingJianshiPower>(),
             HoverTipFactory.FromPower<VigorPower>(),
             HoverTipFactory.FromCard<MingxinZhanLiuGuang>(),
-            // TODO: 翱翔能力写好后取消注释
-            // HoverTipFactory.FromPower<AoxiangPower>(),
+            HoverTipFactory.FromPower<SoarPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // ========== 待实现 ==========
-            // TODO: 获得 DynamicVars["Soar"] 层翱翔
-
+            // 翱翔（SoarPower）：落地前受到的伤害减半
+            await PowerCmd.Apply<SoarPower>(choiceContext, Owner.Creature,
+                DynamicVars["Soar"].IntValue, Owner.Creature, this);
             // 附加：消耗1点青溟剑势 -> 将一张带有消耗的《明心镜·斩流光》加入手卡，本回合免费打出
             await JianshiFunc(choiceContext, DynamicVars[JianshiVarName].IntValue, async () =>
             {

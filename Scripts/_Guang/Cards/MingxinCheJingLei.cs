@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts._Guang.Powers;
@@ -65,13 +66,12 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars.Damage.UpgradeValueBy(6);
         }
 
-        // 被消耗时获得1层超巨化
+        // 被消耗时获得超巨化
         protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
         {
-            // ========== 待实现 ==========
-            // TODO: 获得 DynamicVars["Giant"] 层超巨化
-            // 超巨化能力本项目暂未确认对应实现，待补充。
-            await Task.CompletedTask;
+            // 超巨化（GigantificationPower）：下一张攻击牌造成三倍伤害
+            await PowerCmd.Apply<GigantificationPower>(choiceContext, Owner.Creature,
+                DynamicVars["Giant"].IntValue, Owner.Creature, this);
         }
     }
 }

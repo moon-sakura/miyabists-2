@@ -43,7 +43,10 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
         {
-            await ExhaustEffect(choiceContext);
+            if(card == this)
+            {
+                await ExhaustEffect(choiceContext);
+            }
         }
 
         // ==================== 青溟剑势消耗 ====================

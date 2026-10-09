@@ -1,5 +1,8 @@
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -52,10 +55,24 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             await MiyabiCombatService.AddDaze(choiceContext, cardPlay.Target, DynamicVars[DazeVarName], base.Owner.Creature);
 
-            // ========== 待实现 ==========
-            // TODO: 若本回合已使用过伙伴卡，则将 DynamicVars.Cards 张随机普通牌加入手牌
-            // 1. 需要记录"本回合是否使用过伙伴卡"（可参考 MiyabiPartnerCardBase 相关统计）
-            // 2. 随机普通牌加入手牌逻辑与 引沧澜 共用，待补充。
+            // 附加：本回合使用过伙伴卡，则加入随机普通牌
+            bool usedFriendThisTurn = CombatManager.Instance.History.CardPlaysFinished
+                .Any((CardPlayFinishedEntry e)
+                    => e.CardPlay.Card.Owner == base.Owner
+                    && e.CardPlay.Card.CanonicalKeywords.Contains(MiyabiKeywords.Friends)
+                    && e.HappenedThisTurn(base.CombatState));
+
+            if (!usedFriendThisTurn) return;
+
+            for (int i = 0; i < DynamicVars.Cards.IntValue; i++)
+            {
+                CardModel card = CardFactory.GetDistinctForCombat(Owner, from c in Owner.Character.CardPool.GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint)
+                                                                       where c.Rarity == CardRarity.Common
+                                                                       select c, 1, Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+                if (card == null) break;
+
+                await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
+            }
         }
 
         protected override void OnUpgrade()

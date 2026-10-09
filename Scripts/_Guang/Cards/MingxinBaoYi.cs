@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
@@ -32,17 +33,16 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
-            // TODO: 倒映(reflect)能力写好后取消注释
-            // HoverTipFactory.FromPower<ReflectPower>(),
+            HoverTipFactory.FromPower<ReflectPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
-            // ========== 待实现 ==========
-            // TODO: 获得 DynamicVars["Reflect"] 层倒映（reflect）
-            // 倒映能力本项目暂未确认对应实现，待补充。
+            // 倒映（ReflectPower）：被格挡的伤害反弹给攻击者
+            await PowerCmd.Apply<ReflectPower>(choiceContext, Owner.Creature,
+                DynamicVars["Reflect"].IntValue, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

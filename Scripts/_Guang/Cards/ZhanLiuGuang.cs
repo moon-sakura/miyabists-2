@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
+using Miyabists2.Scripts._Guang.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,8 +63,11 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars[DazeVarName].UpgradeValueBy(1);
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时获得 DynamicVars["JianshiOnExhaust"] 点青溟剑势
-        // 需要挂接本卡被消耗的时机回调。
+        // 被消耗时获得青溟剑势
+        protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Apply<QingmingJianshiPower>(choiceContext, Owner.Creature,
+                DynamicVars["JianshiOnExhaust"].IntValue, Owner.Creature, this);
+        }
     }
 }

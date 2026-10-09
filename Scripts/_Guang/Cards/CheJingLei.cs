@@ -66,20 +66,14 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars["HitCount"].UpgradeValueBy(1); // 升级后4次
         }
 
+        // 被消耗时抽牌，抽到的牌本回合免费使用
         protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
         {
             var drawnCard = await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
-            if(drawnCard.Count() > 0)
+            foreach (var card in drawnCard)
             {
-                foreach (var card in drawnCard)
-                {
-                    card.SetToFreeThisTurn();
-                }
+                card.SetToFreeThisTurn();
             }
         }
-
-            // ========== 待实现 ==========
-            // TODO: 被消耗时抽 DynamicVars.Cards 张卡，抽到的卡本回合免费使用
-            // 需要挂接本卡被消耗的时机回调（抽到后 SetToFreeThisTurn()）。
     }
 }

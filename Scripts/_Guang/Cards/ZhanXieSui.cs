@@ -1,9 +1,11 @@
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using Miyabists2.Scripts._Guang.Powers;
 using System;
 using System.Collections.Generic;
@@ -43,13 +45,21 @@ namespace Miyabists2.Scripts._Guang.Cards
             await PowerCmd.Apply<QingmingJianshiPower>(choiceContext, Owner.Creature,
                 DynamicVars["JianshiGain"].IntValue, Owner.Creature, this);
 
-            // ========== 待实现 ==========
-            // TODO: 消耗1张手卡（需要手牌选择界面）
-            // await CardSelectCmd.FromChooseACardScreen(...) -> CardCmd.Exhaust(...)
+            // 消耗1张手卡
+            CardModel target = (await CardSelectCmd.FromHand(
+                prefs: new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1),
+                context: choiceContext,
+                player: Owner,
+                filter: null,
+                source: this)).FirstOrDefault();
 
-            // ========== 待实现 ==========
-            // TODO: 本回合下一张攻击卡额外打出1次
-            // 需要一个"下张攻击卡额外打出一次"的计数能力承载，待补充。
+            if (target != null)
+            {
+                await CardCmd.Exhaust(choiceContext, target);
+            }
+
+            // 本回合下一张攻击卡额外打出1次（连环拳）
+            await PowerCmd.Apply<OneTwoPunchPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
@@ -57,8 +67,12 @@ namespace Miyabists2.Scripts._Guang.Cards
             AddKeyword(CardKeyword.Retain); // 升级后保留
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时获得 DynamicVars["UnstoppableOnExhaust"] 层势不可挡
-        // 势不可挡能力本项目暂未确认对应实现，需要挂接本卡被消耗的时机回调。
+        // 被消耗时获得势不可挡
+        protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
+        {
+            // 势不可挡（JuggernautPower）：每次获得格挡时对随机敌人造成伤害
+            await PowerCmd.Apply<JuggernautPower>(choiceContext, Owner.Creature,
+                DynamicVars["UnstoppableOnExhaust"].IntValue, Owner.Creature, this);
+        }
     }
 }

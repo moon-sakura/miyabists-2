@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Vigor", 3),
             new DynamicVar("TempStrength", 1),
-            new DynamicVar("VigorOnExhaust", 8),
+            new DynamicVar("VigorOnExhaust", 6),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
@@ -44,9 +44,9 @@ namespace Miyabists2.Scripts._Guang.Cards
             await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature,
                 DynamicVars["Vigor"].IntValue, Owner.Creature, this);
 
-            // ========== 待实现 ==========
-            // TODO: 获得 DynamicVars["TempStrength"] 点临时力量
-            // 临时力量需要"回合结束时消失"的力量能力（本项目暂未确认对应能力），待补充。
+            // 临时力量：回合结束时消失
+            await PowerCmd.Apply<TemporaryStrengthPower>(choiceContext, Owner.Creature,
+                DynamicVars["TempStrength"].IntValue, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
@@ -55,8 +55,11 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars["TempStrength"].UpgradeValueBy(1);
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时获得 DynamicVars["VigorOnExhaust"] 点活力
-        // 需要挂接本卡被消耗的时机回调。
+        // 被消耗时获得活力
+        protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature,
+                DynamicVars["VigorOnExhaust"].IntValue, Owner.Creature, this);
+        }
     }
 }

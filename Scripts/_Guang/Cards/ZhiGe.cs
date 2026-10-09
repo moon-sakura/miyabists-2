@@ -52,8 +52,11 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars.Block.UpgradeValueBy(3);
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时下回合获得 DynamicVars.Energy 点能量
-        // 需要挂接本卡被消耗的时机回调（可参考 BlockNextTurnPower 之类的"下回合生效"能力）。
+        // 被消耗时下回合获得能量
+        protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
+        {
+            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, Owner.Creature,
+                DynamicVars.Energy.IntValue, Owner.Creature, this);
+        }
     }
 }

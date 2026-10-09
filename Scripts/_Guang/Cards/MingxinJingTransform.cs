@@ -12,25 +12,48 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Guang.Cards
 {
     /// <summary>
-    /// 明心镜变换工具（原卡 -> 明心镜卡）。
+    /// 明心镜变换工具（原卡 &lt;-&gt; 明心镜卡，双向就地变换）。
     /// 之后要加新的明心镜卡，只需要：
     ///   1. 让原卡实现 I2MingxinJing
-    ///   2. 在下面的 Factories 里加一行
+    ///   2. 在下面的静态构造里加一行 Register&lt;原卡, 明心镜卡&gt;()
     /// </summary>
     public static class MingxinJingTransform
     {
-        /// <summary>原卡类型 -> 对应的明心镜卡工厂</summary>
-        private static readonly Dictionary<Type, Func<Player, CardModel>> Factories = new()
+        /// <summary>参与明心镜变换的战斗内牌堆（抽牌堆 / 手卡 / 弃牌堆 / 消耗堆）</summary>
+        private static readonly PileType[] CombatPiles =
+        [
+            PileType.Draw,
+            PileType.Hand,
+            PileType.Discard,
+            PileType.Exhaust,
+        ];
+
+        /// <summary>原卡类型 -> 明心镜卡工厂</summary>
+        private static readonly Dictionary<Type, Func<Player, CardModel>> Factories = new();
+
+        /// <summary>明心镜卡类型 -> 原卡工厂（退出明心镜状态时用）</summary>
+        private static readonly Dictionary<Type, Func<Player, CardModel>> ReverseFactories = new();
+
+        static MingxinJingTransform()
         {
-            { typeof(FenShuiXing),  p => p.Creature.CombatState.CreateCard<MingxinFenShuiXing>(p) },
-            { typeof(FuYaoShi),     p => p.Creature.CombatState.CreateCard<MingxinFuYaoShi>(p) },
-            { typeof(ZhanLiuGuang), p => p.Creature.CombatState.CreateCard<MingxinZhanLiuGuang>(p) },
-            { typeof(ZhiGe),        p => p.Creature.CombatState.CreateCard<MingxinBaoYi>(p) },
-            { typeof(CeYing),       p => p.Creature.CombatState.CreateCard<MingxinCeYing>(p) },
-            { typeof(FuYiQu),       p => p.Creature.CombatState.CreateCard<MingxinFuYiQu>(p) },
-            { typeof(FeiGuang),     p => p.Creature.CombatState.CreateCard<MingxinFeiGuang>(p) },
-            { typeof(CheJingLei),   p => p.Creature.CombatState.CreateCard<MingxinCheJingLei>(p) },
-        };
+            Register<FenShuiXing, MingxinFenShuiXing>();
+            Register<FuYaoShi, MingxinFuYaoShi>();
+            Register<ZhanLiuGuang, MingxinZhanLiuGuang>();
+            Register<ZhiGe, MingxinBaoYi>();
+            Register<CeYing, MingxinCeYing>();
+            Register<FuYiQu, MingxinFuYiQu>();
+            Register<FeiGuang, MingxinFeiGuang>();
+            Register<CheJingLei, MingxinCheJingLei>();
+        }
+
+        /// <summary>登记一对「原卡 -> 明心镜卡」，正反两个方向同时登记，不会写漏</summary>
+        private static void Register<TOriginal, TMingxin>()
+            where TOriginal : CardModel
+            where TMingxin : CardModel
+        {
+            Factories[typeof(TOriginal)] = p => p.Creature.CombatState.CreateCard<TMingxin>(p);
+            ReverseFactories[typeof(TMingxin)] = p => p.Creature.CombatState.CreateCard<TOriginal>(p);
+        }
 
         /// <summary>这张卡能否变成明心镜卡（实现了 I2MingxinJing 且登记过）</summary>
         public static bool CanTransform(CardModel card)
@@ -44,44 +67,74 @@ namespace Miyabists2.Scripts._Guang.Cards
             return originalType != null && Factories.ContainsKey(originalType);
         }
 
-        /// <summary>
-        /// 把一张原卡就地变换为对应的明心镜卡（原卡移出，明心镜卡加入手卡）。
-        /// </summary>
-        public static async Task<bool> Transform(PlayerChoiceContext choiceContext, CardModel original)
+        /// <summary>这张卡是否是能变回原卡的明心镜卡</summary>
+        public static bool CanRevert(CardModel card)
         {
-            if (original == null) return false;
-            if (!Factories.TryGetValue(original.GetType(), out Func<Player, CardModel> factory)) return false;
-
-            Player owner = original.Owner;
-            if (owner == null) return false;
-
-            CardModel mingxinJingCard = factory(owner);
-            if (mingxinJingCard == null) return false;
-
-            // TODO: 保留原卡的升级状态（升级相关 API 待确认）
-            // if (original.IsUpgraded) mingxinJingCard.Upgrade();
-
-            // TODO: 原卡此处按"消耗"处理；若原卡不应进入消耗堆，改成对应的移除指令
-            await CardCmd.Exhaust(choiceContext, original);
-
-            // 明心镜形态加入手卡
-            await CardPileCmd.AddGeneratedCardToCombat(mingxinJingCard, PileType.Hand, owner);
-            return true;
+            return card != null && card is IMingxinJing && ReverseFactories.ContainsKey(card.GetType());
         }
 
-        /// <summary>
-        /// 把手牌中所有可变换的原卡都变成明心镜卡（进入明心镜状态时调用）。
-        /// 返回变换成功的张数。
-        /// </summary>
-        public static async Task<int> TransformAllInHand(PlayerChoiceContext choiceContext, Player owner)
+        /// <summary>把一张原卡就地变为对应的明心镜卡（不改变所在牌堆，保留升级状态）。失败返回 null</summary>
+        public static async Task<CardModel?> Transform(CardModel original)
         {
-            CardPile handPile = PileType.Hand.GetPile(owner);
-            List<CardModel> targets = handPile.Cards.Where(CanTransform).ToList();
+            return await Swap(original, Factories);
+        }
+
+        /// <summary>把一张明心镜卡就地变回原卡（不改变所在牌堆，保留升级状态）。失败返回 null</summary>
+        public static async Task<CardModel?> Revert(CardModel mingxinJingCard)
+        {
+            return await Swap(mingxinJingCard, ReverseFactories);
+        }
+
+        /// <summary>把战斗中所有可变换的原卡都变成明心镜卡，返回变换成功的张数</summary>
+        public static async Task<int> TransformAllInCombat(Player owner)
+        {
+            return await SwapAll(owner, CanTransform, Transform);
+        }
+
+        /// <summary>把战斗中所有明心镜卡都变回原卡，返回变换成功的张数</summary>
+        public static async Task<int> RevertAllInCombat(Player owner)
+        {
+            return await SwapAll(owner, CanRevert, Revert);
+        }
+
+        private static async Task<CardModel?> Swap(CardModel original, Dictionary<Type, Func<Player, CardModel>> table)
+        {
+            if (original == null) return null;
+            if (!table.TryGetValue(original.GetType(), out Func<Player, CardModel> factory)) return null;
+
+            Player owner = original.Owner;
+            if (owner == null) return null;
+
+            CardModel replacement = factory(owner);
+            if (replacement == null) return null;
+
+            // 保留原卡的升级状态
+            for (int i = 0; i < original.CurrentUpgradeLevel; i++)
+            {
+                replacement.UpgradeInternal();
+            }
+
+            // 就地替换：卡牌留在原来的牌堆里
+            await CardCmd.Transform(original, replacement);
+            return replacement;
+        }
+
+        private static async Task<int> SwapAll(Player owner, Func<CardModel, bool> filter, Func<CardModel, Task<CardModel?>> swap)
+        {
+            if (owner == null) return 0;
 
             int count = 0;
-            foreach (CardModel card in targets)
+            foreach (PileType pileType in CombatPiles)
             {
-                if (await Transform(choiceContext, card)) count++;
+                // 先快照再变换，避免变换过程中改动牌堆导致遍历失效
+                List<CardModel> targets = pileType.GetPile(owner).Cards
+                    .Where(c => c != null && filter(c))
+                    .ToList();
+
+                foreach (CardModel card in targets)
+                {
+                    if (await swap(card) != null) count++;
+                }
             }
 
             return count;

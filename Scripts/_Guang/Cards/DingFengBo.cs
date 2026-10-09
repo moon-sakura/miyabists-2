@@ -62,10 +62,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             DynamicVars.Block.UpgradeValueBy(2);
         }
 
-        // ========== 待实现 ==========
-        // TODO: 被消耗时将1张随机非稀有牌加入你的手牌
-        // 需要挂接本卡被消耗的时机回调。
-
+        // 被消耗时将1张随机非稀有牌加入手牌
         protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
         {
             CardModel cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
@@ -73,7 +70,6 @@ namespace Miyabists2.Scripts._Guang.Cards
                                                                                select c, 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
             if (cardModel != null)
             {
-                //cardModel.SetToFreeThisTurn();
                 await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, base.Owner);
             }
         }

@@ -1,3 +1,5 @@
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -45,9 +47,15 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // TODO: 附加效果 - 本回合每使用1张攻击卡，伤害+1
-            // 需要在计算伤害前叠加 DynamicVars["DamagePerAttack"] 的值。
-            decimal damage = DynamicVars.Damage.BaseValue;
+            // 本回合已打出的攻击卡数量（本卡尚未结算完成，不计入）
+            int attacksThisTurn = CombatManager.Instance.History.CardPlaysFinished
+                .Count((CardPlayFinishedEntry e)
+                    => e.CardPlay.Card.Owner == base.Owner
+                    && e.CardPlay.Card.Type == CardType.Attack
+                    && e.HappenedThisTurn(base.CombatState));
+
+            decimal damage = DynamicVars.Damage.BaseValue
+                + attacksThisTurn * DynamicVars["DamagePerAttack"].IntValue;
 
             await DamageCmd.Attack(damage).FromCard(this, cardPlay)
                 .Targeting(cardPlay.Target)

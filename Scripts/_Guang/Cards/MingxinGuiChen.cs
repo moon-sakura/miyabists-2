@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Miyabists2.Scripts._Guang.Powers;
 using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
@@ -47,12 +48,11 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             // 失衡由 GuangCardBase.AfterDamageGiven 自动结算
 
-            // ========== 待实现 ==========
-            // TODO: 退出明心镜状态（具体实现待明心镜能力完成后接入）
+            // 退出明心镜状态（能力被移除时会把所有明心镜卡变回原卡）
+            if (Owner.Creature.HasPower<MingxinJingPower>())
+            {
+                await PowerCmd.Remove(Owner.Creature.GetPower<MingxinJingPower>());
+            }
         }
-
-        // ========== 待实现 ==========
-        // TODO: 青溟剑势归为0时自动加入手卡
-        // 由明心镜状态的能力负责监听青溟剑势变化并加入本卡。
     }
 }

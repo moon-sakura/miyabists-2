@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
@@ -36,9 +37,8 @@ namespace Miyabists2.Scripts._Guang.Cards
         {
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
-            // ========== 待实现 ==========
-            // TODO: 下一张攻击卡可以免费打出
-            // 需要一个"下一张攻击卡免费"的状态承载，待补充。
+            // 下一张攻击卡免费（FreeAttackPower）
+            await PowerCmd.Apply<FreeAttackPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
@@ -50,9 +50,10 @@ namespace Miyabists2.Scripts._Guang.Cards
         protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
         {
             // ========== 待实现 ==========
-            // TODO: 接下来 DynamicVars["TurnCount"] 个回合，每回合获得 DynamicVars.Energy 点能量
-            // 可参考"下回合生效"类能力（如 BlockNextTurnPower）做一个持续 N 回合的版本。
-            await Task.CompletedTask;
+            // TODO: 接下来 DynamicVars["TurnCount"] 个回合，每回合获得 DynamicVars.Energy 点能量。
+            // 原版只有 EnergyNextTurnPower（只作用于下 1 个回合，Amount 表示能量数），
+            // 无法表达"每回合 1 点、持续 3 回合"，需要一个自定义的持续型能力，待补充。
+            await PowerCmd.Apply<RadiancePower>(choiceContext, Owner.Creature, DynamicVars.Energy.BaseValue, Owner.Creature, this);
         }
     }
 }

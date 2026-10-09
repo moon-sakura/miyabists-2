@@ -1,4 +1,6 @@
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -17,7 +19,7 @@ namespace Miyabists2.Scripts._Guang.Powers
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
 
-        public override int DisplayAmount => Amount;
+        public override int DisplayAmount => Amount - 1;
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
 
@@ -40,8 +42,27 @@ namespace Miyabists2.Scripts._Guang.Powers
         public void SetFree() => isJianshiFree = true;
         public void ResetFree() => isJianshiFree = false;
 
-        // ========== 待实现 ==========
-        // TODO: 青溟剑势本身不带效果。
-        // 后续若要附带效果（例如每层增伤、达到阈值触发等），在此处补充对应回调即可。
+        // ========== 青溟剑势归 0 ==========
+        // 归 0 时若还处于明心镜状态，《明心镜·归尘》自动加入手卡。
+        // 剑势归 0 可能表现为「层数变成 0」也可能表现为「能力被移除」，两条路都接上。
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        {
+            if (power != this) return;
+            if (Amount > 1) return;
+
+            await NotifyJianshiReachedZero();
+        }
+
+        public override async Task AfterRemoved(Creature oldOwner)
+        {
+            await NotifyJianshiReachedZero();
+        }
+
+        private async Task NotifyJianshiReachedZero()
+        {
+            // 只在明心镜状态下才需要归尘；不在状态里说明归 0 与明心镜无关
+            if (!Owner.HasPower<MingxinJingPower>()) return;
+            await Owner.GetPower<MingxinJingPower>().AddGuiChenIfNeeded();
+        }
     }
 }

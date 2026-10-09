@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -39,14 +40,24 @@ namespace Miyabists2.Scripts._Guang.Cards
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
 
-            // ========== 待实现 ==========
-            // TODO: 随机取1张普通牌(Common)加入手牌
-            // 升级后加入的卡需要 AddKeyword(CardKeyword.Retain)
+            // 随机普通牌加入手牌
+            for (int i = 0; i < DynamicVars.Cards.IntValue; i++)
+            {
+                CardModel card = CardFactory.GetDistinctForCombat(Owner, from c in Owner.Character.CardPool.GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint)
+                                                                       where c.Rarity == CardRarity.Common
+                                                                       select c, 1, Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+                if (card == null) break;
+
+                // 升级后：加入的随机普通牌附加保留
+                if (IsUpgraded) card.AddKeyword(CardKeyword.Retain);
+
+                await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
+            }
         }
 
         protected override void OnUpgrade()
         {
-            // TODO: 升级后加入的随机普通牌添加保留（需要在生成时打标记）
+            // 升级效果（加入的普通牌附加保留）在 OnPlay 里根据 IsUpgraded 处理，此处无需改动数值
         }
     }
 }

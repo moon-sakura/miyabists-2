@@ -39,8 +39,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<QingmingJianshiPower>(),
-            // TODO: 明心镜能力写好后取消注释
-            // HoverTipFactory.FromPower<MingxinJingPower>(),
+            HoverTipFactory.FromPower<MingxinJingPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -63,15 +62,18 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             // 附加：拥有6点青溟剑势则进入明心镜状态
             int jianshi = Owner.Creature.GetPowerAmount<QingmingJianshiPower>();
-            if (jianshi >= DynamicVars["MingxinThreshold"].IntValue)
+            if (jianshi >= DynamicVars["MingxinThreshold"].IntValue
+                && !Owner.Creature.HasPower<MingxinJingPower>())
             {
-                // 进入明心镜状态：把手牌中的原卡变换为对应的明心镜卡
-                await MingxinJingTransform.TransformAllInHand(choiceContext, Owner);
+                // 进入明心镜状态。变牌、消耗正面能力、扣生命上限、失衡易伤都由能力自己处理
+                await PowerCmd.Apply<MingxinJingPower>(choiceContext, Owner.Creature,
+                    1, Owner.Creature, this);
 
-                // ========== 待实现 ==========
-                // TODO: 回复所有能量
-                // TODO: 抽 DynamicVars["DrawCount"] 张牌
-                // TODO: 记录"已进入明心镜状态"（具体实现待明心镜能力完成后接入）
+                // 回复所有能量（把能量补满到本回合上限）
+                await PlayerCmd.SetEnergy(Owner.PlayerCombatState.MaxEnergy, Owner);
+
+                // 抽牌（明心镜状态下抽到的卡会自动变为明心镜卡）
+                await CardPileCmd.Draw(choiceContext, DynamicVars["DrawCount"].IntValue, Owner);
             }
         }
 
