@@ -54,6 +54,10 @@ namespace Miyabists2.Scripts.Cards
         // 暂留空待实现。
         public override decimal ModifyHpLostAfterOstyLate(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
+            if (target == null || cardSource == null) return amount;
+
+            if (Pile.Type != PileType.Hand) return amount; // 仅在手牌中生效
+
             if (target.IsAlive && cardSource.CanonicalKeywords.Contains(MiyabiKeywords.LieShuang) && cardSource.Owner == base.Owner)
             {
                 return 0m;

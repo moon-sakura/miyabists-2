@@ -1,19 +1,20 @@
-using STS2RitsuLib.Interop.AutoRegistration;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.DevConsole.ConsoleCommands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Runs.History;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using Miyabists2.Scripts.Service;
+using STS2RitsuLib.Interop.AutoRegistration;
 using static Godot.HttpRequest;
-using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.DevConsole.ConsoleCommands;
 
 namespace Miyabists2.Scripts.Cards
 {
@@ -68,7 +69,27 @@ namespace Miyabists2.Scripts.Cards
 
             if (!Owner.PlayerCombatState.Hand.Cards.Any(c => c is WuweiQiyue)) return;
 
-            await CreatureCmd.LoseMaxHp(choiceContext, target, amount, false);
+            if (amount < 0m)
+            {
+                throw new ArgumentException("amount must be non-negative. Use GainMaxHp for max HP gain.");
+            }
+
+            decimal newMaxHp = (decimal)target.MaxHp - amount;
+            MapPointHistoryEntry mapPointHistoryEntry = target.Player?.RunState.CurrentMapPointHistoryEntry;
+            if (mapPointHistoryEntry != null)
+            {
+                mapPointHistoryEntry.GetEntry(target.Player.NetId).MaxHpLost += (int)amount;
+            }
+
+            if(newMaxHp <= 0m)
+            {
+                await CreatureCmd.Kill(target);
+            }
+            else
+            {
+                await CreatureCmd.SetMaxHp(target, Math.Max(1.0m, newMaxHp));
+            }
+
 
 
         }
