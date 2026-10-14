@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -60,10 +61,10 @@ namespace Miyabists2.Scripts._Guang.Cards
         // 被消耗时对随机敌人造成伤害
         protected override async Task ExhaustEffect(PlayerChoiceContext choiceContext)
         {
-            await DamageCmd.Attack(DynamicVars["DamageOnExhaust"].IntValue)
-                .TargetingRandomOpponents(Owner.Creature.CombatState)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
+            var target = Owner.Creature.CombatState.Enemies.TakeRandom(1, Owner.RunState.Rng.CombatTargets);
+
+            await CreatureCmd.Damage(choiceContext, target, DynamicVars[""].BaseValue, ValueProp.Unpowered, Owner.Creature);
+
         }
     }
 }
