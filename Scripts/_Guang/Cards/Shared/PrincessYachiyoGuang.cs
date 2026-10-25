@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Miyabists2.Scripts._Guang.Cards
 {
-    [RegisterCard(typeof(YeshunGuangCardPool))]
+    //[RegisterCard(typeof(YeshunGuangCardPool))]
     internal class PrincessYachiyoGuang : PrincessYachiyo
     {
     }
