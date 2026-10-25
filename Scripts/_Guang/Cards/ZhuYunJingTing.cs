@@ -48,14 +48,6 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // 1. 进入明心镜状态。
-            //    变牌、消耗正面能力、扣生命上限、失衡易伤都由能力自己处理。
-            if (!Owner.Creature.HasPower<MingxinJingPower>())
-            {
-                await PowerCmd.Apply<MingxinJingPower>(choiceContext, Owner.Creature,
-                    1, Owner.Creature, this);
-            }
-
             // 2. 青溟剑势不足 6 点则补至 6 点（已经有更多点时不削减）
             int threshold = DynamicVars["MingxinThreshold"].IntValue;
             int jianshi = Owner.Creature.GetPowerAmount<QingmingJianshiPower>();
@@ -67,10 +59,19 @@ namespace Miyabists2.Scripts._Guang.Cards
             }
 
             // 3. 回复所有能量（把能量补满到本回合上限）
-            await PlayerCmd.SetEnergy(Owner.PlayerCombatState.MaxEnergy, Owner);
-
-            // 4. 抽牌（明心镜状态下抽到的卡会自动变为明心镜卡）
-            await CardPileCmd.Draw(choiceContext, DynamicVars["DrawCount"].IntValue, Owner);
+            //await PlayerCmd.SetEnergy(Owner.PlayerCombatState.MaxEnergy, Owner);
+            int recoverEnergy = Owner.PlayerCombatState.MaxEnergy - Owner.PlayerCombatState.Energy;
+            if (recoverEnergy > 0)
+            {
+                await PlayerCmd.GainEnergy(recoverEnergy, Owner);
+            }
+            // 1. 进入明心镜状态。
+            //    变牌、消耗正面能力、扣生命上限、失衡易伤都由能力自己处理。
+            if (!Owner.Creature.HasPower<MingxinJingPower>())
+            {
+                await PowerCmd.Apply<MingxinJingPower>(choiceContext, Owner.Creature,
+                    1, Owner.Creature, this);
+            }
 
             // 5. 升级后：额外将一张《斩妄开天》加入手卡
             if (IsUpgraded)
@@ -81,6 +82,10 @@ namespace Miyabists2.Scripts._Guang.Cards
                     await CardPileCmd.AddGeneratedCardToCombat(kaiTian, PileType.Hand, Owner);
                 }
             }
+
+            // 4. 抽牌（明心镜状态下抽到的卡会自动变为明心镜卡）
+            await CardPileCmd.Draw(choiceContext, DynamicVars["DrawCount"].IntValue, Owner);
+
         }
 
         protected override void OnUpgrade()

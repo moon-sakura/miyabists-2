@@ -66,15 +66,19 @@ namespace Miyabists2.Scripts._Guang.Cards
             if (jianshi >= DynamicVars["MingxinThreshold"].IntValue
                 && !Owner.Creature.HasPower<MingxinJingPower>())
             {
-                // 进入明心镜状态。变牌、消耗正面能力、扣生命上限、失衡易伤都由能力自己处理
-                await PowerCmd.Apply<MingxinJingPower>(choiceContext, Owner.Creature,
-                    1, Owner.Creature, this);
-
                 // 回复所有能量（把能量补满到本回合上限）
-                await PlayerCmd.SetEnergy(Owner.PlayerCombatState.MaxEnergy, Owner);
+                int recoverEnergy = Owner.PlayerCombatState.MaxEnergy - Owner.PlayerCombatState.Energy;
+                if(recoverEnergy > 0){
+                    await PlayerCmd.GainEnergy(recoverEnergy, Owner);
+                }
+                //await PlayerCmd.SetEnergy(Owner.PlayerCombatState.MaxEnergy, Owner);
 
                 // 抽牌（明心镜状态下抽到的卡会自动变为明心镜卡）
                 await CardPileCmd.Draw(choiceContext, DynamicVars["DrawCount"].IntValue, Owner);
+
+                // 进入明心镜状态。变牌、消耗正面能力、扣生命上限、失衡易伤都由能力自己处理
+                await PowerCmd.Apply<MingxinJingPower>(choiceContext, Owner.Creature,
+                    1, Owner.Creature, this);
             }
         }
 

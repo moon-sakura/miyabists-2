@@ -26,6 +26,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             PileType.Hand,
             PileType.Discard,
             PileType.Exhaust,
+            PileType.Play,
         ];
 
         /// <summary>原卡类型 -> 明心镜卡工厂</summary>

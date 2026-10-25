@@ -70,7 +70,12 @@ namespace Miyabists2.Scripts._Guang.Cards
             int jianshi = Owner.Creature.GetPowerAmount<QingmingJianshiPower>();
             if (jianshi > DynamicVars["JianshiThreshold"].IntValue)
             {
-                await PlayerCmd.SetEnergy(Owner.PlayerCombatState.MaxEnergy, Owner);
+                int recoverEnergy = Owner.PlayerCombatState.MaxEnergy - Owner.PlayerCombatState.Energy;
+                if (recoverEnergy > 0)
+                {
+                    await PlayerCmd.GainEnergy(recoverEnergy, Owner);
+                }
+                //await PlayerCmd.SetEnergy(Owner.PlayerCombatState.MaxEnergy, Owner);
                 await PowerCmd.Apply<MingxinJingPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
             }
         }
