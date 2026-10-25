@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using Miyabists2.Scripts._Guang.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,9 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Guang.Cards
 {
     /// <summary>
-    /// 照破无明 - 稀有能力的卡
-    /// 效果暂定（与明心镜相关，待明心镜能力完成后补全）。
-    /// 升级：固有。
+    /// 照破无明 - 稀有能力卡
+    /// 获得1层无明，将一张自身的复制加入抽牌堆，将一张遗忘加入弃牌堆，抽1张卡。
+    /// 升级：保留。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
     internal class ZhaoPoWuMing : GuangCardBase
@@ -26,15 +27,37 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         //protected override string ArtPath => "res://images/_Guang/cards/zhaoPoWuMing.png";
 
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<WuMingPower>(),
+        ];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // ========== 待实现 ==========
-            // TODO: 效果暂定，待明心镜相关设计确定后补全。
+            // 获得1层无明
+            await PowerCmd.Apply<WuMingPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+
+            // 将一张自身的复制加入抽牌堆
+            CardModel copy = this.CreateClone();
+            if (copy != null)
+            {
+                await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Draw, Owner, CardPilePosition.Random);
+            }
+
+            // 将一张遗忘加入弃牌堆
+            CardModel forget = Owner.Creature.CombatState?.CreateCard<YiWang>(Owner);
+            if (forget != null)
+            {
+                await CardPileCmd.AddGeneratedCardToCombat(forget, PileType.Discard, Owner);
+            }
+
+            // 抽1张卡
+            await CardPileCmd.Draw(choiceContext, 1, Owner);
         }
 
         protected override void OnUpgrade()
         {
-            AddKeyword(CardKeyword.Innate); // 升级后固有
+            AddKeyword(CardKeyword.Retain); // 升级后保留
         }
     }
 }

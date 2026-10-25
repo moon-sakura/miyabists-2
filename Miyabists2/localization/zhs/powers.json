@@ -372,8 +372,12 @@
 	"QINGMING_JIANSHI_POWER.smartDescription": "用于发动[gold]明心镜[/gold]卡牌上的强化效果，当前[blue]{Amount}[/blue]点",
 
 	"SU_YING_JING_HONG_POWER.title": "溯影惊鸿",
-	"SU_YING_JING_HONG_POWER.description": "每次使用[gold]伙伴[/gold]卡时，获得[gold]青溟剑势[/gold]",
-	"SU_YING_JING_HONG_POWER.smartDescription": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{Amount}[/blue]点[gold]青溟剑势[/gold]",
+	"SU_YING_JING_HONG_POWER.description": "每次使用[gold]伙伴[/gold]卡时，获得[gold]青溟剑势[/gold]；被移除时获得能量",
+	"SU_YING_JING_HONG_POWER.smartDescription": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{Amount}[/blue]点[gold]青溟剑势[/gold]；被移除时获得{Energy:energyIcons()}",
+
+	"WU_MING_POWER.title": "无明",
+	"WU_MING_POWER.description": "被移除时，消耗所有诅咒卡，每消耗1张为所有敌人附加10%失衡易伤，然后每层对所有敌人造成8点伤害",
+	"WU_MING_POWER.smartDescription": "被移除时，消耗所有[gold]诅咒[/gold]卡，每消耗1张为所有敌人附加[blue]10%[/blue][gold]失衡易伤[/gold]，然后每层对所有敌人造成[blue]8[/blue]点伤害（当前[blue]{Amount}[/blue]层）",
 
 	"MINGXIN_JING_POWER.title": "明心镜",
 	"MINGXIN_JING_POWER.description": "进入明心镜状态：消耗所有正面能力（支援点数、青溟剑势除外），每消耗1种正面能力为所有敌人附加10%失衡易伤，所有卡牌变为明心镜卡。状态结束后变回原卡。",

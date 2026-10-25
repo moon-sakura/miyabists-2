@@ -795,10 +795,13 @@
 	"MIYABISTS2_CARD_ZHAN_XIE_SUI.description": "获得[blue]{JianshiGain:diff()}[/blue]点[gold]青溟剑势[/gold]，消耗1张手卡，本回合下一张[gold]攻击卡[/gold]额外打出1次\\n被[gold]消耗[/gold]时，获得{UnstoppableOnExhaust:diff()}层[gold]势不可挡[/gold]",
 
 	"MIYABISTS2_CARD_ZHAO_PO_WU_MING.title": "照破无明",
-	"MIYABISTS2_CARD_ZHAO_PO_WU_MING.description": "效果暂定。",
+	"MIYABISTS2_CARD_ZHAO_PO_WU_MING.description": "获得1层[gold]无明[/gold]，将一张自身的复制加入抽牌堆，将一张[gold]遗忘[/gold]加入弃牌堆，抽1张牌",
+
+	"MIYABISTS2_CARD_YI_WANG.title": "遗忘",
+	"MIYABISTS2_CARD_YI_WANG.description": "在手卡中时必须优先打出\\n选择1张手卡[gold]消耗[/gold]",
 
 	"MIYABISTS2_CARD_SU_YING_JING_HONG.title": "溯影惊鸿",
-	"MIYABISTS2_CARD_SU_YING_JING_HONG.description": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{JianshiPerPartner:diff()}[/blue]点[gold]青溟剑势[/gold]",
+	"MIYABISTS2_CARD_SU_YING_JING_HONG.description": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{JianshiPerPartner:diff()}[/blue]点[gold]青溟剑势[/gold]\\n能力被[gold]移除[/gold]时，获得{Energy:energyIcons()}",
 
 
 	// ====== 叶瞬光明心镜卡牌 ======

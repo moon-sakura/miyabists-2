@@ -30,6 +30,7 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("JianshiPerPartner", 1),
+            new EnergyVar(3),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
