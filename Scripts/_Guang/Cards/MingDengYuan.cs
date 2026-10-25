@@ -20,13 +20,13 @@ namespace Miyabists2.Scripts._Guang.Cards
     [RegisterCard(typeof(YeshunGuangCardPool))]
     internal class MingDengYuan : GuangCardBase
     {
-        public MingDengYuan() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+        public MingDengYuan() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
         {
         }
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
-            HoverTipFactory.FromPower<MingDengYuanPower>(),
+            //HoverTipFactory.FromPower<MingDengYuanPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

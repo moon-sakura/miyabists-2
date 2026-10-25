@@ -36,7 +36,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             // 消耗堆中每种卡牌各取一张（排除《明心境·策应》自身）
             CardPile exhaustPile = PileType.Exhaust.GetPile(Owner);
             List<CardModel> lightCards = exhaustPile.Cards
-                .Where(c => c.GetType() != typeof(MingxinCeYing) && !c.CanonicalKeywords.Contains(CardKeyword.Unplayable) && !c.CanonicalKeywords.Contains(MiyabiKeywords.EndSkill))
+                .Where(c => c.GetType() != typeof(MingxinCeYing) && !c.CanonicalKeywords.Contains(CardKeyword.Unplayable) && !c.CanonicalKeywords.Contains(MiyabiKeywords.EndSkill) && c.Type != CardType.Curse)
                 .GroupBy(c => c.GetType())
                 .Select(g => g.First())
                 .ToList();

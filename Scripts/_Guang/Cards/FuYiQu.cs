@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using Miyabists2.Scripts.Powers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,11 @@ namespace Miyabists2.Scripts._Guang.Cards
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Afterimage", 1),
             new CardsVar(1),
+        ];
+
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
+        [
+            HoverTipFactory.FromPower<BlurPower>(),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>

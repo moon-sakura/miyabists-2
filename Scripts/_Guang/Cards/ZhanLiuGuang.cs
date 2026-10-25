@@ -42,6 +42,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<DazePower>(),
             HoverTipFactory.FromPower<BreakPower>(),
             HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromPower<QingmingJianshiPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

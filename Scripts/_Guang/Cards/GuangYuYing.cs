@@ -32,7 +32,7 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
-            HoverTipFactory.FromPower<GuangYuYingPower>(),
+            //HoverTipFactory.FromPower<GuangYuYingPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -38,6 +38,8 @@ namespace Miyabists2.Scripts._Guang.Cards
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<QingmingJianshiPower>(),
+            //HoverTipFactory.FromPower<OneTwoPunchPower>(),
+            HoverTipFactory.FromPower<JuggernautPower>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
