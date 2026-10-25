@@ -35,7 +35,7 @@ namespace Miyabists2.Scripts._Guang.Relics
         public override RelicRarity Rarity => RelicRarity.Starter;
 
         // TODO: 替换为青溟剑匣专属遗物图标（images/_Guang/relics/qingmingJianxia.png）
-        public override string PackedIconPath => "res://images/relics/swordNotail200.png";
+        public override string PackedIconPath => "res://images/_Guang/powers/mingxinJing.png";
         protected override string PackedIconOutlinePath => PackedIconPath;
         protected override string BigIconPath => PackedIconPath;
 

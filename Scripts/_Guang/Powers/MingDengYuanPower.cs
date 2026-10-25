@@ -30,7 +30,7 @@ namespace Miyabists2.Scripts._Guang.Powers
 
         public override Color AmountLabelColor => PowerModel._normalAmountLabelColor;
 
-        public string BigIconPath => "res://images/_Guang/powers/mingDengYuan.png";
+        public string BigIconPath => "res://images/_Guang/powers/mingDengyuan.png";
         public string BigBetaIconPath => BigIconPath;
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
