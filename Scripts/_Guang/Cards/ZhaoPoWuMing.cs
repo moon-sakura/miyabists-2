@@ -45,11 +45,11 @@ namespace Miyabists2.Scripts._Guang.Cards
             }
 
             // 将一张遗忘加入弃牌堆
-            CardModel forget = Owner.Creature.CombatState?.CreateCard<YiWang>(Owner);
-            if (forget != null)
-            {
-                await CardPileCmd.AddGeneratedCardToCombat(forget, PileType.Discard, Owner);
-            }
+            //CardModel forget = Owner.Creature.CombatState?.CreateCard<YiWang>(Owner);
+            //if (forget != null)
+            //{
+            await CardPileCmd.AddToCombatAndPreview<YiWang>(Owner.Creature, PileType.Discard, 1, Owner);
+            //}
 
             // 抽1张卡
             await CardPileCmd.Draw(choiceContext, 1, Owner);

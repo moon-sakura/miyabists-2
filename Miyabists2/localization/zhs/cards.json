@@ -838,6 +838,27 @@
 	"MIYABISTS2_CARD_MINGXIN_GUI_CHEN.title": "明心镜·归尘",
 	"MIYABISTS2_CARD_MINGXIN_GUI_CHEN.description": "对所有敌人造成{HitCount:diff()}次{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n退出[gold]明心镜[/gold]状态",
 
+	"MIYABISTS2_CARD_MING_DENG_YUAN.title": "明灯愿",
+	"MIYABISTS2_CARD_MING_DENG_YUAN.description": "能力被[gold]移除[/gold]时，将一张0费的[gold]斩妄开天[/gold]加入手卡",
+
+	"MIYABISTS2_CARD_GONG_TA_CHEN.title": "共黯尘",
+	"MIYABISTS2_CARD_GONG_TA_CHEN.description": "消耗所有手卡，将对应数量的[gold]遗忘[/gold]加入手卡\\n若[gold]青溟剑势[/gold]大于[blue]{JianshiThreshold:diff()}[/blue]点，恢复所有能量并进入[gold]明心镜[/gold]状态\\n被[gold]消耗[/gold]时，获得[blue]{DarkEmbraceGain:diff()}[/blue]层[gold]黑暗之拥[/gold]",
+
+	"MIYABISTS2_CARD_GUANG_YU_YING.title": "光与影",
+	"MIYABISTS2_CARD_GUANG_YU_YING.description": "造成伤害时获得等量的[gold]格挡[/gold]\\n能力被[gold]移除[/gold]时，对随机敌人造成累计获得格挡的伤害\\n[gold]虚无[/gold]",
+
+	"MIYABISTS2_CARD_JIAN_KE_XING.title": "剑客行",
+	"MIYABISTS2_CARD_JIAN_KE_XING.description": "对敌人造成{Damage:diff()}点伤害，本回合每使用过一张卡，造成伤害+[blue]{DamagePerCard:diff()}[/blue]\\n造成等量[gold]失衡值[/gold]",
+
+	"MIYABISTS2_CARD_YAN_XI.title": "燕袭",
+	"MIYABISTS2_CARD_YAN_XI.description": "对敌人造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n获得[blue]{MonologueGain:diff()}[/blue]层[gold]独白[/gold]",
+
+	"MIYABISTS2_CARD_RU_YING_JI_XING.title": "如影疾行",
+	"MIYABISTS2_CARD_RU_YING_JI_XING.description": "对敌人造成{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n如果敌人是[gold]攻击意图[/gold]，获得[blue]{SlipperyGain:diff()}[/blue]层[gold]滑溜[/gold]",
+
+	"MIYABISTS2_CARD_XIAO_YAO_YUN_ZONG.title": "逍遥云踪",
+	"MIYABISTS2_CARD_XIAO_YAO_YUN_ZONG.description": "获得{Block:diff()}点格挡\\n获得[blue]{ReboundGain:diff()}[/blue]层[gold]弹回[/gold]",
+
 
 
 
