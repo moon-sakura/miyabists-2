@@ -39,7 +39,8 @@ namespace Miyabists2.Scripts._Guang.Cards
             Register<FenShuiXing, MingxinFenShuiXing>();
             Register<FuYaoShi, MingxinFuYaoShi>();
             Register<ZhanLiuGuang, MingxinZhanLiuGuang>();
-            Register<ZhiGe, MingxinBaoYi>();
+            Register<BaoYi, MingxinBaoYi>();
+            Register<ZhaoYing, MingxinGuiChen>();
             Register<CeYing, MingxinCeYing>();
             Register<FuYiQu, MingxinFuYiQu>();
             Register<FeiGuang, MingxinFeiGuang>();
@@ -116,7 +117,37 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             // 就地替换：卡牌留在原来的牌堆里
             await CardCmd.Transform(original, replacement);
+
+            // 《明心镜·归尘》由照影变化而来，变化完成后直接加入手卡
+            if (replacement is MingxinGuiChen)
+            {
+                await PlaceGuiChenInHand(owner, replacement);
+            }
+
             return replacement;
+        }
+
+        /// <summary>
+        /// 把《明心镜·归尘》放进手卡：手卡有空位就加入手卡，手卡满了则放到抽卡堆顶部。
+        /// </summary>
+        public static async Task PlaceGuiChenInHand(Player owner, CardModel guiChen)
+        {
+            if (owner == null || guiChen == null) return;
+
+            CardPile hand = PileType.Hand.GetPile(owner);
+            if (guiChen.Pile == hand) return;
+
+            if (hand.Cards.Count < CardPile.MaxCardsInHand)
+            {
+                await CardPileCmd.Add(guiChen, hand);
+                return;
+            }
+
+            CardPile draw = PileType.Draw.GetPile(owner);
+            if (guiChen.Pile != draw)
+            {
+                await CardPileCmd.Add(guiChen, draw, CardPilePosition.Top);
+            }
         }
 
         private static async Task<int> SwapAll(Player owner, Func<CardModel, bool> filter, Func<CardModel, Task<CardModel?>> swap)

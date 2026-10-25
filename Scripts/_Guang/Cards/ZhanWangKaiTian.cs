@@ -56,8 +56,8 @@ namespace Miyabists2.Scripts._Guang.Cards
                 await PowerCmd.Remove(Owner.Creature.GetPower<MingxinJingPower>());
             }
 
-            // 永久获得最大生命值（战斗中提升，战斗结束后依然保留）
-            await CreatureCmd.GainMaxHp(Owner.Creature, DynamicVars["MaxHpGain"].IntValue);
+            // 永久获得最大生命值（暂时关闭，测试后再决定是否加回来）
+            // await CreatureCmd.GainMaxHp(Owner.Creature, DynamicVars["MaxHpGain"].IntValue);
         }
 
         protected override void OnUpgrade()

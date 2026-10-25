@@ -738,10 +738,10 @@
 	"MIYABISTS2_CARD_ZHAO_YING.description": "消耗1张手卡，获得[blue]{JianshiGain:diff()}[/blue]点[gold]青溟剑势[/gold]\\n拥有[blue]{MingxinThreshold:diff()}[/blue]点[gold]青溟剑势[/gold]时，进入[gold]明心镜[/gold]状态，回复所有能量，抽{DrawCount:diff()}张牌",
 
 	"MIYABISTS2_CARD_ZHU_YUN_JING_TING.title": "逐云惊霆",
-	"MIYABISTS2_CARD_ZHU_YUN_JING_TING.description": "进入[gold]明心镜[/gold]状态\\n若[gold]青溟剑势[/gold]不足[blue]{MingxinThreshold:diff()}[/blue]点，则补至[blue]{MingxinThreshold:diff()}[/blue]点\\n回复所有能量，抽{DrawCount:diff()}张牌\\n（升级后额外将一张[gold]斩妄开天[/gold]加入手卡）",
+	"MIYABISTS2_CARD_ZHU_YUN_JING_TING.description": "进入[gold]明心镜[/gold]状态\\n若[gold]青溟剑势[/gold]不足[blue]{MingxinThreshold:diff()}[/blue]点，则补至[blue]{MingxinThreshold:diff()}[/blue]点\\n回复所有能量，抽{DrawCount:diff()}张牌{IfUpgraded:show:\\n将一张[gold]斩妄开天[/gold]加入手卡|}",
 
 	"MIYABISTS2_CARD_ZHAN_WANG_KAI_TIAN.title": "斩妄开天",
-	"MIYABISTS2_CARD_ZHAN_WANG_KAI_TIAN.description": "对所有敌人造成{Damage:diff()}点伤害\\n退出[gold]明心镜[/gold]状态，永久获得{MaxHpGain:diff()}点最大生命值",
+	"MIYABISTS2_CARD_ZHAN_WANG_KAI_TIAN.description": "对所有敌人造成{Damage:diff()}点伤害\\n退出[gold]明心镜[/gold]状态",
 
 	"MIYABISTS2_CARD_YIN_CANG_LAN.title": "引沧澜",
 	"MIYABISTS2_CARD_YIN_CANG_LAN.description": "造成{Damage:diff()}点伤害\\n将{Cards:diff()}张随机普通牌加入你的手卡",
@@ -779,8 +779,11 @@
 	"MIYABISTS2_CARD_DING_FENG_BO.title": "定风波",
 	"MIYABISTS2_CARD_DING_FENG_BO.description": "造成{Damage:diff()}点伤害，获得{Block:diff()}点格挡，获得[blue]{JianshiGain:diff()}[/blue]点[gold]青溟剑势[/gold]\\n被[gold]消耗[/gold]时，将1张随机非稀有牌加入你的手卡",
 
+	"MIYABISTS2_CARD_BAO_YI.title": "抱一",
+	"MIYABISTS2_CARD_BAO_YI.description": "抽{Cards:diff()}张牌，若抽到的是[gold]伙伴[/gold]卡，获得[blue]{JianshiGain:diff()}[/blue]点[gold]青溟剑势[/gold]\\n被[gold]消耗[/gold]时，选择1张被[gold]消耗[/gold]的卡（[gold]终结技[/gold]除外）加入手卡，本回合免费使用",
+
 	"MIYABISTS2_CARD_FEI_GUANG.title": "飞光",
-	"MIYABISTS2_CARD_FEI_GUANG.description": "消耗所有手卡，每消耗1张，获得[blue]{JianshiPerCard:diff()}[/blue]点[gold]青溟剑势[/gold]",
+	"MIYABISTS2_CARD_FEI_GUANG.description": "消耗所有手卡，每消耗1张，获得[blue]{JianshiPerCard:diff()}[/blue]点[gold]青溟剑势[/gold]\\n若拥有{MingxinThreshold:diff()}点[gold]青溟剑势[/gold]，将消耗的卡各复制一份加入手卡，然后进入[gold]明心镜[/gold]状态",
 
 	"MIYABISTS2_CARD_FU_YI_QU.title": "拂衣去",
 	"MIYABISTS2_CARD_FU_YI_QU.description": "获得{Afterimage:diff()}层[gold]残影[/gold]，抽{Cards:diff()}张牌",
@@ -831,6 +834,13 @@
 
 	"MIYABISTS2_CARD_MINGXIN_GUI_CHEN.title": "明心镜·归尘",
 	"MIYABISTS2_CARD_MINGXIN_GUI_CHEN.description": "对所有敌人造成{HitCount:diff()}次{Damage:diff()}点伤害，[gold]失衡值[/gold]{DAZE_POWER:diff()}\\n退出[gold]明心镜[/gold]状态",
+
+
+
+
+
+
+
 
 	"MIYABISTS2_CARD_HOLLOW_EROSION.title": "空洞侵蚀",
 	"MIYABISTS2_CARD_HOLLOW_EROSION.description": "每次抽到时从随机3种侵蚀中进行抉择",

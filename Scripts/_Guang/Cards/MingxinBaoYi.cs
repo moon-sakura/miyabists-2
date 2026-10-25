@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Guang.Cards
 {
     /// <summary>
-    /// 明心境·抱一（原卡：止戈）
+    /// 明心境·抱一（原卡：抱一）
     /// 获得9点格挡，获得1层倒映（reflect）。
     /// 升级：14点格挡。
     /// </summary>
