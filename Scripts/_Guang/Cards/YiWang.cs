@@ -58,7 +58,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         /// </summary>
         public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
         {
-            if (card == this) return true;
+            if (card is YiWang) return true;
             if (autoPlayType != AutoPlayType.None) return true;
             if (Pile?.Type != PileType.Hand) return true;
             return card?.Pile?.Type != PileType.Hand;
