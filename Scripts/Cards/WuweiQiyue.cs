@@ -1,12 +1,15 @@
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using System;
@@ -41,23 +44,47 @@ namespace Miyabists2.Scripts.Cards
 
         public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
         {
-            if (card != this || isCopiedThisTurn) return;
+            //if (card != this || isCopiedThisTurn)
+            //{
+            //    if(isCopiedThisTurn)
+            //    {
+            //        isCopiedThisTurn = false; // 重置复制标记
+            //    }
+            //    return;
+            //}
 
-            isCopiedThisTurn = true;
+                
+            //    isCopiedThisTurn = true;
+
+            //// 向抽卡堆中加入一张本卡的复制
+            //CardModel copy = this.CreateClone();
+            //if (copy != null)
+            //{
+            //    ((WuweiQiyue)copy).isCopiedThisTurn = true; // 标记复制的卡也已经复制过，避免无限复制
+            //    await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Draw, Owner, CardPilePosition.Random);
+            //}
+        }
+
+        public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+        {
+            if (base.Pile?.Type != PileType.Hand) return;
+
 
             // 向抽卡堆中加入一张本卡的复制
             CardModel copy = this.CreateClone();
             if (copy != null)
             {
-                ((WuweiQiyue)copy).isCopiedThisTurn = true; // 标记复制的卡也已经复制过，避免无限复制
-                await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Draw, Owner, CardPilePosition.Random);
+                //((WuweiQiyue)copy).isCopiedThisTurn = true; // 标记复制的卡也已经复制过，避免无限复制
+                CardPileAddResult[] statusCards = new CardPileAddResult[1];
+                statusCards[0] = await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Draw, Owner, CardPilePosition.Random);
+                //await CardPileCmd.AddToCombatAndPreview(copy, PileType.Draw, Owner, CardPilePosition.Random);
+                if (LocalContext.IsMe(Owner))
+                {
+                    CardPreviewStyle style = ((statusCards.Length <= 5) ? CardPreviewStyle.HorizontalLayout : CardPreviewStyle.MessyLayout);
+                    CardCmd.PreviewCardPileAdd(statusCards, 1.2f, style);
+                    await Cmd.Wait(1f);
+                }
             }
-        }
-
-        public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
-        {
-            isCopiedThisTurn = false; // 重置复制标记
-            return base.BeforeSideTurnEnd(choiceContext, side, participants);
         }
 
         // ========== 待实现 ==========

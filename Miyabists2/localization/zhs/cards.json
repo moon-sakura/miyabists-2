@@ -258,7 +258,7 @@
 	"MIYABISTS2_CARD_TRAINING_TODAY.selectionScreenPrompt": "选择修行",
 
 	"MIYABISTS2_CARD_WUWEI_QIYUE.title": "无尾契约",
-    "MIYABISTS2_CARD_WUWEI_QIYUE.description": "抽到这张卡时，向抽卡堆中加入一张这张卡的复制。\\n这张卡在手卡时，[gold]烈霜[/gold]卡牌造成的伤害变为减少等量最大生命值。",
+    "MIYABISTS2_CARD_WUWEI_QIYUE.description": "这张卡在手卡时，[gold]烈霜[/gold]卡牌造成的伤害变为减少等量最大生命值。\\n回合结束时如果这张卡在手卡中，向抽卡堆中加入一张这张卡的复制。",
 
 	"MIYABISTS2_CARD_FANGFEI_ZHIYAO.title": "芳菲之邀",
     "MIYABISTS2_CARD_FANGFEI_ZHIYAO.description": "每回合结束时对所有敌人造成{Damage:diff}点伤害，并施加1层[gold]流明[/gold]。",
