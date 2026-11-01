@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -36,16 +37,27 @@ namespace Miyabists2.Scripts.Cards
             CardKeyword.Unplayable,
         ];
 
+        public bool isCopiedThisTurn = false; // 标记本回合是否已经复制过
+
         public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
         {
-            if (card != this) return;
+            if (card != this || isCopiedThisTurn) return;
+
+            isCopiedThisTurn = true;
 
             // 向抽卡堆中加入一张本卡的复制
             CardModel copy = this.CreateClone();
             if (copy != null)
             {
+                ((WuweiQiyue)copy).isCopiedThisTurn = true; // 标记复制的卡也已经复制过，避免无限复制
                 await CardPileCmd.AddGeneratedCardToCombat(copy, PileType.Draw, Owner, CardPilePosition.Random);
             }
+        }
+
+        public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+        {
+            isCopiedThisTurn = false; // 重置复制标记
+            return base.BeforeSideTurnEnd(choiceContext, side, participants);
         }
 
         // ========== 待实现 ==========
