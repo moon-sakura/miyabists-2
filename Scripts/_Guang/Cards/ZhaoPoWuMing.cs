@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts._Guang.Powers;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,10 @@ namespace Miyabists2.Scripts._Guang.Cards
         }
 
         //protected override string ArtPath => "res://images/_Guang/cards/zhaoPoWuMing.png";
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [
+            new CardsVar(1),
+        ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
@@ -53,11 +58,12 @@ namespace Miyabists2.Scripts._Guang.Cards
             //}
 
             // 抽1张卡
-            await CardPileCmd.Draw(choiceContext, 1, Owner);
+            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue ,Owner);
         }
 
         protected override void OnUpgrade()
         {
+            DynamicVars.Cards.UpgradeValueBy(1);
             AddKeyword(CardKeyword.Retain); // 升级后保留
         }
     }

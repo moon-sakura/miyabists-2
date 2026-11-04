@@ -33,7 +33,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(6, ValueProp.Move),
+            new DamageVar(8, ValueProp.Move),
             new DynamicVar("DamagePerCard", 1),
         ];
 
@@ -66,6 +66,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(2); // 升级后 8 点伤害
+            DynamicVars["DamagePerCard"].UpgradeValueBy(1); 
         }
 
         /// <summary>

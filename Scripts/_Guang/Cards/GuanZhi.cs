@@ -35,13 +35,14 @@ namespace Miyabists2.Scripts._Guang.Cards
         {
             // 指定一张卡进入明心镜状态
             // 未升级：只能选手中已有可变换的卡；升级后：也可以从抽牌堆 / 弃牌堆里选
-            PileType[] piles = IsUpgraded
-                ? [PileType.Hand, PileType.Draw, PileType.Discard]
-                : [PileType.Hand];
+            PileType[] piles = [PileType.Hand, PileType.Draw, PileType.Discard];
+                //IsUpgraded
+                //? [PileType.Hand, PileType.Draw, PileType.Discard]
+                //: [PileType.Hand];
 
             List<CardModel> options = piles
                 .SelectMany(p => p.GetPile(Owner).Cards)
-                .Where(MingxinJingTransform.CanTransform)
+                //.Where(MingxinJingTransform.CanTransform)
                 .ToList();
 
             if (options.Count == 0) return;
@@ -51,13 +52,27 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             bool wasInHand = PileType.Hand.GetPile(Owner).Cards.Contains(chosen);
 
-            CardModel transformed = await MingxinJingTransform.Transform(chosen);
-            if (transformed == null) return;
+            var cardUpgrade = chosen;
+
+            if (MingxinJingTransform.CanTransform(chosen))
+            {
+                CardModel transformed = await MingxinJingTransform.Transform(chosen);
+                if (transformed == null) return;
+                cardUpgrade = transformed;
+            }
+            else
+            {
+                if(chosen.IsUpgradable)
+                {
+                    CardCmd.Upgrade(chosen,MegaCrit.Sts2.Core.Nodes.CommonUi.CardPreviewStyle.HorizontalLayout);
+                }
+                cardUpgrade = chosen;
+            }
 
             // 升级后：原本不在手卡的卡，变换后加入手卡
             if (IsUpgraded && !wasInHand)
             {
-                await CardPileCmd.Add(transformed, PileType.Hand.GetPile(Owner));
+                await CardPileCmd.Add(cardUpgrade, PileType.Hand.GetPile(Owner));
             }
         }
 

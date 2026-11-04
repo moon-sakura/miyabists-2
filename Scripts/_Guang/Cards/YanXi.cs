@@ -29,7 +29,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(4, ValueProp.Move),
+            new DamageVar(6, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar("MonologueGain", 1),
         ];
