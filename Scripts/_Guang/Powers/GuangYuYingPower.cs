@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Afflictions;
 using MegaCrit.Sts2.Core.ValueProps;
 using Miyabists2.Scripts.Powers;
 using System;
@@ -51,7 +52,13 @@ namespace Miyabists2.Scripts._Guang.Powers
             decimal amount = result.TotalDamage;
             decimal gained = await CreatureCmd.GainBlock(Owner, amount, ValueProp.Unpowered, null, false);
 
-            DynamicVars["BlockGained"].BaseValue += gained;
+            //DynamicVars["BlockGained"].BaseValue += gained;
+        }
+
+        public override Task AfterBlockGained(Creature creature, decimal amount, ValueProp props, CardModel? cardSource)
+        {
+            DynamicVars["BlockGained"].BaseValue += amount;
+            return base.AfterBlockGained(creature, amount, props, cardSource);
         }
 
         public override async Task AfterRemoved(Creature oldOwner)

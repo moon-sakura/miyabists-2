@@ -385,7 +385,7 @@
 
 	"GUANG_YU_YING_POWER.title": "光与影",
 	"GUANG_YU_YING_POWER.description": "造成伤害时获得等量的[gold]格挡[/gold]。被移除时，对随机敌人造成累计获得格挡的伤害。",
-	"GUANG_YU_YING_POWER.smartDescription": "造成伤害时获得等量的[gold]格挡[/gold]。被[gold]移除[/gold]时，对随机敌人造成累计获得格挡的伤害。",
+	"GUANG_YU_YING_POWER.smartDescription": "造成伤害时获得等量的[gold]格挡[/gold]。被[gold]移除[/gold]时，对随机敌人造成[blue]{BlockGained}[/blue]点伤害。",
 
 	"MINGXIN_JING_POWER.title": "明心镜",
 	"MINGXIN_JING_POWER.description": "进入明心镜状态：消耗所有[gold]正面能力[/gold]（[gold]支援点数[/gold]、[gold]青溟剑势[/gold]除外），每消耗1种正面能力为所有敌人附加10%[gold]失衡易伤[/gold]，部分卡牌变为明心镜卡。状态结束后变回原卡。",
