@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     [RegisterCard(typeof(YeshunGuangCardPool))]
     internal class CheJingLei : GuangCardBase, I2MingxinJing
     {
-        public CheJingLei() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
+        public CheJingLei() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
         {
         }
 
@@ -43,6 +43,8 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<DazePower>(),
             HoverTipFactory.FromPower<BreakPower>(),
             HoverTipFactory.FromPower<DazeVulnPower>(),
+            HoverTipFactory.FromCard<ShiGan>(),
+
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -54,6 +56,8 @@ namespace Miyabists2.Scripts._Guang.Cards
                 .TargetingRandomOpponents(Owner.Creature.CombatState)
                 .WithHitFx("vfx/vfx_attack_blunt")
                 .Execute(choiceContext);
+
+            await CardPileCmd.AddToCombatAndPreview<ShiGan>(Owner.Creature, PileType.Hand, 1, Owner);
 
             //foreach (Creature enemy in Owner.Creature.CombatState.HittableEnemies)
             //{

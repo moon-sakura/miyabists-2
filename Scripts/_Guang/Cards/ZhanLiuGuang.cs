@@ -32,9 +32,9 @@ namespace Miyabists2.Scripts._Guang.Cards
         //protected override string ArtPath => "res://images/_Guang/cards/zhanLiuGuang.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(4, ValueProp.Move),
-            new DynamicVar(DazeVarName, 1),
-            new DynamicVar("JianshiOnExhaust", 1),
+            new DamageVar(9, ValueProp.Move),
+            new DynamicVar(DazeVarName, 4),
+            new DynamicVar("JianshiOnExhaust", 2),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
@@ -43,10 +43,13 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<BreakPower>(),
             HoverTipFactory.FromPower<DazeVulnPower>(),
             HoverTipFactory.FromPower<QingmingJianshiPower>(),
+            HoverTipFactory.FromCard<ShiGan>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            await CardPileCmd.AddToCombatAndPreview<ShiGan>(Owner.Creature, PileType.Hand, 1, Owner);
+
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
                 .TargetingAllOpponents(Owner.Creature.CombatState)
                 .WithHitFx("vfx/vfx_attack_slash")
@@ -58,7 +61,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(2);
-            DynamicVars[DazeVarName].UpgradeValueBy(1);
+            DynamicVars[DazeVarName].UpgradeValueBy(3);
         }
 
         // 被消耗时获得青溟剑势

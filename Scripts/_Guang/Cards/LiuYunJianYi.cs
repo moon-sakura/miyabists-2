@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -33,7 +34,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         //protected override string ArtPath => "res://images/_Guang/cards/liuYunJianYi.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DamageVar(6, ValueProp.Move),
+            new DamageVar(4, ValueProp.Move),
             new DynamicVar(DazeVarName, 2),
             new DynamicVar("DamagePerAttack", 1),
         ];
@@ -47,17 +48,24 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            CardModel cardModel = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), context: choiceContext, player: base.Owner, filter: null, source: this)).FirstOrDefault();
+            if (cardModel != null)
+            {
+                await CardCmd.Exhaust(choiceContext, cardModel);
+            }
+
             // 本回合已打出的攻击卡数量（本卡尚未结算完成，不计入）
-            int attacksThisTurn = CombatManager.Instance.History.CardPlaysFinished
-                .Count((CardPlayFinishedEntry e)
-                    => e.CardPlay.Card.Owner == base.Owner
-                    && e.CardPlay.Card.Type == CardType.Attack
-                    && e.HappenedThisTurn(base.CombatState));
+            //int attacksThisTurn = CombatManager.Instance.History.CardPlaysFinished
+            //    .Count((CardPlayFinishedEntry e)
+            //        => e.CardPlay.Card.Owner == base.Owner
+            //        && e.CardPlay.Card.Type == CardType.Attack
+            //        && e.HappenedThisTurn(base.CombatState));
 
-            decimal damage = DynamicVars.Damage.BaseValue
-                + attacksThisTurn * DynamicVars["DamagePerAttack"].IntValue;
+            //decimal damage = DynamicVars.Damage.BaseValue
+            //    + attacksThisTurn * DynamicVars["DamagePerAttack"].IntValue;
 
-            await DamageCmd.Attack(damage).FromCard(this, cardPlay)
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
+                .WithHitCount(2)
                 .Targeting(cardPlay.Target)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
@@ -67,7 +75,7 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(3);
+            DynamicVars.Damage.UpgradeValueBy(2);
             DynamicVars[DazeVarName].UpgradeValueBy(1);
         }
     }

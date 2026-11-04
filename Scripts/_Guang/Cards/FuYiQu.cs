@@ -30,12 +30,13 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DynamicVar("Afterimage", 1),
-            new CardsVar(1),
+            new CardsVar(2),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<BlurPower>(),
+            HoverTipFactory.FromCard<YiWang>(),
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -50,6 +51,8 @@ namespace Miyabists2.Scripts._Guang.Cards
                 DynamicVars["Afterimage"].IntValue, Owner.Creature, this);
 
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
+
+            await CardPileCmd.AddToCombatAndPreview<YiWang>(Owner.Creature, PileType.Hand, 1, Owner);
         }
 
         protected override void OnUpgrade()

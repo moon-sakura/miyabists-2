@@ -28,19 +28,22 @@ namespace Miyabists2.Scripts._Guang.Cards
         //protected override string ArtPath => "res://images/_Guang/cards/fuYaoShi.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new DynamicVar("Vigor", 3),
+            new DynamicVar("Vigor", 4),
             new DynamicVar("TempStrength", 1),
-            new DynamicVar("VigorOnExhaust", 6),
+            new DynamicVar("VigorOnExhaust", 8),
         ];
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<VigorPower>(),
             HoverTipFactory.FromPower<StrengthPower>(),
+            HoverTipFactory.FromCard<YiWang>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            await CardPileCmd.AddToCombatAndPreview<YiWang>(Owner.Creature, PileType.Hand, 1, Owner);
+
             await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature,
                 DynamicVars["Vigor"].IntValue, Owner.Creature, this);
 
@@ -51,7 +54,7 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars["Vigor"].UpgradeValueBy(1);
+            DynamicVars["Vigor"].UpgradeValueBy(2);
             DynamicVars["TempStrength"].UpgradeValueBy(1);
         }
 

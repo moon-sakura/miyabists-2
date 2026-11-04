@@ -23,7 +23,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
-            new CardsVar(1),
+            new CardsVar(2),
             new DynamicVar("JianshiGain", 1),
         ];
 
@@ -48,7 +48,8 @@ namespace Miyabists2.Scripts._Guang.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Cards.UpgradeValueBy(1); // 升级后抽2张
+            //DynamicVars.Cards.UpgradeValueBy(1); // 升级后抽2张
+            AddKeyword(CardKeyword.Retain); // 升级后保留)
         }
 
         // 被消耗时：选择1张被消耗的卡（终结技除外）加入手卡，本回合免费使用
