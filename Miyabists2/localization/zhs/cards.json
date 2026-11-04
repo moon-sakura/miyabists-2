@@ -800,6 +800,9 @@
 	"MIYABISTS2_CARD_YI_WANG.title": "遗忘",
 	"MIYABISTS2_CARD_YI_WANG.description": "选择1张手卡[gold]消耗[/gold]。",
 
+	"MIYABISTS2_CARD_SHI_GAN.title": "失感",
+	"MIYABISTS2_CARD_SHI_GAN.description": "随机降级一张卡牌（抽牌堆、手卡、弃牌堆）。",
+
 	"MIYABISTS2_CARD_SU_YING_JING_HONG.title": "溯影惊鸿",
 	"MIYABISTS2_CARD_SU_YING_JING_HONG.description": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{JianshiPerPartner:diff()}[/blue]点[gold]青溟剑势[/gold]\\n能力被[gold]移除[/gold]时，获得{Energy:energyIcons()}",
 
