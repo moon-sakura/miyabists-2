@@ -56,12 +56,12 @@ namespace Miyabists2.Scripts._Guang.Cards
         /// <summary>
         /// 只要《遗忘》还在手卡里，其它手卡就不能先打出（自动打出不受影响）。
         /// </summary>
-        public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
-        {
-            if (card is YiWang) return true;
-            if (autoPlayType != AutoPlayType.None) return true;
-            if (Pile?.Type != PileType.Hand) return true;
-            return card?.Pile?.Type != PileType.Hand;
-        }
+        //public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
+        //{
+        //    if (card is YiWang) return true;
+        //    if (autoPlayType != AutoPlayType.None) return true;
+        //    if (Pile?.Type != PileType.Hand) return true;
+        //    return card?.Pile?.Type != PileType.Hand;
+        //}
     }
 }
