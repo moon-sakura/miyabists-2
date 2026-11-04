@@ -803,6 +803,12 @@
 	"MIYABISTS2_CARD_SHI_GAN.title": "失感",
 	"MIYABISTS2_CARD_SHI_GAN.description": "随机降级一张卡牌。",
 
+	"MIYABISTS2_CARD_JUE_CAI.title": "决裁",
+	"MIYABISTS2_CARD_JUE_CAI.description": "回合开始时，随机将1张[gold]遗忘[/gold]或[gold]失感[/gold]加入手卡\\n能力被[gold]移除[/gold]时，变更为[gold]明心镜·决裁[/gold]",
+
+	"MIYABISTS2_CARD_ZAI_WU.title": "载物",
+	"MIYABISTS2_CARD_ZAI_WU.description": "[gold]明心镜[/gold]状态下：消耗至多[blue]{MaxJianshiCost:diff()}[/blue]点[gold]青溟剑势[/gold]，恢复对应数量的能量\\n非[gold]明心镜[/gold]状态下：获得[blue]{JianshiGain:diff()}[/blue]点[gold]青溟剑势[/gold]",
+
 	"MIYABISTS2_CARD_SU_YING_JING_HONG.title": "溯影惊鸿",
 	"MIYABISTS2_CARD_SU_YING_JING_HONG.description": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{JianshiPerPartner:diff()}[/blue]点[gold]青溟剑势[/gold]\\n能力被[gold]移除[/gold]时，获得{Energy:energyIcons()}",
 
