@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Miyabists2.Scripts._Guang.Cards
 {
     /// <summary>
-    /// 明心镜·归尘 - 青溟剑势归为0后自动加入手卡
+    /// 明心镜·归尘 - 进入明心镜状态时自动加入手卡，退出明心镜状态后被消耗
     /// 对所有敌人造成3次3点伤害，失衡2，退出明心镜状态。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
@@ -48,11 +48,14 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             // 失衡由 GuangCardBase.AfterDamageGiven 自动结算
 
-            // 退出明心镜状态（能力被移除时会把所有明心镜卡变回原卡）
+            // 退出明心镜状态（能力被移除时会把所有明心镜卡变回原卡，并消耗其他归尘）
             if (Owner.Creature.HasPower<MingxinJingPower>())
             {
                 await PowerCmd.Remove(Owner.Creature.GetPower<MingxinJingPower>());
             }
+
+            // 本卡此时还在 Play 堆里，退出状态时扫不到它，由自己消耗
+            await CardCmd.Exhaust(choiceContext, this);
         }
     }
 }

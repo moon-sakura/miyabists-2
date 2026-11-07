@@ -25,7 +25,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             PileType.Draw,
             PileType.Hand,
             PileType.Discard,
-            PileType.Exhaust,
+            //PileType.Exhaust,
             PileType.Play,
         ];
 
@@ -41,7 +41,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             Register<FuYaoShi, MingxinFuYaoShi>();
             Register<ZhanLiuGuang, MingxinZhanLiuGuang>();
             Register<BaoYi, MingxinBaoYi>();
-            Register<ZhaoYing, MingxinGuiChen>();
+            // 照影不再变换为《明心镜·归尘》：进入明心镜时由 MingxinJingPower 直接生成一张归尘
             Register<CeYing, MingxinCeYing>();
             Register<FuYiQu, MingxinFuYiQu>();
             Register<FeiGuang, MingxinFeiGuang>();
@@ -118,12 +118,6 @@ namespace Miyabists2.Scripts._Guang.Cards
 
             // 就地替换：卡牌留在原来的牌堆里
             await CardCmd.Transform(original, replacement);
-
-            // 《明心镜·归尘》由照影变化而来，变化完成后直接加入手卡
-            if (replacement is MingxinGuiChen)
-            {
-                await PlaceGuiChenInHand(owner, replacement);
-            }
 
             return replacement;
         }

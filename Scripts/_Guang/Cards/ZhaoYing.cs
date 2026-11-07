@@ -19,11 +19,11 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// 照影 - 初始技能卡
     /// 消耗1张手卡，获得1点青溟剑势。
     /// 附加：拥有6点青溟剑势则进入明心镜状态，回复所有能量，抽3张牌。
-    /// 进入明心镜状态后本卡变为《明心镜·归尘》，并直接加入手卡。
+    /// 进入明心镜状态时不再变形，改为由《明心镜》能力直接加入一张《明心镜·归尘》。
     /// 升级：保留。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
-    internal class ZhaoYing : GuangCardBase, I2MingxinJing
+    internal class ZhaoYing : GuangCardBase
     {
         public ZhaoYing() : base(0, CardType.Skill, CardRarity.Basic, TargetType.Self)
         {
