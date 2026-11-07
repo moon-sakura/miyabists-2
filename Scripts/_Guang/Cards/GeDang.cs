@@ -26,6 +26,8 @@ namespace Miyabists2.Scripts._Guang.Cards
         {
         }
 
+        protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Defend };
+
         //protected override string ArtPath => "res://images/_Guang/cards/geDang.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [

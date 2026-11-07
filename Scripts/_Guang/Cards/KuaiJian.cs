@@ -37,6 +37,8 @@ namespace Miyabists2.Scripts._Guang.Cards
             new DynamicVar("StrengthOnExhaust", 1),
         ];
 
+        protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
+
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
             HoverTipFactory.FromPower<DazePower>(),
