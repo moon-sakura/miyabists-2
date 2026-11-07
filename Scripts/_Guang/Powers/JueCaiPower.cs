@@ -46,13 +46,22 @@ namespace Miyabists2.Scripts._Guang.Powers
             // 随机在《遗忘》与《失感》之间二选一
             bool useYiWang = owner.RunState.Rng.CombatCardGeneration.NextItem(new[] { true, false });
 
-            CardModel? curse = useYiWang
-                ? owner.Creature.CombatState.CreateCard<YiWang>(owner)
-                : owner.Creature.CombatState.CreateCard<ShiGan>(owner);
+            if (useYiWang)
+            {
+                await CardPileCmd.AddToCombatAndPreview<YiWang>(Owner, PileType.Discard, 1, Owner.Player);
+            }
+            else
+            {
+                await CardPileCmd.AddToCombatAndPreview<ShiGan>(Owner, PileType.Discard, 1, Owner.Player);
+            }
 
-            if (curse == null) return;
+            //CardModel? curse = useYiWang
+            //    ? owner.Creature.CombatState.CreateCard<YiWang>(owner)
+            //    : owner.Creature.CombatState.CreateCard<ShiGan>(owner);
 
-            await CardPileCmd.AddGeneratedCardToCombat(curse, PileType.Hand, owner);
+            //if (curse == null) return;
+
+            //await CardPileCmd.AddGeneratedCardToCombat(curse, PileType.Hand, owner);
         }
 
         public override async Task AfterRemoved(Creature oldOwner)

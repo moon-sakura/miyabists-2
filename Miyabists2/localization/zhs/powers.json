@@ -387,6 +387,10 @@
 	"MINGXIN_JUE_CAI_POWER.description": "攻击时额外造成[gold]消耗堆[/gold]中[gold]诅咒[/gold]卡数量的伤害。回合结束时移除。",
 	"MINGXIN_JUE_CAI_POWER.smartDescription": "攻击时额外造成[gold]消耗堆[/gold]中[gold]诅咒[/gold]卡数量的伤害。回合结束时移除。",
 
+	"YING_XIONG_POWER.title": "英雄！",
+	"YING_XIONG_POWER.description": "每使用1张卡，随机将1张[gold]遗忘[/gold]或[gold]失感[/gold]加入弃牌堆。回合结束时移除。",
+	"YING_XIONG_POWER.smartDescription": "每使用1张卡，随机将1张[gold]遗忘[/gold]或[gold]失感[/gold]加入弃牌堆。回合结束时移除。",
+
 	"MING_DENG_YUAN_POWER.title": "明灯愿",
 	"MING_DENG_YUAN_POWER.description": "被移除时，将一张0费的[gold]斩妄开天[/gold]加入手卡",
 	"MING_DENG_YUAN_POWER.smartDescription": "被[gold]移除[/gold]时，将一张0费的[gold]斩妄开天[/gold]加入手卡",

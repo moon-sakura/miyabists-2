@@ -809,6 +809,18 @@
 	"MIYABISTS2_CARD_ZAI_WU.title": "载物",
 	"MIYABISTS2_CARD_ZAI_WU.description": "[gold]明心镜[/gold]状态下：消耗至多[blue]{MaxJianshiCost:diff()}[/blue]点[gold]青溟剑势[/gold]，恢复对应数量的能量\\n非[gold]明心镜[/gold]状态下：获得[blue]{JianshiGain:diff()}[/blue]点[gold]青溟剑势[/gold]",
 
+	"MIYABISTS2_CARD_MENG_ZHONG_SHEN.title": "梦中身",
+	"MIYABISTS2_CARD_MENG_ZHONG_SHEN.description": "获得{IntangibleGain:diff()}层[gold]无实体[/gold]\\n被[gold]消耗[/gold]时，抽{Cards:diff()}张牌，获得{Energy:energyIcons()}",
+
+	"MIYABISTS2_CARD_WEI_GUANG_YIN.title": "微光引",
+	"MIYABISTS2_CARD_WEI_GUANG_YIN.description": "从[gold]消耗堆[/gold]中选择至多{MaxCards:diff()}张卡（[gold]终结技[/gold]除外）加入抽牌堆，将同等数量的[gold]失感[/gold]加入弃牌堆",
+
+	"MIYABISTS2_CARD_JIAN_GUANG_JING_HONG.title": "剑光惊鸿",
+	"MIYABISTS2_CARD_JIAN_GUANG_JING_HONG.description": "消耗所有[gold]青溟剑势[/gold]，升级你的全部卡牌\\n每消耗{JianshiPerEnergy:diff()}点[gold]青溟剑势[/gold]，获得1点能量",
+
+	"MIYABISTS2_CARD_YING_XIONG.title": "英雄！",
+	"MIYABISTS2_CARD_YING_XIONG.description": "恢复所有能量，抽{Cards:diff()}张牌，进入[gold]明心镜[/gold]状态\\n本回合每使用1张卡，随机将1张[gold]遗忘[/gold]或[gold]失感[/gold]加入弃牌堆",
+
 	"MIYABISTS2_CARD_SU_YING_JING_HONG.title": "溯影惊鸿",
 	"MIYABISTS2_CARD_SU_YING_JING_HONG.description": "每次使用[gold]伙伴[/gold]卡时，获得[blue]{JianshiPerPartner:diff()}[/blue]点[gold]青溟剑势[/gold]\\n能力被[gold]移除[/gold]时，获得{Energy:energyIcons()}",
 
@@ -854,7 +866,7 @@
 	"MIYABISTS2_CARD_GONG_TA_CHEN.description": "消耗所有手卡，将对应数量的[gold]遗忘[/gold]加入手卡\\n若[gold]青溟剑势[/gold]大于[blue]{JianshiThreshold:diff()}[/blue]点，恢复所有能量并进入[gold]明心镜[/gold]状态\\n被[gold]消耗[/gold]时，获得[blue]{DarkEmbraceGain:diff()}[/blue]层[gold]黑暗之拥[/gold]",
 
 	"MIYABISTS2_CARD_GUANG_YU_YING.title": "光与影",
-	"MIYABISTS2_CARD_GUANG_YU_YING.description": "造成伤害时获得等量的[gold]格挡[/gold]\\n能力被[gold]移除[/gold]时，对随机敌人造成累计获得格挡的伤害\\n[gold]虚无[/gold]",
+	"MIYABISTS2_CARD_GUANG_YU_YING.description": "造成伤害时获得等量的[gold]格挡[/gold]\\n能力被[gold]移除[/gold]时，对随机敌人造成累计获得格挡的伤害",
 
 	"MIYABISTS2_CARD_JIAN_KE_XING.title": "剑客行",
 	"MIYABISTS2_CARD_JIAN_KE_XING.description": "对敌人造成{Damage:diff()}点伤害，本回合每使用过一张卡，额外造成{DamagePerCard:diff()}点伤害\\n造成等量[gold]失衡值[/gold]",

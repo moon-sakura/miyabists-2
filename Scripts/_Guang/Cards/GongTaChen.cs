@@ -41,6 +41,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<QingmingJianshiPower>(),
             HoverTipFactory.FromPower<MingxinJingPower>(),
             HoverTipFactory.FromPower<DarkEmbracePower>(),
+            HoverTipFactory.FromCard<YiWang>(),
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
