@@ -35,6 +35,12 @@ namespace Miyabists2.Scripts._Guang.Cards
         /// <summary>明心镜卡类型 -> 原卡工厂（退出明心镜状态时用）</summary>
         private static readonly Dictionary<Type, Func<Player, CardModel>> ReverseFactories = new();
 
+        /// <summary>原卡类型 -> 明心镜卡类型（纯类型映射，用于界面预览，不依赖战斗状态）</summary>
+        private static readonly Dictionary<Type, Type> OriginalToMingxinTypes = new();
+
+        /// <summary>明心镜卡类型 -> 原卡类型（纯类型映射，用于界面预览，不依赖战斗状态）</summary>
+        private static readonly Dictionary<Type, Type> MingxinToOriginalTypes = new();
+
         static MingxinJingTransform()
         {
             Register<FenShuiXing, MingxinFenShuiXing>();
@@ -55,6 +61,44 @@ namespace Miyabists2.Scripts._Guang.Cards
         {
             Factories[typeof(TOriginal)] = p => p.Creature.CombatState.CreateCard<TMingxin>(p);
             ReverseFactories[typeof(TMingxin)] = p => p.Creature.CombatState.CreateCard<TOriginal>(p);
+            OriginalToMingxinTypes[typeof(TOriginal)] = typeof(TMingxin);
+            MingxinToOriginalTypes[typeof(TMingxin)] = typeof(TOriginal);
+        }
+
+        /// <summary>取得一张卡对应的另一种形态的类型（原卡返回明心镜卡类型，明心镜卡返回原卡类型）</summary>
+        public static Type? GetCounterpartType(CardModel card)
+        {
+            if (card == null) return null;
+
+            Type type = card.GetType();
+            if (OriginalToMingxinTypes.TryGetValue(type, out Type? mingxinType)) return mingxinType;
+            if (MingxinToOriginalTypes.TryGetValue(type, out Type? originalType)) return originalType;
+            return null;
+        }
+
+        /// <summary>
+        /// 为界面预览创建一张“另一种形态”的卡牌模型。
+        /// 不依赖 Player / CombatState（卡牌图鉴等界面里没有 owner），
+        /// 并保留传入卡牌的升级等级。
+        /// </summary>
+        public static CardModel? CreateDisplayCounterpart(CardModel card)
+        {
+            Type? counterpartType = GetCounterpartType(card);
+            if (counterpartType == null) return null;
+
+            CardModel? canonical = ModelDb.AllCards.FirstOrDefault(c => c.GetType() == counterpartType);
+            if (canonical == null) return null;
+
+            CardModel model = canonical.ToMutable();
+
+            int upgradeLevel = Math.Min(card.CurrentUpgradeLevel, model.MaxUpgradeLevel);
+            for (int i = 0; i < upgradeLevel; i++)
+            {
+                model.UpgradeInternal();
+                model.FinalizeUpgradeInternal();
+            }
+
+            return model;
         }
 
         /// <summary>这张卡能否变成明心镜卡（实现了 I2MingxinJing 且登记过）</summary>

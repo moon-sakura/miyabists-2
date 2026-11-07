@@ -67,6 +67,10 @@ public static class MiyabiUILoc
         Add("skin_rest",     "Rest",         "Rest",       "Rest",           "Rest");
         Add("skin_shop",     "Shop",         "Shop",       "Shop",           "Shop");
 
+        // ========== 卡牌阅览界面：明心镜切换按钮 ==========
+        Add("mingxin_toggle_to_mingxin", "View Mingxin Jing", "查看明心镜", "명심경 보기", "明心鏡を見る");
+        Add("mingxin_toggle_to_original", "View Original", "查看原卡", "원본 카드 보기", "元のカードを見る");
+
         // ========== 特殊挑战面板 ==========
         Add("funp_title", "Special Challenge", "特殊挑战", "특별 도전", "特殊挑戦");
 

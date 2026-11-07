@@ -20,11 +20,13 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// 对所有敌人造成 66 点伤害，退出明心镜状态，永久获得 10 点最大生命值。
     /// </summary>
     [RegisterCard(typeof(YeshunGuangCardPool))]
-    internal class ZhanWangKaiTian : GuangMingxinjingCardBase
+    internal class ZhanWangKaiTian : GuangCardBase
     {
         public ZhanWangKaiTian() : base(2, CardType.Attack, CardRarity.Token, TargetType.AllEnemies)
         {
         }
+
+        protected override string ArtPath => "res://images/_Guang/cards/mingxinjing_common.png";
 
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [

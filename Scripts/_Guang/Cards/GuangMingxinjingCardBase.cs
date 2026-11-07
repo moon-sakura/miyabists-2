@@ -14,7 +14,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     /// </summary>
     public abstract class GuangMingxinjingCardBase : GuangCardBase, IMingxinJing
     {
-        protected GuangMingxinjingCardBase(int baseCost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = true)
+        protected GuangMingxinjingCardBase(int baseCost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = false)
             : base(baseCost, type, rarity, target, showInCardLibrary)
         {
         }
