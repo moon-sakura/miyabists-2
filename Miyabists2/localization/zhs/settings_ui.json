@@ -65,6 +65,10 @@
 
 	"MIYABISTS2-SHOW_SAME_RELIC.title" : "显示重复遗物",
 
+	"MIYABISTS2-PLAY_VIDEO.title" : "播放技能视频",
+	"MIYABISTS2-PLAY_VIDEO.hover.title" : "播放技能视频",
+	"MIYABISTS2-PLAY_VIDEO.hover.desc" : "勾选后，带有演出视频的卡牌/技能会播放全屏视频；关闭则跳过视频直接结算。",
+
 	"MIYABISTS2-MIYABI_CONFIG.title" : "星见雅相关设置",
 
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "星见雅战斗皮肤选项",

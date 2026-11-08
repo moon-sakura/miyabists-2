@@ -65,6 +65,10 @@
 
 	"MIYABISTS2-SHOW_SAME_RELIC.title" : "중복 유물 표시",
 
+	"MIYABISTS2-PLAY_VIDEO.title" : "스킬 영상 재생",
+	"MIYABISTS2-PLAY_VIDEO.hover.title" : "스킬 영상 재생",
+	"MIYABISTS2-PLAY_VIDEO.hover.desc" : "활성화하면 연출 영상이 있는 카드/스킬 사용 시 전체 화면으로 영상이 재생됩니다. 비활성화하면 영상을 건너뜁니다.",
+
 	"MIYABISTS2-MIYABI_CONFIG.title" : "호시미 미야비 관련 설정",
 
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "호시미 미야비 전투 스킨 옵션",

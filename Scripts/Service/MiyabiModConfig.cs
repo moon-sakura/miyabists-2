@@ -222,6 +222,9 @@ namespace Miyabists2.Scripts.Service
         public static bool MiyabiPanelOpen { get; set; } = true;
 
         public static bool ShowSameRelic {  get; set; } = false;
+
+        /// <summary>是否播放技能演出视频（关闭时直接跳过视频结算）。</summary>
+        public static bool PlayVideo { get; set; } = true;
     }
 
     /// <summary>

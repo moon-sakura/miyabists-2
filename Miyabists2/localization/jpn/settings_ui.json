@@ -65,6 +65,10 @@
 
 	"MIYABISTS2-SHOW_SAME_RELIC.title" : "重複レリックを表示",
 
+	"MIYABISTS2-PLAY_VIDEO.title" : "スキル動画を再生",
+	"MIYABISTS2-PLAY_VIDEO.hover.title" : "スキル動画を再生",
+	"MIYABISTS2-PLAY_VIDEO.hover.desc" : "有効にすると、演出動画付きのカード/スキル使用時に全画面で動画が再生されます。無効にすると動画をスキップします。",
+
 	"MIYABISTS2-MIYABI_CONFIG.title" : "星見雅関連設定",
 
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "星見雅戦闘スキン設定",

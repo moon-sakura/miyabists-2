@@ -36,6 +36,7 @@ project.fragment.lock.json
 *.mp3
 *.wav
 *.ogg
+*.ogv
 *.mp4
 *.zip
 *.rar

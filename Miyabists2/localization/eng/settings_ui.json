@@ -65,6 +65,10 @@
 
 	"MIYABISTS2-SHOW_SAME_RELIC.title" : "Show Duplicate Relics",
 
+	"MIYABISTS2-PLAY_VIDEO.title" : "Play Skill Videos",
+	"MIYABISTS2-PLAY_VIDEO.hover.title" : "Play Skill Videos",
+	"MIYABISTS2-PLAY_VIDEO.hover.desc" : "When enabled, cards/skills with cutscene videos play them fullscreen. Disable to skip videos entirely.",
+
 	"MIYABISTS2-MIYABI_CONFIG.title" : "Hoshimi Miyabi Settings",
 
 	"MIYABISTS2-COMBAT_SELECTED_SLOT.title" : "Hoshimi Miyabi Combat Skin Option",
