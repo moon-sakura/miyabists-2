@@ -83,6 +83,9 @@ namespace Miyabists2.Scripts._Guang.Powers
 
             // 5. 直接加入一张《明心镜·归尘》（手卡没空位时先放到抽卡堆顶，之后每次出牌再补进手卡）
             await AddGuiChenIfNeeded();
+
+            // 6. 战斗立绘切换为明心镜形态
+            MingxinJingVisuals.Enter(Owner);
         }
 
         public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
@@ -97,6 +100,9 @@ namespace Miyabists2.Scripts._Guang.Powers
 
             // 退出明心镜状态：所有明心镜卡变回原卡（保留升级状态）
             if (oldOwner?.Player == null) return;
+
+            // 战斗立绘换回当前选择的战斗皮肤
+            MingxinJingVisuals.Exit(oldOwner);
 
             Player owner = oldOwner.Player;
             await MingxinJingTransform.RevertAllInCombat(owner);

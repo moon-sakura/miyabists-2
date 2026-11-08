@@ -21,7 +21,7 @@ namespace Miyabists2.Scripts._Guang.Cards
     [RegisterCard(typeof(CurseCardPool))]
     internal class ShiGan : MiyabiCardBase
     {
-        public ShiGan() : base(1, CardType.Curse, CardRarity.Curse, TargetType.Self)
+        public ShiGan() : base(0, CardType.Curse, CardRarity.Curse, TargetType.Self)
         {
         }
 
@@ -30,6 +30,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [
             CardKeyword.Retain,
+            CardKeyword.Exhaust,
         ];
 
         public override int MaxUpgradeLevel => 0;

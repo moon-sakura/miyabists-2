@@ -71,14 +71,14 @@ namespace Miyabists2.Scripts.Service
             previewDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "res://images/charui/yiXuan.png";
 
             // ---- Guang 默认皮肤名称 ----
-            skinDatas["MIYABISTS2-GUANG_COMBAT_SELECTED_SLOT.Slot0"] = "叶瞬光";
-            skinDatas["MIYABISTS2-GUANG_REST_SELECTED_SLOT.Slot0"] = "叶瞬光";
-            skinDatas["MIYABISTS2-GUANG_SHOP_SELECTED_SLOT.Slot0"] = "叶瞬光";
+            skinDatas["MIYABISTS2-GUANG_COMBAT_SELECTED_SLOT.Slot0"] = "流云照影";
+            skinDatas["MIYABISTS2-GUANG_REST_SELECTED_SLOT.Slot0"] = "流云照影";
+            skinDatas["MIYABISTS2-GUANG_SHOP_SELECTED_SLOT.Slot0"] = "流云照影";
 
-            // ---- Guang 默认皮肤预览图 ----
-            previewDatas["MIYABISTS2-GUANG_COMBAT_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_select.png";
-            previewDatas["MIYABISTS2-GUANG_REST_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_select.png";
-            previewDatas["MIYABISTS2-GUANG_SHOP_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_select.png";
+            // ---- Guang 默认皮肤预览图（使用内部皮肤图，而非选人界面头像） ----
+            previewDatas["MIYABISTS2-GUANG_COMBAT_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_char.png";
+            previewDatas["MIYABISTS2-GUANG_REST_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_char.png";
+            previewDatas["MIYABISTS2-GUANG_SHOP_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_char.png";
         }
 
         public static void RegisterCombatSkin(string name, string tscnPath, string previewPath = null,
@@ -292,6 +292,8 @@ namespace Miyabists2.Scripts.Service
             "res://scenes/_Guang/guang_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
             "res://scenes/_Guang/guang_Rest.tscn".RegisterSceneForConversion<NRestSiteCharacter>();
             "res://scenes/_Guang/guang_Shop.tscn".RegisterSceneForConversion<NMerchantCharacter>();
+            // 明心镜状态下的战斗立绘（运行时由 MingxinJingPower 替换）
+            "res://scenes/_Guang/guang_char_mingxinjing.tscn".RegisterSceneForConversion<NCreatureVisuals>();
         }
 
         public static void UpdateSkin(string key, int slot, string skinName)

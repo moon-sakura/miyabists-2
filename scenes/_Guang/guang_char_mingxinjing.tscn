@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm5ydg8nqs8rs"]
+
+[ext_resource type="Texture2D" uid="uid://c4vycqof07x3i" path="res://images/_Guang/char/guang_char_mingxinjing.png" id="1_jem80"]
+
+[node name="YixuanEnemy" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(30.999994, -216)
+scale = Vector2(0.6029999, 0.603)
+texture = ExtResource("1_jem80")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -103.0
+offset_top = -446.0
+offset_right = 137.0
+offset_bottom = 41.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, -462)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, -325)
