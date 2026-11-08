@@ -15,7 +15,7 @@ namespace Miyabists2.Scripts.UI;
 public static class MiyabiCharSelectSkinPatch
 {
     [Flags]
-    private enum CharType { None = 0, Miyabi = 1, Yixuan = 2 }
+    private enum CharType { None = 0, Miyabi = 1, Yixuan = 2, Guang = 4 }
 
     private static MiyabiDifficultyPanel _difficultyPanel;
     private static MiyabiSkinPanel _skinPanel;
@@ -39,6 +39,7 @@ public static class MiyabiCharSelectSkinPatch
     {
         CharType charType = characterModel is Miyabi ? CharType.Miyabi
             : characterModel is Yixuan ? CharType.Yixuan
+            : characterModel is YeshunGuang ? CharType.Guang
             : CharType.None;
 
         bool showPanels = charType != CharType.None && MiyabiModConfig.MiyabiPanelOpen;
@@ -179,20 +180,26 @@ public static class MiyabiCharSelectSkinPatch
             case SkinType.Combat:
                 if (_currentCharType == CharType.Miyabi)
                     MiyabiModConfig.CombatSelectedSlot = (MiyabiCombatSkinSlot)newIndex;
-                else
+                else if (_currentCharType == CharType.Yixuan)
                     MiyabiModConfig.YixuanCombatSelectedSlot = (YixuanCombatSkinSlot)newIndex;
+                else
+                    MiyabiModConfig.GuangCombatSelectedSlot = (GuangCombatSkinSlot)newIndex;
                 break;
             case SkinType.Rest:
                 if (_currentCharType == CharType.Miyabi)
                     MiyabiModConfig.RestSelectedSlot = (MiyabiRestSkinSlot)newIndex;
-                else
+                else if (_currentCharType == CharType.Yixuan)
                     MiyabiModConfig.YixuanRestSelectedSlot = (YixuanRestSkinSlot)newIndex;
+                else
+                    MiyabiModConfig.GuangRestSelectedSlot = (GuangRestSkinSlot)newIndex;
                 break;
             case SkinType.Shop:
                 if (_currentCharType == CharType.Miyabi)
                     MiyabiModConfig.ShopSelectedSlot = (MiyabiShopSkinSlot)newIndex;
-                else
+                else if (_currentCharType == CharType.Yixuan)
                     MiyabiModConfig.YixuanShopSelectedSlot = (YixuanShopSkinSlot)newIndex;
+                else
+                    MiyabiModConfig.GuangShopSelectedSlot = (GuangShopSkinSlot)newIndex;
                 break;
         }
 
@@ -214,6 +221,8 @@ public static class MiyabiCharSelectSkinPatch
             MiyabiModConfig.MiyabiFunPileSelected = (MiyabiFunPile)newIndex;
         else if (_currentCharType == CharType.Yixuan)
             MiyabiModConfig.YixuanFunPileSelected = (YixuanFunPile)newIndex;
+        else if (_currentCharType == CharType.Guang)
+            MiyabiModConfig.GuangFunPileSelected = (GuangFunPile)newIndex;
     }
 
     // ============================================================
@@ -279,6 +288,31 @@ public static class MiyabiCharSelectSkinPatch
                 }
                 break;
 
+            case CharType.Guang:
+                switch (skinType)
+                {
+                    case SkinType.Combat:
+                        skinCount = YeshunGuang.CombatSkinPaths.Count;
+                        keyPrefix = "GUANG_COMBAT";
+                        currentSlot = (int)MiyabiModConfig.GuangCombatSelectedSlot;
+                        previewFallbackPrefix = "guang_combat";
+                        break;
+                    case SkinType.Rest:
+                        skinCount = YeshunGuang.RestSkinPaths.Count;
+                        keyPrefix = "GUANG_REST";
+                        currentSlot = (int)MiyabiModConfig.GuangRestSelectedSlot;
+                        previewFallbackPrefix = "guang_rest";
+                        break;
+                    case SkinType.Shop:
+                        skinCount = YeshunGuang.ShopSkinPaths.Count;
+                        keyPrefix = "GUANG_SHOP";
+                        currentSlot = (int)MiyabiModConfig.GuangShopSelectedSlot;
+                        previewFallbackPrefix = "guang_shop";
+                        break;
+                    default: return;
+                }
+                break;
+
             default: return;
         }
 
@@ -335,6 +369,15 @@ public static class MiyabiCharSelectSkinPatch
                 currentIndex = (int)MiyabiModConfig.YixuanFunPileSelected;
                 break;
 
+            case CharType.Guang:
+                options = MakeOptions(language,
+                    "funp_guang_default",
+                    "funp_guang_bangboo",
+                    "funp_guang_bee",
+                    "funp_guang_recorder");
+                currentIndex = (int)MiyabiModConfig.GuangFunPileSelected;
+                break;
+
             default: return;
         }
 
@@ -372,15 +415,20 @@ public static class MiyabiCharSelectSkinPatch
             child.QueueFree();
         }
 
-        string bgPath = charType == CharType.Miyabi
-            ? "res://scenes/char_select/char_select_bg_miyabi.tscn"
-            : "res://scenes/_Yixuan/char_select_bg_yixuan.tscn";
+        (string bgPath, string bgName) = charType switch
+        {
+            CharType.Miyabi => ("res://scenes/char_select/char_select_bg_miyabi.tscn", "Miyabi_Sakura_bg"),
+            CharType.Yixuan => ("res://scenes/_Yixuan/char_select_bg_yixuan.tscn", "Yixuan_bg"),
+            CharType.Guang => ("res://scenes/_Guang/char_select_bg_guang.tscn", "Guang_bg"),
+            _ => ("", "")
+        };
+        if (string.IsNullOrEmpty(bgPath)) return;
 
         var scene = ResourceLoader.Load<PackedScene>(bgPath);
         if (scene != null)
         {
             var control = scene.Instantiate<Control>(PackedScene.GenEditState.Disabled);
-            control.Name = (charType == CharType.Miyabi ? "Miyabi_Sakura" : "Yixuan") + "_bg";
+            control.Name = bgName;
             bgContainer.AddChild(control);
         }
     }

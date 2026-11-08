@@ -127,11 +127,11 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     {
         get
         {
-            switch (MiyabiModConfig.YixuanFunPileSelected)
+            switch (MiyabiModConfig.GuangFunPileSelected)
             {
-                case YixuanFunPile.Default:
+                case GuangFunPile.Default:
                     return GetDefaultDeck();
-                case YixuanFunPile.AllBangboo:
+                case GuangFunPile.AllBangboo:
                     return GetBangbooDeck();
                 default:
                     return GetDefaultDeck();

@@ -95,10 +95,10 @@ public static class MiyabiUILoc
                                       "邦布当家：初始卡组变为仪玄邦布相关卡组",
                                       "Bangboo Crew：시작 덱이 Yixuan Bangboo 카드로 변경",
                                       "ボンプ支配：初期デッキが儀玄ボンプカードに");
-        Add("funp_yixuan_bee",       "Swarm Assemble：Add 1 upgraded [color=#FFD700]Swarm Assemble(Yixuan)[/color] to starting deck",
-                                      "蜂群集结：初始卡组中添加1张升级后的[color=#FFD700]蜂群集结(仪玄)[/color]",
-                                      "Swarm Assemble：시작 덱에 업그레이드된 [color=#FFD700]Swarm Assemble(Yixuan)[/color] 1장 추가",
-                                      "蜂集群集：初期デッキにアップグレード済み[color=#FFD700]蜂集群集(儀玄)[/color]を1枚追加");
+        Add("funp_yixuan_bee",       "Swarm Assemble：Add 1 upgraded [color=#FFD700]Swarm Assemble[/color] to starting deck",
+                                      "蜂群集结：初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]",
+                                      "Swarm Assemble：시작 덱에 업그레이드된 [color=#FFD700]Swarm Assemble[/color] 1장 추가",
+                                      "蜂集群集：初期デッキにアップグレード済み[color=#FFD700]蜂集群集[/color]を1枚追加");
 
         Add("funp_miyabi_recorder",  "Ethereal Recorder：Start with a [color=#FFD700]Fairy Tale Notebook[/color]",
                                       "以骸记录者：游戏开始时获得一个[color=#FFD700]童话记事本[/color]",
@@ -110,6 +110,23 @@ public static class MiyabiUILoc
                                       "グレースの逆襲：初期デッキがグレースカードに");
 
         Add("funp_yixuan_recorder",  "Ethereal Recorder：Start with a [color=#FFD700]Fairy Tale Notebook[/color]",
+                                      "以骸记录者：游戏开始时获得一个[color=#FFD700]童话记事本[/color]",
+                                      "Ethereal Recorder：시작 시 [color=#FFD700]동화 수첩[/color] 획득",
+                                      "以骸記録者：ゲーム開始時に[color=#FFD700]童話手帳[/color]を入手");
+
+        Add("funp_guang_default",    "Default：No changes",
+                                      "默认：无变化",
+                                      "기본：변화 없음",
+                                      "デフォルト：変化なし");
+        Add("funp_guang_bangboo",    "Bangboo Crew：Starting deck becomes Shunguang Bangboo cards",
+                                      "邦布当家：初始卡组变为叶瞬光邦布相关卡组",
+                                      "Bangboo Crew：시작 덱이 Shunguang Bangboo 카드로 변경",
+                                      "ボンプ支配：初期デッキが葉瞬光ボンプカードに");
+        Add("funp_guang_bee",        "Swarm Assemble：Add 1 upgraded [color=#FFD700]Swarm Assemble[/color] to starting deck",
+                                      "蜂群集结：初始卡组中添加1张升级后的[color=#FFD700]蜂群集结[/color]",
+                                      "Swarm Assemble：시작 덱에 업그레이드된 [color=#FFD700]Swarm Assemble[/color] 1장 추가",
+                                      "蜂集群集：初期デッキにアップグレード済み[color=#FFD700]蜂集群集[/color]を1枚追加");
+        Add("funp_guang_recorder",   "Ethereal Recorder：Start with a [color=#FFD700]Fairy Tale Notebook[/color]",
                                       "以骸记录者：游戏开始时获得一个[color=#FFD700]童话记事本[/color]",
                                       "Ethereal Recorder：시작 시 [color=#FFD700]동화 수첩[/color] 획득",
                                       "以骸記録者：ゲーム開始時に[color=#FFD700]童話手帳[/color]を入手");

@@ -69,6 +69,16 @@ namespace Miyabists2.Scripts.Service
             previewDatas["MIYABISTS2-YIXUAN_COMBAT_SELECTED_SLOT.Slot0"] = "res://images/charui/yiXuan.png";
             previewDatas["MIYABISTS2-YIXUAN_REST_SELECTED_SLOT.Slot0"] = "res://images/_YiXuan/char/yixuan_rest.png";
             previewDatas["MIYABISTS2-YIXUAN_SHOP_SELECTED_SLOT.Slot0"] = "res://images/charui/yiXuan.png";
+
+            // ---- Guang 默认皮肤名称 ----
+            skinDatas["MIYABISTS2-GUANG_COMBAT_SELECTED_SLOT.Slot0"] = "叶瞬光";
+            skinDatas["MIYABISTS2-GUANG_REST_SELECTED_SLOT.Slot0"] = "叶瞬光";
+            skinDatas["MIYABISTS2-GUANG_SHOP_SELECTED_SLOT.Slot0"] = "叶瞬光";
+
+            // ---- Guang 默认皮肤预览图 ----
+            previewDatas["MIYABISTS2-GUANG_COMBAT_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_select.png";
+            previewDatas["MIYABISTS2-GUANG_REST_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_select.png";
+            previewDatas["MIYABISTS2-GUANG_SHOP_SELECTED_SLOT.Slot0"] = "res://images/_Guang/char/guang_select.png";
         }
 
         public static void RegisterCombatSkin(string name, string tscnPath, string previewPath = null,
@@ -203,6 +213,72 @@ namespace Miyabists2.Scripts.Service
             }
         }
 
+        public static void RegisterCombatSkinGuang(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
+        {
+            if (YeshunGuang.CombatSkinPaths.Count < MAX_SLOTS)
+            {
+                YeshunGuang.CombatSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NCreatureVisuals>();
+
+                int slot = YeshunGuang.CombatSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-GUANG_COMBAT_SELECTED_SLOT.Slot{slot}";
+                GD.Print($"[MiyabiSkinManager] Guang 外部皮肤成功入驻槽位 Slot_{slot}!");
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
+
+                if (!string.IsNullOrEmpty(previewPath))
+                {
+                    previewDatas[key] = previewPath;
+                    GD.Print($"[MiyabiSkinManager] Guang 战斗皮肤预览图已注册: Slot{slot} -> {previewPath}");
+                }
+            }
+        }
+
+        public static void RegisterRestSkinGuang(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
+        {
+            if (YeshunGuang.RestSkinPaths.Count < MAX_SLOTS)
+            {
+                YeshunGuang.RestSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NRestSiteCharacter>();
+
+                int slot = YeshunGuang.RestSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-GUANG_REST_SELECTED_SLOT.Slot{slot}";
+                GD.Print($"[MiyabiSkinManager] Guang 外部皮肤成功入驻槽位 Slot_{slot}!");
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
+
+                if (!string.IsNullOrEmpty(previewPath))
+                {
+                    previewDatas[key] = previewPath;
+                    GD.Print($"[MiyabiSkinManager] Guang 休息皮肤预览图已注册: Slot{slot} -> {previewPath}");
+                }
+            }
+        }
+
+        public static void RegisterShopSkinGuang(string name, string tscnPath, string previewPath = null,
+            string nameEng = null, string nameKor = null, string nameJpn = null, string nameZhs = null)
+        {
+            if (YeshunGuang.ShopSkinPaths.Count < MAX_SLOTS)
+            {
+                YeshunGuang.ShopSkinPaths.Add(tscnPath);
+                tscnPath?.RegisterSceneForConversion<NMerchantCharacter>();
+
+                int slot = YeshunGuang.ShopSkinPaths.Count - 1;
+                string key = $"MIYABISTS2-GUANG_SHOP_SELECTED_SLOT.Slot{slot}";
+                GD.Print($"[MiyabiSkinManager] Guang 外部皮肤成功入驻槽位 Slot_{slot}!");
+                skinDatas.Add(key, name);
+                StoreLangNames(key, nameEng, nameKor, nameJpn, nameZhs);
+
+                if (!string.IsNullOrEmpty(previewPath))
+                {
+                    previewDatas[key] = previewPath;
+                    GD.Print($"[MiyabiSkinManager] Guang 商店皮肤预览图已注册: Slot{slot} -> {previewPath}");
+                }
+            }
+        }
+
         public static void PreSkinRegister()
         {
             "res://scenes/miyabi_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
@@ -212,6 +288,10 @@ namespace Miyabists2.Scripts.Service
             "res://scenes/_Yixuan/yixuan_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
             "res://scenes/_Yixuan/yixuan_Rest.tscn".RegisterSceneForConversion<NRestSiteCharacter>();
             "res://scenes/_Yixuan/yixuan_Shop.tscn".RegisterSceneForConversion<NMerchantCharacter>();
+
+            "res://scenes/_Guang/guang_char.tscn".RegisterSceneForConversion<NCreatureVisuals>();
+            "res://scenes/_Guang/guang_Rest.tscn".RegisterSceneForConversion<NRestSiteCharacter>();
+            "res://scenes/_Guang/guang_Shop.tscn".RegisterSceneForConversion<NMerchantCharacter>();
         }
 
         public static void UpdateSkin(string key, int slot, string skinName)
