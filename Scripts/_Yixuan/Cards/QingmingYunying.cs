@@ -45,11 +45,15 @@ namespace Miyabists2.Scripts._Yixuan.Cards
             HoverTipFactory.FromPower<ShufaZhi>(),
         ];
 
+        private const string QingmingVideoKey = "qingming_yunying";
+
         private static readonly string[] YixuanYunyingVoices = { "yixuan_yunying_dongjing", "yixuan_yunying_gaijue", "yixuan_yunying_zhumie" };
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             MiyabiAudioPlay.Random(YixuanYunyingVoices);
+
+            await MiyabiVideoService.PlayIfEnabledAsync(QingmingVideoKey, mute: true);
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(DynamicVars["HitCount"].IntValue).FromCard(this, cardPlay)
             .Unblockable()

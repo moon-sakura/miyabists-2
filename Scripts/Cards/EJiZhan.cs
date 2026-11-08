@@ -44,9 +44,12 @@ namespace Miyabists2.Scripts.Cards
             HoverTipFactory.FromPower<DisorderPower>()
         ];
 
+        private const string MiyabiVideoKey = "miyabi_endskill";
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             MiyabiAudioPlay.Play("Ejizhan");
+            await MiyabiVideoService.PlayIfEnabledAsync(MiyabiVideoKey, mute: true);
             await base.OnPlay(choiceContext, cardPlay);
             await PowerCmd.Apply<FrostFallPower>(choiceContext, base.Owner.Creature, 3, base.Owner.Creature, this);
         }

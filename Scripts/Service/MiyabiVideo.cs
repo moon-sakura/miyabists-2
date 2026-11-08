@@ -24,6 +24,7 @@ namespace Miyabists2.Scripts.Service
         private bool _cover = true;
         private bool _loop;
         private bool _pauseGame = true;
+        private bool _mute;
 
         private SceneTree? _tree;
         private AspectRatioContainer? _aspect;
@@ -41,12 +42,13 @@ namespace Miyabists2.Scripts.Service
         /// <summary>
         /// 配置参数，必须在加入场景树之前调用。
         /// </summary>
-        public void Setup(VideoStream stream, bool cover, bool loop, bool pauseGame)
+        public void Setup(VideoStream stream, bool cover, bool loop, bool pauseGame, bool mute = false)
         {
             _stream = stream;
             _cover = cover;
             _loop = loop;
             _pauseGame = pauseGame;
+            _mute = mute;
         }
 
         public override void _Ready()
@@ -103,7 +105,9 @@ namespace Miyabists2.Scripts.Service
                 Loop = _loop,
                 Autoplay = false,
                 MouseFilter = MouseFilterEnum.Ignore,
-                ProcessMode = ProcessModeEnum.Always
+                ProcessMode = ProcessModeEnum.Always,
+                // 静音时视频只出画面，声音交给 MiyabiAudioPlay 播放的语音
+                VolumeDb = _mute ? -80f : 0f
             };
             _player.SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
             _aspect.AddChild(_player);
@@ -253,6 +257,10 @@ namespace Miyabists2.Scripts.Service
     ///
     /// // 3) 不暂停游戏 / 保持原比例不裁切
     /// MiyabiVideoService.Play("guang_awaken", pauseGame: false, cover: false);
+    ///
+    /// // 4) 视频静音只出画面，语音用自己的系统同时播（音画不同步是预期）
+    /// MiyabiAudioPlay.Random(YixuanFufaVoices);
+    /// await MiyabiVideoService.PlayIfEnabledAsync("yixuan_end1", mute: true);
     /// </code>
     ///
     /// 视频文件放在 res://scenes/video/ 下，扩展名必须是 .ogv。
@@ -292,12 +300,17 @@ namespace Miyabists2.Scripts.Service
         /// <param name="pauseGame">播放期间是否暂停游戏（默认 true）。</param>
         /// <param name="cover">true = 铺满全屏并裁切边缘；false = 完整显示并留黑边（默认 true）。</param>
         /// <param name="loop">是否循环播放（循环时只能点击跳过）。</param>
+        /// <param name="mute">
+        /// true = 视频静音，只播画面，声音自己用 MiyabiAudioPlay 播。
+        /// 两者同时开始，音画不同步属于预期。
+        /// </param>
         public static void Play(
             string keyOrPath,
             Action<bool>? onCompleted = null,
             bool pauseGame = true,
             bool cover = true,
-            bool loop = false)
+            bool loop = false,
+            bool mute = false)
         {
             // 同一时间只允许一个视频
             Stop();
@@ -325,7 +338,7 @@ namespace Miyabists2.Scripts.Service
             }
 
             MiyabiVideoOverlay overlay = new() { Name = "MiyabiVideoOverlay" };
-            overlay.Setup(stream, cover, loop, pauseGame);
+            overlay.Setup(stream, cover, loop, pauseGame, mute);
 
             // 先登记再 AddChild：_Ready 里如果立即出错关闭，也能正确清理。
             _current = overlay;
@@ -346,10 +359,11 @@ namespace Miyabists2.Scripts.Service
             string keyOrPath,
             bool pauseGame = true,
             bool cover = true,
-            bool loop = false)
+            bool loop = false,
+            bool mute = false)
         {
             TaskCompletionSource<bool> tcs = new();
-            Play(keyOrPath, result => tcs.TrySetResult(result), pauseGame, cover, loop);
+            Play(keyOrPath, result => tcs.TrySetResult(result), pauseGame, cover, loop, mute);
             return tcs.Task;
         }
 
@@ -362,7 +376,8 @@ namespace Miyabists2.Scripts.Service
             Action<bool>? onCompleted = null,
             bool pauseGame = true,
             bool cover = true,
-            bool loop = false)
+            bool loop = false,
+            bool mute = false)
         {
             if (!MiyabiModConfig.PlayVideo)
             {
@@ -370,7 +385,7 @@ namespace Miyabists2.Scripts.Service
                 return;
             }
 
-            Play(keyOrPath, onCompleted, pauseGame, cover, loop);
+            Play(keyOrPath, onCompleted, pauseGame, cover, loop, mute);
         }
 
         /// <summary>
@@ -380,12 +395,13 @@ namespace Miyabists2.Scripts.Service
             string keyOrPath,
             bool pauseGame = true,
             bool cover = true,
-            bool loop = false)
+            bool loop = false,
+            bool mute = false)
         {
             if (!MiyabiModConfig.PlayVideo)
                 return false;
 
-            return await PlayAsync(keyOrPath, pauseGame, cover, loop);
+            return await PlayAsync(keyOrPath, pauseGame, cover, loop, mute);
         }
 
         /// <summary>立即跳过并关闭当前视频；没有视频时什么也不做。</summary>

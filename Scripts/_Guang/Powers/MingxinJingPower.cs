@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using Miyabists2.Scripts._Guang.Cards;
 using Miyabists2.Scripts.Powers;
+using Miyabists2.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,12 +46,20 @@ namespace Miyabists2.Scripts._Guang.Powers
         public override string CustomIconPath => BigIconPath;
         public override string CustomBigIconPath => BigIconPath;
 
+        private static readonly string[] GuangStartVoices = { "guang_start_jiansuiwoyi", "guang_start_zhangjianzhuxie", "guang_start_zhanjinhongchen" };
+
         public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
         {
             PlayerChoiceContext choiceContext = new ThrowingPlayerChoiceContext();
 
             Player owner = Owner.Player;
             if (owner == null) return;
+
+            // 战斗立绘切换为明心镜形态
+            MingxinJingVisuals.Enter(Owner);
+
+            MiyabiAudioPlay.Random(GuangStartVoices);
+            await MiyabiVideoService.PlayIfEnabledAsync("guang_change", mute: true);
 
             // 1. 消耗所有正面能力（支援点数与青溟剑势除外）
             List<PowerModel> consumed = Owner.Powers
@@ -83,9 +92,6 @@ namespace Miyabists2.Scripts._Guang.Powers
 
             // 5. 直接加入一张《明心镜·归尘》（手卡没空位时先放到抽卡堆顶，之后每次出牌再补进手卡）
             await AddGuiChenIfNeeded();
-
-            // 6. 战斗立绘切换为明心镜形态
-            MingxinJingVisuals.Enter(Owner);
         }
 
         public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)

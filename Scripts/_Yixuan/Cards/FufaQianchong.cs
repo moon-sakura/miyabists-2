@@ -55,11 +55,11 @@ namespace Miyabists2.Scripts._Yixuan.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            // 设置里开启「播放技能视频」时先播演出视频，播完/跳过后再走原来的结算
-            bool isV =  await MiyabiVideoService.PlayIfEnabledAsync(FufaVideoKey);
+            // 语音先起，视频静音只出画面，两者同时进行（音画不同步是预期）
+            MiyabiAudioPlay.Random(YixuanFufaVoices);
 
-            if (!isV)
-                MiyabiAudioPlay.Random(YixuanFufaVoices);
+            // 设置里开启「播放技能视频」时同步播演出画面，播完/跳过后再走原来的结算
+            await MiyabiVideoService.PlayIfEnabledAsync(FufaVideoKey, mute: true);
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(DynamicVars["HitCount"].IntValue).FromCard(this, cardPlay)
             .Unblockable()
@@ -72,8 +72,7 @@ namespace Miyabists2.Scripts._Yixuan.Cards
                 await PowerCmd.Apply<ShufaZhi>(choiceContext, enemy, 15, Owner.Creature, this);
             }
 
-            //if (!isV)
-                MiyabiAudioPlay.Random(YixuanFufaEndVoices);
+            MiyabiAudioPlay.Random(YixuanFufaEndVoices);
 
             CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<XuanmoJizhen>(base.Owner.Creature.Player);
             reward1.SetToFreeThisTurn();

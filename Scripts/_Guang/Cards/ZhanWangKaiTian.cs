@@ -45,12 +45,20 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<MingxinJingPower>(),
         ];
 
+        private static readonly string[] GuangEndVoices = { "guang_end_cijianpowang", "guang_end_songniyichneg", "guang_end_zhanduanjiuxiao" };
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            MiyabiAudioPlay.Random(GuangEndVoices);
+            // 战斗立绘换回当前选择的战斗皮肤
+            MingxinJingVisuals.Exit(Owner.Creature);
+            await MiyabiVideoService.PlayIfEnabledAsync("guang_kaitian", mute: true);
+
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
                 .TargetingAllOpponents(Owner.Creature.CombatState)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
+
 
             // 退出明心镜状态（能力被移除时会把所有明心镜卡变回原卡）
             if (Owner.Creature.HasPower<MingxinJingPower>())
@@ -66,7 +74,7 @@ namespace Miyabists2.Scripts._Guang.Cards
         {
             // 这张卡由《逐云惊霆》升级后生成，本身暂不支持升级。
             DynamicVars.Damage.UpgradeValueBy(33);
-            DynamicVars["MaxHpGain"].UpgradeValueBy(2);
+            //DynamicVars["MaxHpGain"].UpgradeValueBy(2);
         }
     }
 }

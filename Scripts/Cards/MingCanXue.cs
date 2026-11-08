@@ -58,11 +58,14 @@ namespace Miyabists2.Scripts.Cards
             new DynamicVar("HitCount",5)
         ];
 
+        private const string MiyabiVideoKey = "miyabi_endskill";
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             //ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 
             MiyabiAudioPlay.Play("yicidaoWeishi");
+            await MiyabiVideoService.PlayIfEnabledAsync(MiyabiVideoKey, mute: true);
 
             int amount = CombatManager.Instance.History.CardPlaysFinished
                 .Count((CardPlayFinishedEntry e)
