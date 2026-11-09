@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Entities.Cards;
 using Miyabists2.Scripts.Cards;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace Miyabists2.Scripts._Guang.Cards
     [RegisterCard(typeof(YeshunGuangCardPool))]
     internal class YongtanHuacaiGuang : YongtanHuacai
     {
+        public YongtanHuacaiGuang() : base(2) { }
     }
 }

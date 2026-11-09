@@ -28,7 +28,7 @@
   	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC.flavor": "在绝境中绽放的意志",
 
 	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.title": "养气香囊",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧响值[/gold]，最大喧响值上限变为[blue]{MAX:diff()}[/blue]",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧响值[/gold]，喧响值上限变为[blue]{MAX:diff()}[/blue]",
   	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
 
 
@@ -137,7 +137,7 @@
   	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_YIXUAN.flavor": "在绝境中绽放的意志",
 
 	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.title": "养气香囊",
-  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧响值[/gold]，最大喧响值上限变为[blue]{MAX:diff()}[/blue]",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧响值[/gold]，喧响值上限变为[blue]{MAX:diff()}[/blue]",
   	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_YIXUAN.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
 
 	"MIYABISTS2_RELIC_CHOUKA_RELIC_YIXUAN.title": "加密母带",
@@ -180,5 +180,50 @@
 
 	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.title": "猎犬遗骸",
 	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.description": "每次战斗胜利后，额外获得一份随机奖励。",
-	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "神之迷宫最强猎手的证明！来财！"
+	"MIYABISTS2_RELIC_HOUND_REMAINS_RELIC.flavor": "神之迷宫最强猎手的证明！来财！",
+
+	// YeshunGuang shared / Bangboo relic copies
+	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_GUANG.title": "加班布",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_GUANG.description": "回合开始时召唤[gold]加班布[/gold]。",
+  	"MIYABISTS2_RELIC_OVERTIMEBOO_RELIC_GUANG.flavor": "牛马布",
+	"MIYABISTS2_RELIC_PAPERBOO_RELIC_GUANG.title": "纸壳布",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_GUANG.description": "回合开始时召唤[gold]纸壳布[/gold]。",
+  	"MIYABISTS2_RELIC_PAPERBOO_RELIC_GUANG.flavor": "我来护你！",
+	"MIYABISTS2_RELIC_SHARKBOO_RELIC_GUANG.title": "鲨牙布",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_GUANG.description": "回合开始时召唤[gold]鲨牙布[/gold]。",
+  	"MIYABISTS2_RELIC_SHARKBOO_RELIC_GUANG.flavor": "我在启动！",
+	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_GUANG.title": "圣剑布",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_GUANG.description": "回合开始时召唤[gold]圣剑布[/gold]。",
+  	"MIYABISTS2_RELIC_EXCALIBOO_RELIC_GUANG.flavor": "马上就好！",
+	"MIYABISTS2_RELIC_AGENT_RELIC_GUANG.title": "格列佛探员",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_GUANG.description": "回合开始时召唤[gold]格列佛探员[/gold]。",
+  	"MIYABISTS2_RELIC_AGENT_RELIC_GUANG.flavor": "FBI, OPEN THE DOOR!",
+	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_GUANG.title": "招财布",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_GUANG.description": "回合开始时召唤[gold]招财布[/gold]，有小概率会召唤[gold]一丁尼布[/gold]。",
+  	"MIYABISTS2_RELIC_LUCKYBOO_RELIC_GUANG.flavor": "真的会招财吗？",
+	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_GUANG.title": "寻宝布",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_GUANG.description": "回合开始时召唤[gold]寻宝布[/gold]。",
+  	"MIYABISTS2_RELIC_EXPLOREBOO_RELIC_GUANG.flavor": "要发财了！",
+	"MIYABISTS2_RELIC_SUMOBOO_RELIC_GUANG.title": "扑击布",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_GUANG.description": "回合开始时召唤[gold]扑击布[/gold]。",
+  	"MIYABISTS2_RELIC_SUMOBOO_RELIC_GUANG.flavor": "起飞。",
+	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_GUANG.title": "伊埃斯",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_GUANG.description": "回合开始时召唤[gold]伊埃斯[/gold]，在选择下一层的房间时有[blue]{Rooms:diff()}[/blue]次机会可以无视当前的路线。",
+  	"MIYABISTS2_RELIC_EOUS_BANGBOO_RELIC_GUANG.flavor": "最好的的伊埃斯",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_GUANG.title": "磁力布",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_GUANG.description": "回合开始时召唤[gold]磁力布[/gold]。",
+	"MIYABISTS2_RELIC_MAGNETIBOO_RELIC_GUANG.flavor": "磁力全开！",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_GUANG.title": "希希芙",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_GUANG.description": "回合开始时召唤[gold]希希芙[/gold]。",
+	"MIYABISTS2_RELIC_XIXIFU_RELIC_GUANG.flavor": "这是什么邦布？",
+	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_GUANG.title": "超越绝境之志",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_GUANG.description": "血量高于[blue]80%[/blue]时，伤害降低[red]50%[/red]；血量低于[blue]50%[/blue]时，伤害增加[blue]20%[/blue]；血量低于[blue]20%[/blue]时，伤害增加[blue]50%[/blue]",
+  	"MIYABISTS2_RELIC_CHAOYUE_JUEJING_ZHIZHI_RELIC_GUANG.flavor": "在绝境中绽放的意志",
+	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_GUANG.title": "养气香囊",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_GUANG.description": "每[blue]3[/blue]回合获得[blue]{ADD:diff()}[/blue]点[gold]喧响值[/gold]，喧响值上限变为[blue]{MAX:diff()}[/blue]",
+  	"MIYABISTS2_RELIC_YANGQI_XIANGNANG_RELIC_GUANG.flavor": "蕴含着神秘气息的香囊，能够稳定地积累能量",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_GUANG.title": "童话记事本",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_GUANG.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。\\n请勿添加会添加状态卡牌的怪物，否则会导致游戏卡住！",
+	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC_GUANG.flavor": "我把他们都画在了本子上——现在，只要挥挥法杖，我就能把他们都召唤出来！"
+
 }

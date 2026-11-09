@@ -22,7 +22,10 @@ namespace Miyabists2.Scripts.Cards
         internal class YongtanHuacai : MiyabiPartnerCardBase
     {
         protected override string ArtPath => $"res://images/cards/yongtanHuacai.png";
-        public YongtanHuacai() : base(3, CardRarity.Rare, TargetType.Self, CardType.Power) { }
+        public YongtanHuacai() : this(3) { }
+
+        /// <summary>允许角色专属版本指定基础费用。</summary>
+        protected YongtanHuacai(int energyCost) : base(energyCost, CardRarity.Rare, TargetType.Self, CardType.Power) { }
 
         protected override IEnumerable<IHoverTip> AdditionalHoverTips =>
         [
