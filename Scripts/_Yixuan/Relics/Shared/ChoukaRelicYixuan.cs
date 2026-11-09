@@ -37,7 +37,7 @@ namespace Miyabists2.Scripts._Yixuan.Relics.Shared
 
                 if (CinimaCounter >= 2)
                 {
-                    await PowerCmd.Apply<YixuanCinimatwoPower>(choiceContext, base.Owner.Creature, 1m, null, null);
+                    //await PowerCmd.Apply<YixuanCinimatwoPower>(choiceContext, base.Owner.Creature, 1m, null, null);
                 }
 
                 if (CinimaCounter >= 3)
@@ -60,7 +60,27 @@ namespace Miyabists2.Scripts._Yixuan.Relics.Shared
 
                 if (CinimaCounter >= 6)
                 {
-                    await PowerCmd.Apply<YixuanCinimasixPower>(choiceContext, base.Owner.Creature, 2m, null, null);
+                    //await PowerCmd.Apply<YixuanCinimasixPower>(choiceContext, base.Owner.Creature, 2m, null, null);
+                }
+            }
+        }
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if(CinimaCounter >= 2)
+            {
+                if (cardPlay.Card is FufaQianchong && cardPlay.Card.Owner == Owner)
+                {
+                    CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<FufaQianchongPo>(base.Owner);
+                    await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
+                }
+                if(CinimaCounter >= 6)
+                {
+                    if (cardPlay.Card is QingmingYunying && cardPlay.Card.Owner == Owner)
+                    {
+                        CardModel reward1 = base.Owner.Creature.CombatState.CreateCard<FufaQianchong>(base.Owner);
+                        await CardPileCmd.AddGeneratedCardToCombat(reward1, PileType.Hand, Owner);
+                    }
                 }
             }
         }

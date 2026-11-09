@@ -121,13 +121,21 @@ namespace Miyabists2.Scripts._Guang.Relics
             if (_hadPowerBefore ) return;
 
             // 青溟剑势本身不算「新能力」，否则会自己触发自己
-            if (power is QingmingJianshiPower || power is SupportPointPower) return;
+            if (power is QingmingJianshiPower || power is SupportPointPower)
+            {
+                _hadPowerBefore = false;
+                return;
+            }
 
             Creature? self = Owner?.Creature;
             if (self == null) return;
 
             // 明心镜状态下不触发
-            if (self.HasPower<MingxinJingPower>()) return;
+            if (self.HasPower<MingxinJingPower>())
+            {
+                _hadPowerBefore = false;
+                return;
+            }
 
             await PowerCmd.Apply<QingmingJianshiPower>(choiceContext, self, 1, self, null);
         }
