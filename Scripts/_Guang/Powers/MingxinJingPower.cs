@@ -84,6 +84,16 @@ namespace Miyabists2.Scripts._Guang.Powers
                 }
             }
 
+            // 2.5 影画/遗物的额外结算。
+            // 光会消耗所有正面能力，所以相关效果不能做成能力，交给遗物自己结算。
+            if (owner.Relics != null)
+            {
+                foreach (IMingxinJingEnterListener listener in owner.Relics.OfType<IMingxinJingEnterListener>())
+                {
+                    await listener.OnMingxinJingEntered(choiceContext, Owner, consumed.Count);
+                }
+            }
+
             // 3. 扣除 10% 生命上限（暂时关闭，测试后再决定是否加回来）
             // await CreatureCmd.LoseMaxHp(choiceContext, Owner, Owner.MaxHp * HpLossPercent / 100m, false);
 

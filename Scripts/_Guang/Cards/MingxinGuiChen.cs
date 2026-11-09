@@ -38,6 +38,11 @@ namespace Miyabists2.Scripts._Guang.Cards
             HoverTipFactory.FromPower<DazeVulnPower>(),
         ];
 
+        public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [
+            CardKeyword.Exhaust,
+        ];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay)
@@ -55,7 +60,7 @@ namespace Miyabists2.Scripts._Guang.Cards
             }
 
             // 本卡此时还在 Play 堆里，退出状态时扫不到它，由自己消耗
-            await CardCmd.Exhaust(choiceContext, this);
+            //await CardCmd.Exhaust(choiceContext, this);
         }
     }
 }

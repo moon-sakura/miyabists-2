@@ -1,10 +1,10 @@
 {
 	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.title": "妖刀无尾",
-  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+  	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]。每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]。",
   	"MIYABISTS2_RELIC_SWORD_NOTAIL_RELIC.flavor": "很硬很硬的刀",
 
 	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.title": "妖刀解放",
-  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]；战斗开始时，加入一张[red]妖刀解放[/red]到手卡",
+  	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.description": "战斗开始时获得[blue]3[/blue]点[gold]落霜[/gold]。每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]。\\n战斗开始时，加入一张[red]妖刀解放[/red]到手卡",
   	"MIYABISTS2_RELIC_NO_TAIL_FULL_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_JINGHUA_NIYING_RELIC.title": "镜花匿影",
@@ -150,11 +150,11 @@
 	"MIYABISTS2_RELIC_YUNKUI_SHAN_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.title": "青溟术法",
-	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "战斗开始时恢复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]",
+	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.description": "战斗开始时恢复所有[gold]闪能[/gold]。每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]。",
 	"MIYABISTS2_RELIC_QINGMING_SHUFA_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.title": "青溟鸟",
-	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "战斗开始时回复所有[gold]闪能[/gold]，每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]\\n每次失去生命时，从获得{Vigor}点[gold]活力[/gold]、获得{Thorns}层[gold]荆棘[/gold]、对所有敌人施加{Shufa}层[gold]术法值[/gold]中随机触发一个效果。\\n右键点击：失去最大生命值5%的生命，可以选择一个效果触发。",
+	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.description": "战斗开始时回复所有[gold]闪能[/gold]。每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时获得[gold]终结技[/gold]。\\n每次失去生命时，从获得{Vigor}点[gold]活力[/gold]、获得{Thorns}层[gold]荆棘[/gold]、对所有敌人施加{Shufa}层[gold]术法值[/gold]中随机触发一个效果。\\n右键点击：失去最大生命值5%的生命，可以选择一个效果触发。",
 	"MIYABISTS2_RELIC_QINGMING_NIAO_RELIC.flavor": "",
 
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.title": "青溟笼舍",
@@ -162,8 +162,12 @@
 	"MIYABISTS2_RELIC_QINGMING_LONGSHE_RELIC.flavor": "江河易改，旧梦难消",
 
 	"MIYABISTS2_RELIC_QINGMING_JIANXIA_RELIC.title": "青溟剑匣",
-	"MIYABISTS2_RELIC_QINGMING_JIANXIA_RELIC.description": "自身不处于[gold]明心镜[/gold]状态时，每获得[blue]1[/blue]个自身没有的新能力，获得[blue]1[/blue]点[gold]青溟剑势[/gold]\\n每使用[blue]1[/blue]张卡牌计数+1，计数达到[blue]30[/blue]时，将一张[gold]逐云惊霆+[/gold]加入手卡",
+	"MIYABISTS2_RELIC_QINGMING_JIANXIA_RELIC.description": "自身不处于[gold]明心镜[/gold]状态时，每获得[blue]1[/blue]个自身没有的新能力，获得[blue]1[/blue]点[gold]青溟剑势[/gold]。\\n每次使用卡牌可获得[blue]1[/blue]点[gold]喧响值[/gold]，[gold]喧响值[/gold]达到[blue]30[/blue]时，将一张[gold]逐云惊霆+[/gold]加入手卡。",
 	"MIYABISTS2_RELIC_QINGMING_JIANXIA_RELIC.flavor": "",
+
+	"MIYABISTS2_RELIC_CHOUKA_RELIC_GUANG.title": "加密母带",
+	"MIYABISTS2_RELIC_CHOUKA_RELIC_GUANG.description": "现在在休息处可以进行抽卡！每次战斗结束时，获取[blue]1[/blue]次免费抽取次数\\n当前影画：[gold]{CINIMA:diff()}[/gold]\\n当前免费抽取次数：[blue]{FreeCount:diff()}[/blue]\\n{CINIMA:choose(0|1|2|3|4|5|6):[s][color=gray]第1回合开始时，获得6点青溟剑势，将一张照影加入手卡[/color][/s]\\n[s][color=gray]明心镜状态下，每次消耗青溟剑势时，随机升级等量卡牌并获得1点能量[/color][/s]\\n[s][color=gray]每回合开始时，获得2点力量[/color][/s]\\n[s][color=gray]进入明心镜状态时，每种被消耗的能力额外为所有敌人施加10%失衡易伤[/color][/s]\\n[s][color=gray]进入明心镜状态时，获得8点力量[/color][/s]\\n[s][color=gray]战斗开始及之后每进入2次明心镜状态时，为自己施加1层明灯愿[/color][/s]|第[blue]1[/blue]回合开始时，获得[blue]6[/blue]点[gold]青溟剑势[/gold]，将一张[gold]照影[/gold]加入手卡\\n[s][color=gray]明心镜状态下，每次消耗青溟剑势时，随机升级等量卡牌并获得1点能量[/color][/s]\\n[s][color=gray]每回合开始时，获得2点力量[/color][/s]\\n[s][color=gray]进入明心镜状态时，每种被消耗的能力额外为所有敌人施加10%失衡易伤[/color][/s]\\n[s][color=gray]进入明心镜状态时，获得8点力量[/color][/s]\\n[s][color=gray]战斗开始及之后每进入2次明心镜状态时，为自己施加1层明灯愿[/color][/s]|第[blue]1[/blue]回合开始时，获得[blue]6[/blue]点[gold]青溟剑势[/gold]，将一张[gold]照影[/gold]加入手卡\\n[gold]明心镜[/gold]状态下，每次消耗[gold]青溟剑势[/gold]时，随机升级等量卡牌并获得[blue]1[/blue]点能量\\n[s][color=gray]每回合开始时，获得2点力量[/color][/s]\\n[s][color=gray]进入明心镜状态时，每种被消耗的能力额外为所有敌人施加10%失衡易伤[/color][/s]\\n[s][color=gray]进入明心镜状态时，获得8点力量[/color][/s]\\n[s][color=gray]战斗开始及之后每进入2次明心镜状态时，为自己施加1层明灯愿[/color][/s]|第[blue]1[/blue]回合开始时，获得[blue]6[/blue]点[gold]青溟剑势[/gold]，将一张[gold]照影[/gold]加入手卡\\n[gold]明心镜[/gold]状态下，每次消耗[gold]青溟剑势[/gold]时，随机升级等量卡牌并获得[blue]1[/blue]点能量\\n每回合开始时，获得[blue]2[/blue]点[gold]力量[/gold]\\n[s][color=gray]进入明心镜状态时，每种被消耗的能力额外为所有敌人施加10%失衡易伤[/color][/s]\\n[s][color=gray]进入明心镜状态时，获得8点力量[/color][/s]\\n[s][color=gray]战斗开始及之后每进入2次明心镜状态时，为自己施加1层明灯愿[/color][/s]|第[blue]1[/blue]回合开始时，获得[blue]6[/blue]点[gold]青溟剑势[/gold]，将一张[gold]照影[/gold]加入手卡\\n[gold]明心镜[/gold]状态下，每次消耗[gold]青溟剑势[/gold]时，随机升级等量卡牌并获得[blue]1[/blue]点能量\\n每回合开始时，获得[blue]2[/blue]点[gold]力量[/gold]\\n进入[gold]明心镜[/gold]状态时，每种被消耗的能力额外为所有敌人施加[blue]10%[/blue][gold]失衡易伤[/gold]\\n[s][color=gray]进入明心镜状态时，获得8点力量[/color][/s]\\n[s][color=gray]战斗开始及之后每进入2次明心镜状态时，为自己施加1层明灯愿[/color][/s]|第[blue]1[/blue]回合开始时，获得[blue]6[/blue]点[gold]青溟剑势[/gold]，将一张[gold]照影[/gold]加入手卡\\n[gold]明心镜[/gold]状态下，每次消耗[gold]青溟剑势[/gold]时，随机升级等量卡牌并获得[blue]1[/blue]点能量\\n每回合开始时，获得[blue]2[/blue]点[gold]力量[/gold]\\n进入[gold]明心镜[/gold]状态时，每种被消耗的能力额外为所有敌人施加[blue]10%[/blue][gold]失衡易伤[/gold]\\n进入[gold]明心镜[/gold]状态时，获得[blue]8[/blue]点[gold]力量[/gold]\\n[s][color=gray]战斗开始及之后每进入2次明心镜状态时，为自己施加1层明灯愿[/color][/s]|第[blue]1[/blue]回合开始时，获得[blue]6[/blue]点[gold]青溟剑势[/gold]，将一张[gold]照影[/gold]加入手卡\\n[gold]明心镜[/gold]状态下，每次消耗[gold]青溟剑势[/gold]时，随机升级等量卡牌并获得[blue]1[/blue]点能量\\n每回合开始时，获得[blue]2[/blue]点[gold]力量[/gold]\\n进入[gold]明心镜[/gold]状态时，每种被消耗的能力额外为所有敌人施加[blue]10%[/blue][gold]失衡易伤[/gold]\\n进入[gold]明心镜[/gold]状态时，获得[blue]8[/blue]点[gold]力量[/gold]\\n战斗开始及之后每进入[blue]2[/blue]次[gold]明心镜[/gold]状态时，为自己施加[blue]1[/blue]层[gold]明灯愿[/gold]|好像出了点问题X(}",
+	"MIYABISTS2_RELIC_CHOUKA_RELIC_GUANG.flavor": "搏一搏，单车变摩托！",
 
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.title": "童话记事本",
 	"MIYABISTS2_RELIC_TONGHUA_JISHIBEN_RELIC.description": "普通战斗的第2个回合结束或精英战斗的第4个回合结束时，将1张[gold]长夜诗篇[/gold]加入手卡。\\n右键点击：将记录的怪物加入战场。\\n当前记录怪物：[gold]{Monster}[/gold]。\\n请勿添加会添加状态卡牌的怪物，否则会导致游戏卡住！",

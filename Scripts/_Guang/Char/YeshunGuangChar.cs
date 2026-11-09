@@ -143,6 +143,7 @@ class YeshunGuang : ModCharacterTemplate<YeshunGuangCardPool, YeshunGuangRelicPo
     protected override IEnumerable<Type> StartingRelicTypes => [
         typeof(QingmingJianxiaRelic),
         typeof(YunkuiShanRelic),
+        typeof(ChoukaRelicGuang),
     ];
 
     public override async Task AfterRoomEntered(AbstractRoom room)
